@@ -1,0 +1,3231 @@
+{
+  "ok": true,
+  "videoId": "YQHsXMglC9A",
+  "language": "en",
+  "trackKind": "standard",
+  "subtitles": [
+    {
+      "id": "cue-1",
+      "start": 19.44,
+      "end": 22.32,
+      "text": "- I just got here, and I think I'm loosing signal already.",
+      "words": [
+        {
+          "text": "-",
+          "start": 19.44,
+          "end": 19.68
+        },
+        {
+          "text": "I",
+          "start": 19.68,
+          "end": 19.92
+        },
+        {
+          "text": "just",
+          "start": 19.92,
+          "end": 20.16
+        },
+        {
+          "text": "got",
+          "start": 20.16,
+          "end": 20.4
+        },
+        {
+          "text": "here,",
+          "start": 20.4,
+          "end": 20.64
+        },
+        {
+          "text": "and",
+          "start": 20.64,
+          "end": 20.88
+        },
+        {
+          "text": "I",
+          "start": 20.88,
+          "end": 21.12
+        },
+        {
+          "text": "think",
+          "start": 21.12,
+          "end": 21.36
+        },
+        {
+          "text": "I'm",
+          "start": 21.36,
+          "end": 21.6
+        },
+        {
+          "text": "loosing",
+          "start": 21.6,
+          "end": 21.84
+        },
+        {
+          "text": "signal",
+          "start": 21.84,
+          "end": 22.08
+        },
+        {
+          "text": "already.",
+          "start": 22.08,
+          "end": 22.32
+        }
+      ]
+    },
+    {
+      "id": "cue-2",
+      "start": 22.32,
+      "end": 25.32,
+      "text": "Hello? Can you hear me now?",
+      "words": [
+        {
+          "text": "Hello?",
+          "start": 22.32,
+          "end": 22.82
+        },
+        {
+          "text": "Can",
+          "start": 22.82,
+          "end": 23.32
+        },
+        {
+          "text": "you",
+          "start": 23.32,
+          "end": 23.82
+        },
+        {
+          "text": "hear",
+          "start": 23.82,
+          "end": 24.32
+        },
+        {
+          "text": "me",
+          "start": 24.32,
+          "end": 24.82
+        },
+        {
+          "text": "now?",
+          "start": 24.82,
+          "end": 25.32
+        }
+      ]
+    },
+    {
+      "id": "cue-3",
+      "start": 25.31,
+      "end": 33.44,
+      "text": "(wind buffeting) Sorry, sorry, I'll call you later.",
+      "words": [
+        {
+          "text": "(wind",
+          "start": 25.31,
+          "end": 26.88
+        },
+        {
+          "text": "buffeting)",
+          "start": 26.88,
+          "end": 28.45
+        },
+        {
+          "text": "Sorry,",
+          "start": 28.46,
+          "end": 29.29
+        },
+        {
+          "text": "sorry,",
+          "start": 29.29,
+          "end": 30.12
+        },
+        {
+          "text": "I'll",
+          "start": 30.12,
+          "end": 30.95
+        },
+        {
+          "text": "call",
+          "start": 30.95,
+          "end": 31.78
+        },
+        {
+          "text": "you",
+          "start": 31.78,
+          "end": 32.61
+        },
+        {
+          "text": "later.",
+          "start": 32.61,
+          "end": 33.44
+        }
+      ]
+    },
+    {
+      "id": "cue-4",
+      "start": 33.56,
+      "end": 35.87,
+      "text": "Yeah, yeah, sorry.",
+      "words": [
+        {
+          "text": "Yeah,",
+          "start": 33.56,
+          "end": 34.33
+        },
+        {
+          "text": "yeah,",
+          "start": 34.33,
+          "end": 35.1
+        },
+        {
+          "text": "sorry.",
+          "start": 35.1,
+          "end": 35.87
+        }
+      ]
+    },
+    {
+      "id": "cue-5",
+      "start": 35.87,
+      "end": 46.93,
+      "text": "(wind buffeting) (phone clacking) (lock clicking) (door creaking)",
+      "words": [
+        {
+          "text": "(wind",
+          "start": 35.87,
+          "end": 37.12
+        },
+        {
+          "text": "buffeting)",
+          "start": 37.12,
+          "end": 38.37
+        },
+        {
+          "text": "(phone",
+          "start": 38.37,
+          "end": 39.62
+        },
+        {
+          "text": "clacking)",
+          "start": 39.62,
+          "end": 40.87
+        },
+        {
+          "text": "(lock",
+          "start": 41.93,
+          "end": 43.18
+        },
+        {
+          "text": "clicking)",
+          "start": 43.18,
+          "end": 44.43
+        },
+        {
+          "text": "(door",
+          "start": 44.43,
+          "end": 45.68
+        },
+        {
+          "text": "creaking)",
+          "start": 45.68,
+          "end": 46.93
+        }
+      ]
+    },
+    {
+      "id": "cue-6",
+      "start": 51.19,
+      "end": 76.77,
+      "text": "(footsteps echoing) (fabric rustling) (Adele inhaling) (soft piano music)",
+      "words": [
+        {
+          "text": "(footsteps",
+          "start": 51.19,
+          "end": 52.88
+        },
+        {
+          "text": "echoing)",
+          "start": 52.88,
+          "end": 54.58
+        },
+        {
+          "text": "(fabric",
+          "start": 54.58,
+          "end": 55.99
+        },
+        {
+          "text": "rustling)",
+          "start": 55.99,
+          "end": 57.41
+        },
+        {
+          "text": "(Adele",
+          "start": 71.77,
+          "end": 72.77
+        },
+        {
+          "text": "inhaling)",
+          "start": 72.77,
+          "end": 73.77
+        },
+        {
+          "text": "(soft",
+          "start": 73.77,
+          "end": 74.77
+        },
+        {
+          "text": "piano",
+          "start": 74.77,
+          "end": 75.77
+        },
+        {
+          "text": "music)",
+          "start": 75.77,
+          "end": 76.77
+        }
+      ]
+    },
+    {
+      "id": "cue-7",
+      "start": 80.98,
+      "end": 90.62,
+      "text": "♪ Hello, it's me ♪ ♪ I was wondering if after all these years ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 80.98,
+          "end": 81.98
+        },
+        {
+          "text": "Hello,",
+          "start": 81.98,
+          "end": 82.98
+        },
+        {
+          "text": "it's",
+          "start": 82.98,
+          "end": 83.98
+        },
+        {
+          "text": "me",
+          "start": 83.98,
+          "end": 84.98
+        },
+        {
+          "text": "♪",
+          "start": 84.98,
+          "end": 85.98
+        },
+        {
+          "text": "♪",
+          "start": 86.42,
+          "end": 86.84
+        },
+        {
+          "text": "I",
+          "start": 86.84,
+          "end": 87.26
+        },
+        {
+          "text": "was",
+          "start": 87.26,
+          "end": 87.68
+        },
+        {
+          "text": "wondering",
+          "start": 87.68,
+          "end": 88.1
+        },
+        {
+          "text": "if",
+          "start": 88.1,
+          "end": 88.52
+        },
+        {
+          "text": "after",
+          "start": 88.52,
+          "end": 88.94
+        },
+        {
+          "text": "all",
+          "start": 88.94,
+          "end": 89.36
+        },
+        {
+          "text": "these",
+          "start": 89.36,
+          "end": 89.78
+        },
+        {
+          "text": "years",
+          "start": 89.78,
+          "end": 90.2
+        },
+        {
+          "text": "♪",
+          "start": 90.2,
+          "end": 90.62
+        }
+      ]
+    },
+    {
+      "id": "cue-8",
+      "start": 90.62,
+      "end": 92.54,
+      "text": "♪ You'd like to meet ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 90.62,
+          "end": 90.94
+        },
+        {
+          "text": "You'd",
+          "start": 90.94,
+          "end": 91.26
+        },
+        {
+          "text": "like",
+          "start": 91.26,
+          "end": 91.58
+        },
+        {
+          "text": "to",
+          "start": 91.58,
+          "end": 91.9
+        },
+        {
+          "text": "meet",
+          "start": 91.9,
+          "end": 92.22
+        },
+        {
+          "text": "♪",
+          "start": 92.22,
+          "end": 92.54
+        }
+      ]
+    },
+    {
+      "id": "cue-9",
+      "start": 92.54,
+      "end": 97.52,
+      "text": "♪ To go over everything ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 92.54,
+          "end": 93.37
+        },
+        {
+          "text": "To",
+          "start": 93.37,
+          "end": 94.2
+        },
+        {
+          "text": "go",
+          "start": 94.2,
+          "end": 95.03
+        },
+        {
+          "text": "over",
+          "start": 95.03,
+          "end": 95.86
+        },
+        {
+          "text": "everything",
+          "start": 95.86,
+          "end": 96.69
+        },
+        {
+          "text": "♪",
+          "start": 96.69,
+          "end": 97.52
+        }
+      ]
+    },
+    {
+      "id": "cue-10",
+      "start": 98.18,
+      "end": 101.88,
+      "text": "♪ They say that time's supposed to heal ya ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 98.18,
+          "end": 98.55
+        },
+        {
+          "text": "They",
+          "start": 98.55,
+          "end": 98.92
+        },
+        {
+          "text": "say",
+          "start": 98.92,
+          "end": 99.29
+        },
+        {
+          "text": "that",
+          "start": 99.29,
+          "end": 99.66
+        },
+        {
+          "text": "time's",
+          "start": 99.66,
+          "end": 100.03
+        },
+        {
+          "text": "supposed",
+          "start": 100.03,
+          "end": 100.4
+        },
+        {
+          "text": "to",
+          "start": 100.4,
+          "end": 100.77
+        },
+        {
+          "text": "heal",
+          "start": 100.77,
+          "end": 101.14
+        },
+        {
+          "text": "ya",
+          "start": 101.14,
+          "end": 101.51
+        },
+        {
+          "text": "♪",
+          "start": 101.51,
+          "end": 101.88
+        }
+      ]
+    },
+    {
+      "id": "cue-11",
+      "start": 101.88,
+      "end": 105.08,
+      "text": "♪ But I ain't done much healing ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 101.88,
+          "end": 102.28
+        },
+        {
+          "text": "But",
+          "start": 102.28,
+          "end": 102.68
+        },
+        {
+          "text": "I",
+          "start": 102.68,
+          "end": 103.08
+        },
+        {
+          "text": "ain't",
+          "start": 103.08,
+          "end": 103.48
+        },
+        {
+          "text": "done",
+          "start": 103.48,
+          "end": 103.88
+        },
+        {
+          "text": "much",
+          "start": 103.88,
+          "end": 104.28
+        },
+        {
+          "text": "healing",
+          "start": 104.28,
+          "end": 104.68
+        },
+        {
+          "text": "♪",
+          "start": 104.68,
+          "end": 105.08
+        }
+      ]
+    },
+    {
+      "id": "cue-12",
+      "start": 105.11,
+      "end": 110.08,
+      "text": "♪ Hello, can you hear me ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 105.11,
+          "end": 105.82
+        },
+        {
+          "text": "Hello,",
+          "start": 105.82,
+          "end": 106.53
+        },
+        {
+          "text": "can",
+          "start": 106.53,
+          "end": 107.24
+        },
+        {
+          "text": "you",
+          "start": 107.24,
+          "end": 107.95
+        },
+        {
+          "text": "hear",
+          "start": 107.95,
+          "end": 108.66
+        },
+        {
+          "text": "me",
+          "start": 108.66,
+          "end": 109.37
+        },
+        {
+          "text": "♪",
+          "start": 109.37,
+          "end": 110.08
+        }
+      ]
+    },
+    {
+      "id": "cue-13",
+      "start": 110.67,
+      "end": 115.71,
+      "text": "♪ I'm in California dreaming about who we used to be ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 110.67,
+          "end": 111.09
+        },
+        {
+          "text": "I'm",
+          "start": 111.09,
+          "end": 111.51
+        },
+        {
+          "text": "in",
+          "start": 111.51,
+          "end": 111.93
+        },
+        {
+          "text": "California",
+          "start": 111.93,
+          "end": 112.35
+        },
+        {
+          "text": "dreaming",
+          "start": 112.35,
+          "end": 112.77
+        },
+        {
+          "text": "about",
+          "start": 112.77,
+          "end": 113.19
+        },
+        {
+          "text": "who",
+          "start": 113.19,
+          "end": 113.61
+        },
+        {
+          "text": "we",
+          "start": 113.61,
+          "end": 114.03
+        },
+        {
+          "text": "used",
+          "start": 114.03,
+          "end": 114.45
+        },
+        {
+          "text": "to",
+          "start": 114.45,
+          "end": 114.87
+        },
+        {
+          "text": "be",
+          "start": 114.87,
+          "end": 115.29
+        },
+        {
+          "text": "♪",
+          "start": 115.29,
+          "end": 115.71
+        }
+      ]
+    },
+    {
+      "id": "cue-14",
+      "start": 116.61,
+      "end": 121.61,
+      "text": "♪ When we were younger and free ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 116.61,
+          "end": 117.23
+        },
+        {
+          "text": "When",
+          "start": 117.23,
+          "end": 117.86
+        },
+        {
+          "text": "we",
+          "start": 117.86,
+          "end": 118.48
+        },
+        {
+          "text": "were",
+          "start": 118.48,
+          "end": 119.11
+        },
+        {
+          "text": "younger",
+          "start": 119.11,
+          "end": 119.73
+        },
+        {
+          "text": "and",
+          "start": 119.73,
+          "end": 120.36
+        },
+        {
+          "text": "free",
+          "start": 120.36,
+          "end": 120.98
+        },
+        {
+          "text": "♪",
+          "start": 120.98,
+          "end": 121.61
+        }
+      ]
+    },
+    {
+      "id": "cue-15",
+      "start": 122.84,
+      "end": 125.43,
+      "text": "♪ I've forgotten how it felt ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 122.84,
+          "end": 123.21
+        },
+        {
+          "text": "I've",
+          "start": 123.21,
+          "end": 123.58
+        },
+        {
+          "text": "forgotten",
+          "start": 123.58,
+          "end": 123.95
+        },
+        {
+          "text": "how",
+          "start": 123.95,
+          "end": 124.32
+        },
+        {
+          "text": "it",
+          "start": 124.32,
+          "end": 124.69
+        },
+        {
+          "text": "felt",
+          "start": 124.69,
+          "end": 125.06
+        },
+        {
+          "text": "♪",
+          "start": 125.06,
+          "end": 125.43
+        }
+      ]
+    },
+    {
+      "id": "cue-16",
+      "start": 125.42,
+      "end": 128.57,
+      "text": "♪ Before the world fell at our feet ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 125.42,
+          "end": 125.77
+        },
+        {
+          "text": "Before",
+          "start": 125.77,
+          "end": 126.12
+        },
+        {
+          "text": "the",
+          "start": 126.12,
+          "end": 126.47
+        },
+        {
+          "text": "world",
+          "start": 126.47,
+          "end": 126.82
+        },
+        {
+          "text": "fell",
+          "start": 126.82,
+          "end": 127.17
+        },
+        {
+          "text": "at",
+          "start": 127.17,
+          "end": 127.52
+        },
+        {
+          "text": "our",
+          "start": 127.52,
+          "end": 127.87
+        },
+        {
+          "text": "feet",
+          "start": 127.87,
+          "end": 128.22
+        },
+        {
+          "text": "♪",
+          "start": 128.22,
+          "end": 128.57
+        }
+      ]
+    },
+    {
+      "id": "cue-17",
+      "start": 128.61,
+      "end": 133.62,
+      "text": "♪ There's such a difference between us ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 128.61,
+          "end": 129.24
+        },
+        {
+          "text": "There's",
+          "start": 129.24,
+          "end": 129.87
+        },
+        {
+          "text": "such",
+          "start": 129.87,
+          "end": 130.5
+        },
+        {
+          "text": "a",
+          "start": 130.5,
+          "end": 131.12
+        },
+        {
+          "text": "difference",
+          "start": 131.12,
+          "end": 131.75
+        },
+        {
+          "text": "between",
+          "start": 131.75,
+          "end": 132.38
+        },
+        {
+          "text": "us",
+          "start": 132.38,
+          "end": 133.0
+        },
+        {
+          "text": "♪",
+          "start": 133.0,
+          "end": 133.62
+        }
+      ]
+    },
+    {
+      "id": "cue-18",
+      "start": 135.24,
+      "end": 140.22,
+      "text": "♪ And a million miles ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 135.24,
+          "end": 136.07
+        },
+        {
+          "text": "And",
+          "start": 136.07,
+          "end": 136.9
+        },
+        {
+          "text": "a",
+          "start": 136.9,
+          "end": 137.73
+        },
+        {
+          "text": "million",
+          "start": 137.73,
+          "end": 138.56
+        },
+        {
+          "text": "miles",
+          "start": 138.56,
+          "end": 139.39
+        },
+        {
+          "text": "♪",
+          "start": 139.39,
+          "end": 140.22
+        }
+      ]
+    },
+    {
+      "id": "cue-19",
+      "start": 141.85,
+      "end": 146.82,
+      "text": "♪ Hello from the other side ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 141.85,
+          "end": 142.56
+        },
+        {
+          "text": "Hello",
+          "start": 142.56,
+          "end": 143.27
+        },
+        {
+          "text": "from",
+          "start": 143.27,
+          "end": 143.98
+        },
+        {
+          "text": "the",
+          "start": 143.98,
+          "end": 144.69
+        },
+        {
+          "text": "other",
+          "start": 144.69,
+          "end": 145.4
+        },
+        {
+          "text": "side",
+          "start": 145.4,
+          "end": 146.11
+        },
+        {
+          "text": "♪",
+          "start": 146.11,
+          "end": 146.82
+        }
+      ]
+    },
+    {
+      "id": "cue-20",
+      "start": 147.57,
+      "end": 152.56,
+      "text": "♪ I must've called a thousand times ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 147.57,
+          "end": 148.19
+        },
+        {
+          "text": "I",
+          "start": 148.19,
+          "end": 148.81
+        },
+        {
+          "text": "must've",
+          "start": 148.81,
+          "end": 149.44
+        },
+        {
+          "text": "called",
+          "start": 149.44,
+          "end": 150.06
+        },
+        {
+          "text": "a",
+          "start": 150.06,
+          "end": 150.69
+        },
+        {
+          "text": "thousand",
+          "start": 150.69,
+          "end": 151.31
+        },
+        {
+          "text": "times",
+          "start": 151.31,
+          "end": 151.94
+        },
+        {
+          "text": "♪",
+          "start": 151.94,
+          "end": 152.56
+        }
+      ]
+    },
+    {
+      "id": "cue-21",
+      "start": 153.18,
+      "end": 158.22,
+      "text": "♪ To tell you I'm sorry for everything that I've done ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 153.18,
+          "end": 153.6
+        },
+        {
+          "text": "To",
+          "start": 153.6,
+          "end": 154.02
+        },
+        {
+          "text": "tell",
+          "start": 154.02,
+          "end": 154.44
+        },
+        {
+          "text": "you",
+          "start": 154.44,
+          "end": 154.86
+        },
+        {
+          "text": "I'm",
+          "start": 154.86,
+          "end": 155.28
+        },
+        {
+          "text": "sorry",
+          "start": 155.28,
+          "end": 155.7
+        },
+        {
+          "text": "for",
+          "start": 155.7,
+          "end": 156.12
+        },
+        {
+          "text": "everything",
+          "start": 156.12,
+          "end": 156.54
+        },
+        {
+          "text": "that",
+          "start": 156.54,
+          "end": 156.96
+        },
+        {
+          "text": "I've",
+          "start": 156.96,
+          "end": 157.38
+        },
+        {
+          "text": "done",
+          "start": 157.38,
+          "end": 157.8
+        },
+        {
+          "text": "♪",
+          "start": 157.8,
+          "end": 158.22
+        }
+      ]
+    },
+    {
+      "id": "cue-22",
+      "start": 158.85,
+      "end": 163.89,
+      "text": "♪ But when I call, you never seem to be home ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 158.85,
+          "end": 159.27
+        },
+        {
+          "text": "But",
+          "start": 159.27,
+          "end": 159.69
+        },
+        {
+          "text": "when",
+          "start": 159.69,
+          "end": 160.11
+        },
+        {
+          "text": "I",
+          "start": 160.11,
+          "end": 160.53
+        },
+        {
+          "text": "call,",
+          "start": 160.53,
+          "end": 160.95
+        },
+        {
+          "text": "you",
+          "start": 160.95,
+          "end": 161.37
+        },
+        {
+          "text": "never",
+          "start": 161.37,
+          "end": 161.79
+        },
+        {
+          "text": "seem",
+          "start": 161.79,
+          "end": 162.21
+        },
+        {
+          "text": "to",
+          "start": 162.21,
+          "end": 162.63
+        },
+        {
+          "text": "be",
+          "start": 162.63,
+          "end": 163.05
+        },
+        {
+          "text": "home",
+          "start": 163.05,
+          "end": 163.47
+        },
+        {
+          "text": "♪",
+          "start": 163.47,
+          "end": 163.89
+        }
+      ]
+    },
+    {
+      "id": "cue-23",
+      "start": 166.14,
+      "end": 171.12,
+      "text": "♪ Hello from the outside ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 166.14,
+          "end": 166.97
+        },
+        {
+          "text": "Hello",
+          "start": 166.97,
+          "end": 167.8
+        },
+        {
+          "text": "from",
+          "start": 167.8,
+          "end": 168.63
+        },
+        {
+          "text": "the",
+          "start": 168.63,
+          "end": 169.46
+        },
+        {
+          "text": "outside",
+          "start": 169.46,
+          "end": 170.29
+        },
+        {
+          "text": "♪",
+          "start": 170.29,
+          "end": 171.12
+        }
+      ]
+    },
+    {
+      "id": "cue-24",
+      "start": 171.71,
+      "end": 176.71,
+      "text": "♪ At least I can say that I've tried ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 171.71,
+          "end": 172.21
+        },
+        {
+          "text": "At",
+          "start": 172.21,
+          "end": 172.71
+        },
+        {
+          "text": "least",
+          "start": 172.71,
+          "end": 173.21
+        },
+        {
+          "text": "I",
+          "start": 173.21,
+          "end": 173.71
+        },
+        {
+          "text": "can",
+          "start": 173.71,
+          "end": 174.21
+        },
+        {
+          "text": "say",
+          "start": 174.21,
+          "end": 174.71
+        },
+        {
+          "text": "that",
+          "start": 174.71,
+          "end": 175.21
+        },
+        {
+          "text": "I've",
+          "start": 175.21,
+          "end": 175.71
+        },
+        {
+          "text": "tried",
+          "start": 175.71,
+          "end": 176.21
+        },
+        {
+          "text": "♪",
+          "start": 176.21,
+          "end": 176.71
+        }
+      ]
+    },
+    {
+      "id": "cue-25",
+      "start": 177.35,
+      "end": 182.3,
+      "text": "♪ To tell you I'm sorry for breaking your heart ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 177.35,
+          "end": 177.8
+        },
+        {
+          "text": "To",
+          "start": 177.8,
+          "end": 178.25
+        },
+        {
+          "text": "tell",
+          "start": 178.25,
+          "end": 178.7
+        },
+        {
+          "text": "you",
+          "start": 178.7,
+          "end": 179.15
+        },
+        {
+          "text": "I'm",
+          "start": 179.15,
+          "end": 179.6
+        },
+        {
+          "text": "sorry",
+          "start": 179.6,
+          "end": 180.05
+        },
+        {
+          "text": "for",
+          "start": 180.05,
+          "end": 180.5
+        },
+        {
+          "text": "breaking",
+          "start": 180.5,
+          "end": 180.95
+        },
+        {
+          "text": "your",
+          "start": 180.95,
+          "end": 181.4
+        },
+        {
+          "text": "heart",
+          "start": 181.4,
+          "end": 181.85
+        },
+        {
+          "text": "♪",
+          "start": 181.85,
+          "end": 182.3
+        }
+      ]
+    },
+    {
+      "id": "cue-26",
+      "start": 183.05,
+      "end": 184.91,
+      "text": "♪ But it don't matter ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 183.05,
+          "end": 183.36
+        },
+        {
+          "text": "But",
+          "start": 183.36,
+          "end": 183.67
+        },
+        {
+          "text": "it",
+          "start": 183.67,
+          "end": 183.98
+        },
+        {
+          "text": "don't",
+          "start": 183.98,
+          "end": 184.29
+        },
+        {
+          "text": "matter",
+          "start": 184.29,
+          "end": 184.6
+        },
+        {
+          "text": "♪",
+          "start": 184.6,
+          "end": 184.91
+        }
+      ]
+    },
+    {
+      "id": "cue-27",
+      "start": 184.92,
+      "end": 189.96,
+      "text": "♪ It clearly doesn't tear you apart anymore ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 184.92,
+          "end": 185.48
+        },
+        {
+          "text": "It",
+          "start": 185.48,
+          "end": 186.04
+        },
+        {
+          "text": "clearly",
+          "start": 186.04,
+          "end": 186.6
+        },
+        {
+          "text": "doesn't",
+          "start": 186.6,
+          "end": 187.16
+        },
+        {
+          "text": "tear",
+          "start": 187.16,
+          "end": 187.72
+        },
+        {
+          "text": "you",
+          "start": 187.72,
+          "end": 188.28
+        },
+        {
+          "text": "apart",
+          "start": 188.28,
+          "end": 188.84
+        },
+        {
+          "text": "anymore",
+          "start": 188.84,
+          "end": 189.4
+        },
+        {
+          "text": "♪",
+          "start": 189.4,
+          "end": 189.96
+        }
+      ]
+    },
+    {
+      "id": "cue-28",
+      "start": 196.46,
+      "end": 201.44,
+      "text": "♪ Hello, how are you ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 196.46,
+          "end": 197.29
+        },
+        {
+          "text": "Hello,",
+          "start": 197.29,
+          "end": 198.12
+        },
+        {
+          "text": "how",
+          "start": 198.12,
+          "end": 198.95
+        },
+        {
+          "text": "are",
+          "start": 198.95,
+          "end": 199.78
+        },
+        {
+          "text": "you",
+          "start": 199.78,
+          "end": 200.61
+        },
+        {
+          "text": "♪",
+          "start": 200.61,
+          "end": 201.44
+        }
+      ]
+    },
+    {
+      "id": "cue-29",
+      "start": 201.78,
+      "end": 206.72,
+      "text": "♪ It's so typical of me to talk about myself, I'm sorry ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 201.78,
+          "end": 202.16
+        },
+        {
+          "text": "It's",
+          "start": 202.16,
+          "end": 202.54
+        },
+        {
+          "text": "so",
+          "start": 202.54,
+          "end": 202.92
+        },
+        {
+          "text": "typical",
+          "start": 202.92,
+          "end": 203.3
+        },
+        {
+          "text": "of",
+          "start": 203.3,
+          "end": 203.68
+        },
+        {
+          "text": "me",
+          "start": 203.68,
+          "end": 204.06
+        },
+        {
+          "text": "to",
+          "start": 204.06,
+          "end": 204.44
+        },
+        {
+          "text": "talk",
+          "start": 204.44,
+          "end": 204.82
+        },
+        {
+          "text": "about",
+          "start": 204.82,
+          "end": 205.2
+        },
+        {
+          "text": "myself,",
+          "start": 205.2,
+          "end": 205.58
+        },
+        {
+          "text": "I'm",
+          "start": 205.58,
+          "end": 205.96
+        },
+        {
+          "text": "sorry",
+          "start": 205.96,
+          "end": 206.34
+        },
+        {
+          "text": "♪",
+          "start": 206.34,
+          "end": 206.72
+        }
+      ]
+    },
+    {
+      "id": "cue-30",
+      "start": 208.12,
+      "end": 213.09,
+      "text": "♪ I hope that you're well ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 208.12,
+          "end": 208.83
+        },
+        {
+          "text": "I",
+          "start": 208.83,
+          "end": 209.54
+        },
+        {
+          "text": "hope",
+          "start": 209.54,
+          "end": 210.25
+        },
+        {
+          "text": "that",
+          "start": 210.25,
+          "end": 210.96
+        },
+        {
+          "text": "you're",
+          "start": 210.96,
+          "end": 211.67
+        },
+        {
+          "text": "well",
+          "start": 211.67,
+          "end": 212.38
+        },
+        {
+          "text": "♪",
+          "start": 212.38,
+          "end": 213.09
+        }
+      ]
+    },
+    {
+      "id": "cue-31",
+      "start": 214.02,
+      "end": 217.54,
+      "text": "♪ Did you ever make it out of that town ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 214.02,
+          "end": 214.34
+        },
+        {
+          "text": "Did",
+          "start": 214.34,
+          "end": 214.66
+        },
+        {
+          "text": "you",
+          "start": 214.66,
+          "end": 214.98
+        },
+        {
+          "text": "ever",
+          "start": 214.98,
+          "end": 215.3
+        },
+        {
+          "text": "make",
+          "start": 215.3,
+          "end": 215.62
+        },
+        {
+          "text": "it",
+          "start": 215.62,
+          "end": 215.94
+        },
+        {
+          "text": "out",
+          "start": 215.94,
+          "end": 216.26
+        },
+        {
+          "text": "of",
+          "start": 216.26,
+          "end": 216.58
+        },
+        {
+          "text": "that",
+          "start": 216.58,
+          "end": 216.9
+        },
+        {
+          "text": "town",
+          "start": 216.9,
+          "end": 217.22
+        },
+        {
+          "text": "♪",
+          "start": 217.22,
+          "end": 217.54
+        }
+      ]
+    },
+    {
+      "id": "cue-32",
+      "start": 217.49,
+      "end": 220.31,
+      "text": "♪ Where nothing ever happened ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 217.49,
+          "end": 217.96
+        },
+        {
+          "text": "Where",
+          "start": 217.96,
+          "end": 218.43
+        },
+        {
+          "text": "nothing",
+          "start": 218.43,
+          "end": 218.9
+        },
+        {
+          "text": "ever",
+          "start": 218.9,
+          "end": 219.37
+        },
+        {
+          "text": "happened",
+          "start": 219.37,
+          "end": 219.84
+        },
+        {
+          "text": "♪",
+          "start": 219.84,
+          "end": 220.31
+        }
+      ]
+    },
+    {
+      "id": "cue-33",
+      "start": 220.32,
+      "end": 225.32,
+      "text": "♪ It's no secret that the both of us ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 220.32,
+          "end": 220.82
+        },
+        {
+          "text": "It's",
+          "start": 220.82,
+          "end": 221.32
+        },
+        {
+          "text": "no",
+          "start": 221.32,
+          "end": 221.82
+        },
+        {
+          "text": "secret",
+          "start": 221.82,
+          "end": 222.32
+        },
+        {
+          "text": "that",
+          "start": 222.32,
+          "end": 222.82
+        },
+        {
+          "text": "the",
+          "start": 222.82,
+          "end": 223.32
+        },
+        {
+          "text": "both",
+          "start": 223.32,
+          "end": 223.82
+        },
+        {
+          "text": "of",
+          "start": 223.82,
+          "end": 224.32
+        },
+        {
+          "text": "us",
+          "start": 224.32,
+          "end": 224.82
+        },
+        {
+          "text": "♪",
+          "start": 224.82,
+          "end": 225.32
+        }
+      ]
+    },
+    {
+      "id": "cue-34",
+      "start": 226.75,
+      "end": 231.72,
+      "text": "♪ Are running out of time ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 226.75,
+          "end": 227.46
+        },
+        {
+          "text": "Are",
+          "start": 227.46,
+          "end": 228.17
+        },
+        {
+          "text": "running",
+          "start": 228.17,
+          "end": 228.88
+        },
+        {
+          "text": "out",
+          "start": 228.88,
+          "end": 229.59
+        },
+        {
+          "text": "of",
+          "start": 229.59,
+          "end": 230.3
+        },
+        {
+          "text": "time",
+          "start": 230.3,
+          "end": 231.01
+        },
+        {
+          "text": "♪",
+          "start": 231.01,
+          "end": 231.72
+        }
+      ]
+    },
+    {
+      "id": "cue-35",
+      "start": 232.65,
+      "end": 236.25,
+      "text": "♪ So hello from the other side ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 232.65,
+          "end": 233.1
+        },
+        {
+          "text": "So",
+          "start": 233.1,
+          "end": 233.55
+        },
+        {
+          "text": "hello",
+          "start": 233.55,
+          "end": 234.0
+        },
+        {
+          "text": "from",
+          "start": 234.0,
+          "end": 234.45
+        },
+        {
+          "text": "the",
+          "start": 234.45,
+          "end": 234.9
+        },
+        {
+          "text": "other",
+          "start": 234.9,
+          "end": 235.35
+        },
+        {
+          "text": "side",
+          "start": 235.35,
+          "end": 235.8
+        },
+        {
+          "text": "♪",
+          "start": 235.8,
+          "end": 236.25
+        }
+      ]
+    },
+    {
+      "id": "cue-36",
+      "start": 236.22,
+      "end": 242.28,
+      "text": "♪ Other side ♪ ♪ I must've called a thousand times ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 236.22,
+          "end": 236.84
+        },
+        {
+          "text": "Other",
+          "start": 236.84,
+          "end": 237.46
+        },
+        {
+          "text": "side",
+          "start": 237.46,
+          "end": 238.08
+        },
+        {
+          "text": "♪",
+          "start": 238.08,
+          "end": 238.7
+        },
+        {
+          "text": "♪",
+          "start": 238.68,
+          "end": 239.13
+        },
+        {
+          "text": "I",
+          "start": 239.13,
+          "end": 239.58
+        },
+        {
+          "text": "must've",
+          "start": 239.58,
+          "end": 240.03
+        },
+        {
+          "text": "called",
+          "start": 240.03,
+          "end": 240.48
+        },
+        {
+          "text": "a",
+          "start": 240.48,
+          "end": 240.93
+        },
+        {
+          "text": "thousand",
+          "start": 240.93,
+          "end": 241.38
+        },
+        {
+          "text": "times",
+          "start": 241.38,
+          "end": 241.83
+        },
+        {
+          "text": "♪",
+          "start": 241.83,
+          "end": 242.28
+        }
+      ]
+    },
+    {
+      "id": "cue-37",
+      "start": 242.25,
+      "end": 249.2,
+      "text": "♪ Thousand times ♪ ♪ To tell you I'm sorry for everything that I've done ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 242.25,
+          "end": 242.73
+        },
+        {
+          "text": "Thousand",
+          "start": 242.73,
+          "end": 243.21
+        },
+        {
+          "text": "times",
+          "start": 243.21,
+          "end": 243.69
+        },
+        {
+          "text": "♪",
+          "start": 243.69,
+          "end": 244.17
+        },
+        {
+          "text": "♪",
+          "start": 244.16,
+          "end": 244.58
+        },
+        {
+          "text": "To",
+          "start": 244.58,
+          "end": 245.0
+        },
+        {
+          "text": "tell",
+          "start": 245.0,
+          "end": 245.42
+        },
+        {
+          "text": "you",
+          "start": 245.42,
+          "end": 245.84
+        },
+        {
+          "text": "I'm",
+          "start": 245.84,
+          "end": 246.26
+        },
+        {
+          "text": "sorry",
+          "start": 246.26,
+          "end": 246.68
+        },
+        {
+          "text": "for",
+          "start": 246.68,
+          "end": 247.1
+        },
+        {
+          "text": "everything",
+          "start": 247.1,
+          "end": 247.52
+        },
+        {
+          "text": "that",
+          "start": 247.52,
+          "end": 247.94
+        },
+        {
+          "text": "I've",
+          "start": 247.94,
+          "end": 248.36
+        },
+        {
+          "text": "done",
+          "start": 248.36,
+          "end": 248.78
+        },
+        {
+          "text": "♪",
+          "start": 248.78,
+          "end": 249.2
+        }
+      ]
+    },
+    {
+      "id": "cue-38",
+      "start": 249.94,
+      "end": 254.98,
+      "text": "♪ But when I call, you never seem to be home ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 249.94,
+          "end": 250.36
+        },
+        {
+          "text": "But",
+          "start": 250.36,
+          "end": 250.78
+        },
+        {
+          "text": "when",
+          "start": 250.78,
+          "end": 251.2
+        },
+        {
+          "text": "I",
+          "start": 251.2,
+          "end": 251.62
+        },
+        {
+          "text": "call,",
+          "start": 251.62,
+          "end": 252.04
+        },
+        {
+          "text": "you",
+          "start": 252.04,
+          "end": 252.46
+        },
+        {
+          "text": "never",
+          "start": 252.46,
+          "end": 252.88
+        },
+        {
+          "text": "seem",
+          "start": 252.88,
+          "end": 253.3
+        },
+        {
+          "text": "to",
+          "start": 253.3,
+          "end": 253.72
+        },
+        {
+          "text": "be",
+          "start": 253.72,
+          "end": 254.14
+        },
+        {
+          "text": "home",
+          "start": 254.14,
+          "end": 254.56
+        },
+        {
+          "text": "♪",
+          "start": 254.56,
+          "end": 254.98
+        }
+      ]
+    },
+    {
+      "id": "cue-39",
+      "start": 257.48,
+      "end": 260.54,
+      "text": "♪ Hello from the outside ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 257.48,
+          "end": 257.99
+        },
+        {
+          "text": "Hello",
+          "start": 257.99,
+          "end": 258.5
+        },
+        {
+          "text": "from",
+          "start": 258.5,
+          "end": 259.01
+        },
+        {
+          "text": "the",
+          "start": 259.01,
+          "end": 259.52
+        },
+        {
+          "text": "outside",
+          "start": 259.52,
+          "end": 260.03
+        },
+        {
+          "text": "♪",
+          "start": 260.03,
+          "end": 260.54
+        }
+      ]
+    },
+    {
+      "id": "cue-40",
+      "start": 260.52,
+      "end": 266.48,
+      "text": "♪ Outside ♪ ♪ At least I can say that I've tried ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 260.52,
+          "end": 261.37
+        },
+        {
+          "text": "Outside",
+          "start": 261.37,
+          "end": 262.22
+        },
+        {
+          "text": "♪",
+          "start": 262.22,
+          "end": 263.07
+        },
+        {
+          "text": "♪",
+          "start": 263.08,
+          "end": 263.42
+        },
+        {
+          "text": "At",
+          "start": 263.42,
+          "end": 263.76
+        },
+        {
+          "text": "least",
+          "start": 263.76,
+          "end": 264.1
+        },
+        {
+          "text": "I",
+          "start": 264.1,
+          "end": 264.44
+        },
+        {
+          "text": "can",
+          "start": 264.44,
+          "end": 264.78
+        },
+        {
+          "text": "say",
+          "start": 264.78,
+          "end": 265.12
+        },
+        {
+          "text": "that",
+          "start": 265.12,
+          "end": 265.46
+        },
+        {
+          "text": "I've",
+          "start": 265.46,
+          "end": 265.8
+        },
+        {
+          "text": "tried",
+          "start": 265.8,
+          "end": 266.14
+        },
+        {
+          "text": "♪",
+          "start": 266.14,
+          "end": 266.48
+        }
+      ]
+    },
+    {
+      "id": "cue-41",
+      "start": 266.52,
+      "end": 273.47,
+      "text": "♪ I've tried ♪ ♪ To tell you I'm sorry for breaking your heart ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 266.52,
+          "end": 267.02
+        },
+        {
+          "text": "I've",
+          "start": 267.02,
+          "end": 267.52
+        },
+        {
+          "text": "tried",
+          "start": 267.52,
+          "end": 268.02
+        },
+        {
+          "text": "♪",
+          "start": 268.02,
+          "end": 268.52
+        },
+        {
+          "text": "♪",
+          "start": 268.52,
+          "end": 268.97
+        },
+        {
+          "text": "To",
+          "start": 268.97,
+          "end": 269.42
+        },
+        {
+          "text": "tell",
+          "start": 269.42,
+          "end": 269.87
+        },
+        {
+          "text": "you",
+          "start": 269.87,
+          "end": 270.32
+        },
+        {
+          "text": "I'm",
+          "start": 270.32,
+          "end": 270.77
+        },
+        {
+          "text": "sorry",
+          "start": 270.77,
+          "end": 271.22
+        },
+        {
+          "text": "for",
+          "start": 271.22,
+          "end": 271.67
+        },
+        {
+          "text": "breaking",
+          "start": 271.67,
+          "end": 272.12
+        },
+        {
+          "text": "your",
+          "start": 272.12,
+          "end": 272.57
+        },
+        {
+          "text": "heart",
+          "start": 272.57,
+          "end": 273.02
+        },
+        {
+          "text": "♪",
+          "start": 273.02,
+          "end": 273.47
+        }
+      ]
+    },
+    {
+      "id": "cue-42",
+      "start": 274.36,
+      "end": 276.04,
+      "text": "♪ But it don't matter ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 274.36,
+          "end": 274.64
+        },
+        {
+          "text": "But",
+          "start": 274.64,
+          "end": 274.92
+        },
+        {
+          "text": "it",
+          "start": 274.92,
+          "end": 275.2
+        },
+        {
+          "text": "don't",
+          "start": 275.2,
+          "end": 275.48
+        },
+        {
+          "text": "matter",
+          "start": 275.48,
+          "end": 275.76
+        },
+        {
+          "text": "♪",
+          "start": 275.76,
+          "end": 276.04
+        }
+      ]
+    },
+    {
+      "id": "cue-43",
+      "start": 276.06,
+      "end": 281.1,
+      "text": "♪ It clearly doesn't tear you apart anymore ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 276.06,
+          "end": 276.62
+        },
+        {
+          "text": "It",
+          "start": 276.62,
+          "end": 277.18
+        },
+        {
+          "text": "clearly",
+          "start": 277.18,
+          "end": 277.74
+        },
+        {
+          "text": "doesn't",
+          "start": 277.74,
+          "end": 278.3
+        },
+        {
+          "text": "tear",
+          "start": 278.3,
+          "end": 278.86
+        },
+        {
+          "text": "you",
+          "start": 278.86,
+          "end": 279.42
+        },
+        {
+          "text": "apart",
+          "start": 279.42,
+          "end": 279.98
+        },
+        {
+          "text": "anymore",
+          "start": 279.98,
+          "end": 280.54
+        },
+        {
+          "text": "♪",
+          "start": 280.54,
+          "end": 281.1
+        }
+      ]
+    },
+    {
+      "id": "cue-44",
+      "start": 281.9,
+      "end": 284.42,
+      "text": "♪ Highs, highs, highs, highs ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 281.9,
+          "end": 282.32
+        },
+        {
+          "text": "Highs,",
+          "start": 282.32,
+          "end": 282.74
+        },
+        {
+          "text": "highs,",
+          "start": 282.74,
+          "end": 283.16
+        },
+        {
+          "text": "highs,",
+          "start": 283.16,
+          "end": 283.58
+        },
+        {
+          "text": "highs",
+          "start": 283.58,
+          "end": 284.0
+        },
+        {
+          "text": "♪",
+          "start": 284.0,
+          "end": 284.42
+        }
+      ]
+    },
+    {
+      "id": "cue-45",
+      "start": 284.39,
+      "end": 288.09,
+      "text": "♪ Ooh, anymore ♪ ♪ Lows, lows, lows, lows ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 284.39,
+          "end": 284.76
+        },
+        {
+          "text": "Ooh,",
+          "start": 284.76,
+          "end": 285.13
+        },
+        {
+          "text": "anymore",
+          "start": 285.13,
+          "end": 285.5
+        },
+        {
+          "text": "♪",
+          "start": 285.5,
+          "end": 285.87
+        },
+        {
+          "text": "♪",
+          "start": 285.87,
+          "end": 286.24
+        },
+        {
+          "text": "Lows,",
+          "start": 286.24,
+          "end": 286.61
+        },
+        {
+          "text": "lows,",
+          "start": 286.61,
+          "end": 286.98
+        },
+        {
+          "text": "lows,",
+          "start": 286.98,
+          "end": 287.35
+        },
+        {
+          "text": "lows",
+          "start": 287.35,
+          "end": 287.72
+        },
+        {
+          "text": "♪",
+          "start": 287.72,
+          "end": 288.09
+        }
+      ]
+    },
+    {
+      "id": "cue-46",
+      "start": 288.06,
+      "end": 290.58,
+      "text": "♪ Highs, highs, highs, highs ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 288.06,
+          "end": 288.48
+        },
+        {
+          "text": "Highs,",
+          "start": 288.48,
+          "end": 288.9
+        },
+        {
+          "text": "highs,",
+          "start": 288.9,
+          "end": 289.32
+        },
+        {
+          "text": "highs,",
+          "start": 289.32,
+          "end": 289.74
+        },
+        {
+          "text": "highs",
+          "start": 289.74,
+          "end": 290.16
+        },
+        {
+          "text": "♪",
+          "start": 290.16,
+          "end": 290.58
+        }
+      ]
+    },
+    {
+      "id": "cue-47",
+      "start": 290.57,
+      "end": 294.27,
+      "text": "♪ Ooh, anymore ♪ ♪ Lows, lows, lows, lows ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 290.57,
+          "end": 290.94
+        },
+        {
+          "text": "Ooh,",
+          "start": 290.94,
+          "end": 291.31
+        },
+        {
+          "text": "anymore",
+          "start": 291.31,
+          "end": 291.68
+        },
+        {
+          "text": "♪",
+          "start": 291.68,
+          "end": 292.05
+        },
+        {
+          "text": "♪",
+          "start": 292.05,
+          "end": 292.42
+        },
+        {
+          "text": "Lows,",
+          "start": 292.42,
+          "end": 292.79
+        },
+        {
+          "text": "lows,",
+          "start": 292.79,
+          "end": 293.16
+        },
+        {
+          "text": "lows,",
+          "start": 293.16,
+          "end": 293.53
+        },
+        {
+          "text": "lows",
+          "start": 293.53,
+          "end": 293.9
+        },
+        {
+          "text": "♪",
+          "start": 293.9,
+          "end": 294.27
+        }
+      ]
+    },
+    {
+      "id": "cue-48",
+      "start": 294.26,
+      "end": 296.72,
+      "text": "♪ Highs, highs, highs, highs ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 294.26,
+          "end": 294.67
+        },
+        {
+          "text": "Highs,",
+          "start": 294.67,
+          "end": 295.08
+        },
+        {
+          "text": "highs,",
+          "start": 295.08,
+          "end": 295.49
+        },
+        {
+          "text": "highs,",
+          "start": 295.49,
+          "end": 295.9
+        },
+        {
+          "text": "highs",
+          "start": 295.9,
+          "end": 296.31
+        },
+        {
+          "text": "♪",
+          "start": 296.31,
+          "end": 296.72
+        }
+      ]
+    },
+    {
+      "id": "cue-49",
+      "start": 296.71,
+      "end": 300.11,
+      "text": "♪ Ooh, anymore ♪ ♪ Lows, lows, lows, lows ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 296.71,
+          "end": 297.05
+        },
+        {
+          "text": "Ooh,",
+          "start": 297.05,
+          "end": 297.39
+        },
+        {
+          "text": "anymore",
+          "start": 297.39,
+          "end": 297.73
+        },
+        {
+          "text": "♪",
+          "start": 297.73,
+          "end": 298.07
+        },
+        {
+          "text": "♪",
+          "start": 298.07,
+          "end": 298.41
+        },
+        {
+          "text": "Lows,",
+          "start": 298.41,
+          "end": 298.75
+        },
+        {
+          "text": "lows,",
+          "start": 298.75,
+          "end": 299.09
+        },
+        {
+          "text": "lows,",
+          "start": 299.09,
+          "end": 299.43
+        },
+        {
+          "text": "lows",
+          "start": 299.43,
+          "end": 299.77
+        },
+        {
+          "text": "♪",
+          "start": 299.77,
+          "end": 300.11
+        }
+      ]
+    },
+    {
+      "id": "cue-50",
+      "start": 300.1,
+      "end": 302.62,
+      "text": "♪ Highs, highs, highs, highs ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 300.1,
+          "end": 300.52
+        },
+        {
+          "text": "Highs,",
+          "start": 300.52,
+          "end": 300.94
+        },
+        {
+          "text": "highs,",
+          "start": 300.94,
+          "end": 301.36
+        },
+        {
+          "text": "highs,",
+          "start": 301.36,
+          "end": 301.78
+        },
+        {
+          "text": "highs",
+          "start": 301.78,
+          "end": 302.2
+        },
+        {
+          "text": "♪",
+          "start": 302.2,
+          "end": 302.62
+        }
+      ]
+    },
+    {
+      "id": "cue-51",
+      "start": 302.64,
+      "end": 306.15,
+      "text": "♪ Anymore ♪ ♪ Lows, lows, lows, lows ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 302.64,
+          "end": 303.03
+        },
+        {
+          "text": "Anymore",
+          "start": 303.03,
+          "end": 303.42
+        },
+        {
+          "text": "♪",
+          "start": 303.42,
+          "end": 303.81
+        },
+        {
+          "text": "♪",
+          "start": 303.81,
+          "end": 304.2
+        },
+        {
+          "text": "Lows,",
+          "start": 304.2,
+          "end": 304.59
+        },
+        {
+          "text": "lows,",
+          "start": 304.59,
+          "end": 304.98
+        },
+        {
+          "text": "lows,",
+          "start": 304.98,
+          "end": 305.37
+        },
+        {
+          "text": "lows",
+          "start": 305.37,
+          "end": 305.76
+        },
+        {
+          "text": "♪",
+          "start": 305.76,
+          "end": 306.15
+        }
+      ]
+    },
+    {
+      "id": "cue-52",
+      "start": 306.17,
+      "end": 309.04,
+      "text": "♪ Hello from the other side ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 306.17,
+          "end": 306.58
+        },
+        {
+          "text": "Hello",
+          "start": 306.58,
+          "end": 306.99
+        },
+        {
+          "text": "from",
+          "start": 306.99,
+          "end": 307.4
+        },
+        {
+          "text": "the",
+          "start": 307.4,
+          "end": 307.81
+        },
+        {
+          "text": "other",
+          "start": 307.81,
+          "end": 308.22
+        },
+        {
+          "text": "side",
+          "start": 308.22,
+          "end": 308.63
+        },
+        {
+          "text": "♪",
+          "start": 308.63,
+          "end": 309.04
+        }
+      ]
+    },
+    {
+      "id": "cue-53",
+      "start": 309.04,
+      "end": 315.03,
+      "text": "♪ Other side ♪ ♪ I must've called a thousand times ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 309.04,
+          "end": 309.72
+        },
+        {
+          "text": "Other",
+          "start": 309.72,
+          "end": 310.4
+        },
+        {
+          "text": "side",
+          "start": 310.4,
+          "end": 311.08
+        },
+        {
+          "text": "♪",
+          "start": 311.08,
+          "end": 311.76
+        },
+        {
+          "text": "♪",
+          "start": 311.75,
+          "end": 312.16
+        },
+        {
+          "text": "I",
+          "start": 312.16,
+          "end": 312.57
+        },
+        {
+          "text": "must've",
+          "start": 312.57,
+          "end": 312.98
+        },
+        {
+          "text": "called",
+          "start": 312.98,
+          "end": 313.39
+        },
+        {
+          "text": "a",
+          "start": 313.39,
+          "end": 313.8
+        },
+        {
+          "text": "thousand",
+          "start": 313.8,
+          "end": 314.21
+        },
+        {
+          "text": "times",
+          "start": 314.21,
+          "end": 314.62
+        },
+        {
+          "text": "♪",
+          "start": 314.62,
+          "end": 315.03
+        }
+      ]
+    },
+    {
+      "id": "cue-54",
+      "start": 315.06,
+      "end": 322.28,
+      "text": "♪ Thousand times ♪ ♪ To tell you I'm sorry for everything that I've done ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 315.06,
+          "end": 315.61
+        },
+        {
+          "text": "Thousand",
+          "start": 315.61,
+          "end": 316.16
+        },
+        {
+          "text": "times",
+          "start": 316.16,
+          "end": 316.71
+        },
+        {
+          "text": "♪",
+          "start": 316.71,
+          "end": 317.25
+        },
+        {
+          "text": "♪",
+          "start": 317.24,
+          "end": 317.66
+        },
+        {
+          "text": "To",
+          "start": 317.66,
+          "end": 318.08
+        },
+        {
+          "text": "tell",
+          "start": 318.08,
+          "end": 318.5
+        },
+        {
+          "text": "you",
+          "start": 318.5,
+          "end": 318.92
+        },
+        {
+          "text": "I'm",
+          "start": 318.92,
+          "end": 319.34
+        },
+        {
+          "text": "sorry",
+          "start": 319.34,
+          "end": 319.76
+        },
+        {
+          "text": "for",
+          "start": 319.76,
+          "end": 320.18
+        },
+        {
+          "text": "everything",
+          "start": 320.18,
+          "end": 320.6
+        },
+        {
+          "text": "that",
+          "start": 320.6,
+          "end": 321.02
+        },
+        {
+          "text": "I've",
+          "start": 321.02,
+          "end": 321.44
+        },
+        {
+          "text": "done",
+          "start": 321.44,
+          "end": 321.86
+        },
+        {
+          "text": "♪",
+          "start": 321.86,
+          "end": 322.28
+        }
+      ]
+    },
+    {
+      "id": "cue-55",
+      "start": 322.98,
+      "end": 328.02,
+      "text": "♪ But when I call, you never seem to be home ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 322.98,
+          "end": 323.4
+        },
+        {
+          "text": "But",
+          "start": 323.4,
+          "end": 323.82
+        },
+        {
+          "text": "when",
+          "start": 323.82,
+          "end": 324.24
+        },
+        {
+          "text": "I",
+          "start": 324.24,
+          "end": 324.66
+        },
+        {
+          "text": "call,",
+          "start": 324.66,
+          "end": 325.08
+        },
+        {
+          "text": "you",
+          "start": 325.08,
+          "end": 325.5
+        },
+        {
+          "text": "never",
+          "start": 325.5,
+          "end": 325.92
+        },
+        {
+          "text": "seem",
+          "start": 325.92,
+          "end": 326.34
+        },
+        {
+          "text": "to",
+          "start": 326.34,
+          "end": 326.76
+        },
+        {
+          "text": "be",
+          "start": 326.76,
+          "end": 327.18
+        },
+        {
+          "text": "home",
+          "start": 327.18,
+          "end": 327.6
+        },
+        {
+          "text": "♪",
+          "start": 327.6,
+          "end": 328.02
+        }
+      ]
+    },
+    {
+      "id": "cue-56",
+      "start": 330.35,
+      "end": 333.63,
+      "text": "♪ Hello from the outside ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 330.35,
+          "end": 330.9
+        },
+        {
+          "text": "Hello",
+          "start": 330.9,
+          "end": 331.44
+        },
+        {
+          "text": "from",
+          "start": 331.44,
+          "end": 331.99
+        },
+        {
+          "text": "the",
+          "start": 331.99,
+          "end": 332.54
+        },
+        {
+          "text": "outside",
+          "start": 332.54,
+          "end": 333.09
+        },
+        {
+          "text": "♪",
+          "start": 333.09,
+          "end": 333.63
+        }
+      ]
+    },
+    {
+      "id": "cue-57",
+      "start": 333.62,
+      "end": 339.78,
+      "text": "♪ Outside ♪ ♪ At least I can say that I've tried ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 333.62,
+          "end": 334.44
+        },
+        {
+          "text": "Outside",
+          "start": 334.44,
+          "end": 335.26
+        },
+        {
+          "text": "♪",
+          "start": 335.26,
+          "end": 336.08
+        },
+        {
+          "text": "♪",
+          "start": 336.08,
+          "end": 336.45
+        },
+        {
+          "text": "At",
+          "start": 336.45,
+          "end": 336.82
+        },
+        {
+          "text": "least",
+          "start": 336.82,
+          "end": 337.19
+        },
+        {
+          "text": "I",
+          "start": 337.19,
+          "end": 337.56
+        },
+        {
+          "text": "can",
+          "start": 337.56,
+          "end": 337.93
+        },
+        {
+          "text": "say",
+          "start": 337.93,
+          "end": 338.3
+        },
+        {
+          "text": "that",
+          "start": 338.3,
+          "end": 338.67
+        },
+        {
+          "text": "I've",
+          "start": 338.67,
+          "end": 339.04
+        },
+        {
+          "text": "tried",
+          "start": 339.04,
+          "end": 339.41
+        },
+        {
+          "text": "♪",
+          "start": 339.41,
+          "end": 339.78
+        }
+      ]
+    },
+    {
+      "id": "cue-58",
+      "start": 339.81,
+      "end": 346.47,
+      "text": "♪ I've tried ♪ ♪ To tell you I'm sorry for breaking your heart ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 339.81,
+          "end": 340.24
+        },
+        {
+          "text": "I've",
+          "start": 340.24,
+          "end": 340.67
+        },
+        {
+          "text": "tried",
+          "start": 340.67,
+          "end": 341.1
+        },
+        {
+          "text": "♪",
+          "start": 341.1,
+          "end": 341.53
+        },
+        {
+          "text": "♪",
+          "start": 341.52,
+          "end": 341.97
+        },
+        {
+          "text": "To",
+          "start": 341.97,
+          "end": 342.42
+        },
+        {
+          "text": "tell",
+          "start": 342.42,
+          "end": 342.87
+        },
+        {
+          "text": "you",
+          "start": 342.87,
+          "end": 343.32
+        },
+        {
+          "text": "I'm",
+          "start": 343.32,
+          "end": 343.77
+        },
+        {
+          "text": "sorry",
+          "start": 343.77,
+          "end": 344.22
+        },
+        {
+          "text": "for",
+          "start": 344.22,
+          "end": 344.67
+        },
+        {
+          "text": "breaking",
+          "start": 344.67,
+          "end": 345.12
+        },
+        {
+          "text": "your",
+          "start": 345.12,
+          "end": 345.57
+        },
+        {
+          "text": "heart",
+          "start": 345.57,
+          "end": 346.02
+        },
+        {
+          "text": "♪",
+          "start": 346.02,
+          "end": 346.47
+        }
+      ]
+    },
+    {
+      "id": "cue-59",
+      "start": 347.33,
+      "end": 348.95,
+      "text": "♪ But it don't matter ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 347.33,
+          "end": 347.6
+        },
+        {
+          "text": "But",
+          "start": 347.6,
+          "end": 347.87
+        },
+        {
+          "text": "it",
+          "start": 347.87,
+          "end": 348.14
+        },
+        {
+          "text": "don't",
+          "start": 348.14,
+          "end": 348.41
+        },
+        {
+          "text": "matter",
+          "start": 348.41,
+          "end": 348.68
+        },
+        {
+          "text": "♪",
+          "start": 348.68,
+          "end": 348.95
+        }
+      ]
+    },
+    {
+      "id": "cue-60",
+      "start": 348.96,
+      "end": 354.0,
+      "text": "♪ It clearly doesn't tear you apart anymore ♪",
+      "words": [
+        {
+          "text": "♪",
+          "start": 348.96,
+          "end": 349.52
+        },
+        {
+          "text": "It",
+          "start": 349.52,
+          "end": 350.08
+        },
+        {
+          "text": "clearly",
+          "start": 350.08,
+          "end": 350.64
+        },
+        {
+          "text": "doesn't",
+          "start": 350.64,
+          "end": 351.2
+        },
+        {
+          "text": "tear",
+          "start": 351.2,
+          "end": 351.76
+        },
+        {
+          "text": "you",
+          "start": 351.76,
+          "end": 352.32
+        },
+        {
+          "text": "apart",
+          "start": 352.32,
+          "end": 352.88
+        },
+        {
+          "text": "anymore",
+          "start": 352.88,
+          "end": 353.44
+        },
+        {
+          "text": "♪",
+          "start": 353.44,
+          "end": 354.0
+        }
+      ]
+    },
+    {
+      "id": "cue-61",
+      "start": 356.5,
+      "end": 359.17,
+      "text": "(somber music)",
+      "words": [
+        {
+          "text": "(somber",
+          "start": 356.5,
+          "end": 357.84
+        },
+        {
+          "text": "music)",
+          "start": 357.84,
+          "end": 359.17
+        }
+      ]
+    }
+  ]
+}
