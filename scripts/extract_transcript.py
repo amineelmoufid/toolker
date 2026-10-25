@@ -1,7 +1,8 @@
 import sys
 import os
 import json
-from youtube_transcript_api import YouTubeTranscriptApi
+import glob
+import subprocess
 
 def interpolate_words(text, start, end):
     words = [w for w in text.split() if w]
@@ -77,80 +78,185 @@ def select_best_track(t_list, preferred_lang=None):
     if not tracks:
         return None
 
-    # If preferred language is provided (e.g. 'en', 'fr')
     if preferred_lang:
         p_code = preferred_lang.lower().split('-')[0]
-        # 1. Manual in preferred
         for t in tracks:
             if not t.is_generated and t.language_code.lower().startswith(p_code):
                 return t
-        # 2. Generated in preferred
         for t in tracks:
             if t.is_generated and t.language_code.lower().startswith(p_code):
                 return t
 
-    # Priority 1: Manual English or French
     for code in ['en', 'fr']:
         for t in tracks:
             if not t.is_generated and t.language_code.lower().startswith(code):
                 return t
 
-    # Priority 2: Generated English or French
     for code in ['en', 'fr']:
         for t in tracks:
             if t.is_generated and t.language_code.lower().startswith(code):
                 return t
 
-    # Priority 3: Any manual track
     for t in tracks:
         if not t.is_generated:
             return t
 
-    # Priority 4: First track available
     return tracks[0]
+
+def extract_with_ytdlp(vid, preferred_lang=None):
+    print(f"--> [Fallback Engine] Extracting via yt-dlp native timedtext for {vid}...")
+    out_prefix = f"temp_sub_{vid}"
+    sub_lang_arg = f"{preferred_lang}.*,en.*,fr.*" if preferred_lang else "en.*,fr.*,.*"
+    cmd = [
+        "yt-dlp",
+        "--skip-download",
+        "--write-auto-sub",
+        "--write-subs",
+        "--sub-langs", sub_lang_arg,
+        "--sub-format", "json3",
+        "-o", f"{out_prefix}.%(ext)s",
+        f"https://www.youtube.com/watch?v={vid}"
+    ]
+    try:
+        res = subprocess.run(cmd, capture_output=True, text=True, timeout=40)
+    except Exception as e:
+        print(f"yt-dlp subprocess error: {e}")
+        return None, None
+
+    files = glob.glob(f"{out_prefix}*.json3")
+    if not files:
+        print(f"yt-dlp produced no json3 files. stderr: {res.stderr[:200]}")
+        return None, None
+
+    chosen_file = files[0]
+    for f in files:
+        if preferred_lang and preferred_lang in f:
+            chosen_file = f
+            break
+
+    lang = "en"
+    for part in chosen_file.split('.'):
+        if len(part) == 2 or (len(part) == 5 and '-' in part):
+            lang = part
+            break
+
+    try:
+        with open(chosen_file, "r", encoding="utf-8") as jf:
+            data = json.load(jf)
+    finally:
+        for f in files:
+            try:
+                os.remove(f)
+            except Exception:
+                pass
+
+    events = data.get("events", [])
+    raw_words = []
+    for ev in events:
+        tStart = ev.get("tStartMs", 0) / 1000.0
+        segs = ev.get("segs", [])
+        if not segs:
+            continue
+        for s in segs:
+            w_text = s.get("utf8", "").replace('\n', ' ').strip()
+            if not w_text or (w_text.startswith('[') and w_text.endswith(']')):
+                continue
+            offset = s.get("tOffsetMs", 0) / 1000.0
+            w_start = round(tStart + offset, 2)
+            raw_words.append({
+                "text": w_text,
+                "start": w_start,
+                "end": round(w_start + 0.35, 2)
+            })
+
+    if not raw_words:
+        return None, None
+
+    for i in range(len(raw_words) - 1):
+        raw_words[i]["end"] = min(raw_words[i]["start"] + 1.2, raw_words[i + 1]["start"])
+        if raw_words[i]["end"] <= raw_words[i]["start"]:
+            raw_words[i]["end"] = round(raw_words[i]["start"] + 0.25, 2)
+
+    sentences = []
+    curr = []
+    for w in raw_words:
+        curr.append(w)
+        if len(curr) >= 6 or any(w["text"].endswith(p) for p in ['.', '?', '!', ',', ';']):
+            s_text = " ".join(item["text"] for item in curr)
+            sentences.append({
+                "id": f"cue-{len(sentences) + 1}",
+                "start": curr[0]["start"],
+                "end": curr[-1]["end"],
+                "text": s_text,
+                "words": [...curr]
+            })
+            curr = []
+    if curr:
+        s_text = " ".join(item["text"] for item in curr)
+        sentences.append({
+            "id": f"cue-{len(sentences) + 1}",
+            "start": curr[0]["start"],
+            "end": curr[-1]["end"],
+            "text": s_text,
+            "words": [...curr]
+        })
+
+    return sentences, lang
 
 def extract_video(vid, preferred_lang=None, output_dir="public/transcripts"):
     os.makedirs(output_dir, exist_ok=True)
     out_file = os.path.join(output_dir, f"{vid}.json")
     
     print(f"--> Extracting transcript for YouTube ID: {vid} (preferred: {preferred_lang})")
-    
+    sentences = None
+    lang_code = preferred_lang or "en"
+    track_kind = "standard"
+
+    # Engine 1: YouTubeTranscriptApi
     try:
+        from youtube_transcript_api import YouTubeTranscriptApi
         api = YouTubeTranscriptApi()
         t_list = api.list(vid)
-        
         selected = select_best_track(t_list, preferred_lang)
-        if not selected:
-            raise Exception("No transcript tracks found on YouTube.")
-            
-        print(f"Found track: {selected.language} ({selected.language_code}), generated: {selected.is_generated}")
-        snippets = selected.fetch()
-        sentences = assemble_semantic_sentences(snippets)
-        
+        if selected:
+            print(f"Found track: {selected.language} ({selected.language_code}), generated: {selected.is_generated}")
+            snippets = selected.fetch()
+            sentences = assemble_semantic_sentences(snippets)
+            lang_code = selected.language_code
+            track_kind = "asr" if selected.is_generated else "standard"
+    except Exception as e:
+        print(f"YouTubeTranscriptApi notice: {e}")
+
+    # Engine 2: yt-dlp fallback (bypasses cloud IP restrictions)
+    if not sentences or len(sentences) == 0:
+        ytdlp_sentences, detected_lang = extract_with_ytdlp(vid, preferred_lang)
+        if ytdlp_sentences and len(ytdlp_sentences) > 0:
+            sentences = ytdlp_sentences
+            lang_code = detected_lang or lang_code
+            track_kind = "timedtext_json3"
+
+    if sentences and len(sentences) > 0:
         output_data = {
             "ok": True,
             "videoId": vid,
-            "language": selected.language_code,
-            "trackKind": "asr" if selected.is_generated else "standard",
+            "language": lang_code,
+            "trackKind": track_kind,
             "subtitles": sentences
         }
-        
         with open(out_file, "w", encoding="utf-8") as f:
             json.dump(output_data, f, ensure_ascii=False, indent=2)
-            
         print(f"Successfully generated {out_file} with {len(sentences)} sentences.")
         return True
-        
-    except Exception as e:
-        print(f"Extraction error for {vid}: {e}")
+    else:
         err_data = {
             "ok": False,
             "videoId": vid,
-            "error": str(e),
+            "error": "No subtitles could be extracted from YouTube.",
             "subtitles": []
         }
         with open(out_file, "w", encoding="utf-8") as f:
             json.dump(err_data, f, ensure_ascii=False, indent=2)
+        print(f"Failed to extract subtitles for {vid}")
         return False
 
 if __name__ == "__main__":
