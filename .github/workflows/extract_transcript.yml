@@ -28,7 +28,7 @@ jobs:
           fetch-depth: 1
 
       - name: Extract Transcript
-        shell: pwsh
+        shell: powershell
         run: |
           $videoId = "${{ github.event.client_payload.videoId || github.event.inputs.videoId }}"
           $lang = "${{ github.event.client_payload.lang || github.event.inputs.lang }}"
@@ -36,7 +36,7 @@ jobs:
           py scripts/extract_transcript.py "$videoId" "$lang"
 
       - name: Commit and Push Transcript
-        shell: pwsh
+        shell: powershell
         run: |
           $videoId = "${{ github.event.client_payload.videoId || github.event.inputs.videoId }}"
           git config user.name "github-actions[bot]"
