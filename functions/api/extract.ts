@@ -22,29 +22,64 @@ export const onRequestOptions = async () => {
 export const onRequestGet = async (context: any) => {
   const url = new URL(context.request.url);
   const videoId = url.searchParams.get('videoId') || url.searchParams.get('v');
-  if (!videoId) {
-    return new Response(JSON.stringify({ ok: false, error: "Missing videoId" }), {
+  if (!videoId || videoId.length !== 11) {
+    return new Response(JSON.stringify({ ok: false, error: "Invalid videoId" }), {
       status: 400,
       headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
     });
   }
 
-  const rawUrl = `https://raw.githubusercontent.com/${GITHUB_REPO}/main/public/transcripts/${videoId}.json?_t=${Date.now()}`;
+  // 1. Check local static transcripts
   try {
-    const rawRes = await fetch(rawUrl);
-    if (rawRes.ok) {
-      const data = await rawRes.json();
-      return new Response(JSON.stringify(data), {
-        status: 200,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-          'Cache-Control': 'no-cache'
-        }
-      });
+    const staticUrl = new URL(`/transcripts/${videoId}.json`, context.request.url);
+    const staticRes = await fetch(staticUrl);
+    if (staticRes.ok) {
+      const staticData: any = await staticRes.json();
+      if (staticData && staticData.ok && Array.isArray(staticData.subtitles) && staticData.subtitles.length > 0) {
+        return new Response(JSON.stringify(staticData), {
+          status: 200,
+          headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Cache-Control': 'no-cache'
+          }
+        });
+      }
     }
   } catch (_) {}
 
+  // 2. Query GitHub Contents API directly (real-time, zero CDN caching, bypasses Fastly 404 cache)
+  try {
+    const pat = context.env?.GITHUB_PAT || FALLBACK_PAT;
+    const ghApiUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/public/transcripts/${videoId}.json`;
+    const ghRes = await fetch(ghApiUrl, {
+      headers: {
+        'Authorization': `Bearer ${pat}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'User-Agent': 'ToolkerApp'
+      }
+    });
+
+    if (ghRes.ok) {
+      const fileData: any = await ghRes.json();
+      if (fileData.content) {
+        const decoded = atob(fileData.content.replace(/\s+/g, ''));
+        const subData = JSON.parse(decoded);
+        return new Response(JSON.stringify(subData), {
+          status: 200,
+          headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Cache-Control': 'no-cache'
+          }
+        });
+      }
+    }
+  } catch (err) {
+    console.warn("GitHub contents check error:", err);
+  }
+
+  // Return 200 pending so browser console has ZERO red 404 errors!
   return new Response(JSON.stringify({ ok: false, pending: true }), {
     status: 200,
     headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
@@ -64,22 +99,33 @@ export const onRequestPost = async (context: any) => {
       });
     }
 
-    // 1. Check if raw file already exists on GitHub
-    const rawUrl = `https://raw.githubusercontent.com/${GITHUB_REPO}/main/public/transcripts/${videoId}.json?_t=${Date.now()}`;
+    // 1. Check if file already exists in repository (instant return)
+    const pat = context.env?.GITHUB_PAT || FALLBACK_PAT;
     try {
-      const checkRes = await fetch(rawUrl);
+      const ghApiUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/public/transcripts/${videoId}.json`;
+      const checkRes = await fetch(ghApiUrl, {
+        headers: {
+          'Authorization': `Bearer ${pat}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'User-Agent': 'ToolkerApp'
+        }
+      });
       if (checkRes.ok) {
-        const existingData: any = await checkRes.json();
-        if (existingData && existingData.ok && Array.isArray(existingData.subtitles) && existingData.subtitles.length > 0) {
-          return new Response(JSON.stringify({
-            ok: true,
-            ready: true,
-            subtitles: existingData.subtitles,
-            language: existingData.language
-          }), {
-            status: 200,
-            headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
-          });
+        const fileData: any = await checkRes.json();
+        if (fileData.content) {
+          const decoded = atob(fileData.content.replace(/\s+/g, ''));
+          const existingData = JSON.parse(decoded);
+          if (existingData && existingData.ok && Array.isArray(existingData.subtitles) && existingData.subtitles.length > 0) {
+            return new Response(JSON.stringify({
+              ok: true,
+              ready: true,
+              subtitles: existingData.subtitles,
+              language: existingData.language
+            }), {
+              status: 200,
+              headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+            });
+          }
         }
       }
     } catch (_) {}

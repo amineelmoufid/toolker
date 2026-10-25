@@ -80,7 +80,6 @@ const YouTubePlayer = forwardRef<YouTubePlayerRef, YouTubePlayerProps>(({
       try {
         playerRef.current = new window.YT.Player(containerId.current, {
           videoId,
-          host: 'https://www.youtube-nocookie.com',
           width: '100%',
           height: '100%',
           playerVars: {

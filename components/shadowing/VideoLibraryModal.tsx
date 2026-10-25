@@ -54,43 +54,44 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
       }
     } catch (_) {}
 
-    // 2. Check GitHub Raw CDN directly
+    // 2. Check if already extracted via /api/extract
     try {
-      const ghRes = await fetch(`https://raw.githubusercontent.com/amineelmoufid/toolker/main/public/transcripts/${ytId}.json?_t=${Date.now()}`);
-      if (ghRes.ok) {
-        const ghData = await ghRes.json();
-        if (ghData.ok && Array.isArray(ghData.subtitles) && ghData.subtitles.length > 0) {
-          return ghData.subtitles;
+      const checkRes = await fetch(`/api/extract?v=${ytId}&_t=${Date.now()}`);
+      if (checkRes.ok) {
+        const checkData = await checkRes.json();
+        if (checkData.ok && Array.isArray(checkData.subtitles) && checkData.subtitles.length > 0) {
+          return checkData.subtitles;
         }
       }
     } catch (_) {}
 
     // 3. Trigger Autonomous Cloud Extractor via /api/extract
     try {
-      setSyncMessage('⚡ Booting cloud extractor for this new video... (~15-20s)');
+      setSyncMessage('⚡ Autonomous cloud runner started! Extracting 100% authentic captions...');
       const extractRes = await fetch('/api/extract', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ videoId: ytId })
       });
+
       if (extractRes.ok) {
         const extractData = await extractRes.json();
-        if (extractData.ready && extractData.subtitles?.length > 0) {
+        if (extractData.ready && Array.isArray(extractData.subtitles) && extractData.subtitles.length > 0) {
           return extractData.subtitles;
         }
 
-        // Poll GitHub raw CDN every 2.5s up to 18 times (~45s)
-        for (let i = 1; i <= 18; i++) {
-          setSyncMessage(`⚡ Extracting dialogue via cloud runner... (${Math.round(i * 2.5)}s)`);
-          await new Promise(r => setTimeout(r, 2500));
+        // Poll /api/extract every 2s for up to 30 attempts (~60s)
+        for (let i = 1; i <= 30; i++) {
+          setSyncMessage(`⚡ Extracting dialogue via cloud runner... (${i * 2}s)`);
+          await new Promise(r => setTimeout(r, 2000));
           try {
-            const pollRes = await fetch(`https://raw.githubusercontent.com/amineelmoufid/toolker/main/public/transcripts/${ytId}.json?_t=${Date.now()}`);
+            const pollRes = await fetch(`/api/extract?v=${ytId}&_t=${Date.now()}`);
             if (pollRes.ok) {
               const pollData = await pollRes.json();
               if (pollData.ok && Array.isArray(pollData.subtitles) && pollData.subtitles.length > 0) {
                 return pollData.subtitles;
               }
-              if (pollData.ok === false) {
+              if (pollData.ok === false && pollData.error && !pollData.pending) {
                 console.warn("Cloud extractor reported:", pollData.error);
                 break;
               }
