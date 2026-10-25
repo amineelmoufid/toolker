@@ -131,7 +131,6 @@ export const onRequestPost = async (context: any) => {
     } catch (_) {}
 
     // 2. Dispatch GitHub Actions workflow
-    const pat = context.env?.GITHUB_PAT || FALLBACK_PAT;
     const dispatchUrl = `https://api.github.com/repos/${GITHUB_REPO}/dispatches`;
 
     const ghRes = await fetch(dispatchUrl, {
