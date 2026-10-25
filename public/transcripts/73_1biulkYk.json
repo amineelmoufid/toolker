@@ -1,0 +1,1976 @@
+{
+  "ok": true,
+  "videoId": "73_1biulkYk",
+  "language": "en",
+  "trackKind": "standard",
+  "subtitles": [
+    {
+      "id": "cue-1",
+      "start": 1.37,
+      "end": 3.45,
+      "text": "BARTENDER I told you, you're not welcome here.",
+      "words": [
+        {
+          "text": "BARTENDER",
+          "start": 1.37,
+          "end": 1.63
+        },
+        {
+          "text": "I",
+          "start": 1.63,
+          "end": 1.89
+        },
+        {
+          "text": "told",
+          "start": 1.89,
+          "end": 2.15
+        },
+        {
+          "text": "you,",
+          "start": 2.15,
+          "end": 2.41
+        },
+        {
+          "text": "you're",
+          "start": 2.41,
+          "end": 2.67
+        },
+        {
+          "text": "not",
+          "start": 2.67,
+          "end": 2.93
+        },
+        {
+          "text": "welcome",
+          "start": 2.93,
+          "end": 3.19
+        },
+        {
+          "text": "here.",
+          "start": 3.19,
+          "end": 3.45
+        }
+      ]
+    },
+    {
+      "id": "cue-2",
+      "start": 3.49,
+      "end": 4.69,
+      "text": "You're not welcome anywhere.",
+      "words": [
+        {
+          "text": "You're",
+          "start": 3.49,
+          "end": 3.79
+        },
+        {
+          "text": "not",
+          "start": 3.79,
+          "end": 4.09
+        },
+        {
+          "text": "welcome",
+          "start": 4.09,
+          "end": 4.39
+        },
+        {
+          "text": "anywhere.",
+          "start": 4.39,
+          "end": 4.69
+        }
+      ]
+    },
+    {
+      "id": "cue-3",
+      "start": 5.2,
+      "end": 6.48,
+      "text": "Now, get the f*** out of my bar.",
+      "words": [
+        {
+          "text": "Now,",
+          "start": 5.2,
+          "end": 5.36
+        },
+        {
+          "text": "get",
+          "start": 5.36,
+          "end": 5.52
+        },
+        {
+          "text": "the",
+          "start": 5.52,
+          "end": 5.68
+        },
+        {
+          "text": "f***",
+          "start": 5.68,
+          "end": 5.84
+        },
+        {
+          "text": "out",
+          "start": 5.84,
+          "end": 6.0
+        },
+        {
+          "text": "of",
+          "start": 6.0,
+          "end": 6.16
+        },
+        {
+          "text": "my",
+          "start": 6.16,
+          "end": 6.32
+        },
+        {
+          "text": "bar.",
+          "start": 6.32,
+          "end": 6.48
+        }
+      ]
+    },
+    {
+      "id": "cue-4",
+      "start": 6.58,
+      "end": 7.77,
+      "text": "LOGAN Just give me one more drink",
+      "words": [
+        {
+          "text": "LOGAN",
+          "start": 6.58,
+          "end": 6.75
+        },
+        {
+          "text": "Just",
+          "start": 6.75,
+          "end": 6.92
+        },
+        {
+          "text": "give",
+          "start": 6.92,
+          "end": 7.09
+        },
+        {
+          "text": "me",
+          "start": 7.09,
+          "end": 7.26
+        },
+        {
+          "text": "one",
+          "start": 7.26,
+          "end": 7.43
+        },
+        {
+          "text": "more",
+          "start": 7.43,
+          "end": 7.6
+        },
+        {
+          "text": "drink",
+          "start": 7.6,
+          "end": 7.77
+        }
+      ]
+    },
+    {
+      "id": "cue-5",
+      "start": 7.78,
+      "end": 8.78,
+      "text": "and then I'll leave.",
+      "words": [
+        {
+          "text": "and",
+          "start": 7.78,
+          "end": 8.03
+        },
+        {
+          "text": "then",
+          "start": 8.03,
+          "end": 8.28
+        },
+        {
+          "text": "I'll",
+          "start": 8.28,
+          "end": 8.53
+        },
+        {
+          "text": "leave.",
+          "start": 8.53,
+          "end": 8.78
+        }
+      ]
+    },
+    {
+      "id": "cue-6",
+      "start": 10.66,
+      "end": 11.44,
+      "text": "DEADPOOL Hi, peanut.",
+      "words": [
+        {
+          "text": "DEADPOOL",
+          "start": 10.66,
+          "end": 10.92
+        },
+        {
+          "text": "Hi,",
+          "start": 10.92,
+          "end": 11.18
+        },
+        {
+          "text": "peanut.",
+          "start": 11.18,
+          "end": 11.44
+        }
+      ]
+    },
+    {
+      "id": "cue-7",
+      "start": 11.53,
+      "end": 13.51,
+      "text": "I'm going to need you to come with me right now.",
+      "words": [
+        {
+          "text": "I'm",
+          "start": 11.53,
+          "end": 11.71
+        },
+        {
+          "text": "going",
+          "start": 11.71,
+          "end": 11.89
+        },
+        {
+          "text": "to",
+          "start": 11.89,
+          "end": 12.07
+        },
+        {
+          "text": "need",
+          "start": 12.07,
+          "end": 12.25
+        },
+        {
+          "text": "you",
+          "start": 12.25,
+          "end": 12.43
+        },
+        {
+          "text": "to",
+          "start": 12.43,
+          "end": 12.61
+        },
+        {
+          "text": "come",
+          "start": 12.61,
+          "end": 12.79
+        },
+        {
+          "text": "with",
+          "start": 12.79,
+          "end": 12.97
+        },
+        {
+          "text": "me",
+          "start": 12.97,
+          "end": 13.15
+        },
+        {
+          "text": "right",
+          "start": 13.15,
+          "end": 13.33
+        },
+        {
+          "text": "now.",
+          "start": 13.33,
+          "end": 13.51
+        }
+      ]
+    },
+    {
+      "id": "cue-8",
+      "start": 14.2,
+      "end": 15.76,
+      "text": "LOGAN Look, lady, I'm not interested.",
+      "words": [
+        {
+          "text": "LOGAN",
+          "start": 14.2,
+          "end": 14.46
+        },
+        {
+          "text": "Look,",
+          "start": 14.46,
+          "end": 14.72
+        },
+        {
+          "text": "lady,",
+          "start": 14.72,
+          "end": 14.98
+        },
+        {
+          "text": "I'm",
+          "start": 14.98,
+          "end": 15.24
+        },
+        {
+          "text": "not",
+          "start": 15.24,
+          "end": 15.5
+        },
+        {
+          "text": "interested.",
+          "start": 15.5,
+          "end": 15.76
+        }
+      ]
+    },
+    {
+      "id": "cue-9",
+      "start": 16.62,
+      "end": 17.46,
+      "text": "DEADPOOL Alright, well, I'm sort of",
+      "words": [
+        {
+          "text": "DEADPOOL",
+          "start": 16.62,
+          "end": 16.76
+        },
+        {
+          "text": "Alright,",
+          "start": 16.76,
+          "end": 16.9
+        },
+        {
+          "text": "well,",
+          "start": 16.9,
+          "end": 17.04
+        },
+        {
+          "text": "I'm",
+          "start": 17.04,
+          "end": 17.18
+        },
+        {
+          "text": "sort",
+          "start": 17.18,
+          "end": 17.32
+        },
+        {
+          "text": "of",
+          "start": 17.32,
+          "end": 17.46
+        }
+      ]
+    },
+    {
+      "id": "cue-10",
+      "start": 17.53,
+      "end": 19.53,
+      "text": "on the tick-tick, so upsy-daisy, here we go.",
+      "words": [
+        {
+          "text": "on",
+          "start": 17.53,
+          "end": 17.78
+        },
+        {
+          "text": "the",
+          "start": 17.78,
+          "end": 18.03
+        },
+        {
+          "text": "tick-tick,",
+          "start": 18.03,
+          "end": 18.28
+        },
+        {
+          "text": "so",
+          "start": 18.28,
+          "end": 18.53
+        },
+        {
+          "text": "upsy-daisy,",
+          "start": 18.53,
+          "end": 18.78
+        },
+        {
+          "text": "here",
+          "start": 18.78,
+          "end": 19.03
+        },
+        {
+          "text": "we",
+          "start": 19.03,
+          "end": 19.28
+        },
+        {
+          "text": "go.",
+          "start": 19.28,
+          "end": 19.53
+        }
+      ]
+    },
+    {
+      "id": "cue-11",
+      "start": 19.57,
+      "end": 20.41,
+      "text": "LOGAN Whoa, hey, hey!",
+      "words": [
+        {
+          "text": "LOGAN",
+          "start": 19.57,
+          "end": 19.78
+        },
+        {
+          "text": "Whoa,",
+          "start": 19.78,
+          "end": 19.99
+        },
+        {
+          "text": "hey,",
+          "start": 19.99,
+          "end": 20.2
+        },
+        {
+          "text": "hey!",
+          "start": 20.2,
+          "end": 20.41
+        }
+      ]
+    },
+    {
+      "id": "cue-12",
+      "start": 21.82,
+      "end": 22.54,
+      "text": "DEADPOOL Oh.",
+      "words": [
+        {
+          "text": "DEADPOOL",
+          "start": 21.82,
+          "end": 22.18
+        },
+        {
+          "text": "Oh.",
+          "start": 22.18,
+          "end": 22.54
+        }
+      ]
+    },
+    {
+      "id": "cue-13",
+      "start": 22.62,
+      "end": 25.86,
+      "text": "Whiskey dick of the claws. It's quite common in Wolverines over 40.",
+      "words": [
+        {
+          "text": "Whiskey",
+          "start": 22.62,
+          "end": 22.89
+        },
+        {
+          "text": "dick",
+          "start": 22.89,
+          "end": 23.16
+        },
+        {
+          "text": "of",
+          "start": 23.16,
+          "end": 23.43
+        },
+        {
+          "text": "the",
+          "start": 23.43,
+          "end": 23.7
+        },
+        {
+          "text": "claws.",
+          "start": 23.7,
+          "end": 23.97
+        },
+        {
+          "text": "It's",
+          "start": 23.97,
+          "end": 24.24
+        },
+        {
+          "text": "quite",
+          "start": 24.24,
+          "end": 24.51
+        },
+        {
+          "text": "common",
+          "start": 24.51,
+          "end": 24.78
+        },
+        {
+          "text": "in",
+          "start": 24.78,
+          "end": 25.05
+        },
+        {
+          "text": "Wolverines",
+          "start": 25.05,
+          "end": 25.32
+        },
+        {
+          "text": "over",
+          "start": 25.32,
+          "end": 25.59
+        },
+        {
+          "text": "40.",
+          "start": 25.59,
+          "end": 25.86
+        }
+      ]
+    },
+    {
+      "id": "cue-14",
+      "start": 25.95,
+      "end": 26.75,
+      "text": "LOGAN You don't want this.",
+      "words": [
+        {
+          "text": "LOGAN",
+          "start": 25.95,
+          "end": 26.11
+        },
+        {
+          "text": "You",
+          "start": 26.11,
+          "end": 26.27
+        },
+        {
+          "text": "don't",
+          "start": 26.27,
+          "end": 26.43
+        },
+        {
+          "text": "want",
+          "start": 26.43,
+          "end": 26.59
+        },
+        {
+          "text": "this.",
+          "start": 26.59,
+          "end": 26.75
+        }
+      ]
+    },
+    {
+      "id": "cue-15",
+      "start": 27.49,
+      "end": 28.66,
+      "text": "DEADPOOL Unless you want to take a deep breath",
+      "words": [
+        {
+          "text": "DEADPOOL",
+          "start": 27.49,
+          "end": 27.62
+        },
+        {
+          "text": "Unless",
+          "start": 27.62,
+          "end": 27.75
+        },
+        {
+          "text": "you",
+          "start": 27.75,
+          "end": 27.88
+        },
+        {
+          "text": "want",
+          "start": 27.88,
+          "end": 28.01
+        },
+        {
+          "text": "to",
+          "start": 28.01,
+          "end": 28.14
+        },
+        {
+          "text": "take",
+          "start": 28.14,
+          "end": 28.27
+        },
+        {
+          "text": "a",
+          "start": 28.27,
+          "end": 28.4
+        },
+        {
+          "text": "deep",
+          "start": 28.4,
+          "end": 28.53
+        },
+        {
+          "text": "breath",
+          "start": 28.53,
+          "end": 28.66
+        }
+      ]
+    },
+    {
+      "id": "cue-16",
+      "start": 28.7,
+      "end": 31.98,
+      "text": "through your f****** forehead, I suggest you reconsider.",
+      "words": [
+        {
+          "text": "through",
+          "start": 28.7,
+          "end": 29.11
+        },
+        {
+          "text": "your",
+          "start": 29.11,
+          "end": 29.52
+        },
+        {
+          "text": "f******",
+          "start": 29.52,
+          "end": 29.93
+        },
+        {
+          "text": "forehead,",
+          "start": 29.93,
+          "end": 30.34
+        },
+        {
+          "text": "I",
+          "start": 30.34,
+          "end": 30.75
+        },
+        {
+          "text": "suggest",
+          "start": 30.75,
+          "end": 31.16
+        },
+        {
+          "text": "you",
+          "start": 31.16,
+          "end": 31.57
+        },
+        {
+          "text": "reconsider.",
+          "start": 31.57,
+          "end": 31.98
+        }
+      ]
+    },
+    {
+      "id": "cue-17",
+      "start": 39.08,
+      "end": 40.1,
+      "text": "DEADPOOL I'm about to lose everything",
+      "words": [
+        {
+          "text": "DEADPOOL",
+          "start": 39.08,
+          "end": 39.25
+        },
+        {
+          "text": "I'm",
+          "start": 39.25,
+          "end": 39.42
+        },
+        {
+          "text": "about",
+          "start": 39.42,
+          "end": 39.59
+        },
+        {
+          "text": "to",
+          "start": 39.59,
+          "end": 39.76
+        },
+        {
+          "text": "lose",
+          "start": 39.76,
+          "end": 39.93
+        },
+        {
+          "text": "everything",
+          "start": 39.93,
+          "end": 40.1
+        }
+      ]
+    },
+    {
+      "id": "cue-18",
+      "start": 40.16,
+      "end": 41.01,
+      "text": "that I've ever cared about.",
+      "words": [
+        {
+          "text": "that",
+          "start": 40.16,
+          "end": 40.33
+        },
+        {
+          "text": "I've",
+          "start": 40.33,
+          "end": 40.5
+        },
+        {
+          "text": "ever",
+          "start": 40.5,
+          "end": 40.67
+        },
+        {
+          "text": "cared",
+          "start": 40.67,
+          "end": 40.84
+        },
+        {
+          "text": "about.",
+          "start": 40.84,
+          "end": 41.01
+        }
+      ]
+    },
+    {
+      "id": "cue-19",
+      "start": 43.03,
+      "end": 44.73,
+      "text": "WOLVERINE Not my f****** problem.",
+      "words": [
+        {
+          "text": "WOLVERINE",
+          "start": 43.03,
+          "end": 43.37
+        },
+        {
+          "text": "Not",
+          "start": 43.37,
+          "end": 43.71
+        },
+        {
+          "text": "my",
+          "start": 43.71,
+          "end": 44.05
+        },
+        {
+          "text": "f******",
+          "start": 44.05,
+          "end": 44.39
+        },
+        {
+          "text": "problem.",
+          "start": 44.39,
+          "end": 44.73
+        }
+      ]
+    },
+    {
+      "id": "cue-20",
+      "start": 44.83,
+      "end": 45.73,
+      "text": "DEADPOOL Is that what you said when your world",
+      "words": [
+        {
+          "text": "DEADPOOL",
+          "start": 44.83,
+          "end": 44.93
+        },
+        {
+          "text": "Is",
+          "start": 44.93,
+          "end": 45.03
+        },
+        {
+          "text": "that",
+          "start": 45.03,
+          "end": 45.13
+        },
+        {
+          "text": "what",
+          "start": 45.13,
+          "end": 45.23
+        },
+        {
+          "text": "you",
+          "start": 45.23,
+          "end": 45.33
+        },
+        {
+          "text": "said",
+          "start": 45.33,
+          "end": 45.43
+        },
+        {
+          "text": "when",
+          "start": 45.43,
+          "end": 45.53
+        },
+        {
+          "text": "your",
+          "start": 45.53,
+          "end": 45.63
+        },
+        {
+          "text": "world",
+          "start": 45.63,
+          "end": 45.73
+        }
+      ]
+    },
+    {
+      "id": "cue-21",
+      "start": 45.78,
+      "end": 46.74,
+      "text": "went to s***?",
+      "words": [
+        {
+          "text": "went",
+          "start": 45.78,
+          "end": 46.1
+        },
+        {
+          "text": "to",
+          "start": 46.1,
+          "end": 46.42
+        },
+        {
+          "text": "s***?",
+          "start": 46.42,
+          "end": 46.74
+        }
+      ]
+    },
+    {
+      "id": "cue-22",
+      "start": 49.99,
+      "end": 51.04,
+      "text": "WOLVERINE Come again?",
+      "words": [
+        {
+          "text": "WOLVERINE",
+          "start": 49.99,
+          "end": 50.34
+        },
+        {
+          "text": "Come",
+          "start": 50.34,
+          "end": 50.69
+        },
+        {
+          "text": "again?",
+          "start": 50.69,
+          "end": 51.04
+        }
+      ]
+    },
+    {
+      "id": "cue-23",
+      "start": 51.7,
+      "end": 54.62,
+      "text": "PARADOX This Wolverine let down his entire world.",
+      "words": [
+        {
+          "text": "PARADOX",
+          "start": 51.7,
+          "end": 52.07
+        },
+        {
+          "text": "This",
+          "start": 52.07,
+          "end": 52.44
+        },
+        {
+          "text": "Wolverine",
+          "start": 52.44,
+          "end": 52.8
+        },
+        {
+          "text": "let",
+          "start": 52.8,
+          "end": 53.16
+        },
+        {
+          "text": "down",
+          "start": 53.16,
+          "end": 53.52
+        },
+        {
+          "text": "his",
+          "start": 53.52,
+          "end": 53.89
+        },
+        {
+          "text": "entire",
+          "start": 53.89,
+          "end": 54.26
+        },
+        {
+          "text": "world.",
+          "start": 54.26,
+          "end": 54.62
+        }
+      ]
+    },
+    {
+      "id": "cue-24",
+      "start": 61.37,
+      "end": 63.17,
+      "text": "WADE WILSON Want to talk about what's haunting you,",
+      "words": [
+        {
+          "text": "WADE",
+          "start": 61.37,
+          "end": 61.57
+        },
+        {
+          "text": "WILSON",
+          "start": 61.57,
+          "end": 61.77
+        },
+        {
+          "text": "Want",
+          "start": 61.77,
+          "end": 61.97
+        },
+        {
+          "text": "to",
+          "start": 61.97,
+          "end": 62.17
+        },
+        {
+          "text": "talk",
+          "start": 62.17,
+          "end": 62.37
+        },
+        {
+          "text": "about",
+          "start": 62.37,
+          "end": 62.57
+        },
+        {
+          "text": "what's",
+          "start": 62.57,
+          "end": 62.77
+        },
+        {
+          "text": "haunting",
+          "start": 62.77,
+          "end": 62.97
+        },
+        {
+          "text": "you,",
+          "start": 62.97,
+          "end": 63.17
+        }
+      ]
+    },
+    {
+      "id": "cue-25",
+      "start": 63.24,
+      "end": 65.13,
+      "text": "or should we wait for a third act flashback?",
+      "words": [
+        {
+          "text": "or",
+          "start": 63.24,
+          "end": 63.45
+        },
+        {
+          "text": "should",
+          "start": 63.45,
+          "end": 63.66
+        },
+        {
+          "text": "we",
+          "start": 63.66,
+          "end": 63.87
+        },
+        {
+          "text": "wait",
+          "start": 63.87,
+          "end": 64.08
+        },
+        {
+          "text": "for",
+          "start": 64.08,
+          "end": 64.29
+        },
+        {
+          "text": "a",
+          "start": 64.29,
+          "end": 64.5
+        },
+        {
+          "text": "third",
+          "start": 64.5,
+          "end": 64.71
+        },
+        {
+          "text": "act",
+          "start": 64.71,
+          "end": 64.92
+        },
+        {
+          "text": "flashback?",
+          "start": 64.92,
+          "end": 65.13
+        }
+      ]
+    },
+    {
+      "id": "cue-26",
+      "start": 65.2,
+      "end": 66.95,
+      "text": "WOLVERINE Uh, go f*** yourself.",
+      "words": [
+        {
+          "text": "WOLVERINE",
+          "start": 65.2,
+          "end": 65.55
+        },
+        {
+          "text": "Uh,",
+          "start": 65.55,
+          "end": 65.9
+        },
+        {
+          "text": "go",
+          "start": 65.9,
+          "end": 66.25
+        },
+        {
+          "text": "f***",
+          "start": 66.25,
+          "end": 66.6
+        },
+        {
+          "text": "yourself.",
+          "start": 66.6,
+          "end": 66.95
+        }
+      ]
+    },
+    {
+      "id": "cue-27",
+      "start": 75.45,
+      "end": 77.05,
+      "text": "DEADPOOL I don't know anything about saving worlds,",
+      "words": [
+        {
+          "text": "DEADPOOL",
+          "start": 75.45,
+          "end": 75.65
+        },
+        {
+          "text": "I",
+          "start": 75.65,
+          "end": 75.85
+        },
+        {
+          "text": "don't",
+          "start": 75.85,
+          "end": 76.05
+        },
+        {
+          "text": "know",
+          "start": 76.05,
+          "end": 76.25
+        },
+        {
+          "text": "anything",
+          "start": 76.25,
+          "end": 76.45
+        },
+        {
+          "text": "about",
+          "start": 76.45,
+          "end": 76.65
+        },
+        {
+          "text": "saving",
+          "start": 76.65,
+          "end": 76.85
+        },
+        {
+          "text": "worlds,",
+          "start": 76.85,
+          "end": 77.05
+        }
+      ]
+    },
+    {
+      "id": "cue-28",
+      "start": 78.16,
+      "end": 79.54,
+      "text": "but you do!",
+      "words": [
+        {
+          "text": "but",
+          "start": 78.16,
+          "end": 78.62
+        },
+        {
+          "text": "you",
+          "start": 78.62,
+          "end": 79.08
+        },
+        {
+          "text": "do!",
+          "start": 79.08,
+          "end": 79.54
+        }
+      ]
+    },
+    {
+      "id": "cue-29",
+      "start": 82.16,
+      "end": 83.42,
+      "text": "WOLVERINE Trust me, kid, I'm no hero.",
+      "words": [
+        {
+          "text": "WOLVERINE",
+          "start": 82.16,
+          "end": 82.34
+        },
+        {
+          "text": "Trust",
+          "start": 82.34,
+          "end": 82.52
+        },
+        {
+          "text": "me,",
+          "start": 82.52,
+          "end": 82.7
+        },
+        {
+          "text": "kid,",
+          "start": 82.7,
+          "end": 82.88
+        },
+        {
+          "text": "I'm",
+          "start": 82.88,
+          "end": 83.06
+        },
+        {
+          "text": "no",
+          "start": 83.06,
+          "end": 83.24
+        },
+        {
+          "text": "hero.",
+          "start": 83.24,
+          "end": 83.42
+        }
+      ]
+    },
+    {
+      "id": "cue-30",
+      "start": 85.16,
+      "end": 86.54,
+      "text": "WADE WILSON You were an X-Man.",
+      "words": [
+        {
+          "text": "WADE",
+          "start": 85.16,
+          "end": 85.39
+        },
+        {
+          "text": "WILSON",
+          "start": 85.39,
+          "end": 85.62
+        },
+        {
+          "text": "You",
+          "start": 85.62,
+          "end": 85.85
+        },
+        {
+          "text": "were",
+          "start": 85.85,
+          "end": 86.08
+        },
+        {
+          "text": "an",
+          "start": 86.08,
+          "end": 86.31
+        },
+        {
+          "text": "X-Man.",
+          "start": 86.31,
+          "end": 86.54
+        }
+      ]
+    },
+    {
+      "id": "cue-31",
+      "start": 87.91,
+      "end": 89.17,
+      "text": "WADE WILSON You were the X-Man.",
+      "words": [
+        {
+          "text": "WADE",
+          "start": 87.91,
+          "end": 88.12
+        },
+        {
+          "text": "WILSON",
+          "start": 88.12,
+          "end": 88.33
+        },
+        {
+          "text": "You",
+          "start": 88.33,
+          "end": 88.54
+        },
+        {
+          "text": "were",
+          "start": 88.54,
+          "end": 88.75
+        },
+        {
+          "text": "the",
+          "start": 88.75,
+          "end": 88.96
+        },
+        {
+          "text": "X-Man.",
+          "start": 88.96,
+          "end": 89.17
+        }
+      ]
+    },
+    {
+      "id": "cue-32",
+      "start": 92.33,
+      "end": 94.64,
+      "text": "DEADPOOL I am soaking wet right now.",
+      "words": [
+        {
+          "text": "DEADPOOL",
+          "start": 92.33,
+          "end": 92.66
+        },
+        {
+          "text": "I",
+          "start": 92.66,
+          "end": 92.99
+        },
+        {
+          "text": "am",
+          "start": 92.99,
+          "end": 93.32
+        },
+        {
+          "text": "soaking",
+          "start": 93.32,
+          "end": 93.65
+        },
+        {
+          "text": "wet",
+          "start": 93.65,
+          "end": 93.98
+        },
+        {
+          "text": "right",
+          "start": 93.98,
+          "end": 94.31
+        },
+        {
+          "text": "now.",
+          "start": 94.31,
+          "end": 94.64
+        }
+      ]
+    },
+    {
+      "id": "cue-33",
+      "start": 107.91,
+      "end": 109.63,
+      "text": "Boys are so silly.",
+      "words": [
+        {
+          "text": "Boys",
+          "start": 107.91,
+          "end": 108.34
+        },
+        {
+          "text": "are",
+          "start": 108.34,
+          "end": 108.77
+        },
+        {
+          "text": "so",
+          "start": 108.77,
+          "end": 109.2
+        },
+        {
+          "text": "silly.",
+          "start": 109.2,
+          "end": 109.63
+        }
+      ]
+    },
+    {
+      "id": "cue-34",
+      "start": 112.2,
+      "end": 113.95,
+      "text": "DEADPOOL This is what I'm talking about.",
+      "words": [
+        {
+          "text": "DEADPOOL",
+          "start": 112.2,
+          "end": 112.45
+        },
+        {
+          "text": "This",
+          "start": 112.45,
+          "end": 112.7
+        },
+        {
+          "text": "is",
+          "start": 112.7,
+          "end": 112.95
+        },
+        {
+          "text": "what",
+          "start": 112.95,
+          "end": 113.2
+        },
+        {
+          "text": "I'm",
+          "start": 113.2,
+          "end": 113.45
+        },
+        {
+          "text": "talking",
+          "start": 113.45,
+          "end": 113.7
+        },
+        {
+          "text": "about.",
+          "start": 113.7,
+          "end": 113.95
+        }
+      ]
+    },
+    {
+      "id": "cue-35",
+      "start": 115.7,
+      "end": 118.04,
+      "text": "DEADPOOL Big slow motion action sequence!",
+      "words": [
+        {
+          "text": "DEADPOOL",
+          "start": 115.7,
+          "end": 116.09
+        },
+        {
+          "text": "Big",
+          "start": 116.09,
+          "end": 116.48
+        },
+        {
+          "text": "slow",
+          "start": 116.48,
+          "end": 116.87
+        },
+        {
+          "text": "motion",
+          "start": 116.87,
+          "end": 117.26
+        },
+        {
+          "text": "action",
+          "start": 117.26,
+          "end": 117.65
+        },
+        {
+          "text": "sequence!",
+          "start": 117.65,
+          "end": 118.04
+        }
+      ]
+    },
+    {
+      "id": "cue-36",
+      "start": 120.41,
+      "end": 122.01,
+      "text": "DEADPOOL Who knows if you live or die?",
+      "words": [
+        {
+          "text": "DEADPOOL",
+          "start": 120.41,
+          "end": 120.61
+        },
+        {
+          "text": "Who",
+          "start": 120.61,
+          "end": 120.81
+        },
+        {
+          "text": "knows",
+          "start": 120.81,
+          "end": 121.01
+        },
+        {
+          "text": "if",
+          "start": 121.01,
+          "end": 121.21
+        },
+        {
+          "text": "you",
+          "start": 121.21,
+          "end": 121.41
+        },
+        {
+          "text": "live",
+          "start": 121.41,
+          "end": 121.61
+        },
+        {
+          "text": "or",
+          "start": 121.61,
+          "end": 121.81
+        },
+        {
+          "text": "die?",
+          "start": 121.81,
+          "end": 122.01
+        }
+      ]
+    },
+    {
+      "id": "cue-37",
+      "start": 126.12,
+      "end": 127.96,
+      "text": "DEADPOOL Let's f****** go!",
+      "words": [
+        {
+          "text": "DEADPOOL",
+          "start": 126.12,
+          "end": 126.58
+        },
+        {
+          "text": "Let's",
+          "start": 126.58,
+          "end": 127.04
+        },
+        {
+          "text": "f******",
+          "start": 127.04,
+          "end": 127.5
+        },
+        {
+          "text": "go!",
+          "start": 127.5,
+          "end": 127.96
+        }
+      ]
+    },
+    {
+      "id": "cue-38",
+      "start": 128.49,
+      "end": 130.02,
+      "text": "WOLVERINE Let's f****** go.",
+      "words": [
+        {
+          "text": "WOLVERINE",
+          "start": 128.49,
+          "end": 128.88
+        },
+        {
+          "text": "Let's",
+          "start": 128.88,
+          "end": 129.26
+        },
+        {
+          "text": "f******",
+          "start": 129.26,
+          "end": 129.64
+        },
+        {
+          "text": "go.",
+          "start": 129.64,
+          "end": 130.02
+        }
+      ]
+    },
+    {
+      "id": "cue-39",
+      "start": 132.7,
+      "end": 134.44,
+      "text": "DEADPOOL Yeah!",
+      "words": [
+        {
+          "text": "DEADPOOL",
+          "start": 132.7,
+          "end": 133.57
+        },
+        {
+          "text": "Yeah!",
+          "start": 133.57,
+          "end": 134.44
+        }
+      ]
+    },
+    {
+      "id": "cue-40",
+      "start": 139.24,
+      "end": 140.26,
+      "text": "BLIND AL Wanna do some c******?",
+      "words": [
+        {
+          "text": "BLIND",
+          "start": 139.24,
+          "end": 139.41
+        },
+        {
+          "text": "AL",
+          "start": 139.41,
+          "end": 139.58
+        },
+        {
+          "text": "Wanna",
+          "start": 139.58,
+          "end": 139.75
+        },
+        {
+          "text": "do",
+          "start": 139.75,
+          "end": 139.92
+        },
+        {
+          "text": "some",
+          "start": 139.92,
+          "end": 140.09
+        },
+        {
+          "text": "c******?",
+          "start": 140.09,
+          "end": 140.26
+        }
+      ]
+    },
+    {
+      "id": "cue-41",
+      "start": 140.33,
+      "end": 140.81,
+      "text": "WADE WILSON Hey!",
+      "words": [
+        {
+          "text": "WADE",
+          "start": 140.33,
+          "end": 140.49
+        },
+        {
+          "text": "WILSON",
+          "start": 140.49,
+          "end": 140.65
+        },
+        {
+          "text": "Hey!",
+          "start": 140.65,
+          "end": 140.81
+        }
+      ]
+    },
+    {
+      "id": "cue-42",
+      "start": 140.87,
+      "end": 143.73,
+      "text": "C****** is the one thing that Feige said is off limits.",
+      "words": [
+        {
+          "text": "C******",
+          "start": 140.87,
+          "end": 141.13
+        },
+        {
+          "text": "is",
+          "start": 141.13,
+          "end": 141.39
+        },
+        {
+          "text": "the",
+          "start": 141.39,
+          "end": 141.65
+        },
+        {
+          "text": "one",
+          "start": 141.65,
+          "end": 141.91
+        },
+        {
+          "text": "thing",
+          "start": 141.91,
+          "end": 142.17
+        },
+        {
+          "text": "that",
+          "start": 142.17,
+          "end": 142.43
+        },
+        {
+          "text": "Feige",
+          "start": 142.43,
+          "end": 142.69
+        },
+        {
+          "text": "said",
+          "start": 142.69,
+          "end": 142.95
+        },
+        {
+          "text": "is",
+          "start": 142.95,
+          "end": 143.21
+        },
+        {
+          "text": "off",
+          "start": 143.21,
+          "end": 143.47
+        },
+        {
+          "text": "limits.",
+          "start": 143.47,
+          "end": 143.73
+        }
+      ]
+    },
+    {
+      "id": "cue-43",
+      "start": 143.78,
+      "end": 145.81,
+      "text": "BLIND AL What about Bolivian marching powder?",
+      "words": [
+        {
+          "text": "BLIND",
+          "start": 143.78,
+          "end": 144.07
+        },
+        {
+          "text": "AL",
+          "start": 144.07,
+          "end": 144.36
+        },
+        {
+          "text": "What",
+          "start": 144.36,
+          "end": 144.65
+        },
+        {
+          "text": "about",
+          "start": 144.65,
+          "end": 144.94
+        },
+        {
+          "text": "Bolivian",
+          "start": 144.94,
+          "end": 145.23
+        },
+        {
+          "text": "marching",
+          "start": 145.23,
+          "end": 145.52
+        },
+        {
+          "text": "powder?",
+          "start": 145.52,
+          "end": 145.81
+        }
+      ]
+    },
+    {
+      "id": "cue-44",
+      "start": 145.87,
+      "end": 146.83,
+      "text": "WADE WILSON They know all the slang terms.",
+      "words": [
+        {
+          "text": "WADE",
+          "start": 145.87,
+          "end": 145.99
+        },
+        {
+          "text": "WILSON",
+          "start": 145.99,
+          "end": 146.11
+        },
+        {
+          "text": "They",
+          "start": 146.11,
+          "end": 146.23
+        },
+        {
+          "text": "know",
+          "start": 146.23,
+          "end": 146.35
+        },
+        {
+          "text": "all",
+          "start": 146.35,
+          "end": 146.47
+        },
+        {
+          "text": "the",
+          "start": 146.47,
+          "end": 146.59
+        },
+        {
+          "text": "slang",
+          "start": 146.59,
+          "end": 146.71
+        },
+        {
+          "text": "terms.",
+          "start": 146.71,
+          "end": 146.83
+        }
+      ]
+    },
+    {
+      "id": "cue-45",
+      "start": 146.87,
+      "end": 147.57,
+      "text": "They have a list.",
+      "words": [
+        {
+          "text": "They",
+          "start": 146.87,
+          "end": 147.05
+        },
+        {
+          "text": "have",
+          "start": 147.05,
+          "end": 147.23
+        },
+        {
+          "text": "a",
+          "start": 147.23,
+          "end": 147.4
+        },
+        {
+          "text": "list.",
+          "start": 147.4,
+          "end": 147.57
+        }
+      ]
+    },
+    {
+      "id": "cue-46",
+      "start": 147.62,
+      "end": 148.54,
+      "text": "BLIND AL Even snowboarding?",
+      "words": [
+        {
+          "text": "BLIND",
+          "start": 147.62,
+          "end": 147.85
+        },
+        {
+          "text": "AL",
+          "start": 147.85,
+          "end": 148.08
+        },
+        {
+          "text": "Even",
+          "start": 148.08,
+          "end": 148.31
+        },
+        {
+          "text": "snowboarding?",
+          "start": 148.31,
+          "end": 148.54
+        }
+      ]
+    },
+    {
+      "id": "cue-47",
+      "start": 148.57,
+      "end": 149.37,
+      "text": "WADE WILSON Even disco dust.",
+      "words": [
+        {
+          "text": "WADE",
+          "start": 148.57,
+          "end": 148.73
+        },
+        {
+          "text": "WILSON",
+          "start": 148.73,
+          "end": 148.89
+        },
+        {
+          "text": "Even",
+          "start": 148.89,
+          "end": 149.05
+        },
+        {
+          "text": "disco",
+          "start": 149.05,
+          "end": 149.21
+        },
+        {
+          "text": "dust.",
+          "start": 149.21,
+          "end": 149.37
+        }
+      ]
+    },
+    {
+      "id": "cue-48",
+      "start": 149.41,
+      "end": 150.56,
+      "text": "BLIND AL White Girl, Interrupted?",
+      "words": [
+        {
+          "text": "BLIND",
+          "start": 149.41,
+          "end": 149.64
+        },
+        {
+          "text": "AL",
+          "start": 149.64,
+          "end": 149.87
+        },
+        {
+          "text": "White",
+          "start": 149.87,
+          "end": 150.1
+        },
+        {
+          "text": "Girl,",
+          "start": 150.1,
+          "end": 150.33
+        },
+        {
+          "text": "Interrupted?",
+          "start": 150.33,
+          "end": 150.56
+        }
+      ]
+    },
+    {
+      "id": "cue-49",
+      "start": 150.62,
+      "end": 151.52,
+      "text": "WADE WILSON Even Forrest Bump.",
+      "words": [
+        {
+          "text": "WADE",
+          "start": 150.62,
+          "end": 150.8
+        },
+        {
+          "text": "WILSON",
+          "start": 150.8,
+          "end": 150.98
+        },
+        {
+          "text": "Even",
+          "start": 150.98,
+          "end": 151.16
+        },
+        {
+          "text": "Forrest",
+          "start": 151.16,
+          "end": 151.34
+        },
+        {
+          "text": "Bump.",
+          "start": 151.34,
+          "end": 151.52
+        }
+      ]
+    },
+    {
+      "id": "cue-50",
+      "start": 151.57,
+      "end": 152.29,
+      "text": "BLIND AL Do you want to build a snowman?",
+      "words": [
+        {
+          "text": "BLIND",
+          "start": 151.57,
+          "end": 151.65
+        },
+        {
+          "text": "AL",
+          "start": 151.65,
+          "end": 151.73
+        },
+        {
+          "text": "Do",
+          "start": 151.73,
+          "end": 151.81
+        },
+        {
+          "text": "you",
+          "start": 151.81,
+          "end": 151.89
+        },
+        {
+          "text": "want",
+          "start": 151.89,
+          "end": 151.97
+        },
+        {
+          "text": "to",
+          "start": 151.97,
+          "end": 152.05
+        },
+        {
+          "text": "build",
+          "start": 152.05,
+          "end": 152.13
+        },
+        {
+          "text": "a",
+          "start": 152.13,
+          "end": 152.21
+        },
+        {
+          "text": "snowman?",
+          "start": 152.21,
+          "end": 152.29
+        }
+      ]
+    },
+    {
+      "id": "cue-51",
+      "start": 152.41,
+      "end": 154.93,
+      "text": "WADE WILSON Yes! But I can't!",
+      "words": [
+        {
+          "text": "WADE",
+          "start": 152.41,
+          "end": 152.83
+        },
+        {
+          "text": "WILSON",
+          "start": 152.83,
+          "end": 153.25
+        },
+        {
+          "text": "Yes!",
+          "start": 153.25,
+          "end": 153.67
+        },
+        {
+          "text": "But",
+          "start": 153.67,
+          "end": 154.09
+        },
+        {
+          "text": "I",
+          "start": 154.09,
+          "end": 154.51
+        },
+        {
+          "text": "can't!",
+          "start": 154.51,
+          "end": 154.93
+        }
+      ]
+    }
+  ]
+}
