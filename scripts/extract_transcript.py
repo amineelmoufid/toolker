@@ -188,7 +188,7 @@ def extract_with_ytdlp(vid, preferred_lang=None):
                 "start": curr[0]["start"],
                 "end": curr[-1]["end"],
                 "text": s_text,
-                "words": [...curr]
+                "words": list(curr)
             })
             curr = []
     if curr:
@@ -198,7 +198,7 @@ def extract_with_ytdlp(vid, preferred_lang=None):
             "start": curr[0]["start"],
             "end": curr[-1]["end"],
             "text": s_text,
-            "words": [...curr]
+            "words": list(curr)
         })
 
     return sentences, lang
