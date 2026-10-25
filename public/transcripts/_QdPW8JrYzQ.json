@@ -1,0 +1,7604 @@
+{
+  "ok": true,
+  "videoId": "_QdPW8JrYzQ",
+  "language": "en",
+  "trackKind": "standard",
+  "subtitles": [
+    {
+      "id": "cue-1",
+      "start": 12.81,
+      "end": 13.97,
+      "text": "A few years ago,",
+      "words": [
+        {
+          "text": "A",
+          "start": 12.81,
+          "end": 13.1
+        },
+        {
+          "text": "few",
+          "start": 13.1,
+          "end": 13.39
+        },
+        {
+          "text": "years",
+          "start": 13.39,
+          "end": 13.68
+        },
+        {
+          "text": "ago,",
+          "start": 13.68,
+          "end": 13.97
+        }
+      ]
+    },
+    {
+      "id": "cue-2",
+      "start": 13.98,
+      "end": 17.41,
+      "text": "I got one of those spam emails.",
+      "words": [
+        {
+          "text": "I",
+          "start": 13.98,
+          "end": 14.47
+        },
+        {
+          "text": "got",
+          "start": 14.47,
+          "end": 14.96
+        },
+        {
+          "text": "one",
+          "start": 14.96,
+          "end": 15.45
+        },
+        {
+          "text": "of",
+          "start": 15.45,
+          "end": 15.94
+        },
+        {
+          "text": "those",
+          "start": 15.94,
+          "end": 16.43
+        },
+        {
+          "text": "spam",
+          "start": 16.43,
+          "end": 16.92
+        },
+        {
+          "text": "emails.",
+          "start": 16.92,
+          "end": 17.41
+        }
+      ]
+    },
+    {
+      "id": "cue-3",
+      "start": 17.47,
+      "end": 19.54,
+      "text": "And it managed to get through my spam filter.",
+      "words": [
+        {
+          "text": "And",
+          "start": 17.47,
+          "end": 17.7
+        },
+        {
+          "text": "it",
+          "start": 17.7,
+          "end": 17.93
+        },
+        {
+          "text": "managed",
+          "start": 17.93,
+          "end": 18.16
+        },
+        {
+          "text": "to",
+          "start": 18.16,
+          "end": 18.39
+        },
+        {
+          "text": "get",
+          "start": 18.39,
+          "end": 18.62
+        },
+        {
+          "text": "through",
+          "start": 18.62,
+          "end": 18.85
+        },
+        {
+          "text": "my",
+          "start": 18.85,
+          "end": 19.08
+        },
+        {
+          "text": "spam",
+          "start": 19.08,
+          "end": 19.31
+        },
+        {
+          "text": "filter.",
+          "start": 19.31,
+          "end": 19.54
+        }
+      ]
+    },
+    {
+      "id": "cue-4",
+      "start": 19.6,
+      "end": 22.12,
+      "text": "I'm not quite sure how, but it turned up in my inbox,",
+      "words": [
+        {
+          "text": "I'm",
+          "start": 19.6,
+          "end": 19.81
+        },
+        {
+          "text": "not",
+          "start": 19.81,
+          "end": 20.02
+        },
+        {
+          "text": "quite",
+          "start": 20.02,
+          "end": 20.23
+        },
+        {
+          "text": "sure",
+          "start": 20.23,
+          "end": 20.44
+        },
+        {
+          "text": "how,",
+          "start": 20.44,
+          "end": 20.65
+        },
+        {
+          "text": "but",
+          "start": 20.65,
+          "end": 20.86
+        },
+        {
+          "text": "it",
+          "start": 20.86,
+          "end": 21.07
+        },
+        {
+          "text": "turned",
+          "start": 21.07,
+          "end": 21.28
+        },
+        {
+          "text": "up",
+          "start": 21.28,
+          "end": 21.49
+        },
+        {
+          "text": "in",
+          "start": 21.49,
+          "end": 21.7
+        },
+        {
+          "text": "my",
+          "start": 21.7,
+          "end": 21.91
+        },
+        {
+          "text": "inbox,",
+          "start": 21.91,
+          "end": 22.12
+        }
+      ]
+    },
+    {
+      "id": "cue-5",
+      "start": 22.18,
+      "end": 24.34,
+      "text": "and it was from a guy called Solomon Odonkoh.",
+      "words": [
+        {
+          "text": "and",
+          "start": 22.18,
+          "end": 22.42
+        },
+        {
+          "text": "it",
+          "start": 22.42,
+          "end": 22.66
+        },
+        {
+          "text": "was",
+          "start": 22.66,
+          "end": 22.9
+        },
+        {
+          "text": "from",
+          "start": 22.9,
+          "end": 23.14
+        },
+        {
+          "text": "a",
+          "start": 23.14,
+          "end": 23.38
+        },
+        {
+          "text": "guy",
+          "start": 23.38,
+          "end": 23.62
+        },
+        {
+          "text": "called",
+          "start": 23.62,
+          "end": 23.86
+        },
+        {
+          "text": "Solomon",
+          "start": 23.86,
+          "end": 24.1
+        },
+        {
+          "text": "Odonkoh.",
+          "start": 24.1,
+          "end": 24.34
+        }
+      ]
+    },
+    {
+      "id": "cue-6",
+      "start": 24.35,
+      "end": 27.3,
+      "text": "(Laughter) I know.",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 24.35,
+          "end": 25.56
+        },
+        {
+          "text": "I",
+          "start": 26.16,
+          "end": 26.73
+        },
+        {
+          "text": "know.",
+          "start": 26.73,
+          "end": 27.3
+        }
+      ]
+    },
+    {
+      "id": "cue-7",
+      "start": 27.33,
+      "end": 31.37,
+      "text": "(Laughter) It went like this: it said, \"Hello James Veitch,",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 27.33,
+          "end": 28.56
+        },
+        {
+          "text": "It",
+          "start": 28.59,
+          "end": 28.88
+        },
+        {
+          "text": "went",
+          "start": 28.88,
+          "end": 29.17
+        },
+        {
+          "text": "like",
+          "start": 29.17,
+          "end": 29.46
+        },
+        {
+          "text": "this:",
+          "start": 29.46,
+          "end": 29.75
+        },
+        {
+          "text": "it",
+          "start": 29.77,
+          "end": 30.09
+        },
+        {
+          "text": "said,",
+          "start": 30.09,
+          "end": 30.41
+        },
+        {
+          "text": "\"Hello",
+          "start": 30.41,
+          "end": 30.73
+        },
+        {
+          "text": "James",
+          "start": 30.73,
+          "end": 31.05
+        },
+        {
+          "text": "Veitch,",
+          "start": 31.05,
+          "end": 31.37
+        }
+      ]
+    },
+    {
+      "id": "cue-8",
+      "start": 31.41,
+      "end": 34.92,
+      "text": "I have an interesting business proposal I want to share with you, Solomon.\"",
+      "words": [
+        {
+          "text": "I",
+          "start": 31.41,
+          "end": 31.68
+        },
+        {
+          "text": "have",
+          "start": 31.68,
+          "end": 31.95
+        },
+        {
+          "text": "an",
+          "start": 31.95,
+          "end": 32.22
+        },
+        {
+          "text": "interesting",
+          "start": 32.22,
+          "end": 32.49
+        },
+        {
+          "text": "business",
+          "start": 32.49,
+          "end": 32.76
+        },
+        {
+          "text": "proposal",
+          "start": 32.76,
+          "end": 33.03
+        },
+        {
+          "text": "I",
+          "start": 33.03,
+          "end": 33.3
+        },
+        {
+          "text": "want",
+          "start": 33.3,
+          "end": 33.57
+        },
+        {
+          "text": "to",
+          "start": 33.57,
+          "end": 33.84
+        },
+        {
+          "text": "share",
+          "start": 33.84,
+          "end": 34.11
+        },
+        {
+          "text": "with",
+          "start": 34.11,
+          "end": 34.38
+        },
+        {
+          "text": "you,",
+          "start": 34.38,
+          "end": 34.65
+        },
+        {
+          "text": "Solomon.\"",
+          "start": 34.65,
+          "end": 34.92
+        }
+      ]
+    },
+    {
+      "id": "cue-9",
+      "start": 36.25,
+      "end": 39.13,
+      "text": "Now, my hand was kind of hovering on the delete button, right?",
+      "words": [
+        {
+          "text": "Now,",
+          "start": 36.25,
+          "end": 36.49
+        },
+        {
+          "text": "my",
+          "start": 36.49,
+          "end": 36.73
+        },
+        {
+          "text": "hand",
+          "start": 36.73,
+          "end": 36.97
+        },
+        {
+          "text": "was",
+          "start": 36.97,
+          "end": 37.21
+        },
+        {
+          "text": "kind",
+          "start": 37.21,
+          "end": 37.45
+        },
+        {
+          "text": "of",
+          "start": 37.45,
+          "end": 37.69
+        },
+        {
+          "text": "hovering",
+          "start": 37.69,
+          "end": 37.93
+        },
+        {
+          "text": "on",
+          "start": 37.93,
+          "end": 38.17
+        },
+        {
+          "text": "the",
+          "start": 38.17,
+          "end": 38.41
+        },
+        {
+          "text": "delete",
+          "start": 38.41,
+          "end": 38.65
+        },
+        {
+          "text": "button,",
+          "start": 38.65,
+          "end": 38.89
+        },
+        {
+          "text": "right?",
+          "start": 38.89,
+          "end": 39.13
+        }
+      ]
+    },
+    {
+      "id": "cue-10",
+      "start": 39.18,
+      "end": 42.17,
+      "text": "I was looking at my phone. I thought, I could just delete this.",
+      "words": [
+        {
+          "text": "I",
+          "start": 39.18,
+          "end": 39.41
+        },
+        {
+          "text": "was",
+          "start": 39.41,
+          "end": 39.64
+        },
+        {
+          "text": "looking",
+          "start": 39.64,
+          "end": 39.87
+        },
+        {
+          "text": "at",
+          "start": 39.87,
+          "end": 40.1
+        },
+        {
+          "text": "my",
+          "start": 40.1,
+          "end": 40.33
+        },
+        {
+          "text": "phone.",
+          "start": 40.33,
+          "end": 40.56
+        },
+        {
+          "text": "I",
+          "start": 40.56,
+          "end": 40.79
+        },
+        {
+          "text": "thought,",
+          "start": 40.79,
+          "end": 41.02
+        },
+        {
+          "text": "I",
+          "start": 41.02,
+          "end": 41.25
+        },
+        {
+          "text": "could",
+          "start": 41.25,
+          "end": 41.48
+        },
+        {
+          "text": "just",
+          "start": 41.48,
+          "end": 41.71
+        },
+        {
+          "text": "delete",
+          "start": 41.71,
+          "end": 41.94
+        },
+        {
+          "text": "this.",
+          "start": 41.94,
+          "end": 42.17
+        }
+      ]
+    },
+    {
+      "id": "cue-11",
+      "start": 42.44,
+      "end": 46.6,
+      "text": "Or I could do what I think we've all always wanted to do.",
+      "words": [
+        {
+          "text": "Or",
+          "start": 42.44,
+          "end": 42.76
+        },
+        {
+          "text": "I",
+          "start": 42.76,
+          "end": 43.08
+        },
+        {
+          "text": "could",
+          "start": 43.08,
+          "end": 43.4
+        },
+        {
+          "text": "do",
+          "start": 43.4,
+          "end": 43.72
+        },
+        {
+          "text": "what",
+          "start": 43.72,
+          "end": 44.04
+        },
+        {
+          "text": "I",
+          "start": 44.04,
+          "end": 44.36
+        },
+        {
+          "text": "think",
+          "start": 44.36,
+          "end": 44.68
+        },
+        {
+          "text": "we've",
+          "start": 44.68,
+          "end": 45.0
+        },
+        {
+          "text": "all",
+          "start": 45.0,
+          "end": 45.32
+        },
+        {
+          "text": "always",
+          "start": 45.32,
+          "end": 45.64
+        },
+        {
+          "text": "wanted",
+          "start": 45.64,
+          "end": 45.96
+        },
+        {
+          "text": "to",
+          "start": 45.96,
+          "end": 46.28
+        },
+        {
+          "text": "do.",
+          "start": 46.28,
+          "end": 46.6
+        }
+      ]
+    },
+    {
+      "id": "cue-12",
+      "start": 46.63,
+      "end": 52.78,
+      "text": "(Laughter) And I said, \"Solomon, Your email intrigues me.\"",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 46.63,
+          "end": 49.62
+        },
+        {
+          "text": "And",
+          "start": 50.54,
+          "end": 50.82
+        },
+        {
+          "text": "I",
+          "start": 50.82,
+          "end": 51.1
+        },
+        {
+          "text": "said,",
+          "start": 51.1,
+          "end": 51.38
+        },
+        {
+          "text": "\"Solomon,",
+          "start": 51.38,
+          "end": 51.66
+        },
+        {
+          "text": "Your",
+          "start": 51.66,
+          "end": 51.94
+        },
+        {
+          "text": "email",
+          "start": 51.94,
+          "end": 52.22
+        },
+        {
+          "text": "intrigues",
+          "start": 52.22,
+          "end": 52.5
+        },
+        {
+          "text": "me.\"",
+          "start": 52.5,
+          "end": 52.78
+        }
+      ]
+    },
+    {
+      "id": "cue-13",
+      "start": 52.77,
+      "end": 62.9,
+      "text": "(Laughter) (Applause) And the game was afoot.",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 52.77,
+          "end": 55.48
+        },
+        {
+          "text": "(Applause)",
+          "start": 55.5,
+          "end": 60.48
+        },
+        {
+          "text": "And",
+          "start": 60.5,
+          "end": 60.98
+        },
+        {
+          "text": "the",
+          "start": 60.98,
+          "end": 61.46
+        },
+        {
+          "text": "game",
+          "start": 61.46,
+          "end": 61.94
+        },
+        {
+          "text": "was",
+          "start": 61.94,
+          "end": 62.42
+        },
+        {
+          "text": "afoot.",
+          "start": 62.42,
+          "end": 62.9
+        }
+      ]
+    },
+    {
+      "id": "cue-14",
+      "start": 65.21,
+      "end": 68.21,
+      "text": "He said, \"Dear James Veitch, We shall be shipping Gold to you.\"",
+      "words": [
+        {
+          "text": "He",
+          "start": 65.21,
+          "end": 65.46
+        },
+        {
+          "text": "said,",
+          "start": 65.46,
+          "end": 65.71
+        },
+        {
+          "text": "\"Dear",
+          "start": 65.71,
+          "end": 65.96
+        },
+        {
+          "text": "James",
+          "start": 65.96,
+          "end": 66.21
+        },
+        {
+          "text": "Veitch,",
+          "start": 66.21,
+          "end": 66.46
+        },
+        {
+          "text": "We",
+          "start": 66.46,
+          "end": 66.71
+        },
+        {
+          "text": "shall",
+          "start": 66.71,
+          "end": 66.96
+        },
+        {
+          "text": "be",
+          "start": 66.96,
+          "end": 67.21
+        },
+        {
+          "text": "shipping",
+          "start": 67.21,
+          "end": 67.46
+        },
+        {
+          "text": "Gold",
+          "start": 67.46,
+          "end": 67.71
+        },
+        {
+          "text": "to",
+          "start": 67.71,
+          "end": 67.96
+        },
+        {
+          "text": "you.\"",
+          "start": 67.96,
+          "end": 68.21
+        }
+      ]
+    },
+    {
+      "id": "cue-15",
+      "start": 68.2,
+      "end": 73.18,
+      "text": "(Laughter) \"You will earn 10% of any gold you distributes.\"",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 68.2,
+          "end": 69.9
+        },
+        {
+          "text": "\"You",
+          "start": 70.3,
+          "end": 70.62
+        },
+        {
+          "text": "will",
+          "start": 70.62,
+          "end": 70.94
+        },
+        {
+          "text": "earn",
+          "start": 70.94,
+          "end": 71.26
+        },
+        {
+          "text": "10%",
+          "start": 71.26,
+          "end": 71.58
+        },
+        {
+          "text": "of",
+          "start": 71.58,
+          "end": 71.9
+        },
+        {
+          "text": "any",
+          "start": 71.9,
+          "end": 72.22
+        },
+        {
+          "text": "gold",
+          "start": 72.22,
+          "end": 72.54
+        },
+        {
+          "text": "you",
+          "start": 72.54,
+          "end": 72.86
+        },
+        {
+          "text": "distributes.\"",
+          "start": 72.86,
+          "end": 73.18
+        }
+      ]
+    },
+    {
+      "id": "cue-16",
+      "start": 73.22,
+      "end": 77.38,
+      "text": "(Laughter) So I knew I was dealing with a professional.",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 73.22,
+          "end": 74.99
+        },
+        {
+          "text": "So",
+          "start": 75.31,
+          "end": 75.54
+        },
+        {
+          "text": "I",
+          "start": 75.54,
+          "end": 75.77
+        },
+        {
+          "text": "knew",
+          "start": 75.77,
+          "end": 76.0
+        },
+        {
+          "text": "I",
+          "start": 76.0,
+          "end": 76.23
+        },
+        {
+          "text": "was",
+          "start": 76.23,
+          "end": 76.46
+        },
+        {
+          "text": "dealing",
+          "start": 76.46,
+          "end": 76.69
+        },
+        {
+          "text": "with",
+          "start": 76.69,
+          "end": 76.92
+        },
+        {
+          "text": "a",
+          "start": 76.92,
+          "end": 77.15
+        },
+        {
+          "text": "professional.",
+          "start": 77.15,
+          "end": 77.38
+        }
+      ]
+    },
+    {
+      "id": "cue-17",
+      "start": 77.38,
+      "end": 83.88,
+      "text": "(Laughter) I said, \"How much is it worth?\"",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 77.38,
+          "end": 80.96
+        },
+        {
+          "text": "I",
+          "start": 82.41,
+          "end": 82.62
+        },
+        {
+          "text": "said,",
+          "start": 82.62,
+          "end": 82.83
+        },
+        {
+          "text": "\"How",
+          "start": 82.83,
+          "end": 83.04
+        },
+        {
+          "text": "much",
+          "start": 83.04,
+          "end": 83.25
+        },
+        {
+          "text": "is",
+          "start": 83.25,
+          "end": 83.46
+        },
+        {
+          "text": "it",
+          "start": 83.46,
+          "end": 83.67
+        },
+        {
+          "text": "worth?\"",
+          "start": 83.67,
+          "end": 83.88
+        }
+      ]
+    },
+    {
+      "id": "cue-18",
+      "start": 85.06,
+      "end": 87.58,
+      "text": "He said, \"We will start with smaller quantity,\" --",
+      "words": [
+        {
+          "text": "He",
+          "start": 85.06,
+          "end": 85.34
+        },
+        {
+          "text": "said,",
+          "start": 85.34,
+          "end": 85.62
+        },
+        {
+          "text": "\"We",
+          "start": 85.62,
+          "end": 85.9
+        },
+        {
+          "text": "will",
+          "start": 85.9,
+          "end": 86.18
+        },
+        {
+          "text": "start",
+          "start": 86.18,
+          "end": 86.46
+        },
+        {
+          "text": "with",
+          "start": 86.46,
+          "end": 86.74
+        },
+        {
+          "text": "smaller",
+          "start": 86.74,
+          "end": 87.02
+        },
+        {
+          "text": "quantity,\"",
+          "start": 87.02,
+          "end": 87.3
+        },
+        {
+          "text": "--",
+          "start": 87.3,
+          "end": 87.58
+        }
+      ]
+    },
+    {
+      "id": "cue-19",
+      "start": 87.58,
+      "end": 91.56,
+      "text": "I was like, aww -- and then he said, \"of 25 kgs.",
+      "words": [
+        {
+          "text": "I",
+          "start": 87.58,
+          "end": 87.81
+        },
+        {
+          "text": "was",
+          "start": 87.81,
+          "end": 88.04
+        },
+        {
+          "text": "like,",
+          "start": 88.04,
+          "end": 88.27
+        },
+        {
+          "text": "aww",
+          "start": 88.27,
+          "end": 88.5
+        },
+        {
+          "text": "--",
+          "start": 88.5,
+          "end": 88.73
+        },
+        {
+          "text": "and",
+          "start": 88.76,
+          "end": 89.16
+        },
+        {
+          "text": "then",
+          "start": 89.16,
+          "end": 89.56
+        },
+        {
+          "text": "he",
+          "start": 89.56,
+          "end": 89.96
+        },
+        {
+          "text": "said,",
+          "start": 89.96,
+          "end": 90.36
+        },
+        {
+          "text": "\"of",
+          "start": 90.36,
+          "end": 90.76
+        },
+        {
+          "text": "25",
+          "start": 90.76,
+          "end": 91.16
+        },
+        {
+          "text": "kgs.",
+          "start": 91.16,
+          "end": 91.56
+        }
+      ]
+    },
+    {
+      "id": "cue-20",
+      "start": 91.58,
+      "end": 97.42,
+      "text": "(Laughter) The worth should be about $2.5 million.\"",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 91.58,
+          "end": 93.58
+        },
+        {
+          "text": "The",
+          "start": 94.97,
+          "end": 95.32
+        },
+        {
+          "text": "worth",
+          "start": 95.32,
+          "end": 95.67
+        },
+        {
+          "text": "should",
+          "start": 95.67,
+          "end": 96.02
+        },
+        {
+          "text": "be",
+          "start": 96.02,
+          "end": 96.37
+        },
+        {
+          "text": "about",
+          "start": 96.37,
+          "end": 96.72
+        },
+        {
+          "text": "$2.5",
+          "start": 96.72,
+          "end": 97.07
+        },
+        {
+          "text": "million.\"",
+          "start": 97.07,
+          "end": 97.42
+        }
+      ]
+    },
+    {
+      "id": "cue-21",
+      "start": 99.54,
+      "end": 102.18,
+      "text": "I said, \"Solomon, if we're going to do it, let's go big.",
+      "words": [
+        {
+          "text": "I",
+          "start": 99.54,
+          "end": 99.76
+        },
+        {
+          "text": "said,",
+          "start": 99.76,
+          "end": 99.98
+        },
+        {
+          "text": "\"Solomon,",
+          "start": 99.98,
+          "end": 100.2
+        },
+        {
+          "text": "if",
+          "start": 100.2,
+          "end": 100.42
+        },
+        {
+          "text": "we're",
+          "start": 100.42,
+          "end": 100.64
+        },
+        {
+          "text": "going",
+          "start": 100.64,
+          "end": 100.86
+        },
+        {
+          "text": "to",
+          "start": 100.86,
+          "end": 101.08
+        },
+        {
+          "text": "do",
+          "start": 101.08,
+          "end": 101.3
+        },
+        {
+          "text": "it,",
+          "start": 101.3,
+          "end": 101.52
+        },
+        {
+          "text": "let's",
+          "start": 101.52,
+          "end": 101.74
+        },
+        {
+          "text": "go",
+          "start": 101.74,
+          "end": 101.96
+        },
+        {
+          "text": "big.",
+          "start": 101.96,
+          "end": 102.18
+        }
+      ]
+    },
+    {
+      "id": "cue-22",
+      "start": 102.23,
+      "end": 114.19,
+      "text": "(Applause) I can handle it. How much gold do you have?\"",
+      "words": [
+        {
+          "text": "(Applause)",
+          "start": 102.23,
+          "end": 109.14
+        },
+        {
+          "text": "I",
+          "start": 110.29,
+          "end": 110.68
+        },
+        {
+          "text": "can",
+          "start": 110.68,
+          "end": 111.07
+        },
+        {
+          "text": "handle",
+          "start": 111.07,
+          "end": 111.46
+        },
+        {
+          "text": "it.",
+          "start": 111.46,
+          "end": 111.85
+        },
+        {
+          "text": "How",
+          "start": 111.85,
+          "end": 112.24
+        },
+        {
+          "text": "much",
+          "start": 112.24,
+          "end": 112.63
+        },
+        {
+          "text": "gold",
+          "start": 112.63,
+          "end": 113.02
+        },
+        {
+          "text": "do",
+          "start": 113.02,
+          "end": 113.41
+        },
+        {
+          "text": "you",
+          "start": 113.41,
+          "end": 113.8
+        },
+        {
+          "text": "have?\"",
+          "start": 113.8,
+          "end": 114.19
+        }
+      ]
+    },
+    {
+      "id": "cue-23",
+      "start": 114.22,
+      "end": 120.36,
+      "text": "(Laughter) He said, \"It is not a matter of how much gold I have,",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 114.22,
+          "end": 117.3
+        },
+        {
+          "text": "He",
+          "start": 117.76,
+          "end": 117.96
+        },
+        {
+          "text": "said,",
+          "start": 117.96,
+          "end": 118.16
+        },
+        {
+          "text": "\"It",
+          "start": 118.16,
+          "end": 118.36
+        },
+        {
+          "text": "is",
+          "start": 118.36,
+          "end": 118.56
+        },
+        {
+          "text": "not",
+          "start": 118.56,
+          "end": 118.76
+        },
+        {
+          "text": "a",
+          "start": 118.76,
+          "end": 118.96
+        },
+        {
+          "text": "matter",
+          "start": 118.96,
+          "end": 119.16
+        },
+        {
+          "text": "of",
+          "start": 119.16,
+          "end": 119.36
+        },
+        {
+          "text": "how",
+          "start": 119.36,
+          "end": 119.56
+        },
+        {
+          "text": "much",
+          "start": 119.56,
+          "end": 119.76
+        },
+        {
+          "text": "gold",
+          "start": 119.76,
+          "end": 119.96
+        },
+        {
+          "text": "I",
+          "start": 119.96,
+          "end": 120.16
+        },
+        {
+          "text": "have,",
+          "start": 120.16,
+          "end": 120.36
+        }
+      ]
+    },
+    {
+      "id": "cue-24",
+      "start": 120.39,
+      "end": 122.42,
+      "text": "what matters is your capability of handling.",
+      "words": [
+        {
+          "text": "what",
+          "start": 120.39,
+          "end": 120.68
+        },
+        {
+          "text": "matters",
+          "start": 120.68,
+          "end": 120.97
+        },
+        {
+          "text": "is",
+          "start": 120.97,
+          "end": 121.26
+        },
+        {
+          "text": "your",
+          "start": 121.26,
+          "end": 121.55
+        },
+        {
+          "text": "capability",
+          "start": 121.55,
+          "end": 121.84
+        },
+        {
+          "text": "of",
+          "start": 121.84,
+          "end": 122.13
+        },
+        {
+          "text": "handling.",
+          "start": 122.13,
+          "end": 122.42
+        }
+      ]
+    },
+    {
+      "id": "cue-25",
+      "start": 122.46,
+      "end": 124.71,
+      "text": "We can start with 50 kgs as trial shipment.\"",
+      "words": [
+        {
+          "text": "We",
+          "start": 122.46,
+          "end": 122.71
+        },
+        {
+          "text": "can",
+          "start": 122.71,
+          "end": 122.96
+        },
+        {
+          "text": "start",
+          "start": 122.96,
+          "end": 123.21
+        },
+        {
+          "text": "with",
+          "start": 123.21,
+          "end": 123.46
+        },
+        {
+          "text": "50",
+          "start": 123.46,
+          "end": 123.71
+        },
+        {
+          "text": "kgs",
+          "start": 123.71,
+          "end": 123.96
+        },
+        {
+          "text": "as",
+          "start": 123.96,
+          "end": 124.21
+        },
+        {
+          "text": "trial",
+          "start": 124.21,
+          "end": 124.46
+        },
+        {
+          "text": "shipment.\"",
+          "start": 124.46,
+          "end": 124.71
+        }
+      ]
+    },
+    {
+      "id": "cue-26",
+      "start": 124.71,
+      "end": 126.59,
+      "text": "I said, \"50 kgs?",
+      "words": [
+        {
+          "text": "I",
+          "start": 124.71,
+          "end": 125.18
+        },
+        {
+          "text": "said,",
+          "start": 125.18,
+          "end": 125.65
+        },
+        {
+          "text": "\"50",
+          "start": 125.65,
+          "end": 126.12
+        },
+        {
+          "text": "kgs?",
+          "start": 126.12,
+          "end": 126.59
+        }
+      ]
+    },
+    {
+      "id": "cue-27",
+      "start": 126.6,
+      "end": 128.28,
+      "text": "There's no point doing this at all",
+      "words": [
+        {
+          "text": "There's",
+          "start": 126.6,
+          "end": 126.84
+        },
+        {
+          "text": "no",
+          "start": 126.84,
+          "end": 127.08
+        },
+        {
+          "text": "point",
+          "start": 127.08,
+          "end": 127.32
+        },
+        {
+          "text": "doing",
+          "start": 127.32,
+          "end": 127.56
+        },
+        {
+          "text": "this",
+          "start": 127.56,
+          "end": 127.8
+        },
+        {
+          "text": "at",
+          "start": 127.8,
+          "end": 128.04
+        },
+        {
+          "text": "all",
+          "start": 128.04,
+          "end": 128.28
+        }
+      ]
+    },
+    {
+      "id": "cue-28",
+      "start": 128.27,
+      "end": 130.51,
+      "text": "unless you're shipping at least a metric ton.\"",
+      "words": [
+        {
+          "text": "unless",
+          "start": 128.27,
+          "end": 128.55
+        },
+        {
+          "text": "you're",
+          "start": 128.55,
+          "end": 128.83
+        },
+        {
+          "text": "shipping",
+          "start": 128.83,
+          "end": 129.11
+        },
+        {
+          "text": "at",
+          "start": 129.11,
+          "end": 129.39
+        },
+        {
+          "text": "least",
+          "start": 129.39,
+          "end": 129.67
+        },
+        {
+          "text": "a",
+          "start": 129.67,
+          "end": 129.95
+        },
+        {
+          "text": "metric",
+          "start": 129.95,
+          "end": 130.23
+        },
+        {
+          "text": "ton.\"",
+          "start": 130.23,
+          "end": 130.51
+        }
+      ]
+    },
+    {
+      "id": "cue-29",
+      "start": 130.52,
+      "end": 137.29,
+      "text": "(Laughter) (Applause) He said, \"What do you do for a living?\"",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 130.52,
+          "end": 131.72
+        },
+        {
+          "text": "(Applause)",
+          "start": 131.74,
+          "end": 134.51
+        },
+        {
+          "text": "He",
+          "start": 135.4,
+          "end": 135.61
+        },
+        {
+          "text": "said,",
+          "start": 135.61,
+          "end": 135.82
+        },
+        {
+          "text": "\"What",
+          "start": 135.82,
+          "end": 136.03
+        },
+        {
+          "text": "do",
+          "start": 136.03,
+          "end": 136.24
+        },
+        {
+          "text": "you",
+          "start": 136.24,
+          "end": 136.45
+        },
+        {
+          "text": "do",
+          "start": 136.45,
+          "end": 136.66
+        },
+        {
+          "text": "for",
+          "start": 136.66,
+          "end": 136.87
+        },
+        {
+          "text": "a",
+          "start": 136.87,
+          "end": 137.08
+        },
+        {
+          "text": "living?\"",
+          "start": 137.08,
+          "end": 137.29
+        }
+      ]
+    },
+    {
+      "id": "cue-30",
+      "start": 137.35,
+      "end": 142.62,
+      "text": "(Laughter) I said, \"I'm a hedge fund executive bank manager.\"",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 137.35,
+          "end": 139.2
+        },
+        {
+          "text": "I",
+          "start": 140.28,
+          "end": 140.54
+        },
+        {
+          "text": "said,",
+          "start": 140.54,
+          "end": 140.8
+        },
+        {
+          "text": "\"I'm",
+          "start": 140.8,
+          "end": 141.06
+        },
+        {
+          "text": "a",
+          "start": 141.06,
+          "end": 141.32
+        },
+        {
+          "text": "hedge",
+          "start": 141.32,
+          "end": 141.58
+        },
+        {
+          "text": "fund",
+          "start": 141.58,
+          "end": 141.84
+        },
+        {
+          "text": "executive",
+          "start": 141.84,
+          "end": 142.1
+        },
+        {
+          "text": "bank",
+          "start": 142.1,
+          "end": 142.36
+        },
+        {
+          "text": "manager.\"",
+          "start": 142.36,
+          "end": 142.62
+        }
+      ]
+    },
+    {
+      "id": "cue-31",
+      "start": 142.65,
+      "end": 149.94,
+      "text": "(Laughter) This isn't the first time I've shipped bullion, my friend,",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 142.65,
+          "end": 146.06
+        },
+        {
+          "text": "This",
+          "start": 147.24,
+          "end": 147.51
+        },
+        {
+          "text": "isn't",
+          "start": 147.51,
+          "end": 147.78
+        },
+        {
+          "text": "the",
+          "start": 147.78,
+          "end": 148.05
+        },
+        {
+          "text": "first",
+          "start": 148.05,
+          "end": 148.32
+        },
+        {
+          "text": "time",
+          "start": 148.32,
+          "end": 148.59
+        },
+        {
+          "text": "I've",
+          "start": 148.59,
+          "end": 148.86
+        },
+        {
+          "text": "shipped",
+          "start": 148.86,
+          "end": 149.13
+        },
+        {
+          "text": "bullion,",
+          "start": 149.13,
+          "end": 149.4
+        },
+        {
+          "text": "my",
+          "start": 149.4,
+          "end": 149.67
+        },
+        {
+          "text": "friend,",
+          "start": 149.67,
+          "end": 149.94
+        }
+      ]
+    },
+    {
+      "id": "cue-32",
+      "start": 149.99,
+      "end": 151.64,
+      "text": "no no no.",
+      "words": [
+        {
+          "text": "no",
+          "start": 149.99,
+          "end": 150.54
+        },
+        {
+          "text": "no",
+          "start": 150.54,
+          "end": 151.09
+        },
+        {
+          "text": "no.",
+          "start": 151.09,
+          "end": 151.64
+        }
+      ]
+    },
+    {
+      "id": "cue-33",
+      "start": 152.99,
+      "end": 154.14,
+      "text": "Then I started to panic.",
+      "words": [
+        {
+          "text": "Then",
+          "start": 152.99,
+          "end": 153.22
+        },
+        {
+          "text": "I",
+          "start": 153.22,
+          "end": 153.45
+        },
+        {
+          "text": "started",
+          "start": 153.45,
+          "end": 153.68
+        },
+        {
+          "text": "to",
+          "start": 153.68,
+          "end": 153.91
+        },
+        {
+          "text": "panic.",
+          "start": 153.91,
+          "end": 154.14
+        }
+      ]
+    },
+    {
+      "id": "cue-34",
+      "start": 154.16,
+      "end": 155.77,
+      "text": "I was like, \"Where are you based?\"",
+      "words": [
+        {
+          "text": "I",
+          "start": 154.16,
+          "end": 154.39
+        },
+        {
+          "text": "was",
+          "start": 154.39,
+          "end": 154.62
+        },
+        {
+          "text": "like,",
+          "start": 154.62,
+          "end": 154.85
+        },
+        {
+          "text": "\"Where",
+          "start": 154.85,
+          "end": 155.08
+        },
+        {
+          "text": "are",
+          "start": 155.08,
+          "end": 155.31
+        },
+        {
+          "text": "you",
+          "start": 155.31,
+          "end": 155.54
+        },
+        {
+          "text": "based?\"",
+          "start": 155.54,
+          "end": 155.77
+        }
+      ]
+    },
+    {
+      "id": "cue-35",
+      "start": 155.82,
+      "end": 157.02,
+      "text": "I don't know about you,",
+      "words": [
+        {
+          "text": "I",
+          "start": 155.82,
+          "end": 156.06
+        },
+        {
+          "text": "don't",
+          "start": 156.06,
+          "end": 156.3
+        },
+        {
+          "text": "know",
+          "start": 156.3,
+          "end": 156.54
+        },
+        {
+          "text": "about",
+          "start": 156.54,
+          "end": 156.78
+        },
+        {
+          "text": "you,",
+          "start": 156.78,
+          "end": 157.02
+        }
+      ]
+    },
+    {
+      "id": "cue-36",
+      "start": 157.02,
+      "end": 159.42,
+      "text": "but I think if we're going via the postal service,",
+      "words": [
+        {
+          "text": "but",
+          "start": 157.02,
+          "end": 157.26
+        },
+        {
+          "text": "I",
+          "start": 157.26,
+          "end": 157.5
+        },
+        {
+          "text": "think",
+          "start": 157.5,
+          "end": 157.74
+        },
+        {
+          "text": "if",
+          "start": 157.74,
+          "end": 157.98
+        },
+        {
+          "text": "we're",
+          "start": 157.98,
+          "end": 158.22
+        },
+        {
+          "text": "going",
+          "start": 158.22,
+          "end": 158.46
+        },
+        {
+          "text": "via",
+          "start": 158.46,
+          "end": 158.7
+        },
+        {
+          "text": "the",
+          "start": 158.7,
+          "end": 158.94
+        },
+        {
+          "text": "postal",
+          "start": 158.94,
+          "end": 159.18
+        },
+        {
+          "text": "service,",
+          "start": 159.18,
+          "end": 159.42
+        }
+      ]
+    },
+    {
+      "id": "cue-37",
+      "start": 159.41,
+      "end": 160.73,
+      "text": "it ought to be signed for.",
+      "words": [
+        {
+          "text": "it",
+          "start": 159.41,
+          "end": 159.63
+        },
+        {
+          "text": "ought",
+          "start": 159.63,
+          "end": 159.85
+        },
+        {
+          "text": "to",
+          "start": 159.85,
+          "end": 160.07
+        },
+        {
+          "text": "be",
+          "start": 160.07,
+          "end": 160.29
+        },
+        {
+          "text": "signed",
+          "start": 160.29,
+          "end": 160.51
+        },
+        {
+          "text": "for.",
+          "start": 160.51,
+          "end": 160.73
+        }
+      ]
+    },
+    {
+      "id": "cue-38",
+      "start": 160.75,
+      "end": 165.09,
+      "text": "That's a lot of gold.\" He said, \"It will not be easy to convince my company",
+      "words": [
+        {
+          "text": "That's",
+          "start": 160.75,
+          "end": 160.98
+        },
+        {
+          "text": "a",
+          "start": 160.98,
+          "end": 161.21
+        },
+        {
+          "text": "lot",
+          "start": 161.21,
+          "end": 161.44
+        },
+        {
+          "text": "of",
+          "start": 161.44,
+          "end": 161.67
+        },
+        {
+          "text": "gold.\"",
+          "start": 161.67,
+          "end": 161.9
+        },
+        {
+          "text": "He",
+          "start": 162.67,
+          "end": 162.89
+        },
+        {
+          "text": "said,",
+          "start": 162.89,
+          "end": 163.11
+        },
+        {
+          "text": "\"It",
+          "start": 163.11,
+          "end": 163.33
+        },
+        {
+          "text": "will",
+          "start": 163.33,
+          "end": 163.55
+        },
+        {
+          "text": "not",
+          "start": 163.55,
+          "end": 163.77
+        },
+        {
+          "text": "be",
+          "start": 163.77,
+          "end": 163.99
+        },
+        {
+          "text": "easy",
+          "start": 163.99,
+          "end": 164.21
+        },
+        {
+          "text": "to",
+          "start": 164.21,
+          "end": 164.43
+        },
+        {
+          "text": "convince",
+          "start": 164.43,
+          "end": 164.65
+        },
+        {
+          "text": "my",
+          "start": 164.65,
+          "end": 164.87
+        },
+        {
+          "text": "company",
+          "start": 164.87,
+          "end": 165.09
+        }
+      ]
+    },
+    {
+      "id": "cue-39",
+      "start": 165.13,
+      "end": 169.36,
+      "text": "to do larger quantity shipment.\" I said, \"Solomon, I'm completely with you on this one.",
+      "words": [
+        {
+          "text": "to",
+          "start": 165.13,
+          "end": 165.47
+        },
+        {
+          "text": "do",
+          "start": 165.47,
+          "end": 165.81
+        },
+        {
+          "text": "larger",
+          "start": 165.81,
+          "end": 166.15
+        },
+        {
+          "text": "quantity",
+          "start": 166.15,
+          "end": 166.49
+        },
+        {
+          "text": "shipment.\"",
+          "start": 166.49,
+          "end": 166.83
+        },
+        {
+          "text": "I",
+          "start": 166.86,
+          "end": 167.11
+        },
+        {
+          "text": "said,",
+          "start": 167.11,
+          "end": 167.36
+        },
+        {
+          "text": "\"Solomon,",
+          "start": 167.36,
+          "end": 167.61
+        },
+        {
+          "text": "I'm",
+          "start": 167.61,
+          "end": 167.86
+        },
+        {
+          "text": "completely",
+          "start": 167.86,
+          "end": 168.11
+        },
+        {
+          "text": "with",
+          "start": 168.11,
+          "end": 168.36
+        },
+        {
+          "text": "you",
+          "start": 168.36,
+          "end": 168.61
+        },
+        {
+          "text": "on",
+          "start": 168.61,
+          "end": 168.86
+        },
+        {
+          "text": "this",
+          "start": 168.86,
+          "end": 169.11
+        },
+        {
+          "text": "one.",
+          "start": 169.11,
+          "end": 169.36
+        }
+      ]
+    },
+    {
+      "id": "cue-40",
+      "start": 169.41,
+      "end": 172.92,
+      "text": "I'm putting together a visual for you to take into the board meeting.",
+      "words": [
+        {
+          "text": "I'm",
+          "start": 169.41,
+          "end": 169.68
+        },
+        {
+          "text": "putting",
+          "start": 169.68,
+          "end": 169.95
+        },
+        {
+          "text": "together",
+          "start": 169.95,
+          "end": 170.22
+        },
+        {
+          "text": "a",
+          "start": 170.22,
+          "end": 170.49
+        },
+        {
+          "text": "visual",
+          "start": 170.49,
+          "end": 170.76
+        },
+        {
+          "text": "for",
+          "start": 170.76,
+          "end": 171.03
+        },
+        {
+          "text": "you",
+          "start": 171.03,
+          "end": 171.3
+        },
+        {
+          "text": "to",
+          "start": 171.3,
+          "end": 171.57
+        },
+        {
+          "text": "take",
+          "start": 171.57,
+          "end": 171.84
+        },
+        {
+          "text": "into",
+          "start": 171.84,
+          "end": 172.11
+        },
+        {
+          "text": "the",
+          "start": 172.11,
+          "end": 172.38
+        },
+        {
+          "text": "board",
+          "start": 172.38,
+          "end": 172.65
+        },
+        {
+          "text": "meeting.",
+          "start": 172.65,
+          "end": 172.92
+        }
+      ]
+    },
+    {
+      "id": "cue-41",
+      "start": 172.88,
+      "end": 182.34,
+      "text": "Hold tight.\" (Laughter) This is what I sent Solomon.",
+      "words": [
+        {
+          "text": "Hold",
+          "start": 172.88,
+          "end": 173.47
+        },
+        {
+          "text": "tight.\"",
+          "start": 173.47,
+          "end": 174.06
+        },
+        {
+          "text": "(Laughter)",
+          "start": 174.09,
+          "end": 177.12
+        },
+        {
+          "text": "This",
+          "start": 181.01,
+          "end": 181.23
+        },
+        {
+          "text": "is",
+          "start": 181.23,
+          "end": 181.45
+        },
+        {
+          "text": "what",
+          "start": 181.45,
+          "end": 181.67
+        },
+        {
+          "text": "I",
+          "start": 181.67,
+          "end": 181.89
+        },
+        {
+          "text": "sent",
+          "start": 181.89,
+          "end": 182.11
+        },
+        {
+          "text": "Solomon.",
+          "start": 182.11,
+          "end": 182.34
+        }
+      ]
+    },
+    {
+      "id": "cue-42",
+      "start": 183.21,
+      "end": 194.91,
+      "text": "(Laughter) (Applause) I don't know if we have any statisticians in the house,",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 183.21,
+          "end": 185.33
+        },
+        {
+          "text": "(Applause)",
+          "start": 185.36,
+          "end": 191.27
+        },
+        {
+          "text": "I",
+          "start": 191.83,
+          "end": 192.11
+        },
+        {
+          "text": "don't",
+          "start": 192.11,
+          "end": 192.39
+        },
+        {
+          "text": "know",
+          "start": 192.39,
+          "end": 192.67
+        },
+        {
+          "text": "if",
+          "start": 192.67,
+          "end": 192.95
+        },
+        {
+          "text": "we",
+          "start": 192.95,
+          "end": 193.23
+        },
+        {
+          "text": "have",
+          "start": 193.23,
+          "end": 193.51
+        },
+        {
+          "text": "any",
+          "start": 193.51,
+          "end": 193.79
+        },
+        {
+          "text": "statisticians",
+          "start": 193.79,
+          "end": 194.07
+        },
+        {
+          "text": "in",
+          "start": 194.07,
+          "end": 194.35
+        },
+        {
+          "text": "the",
+          "start": 194.35,
+          "end": 194.63
+        },
+        {
+          "text": "house,",
+          "start": 194.63,
+          "end": 194.91
+        }
+      ]
+    },
+    {
+      "id": "cue-43",
+      "start": 194.91,
+      "end": 196.95,
+      "text": "but there's definitely something going on.",
+      "words": [
+        {
+          "text": "but",
+          "start": 194.91,
+          "end": 195.25
+        },
+        {
+          "text": "there's",
+          "start": 195.25,
+          "end": 195.59
+        },
+        {
+          "text": "definitely",
+          "start": 195.59,
+          "end": 195.93
+        },
+        {
+          "text": "something",
+          "start": 195.93,
+          "end": 196.27
+        },
+        {
+          "text": "going",
+          "start": 196.27,
+          "end": 196.61
+        },
+        {
+          "text": "on.",
+          "start": 196.61,
+          "end": 196.95
+        }
+      ]
+    },
+    {
+      "id": "cue-44",
+      "start": 196.94,
+      "end": 202.41,
+      "text": "(Laughter) I said, \"Solomon, attached to this email you'll find a helpful chart.",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 196.94,
+          "end": 198.57
+        },
+        {
+          "text": "I",
+          "start": 199.17,
+          "end": 199.44
+        },
+        {
+          "text": "said,",
+          "start": 199.44,
+          "end": 199.71
+        },
+        {
+          "text": "\"Solomon,",
+          "start": 199.71,
+          "end": 199.98
+        },
+        {
+          "text": "attached",
+          "start": 199.98,
+          "end": 200.25
+        },
+        {
+          "text": "to",
+          "start": 200.25,
+          "end": 200.52
+        },
+        {
+          "text": "this",
+          "start": 200.52,
+          "end": 200.79
+        },
+        {
+          "text": "email",
+          "start": 200.79,
+          "end": 201.06
+        },
+        {
+          "text": "you'll",
+          "start": 201.06,
+          "end": 201.33
+        },
+        {
+          "text": "find",
+          "start": 201.33,
+          "end": 201.6
+        },
+        {
+          "text": "a",
+          "start": 201.6,
+          "end": 201.87
+        },
+        {
+          "text": "helpful",
+          "start": 201.87,
+          "end": 202.14
+        },
+        {
+          "text": "chart.",
+          "start": 202.14,
+          "end": 202.41
+        }
+      ]
+    },
+    {
+      "id": "cue-45",
+      "start": 203.28,
+      "end": 205.53,
+      "text": "I've had one of my assistants run the numbers.",
+      "words": [
+        {
+          "text": "I've",
+          "start": 203.28,
+          "end": 203.53
+        },
+        {
+          "text": "had",
+          "start": 203.53,
+          "end": 203.78
+        },
+        {
+          "text": "one",
+          "start": 203.78,
+          "end": 204.03
+        },
+        {
+          "text": "of",
+          "start": 204.03,
+          "end": 204.28
+        },
+        {
+          "text": "my",
+          "start": 204.28,
+          "end": 204.53
+        },
+        {
+          "text": "assistants",
+          "start": 204.53,
+          "end": 204.78
+        },
+        {
+          "text": "run",
+          "start": 204.78,
+          "end": 205.03
+        },
+        {
+          "text": "the",
+          "start": 205.03,
+          "end": 205.28
+        },
+        {
+          "text": "numbers.",
+          "start": 205.28,
+          "end": 205.53
+        }
+      ]
+    },
+    {
+      "id": "cue-46",
+      "start": 205.6,
+      "end": 209.75,
+      "text": "(Laughter) We're ready for shipping as much gold as possible.\"",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 205.6,
+          "end": 207.38
+        },
+        {
+          "text": "We're",
+          "start": 207.41,
+          "end": 207.67
+        },
+        {
+          "text": "ready",
+          "start": 207.67,
+          "end": 207.93
+        },
+        {
+          "text": "for",
+          "start": 207.93,
+          "end": 208.19
+        },
+        {
+          "text": "shipping",
+          "start": 208.19,
+          "end": 208.45
+        },
+        {
+          "text": "as",
+          "start": 208.45,
+          "end": 208.71
+        },
+        {
+          "text": "much",
+          "start": 208.71,
+          "end": 208.97
+        },
+        {
+          "text": "gold",
+          "start": 208.97,
+          "end": 209.23
+        },
+        {
+          "text": "as",
+          "start": 209.23,
+          "end": 209.49
+        },
+        {
+          "text": "possible.\"",
+          "start": 209.49,
+          "end": 209.75
+        }
+      ]
+    },
+    {
+      "id": "cue-47",
+      "start": 210.25,
+      "end": 213.33,
+      "text": "There's always a moment where they try to tug your heartstrings,",
+      "words": [
+        {
+          "text": "There's",
+          "start": 210.25,
+          "end": 210.53
+        },
+        {
+          "text": "always",
+          "start": 210.53,
+          "end": 210.81
+        },
+        {
+          "text": "a",
+          "start": 210.81,
+          "end": 211.09
+        },
+        {
+          "text": "moment",
+          "start": 211.09,
+          "end": 211.37
+        },
+        {
+          "text": "where",
+          "start": 211.37,
+          "end": 211.65
+        },
+        {
+          "text": "they",
+          "start": 211.65,
+          "end": 211.93
+        },
+        {
+          "text": "try",
+          "start": 211.93,
+          "end": 212.21
+        },
+        {
+          "text": "to",
+          "start": 212.21,
+          "end": 212.49
+        },
+        {
+          "text": "tug",
+          "start": 212.49,
+          "end": 212.77
+        },
+        {
+          "text": "your",
+          "start": 212.77,
+          "end": 213.05
+        },
+        {
+          "text": "heartstrings,",
+          "start": 213.05,
+          "end": 213.33
+        }
+      ]
+    },
+    {
+      "id": "cue-48",
+      "start": 213.33,
+      "end": 214.65,
+      "text": "and this was it for Solomon.",
+      "words": [
+        {
+          "text": "and",
+          "start": 213.33,
+          "end": 213.55
+        },
+        {
+          "text": "this",
+          "start": 213.55,
+          "end": 213.77
+        },
+        {
+          "text": "was",
+          "start": 213.77,
+          "end": 213.99
+        },
+        {
+          "text": "it",
+          "start": 213.99,
+          "end": 214.21
+        },
+        {
+          "text": "for",
+          "start": 214.21,
+          "end": 214.43
+        },
+        {
+          "text": "Solomon.",
+          "start": 214.43,
+          "end": 214.65
+        }
+      ]
+    },
+    {
+      "id": "cue-49",
+      "start": 214.69,
+      "end": 217.29,
+      "text": "He said, \"I will be so much happy if the deal goes well,",
+      "words": [
+        {
+          "text": "He",
+          "start": 214.69,
+          "end": 214.89
+        },
+        {
+          "text": "said,",
+          "start": 214.89,
+          "end": 215.09
+        },
+        {
+          "text": "\"I",
+          "start": 215.09,
+          "end": 215.29
+        },
+        {
+          "text": "will",
+          "start": 215.29,
+          "end": 215.49
+        },
+        {
+          "text": "be",
+          "start": 215.49,
+          "end": 215.69
+        },
+        {
+          "text": "so",
+          "start": 215.69,
+          "end": 215.89
+        },
+        {
+          "text": "much",
+          "start": 215.89,
+          "end": 216.09
+        },
+        {
+          "text": "happy",
+          "start": 216.09,
+          "end": 216.29
+        },
+        {
+          "text": "if",
+          "start": 216.29,
+          "end": 216.49
+        },
+        {
+          "text": "the",
+          "start": 216.49,
+          "end": 216.69
+        },
+        {
+          "text": "deal",
+          "start": 216.69,
+          "end": 216.89
+        },
+        {
+          "text": "goes",
+          "start": 216.89,
+          "end": 217.09
+        },
+        {
+          "text": "well,",
+          "start": 217.09,
+          "end": 217.29
+        }
+      ]
+    },
+    {
+      "id": "cue-50",
+      "start": 217.35,
+      "end": 219.99,
+      "text": "because I'm going to get a very good commission as well.\"",
+      "words": [
+        {
+          "text": "because",
+          "start": 217.35,
+          "end": 217.59
+        },
+        {
+          "text": "I'm",
+          "start": 217.59,
+          "end": 217.83
+        },
+        {
+          "text": "going",
+          "start": 217.83,
+          "end": 218.07
+        },
+        {
+          "text": "to",
+          "start": 218.07,
+          "end": 218.31
+        },
+        {
+          "text": "get",
+          "start": 218.31,
+          "end": 218.55
+        },
+        {
+          "text": "a",
+          "start": 218.55,
+          "end": 218.79
+        },
+        {
+          "text": "very",
+          "start": 218.79,
+          "end": 219.03
+        },
+        {
+          "text": "good",
+          "start": 219.03,
+          "end": 219.27
+        },
+        {
+          "text": "commission",
+          "start": 219.27,
+          "end": 219.51
+        },
+        {
+          "text": "as",
+          "start": 219.51,
+          "end": 219.75
+        },
+        {
+          "text": "well.\"",
+          "start": 219.75,
+          "end": 219.99
+        }
+      ]
+    },
+    {
+      "id": "cue-51",
+      "start": 220.04,
+      "end": 223.4,
+      "text": "And I said, \"That's amazing, What are you going to spend your cut on?\"",
+      "words": [
+        {
+          "text": "And",
+          "start": 220.04,
+          "end": 220.28
+        },
+        {
+          "text": "I",
+          "start": 220.28,
+          "end": 220.52
+        },
+        {
+          "text": "said,",
+          "start": 220.52,
+          "end": 220.76
+        },
+        {
+          "text": "\"That's",
+          "start": 220.76,
+          "end": 221.0
+        },
+        {
+          "text": "amazing,",
+          "start": 221.0,
+          "end": 221.24
+        },
+        {
+          "text": "What",
+          "start": 221.24,
+          "end": 221.48
+        },
+        {
+          "text": "are",
+          "start": 221.48,
+          "end": 221.72
+        },
+        {
+          "text": "you",
+          "start": 221.72,
+          "end": 221.96
+        },
+        {
+          "text": "going",
+          "start": 221.96,
+          "end": 222.2
+        },
+        {
+          "text": "to",
+          "start": 222.2,
+          "end": 222.44
+        },
+        {
+          "text": "spend",
+          "start": 222.44,
+          "end": 222.68
+        },
+        {
+          "text": "your",
+          "start": 222.68,
+          "end": 222.92
+        },
+        {
+          "text": "cut",
+          "start": 222.92,
+          "end": 223.16
+        },
+        {
+          "text": "on?\"",
+          "start": 223.16,
+          "end": 223.4
+        }
+      ]
+    },
+    {
+      "id": "cue-52",
+      "start": 223.36,
+      "end": 225.52,
+      "text": "And he said, \"On RealEstate, what about you?\"",
+      "words": [
+        {
+          "text": "And",
+          "start": 223.36,
+          "end": 223.63
+        },
+        {
+          "text": "he",
+          "start": 223.63,
+          "end": 223.9
+        },
+        {
+          "text": "said,",
+          "start": 223.9,
+          "end": 224.17
+        },
+        {
+          "text": "\"On",
+          "start": 224.17,
+          "end": 224.44
+        },
+        {
+          "text": "RealEstate,",
+          "start": 224.44,
+          "end": 224.71
+        },
+        {
+          "text": "what",
+          "start": 224.71,
+          "end": 224.98
+        },
+        {
+          "text": "about",
+          "start": 224.98,
+          "end": 225.25
+        },
+        {
+          "text": "you?\"",
+          "start": 225.25,
+          "end": 225.52
+        }
+      ]
+    },
+    {
+      "id": "cue-53",
+      "start": 226.13,
+      "end": 229.17,
+      "text": "I thought about it for a long time.",
+      "words": [
+        {
+          "text": "I",
+          "start": 226.13,
+          "end": 226.51
+        },
+        {
+          "text": "thought",
+          "start": 226.51,
+          "end": 226.89
+        },
+        {
+          "text": "about",
+          "start": 226.89,
+          "end": 227.27
+        },
+        {
+          "text": "it",
+          "start": 227.27,
+          "end": 227.65
+        },
+        {
+          "text": "for",
+          "start": 227.65,
+          "end": 228.03
+        },
+        {
+          "text": "a",
+          "start": 228.03,
+          "end": 228.41
+        },
+        {
+          "text": "long",
+          "start": 228.41,
+          "end": 228.79
+        },
+        {
+          "text": "time.",
+          "start": 228.79,
+          "end": 229.17
+        }
+      ]
+    },
+    {
+      "id": "cue-54",
+      "start": 230.93,
+      "end": 232.58,
+      "text": "And I said, \"One word;",
+      "words": [
+        {
+          "text": "And",
+          "start": 230.93,
+          "end": 231.26
+        },
+        {
+          "text": "I",
+          "start": 231.26,
+          "end": 231.59
+        },
+        {
+          "text": "said,",
+          "start": 231.59,
+          "end": 231.92
+        },
+        {
+          "text": "\"One",
+          "start": 231.92,
+          "end": 232.25
+        },
+        {
+          "text": "word;",
+          "start": 232.25,
+          "end": 232.58
+        }
+      ]
+    },
+    {
+      "id": "cue-55",
+      "start": 233.63,
+      "end": 241.4,
+      "text": "Hummus.\" (Laughter) \"It's going places.",
+      "words": [
+        {
+          "text": "Hummus.\"",
+          "start": 233.63,
+          "end": 234.78
+        },
+        {
+          "text": "(Laughter)",
+          "start": 234.81,
+          "end": 237.99
+        },
+        {
+          "text": "\"It's",
+          "start": 240.26,
+          "end": 240.64
+        },
+        {
+          "text": "going",
+          "start": 240.64,
+          "end": 241.02
+        },
+        {
+          "text": "places.",
+          "start": 241.02,
+          "end": 241.4
+        }
+      ]
+    },
+    {
+      "id": "cue-56",
+      "start": 241.44,
+      "end": 245.01,
+      "text": "(Laughter) I was in Sainsbury's the other day",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 241.44,
+          "end": 242.62
+        },
+        {
+          "text": "I",
+          "start": 243.4,
+          "end": 243.63
+        },
+        {
+          "text": "was",
+          "start": 243.63,
+          "end": 243.86
+        },
+        {
+          "text": "in",
+          "start": 243.86,
+          "end": 244.09
+        },
+        {
+          "text": "Sainsbury's",
+          "start": 244.09,
+          "end": 244.32
+        },
+        {
+          "text": "the",
+          "start": 244.32,
+          "end": 244.55
+        },
+        {
+          "text": "other",
+          "start": 244.55,
+          "end": 244.78
+        },
+        {
+          "text": "day",
+          "start": 244.78,
+          "end": 245.01
+        }
+      ]
+    },
+    {
+      "id": "cue-57",
+      "start": 245.06,
+      "end": 247.09,
+      "text": "and there were like 30 different varieties.",
+      "words": [
+        {
+          "text": "and",
+          "start": 245.06,
+          "end": 245.35
+        },
+        {
+          "text": "there",
+          "start": 245.35,
+          "end": 245.64
+        },
+        {
+          "text": "were",
+          "start": 245.64,
+          "end": 245.93
+        },
+        {
+          "text": "like",
+          "start": 245.93,
+          "end": 246.22
+        },
+        {
+          "text": "30",
+          "start": 246.22,
+          "end": 246.51
+        },
+        {
+          "text": "different",
+          "start": 246.51,
+          "end": 246.8
+        },
+        {
+          "text": "varieties.",
+          "start": 246.8,
+          "end": 247.09
+        }
+      ]
+    },
+    {
+      "id": "cue-58",
+      "start": 247.14,
+      "end": 250.0,
+      "text": "Also you can cut up carrots, and you can dip them.",
+      "words": [
+        {
+          "text": "Also",
+          "start": 247.14,
+          "end": 247.4
+        },
+        {
+          "text": "you",
+          "start": 247.4,
+          "end": 247.66
+        },
+        {
+          "text": "can",
+          "start": 247.66,
+          "end": 247.92
+        },
+        {
+          "text": "cut",
+          "start": 247.92,
+          "end": 248.18
+        },
+        {
+          "text": "up",
+          "start": 248.18,
+          "end": 248.44
+        },
+        {
+          "text": "carrots,",
+          "start": 248.44,
+          "end": 248.7
+        },
+        {
+          "text": "and",
+          "start": 248.7,
+          "end": 248.96
+        },
+        {
+          "text": "you",
+          "start": 248.96,
+          "end": 249.22
+        },
+        {
+          "text": "can",
+          "start": 249.22,
+          "end": 249.48
+        },
+        {
+          "text": "dip",
+          "start": 249.48,
+          "end": 249.74
+        },
+        {
+          "text": "them.",
+          "start": 249.74,
+          "end": 250.0
+        }
+      ]
+    },
+    {
+      "id": "cue-59",
+      "start": 250.06,
+      "end": 251.92,
+      "text": "Have you ever done that, Solomon?\"",
+      "words": [
+        {
+          "text": "Have",
+          "start": 250.06,
+          "end": 250.37
+        },
+        {
+          "text": "you",
+          "start": 250.37,
+          "end": 250.68
+        },
+        {
+          "text": "ever",
+          "start": 250.68,
+          "end": 250.99
+        },
+        {
+          "text": "done",
+          "start": 250.99,
+          "end": 251.3
+        },
+        {
+          "text": "that,",
+          "start": 251.3,
+          "end": 251.61
+        },
+        {
+          "text": "Solomon?\"",
+          "start": 251.61,
+          "end": 251.92
+        }
+      ]
+    },
+    {
+      "id": "cue-60",
+      "start": 251.94,
+      "end": 255.98,
+      "text": "(Laughter) He said, \"I have to go bed now.\"",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 251.94,
+          "end": 253.94
+        },
+        {
+          "text": "He",
+          "start": 254.46,
+          "end": 254.65
+        },
+        {
+          "text": "said,",
+          "start": 254.65,
+          "end": 254.84
+        },
+        {
+          "text": "\"I",
+          "start": 254.84,
+          "end": 255.03
+        },
+        {
+          "text": "have",
+          "start": 255.03,
+          "end": 255.22
+        },
+        {
+          "text": "to",
+          "start": 255.22,
+          "end": 255.41
+        },
+        {
+          "text": "go",
+          "start": 255.41,
+          "end": 255.6
+        },
+        {
+          "text": "bed",
+          "start": 255.6,
+          "end": 255.79
+        },
+        {
+          "text": "now.\"",
+          "start": 255.79,
+          "end": 255.98
+        }
+      ]
+    },
+    {
+      "id": "cue-61",
+      "start": 256.01,
+      "end": 263.18,
+      "text": "(Laughter) (Applause) \"Till morrow.",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 256.01,
+          "end": 258.89
+        },
+        {
+          "text": "(Applause)",
+          "start": 258.92,
+          "end": 261.78
+        },
+        {
+          "text": "\"Till",
+          "start": 261.8,
+          "end": 262.49
+        },
+        {
+          "text": "morrow.",
+          "start": 262.49,
+          "end": 263.18
+        }
+      ]
+    },
+    {
+      "id": "cue-62",
+      "start": 264.41,
+      "end": 266.96,
+      "text": "Have sweet dream.\" I didn't know what to say!",
+      "words": [
+        {
+          "text": "Have",
+          "start": 264.41,
+          "end": 264.79
+        },
+        {
+          "text": "sweet",
+          "start": 264.79,
+          "end": 265.17
+        },
+        {
+          "text": "dream.\"",
+          "start": 265.17,
+          "end": 265.55
+        },
+        {
+          "text": "I",
+          "start": 265.58,
+          "end": 265.81
+        },
+        {
+          "text": "didn't",
+          "start": 265.81,
+          "end": 266.04
+        },
+        {
+          "text": "know",
+          "start": 266.04,
+          "end": 266.27
+        },
+        {
+          "text": "what",
+          "start": 266.27,
+          "end": 266.5
+        },
+        {
+          "text": "to",
+          "start": 266.5,
+          "end": 266.73
+        },
+        {
+          "text": "say!",
+          "start": 266.73,
+          "end": 266.96
+        }
+      ]
+    },
+    {
+      "id": "cue-63",
+      "start": 267.64,
+      "end": 270.51,
+      "text": "I said, \"Bonsoir my golden nugget, bonsoir.\"",
+      "words": [
+        {
+          "text": "I",
+          "start": 267.64,
+          "end": 268.05
+        },
+        {
+          "text": "said,",
+          "start": 268.05,
+          "end": 268.46
+        },
+        {
+          "text": "\"Bonsoir",
+          "start": 268.46,
+          "end": 268.87
+        },
+        {
+          "text": "my",
+          "start": 268.87,
+          "end": 269.28
+        },
+        {
+          "text": "golden",
+          "start": 269.28,
+          "end": 269.69
+        },
+        {
+          "text": "nugget,",
+          "start": 269.69,
+          "end": 270.1
+        },
+        {
+          "text": "bonsoir.\"",
+          "start": 270.1,
+          "end": 270.51
+        }
+      ]
+    },
+    {
+      "id": "cue-64",
+      "start": 270.55,
+      "end": 276.44,
+      "text": "(Laughter) Guys, you have to understand, this had been going for, like, weeks,",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 270.55,
+          "end": 272.85
+        },
+        {
+          "text": "Guys,",
+          "start": 273.32,
+          "end": 273.58
+        },
+        {
+          "text": "you",
+          "start": 273.58,
+          "end": 273.84
+        },
+        {
+          "text": "have",
+          "start": 273.84,
+          "end": 274.1
+        },
+        {
+          "text": "to",
+          "start": 274.1,
+          "end": 274.36
+        },
+        {
+          "text": "understand,",
+          "start": 274.36,
+          "end": 274.62
+        },
+        {
+          "text": "this",
+          "start": 274.62,
+          "end": 274.88
+        },
+        {
+          "text": "had",
+          "start": 274.88,
+          "end": 275.14
+        },
+        {
+          "text": "been",
+          "start": 275.14,
+          "end": 275.4
+        },
+        {
+          "text": "going",
+          "start": 275.4,
+          "end": 275.66
+        },
+        {
+          "text": "for,",
+          "start": 275.66,
+          "end": 275.92
+        },
+        {
+          "text": "like,",
+          "start": 275.92,
+          "end": 276.18
+        },
+        {
+          "text": "weeks,",
+          "start": 276.18,
+          "end": 276.44
+        }
+      ]
+    },
+    {
+      "id": "cue-65",
+      "start": 276.5,
+      "end": 278.66,
+      "text": "albeit hitherto the greatest weeks of my life,",
+      "words": [
+        {
+          "text": "albeit",
+          "start": 276.5,
+          "end": 276.77
+        },
+        {
+          "text": "hitherto",
+          "start": 276.77,
+          "end": 277.04
+        },
+        {
+          "text": "the",
+          "start": 277.04,
+          "end": 277.31
+        },
+        {
+          "text": "greatest",
+          "start": 277.31,
+          "end": 277.58
+        },
+        {
+          "text": "weeks",
+          "start": 277.58,
+          "end": 277.85
+        },
+        {
+          "text": "of",
+          "start": 277.85,
+          "end": 278.12
+        },
+        {
+          "text": "my",
+          "start": 278.12,
+          "end": 278.39
+        },
+        {
+          "text": "life,",
+          "start": 278.39,
+          "end": 278.66
+        }
+      ]
+    },
+    {
+      "id": "cue-66",
+      "start": 278.67,
+      "end": 280.29,
+      "text": "but I had to knock it on the head.",
+      "words": [
+        {
+          "text": "but",
+          "start": 278.67,
+          "end": 278.85
+        },
+        {
+          "text": "I",
+          "start": 278.85,
+          "end": 279.03
+        },
+        {
+          "text": "had",
+          "start": 279.03,
+          "end": 279.21
+        },
+        {
+          "text": "to",
+          "start": 279.21,
+          "end": 279.39
+        },
+        {
+          "text": "knock",
+          "start": 279.39,
+          "end": 279.57
+        },
+        {
+          "text": "it",
+          "start": 279.57,
+          "end": 279.75
+        },
+        {
+          "text": "on",
+          "start": 279.75,
+          "end": 279.93
+        },
+        {
+          "text": "the",
+          "start": 279.93,
+          "end": 280.11
+        },
+        {
+          "text": "head.",
+          "start": 280.11,
+          "end": 280.29
+        }
+      ]
+    },
+    {
+      "id": "cue-67",
+      "start": 280.32,
+      "end": 281.92,
+      "text": "It was getting a bit out of hand.",
+      "words": [
+        {
+          "text": "It",
+          "start": 280.32,
+          "end": 280.52
+        },
+        {
+          "text": "was",
+          "start": 280.52,
+          "end": 280.72
+        },
+        {
+          "text": "getting",
+          "start": 280.72,
+          "end": 280.92
+        },
+        {
+          "text": "a",
+          "start": 280.92,
+          "end": 281.12
+        },
+        {
+          "text": "bit",
+          "start": 281.12,
+          "end": 281.32
+        },
+        {
+          "text": "out",
+          "start": 281.32,
+          "end": 281.52
+        },
+        {
+          "text": "of",
+          "start": 281.52,
+          "end": 281.72
+        },
+        {
+          "text": "hand.",
+          "start": 281.72,
+          "end": 281.92
+        }
+      ]
+    },
+    {
+      "id": "cue-68",
+      "start": 281.93,
+      "end": 284.93,
+      "text": "Friends were saying, \"James, do you want to come for a drink?\"",
+      "words": [
+        {
+          "text": "Friends",
+          "start": 281.93,
+          "end": 282.18
+        },
+        {
+          "text": "were",
+          "start": 282.18,
+          "end": 282.43
+        },
+        {
+          "text": "saying,",
+          "start": 282.43,
+          "end": 282.68
+        },
+        {
+          "text": "\"James,",
+          "start": 282.68,
+          "end": 282.93
+        },
+        {
+          "text": "do",
+          "start": 282.93,
+          "end": 283.18
+        },
+        {
+          "text": "you",
+          "start": 283.18,
+          "end": 283.43
+        },
+        {
+          "text": "want",
+          "start": 283.43,
+          "end": 283.68
+        },
+        {
+          "text": "to",
+          "start": 283.68,
+          "end": 283.93
+        },
+        {
+          "text": "come",
+          "start": 283.93,
+          "end": 284.18
+        },
+        {
+          "text": "for",
+          "start": 284.18,
+          "end": 284.43
+        },
+        {
+          "text": "a",
+          "start": 284.43,
+          "end": 284.68
+        },
+        {
+          "text": "drink?\"",
+          "start": 284.68,
+          "end": 284.93
+        }
+      ]
+    },
+    {
+      "id": "cue-69",
+      "start": 284.9,
+      "end": 287.9,
+      "text": "I was like, \"I can't, I'm expecting an email about some gold.\"",
+      "words": [
+        {
+          "text": "I",
+          "start": 284.9,
+          "end": 285.15
+        },
+        {
+          "text": "was",
+          "start": 285.15,
+          "end": 285.4
+        },
+        {
+          "text": "like,",
+          "start": 285.4,
+          "end": 285.65
+        },
+        {
+          "text": "\"I",
+          "start": 285.65,
+          "end": 285.9
+        },
+        {
+          "text": "can't,",
+          "start": 285.9,
+          "end": 286.15
+        },
+        {
+          "text": "I'm",
+          "start": 286.15,
+          "end": 286.4
+        },
+        {
+          "text": "expecting",
+          "start": 286.4,
+          "end": 286.65
+        },
+        {
+          "text": "an",
+          "start": 286.65,
+          "end": 286.9
+        },
+        {
+          "text": "email",
+          "start": 286.9,
+          "end": 287.15
+        },
+        {
+          "text": "about",
+          "start": 287.15,
+          "end": 287.4
+        },
+        {
+          "text": "some",
+          "start": 287.4,
+          "end": 287.65
+        },
+        {
+          "text": "gold.\"",
+          "start": 287.65,
+          "end": 287.9
+        }
+      ]
+    },
+    {
+      "id": "cue-70",
+      "start": 287.94,
+      "end": 290.03,
+      "text": "So I figured I had to knock it on the head.",
+      "words": [
+        {
+          "text": "So",
+          "start": 287.94,
+          "end": 288.13
+        },
+        {
+          "text": "I",
+          "start": 288.13,
+          "end": 288.32
+        },
+        {
+          "text": "figured",
+          "start": 288.32,
+          "end": 288.51
+        },
+        {
+          "text": "I",
+          "start": 288.51,
+          "end": 288.7
+        },
+        {
+          "text": "had",
+          "start": 288.7,
+          "end": 288.89
+        },
+        {
+          "text": "to",
+          "start": 288.89,
+          "end": 289.08
+        },
+        {
+          "text": "knock",
+          "start": 289.08,
+          "end": 289.27
+        },
+        {
+          "text": "it",
+          "start": 289.27,
+          "end": 289.46
+        },
+        {
+          "text": "on",
+          "start": 289.46,
+          "end": 289.65
+        },
+        {
+          "text": "the",
+          "start": 289.65,
+          "end": 289.84
+        },
+        {
+          "text": "head.",
+          "start": 289.84,
+          "end": 290.03
+        }
+      ]
+    },
+    {
+      "id": "cue-71",
+      "start": 290.01,
+      "end": 292.08,
+      "text": "I had to take it to a ridiculous conclusion.",
+      "words": [
+        {
+          "text": "I",
+          "start": 290.01,
+          "end": 290.24
+        },
+        {
+          "text": "had",
+          "start": 290.24,
+          "end": 290.47
+        },
+        {
+          "text": "to",
+          "start": 290.47,
+          "end": 290.7
+        },
+        {
+          "text": "take",
+          "start": 290.7,
+          "end": 290.93
+        },
+        {
+          "text": "it",
+          "start": 290.93,
+          "end": 291.16
+        },
+        {
+          "text": "to",
+          "start": 291.16,
+          "end": 291.39
+        },
+        {
+          "text": "a",
+          "start": 291.39,
+          "end": 291.62
+        },
+        {
+          "text": "ridiculous",
+          "start": 291.62,
+          "end": 291.85
+        },
+        {
+          "text": "conclusion.",
+          "start": 291.85,
+          "end": 292.08
+        }
+      ]
+    },
+    {
+      "id": "cue-72",
+      "start": 292.09,
+      "end": 293.24,
+      "text": "So I concocted a plan.",
+      "words": [
+        {
+          "text": "So",
+          "start": 292.09,
+          "end": 292.32
+        },
+        {
+          "text": "I",
+          "start": 292.32,
+          "end": 292.55
+        },
+        {
+          "text": "concocted",
+          "start": 292.55,
+          "end": 292.78
+        },
+        {
+          "text": "a",
+          "start": 292.78,
+          "end": 293.01
+        },
+        {
+          "text": "plan.",
+          "start": 293.01,
+          "end": 293.24
+        }
+      ]
+    },
+    {
+      "id": "cue-73",
+      "start": 293.27,
+      "end": 295.65,
+      "text": "I said, \"Solomon, I'm concerned about security.",
+      "words": [
+        {
+          "text": "I",
+          "start": 293.27,
+          "end": 293.61
+        },
+        {
+          "text": "said,",
+          "start": 293.61,
+          "end": 293.95
+        },
+        {
+          "text": "\"Solomon,",
+          "start": 293.95,
+          "end": 294.29
+        },
+        {
+          "text": "I'm",
+          "start": 294.29,
+          "end": 294.63
+        },
+        {
+          "text": "concerned",
+          "start": 294.63,
+          "end": 294.97
+        },
+        {
+          "text": "about",
+          "start": 294.97,
+          "end": 295.31
+        },
+        {
+          "text": "security.",
+          "start": 295.31,
+          "end": 295.65
+        }
+      ]
+    },
+    {
+      "id": "cue-74",
+      "start": 295.64,
+      "end": 296.84,
+      "text": "When we email each other,",
+      "words": [
+        {
+          "text": "When",
+          "start": 295.64,
+          "end": 295.88
+        },
+        {
+          "text": "we",
+          "start": 295.88,
+          "end": 296.12
+        },
+        {
+          "text": "email",
+          "start": 296.12,
+          "end": 296.36
+        },
+        {
+          "text": "each",
+          "start": 296.36,
+          "end": 296.6
+        },
+        {
+          "text": "other,",
+          "start": 296.6,
+          "end": 296.84
+        }
+      ]
+    },
+    {
+      "id": "cue-75",
+      "start": 296.88,
+      "end": 298.02,
+      "text": "we need to use a code.\"",
+      "words": [
+        {
+          "text": "we",
+          "start": 296.88,
+          "end": 297.07
+        },
+        {
+          "text": "need",
+          "start": 297.07,
+          "end": 297.26
+        },
+        {
+          "text": "to",
+          "start": 297.26,
+          "end": 297.45
+        },
+        {
+          "text": "use",
+          "start": 297.45,
+          "end": 297.64
+        },
+        {
+          "text": "a",
+          "start": 297.64,
+          "end": 297.83
+        },
+        {
+          "text": "code.\"",
+          "start": 297.83,
+          "end": 298.02
+        }
+      ]
+    },
+    {
+      "id": "cue-76",
+      "start": 300.58,
+      "end": 301.72,
+      "text": "And he agreed.",
+      "words": [
+        {
+          "text": "And",
+          "start": 300.58,
+          "end": 300.96
+        },
+        {
+          "text": "he",
+          "start": 300.96,
+          "end": 301.34
+        },
+        {
+          "text": "agreed.",
+          "start": 301.34,
+          "end": 301.72
+        }
+      ]
+    },
+    {
+      "id": "cue-77",
+      "start": 301.76,
+      "end": 306.05,
+      "text": "(Laughter) I said, \"Solomon, I spent all night coming up with this code",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 301.76,
+          "end": 303.14
+        },
+        {
+          "text": "I",
+          "start": 303.17,
+          "end": 303.41
+        },
+        {
+          "text": "said,",
+          "start": 303.41,
+          "end": 303.65
+        },
+        {
+          "text": "\"Solomon,",
+          "start": 303.65,
+          "end": 303.89
+        },
+        {
+          "text": "I",
+          "start": 303.89,
+          "end": 304.13
+        },
+        {
+          "text": "spent",
+          "start": 304.13,
+          "end": 304.37
+        },
+        {
+          "text": "all",
+          "start": 304.37,
+          "end": 304.61
+        },
+        {
+          "text": "night",
+          "start": 304.61,
+          "end": 304.85
+        },
+        {
+          "text": "coming",
+          "start": 304.85,
+          "end": 305.09
+        },
+        {
+          "text": "up",
+          "start": 305.09,
+          "end": 305.33
+        },
+        {
+          "text": "with",
+          "start": 305.33,
+          "end": 305.57
+        },
+        {
+          "text": "this",
+          "start": 305.57,
+          "end": 305.81
+        },
+        {
+          "text": "code",
+          "start": 305.81,
+          "end": 306.05
+        }
+      ]
+    },
+    {
+      "id": "cue-78",
+      "start": 306.08,
+      "end": 308.16,
+      "text": "we need to use in all further correspondence:",
+      "words": [
+        {
+          "text": "we",
+          "start": 306.08,
+          "end": 306.34
+        },
+        {
+          "text": "need",
+          "start": 306.34,
+          "end": 306.6
+        },
+        {
+          "text": "to",
+          "start": 306.6,
+          "end": 306.86
+        },
+        {
+          "text": "use",
+          "start": 306.86,
+          "end": 307.12
+        },
+        {
+          "text": "in",
+          "start": 307.12,
+          "end": 307.38
+        },
+        {
+          "text": "all",
+          "start": 307.38,
+          "end": 307.64
+        },
+        {
+          "text": "further",
+          "start": 307.64,
+          "end": 307.9
+        },
+        {
+          "text": "correspondence:",
+          "start": 307.9,
+          "end": 308.16
+        }
+      ]
+    },
+    {
+      "id": "cue-79",
+      "start": 308.21,
+      "end": 311.96,
+      "text": "Lawyer: Gummy Bear.",
+      "words": [
+        {
+          "text": "Lawyer:",
+          "start": 308.21,
+          "end": 309.46
+        },
+        {
+          "text": "Gummy",
+          "start": 309.46,
+          "end": 310.71
+        },
+        {
+          "text": "Bear.",
+          "start": 310.71,
+          "end": 311.96
+        }
+      ]
+    },
+    {
+      "id": "cue-80",
+      "start": 313.56,
+      "end": 315.42,
+      "text": "Bank: Cream Egg.",
+      "words": [
+        {
+          "text": "Bank:",
+          "start": 313.56,
+          "end": 314.18
+        },
+        {
+          "text": "Cream",
+          "start": 314.18,
+          "end": 314.8
+        },
+        {
+          "text": "Egg.",
+          "start": 314.8,
+          "end": 315.42
+        }
+      ]
+    },
+    {
+      "id": "cue-81",
+      "start": 316.0,
+      "end": 318.17,
+      "text": "Legal: Fizzy Cola Bottle. Claim: Peanut M&Ms.",
+      "words": [
+        {
+          "text": "Legal:",
+          "start": 316.0,
+          "end": 316.31
+        },
+        {
+          "text": "Fizzy",
+          "start": 316.31,
+          "end": 316.62
+        },
+        {
+          "text": "Cola",
+          "start": 316.62,
+          "end": 316.93
+        },
+        {
+          "text": "Bottle.",
+          "start": 316.93,
+          "end": 317.24
+        },
+        {
+          "text": "Claim:",
+          "start": 317.24,
+          "end": 317.55
+        },
+        {
+          "text": "Peanut",
+          "start": 317.55,
+          "end": 317.86
+        },
+        {
+          "text": "M&Ms.",
+          "start": 317.86,
+          "end": 318.17
+        }
+      ]
+    },
+    {
+      "id": "cue-82",
+      "start": 318.19,
+      "end": 320.11,
+      "text": "Documents: Jelly Beans.",
+      "words": [
+        {
+          "text": "Documents:",
+          "start": 318.19,
+          "end": 318.83
+        },
+        {
+          "text": "Jelly",
+          "start": 318.83,
+          "end": 319.47
+        },
+        {
+          "text": "Beans.",
+          "start": 319.47,
+          "end": 320.11
+        }
+      ]
+    },
+    {
+      "id": "cue-83",
+      "start": 320.14,
+      "end": 322.3,
+      "text": "Western Union: A Giant Gummy Lizard.\"",
+      "words": [
+        {
+          "text": "Western",
+          "start": 320.14,
+          "end": 320.5
+        },
+        {
+          "text": "Union:",
+          "start": 320.5,
+          "end": 320.86
+        },
+        {
+          "text": "A",
+          "start": 320.86,
+          "end": 321.22
+        },
+        {
+          "text": "Giant",
+          "start": 321.22,
+          "end": 321.58
+        },
+        {
+          "text": "Gummy",
+          "start": 321.58,
+          "end": 321.94
+        },
+        {
+          "text": "Lizard.\"",
+          "start": 321.94,
+          "end": 322.3
+        }
+      ]
+    },
+    {
+      "id": "cue-84",
+      "start": 322.31,
+      "end": 326.67,
+      "text": "(Laughter) I knew these were all words they use, right?",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 322.31,
+          "end": 324.14
+        },
+        {
+          "text": "I",
+          "start": 324.6,
+          "end": 324.83
+        },
+        {
+          "text": "knew",
+          "start": 324.83,
+          "end": 325.06
+        },
+        {
+          "text": "these",
+          "start": 325.06,
+          "end": 325.29
+        },
+        {
+          "text": "were",
+          "start": 325.29,
+          "end": 325.52
+        },
+        {
+          "text": "all",
+          "start": 325.52,
+          "end": 325.75
+        },
+        {
+          "text": "words",
+          "start": 325.75,
+          "end": 325.98
+        },
+        {
+          "text": "they",
+          "start": 325.98,
+          "end": 326.21
+        },
+        {
+          "text": "use,",
+          "start": 326.21,
+          "end": 326.44
+        },
+        {
+          "text": "right?",
+          "start": 326.44,
+          "end": 326.67
+        }
+      ]
+    },
+    {
+      "id": "cue-85",
+      "start": 326.96,
+      "end": 330.66,
+      "text": "I said, \"Please call me Kitkat in all further correspondence.\"",
+      "words": [
+        {
+          "text": "I",
+          "start": 326.96,
+          "end": 327.33
+        },
+        {
+          "text": "said,",
+          "start": 327.33,
+          "end": 327.7
+        },
+        {
+          "text": "\"Please",
+          "start": 327.7,
+          "end": 328.07
+        },
+        {
+          "text": "call",
+          "start": 328.07,
+          "end": 328.44
+        },
+        {
+          "text": "me",
+          "start": 328.44,
+          "end": 328.81
+        },
+        {
+          "text": "Kitkat",
+          "start": 328.81,
+          "end": 329.18
+        },
+        {
+          "text": "in",
+          "start": 329.18,
+          "end": 329.55
+        },
+        {
+          "text": "all",
+          "start": 329.55,
+          "end": 329.92
+        },
+        {
+          "text": "further",
+          "start": 329.92,
+          "end": 330.29
+        },
+        {
+          "text": "correspondence.\"",
+          "start": 330.29,
+          "end": 330.66
+        }
+      ]
+    },
+    {
+      "id": "cue-86",
+      "start": 330.66,
+      "end": 338.4,
+      "text": "(Laughter) I didn't hear back. I thought, I've gone too far.",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 330.66,
+          "end": 334.72
+        },
+        {
+          "text": "I",
+          "start": 336.0,
+          "end": 336.24
+        },
+        {
+          "text": "didn't",
+          "start": 336.24,
+          "end": 336.48
+        },
+        {
+          "text": "hear",
+          "start": 336.48,
+          "end": 336.72
+        },
+        {
+          "text": "back.",
+          "start": 336.72,
+          "end": 336.96
+        },
+        {
+          "text": "I",
+          "start": 336.96,
+          "end": 337.2
+        },
+        {
+          "text": "thought,",
+          "start": 337.2,
+          "end": 337.44
+        },
+        {
+          "text": "I've",
+          "start": 337.44,
+          "end": 337.68
+        },
+        {
+          "text": "gone",
+          "start": 337.68,
+          "end": 337.92
+        },
+        {
+          "text": "too",
+          "start": 337.92,
+          "end": 338.16
+        },
+        {
+          "text": "far.",
+          "start": 338.16,
+          "end": 338.4
+        }
+      ]
+    },
+    {
+      "id": "cue-87",
+      "start": 338.45,
+      "end": 340.76,
+      "text": "I've gone too far. So I had to backpedal a little.",
+      "words": [
+        {
+          "text": "I've",
+          "start": 338.45,
+          "end": 338.66
+        },
+        {
+          "text": "gone",
+          "start": 338.66,
+          "end": 338.87
+        },
+        {
+          "text": "too",
+          "start": 338.87,
+          "end": 339.08
+        },
+        {
+          "text": "far.",
+          "start": 339.08,
+          "end": 339.29
+        },
+        {
+          "text": "So",
+          "start": 339.29,
+          "end": 339.5
+        },
+        {
+          "text": "I",
+          "start": 339.5,
+          "end": 339.71
+        },
+        {
+          "text": "had",
+          "start": 339.71,
+          "end": 339.92
+        },
+        {
+          "text": "to",
+          "start": 339.92,
+          "end": 340.13
+        },
+        {
+          "text": "backpedal",
+          "start": 340.13,
+          "end": 340.34
+        },
+        {
+          "text": "a",
+          "start": 340.34,
+          "end": 340.55
+        },
+        {
+          "text": "little.",
+          "start": 340.55,
+          "end": 340.76
+        }
+      ]
+    },
+    {
+      "id": "cue-88",
+      "start": 340.82,
+      "end": 343.14,
+      "text": "I said, \"Solomon, Is the deal still on?",
+      "words": [
+        {
+          "text": "I",
+          "start": 340.82,
+          "end": 341.11
+        },
+        {
+          "text": "said,",
+          "start": 341.11,
+          "end": 341.4
+        },
+        {
+          "text": "\"Solomon,",
+          "start": 341.4,
+          "end": 341.69
+        },
+        {
+          "text": "Is",
+          "start": 341.69,
+          "end": 341.98
+        },
+        {
+          "text": "the",
+          "start": 341.98,
+          "end": 342.27
+        },
+        {
+          "text": "deal",
+          "start": 342.27,
+          "end": 342.56
+        },
+        {
+          "text": "still",
+          "start": 342.56,
+          "end": 342.85
+        },
+        {
+          "text": "on?",
+          "start": 342.85,
+          "end": 343.14
+        }
+      ]
+    },
+    {
+      "id": "cue-89",
+      "start": 344.31,
+      "end": 348.62,
+      "text": "KitKat.\" (Laughter) Because you have to be consistent.",
+      "words": [
+        {
+          "text": "KitKat.\"",
+          "start": 344.31,
+          "end": 345.46
+        },
+        {
+          "text": "(Laughter)",
+          "start": 345.49,
+          "end": 346.73
+        },
+        {
+          "text": "Because",
+          "start": 346.76,
+          "end": 347.07
+        },
+        {
+          "text": "you",
+          "start": 347.07,
+          "end": 347.38
+        },
+        {
+          "text": "have",
+          "start": 347.38,
+          "end": 347.69
+        },
+        {
+          "text": "to",
+          "start": 347.69,
+          "end": 348.0
+        },
+        {
+          "text": "be",
+          "start": 348.0,
+          "end": 348.31
+        },
+        {
+          "text": "consistent.",
+          "start": 348.31,
+          "end": 348.62
+        }
+      ]
+    },
+    {
+      "id": "cue-90",
+      "start": 351.21,
+      "end": 353.1,
+      "text": "Then I did get an email back from him.",
+      "words": [
+        {
+          "text": "Then",
+          "start": 351.21,
+          "end": 351.42
+        },
+        {
+          "text": "I",
+          "start": 351.42,
+          "end": 351.63
+        },
+        {
+          "text": "did",
+          "start": 351.63,
+          "end": 351.84
+        },
+        {
+          "text": "get",
+          "start": 351.84,
+          "end": 352.05
+        },
+        {
+          "text": "an",
+          "start": 352.05,
+          "end": 352.26
+        },
+        {
+          "text": "email",
+          "start": 352.26,
+          "end": 352.47
+        },
+        {
+          "text": "back",
+          "start": 352.47,
+          "end": 352.68
+        },
+        {
+          "text": "from",
+          "start": 352.68,
+          "end": 352.89
+        },
+        {
+          "text": "him.",
+          "start": 352.89,
+          "end": 353.1
+        }
+      ]
+    },
+    {
+      "id": "cue-91",
+      "start": 353.1,
+      "end": 356.25,
+      "text": "He said, \"The Business is on and I am trying to blah blah blah ...\"",
+      "words": [
+        {
+          "text": "He",
+          "start": 353.1,
+          "end": 353.31
+        },
+        {
+          "text": "said,",
+          "start": 353.31,
+          "end": 353.52
+        },
+        {
+          "text": "\"The",
+          "start": 353.52,
+          "end": 353.73
+        },
+        {
+          "text": "Business",
+          "start": 353.73,
+          "end": 353.94
+        },
+        {
+          "text": "is",
+          "start": 353.94,
+          "end": 354.15
+        },
+        {
+          "text": "on",
+          "start": 354.15,
+          "end": 354.36
+        },
+        {
+          "text": "and",
+          "start": 354.36,
+          "end": 354.57
+        },
+        {
+          "text": "I",
+          "start": 354.57,
+          "end": 354.78
+        },
+        {
+          "text": "am",
+          "start": 354.78,
+          "end": 354.99
+        },
+        {
+          "text": "trying",
+          "start": 354.99,
+          "end": 355.2
+        },
+        {
+          "text": "to",
+          "start": 355.2,
+          "end": 355.41
+        },
+        {
+          "text": "blah",
+          "start": 355.41,
+          "end": 355.62
+        },
+        {
+          "text": "blah",
+          "start": 355.62,
+          "end": 355.83
+        },
+        {
+          "text": "blah",
+          "start": 355.83,
+          "end": 356.04
+        },
+        {
+          "text": "...\"",
+          "start": 356.04,
+          "end": 356.25
+        }
+      ]
+    },
+    {
+      "id": "cue-92",
+      "start": 356.3,
+      "end": 358.28,
+      "text": "I said, \"Dude, you have to use the code!\"",
+      "words": [
+        {
+          "text": "I",
+          "start": 356.3,
+          "end": 356.52
+        },
+        {
+          "text": "said,",
+          "start": 356.52,
+          "end": 356.74
+        },
+        {
+          "text": "\"Dude,",
+          "start": 356.74,
+          "end": 356.96
+        },
+        {
+          "text": "you",
+          "start": 356.96,
+          "end": 357.18
+        },
+        {
+          "text": "have",
+          "start": 357.18,
+          "end": 357.4
+        },
+        {
+          "text": "to",
+          "start": 357.4,
+          "end": 357.62
+        },
+        {
+          "text": "use",
+          "start": 357.62,
+          "end": 357.84
+        },
+        {
+          "text": "the",
+          "start": 357.84,
+          "end": 358.06
+        },
+        {
+          "text": "code!\"",
+          "start": 358.06,
+          "end": 358.28
+        }
+      ]
+    },
+    {
+      "id": "cue-93",
+      "start": 361.48,
+      "end": 364.09,
+      "text": "What followed is the greatest email I've ever received.",
+      "words": [
+        {
+          "text": "What",
+          "start": 361.48,
+          "end": 361.77
+        },
+        {
+          "text": "followed",
+          "start": 361.77,
+          "end": 362.06
+        },
+        {
+          "text": "is",
+          "start": 362.06,
+          "end": 362.35
+        },
+        {
+          "text": "the",
+          "start": 362.35,
+          "end": 362.64
+        },
+        {
+          "text": "greatest",
+          "start": 362.64,
+          "end": 362.93
+        },
+        {
+          "text": "email",
+          "start": 362.93,
+          "end": 363.22
+        },
+        {
+          "text": "I've",
+          "start": 363.22,
+          "end": 363.51
+        },
+        {
+          "text": "ever",
+          "start": 363.51,
+          "end": 363.8
+        },
+        {
+          "text": "received.",
+          "start": 363.8,
+          "end": 364.09
+        }
+      ]
+    },
+    {
+      "id": "cue-94",
+      "start": 364.09,
+      "end": 370.21,
+      "text": "(Laughter) I'm not joking, this is what turned up in my inbox.",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 364.09,
+          "end": 366.27
+        },
+        {
+          "text": "I'm",
+          "start": 367.68,
+          "end": 367.91
+        },
+        {
+          "text": "not",
+          "start": 367.91,
+          "end": 368.14
+        },
+        {
+          "text": "joking,",
+          "start": 368.14,
+          "end": 368.37
+        },
+        {
+          "text": "this",
+          "start": 368.37,
+          "end": 368.6
+        },
+        {
+          "text": "is",
+          "start": 368.6,
+          "end": 368.83
+        },
+        {
+          "text": "what",
+          "start": 368.83,
+          "end": 369.06
+        },
+        {
+          "text": "turned",
+          "start": 369.06,
+          "end": 369.29
+        },
+        {
+          "text": "up",
+          "start": 369.29,
+          "end": 369.52
+        },
+        {
+          "text": "in",
+          "start": 369.52,
+          "end": 369.75
+        },
+        {
+          "text": "my",
+          "start": 369.75,
+          "end": 369.98
+        },
+        {
+          "text": "inbox.",
+          "start": 369.98,
+          "end": 370.21
+        }
+      ]
+    },
+    {
+      "id": "cue-95",
+      "start": 370.94,
+      "end": 372.09,
+      "text": "This was a good day.",
+      "words": [
+        {
+          "text": "This",
+          "start": 370.94,
+          "end": 371.17
+        },
+        {
+          "text": "was",
+          "start": 371.17,
+          "end": 371.4
+        },
+        {
+          "text": "a",
+          "start": 371.4,
+          "end": 371.63
+        },
+        {
+          "text": "good",
+          "start": 371.63,
+          "end": 371.86
+        },
+        {
+          "text": "day.",
+          "start": 371.86,
+          "end": 372.09
+        }
+      ]
+    },
+    {
+      "id": "cue-96",
+      "start": 373.22,
+      "end": 374.38,
+      "text": "\"The business is on.",
+      "words": [
+        {
+          "text": "\"The",
+          "start": 373.22,
+          "end": 373.51
+        },
+        {
+          "text": "business",
+          "start": 373.51,
+          "end": 373.8
+        },
+        {
+          "text": "is",
+          "start": 373.8,
+          "end": 374.09
+        },
+        {
+          "text": "on.",
+          "start": 374.09,
+          "end": 374.38
+        }
+      ]
+    },
+    {
+      "id": "cue-97",
+      "start": 376.06,
+      "end": 378.7,
+      "text": "I am trying to raise the balance for the Gummy Bear --",
+      "words": [
+        {
+          "text": "I",
+          "start": 376.06,
+          "end": 376.28
+        },
+        {
+          "text": "am",
+          "start": 376.28,
+          "end": 376.5
+        },
+        {
+          "text": "trying",
+          "start": 376.5,
+          "end": 376.72
+        },
+        {
+          "text": "to",
+          "start": 376.72,
+          "end": 376.94
+        },
+        {
+          "text": "raise",
+          "start": 376.94,
+          "end": 377.16
+        },
+        {
+          "text": "the",
+          "start": 377.16,
+          "end": 377.38
+        },
+        {
+          "text": "balance",
+          "start": 377.38,
+          "end": 377.6
+        },
+        {
+          "text": "for",
+          "start": 377.6,
+          "end": 377.82
+        },
+        {
+          "text": "the",
+          "start": 377.82,
+          "end": 378.04
+        },
+        {
+          "text": "Gummy",
+          "start": 378.04,
+          "end": 378.26
+        },
+        {
+          "text": "Bear",
+          "start": 378.26,
+          "end": 378.48
+        },
+        {
+          "text": "--",
+          "start": 378.48,
+          "end": 378.7
+        }
+      ]
+    },
+    {
+      "id": "cue-98",
+      "start": 378.71,
+      "end": 386.73,
+      "text": "(Laughter) so he can submit all the needed Fizzy Cola Bottle Jelly Beans",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 378.71,
+          "end": 380.11
+        },
+        {
+          "text": "so",
+          "start": 383.49,
+          "end": 383.76
+        },
+        {
+          "text": "he",
+          "start": 383.76,
+          "end": 384.03
+        },
+        {
+          "text": "can",
+          "start": 384.03,
+          "end": 384.3
+        },
+        {
+          "text": "submit",
+          "start": 384.3,
+          "end": 384.57
+        },
+        {
+          "text": "all",
+          "start": 384.57,
+          "end": 384.84
+        },
+        {
+          "text": "the",
+          "start": 384.84,
+          "end": 385.11
+        },
+        {
+          "text": "needed",
+          "start": 385.11,
+          "end": 385.38
+        },
+        {
+          "text": "Fizzy",
+          "start": 385.38,
+          "end": 385.65
+        },
+        {
+          "text": "Cola",
+          "start": 385.65,
+          "end": 385.92
+        },
+        {
+          "text": "Bottle",
+          "start": 385.92,
+          "end": 386.19
+        },
+        {
+          "text": "Jelly",
+          "start": 386.19,
+          "end": 386.46
+        },
+        {
+          "text": "Beans",
+          "start": 386.46,
+          "end": 386.73
+        }
+      ]
+    },
+    {
+      "id": "cue-99",
+      "start": 386.73,
+      "end": 387.89,
+      "text": "to the Creme Egg,",
+      "words": [
+        {
+          "text": "to",
+          "start": 386.73,
+          "end": 387.02
+        },
+        {
+          "text": "the",
+          "start": 387.02,
+          "end": 387.31
+        },
+        {
+          "text": "Creme",
+          "start": 387.31,
+          "end": 387.6
+        },
+        {
+          "text": "Egg,",
+          "start": 387.6,
+          "end": 387.89
+        }
+      ]
+    },
+    {
+      "id": "cue-100",
+      "start": 389.79,
+      "end": 392.1,
+      "text": "for the Peanut M&Ms process to start.",
+      "words": [
+        {
+          "text": "for",
+          "start": 389.79,
+          "end": 390.12
+        },
+        {
+          "text": "the",
+          "start": 390.12,
+          "end": 390.45
+        },
+        {
+          "text": "Peanut",
+          "start": 390.45,
+          "end": 390.78
+        },
+        {
+          "text": "M&Ms",
+          "start": 390.78,
+          "end": 391.11
+        },
+        {
+          "text": "process",
+          "start": 391.11,
+          "end": 391.44
+        },
+        {
+          "text": "to",
+          "start": 391.44,
+          "end": 391.77
+        },
+        {
+          "text": "start.",
+          "start": 391.77,
+          "end": 392.1
+        }
+      ]
+    },
+    {
+      "id": "cue-101",
+      "start": 392.12,
+      "end": 398.49,
+      "text": "(Laughter) Send 1,500 pounds via a Giant Gummy Lizard.\"",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 392.12,
+          "end": 393.5
+        },
+        {
+          "text": "Send",
+          "start": 393.94,
+          "end": 394.65
+        },
+        {
+          "text": "1,500",
+          "start": 394.65,
+          "end": 395.36
+        },
+        {
+          "text": "pounds",
+          "start": 395.36,
+          "end": 396.07
+        },
+        {
+          "text": "via",
+          "start": 396.09,
+          "end": 396.57
+        },
+        {
+          "text": "a",
+          "start": 396.57,
+          "end": 397.05
+        },
+        {
+          "text": "Giant",
+          "start": 397.05,
+          "end": 397.53
+        },
+        {
+          "text": "Gummy",
+          "start": 397.53,
+          "end": 398.01
+        },
+        {
+          "text": "Lizard.\"",
+          "start": 398.01,
+          "end": 398.49
+        }
+      ]
+    },
+    {
+      "id": "cue-102",
+      "start": 398.51,
+      "end": 411.77,
+      "text": "(Applause) And that was so much fun, right,",
+      "words": [
+        {
+          "text": "(Applause)",
+          "start": 398.51,
+          "end": 405.27
+        },
+        {
+          "text": "And",
+          "start": 409.39,
+          "end": 409.73
+        },
+        {
+          "text": "that",
+          "start": 409.73,
+          "end": 410.07
+        },
+        {
+          "text": "was",
+          "start": 410.07,
+          "end": 410.41
+        },
+        {
+          "text": "so",
+          "start": 410.41,
+          "end": 410.75
+        },
+        {
+          "text": "much",
+          "start": 410.75,
+          "end": 411.09
+        },
+        {
+          "text": "fun,",
+          "start": 411.09,
+          "end": 411.43
+        },
+        {
+          "text": "right,",
+          "start": 411.43,
+          "end": 411.77
+        }
+      ]
+    },
+    {
+      "id": "cue-103",
+      "start": 411.82,
+      "end": 416.05,
+      "text": "that it got me thinking: like, what would happen if I just spent as much time as could",
+      "words": [
+        {
+          "text": "that",
+          "start": 411.82,
+          "end": 412.09
+        },
+        {
+          "text": "it",
+          "start": 412.09,
+          "end": 412.36
+        },
+        {
+          "text": "got",
+          "start": 412.36,
+          "end": 412.63
+        },
+        {
+          "text": "me",
+          "start": 412.63,
+          "end": 412.9
+        },
+        {
+          "text": "thinking:",
+          "start": 412.9,
+          "end": 413.17
+        },
+        {
+          "text": "like,",
+          "start": 413.19,
+          "end": 413.41
+        },
+        {
+          "text": "what",
+          "start": 413.41,
+          "end": 413.63
+        },
+        {
+          "text": "would",
+          "start": 413.63,
+          "end": 413.85
+        },
+        {
+          "text": "happen",
+          "start": 413.85,
+          "end": 414.07
+        },
+        {
+          "text": "if",
+          "start": 414.07,
+          "end": 414.29
+        },
+        {
+          "text": "I",
+          "start": 414.29,
+          "end": 414.51
+        },
+        {
+          "text": "just",
+          "start": 414.51,
+          "end": 414.73
+        },
+        {
+          "text": "spent",
+          "start": 414.73,
+          "end": 414.95
+        },
+        {
+          "text": "as",
+          "start": 414.95,
+          "end": 415.17
+        },
+        {
+          "text": "much",
+          "start": 415.17,
+          "end": 415.39
+        },
+        {
+          "text": "time",
+          "start": 415.39,
+          "end": 415.61
+        },
+        {
+          "text": "as",
+          "start": 415.61,
+          "end": 415.83
+        },
+        {
+          "text": "could",
+          "start": 415.83,
+          "end": 416.05
+        }
+      ]
+    },
+    {
+      "id": "cue-104",
+      "start": 416.13,
+      "end": 418.2,
+      "text": "replying to as many scam emails as I could?",
+      "words": [
+        {
+          "text": "replying",
+          "start": 416.13,
+          "end": 416.36
+        },
+        {
+          "text": "to",
+          "start": 416.36,
+          "end": 416.59
+        },
+        {
+          "text": "as",
+          "start": 416.59,
+          "end": 416.82
+        },
+        {
+          "text": "many",
+          "start": 416.82,
+          "end": 417.05
+        },
+        {
+          "text": "scam",
+          "start": 417.05,
+          "end": 417.28
+        },
+        {
+          "text": "emails",
+          "start": 417.28,
+          "end": 417.51
+        },
+        {
+          "text": "as",
+          "start": 417.51,
+          "end": 417.74
+        },
+        {
+          "text": "I",
+          "start": 417.74,
+          "end": 417.97
+        },
+        {
+          "text": "could?",
+          "start": 417.97,
+          "end": 418.2
+        }
+      ]
+    },
+    {
+      "id": "cue-105",
+      "start": 420.14,
+      "end": 423.14,
+      "text": "And that's what I've been doing",
+      "words": [
+        {
+          "text": "And",
+          "start": 420.14,
+          "end": 420.64
+        },
+        {
+          "text": "that's",
+          "start": 420.64,
+          "end": 421.14
+        },
+        {
+          "text": "what",
+          "start": 421.14,
+          "end": 421.64
+        },
+        {
+          "text": "I've",
+          "start": 421.64,
+          "end": 422.14
+        },
+        {
+          "text": "been",
+          "start": 422.14,
+          "end": 422.64
+        },
+        {
+          "text": "doing",
+          "start": 422.64,
+          "end": 423.14
+        }
+      ]
+    },
+    {
+      "id": "cue-106",
+      "start": 423.14,
+      "end": 426.56,
+      "text": "for three years on your behalf.",
+      "words": [
+        {
+          "text": "for",
+          "start": 423.14,
+          "end": 423.84
+        },
+        {
+          "text": "three",
+          "start": 423.84,
+          "end": 424.54
+        },
+        {
+          "text": "years",
+          "start": 424.54,
+          "end": 425.24
+        },
+        {
+          "text": "on",
+          "start": 425.27,
+          "end": 425.7
+        },
+        {
+          "text": "your",
+          "start": 425.7,
+          "end": 426.13
+        },
+        {
+          "text": "behalf.",
+          "start": 426.13,
+          "end": 426.56
+        }
+      ]
+    },
+    {
+      "id": "cue-107",
+      "start": 426.57,
+      "end": 434.98,
+      "text": "(Laughter) (Applause) Crazy stuff happens when you start replying to scam emails.",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 426.57,
+          "end": 428.97
+        },
+        {
+          "text": "(Applause)",
+          "start": 428.99,
+          "end": 431.31
+        },
+        {
+          "text": "Crazy",
+          "start": 432.08,
+          "end": 432.37
+        },
+        {
+          "text": "stuff",
+          "start": 432.37,
+          "end": 432.66
+        },
+        {
+          "text": "happens",
+          "start": 432.66,
+          "end": 432.95
+        },
+        {
+          "text": "when",
+          "start": 432.95,
+          "end": 433.24
+        },
+        {
+          "text": "you",
+          "start": 433.24,
+          "end": 433.53
+        },
+        {
+          "text": "start",
+          "start": 433.53,
+          "end": 433.82
+        },
+        {
+          "text": "replying",
+          "start": 433.82,
+          "end": 434.11
+        },
+        {
+          "text": "to",
+          "start": 434.11,
+          "end": 434.4
+        },
+        {
+          "text": "scam",
+          "start": 434.4,
+          "end": 434.69
+        },
+        {
+          "text": "emails.",
+          "start": 434.69,
+          "end": 434.98
+        }
+      ]
+    },
+    {
+      "id": "cue-108",
+      "start": 434.97,
+      "end": 436.11,
+      "text": "It's really difficult,",
+      "words": [
+        {
+          "text": "It's",
+          "start": 434.97,
+          "end": 435.35
+        },
+        {
+          "text": "really",
+          "start": 435.35,
+          "end": 435.73
+        },
+        {
+          "text": "difficult,",
+          "start": 435.73,
+          "end": 436.11
+        }
+      ]
+    },
+    {
+      "id": "cue-109",
+      "start": 436.15,
+      "end": 437.76,
+      "text": "and I highly recommend we do it.",
+      "words": [
+        {
+          "text": "and",
+          "start": 436.15,
+          "end": 436.38
+        },
+        {
+          "text": "I",
+          "start": 436.38,
+          "end": 436.61
+        },
+        {
+          "text": "highly",
+          "start": 436.61,
+          "end": 436.84
+        },
+        {
+          "text": "recommend",
+          "start": 436.84,
+          "end": 437.07
+        },
+        {
+          "text": "we",
+          "start": 437.07,
+          "end": 437.3
+        },
+        {
+          "text": "do",
+          "start": 437.3,
+          "end": 437.53
+        },
+        {
+          "text": "it.",
+          "start": 437.53,
+          "end": 437.76
+        }
+      ]
+    },
+    {
+      "id": "cue-110",
+      "start": 437.75,
+      "end": 439.59,
+      "text": "I don't think what I'm doing is mean.",
+      "words": [
+        {
+          "text": "I",
+          "start": 437.75,
+          "end": 437.98
+        },
+        {
+          "text": "don't",
+          "start": 437.98,
+          "end": 438.21
+        },
+        {
+          "text": "think",
+          "start": 438.21,
+          "end": 438.44
+        },
+        {
+          "text": "what",
+          "start": 438.44,
+          "end": 438.67
+        },
+        {
+          "text": "I'm",
+          "start": 438.67,
+          "end": 438.9
+        },
+        {
+          "text": "doing",
+          "start": 438.9,
+          "end": 439.13
+        },
+        {
+          "text": "is",
+          "start": 439.13,
+          "end": 439.36
+        },
+        {
+          "text": "mean.",
+          "start": 439.36,
+          "end": 439.59
+        }
+      ]
+    },
+    {
+      "id": "cue-111",
+      "start": 439.62,
+      "end": 442.38,
+      "text": "There are a lot of people who do mean things to scammers.",
+      "words": [
+        {
+          "text": "There",
+          "start": 439.62,
+          "end": 439.85
+        },
+        {
+          "text": "are",
+          "start": 439.85,
+          "end": 440.08
+        },
+        {
+          "text": "a",
+          "start": 440.08,
+          "end": 440.31
+        },
+        {
+          "text": "lot",
+          "start": 440.31,
+          "end": 440.54
+        },
+        {
+          "text": "of",
+          "start": 440.54,
+          "end": 440.77
+        },
+        {
+          "text": "people",
+          "start": 440.77,
+          "end": 441.0
+        },
+        {
+          "text": "who",
+          "start": 441.0,
+          "end": 441.23
+        },
+        {
+          "text": "do",
+          "start": 441.23,
+          "end": 441.46
+        },
+        {
+          "text": "mean",
+          "start": 441.46,
+          "end": 441.69
+        },
+        {
+          "text": "things",
+          "start": 441.69,
+          "end": 441.92
+        },
+        {
+          "text": "to",
+          "start": 441.92,
+          "end": 442.15
+        },
+        {
+          "text": "scammers.",
+          "start": 442.15,
+          "end": 442.38
+        }
+      ]
+    },
+    {
+      "id": "cue-112",
+      "start": 442.39,
+      "end": 445.96,
+      "text": "All I'm doing is wasting their time.",
+      "words": [
+        {
+          "text": "All",
+          "start": 442.39,
+          "end": 442.9
+        },
+        {
+          "text": "I'm",
+          "start": 442.9,
+          "end": 443.41
+        },
+        {
+          "text": "doing",
+          "start": 443.41,
+          "end": 443.92
+        },
+        {
+          "text": "is",
+          "start": 443.92,
+          "end": 444.43
+        },
+        {
+          "text": "wasting",
+          "start": 444.43,
+          "end": 444.94
+        },
+        {
+          "text": "their",
+          "start": 444.94,
+          "end": 445.45
+        },
+        {
+          "text": "time.",
+          "start": 445.45,
+          "end": 445.96
+        }
+      ]
+    },
+    {
+      "id": "cue-113",
+      "start": 446.89,
+      "end": 449.05,
+      "text": "And I think any time they're spending with me",
+      "words": [
+        {
+          "text": "And",
+          "start": 446.89,
+          "end": 447.13
+        },
+        {
+          "text": "I",
+          "start": 447.13,
+          "end": 447.37
+        },
+        {
+          "text": "think",
+          "start": 447.37,
+          "end": 447.61
+        },
+        {
+          "text": "any",
+          "start": 447.61,
+          "end": 447.85
+        },
+        {
+          "text": "time",
+          "start": 447.85,
+          "end": 448.09
+        },
+        {
+          "text": "they're",
+          "start": 448.09,
+          "end": 448.33
+        },
+        {
+          "text": "spending",
+          "start": 448.33,
+          "end": 448.57
+        },
+        {
+          "text": "with",
+          "start": 448.57,
+          "end": 448.81
+        },
+        {
+          "text": "me",
+          "start": 448.81,
+          "end": 449.05
+        }
+      ]
+    },
+    {
+      "id": "cue-114",
+      "start": 449.08,
+      "end": 451.64,
+      "text": "is time they're not spending scamming vulnerable adults",
+      "words": [
+        {
+          "text": "is",
+          "start": 449.08,
+          "end": 449.4
+        },
+        {
+          "text": "time",
+          "start": 449.4,
+          "end": 449.72
+        },
+        {
+          "text": "they're",
+          "start": 449.72,
+          "end": 450.04
+        },
+        {
+          "text": "not",
+          "start": 450.04,
+          "end": 450.36
+        },
+        {
+          "text": "spending",
+          "start": 450.36,
+          "end": 450.68
+        },
+        {
+          "text": "scamming",
+          "start": 450.68,
+          "end": 451.0
+        },
+        {
+          "text": "vulnerable",
+          "start": 451.0,
+          "end": 451.32
+        },
+        {
+          "text": "adults",
+          "start": 451.32,
+          "end": 451.64
+        }
+      ]
+    },
+    {
+      "id": "cue-115",
+      "start": 451.7,
+      "end": 453.05,
+      "text": "out of their savings, right?",
+      "words": [
+        {
+          "text": "out",
+          "start": 451.7,
+          "end": 451.97
+        },
+        {
+          "text": "of",
+          "start": 451.97,
+          "end": 452.24
+        },
+        {
+          "text": "their",
+          "start": 452.24,
+          "end": 452.51
+        },
+        {
+          "text": "savings,",
+          "start": 452.51,
+          "end": 452.78
+        },
+        {
+          "text": "right?",
+          "start": 452.78,
+          "end": 453.05
+        }
+      ]
+    },
+    {
+      "id": "cue-116",
+      "start": 453.58,
+      "end": 457.18,
+      "text": "And if you're going to do this -- and I highly recommend you do --",
+      "words": [
+        {
+          "text": "And",
+          "start": 453.58,
+          "end": 453.82
+        },
+        {
+          "text": "if",
+          "start": 453.82,
+          "end": 454.06
+        },
+        {
+          "text": "you're",
+          "start": 454.06,
+          "end": 454.3
+        },
+        {
+          "text": "going",
+          "start": 454.3,
+          "end": 454.54
+        },
+        {
+          "text": "to",
+          "start": 454.54,
+          "end": 454.78
+        },
+        {
+          "text": "do",
+          "start": 454.78,
+          "end": 455.02
+        },
+        {
+          "text": "this",
+          "start": 455.02,
+          "end": 455.26
+        },
+        {
+          "text": "--",
+          "start": 455.26,
+          "end": 455.5
+        },
+        {
+          "text": "and",
+          "start": 455.5,
+          "end": 455.74
+        },
+        {
+          "text": "I",
+          "start": 455.74,
+          "end": 455.98
+        },
+        {
+          "text": "highly",
+          "start": 455.98,
+          "end": 456.22
+        },
+        {
+          "text": "recommend",
+          "start": 456.22,
+          "end": 456.46
+        },
+        {
+          "text": "you",
+          "start": 456.46,
+          "end": 456.7
+        },
+        {
+          "text": "do",
+          "start": 456.7,
+          "end": 456.94
+        },
+        {
+          "text": "--",
+          "start": 456.94,
+          "end": 457.18
+        }
+      ]
+    },
+    {
+      "id": "cue-117",
+      "start": 457.17,
+      "end": 459.16,
+      "text": "get yourself a pseudonymous email address.",
+      "words": [
+        {
+          "text": "get",
+          "start": 457.17,
+          "end": 457.5
+        },
+        {
+          "text": "yourself",
+          "start": 457.5,
+          "end": 457.83
+        },
+        {
+          "text": "a",
+          "start": 457.83,
+          "end": 458.16
+        },
+        {
+          "text": "pseudonymous",
+          "start": 458.16,
+          "end": 458.5
+        },
+        {
+          "text": "email",
+          "start": 458.5,
+          "end": 458.83
+        },
+        {
+          "text": "address.",
+          "start": 458.83,
+          "end": 459.16
+        }
+      ]
+    },
+    {
+      "id": "cue-118",
+      "start": 459.21,
+      "end": 460.83,
+      "text": "Don't use your own email address.",
+      "words": [
+        {
+          "text": "Don't",
+          "start": 459.21,
+          "end": 459.48
+        },
+        {
+          "text": "use",
+          "start": 459.48,
+          "end": 459.75
+        },
+        {
+          "text": "your",
+          "start": 459.75,
+          "end": 460.02
+        },
+        {
+          "text": "own",
+          "start": 460.02,
+          "end": 460.29
+        },
+        {
+          "text": "email",
+          "start": 460.29,
+          "end": 460.56
+        },
+        {
+          "text": "address.",
+          "start": 460.56,
+          "end": 460.83
+        }
+      ]
+    },
+    {
+      "id": "cue-119",
+      "start": 460.83,
+      "end": 463.69,
+      "text": "That's what I was doing at the start and it was a nightmare.",
+      "words": [
+        {
+          "text": "That's",
+          "start": 460.83,
+          "end": 461.05
+        },
+        {
+          "text": "what",
+          "start": 461.05,
+          "end": 461.27
+        },
+        {
+          "text": "I",
+          "start": 461.27,
+          "end": 461.49
+        },
+        {
+          "text": "was",
+          "start": 461.49,
+          "end": 461.71
+        },
+        {
+          "text": "doing",
+          "start": 461.71,
+          "end": 461.93
+        },
+        {
+          "text": "at",
+          "start": 461.93,
+          "end": 462.15
+        },
+        {
+          "text": "the",
+          "start": 462.15,
+          "end": 462.37
+        },
+        {
+          "text": "start",
+          "start": 462.37,
+          "end": 462.59
+        },
+        {
+          "text": "and",
+          "start": 462.59,
+          "end": 462.81
+        },
+        {
+          "text": "it",
+          "start": 462.81,
+          "end": 463.03
+        },
+        {
+          "text": "was",
+          "start": 463.03,
+          "end": 463.25
+        },
+        {
+          "text": "a",
+          "start": 463.25,
+          "end": 463.47
+        },
+        {
+          "text": "nightmare.",
+          "start": 463.47,
+          "end": 463.69
+        }
+      ]
+    },
+    {
+      "id": "cue-120",
+      "start": 463.71,
+      "end": 466.24,
+      "text": "I'd wake up in the morning and have a thousand emails",
+      "words": [
+        {
+          "text": "I'd",
+          "start": 463.71,
+          "end": 463.94
+        },
+        {
+          "text": "wake",
+          "start": 463.94,
+          "end": 464.17
+        },
+        {
+          "text": "up",
+          "start": 464.17,
+          "end": 464.4
+        },
+        {
+          "text": "in",
+          "start": 464.4,
+          "end": 464.63
+        },
+        {
+          "text": "the",
+          "start": 464.63,
+          "end": 464.86
+        },
+        {
+          "text": "morning",
+          "start": 464.86,
+          "end": 465.09
+        },
+        {
+          "text": "and",
+          "start": 465.09,
+          "end": 465.32
+        },
+        {
+          "text": "have",
+          "start": 465.32,
+          "end": 465.55
+        },
+        {
+          "text": "a",
+          "start": 465.55,
+          "end": 465.78
+        },
+        {
+          "text": "thousand",
+          "start": 465.78,
+          "end": 466.01
+        },
+        {
+          "text": "emails",
+          "start": 466.01,
+          "end": 466.24
+        }
+      ]
+    },
+    {
+      "id": "cue-121",
+      "start": 466.29,
+      "end": 467.49,
+      "text": "about penis enlargements,",
+      "words": [
+        {
+          "text": "about",
+          "start": 466.29,
+          "end": 466.69
+        },
+        {
+          "text": "penis",
+          "start": 466.69,
+          "end": 467.09
+        },
+        {
+          "text": "enlargements,",
+          "start": 467.09,
+          "end": 467.49
+        }
+      ]
+    },
+    {
+      "id": "cue-122",
+      "start": 467.52,
+      "end": 469.68,
+      "text": "only one of which was a legitimate response --",
+      "words": [
+        {
+          "text": "only",
+          "start": 467.52,
+          "end": 467.76
+        },
+        {
+          "text": "one",
+          "start": 467.76,
+          "end": 468.0
+        },
+        {
+          "text": "of",
+          "start": 468.0,
+          "end": 468.24
+        },
+        {
+          "text": "which",
+          "start": 468.24,
+          "end": 468.48
+        },
+        {
+          "text": "was",
+          "start": 468.48,
+          "end": 468.72
+        },
+        {
+          "text": "a",
+          "start": 468.72,
+          "end": 468.96
+        },
+        {
+          "text": "legitimate",
+          "start": 468.96,
+          "end": 469.2
+        },
+        {
+          "text": "response",
+          "start": 469.2,
+          "end": 469.44
+        },
+        {
+          "text": "--",
+          "start": 469.44,
+          "end": 469.68
+        }
+      ]
+    },
+    {
+      "id": "cue-123",
+      "start": 469.74,
+      "end": 473.21,
+      "text": "(Laughter) to a medical question I had.",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 469.74,
+          "end": 471.84
+        },
+        {
+          "text": "to",
+          "start": 471.86,
+          "end": 472.09
+        },
+        {
+          "text": "a",
+          "start": 472.09,
+          "end": 472.31
+        },
+        {
+          "text": "medical",
+          "start": 472.31,
+          "end": 472.53
+        },
+        {
+          "text": "question",
+          "start": 472.53,
+          "end": 472.75
+        },
+        {
+          "text": "I",
+          "start": 472.75,
+          "end": 472.98
+        },
+        {
+          "text": "had.",
+          "start": 472.98,
+          "end": 473.21
+        }
+      ]
+    },
+    {
+      "id": "cue-124",
+      "start": 473.23,
+      "end": 474.98,
+      "text": "But I'll tell you what, though, guys,",
+      "words": [
+        {
+          "text": "But",
+          "start": 473.23,
+          "end": 473.48
+        },
+        {
+          "text": "I'll",
+          "start": 473.48,
+          "end": 473.73
+        },
+        {
+          "text": "tell",
+          "start": 473.73,
+          "end": 473.98
+        },
+        {
+          "text": "you",
+          "start": 473.98,
+          "end": 474.23
+        },
+        {
+          "text": "what,",
+          "start": 474.23,
+          "end": 474.48
+        },
+        {
+          "text": "though,",
+          "start": 474.48,
+          "end": 474.73
+        },
+        {
+          "text": "guys,",
+          "start": 474.73,
+          "end": 474.98
+        }
+      ]
+    },
+    {
+      "id": "cue-125",
+      "start": 475.02,
+      "end": 478.06,
+      "text": "I'll tell you what: any day is a good day, any day is a good day",
+      "words": [
+        {
+          "text": "I'll",
+          "start": 475.02,
+          "end": 475.21
+        },
+        {
+          "text": "tell",
+          "start": 475.21,
+          "end": 475.4
+        },
+        {
+          "text": "you",
+          "start": 475.4,
+          "end": 475.59
+        },
+        {
+          "text": "what:",
+          "start": 475.59,
+          "end": 475.78
+        },
+        {
+          "text": "any",
+          "start": 475.78,
+          "end": 475.97
+        },
+        {
+          "text": "day",
+          "start": 475.97,
+          "end": 476.16
+        },
+        {
+          "text": "is",
+          "start": 476.16,
+          "end": 476.35
+        },
+        {
+          "text": "a",
+          "start": 476.35,
+          "end": 476.54
+        },
+        {
+          "text": "good",
+          "start": 476.54,
+          "end": 476.73
+        },
+        {
+          "text": "day,",
+          "start": 476.73,
+          "end": 476.92
+        },
+        {
+          "text": "any",
+          "start": 476.92,
+          "end": 477.11
+        },
+        {
+          "text": "day",
+          "start": 477.11,
+          "end": 477.3
+        },
+        {
+          "text": "is",
+          "start": 477.3,
+          "end": 477.49
+        },
+        {
+          "text": "a",
+          "start": 477.49,
+          "end": 477.68
+        },
+        {
+          "text": "good",
+          "start": 477.68,
+          "end": 477.87
+        },
+        {
+          "text": "day",
+          "start": 477.87,
+          "end": 478.06
+        }
+      ]
+    },
+    {
+      "id": "cue-126",
+      "start": 478.05,
+      "end": 480.48,
+      "text": "if you receive an email that begins like this:",
+      "words": [
+        {
+          "text": "if",
+          "start": 478.05,
+          "end": 478.32
+        },
+        {
+          "text": "you",
+          "start": 478.32,
+          "end": 478.59
+        },
+        {
+          "text": "receive",
+          "start": 478.59,
+          "end": 478.86
+        },
+        {
+          "text": "an",
+          "start": 478.86,
+          "end": 479.13
+        },
+        {
+          "text": "email",
+          "start": 479.13,
+          "end": 479.4
+        },
+        {
+          "text": "that",
+          "start": 479.4,
+          "end": 479.67
+        },
+        {
+          "text": "begins",
+          "start": 479.67,
+          "end": 479.94
+        },
+        {
+          "text": "like",
+          "start": 479.94,
+          "end": 480.21
+        },
+        {
+          "text": "this:",
+          "start": 480.21,
+          "end": 480.48
+        }
+      ]
+    },
+    {
+      "id": "cue-127",
+      "start": 481.56,
+      "end": 486.2,
+      "text": "(Laughter) \"I AM WINNIE MANDELA,",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 481.56,
+          "end": 484.37
+        },
+        {
+          "text": "\"I",
+          "start": 484.4,
+          "end": 484.85
+        },
+        {
+          "text": "AM",
+          "start": 484.85,
+          "end": 485.3
+        },
+        {
+          "text": "WINNIE",
+          "start": 485.3,
+          "end": 485.75
+        },
+        {
+          "text": "MANDELA,",
+          "start": 485.75,
+          "end": 486.2
+        }
+      ]
+    },
+    {
+      "id": "cue-128",
+      "start": 487.09,
+      "end": 490.39,
+      "text": "THE SECOND WIFE OF NELSON MANDELA THE FORMER SOUTH AFRICAN PRESIDENT.\"",
+      "words": [
+        {
+          "text": "THE",
+          "start": 487.09,
+          "end": 487.39
+        },
+        {
+          "text": "SECOND",
+          "start": 487.39,
+          "end": 487.69
+        },
+        {
+          "text": "WIFE",
+          "start": 487.69,
+          "end": 487.99
+        },
+        {
+          "text": "OF",
+          "start": 487.99,
+          "end": 488.29
+        },
+        {
+          "text": "NELSON",
+          "start": 488.29,
+          "end": 488.59
+        },
+        {
+          "text": "MANDELA",
+          "start": 488.59,
+          "end": 488.89
+        },
+        {
+          "text": "THE",
+          "start": 488.89,
+          "end": 489.19
+        },
+        {
+          "text": "FORMER",
+          "start": 489.19,
+          "end": 489.49
+        },
+        {
+          "text": "SOUTH",
+          "start": 489.49,
+          "end": 489.79
+        },
+        {
+          "text": "AFRICAN",
+          "start": 489.79,
+          "end": 490.09
+        },
+        {
+          "text": "PRESIDENT.\"",
+          "start": 490.09,
+          "end": 490.39
+        }
+      ]
+    },
+    {
+      "id": "cue-129",
+      "start": 490.41,
+      "end": 492.33,
+      "text": "I was like, oh! -- that Winnie Mandela.",
+      "words": [
+        {
+          "text": "I",
+          "start": 490.41,
+          "end": 490.65
+        },
+        {
+          "text": "was",
+          "start": 490.65,
+          "end": 490.89
+        },
+        {
+          "text": "like,",
+          "start": 490.89,
+          "end": 491.13
+        },
+        {
+          "text": "oh!",
+          "start": 491.13,
+          "end": 491.37
+        },
+        {
+          "text": "--",
+          "start": 491.37,
+          "end": 491.61
+        },
+        {
+          "text": "that",
+          "start": 491.61,
+          "end": 491.85
+        },
+        {
+          "text": "Winnie",
+          "start": 491.85,
+          "end": 492.09
+        },
+        {
+          "text": "Mandela.",
+          "start": 492.09,
+          "end": 492.33
+        }
+      ]
+    },
+    {
+      "id": "cue-130",
+      "start": 492.34,
+      "end": 494.6,
+      "text": "(Laughter) I know so many.",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 492.34,
+          "end": 493.42
+        },
+        {
+          "text": "I",
+          "start": 493.44,
+          "end": 493.73
+        },
+        {
+          "text": "know",
+          "start": 493.73,
+          "end": 494.02
+        },
+        {
+          "text": "so",
+          "start": 494.02,
+          "end": 494.31
+        },
+        {
+          "text": "many.",
+          "start": 494.31,
+          "end": 494.6
+        }
+      ]
+    },
+    {
+      "id": "cue-131",
+      "start": 495.55,
+      "end": 498.63,
+      "text": "\"I NEED TO TRANSFER 45 MILLION DOLLARS OUT OF THE COUNTRY",
+      "words": [
+        {
+          "text": "\"I",
+          "start": 495.55,
+          "end": 495.83
+        },
+        {
+          "text": "NEED",
+          "start": 495.83,
+          "end": 496.11
+        },
+        {
+          "text": "TO",
+          "start": 496.11,
+          "end": 496.39
+        },
+        {
+          "text": "TRANSFER",
+          "start": 496.39,
+          "end": 496.67
+        },
+        {
+          "text": "45",
+          "start": 496.67,
+          "end": 496.95
+        },
+        {
+          "text": "MILLION",
+          "start": 496.95,
+          "end": 497.23
+        },
+        {
+          "text": "DOLLARS",
+          "start": 497.23,
+          "end": 497.51
+        },
+        {
+          "text": "OUT",
+          "start": 497.51,
+          "end": 497.79
+        },
+        {
+          "text": "OF",
+          "start": 497.79,
+          "end": 498.07
+        },
+        {
+          "text": "THE",
+          "start": 498.07,
+          "end": 498.35
+        },
+        {
+          "text": "COUNTRY",
+          "start": 498.35,
+          "end": 498.63
+        }
+      ]
+    },
+    {
+      "id": "cue-132",
+      "start": 498.63,
+      "end": 501.43,
+      "text": "BECAUSE OF MY HUSBAND NELSON MANDELA'S HEALTH CONDITION.\"",
+      "words": [
+        {
+          "text": "BECAUSE",
+          "start": 498.63,
+          "end": 498.98
+        },
+        {
+          "text": "OF",
+          "start": 498.98,
+          "end": 499.33
+        },
+        {
+          "text": "MY",
+          "start": 499.33,
+          "end": 499.68
+        },
+        {
+          "text": "HUSBAND",
+          "start": 499.68,
+          "end": 500.03
+        },
+        {
+          "text": "NELSON",
+          "start": 500.03,
+          "end": 500.38
+        },
+        {
+          "text": "MANDELA'S",
+          "start": 500.38,
+          "end": 500.73
+        },
+        {
+          "text": "HEALTH",
+          "start": 500.73,
+          "end": 501.08
+        },
+        {
+          "text": "CONDITION.\"",
+          "start": 501.08,
+          "end": 501.43
+        }
+      ]
+    },
+    {
+      "id": "cue-133",
+      "start": 501.42,
+      "end": 502.58,
+      "text": "Let that sink in.",
+      "words": [
+        {
+          "text": "Let",
+          "start": 501.42,
+          "end": 501.71
+        },
+        {
+          "text": "that",
+          "start": 501.71,
+          "end": 502.0
+        },
+        {
+          "text": "sink",
+          "start": 502.0,
+          "end": 502.29
+        },
+        {
+          "text": "in.",
+          "start": 502.29,
+          "end": 502.58
+        }
+      ]
+    },
+    {
+      "id": "cue-134",
+      "start": 503.86,
+      "end": 506.52,
+      "text": "She sent me this, which is hysterical.",
+      "words": [
+        {
+          "text": "She",
+          "start": 503.86,
+          "end": 504.24
+        },
+        {
+          "text": "sent",
+          "start": 504.24,
+          "end": 504.62
+        },
+        {
+          "text": "me",
+          "start": 504.62,
+          "end": 505.0
+        },
+        {
+          "text": "this,",
+          "start": 505.0,
+          "end": 505.38
+        },
+        {
+          "text": "which",
+          "start": 505.38,
+          "end": 505.76
+        },
+        {
+          "text": "is",
+          "start": 505.76,
+          "end": 506.14
+        },
+        {
+          "text": "hysterical.",
+          "start": 506.14,
+          "end": 506.52
+        }
+      ]
+    },
+    {
+      "id": "cue-135",
+      "start": 506.53,
+      "end": 510.66,
+      "text": "(Laughter) And this.",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 506.53,
+          "end": 509.48
+        },
+        {
+          "text": "And",
+          "start": 509.5,
+          "end": 510.08
+        },
+        {
+          "text": "this.",
+          "start": 510.08,
+          "end": 510.66
+        }
+      ]
+    },
+    {
+      "id": "cue-136",
+      "start": 510.68,
+      "end": 513.87,
+      "text": "And this looks fairly legitimate, this is a letter of authorization.",
+      "words": [
+        {
+          "text": "And",
+          "start": 510.68,
+          "end": 510.97
+        },
+        {
+          "text": "this",
+          "start": 510.97,
+          "end": 511.26
+        },
+        {
+          "text": "looks",
+          "start": 511.26,
+          "end": 511.55
+        },
+        {
+          "text": "fairly",
+          "start": 511.55,
+          "end": 511.84
+        },
+        {
+          "text": "legitimate,",
+          "start": 511.84,
+          "end": 512.13
+        },
+        {
+          "text": "this",
+          "start": 512.13,
+          "end": 512.42
+        },
+        {
+          "text": "is",
+          "start": 512.42,
+          "end": 512.71
+        },
+        {
+          "text": "a",
+          "start": 512.71,
+          "end": 513.0
+        },
+        {
+          "text": "letter",
+          "start": 513.0,
+          "end": 513.29
+        },
+        {
+          "text": "of",
+          "start": 513.29,
+          "end": 513.58
+        },
+        {
+          "text": "authorization.",
+          "start": 513.58,
+          "end": 513.87
+        }
+      ]
+    },
+    {
+      "id": "cue-137",
+      "start": 513.9,
+      "end": 517.26,
+      "text": "But to be honest, if there's nothing written on it, it's just a shape!",
+      "words": [
+        {
+          "text": "But",
+          "start": 513.9,
+          "end": 514.14
+        },
+        {
+          "text": "to",
+          "start": 514.14,
+          "end": 514.38
+        },
+        {
+          "text": "be",
+          "start": 514.38,
+          "end": 514.62
+        },
+        {
+          "text": "honest,",
+          "start": 514.62,
+          "end": 514.86
+        },
+        {
+          "text": "if",
+          "start": 514.86,
+          "end": 515.1
+        },
+        {
+          "text": "there's",
+          "start": 515.1,
+          "end": 515.34
+        },
+        {
+          "text": "nothing",
+          "start": 515.34,
+          "end": 515.58
+        },
+        {
+          "text": "written",
+          "start": 515.58,
+          "end": 515.82
+        },
+        {
+          "text": "on",
+          "start": 515.82,
+          "end": 516.06
+        },
+        {
+          "text": "it,",
+          "start": 516.06,
+          "end": 516.3
+        },
+        {
+          "text": "it's",
+          "start": 516.3,
+          "end": 516.54
+        },
+        {
+          "text": "just",
+          "start": 516.54,
+          "end": 516.78
+        },
+        {
+          "text": "a",
+          "start": 516.78,
+          "end": 517.02
+        },
+        {
+          "text": "shape!",
+          "start": 517.02,
+          "end": 517.26
+        }
+      ]
+    },
+    {
+      "id": "cue-138",
+      "start": 517.32,
+      "end": 521.95,
+      "text": "(Laughter) I said, \"Winnie, I'm really sorry to hear of this.",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 517.32,
+          "end": 519.17
+        },
+        {
+          "text": "I",
+          "start": 519.65,
+          "end": 519.88
+        },
+        {
+          "text": "said,",
+          "start": 519.88,
+          "end": 520.11
+        },
+        {
+          "text": "\"Winnie,",
+          "start": 520.11,
+          "end": 520.34
+        },
+        {
+          "text": "I'm",
+          "start": 520.34,
+          "end": 520.57
+        },
+        {
+          "text": "really",
+          "start": 520.57,
+          "end": 520.8
+        },
+        {
+          "text": "sorry",
+          "start": 520.8,
+          "end": 521.03
+        },
+        {
+          "text": "to",
+          "start": 521.03,
+          "end": 521.26
+        },
+        {
+          "text": "hear",
+          "start": 521.26,
+          "end": 521.49
+        },
+        {
+          "text": "of",
+          "start": 521.49,
+          "end": 521.72
+        },
+        {
+          "text": "this.",
+          "start": 521.72,
+          "end": 521.95
+        }
+      ]
+    },
+    {
+      "id": "cue-139",
+      "start": 522.02,
+      "end": 523.98,
+      "text": "Given that Nelson died three months ago,",
+      "words": [
+        {
+          "text": "Given",
+          "start": 522.02,
+          "end": 522.3
+        },
+        {
+          "text": "that",
+          "start": 522.3,
+          "end": 522.58
+        },
+        {
+          "text": "Nelson",
+          "start": 522.58,
+          "end": 522.86
+        },
+        {
+          "text": "died",
+          "start": 522.86,
+          "end": 523.14
+        },
+        {
+          "text": "three",
+          "start": 523.14,
+          "end": 523.42
+        },
+        {
+          "text": "months",
+          "start": 523.42,
+          "end": 523.7
+        },
+        {
+          "text": "ago,",
+          "start": 523.7,
+          "end": 523.98
+        }
+      ]
+    },
+    {
+      "id": "cue-140",
+      "start": 524.03,
+      "end": 526.59,
+      "text": "I'd describe his health condition as fairly serious.\"",
+      "words": [
+        {
+          "text": "I'd",
+          "start": 524.03,
+          "end": 524.35
+        },
+        {
+          "text": "describe",
+          "start": 524.35,
+          "end": 524.67
+        },
+        {
+          "text": "his",
+          "start": 524.67,
+          "end": 524.99
+        },
+        {
+          "text": "health",
+          "start": 524.99,
+          "end": 525.31
+        },
+        {
+          "text": "condition",
+          "start": 525.31,
+          "end": 525.63
+        },
+        {
+          "text": "as",
+          "start": 525.63,
+          "end": 525.95
+        },
+        {
+          "text": "fairly",
+          "start": 525.95,
+          "end": 526.27
+        },
+        {
+          "text": "serious.\"",
+          "start": 526.27,
+          "end": 526.59
+        }
+      ]
+    },
+    {
+      "id": "cue-141",
+      "start": 526.64,
+      "end": 533.0,
+      "text": "(Laughter) That's the worst health condition you can have, not being alive.",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 526.64,
+          "end": 529.46
+        },
+        {
+          "text": "That's",
+          "start": 529.48,
+          "end": 529.8
+        },
+        {
+          "text": "the",
+          "start": 529.8,
+          "end": 530.12
+        },
+        {
+          "text": "worst",
+          "start": 530.12,
+          "end": 530.44
+        },
+        {
+          "text": "health",
+          "start": 530.44,
+          "end": 530.76
+        },
+        {
+          "text": "condition",
+          "start": 530.76,
+          "end": 531.08
+        },
+        {
+          "text": "you",
+          "start": 531.08,
+          "end": 531.4
+        },
+        {
+          "text": "can",
+          "start": 531.4,
+          "end": 531.72
+        },
+        {
+          "text": "have,",
+          "start": 531.72,
+          "end": 532.04
+        },
+        {
+          "text": "not",
+          "start": 532.04,
+          "end": 532.36
+        },
+        {
+          "text": "being",
+          "start": 532.36,
+          "end": 532.68
+        },
+        {
+          "text": "alive.",
+          "start": 532.68,
+          "end": 533.0
+        }
+      ]
+    },
+    {
+      "id": "cue-142",
+      "start": 535.37,
+      "end": 538.17,
+      "text": "She said, \"KINDLY COMPLY WITH MY BANKERS INSTRUCTIONS.",
+      "words": [
+        {
+          "text": "She",
+          "start": 535.37,
+          "end": 535.72
+        },
+        {
+          "text": "said,",
+          "start": 535.72,
+          "end": 536.07
+        },
+        {
+          "text": "\"KINDLY",
+          "start": 536.07,
+          "end": 536.42
+        },
+        {
+          "text": "COMPLY",
+          "start": 536.42,
+          "end": 536.77
+        },
+        {
+          "text": "WITH",
+          "start": 536.77,
+          "end": 537.12
+        },
+        {
+          "text": "MY",
+          "start": 537.12,
+          "end": 537.47
+        },
+        {
+          "text": "BANKERS",
+          "start": 537.47,
+          "end": 537.82
+        },
+        {
+          "text": "INSTRUCTIONS.",
+          "start": 537.82,
+          "end": 538.17
+        }
+      ]
+    },
+    {
+      "id": "cue-143",
+      "start": 538.17,
+      "end": 544.17,
+      "text": "ONE LOVE.\" (Laughter) I said, \"Of course. NO WOMAN, NO CRY.\"",
+      "words": [
+        {
+          "text": "ONE",
+          "start": 538.17,
+          "end": 538.75
+        },
+        {
+          "text": "LOVE.\"",
+          "start": 538.75,
+          "end": 539.33
+        },
+        {
+          "text": "(Laughter)",
+          "start": 539.35,
+          "end": 541.3
+        },
+        {
+          "text": "I",
+          "start": 542.33,
+          "end": 542.56
+        },
+        {
+          "text": "said,",
+          "start": 542.56,
+          "end": 542.79
+        },
+        {
+          "text": "\"Of",
+          "start": 542.79,
+          "end": 543.02
+        },
+        {
+          "text": "course.",
+          "start": 543.02,
+          "end": 543.25
+        },
+        {
+          "text": "NO",
+          "start": 543.25,
+          "end": 543.48
+        },
+        {
+          "text": "WOMAN,",
+          "start": 543.48,
+          "end": 543.71
+        },
+        {
+          "text": "NO",
+          "start": 543.71,
+          "end": 543.94
+        },
+        {
+          "text": "CRY.\"",
+          "start": 543.94,
+          "end": 544.17
+        }
+      ]
+    },
+    {
+      "id": "cue-144",
+      "start": 544.17,
+      "end": 555.82,
+      "text": "(Laughter) (Applause) She said, \"MY BANKER WILL NEED TRANSFER OF 3000 DOLLARS. ONE LOVE.\"",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 544.17,
+          "end": 547.67
+        },
+        {
+          "text": "(Applause)",
+          "start": 547.7,
+          "end": 551.19
+        },
+        {
+          "text": "She",
+          "start": 552.7,
+          "end": 552.96
+        },
+        {
+          "text": "said,",
+          "start": 552.96,
+          "end": 553.22
+        },
+        {
+          "text": "\"MY",
+          "start": 553.22,
+          "end": 553.48
+        },
+        {
+          "text": "BANKER",
+          "start": 553.48,
+          "end": 553.74
+        },
+        {
+          "text": "WILL",
+          "start": 553.74,
+          "end": 554.0
+        },
+        {
+          "text": "NEED",
+          "start": 554.0,
+          "end": 554.26
+        },
+        {
+          "text": "TRANSFER",
+          "start": 554.26,
+          "end": 554.52
+        },
+        {
+          "text": "OF",
+          "start": 554.52,
+          "end": 554.78
+        },
+        {
+          "text": "3000",
+          "start": 554.78,
+          "end": 555.04
+        },
+        {
+          "text": "DOLLARS.",
+          "start": 555.04,
+          "end": 555.3
+        },
+        {
+          "text": "ONE",
+          "start": 555.3,
+          "end": 555.56
+        },
+        {
+          "text": "LOVE.\"",
+          "start": 555.56,
+          "end": 555.82
+        }
+      ]
+    },
+    {
+      "id": "cue-145",
+      "start": 555.88,
+      "end": 561.97,
+      "text": "(Laughter) I said, \"no problemo.",
+      "words": [
+        {
+          "text": "(Laughter)",
+          "start": 555.88,
+          "end": 558.01
+        },
+        {
+          "text": "I",
+          "start": 560.01,
+          "end": 560.5
+        },
+        {
+          "text": "said,",
+          "start": 560.5,
+          "end": 560.99
+        },
+        {
+          "text": "\"no",
+          "start": 560.99,
+          "end": 561.48
+        },
+        {
+          "text": "problemo.",
+          "start": 561.48,
+          "end": 561.97
+        }
+      ]
+    },
+    {
+      "id": "cue-146",
+      "start": 564.42,
+      "end": 573.92,
+      "text": "I SHOT THE SHERIFF.\" (Laughter) Thank you.",
+      "words": [
+        {
+          "text": "I",
+          "start": 564.42,
+          "end": 564.74
+        },
+        {
+          "text": "SHOT",
+          "start": 564.74,
+          "end": 565.06
+        },
+        {
+          "text": "THE",
+          "start": 565.06,
+          "end": 565.38
+        },
+        {
+          "text": "SHERIFF.\"",
+          "start": 565.38,
+          "end": 565.7
+        },
+        {
+          "text": "(Laughter)",
+          "start": 571.72,
+          "end": 572.74
+        },
+        {
+          "text": "Thank",
+          "start": 572.77,
+          "end": 573.35
+        },
+        {
+          "text": "you.",
+          "start": 573.35,
+          "end": 573.92
+        }
+      ]
+    },
+    {
+      "id": "cue-147",
+      "start": 573.94,
+      "end": 587.21,
+      "text": "(Applause)",
+      "words": [
+        {
+          "text": "(Applause)",
+          "start": 573.94,
+          "end": 587.21
+        }
+      ]
+    }
+  ]
+}

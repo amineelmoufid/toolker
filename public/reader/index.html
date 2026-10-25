@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FocusFlow — ADHD Bionic Speed Reader</title>
+  <meta name="description" content="Read faster, focus deeper, and overcome text fatigue with bionic fixation formatting, ADHD reading guides, and bimodal audio.">
+  <meta name="theme-color" content="#3b82f6">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20width=%22100%22%20height=%22100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  
+  <!-- Google Fonts: Lexend (ADHD optimized), Arabic fonts (Cairo, Noto Sans Arabic, Tajawal), Atkinson, Inter, Merriweather, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700;800&family=Tajawal:wght@400;500;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Lexend:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for High-Fidelity Math & Formula Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-light font-lexend">
+  <!-- Reading Ruler (Follows cursor when enabled) -->
+  <div id="readingRuler" class="reading-ruler hidden" aria-hidden="true"></div>
+
+  <!-- App Wrapper -->
+  <div class="app-container">
+    <!-- Top Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="brand">
+          <div class="brand-logo">
+            <span class="logo-bold">Fo</span><span>cus</span><span class="logo-accent">Flow</span>
+          </div>
+          <span class="badge badge-accent">ADHD Reader</span>
+        </div>
+        <p class="tagline"><b>Bio</b>nic <b>fixa</b>tion <b>read</b>ing <b>eng</b>ine <b>desig</b>ned <b>f</b>or <b>neurodiv</b>ergent <b>fo</b>cus.</p>
+      </div>
+
+      <div class="header-actions">
+        <!-- View mode switcher -->
+        <div class="segmented-control" role="tablist">
+          <button id="btnViewFocus" class="seg-btn active" role="tab" aria-selected="true" title="Distraction-free reading view (Main Page)">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            <span>Focus Mode</span>
+          </button>
+          <button id="btnViewSplit" class="seg-btn" role="tab" aria-selected="false" title="Split input and formatted text">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+            <span>Split View</span>
+          </button>
+        </div>
+
+
+        <!-- 100% Cross-Device Cloud Sync Status -->
+        <button id="btnCloudSync" class="cloud-sync-btn is-synced" title="100% Saved to Cloud — Open from any device to see this exact screen. Click to copy sync link." aria-label="Cross-device cloud sync status">
+          <svg class="icon-xs" id="cloudSyncIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+            <polyline points="9 11 12 14 20 6" id="cloudCheckMark" stroke-width="2"/>
+          </svg>
+          <span id="cloudSyncLabel">Cloud Saved</span>
+        </button>
+
+        <!-- Settings drawer toggle -->
+        <button id="btnToggleSettings" class="btn btn-secondary icon-btn" title="Reading Ergonomics Settings" aria-label="Toggle typography settings">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Ergonomics Controls Bar -->
+    <div id="settingsPanel" class="settings-panel">
+      <div class="settings-grid">
+        <!-- Fixation Strength -->
+        <div class="setting-item">
+          <div class="setting-label">
+            <span>Fixation Strength</span>
+            <span id="fixationVal" class="setting-val">45%</span>
+          </div>
+          <input type="range" id="sliderFixation" min="20" max="75" step="5" value="45" class="range-slider">
+          <div class="slider-ticks">
+            <span>Subtle</span>
+            <span>Balanced</span>
+            <span>Intense</span>
+          </div>
+        </div>
+
+        <!-- Typography / Font (With Live Typeface Previews) -->
+        <div class="setting-item">
+          <div class="setting-label">
+            <span>Font Family</span>
+          </div>
+          <div id="fontPickerDropdown" class="font-picker-dropdown">
+            <button type="button" id="btnFontPickerTrigger" class="font-picker-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Select font family">
+              <span class="font-trigger-content">
+                <span id="fontTriggerLabel" class="font-trigger-label preview-font-lexend">Lexend (Optimal Reading)</span>
+              </span>
+              <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div id="fontPickerMenu" class="font-picker-menu hidden" role="listbox" tabindex="-1">
+              <div class="font-group-label">Latin Fonts (English / French)</div>
+              
+              <div class="font-option-item is-selected" role="option" tabindex="0" data-font="font-lexend" data-name="Lexend (Optimal Reading)">
+                <div class="font-option-meta">
+                  <span class="font-option-name preview-font-lexend">Lexend</span>
+                  <span class="font-badge">Optimal Reading</span>
+                  <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="font-option-specimen preview-font-lexend">
+                  Aa Bb Quick focus saccades 123
+                </div>
+              </div>
+
+              <div class="font-option-item" role="option" tabindex="0" data-font="font-atkinson" data-name="Atkinson Hyperlegible">
+                <div class="font-option-meta">
+                  <span class="font-option-name preview-font-atkinson">Atkinson Hyperlegible</span>
+                  <span class="font-badge">High Clarity</span>
+                  <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="font-option-specimen preview-font-atkinson">
+                  Aa Bb Quick focus saccades 123
+                </div>
+              </div>
+
+              <div class="font-option-item" role="option" tabindex="0" data-font="font-inter" data-name="Inter (Clean Modern)">
+                <div class="font-option-meta">
+                  <span class="font-option-name preview-font-inter">Inter</span>
+                  <span class="font-badge">Clean Modern</span>
+                  <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="font-option-specimen preview-font-inter">
+                  Aa Bb Quick focus saccades 123
+                </div>
+              </div>
+
+              <div class="font-option-item" role="option" tabindex="0" data-font="font-serif" data-name="Merriweather (Serif)">
+                <div class="font-option-meta">
+                  <span class="font-option-name preview-font-serif">Merriweather</span>
+                  <span class="font-badge">Editorial Serif</span>
+                  <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="font-option-specimen preview-font-serif">
+                  Aa Bb Quick focus saccades 123
+                </div>
+              </div>
+
+              <div class="font-option-item" role="option" tabindex="0" data-font="font-mono" data-name="JetBrains Mono (Code)">
+                <div class="font-option-meta">
+                  <span class="font-option-name preview-font-mono">JetBrains Mono</span>
+                  <span class="font-badge">Monospace</span>
+                  <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="font-option-specimen preview-font-mono">
+                  Aa Bb Quick focus saccades 123
+                </div>
+              </div>
+
+              <div class="font-group-label">Arabic Fonts (العربية)</div>
+
+              <div class="font-option-item" role="option" tabindex="0" data-font="font-cairo" data-name="Cairo (العربية - حديث)" dir="rtl">
+                <div class="font-option-meta">
+                  <span class="font-option-name preview-font-cairo">Cairo (القاهرة)</span>
+                  <span class="font-badge">حديث وعصري</span>
+                  <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="font-option-specimen preview-font-cairo">
+                  أبجد هوز - القراءة الحيوية السريعة ١٢٣
+                </div>
+              </div>
+
+              <div class="font-option-item" role="option" tabindex="0" data-font="font-noto-arabic" data-name="Noto Sans Arabic (العربية - فائق الوضوح)" dir="rtl">
+                <div class="font-option-meta">
+                  <span class="font-option-name preview-font-noto-arabic">Noto Sans Arabic</span>
+                  <span class="font-badge">فائق الوضوح</span>
+                  <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="font-option-specimen preview-font-noto-arabic">
+                  أبجد هوز - القراءة الحيوية السريعة ١٢٣
+                </div>
+              </div>
+
+              <div class="font-option-item" role="option" tabindex="0" data-font="font-tajawal" data-name="Tajawal (العربية - مريح)" dir="rtl">
+                <div class="font-option-meta">
+                  <span class="font-option-name preview-font-tajawal">Tajawal (تجوال)</span>
+                  <span class="font-badge">مريح للعين</span>
+                  <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="font-option-specimen preview-font-tajawal">
+                  أبجد هوز - القراءة الحيوية السريعة ١٢٣
+                </div>
+              </div>
+            </div>
+            <!-- Visually hidden native select for fallback / testability -->
+            <select id="selectFont" class="sr-only" tabindex="-1" aria-hidden="true">
+              <option value="font-lexend">Lexend (Optimal Reading)</option>
+              <option value="font-atkinson">Atkinson Hyperlegible</option>
+              <option value="font-inter">Inter (Clean Modern)</option>
+              <option value="font-serif">Merriweather (Serif)</option>
+              <option value="font-mono">JetBrains Mono (Code)</option>
+              <option value="font-cairo">Cairo (العربية - حديث)</option>
+              <option value="font-noto-arabic">Noto Sans Arabic (العربية - فائق الوضوح)</option>
+              <option value="font-tajawal">Tajawal (العربية - مريح)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Font Size -->
+        <div class="setting-item">
+          <div class="setting-label">
+            <span>Font Size</span>
+            <span id="fontSizeVal" class="setting-val">19px</span>
+          </div>
+          <input type="range" id="sliderFontSize" min="14" max="32" step="1" value="19" class="range-slider">
+        </div>
+
+        <!-- Line Height -->
+        <div class="setting-item">
+          <div class="setting-label">
+            <span>Line Spacing</span>
+            <span id="lineHeightVal" class="setting-val">1.8</span>
+          </div>
+          <input type="range" id="sliderLineHeight" min="1.3" max="2.4" step="0.1" value="1.8" class="range-slider">
+        </div>
+
+        <!-- Line Width -->
+        <div class="setting-item">
+          <div class="setting-label">
+            <span>Max Column Width</span>
+          </div>
+          <select id="selectWidth" class="form-select">
+            <option value="width-narrow">Narrow (55ch - Less eye travel)</option>
+            <option value="width-medium" selected>Balanced (70ch)</option>
+            <option value="width-wide">Wide (85ch)</option>
+            <option value="width-full">Full Width</option>
+          </select>
+        </div>
+
+        <!-- ADHD Tools Toggles -->
+        <div class="setting-item toggles-group">
+          <div class="setting-label"><span>ADHD Aids</span></div>
+          <div class="toggle-row">
+            <label class="toggle-switch">
+              <input type="checkbox" id="toggleRuler">
+              <span class="switch-slider"></span>
+              <span class="switch-label">Reading Ruler (Guide line)</span>
+            </label>
+            <label class="toggle-switch">
+              <input type="checkbox" id="toggleHighContrast">
+              <span class="switch-slider"></span>
+              <span class="switch-label">Subtle Word Dimming</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Workspace (Defaults to Focus Mode as Main Page) -->
+    <main class="workspace focus-mode" id="workspace">
+      <!-- Input Column -->
+      <section class="pane input-pane" id="inputPane">
+        <div class="pane-header">
+          <div class="pane-title">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            <span>Input Text</span>
+          </div>
+          <div class="pane-tools">
+            <!-- Language Selector Pills (Samples & Voice presets) -->
+            <div class="lang-pills" role="group" aria-label="Language selector">
+              <button id="btnLangEn" class="lang-pill active" data-lang="en" title="English Sample & Presets">EN</button>
+              <button id="btnLangFr" class="lang-pill" data-lang="fr" title="Échantillon Français & Paramètres">FR</button>
+              <button id="btnLangAr" class="lang-pill" data-lang="ar" title="نموذج عربي وإعدادات اليمين لليسار">العربية</button>
+            </div>
+
+            <!-- Direction Toggle -->
+            <button id="btnToggleDir" class="btn btn-sm btn-ghost" title="Text Direction (LTR / RTL)">
+              <span id="dirLabel">LTR</span>
+            </button>
+
+            <button id="btnPasteText" class="btn btn-sm btn-ghost" title="Paste clipboard text">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+              <span>Paste</span>
+            </button>
+            <button id="btnClearText" class="btn btn-sm btn-ghost text-danger" title="Clear text">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              <span>Clear</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="textarea-wrapper">
+          <textarea id="rawInput" placeholder="Paste or type any article, study paper, email, or notes here...&#10;&#10;FocusFlow instantly converts your text with bionic visual anchors so your eyes can glide through paragraphs without getting stuck." spellcheck="false"></textarea>
+        </div>
+
+        <div class="pane-footer">
+          <div class="stats-bar" id="statsBar">
+            <span id="statWords">0 words</span>
+            <span class="bullet">•</span>
+            <span id="statChars">0 characters</span>
+            <span class="bullet">•</span>
+            <span id="statReadTime">~0 min read</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Formatted Reader Column -->
+      <section class="pane reader-pane" id="readerPane">
+        <div class="pane-header">
+          <div class="pane-title">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <span>Bionic Reader Canvas</span>
+          </div>
+          <div class="pane-tools">
+            <!-- Audio Controls (Bimodal Reading & Shadowing) -->
+            <div class="audio-controls" id="audioControls">
+              <button id="btnTtsPlay" class="btn btn-sm btn-accent" title="Listen with Text-to-Speech (Bimodal Audio)">
+                <svg class="icon-xs" id="ttsPlayIcon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <span id="ttsBtnLabel">Listen</span>
+              </button>
+              <button id="btnTtsStop" class="btn btn-sm btn-ghost hidden" title="Stop Audio">
+                <svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12"/></svg>
+                <span>Stop</span>
+              </button>
+              <button id="btnToolbarShadow" class="btn btn-sm btn-shadow-trigger" title="Hold or Click to Shadow active sentence" type="button">
+                <svg class="icon-xs shadow-mic-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                  <line x1="12" y1="19" x2="12" y2="22"/>
+                </svg>
+                <span id="toolbarShadowLabel">Shadow</span>
+              </button>
+              <button id="btnToolbarPartnerAudio" class="btn btn-sm btn-partner-shadow hidden" title="Play partner's shadow recording" type="button">
+                <span class="pulse-partner-dot"></span>
+                <span>Partner ▶</span>
+              </button>
+              <select id="ttsDialect" class="select-micro" title="Speech Dialect / Language">
+                <option value="auto">🌐 Auto</option>
+                <option value="en-US">🇺🇸 en-US</option>
+                <option value="fr-FR">🇫🇷 fr-FR</option>
+                <option value="ar-SA">🇸🇦 ar-SA</option>
+              </select>
+              <select id="ttsVoice" class="select-micro max-w-voice" title="Select Voice">
+                <option value="">Detecting voices...</option>
+              </select>
+              <select id="ttsSpeed" class="select-micro" title="Speech Speed">
+                <option value="0.85">0.85x</option>
+                <option value="1.0" selected>1.0x</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5">1.5x</option>
+                <option value="1.75">1.75x</option>
+              </select>
+            </div>
+
+            <!-- Action, Edit & Export tools -->
+            <button id="btnOpenBrainGym" class="btn btn-sm btn-accent brain-gym-trigger-btn" title="Generate interactive study games with Gemini AI">
+              <svg id="brainIdleIcon" class="icon-xs btn-brain-idle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="4"/></svg>
+              <svg id="brainSpinnerIcon" class="icon-xs btn-brain-spinner hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+              <span id="brainBtnLabel">Study Games</span>
+              <span id="brainReadyMark" class="ready-check hidden" title="Ready to open">✓</span>
+            </button>
+            <button id="btnToggleRuler" class="btn btn-sm btn-ghost" title="Toggle Reading Ruler (ADHD guide line)">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 17h18M7 7v4M12 7v3M17 7v4"/></svg>
+              <span>Ruler</span>
+            </button>
+            <button id="btnReaderPaste" class="btn btn-sm btn-ghost" title="Paste text from clipboard (or press Ctrl+V)">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+              <span>Paste</span>
+            </button>
+            <button id="btnCopyHtml" class="btn btn-sm btn-ghost" title="Copy formatted rich text (paste into Word/Docs/Notion)">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span>Copy</span>
+            </button>
+            <button id="btnReaderClear" class="btn btn-sm btn-ghost text-danger" title="Clear current canvas text">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              <span>Clear</span>
+            </button>
+            <button id="btnPrint" class="btn btn-sm btn-ghost" title="Print or Save as PDF">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              <span>Print/PDF</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="reader-scroll-area">
+          <article id="bionicOutput" class="bionic-article width-medium" aria-live="polite">
+            <div class="empty-state">
+              <div class="empty-icon">📖</div>
+              <h3>Yo<b>ur</b> re<b>ad</b>ing ca<b>nv</b>as is re<b>a</b>dy</h3>
+              <p>Pa<b>ste</b> te<b>xt</b> on the le<b>ft</b> or cl<b>ick</b> <strong>"Load Sample"</strong> ab<b>ove</b> to ex<b>perie</b>nce ho<b>w</b> bi<b>on</b>ic vi<b>su</b>al fi<b>xat</b>ion gui<b>des</b> yo<b>ur</b> ey<b>es</b>.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="pane-footer reader-footer">
+          <span class="tip-text">💡 <strong>ADHD Tip:</strong> Press <kbd>Space</kbd> in Focus Mode to scroll smoothly, or use the <button id="btnFooterRuler" class="link-btn-text" type="button" title="Toggle Reading Ruler">Line Ruler</button> to keep your eye locked to the current sentence.</span>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sentence Focus Modal (Sentence-by-Sentence TTS & Bionic Reader) -->
+    <div id="sentenceFocusModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="sentenceFocusTitle">
+      <div class="sentence-focus-card">
+        <div class="focus-player-header">
+          <div class="focus-title-group">
+            <h3 id="sentenceFocusTitle">Sentence Focus Reader</h3>
+            <span id="sentenceFocusLangBadge" class="badge badge-accent">Audio Sync</span>
+          </div>
+          <button id="btnCloseSentenceFocus" class="btn-close" aria-label="Close sentence focus player">&times;</button>
+        </div>
+
+        <!-- Mode Selector: Continuous vs Loop Repeat vs Step & Wait -->
+        <div class="focus-mode-switcher-container">
+          <div class="segmented-control focus-mode-selector" role="radiogroup" aria-label="Playback Mode">
+            <button id="btnModeContinuous" class="seg-btn active" role="radio" aria-checked="true" title="Auto-advance to next sentence continuously">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg>
+              <span>Continuous</span>
+            </button>
+            <button id="btnModeLoop" class="seg-btn" role="radio" aria-checked="false" title="Repeat active sentence in a continuous loop">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+              <span>Loop Repeat</span>
+            </button>
+            <button id="btnModeStep" class="seg-btn" role="radio" aria-checked="false" title="Play active sentence once and pause, waiting for next move">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="4" width="4" height="16"/><polygon points="14 5 20 12 14 19 14 5"/></svg>
+              <span>Step &amp; Wait</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Sentence Focus Stage (Contextual Peek + Main Focal Sentence) -->
+        <div class="sentence-stage">
+          <div id="sentencePeekPrev" class="sentence-peek peek-prev" role="button" tabindex="0" title="Click to jump to previous sentence">
+            <span class="peek-label">Previous:</span>
+            <span id="peekPrevText" class="peek-content"></span>
+          </div>
+          <div id="sentenceFocalBox" class="sentence-focal-box">
+            <div id="sentenceFocalContent" class="sentence-focal-content">Ready to read.</div>
+          </div>
+          <div id="sentencePeekNext" class="sentence-peek peek-next" role="button" tabindex="0" title="Click to jump to next sentence">
+            <span class="peek-label">Next:</span>
+            <span id="peekNextText" class="peek-content"></span>
+          </div>
+        </div>
+
+        <!-- The Timeline (Progress Bar, Scrubber & Stats) -->
+        <div class="sentence-timeline-group">
+          <div class="timeline-slider-wrapper">
+            <div class="timeline-progress-track">
+              <div id="sentenceProgressBar" class="timeline-progress-bar" style="width: 0%"></div>
+            </div>
+            <input type="range" id="sliderSentenceTimeline" min="1" max="1" value="1" step="1" class="timeline-slider" aria-label="Sentence Timeline Scrubber">
+          </div>
+          <div class="sentence-stats-row">
+            <span id="sentenceIndexBadge">Sentence 1 / 1</span>
+            <span id="sentenceWordsBadge">0 words</span>
+            <span id="sentenceModeStatusLabel" class="mode-status-pill">Continuous (Auto-advance)</span>
+          </div>
+        </div>
+
+        <!-- Transport Controls: < (Prev), Replay, Start/Pause, > (Next), Speed -->
+        <div class="focus-controls-wrapper">
+          <div class="focus-btn-row">
+            <button id="btnSentencePrev" class="btn btn-secondary icon-btn" title="Previous sentence (←)">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button id="btnSentenceReplay" class="btn btn-secondary icon-btn" title="Replay current sentence (R)">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><polyline points="3 3 3 8 8 8"/></svg>
+            </button>
+            <button id="btnSentencePlay" class="btn btn-accent focus-play-btn" title="Start / Pause sentence audio (Space)">
+              <svg id="sentencePlayIcon" class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <span id="sentencePlayLabel">Start</span>
+            </button>
+            <button id="btnSentenceNext" class="btn btn-secondary icon-btn" title="Next sentence (→)">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+
+          <div class="focus-speed-row">
+            <span class="speed-label">Audio Speed: <strong id="sentenceSpeedVal">1.0x</strong></span>
+            <input type="range" id="sliderSentenceSpeed" min="0.75" max="2.0" step="0.05" value="1.0" class="range-slider">
+          </div>
+        </div>
+
+        <div class="focus-keyboard-hint">
+          <span>Shortcuts: <kbd>Space</kbd> Start/Pause &nbsp;|&nbsp; <kbd>←</kbd> <kbd>→</kbd> Prev/Next &nbsp;|&nbsp; <kbd>R</kbd> Replay &nbsp;|&nbsp; <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> Modes &nbsp;|&nbsp; <kbd>Esc</kbd> Exit &amp; Sync</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Study Mode Modal (Gemini Smart Games, Critical Quizzes & Active Recall Flashcards) -->
+    <div id="brainGymModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="brainGymTitle">
+      <div class="brain-gym-card">
+        <!-- Header -->
+        <div class="brain-gym-header">
+          <div class="brain-gym-title-group">
+            <div class="brain-gym-brand">
+              <h3 id="brainGymTitle">Study Mode</h3>
+            </div>
+            <span id="brainGymTopicBadge" class="badge badge-accent">Overview</span>
+          </div>
+          <div class="brain-gym-header-actions">
+            <span id="brainCoverageBadge" class="badge badge-subtle" style="display:none;" title="Sequential coverage of ideas in the text">100% Coverage</span>
+            
+            <!-- Tiny Audio On/Off Toggle Button -->
+            <button id="btnToggleGameAudio" class="tiny-audio-toggle active" title="Click-to-read audio: On (Click to turn off)">
+              <svg class="icon-xs icon-audio-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+              </svg>
+              <svg class="icon-xs icon-audio-off hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="1" y1="1" x2="23" y2="23"/>
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+              </svg>
+              <span id="audioToggleLabel" class="audio-toggle-label">Audio: On</span>
+            </button>
+
+            <button id="btnCloseBrainGym" class="btn-close" aria-label="Close Study Mode">&times;</button>
+          </div>
+        </div>
+
+        <!-- Mode Selector Toolbar -->
+        <div class="brain-gym-nav-bar">
+          <div class="segmented-control brain-mode-selector" role="tablist" aria-label="Study Mode">
+            <button id="btnGameJourney" class="seg-btn active" role="tab" aria-selected="true" title="Progressive Discovery: Understand ideas sequentially">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="12 6 12 12 16 14"/></svg>
+              <span>Discovery</span>
+            </button>
+            <button id="btnGameFlashcards" class="seg-btn" role="tab" aria-selected="false" title="Active Recall Flashcards">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+              <span>Flashcards</span>
+            </button>
+            <button id="btnGameQuiz" class="seg-btn" role="tab" aria-selected="false" title="Critical Scenario Quiz">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>Quiz</span>
+            </button>
+            <button id="btnGameDetective" class="seg-btn" role="tab" aria-selected="false" title="Spot Logical Fallacies">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <span>Detective</span>
+            </button>
+            <button id="btnGameMatch" class="seg-btn" role="tab" aria-selected="false" title="Match Concepts and Principles">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              <span>Matching</span>
+            </button>
+          </div>
+
+          <div class="brain-gym-actions-bar">
+            <!-- Difficulty Selector -->
+            <div class="depth-toggle-wrapper" title="Content Depth">
+              <button id="btnDepthSprint" class="depth-pill active" title="Concise review">Sprint</button>
+              <button id="btnDepthDeep" class="depth-pill" title="In-depth analysis">Deep</button>
+            </div>
+
+            <!-- Regenerate Button -->
+            <button id="btnRegenerateGames" class="btn btn-sm btn-secondary" title="Regenerate questions and analysis with Gemini">
+              <svg class="icon-xs" id="regenIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+              <span>Regenerate</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Main Interactive Stage -->
+        <div id="brainGymStage" class="brain-gym-stage">
+          <!-- Dynamic Content injected here -->
+        </div>
+
+        <!-- Bottom Keyboard & Clean Footer -->
+        <div class="brain-gym-footer">
+          <span class="brain-hint-text"><kbd>1</kbd>–<kbd>5</kbd> Switch Mode &nbsp;|&nbsp; <kbd>Space</kbd> Action / Next &nbsp;|&nbsp; <kbd>Esc</kbd> Close</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Paste Modal (Seamless fallback when browser restricts direct clipboard access) -->
+    <div id="pasteModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="pasteModalTitle">
+      <div class="rsvp-card paste-card">
+        <div class="rsvp-header">
+          <div class="rsvp-title-group">
+            <h3 id="pasteModalTitle">Paste into Focus Mode</h3>
+            <span class="badge badge-accent">Direct Reader</span>
+          </div>
+          <button id="btnClosePasteModal" class="btn-close" aria-label="Close paste dialog">&times;</button>
+        </div>
+
+        <div class="paste-modal-instruction">
+          <p>Press <kbd>Ctrl+V</kbd> (or <kbd>Cmd+V</kbd> / right-click Paste) in the box below:</p>
+        </div>
+
+        <div class="paste-modal-input-wrap">
+          <textarea id="pasteModalInput" class="paste-modal-textarea" placeholder="Paste your article, notes, or paper here..." spellcheck="false" autofocus></textarea>
+        </div>
+
+        <div class="paste-modal-footer">
+          <div class="paste-permission-tip">
+            <span>💡 <em>Tip: To enable 1-click paste next time, click the 🔒 lock icon in your browser URL bar and set Clipboard to "Allow".</em></span>
+          </div>
+          <div class="paste-btn-row">
+            <button id="btnCancelPaste" class="btn btn-secondary">Cancel</button>
+            <button id="btnConfirmPaste" class="btn btn-accent">Apply &amp; Read</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Quick Audio Controller (Tiny Float Play/Pause & Shadow) -->
+    <aside id="floatingTtsBar" class="floating-tts-bar" aria-label="Floating audio control">
+      <button id="btnFloatPlay" class="float-btn float-btn-primary" title="Play / Pause Audio (Space)" type="button">
+        <svg class="icon-sm" id="floatPlayIcon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </button>
+      <button id="btnFloatStop" class="float-btn float-btn-subtle" title="Stop Audio" type="button">
+        <svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12"/></svg>
+      </button>
+      <button id="btnFloatShadow" class="float-btn float-btn-shadow" title="Hold or Click to Shadow active sentence" type="button">
+        <svg class="icon-xs shadow-mic-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+          <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+          <line x1="12" y1="19" x2="12" y2="22"/>
+        </svg>
+      </button>
+      <button id="btnFloatPartnerAudio" class="float-btn float-btn-partner hidden" title="Play partner's shadow recording" type="button">
+        <span class="pulse-partner-dot"></span>
+        <svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </button>
+      <div id="btnOpenSentenceFocus" class="float-info float-clickable-zone" role="button" tabindex="0" title="Click to open Sentence Focus Reader">
+        <span id="floatStatusLabel">Listen</span>
+      </div>
+    </aside>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast hidden" role="status"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

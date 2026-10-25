@@ -1,0 +1,10 @@
+{
+  "name": "ToolkerPro",
+  "description": "A collaborative pronunciation practice app where admins generate sentences and reference audio, and users practice by recording their own voices, all synced in real-time.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
