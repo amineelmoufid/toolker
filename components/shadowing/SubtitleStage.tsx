@@ -15,6 +15,9 @@ interface SubtitleStageProps {
   onToggleTranslation: () => void;
   onLineCompleted: (line: SubtitleLine) => void;
   onReplayLine: () => void;
+  isSyncing?: boolean;
+  syncError?: string | null;
+  onOpenLibrary?: () => void;
 }
 
 const SubtitleStage: React.FC<SubtitleStageProps> = ({
@@ -28,9 +31,62 @@ const SubtitleStage: React.FC<SubtitleStageProps> = ({
   showTranslation,
   onToggleTranslation,
   onLineCompleted,
-  onReplayLine
+  onReplayLine,
+  isSyncing = false,
+  syncError = null,
+  onOpenLibrary
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
+
+  // If subtitles array is empty, show loading or error buffer
+  if (!subtitles || subtitles.length === 0) {
+    return (
+      <div 
+        ref={containerRef}
+        className="flex-1 w-full flex flex-col items-center justify-center p-6 text-center"
+      >
+        <div className="w-full max-w-lg bg-[#16171a] rounded-lg border-2 border-[#1c1d20] shadow-[inset_2px_2px_5px_rgba(0,0,0,0.8)] p-6 sm:p-8 flex flex-col items-center justify-center">
+          {syncError ? (
+            <>
+              <div className="w-12 h-12 rounded-full bg-red-950/40 border border-red-500/40 flex items-center justify-center mb-3">
+                <span className="text-xl">⚠️</span>
+              </div>
+              <h3 className="font-mono text-xs sm:text-sm font-bold text-[#ebe6d8] uppercase tracking-wider mb-2">
+                No Subtitles Detected
+              </h3>
+              <p className="font-mono text-[11px] text-[#a09c91] max-w-md leading-relaxed mb-4">
+                {syncError}
+              </p>
+              {onOpenLibrary && (
+                <button
+                  type="button"
+                  onClick={onOpenLibrary}
+                  className="bg-[#cf573c] hover:bg-[#a83f2a] text-[#ebe6d8] border-2 border-[#1c1d20] shadow-[2px_2px_0px_#18191c] px-4 py-2 rounded-md font-mono text-xs font-bold uppercase transition-all active:translate-y-0.5 active:shadow-[0px_0px_0px_#18191c]"
+                >
+                  CHOOSE ANOTHER CLIP 🎬
+                </button>
+              )}
+            </>
+          ) : (
+            <>
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-3 h-3 rounded-full bg-[#cf573c] animate-ping" />
+                <span className="font-mono text-xs sm:text-sm font-bold text-[#ebe6d8] uppercase tracking-wider">
+                  {isSyncing ? "EXTRACTING SUBTITLES VIA CLOUD RUNNER..." : "AWAITING VIDEO SUBTITLES..."}
+                </span>
+              </div>
+              <p className="font-mono text-[11px] sm:text-xs text-[#a09c91] max-w-md leading-relaxed mb-4">
+                Synchronizing authentic speech dialogue with word-level accuracy. Timed cues will appear automatically.
+              </p>
+              <div className="w-48 h-1.5 bg-[#24252a] rounded-full overflow-hidden">
+                <div className="h-full bg-[#cf573c] animate-pulse w-full rounded-full" />
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   // 1. Determine active line:
   const activeLineIdx = subtitles.findIndex((line, idx) => {

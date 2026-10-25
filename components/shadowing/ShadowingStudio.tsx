@@ -23,18 +23,19 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack }) => {
       const storedSession = localStorage.getItem('toolker_last_session');
       if (storedSession) {
         const parsed = JSON.parse(storedSession);
-        if (parsed.clip) return parsed.clip;
+        if (parsed.clip && parsed.clip.youtubeId && parsed.clip.youtubeId !== 'qB254u2N5gQ') {
+          return parsed.clip;
+        }
       }
     } catch (e) {}
 
     // Fallback to first saved clip if it exists
     try {
-      const storedClips = localStorage.getItem('toolker_saved_clips');
+      const storedClips = localStorage.getItem('toolker_saved_clips') || localStorage.getItem('toolker_custom_clips');
       if (storedClips) {
         const parsedClips = JSON.parse(storedClips);
-        if (parsedClips && parsedClips.length > 0) {
-          return parsedClips[0];
-        }
+        const validClip = parsedClips.find((c: any) => c.youtubeId && c.youtubeId !== 'qB254u2N5gQ');
+        if (validClip) return validClip;
       }
     } catch (e) {}
 
@@ -86,6 +87,123 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack }) => {
   
   const [isLibraryOpen, setIsLibraryOpen] = useState<boolean>(currentClip === null);
   const [activeShadowLine, setActiveShadowLine] = useState<SubtitleLine | null>(null);
+  const [isAutoHealingSubtitles, setIsAutoHealingSubtitles] = useState<boolean>(false);
+  const [subtitlesError, setSubtitlesError] = useState<string | null>(null);
+
+  // Auto-heal subtitles if currentClip has empty or missing subtitles
+  useEffect(() => {
+    if (!currentClip || !currentClip.youtubeId) return;
+
+    if (currentClip.subtitles && currentClip.subtitles.length > 0) {
+      setIsAutoHealingSubtitles(false);
+      setSubtitlesError(null);
+      return;
+    }
+
+    let isMounted = true;
+    let pollInterval: any = null;
+    let attempts = 0;
+    const maxAttempts = 30;
+    const ytId = currentClip.youtubeId;
+
+    setIsAutoHealingSubtitles(true);
+    setSubtitlesError(null);
+
+    const applySubtitles = (subs: SubtitleLine[]) => {
+      if (!isMounted || !subs || subs.length === 0) return;
+      setCurrentClip(prev => {
+        if (!prev || prev.youtubeId !== ytId) return prev;
+        const updated = { ...prev, subtitles: subs };
+        try {
+          const stored = localStorage.getItem('toolker_last_session');
+          if (stored) {
+            const parsed = JSON.parse(stored);
+            localStorage.setItem('toolker_last_session', JSON.stringify({ ...parsed, clip: updated }));
+          }
+          const storedClips = localStorage.getItem('toolker_custom_clips');
+          if (storedClips) {
+            const parsedList = JSON.parse(storedClips);
+            const updatedList = parsedList.map((c: any) => c.youtubeId === ytId ? { ...c, subtitles: subs } : c);
+            localStorage.setItem('toolker_custom_clips', JSON.stringify(updatedList));
+          }
+        } catch (_) {}
+        return updated;
+      });
+      setIsAutoHealingSubtitles(false);
+      setSubtitlesError(null);
+      showToast(`✓ Subtitles Loaded (${subs.length} cues)`);
+    };
+
+    const runExtraction = async () => {
+      // 1. Direct static check
+      try {
+        const staticRes = await fetch(`/transcripts/${ytId}.json?_t=${Date.now()}`);
+        if (staticRes.ok) {
+          const staticData = await staticRes.json();
+          if (staticData.ok && Array.isArray(staticData.subtitles) && staticData.subtitles.length > 0) {
+            applySubtitles(staticData.subtitles);
+            return;
+          }
+        }
+      } catch (_) {}
+
+      // 2. Direct API check
+      try {
+        const checkRes = await fetch(`/api/extract?v=${ytId}&_t=${Date.now()}`);
+        if (checkRes.ok) {
+          const checkData = await checkRes.json();
+          if (checkData.ok && Array.isArray(checkData.subtitles) && checkData.subtitles.length > 0) {
+            applySubtitles(checkData.subtitles);
+            return;
+          }
+        }
+      } catch (_) {}
+
+      // 3. Trigger cloud extractor
+      try {
+        await fetch('/api/extract', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ videoId: ytId })
+        });
+      } catch (_) {}
+
+      // 4. Poll every 2 seconds
+      pollInterval = setInterval(async () => {
+        if (!isMounted) {
+          clearInterval(pollInterval);
+          return;
+        }
+        attempts++;
+        try {
+          const pollRes = await fetch(`/api/extract?v=${ytId}&_t=${Date.now()}`);
+          if (pollRes.ok) {
+            const pollData = await pollRes.json();
+            if (pollData.ok && Array.isArray(pollData.subtitles) && pollData.subtitles.length > 0) {
+              clearInterval(pollInterval);
+              applySubtitles(pollData.subtitles);
+              return;
+            }
+          }
+        } catch (_) {}
+
+        if (attempts >= maxAttempts) {
+          clearInterval(pollInterval);
+          if (isMounted) {
+            setIsAutoHealingSubtitles(false);
+            setSubtitlesError("No subtitles available on YouTube for this video.");
+          }
+        }
+      }, 2000);
+    };
+
+    runExtraction();
+
+    return () => {
+      isMounted = false;
+      if (pollInterval) clearInterval(pollInterval);
+    };
+  }, [currentClip?.youtubeId, currentClip?.subtitles?.length]);
 
   const playerRef = useRef<YouTubePlayerRef | null>(null);
   const lastSavedTimeRef = useRef<number>(0);
@@ -511,6 +629,9 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack }) => {
               onToggleTranslation={handleToggleTranslation}
               onLineCompleted={handleLineCompleted}
               onReplayLine={handleReplayActiveLine}
+              isSyncing={isAutoHealingSubtitles}
+              syncError={subtitlesError}
+              onOpenLibrary={() => setIsLibraryOpen(true)}
             />
           ) : (
             <div className="flex items-center justify-center h-full w-full opacity-50">

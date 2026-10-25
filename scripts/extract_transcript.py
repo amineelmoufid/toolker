@@ -248,14 +248,6 @@ def extract_video(vid, preferred_lang=None, output_dir="public/transcripts"):
         print(f"Successfully generated {out_file} with {len(sentences)} sentences.")
         return True
     else:
-        err_data = {
-            "ok": False,
-            "videoId": vid,
-            "error": "No subtitles could be extracted from YouTube.",
-            "subtitles": []
-        }
-        with open(out_file, "w", encoding="utf-8") as f:
-            json.dump(err_data, f, ensure_ascii=False, indent=2)
         print(f"Failed to extract subtitles for {vid}")
         return False
 

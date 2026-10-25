@@ -220,7 +220,12 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
     try {
       const stored = localStorage.getItem('toolker_custom_clips');
       if (stored) {
-        setCustomClips(JSON.parse(stored));
+        const parsed = JSON.parse(stored);
+        const valid = Array.isArray(parsed) ? parsed.filter((c: any) => c.youtubeId && c.youtubeId !== 'qB254u2N5gQ') : [];
+        setCustomClips(valid);
+        if (Array.isArray(parsed) && valid.length !== parsed.length) {
+          localStorage.setItem('toolker_custom_clips', JSON.stringify(valid));
+        }
       }
     } catch (err) {
       console.warn("Failed to load custom clips", err);

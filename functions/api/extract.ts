@@ -155,7 +155,7 @@ export const onRequestPost = async (context: any) => {
         ok: true,
         queued: true,
         videoId,
-        pollUrl: rawUrl,
+        pollUrl: `/api/extract?v=${videoId}`,
         message: "Cloud extractor launched. Polling for transcript."
       }), {
         status: 200,

@@ -292,8 +292,8 @@ export const PRESET_CLIPS: ShadowingClip[] = [
   {
     id: 'le-petit-prince',
     title: 'Le Petit Prince - L’essentiel est invisible pour les yeux',
-    youtubeId: 'qB254u2N5gQ',
-    thumbnail: 'https://img.youtube.com/vi/qB254u2N5gQ/hqdefault.jpg',
+    youtubeId: 'xsmv-znZqik',
+    thumbnail: 'https://img.youtube.com/vi/xsmv-znZqik/hqdefault.jpg',
     category: 'Français 🇫🇷',
     subtitles: [
       {
