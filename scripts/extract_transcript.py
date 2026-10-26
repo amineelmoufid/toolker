@@ -47,7 +47,7 @@ def build_sentences_from_words(raw_words):
 
         w_clean = re.sub(r'[^\w]', '', t).lower()
         p_clean = re.sub(r'[^\w]', '', prev_text).lower()
-        if w_clean and w_clean == p_clean and abs(w.get('start', 0) - prev_start) < 0.8:
+        if w_clean and w_clean == p_clean and abs(w.get('start', 0) - prev_start) < 0.6:
             continue
 
         clean_words.append({
@@ -61,13 +61,6 @@ def build_sentences_from_words(raw_words):
     if not clean_words:
         return []
 
-    for i in range(len(clean_words)):
-        if i > 0:
-            if clean_words[i]['start'] < clean_words[i - 1]['start']:
-                clean_words[i]['start'] = round(clean_words[i - 1]['end'], 2)
-            if clean_words[i]['end'] <= clean_words[i]['start']:
-                clean_words[i]['end'] = round(clean_words[i]['start'] + 0.35, 2)
-
     sentences = []
     curr = []
 
@@ -76,23 +69,30 @@ def build_sentences_from_words(raw_words):
         txt = w['text']
         is_last = (i == len(clean_words) - 1)
 
-        ends_punct = bool(re.search(r'[.?!][\"\']?$', txt)) and (txt.lower() not in COMMON_ABBREVIATIONS)
+        ends_punct = bool(re.search(r'[.?!][\"\'”’]?$', txt)) and (txt.lower() not in COMMON_ABBREVIATIONS)
         is_pause = False
         if i < len(clean_words) - 1:
             gap = clean_words[i + 1]['start'] - w['end']
-            if gap >= 0.85:
+            if gap >= 1.5 and len(curr) >= 8:
                 is_pause = True
 
-        is_too_long = len(curr) >= 18
-        should_break = is_last or ends_punct or (is_pause and len(curr) >= 4) or is_too_long
+        is_runaway = len(curr) >= 35
+        should_break = is_last or ends_punct or is_pause or is_runaway
 
         if should_break and curr:
+            # Monotonize word timestamps ONLY within this individual sentence to avoid global drift
+            for j in range(1, len(curr)):
+                if curr[j]['start'] < curr[j - 1]['start']:
+                    curr[j]['start'] = curr[j - 1]['end']
+                if curr[j]['end'] <= curr[j]['start']:
+                    curr[j]['end'] = round(curr[j]['start'] + 0.25, 2)
+
             s_text = " ".join(item['text'] for item in curr).strip()
             if s_text:
                 s_text = s_text[0].upper() + s_text[1:]
                 curr[0]['text'] = curr[0]['text'][0].upper() + curr[0]['text'][1:]
 
-            if not re.search(r'[.?!][\"\']?$', s_text):
+            if not re.search(r'[.?!][\"\'”’]?$', s_text):
                 s_text = re.sub(r'[,;:-]$', '', s_text) + '.'
                 curr[-1]['text'] = re.sub(r'[,;:-]$', '', curr[-1]['text']) + '.'
 

@@ -2674,8 +2674,8 @@
     {
       "id": "cue-35",
       "start": 218.02,
-      "end": 225.46,
-      "text": "On a beach in Puerto Rico Until the waves scream: “Oh Lord!” So that my seal stays with.",
+      "end": 222.34,
+      "text": "On a beach in Puerto Rico Until the waves scream: “Oh Lord!”",
       "words": [
         {
           "text": "On",
@@ -2736,7 +2736,15 @@
           "text": "Lord!”",
           "start": 221.92,
           "end": 222.34
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-36",
+      "start": 222.4,
+      "end": 225.46,
+      "text": "So that my seal stays with.",
+      "words": [
         {
           "text": "So",
           "start": 222.4,
@@ -2770,7 +2778,7 @@
       ]
     },
     {
-      "id": "cue-36",
+      "id": "cue-37",
       "start": 225.46,
       "end": 231.36,
       "text": "You Step by step, soft then softly (Oh, yeah, We come up against each other, little by little.",
@@ -2868,7 +2876,7 @@
       ]
     },
     {
-      "id": "cue-37",
+      "id": "cue-38",
       "start": 231.36,
       "end": 239.53,
       "text": "(No, oh) Want you to show my mouth Your favorite places Favorite, baby Step by step, soft then.",
@@ -2966,7 +2974,7 @@
       ]
     },
     {
-      "id": "cue-38",
+      "id": "cue-39",
       "start": 239.53,
       "end": 246.03,
       "text": "Softly We come up against each other, little by little Until I make you scream And you forget.",
@@ -3064,7 +3072,7 @@
       ]
     },
     {
-      "id": "cue-39",
+      "id": "cue-40",
       "start": 246.03,
       "end": 249.6,
       "text": "Your last name Slowly.",

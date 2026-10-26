@@ -18612,8 +18612,8 @@
     {
       "id": "cue-191",
       "start": 1240.18,
-      "end": 1246.48,
-      "text": "La porte dérobée ne s'installe pas c'est un signe de discrétion de la part de jatan l'attaque est.",
+      "end": 1252.43,
+      "text": "La porte dérobée ne s'installe pas c'est un signe de discrétion de la part de jatan l'attaque est. Plus difficile à détecter et surtout c'est une façon de faire qui en dit beaucoup sur la.",
       "words": [
         {
           "text": "La",
@@ -18704,15 +18704,7 @@
           "text": "est.",
           "start": 1246.13,
           "end": 1246.48
-        }
-      ]
-    },
-    {
-      "id": "cue-192",
-      "start": 1246.48,
-      "end": 1252.78,
-      "text": "Plus difficile à détecter et surtout c'est une façon de faire qui en dit beaucoup sur la sophistication.",
-      "words": [
+        },
         {
           "text": "Plus",
           "start": 1246.48,
@@ -18794,12 +18786,20 @@
           "end": 1252.08
         },
         {
-          "text": "la",
+          "text": "la.",
           "start": 1252.08,
           "end": 1252.43
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-192",
+      "start": 1252.43,
+      "end": 1252.78,
+      "text": "Sophistication.",
+      "words": [
         {
-          "text": "sophistication.",
+          "text": "Sophistication.",
           "start": 1252.43,
           "end": 1252.78
         }
@@ -21650,8 +21650,8 @@
     {
       "id": "cue-222",
       "start": 1435.48,
-      "end": 1441.78,
-      "text": "Plus il est difficile de ne laisser aucune trace mais pas pour jatan à part ce qui est.",
+      "end": 1447.73,
+      "text": "Plus il est difficile de ne laisser aucune trace mais pas pour jatan à part ce qui est. Nécessairement publique pour développer du code open source c'est-à-dire du code et des mails il n'y a.",
       "words": [
         {
           "text": "Plus",
@@ -21742,15 +21742,7 @@
           "text": "est.",
           "start": 1441.43,
           "end": 1441.78
-        }
-      ]
-    },
-    {
-      "id": "cue-223",
-      "start": 1441.78,
-      "end": 1448.08,
-      "text": "Nécessairement publique pour développer du code open source c'est-à-dire du code et des mails il n'y a absolument.",
-      "words": [
+        },
         {
           "text": "Nécessairement",
           "start": 1441.78,
@@ -21832,12 +21824,20 @@
           "end": 1447.38
         },
         {
-          "text": "a",
+          "text": "a.",
           "start": 1447.38,
           "end": 1447.73
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-223",
+      "start": 1447.73,
+      "end": 1448.08,
+      "text": "Absolument.",
+      "words": [
         {
-          "text": "absolument.",
+          "text": "Absolument.",
           "start": 1447.73,
           "end": 1448.08
         }
@@ -25570,8 +25570,8 @@
     {
       "id": "cue-262",
       "start": 1687.48,
-      "end": 1693.78,
-      "text": "Y a plusieurs thèses à ce sujet sur Internet toute ne concorde pas mais une d'entre elles est.",
+      "end": 1699.73,
+      "text": "Y a plusieurs thèses à ce sujet sur Internet toute ne concorde pas mais une d'entre elles est. Particulièrement intéressante et selon moi crédible pour cacher d'où il travaille jatan aurait très bien pu changer.",
       "words": [
         {
           "text": "Y",
@@ -25662,15 +25662,7 @@
           "text": "est.",
           "start": 1693.43,
           "end": 1693.78
-        }
-      ]
-    },
-    {
-      "id": "cue-263",
-      "start": 1693.78,
-      "end": 1700.08,
-      "text": "Particulièrement intéressante et selon moi crédible pour cacher d'où il travaille jatan aurait très bien pu changer le.",
-      "words": [
+        },
         {
           "text": "Particulièrement",
           "start": 1693.78,
@@ -25752,12 +25744,20 @@
           "end": 1699.38
         },
         {
-          "text": "changer",
+          "text": "changer.",
           "start": 1699.38,
           "end": 1699.73
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-263",
+      "start": 1699.73,
+      "end": 1700.08,
+      "text": "Le.",
+      "words": [
         {
-          "text": "le.",
+          "text": "Le.",
           "start": 1699.73,
           "end": 1700.08
         }

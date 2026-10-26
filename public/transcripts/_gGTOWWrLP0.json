@@ -2792,8 +2792,8 @@
     {
       "id": "cue-41",
       "start": 208.55,
-      "end": 215.28,
-      "text": "Et si maintenant on utilisait cette expertise pour vendre de la protection ?” Crossrider va donc devenir Kape.",
+      "end": 213.08,
+      "text": "Et si maintenant on utilisait cette expertise pour vendre de la protection ?”",
       "words": [
         {
           "text": "Et",
@@ -2859,7 +2859,15 @@
           "text": "?”",
           "start": 212.75,
           "end": 213.1
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-42",
+      "start": 213.08,
+      "end": 215.28,
+      "text": "Crossrider va donc devenir Kape.",
+      "words": [
         {
           "text": "Crossrider",
           "start": 213.08,
@@ -2888,7 +2896,7 @@
       ]
     },
     {
-      "id": "cue-42",
+      "id": "cue-43",
       "start": 215.28,
       "end": 220.25,
       "text": "Technologies et faire un pivot vers la protection de la vie privée.",
@@ -2956,7 +2964,7 @@
       ]
     },
     {
-      "id": "cue-43",
+      "id": "cue-44",
       "start": 220.25,
       "end": 224.52,
       "text": "Mais comme on va le voir, on ne change pas son ADN aussi facilement.",
@@ -3034,7 +3042,7 @@
       ]
     },
     {
-      "id": "cue-44",
+      "id": "cue-45",
       "start": 224.52,
       "end": 231.68,
       "text": "Car derrière les fondateurs de Crossrider, il y a un réseau d'influence qui nous emmène directement dans les.",
@@ -3132,7 +3140,7 @@
       ]
     },
     {
-      "id": "cue-45",
+      "id": "cue-46",
       "start": 231.68,
       "end": 239.36,
       "text": "Bureaux de l'une des agences de renseignement les plus puissantes du monde.",
@@ -3200,7 +3208,7 @@
       ]
     },
     {
-      "id": "cue-46",
+      "id": "cue-47",
       "start": 239.4,
       "end": 247.22,
       "text": "Et c’est ici que l’histoire bascule car pour comprendre pourquoi Kape Technologies est si inquiétante, il ne faut.",
@@ -3298,7 +3306,7 @@
       ]
     },
     {
-      "id": "cue-47",
+      "id": "cue-48",
       "start": 247.22,
       "end": 251.08,
       "text": "Pas seulement regarder ce qu'ils font, mais d'où ils viennent.",
@@ -3356,7 +3364,7 @@
       ]
     },
     {
-      "id": "cue-48",
+      "id": "cue-49",
       "start": 251.08,
       "end": 255.8,
       "text": "L’un des fondateurs de Crossrider s’appelle Koby Menachemi.",
@@ -3404,7 +3412,7 @@
       ]
     },
     {
-      "id": "cue-49",
+      "id": "cue-50",
       "start": 255.8,
       "end": 260.52,
       "text": "Et Koby n’est pas l’entrepreneur lambda de la Silicon Valley.",
@@ -3462,7 +3470,7 @@
       ]
     },
     {
-      "id": "cue-50",
+      "id": "cue-51",
       "start": 260.52,
       "end": 263.56,
       "text": "C’est un ancien membre de l’Unité 8200.",
@@ -3505,7 +3513,7 @@
       ]
     },
     {
-      "id": "cue-51",
+      "id": "cue-52",
       "start": 263.56,
       "end": 268.24,
       "text": "Pour ceux qui ne connaissent pas, c’est l’élite absolue du renseignement israélien.",
@@ -3573,7 +3581,7 @@
       ]
     },
     {
-      "id": "cue-52",
+      "id": "cue-53",
       "start": 268.24,
       "end": 273.48,
       "text": "C’est l’équivalent de la NSA aux Etats Unis mais avec une culture encore plus agressive.",
@@ -3656,7 +3664,7 @@
       ]
     },
     {
-      "id": "cue-53",
+      "id": "cue-54",
       "start": 273.48,
       "end": 279.99,
       "text": "Leur métier, c’est de craquer des codes, d’infiltrer des réseaux étrangers et de mettre en place des systèmes.",
@@ -3754,7 +3762,7 @@
       ]
     },
     {
-      "id": "cue-54",
+      "id": "cue-55",
       "start": 279.99,
       "end": 281.28,
       "text": "De surveillance de masse.",
@@ -3782,7 +3790,7 @@
       ]
     },
     {
-      "id": "cue-55",
+      "id": "cue-56",
       "start": 281.28,
       "end": 283.08,
       "text": "Ce n’est pas une accusation.",
@@ -3815,7 +3823,7 @@
       ]
     },
     {
-      "id": "cue-56",
+      "id": "cue-57",
       "start": 283.08,
       "end": 285.96,
       "text": "C’est un fait documenté et revendiqué par l’État.",
@@ -3863,7 +3871,7 @@
       ]
     },
     {
-      "id": "cue-57",
+      "id": "cue-58",
       "start": 292.0,
       "end": 296.16,
       "text": "Et quand ils sortent de là, ils créent souvent des boîtes tech ultra-performantes.",
@@ -3936,7 +3944,7 @@
       ]
     },
     {
-      "id": "cue-58",
+      "id": "cue-59",
       "start": 296.2,
       "end": 301.0,
       "text": "Bref, dans la vraie vie c’est comme si vous donniez la clé de votre coffre à un serrurier.",
@@ -4034,7 +4042,7 @@
       ]
     },
     {
-      "id": "cue-59",
+      "id": "cue-60",
       "start": 301.0,
       "end": 304.3,
       "text": "Qui était il y a quelques mois braqueur de banque.",
@@ -4092,7 +4100,7 @@
       ]
     },
     {
-      "id": "cue-60",
+      "id": "cue-61",
       "start": 304.3,
       "end": 308.92,
       "text": "Et Menachemi n’est pas le seul personnage trouble dans cette affaire.",
@@ -4155,7 +4163,7 @@
       ]
     },
     {
-      "id": "cue-61",
+      "id": "cue-62",
       "start": 308.96,
       "end": 314.21,
       "text": "Derrière lui, dans l'ombre, il y a le véritable propriétaire de Kape : Teddy Sagi.",
@@ -4238,7 +4246,7 @@
       ]
     },
     {
-      "id": "cue-62",
+      "id": "cue-63",
       "start": 314.21,
       "end": 320.88,
       "text": "C'est un milliardaire israélien qui a fait fortune dans les casinos en ligne et la pornographie en ligne.",
@@ -4336,7 +4344,7 @@
       ]
     },
     {
-      "id": "cue-63",
+      "id": "cue-64",
       "start": 320.88,
       "end": 326.32,
       "text": "Sagi a même fait de la prison dans les années 90 pour délit d’initié et fraude.",
@@ -4424,7 +4432,7 @@
       ]
     },
     {
-      "id": "cue-64",
+      "id": "cue-65",
       "start": 326.4,
       "end": 332.85,
       "text": "Évidemment, la page A propos du site de Kape ne fait jamais mention de ces deux personnages qui.",
@@ -4522,7 +4530,7 @@
       ]
     },
     {
-      "id": "cue-65",
+      "id": "cue-66",
       "start": 332.85,
       "end": 340.02,
       "text": "Sont un véritable cockail explosif et qui savent pertinnement que sur internet, la donnée personnelle est l’actif le.",
@@ -4620,7 +4628,7 @@
       ]
     },
     {
-      "id": "cue-66",
+      "id": "cue-67",
       "start": 340.02,
       "end": 340.76,
       "text": "Plus précieux.",
@@ -4638,7 +4646,7 @@
       ]
     },
     {
-      "id": "cue-67",
+      "id": "cue-68",
       "start": 340.76,
       "end": 344.72,
       "text": "Et quoi de mieux que la “protection” pour la monétiser ?",
@@ -4701,7 +4709,7 @@
       ]
     },
     {
-      "id": "cue-68",
+      "id": "cue-69",
       "start": 344.72,
       "end": 347.74,
       "text": "Et là, il faut comprendre une chose fondamentale.",
@@ -4749,7 +4757,7 @@
       ]
     },
     {
-      "id": "cue-69",
+      "id": "cue-70",
       "start": 347.74,
       "end": 351.52,
       "text": "Un VPN ne vous rend pas invisible.",
@@ -4792,7 +4800,7 @@
       ]
     },
     {
-      "id": "cue-70",
+      "id": "cue-71",
       "start": 351.52,
       "end": 355.28,
       "text": "Il vous déplace vers un autre intermédiaire.",
@@ -4835,7 +4843,7 @@
       ]
     },
     {
-      "id": "cue-71",
+      "id": "cue-72",
       "start": 355.28,
       "end": 360.16,
       "text": "Si vous utilisez un VPN, vous lui confiez l'intégralité de votre vie privée.",
@@ -4908,7 +4916,7 @@
       ]
     },
     {
-      "id": "cue-72",
+      "id": "cue-73",
       "start": 360.16,
       "end": 365.76,
       "text": "Il voit quels sites vous visitez, à quelle heure, et parfois même ce que vous y faites.",
@@ -5001,7 +5009,7 @@
       ]
     },
     {
-      "id": "cue-73",
+      "id": "cue-74",
       "start": 365.76,
       "end": 372.68,
       "text": "En gros, vous transférez votre confiance de votre fournisseur d'accès internet comme Orange ou Free vers une entreprise.",
@@ -5099,7 +5107,7 @@
       ]
     },
     {
-      "id": "cue-74",
+      "id": "cue-75",
       "start": 372.68,
       "end": 373.16,
       "text": "Privée.",
@@ -5112,7 +5120,7 @@
       ]
     },
     {
-      "id": "cue-75",
+      "id": "cue-76",
       "start": 373.16,
       "end": 382.95,
       "text": "Même lorsqu’il promet de ne rien conserver avec une politique no-log et des audits externes, tout repose sur.",
@@ -5210,7 +5218,7 @@
       ]
     },
     {
-      "id": "cue-76",
+      "id": "cue-77",
       "start": 382.95,
       "end": 384.73,
       "text": "La confiance.",
@@ -5228,7 +5236,7 @@
       ]
     },
     {
-      "id": "cue-77",
+      "id": "cue-78",
       "start": 384.73,
       "end": 390.07,
       "text": "Et Kape va acheter cette confiance.",
@@ -5266,7 +5274,7 @@
       ]
     },
     {
-      "id": "cue-78",
+      "id": "cue-79",
       "start": 390.12,
       "end": 396.42,
       "text": "À partir de 2017, Kape Technologies va lancer une offensive qu’internet n'avait jamais vue jusqu'à maintenant.",
@@ -5354,7 +5362,7 @@
       ]
     },
     {
-      "id": "cue-79",
+      "id": "cue-80",
       "start": 396.42,
       "end": 401.67,
       "text": "Ils ne veulent pas juste être un acteur du marché, ils veulent être le marché.",
@@ -5437,7 +5445,7 @@
       ]
     },
     {
-      "id": "cue-80",
+      "id": "cue-81",
       "start": 401.68,
       "end": 408.2,
       "text": "Et pour ça, Teddy Sagi va sortir le chéquier et racheter, un par un, les noms les plus.",
@@ -5535,7 +5543,7 @@
       ]
     },
     {
-      "id": "cue-81",
+      "id": "cue-82",
       "start": 408.2,
       "end": 410.24,
       "text": "Respectés de la cybersécurité grand public.",
@@ -5573,7 +5581,7 @@
       ]
     },
     {
-      "id": "cue-82",
+      "id": "cue-83",
       "start": 410.28,
       "end": 413.4,
       "text": "Le premier à tomber, c’est CyberGhost en 2017.",
@@ -5621,7 +5629,7 @@
       ]
     },
     {
-      "id": "cue-83",
+      "id": "cue-84",
       "start": 413.4,
       "end": 416.52,
       "text": "À l’époque, c’est un choc pour la communauté.",
@@ -5669,7 +5677,7 @@
       ]
     },
     {
-      "id": "cue-84",
+      "id": "cue-85",
       "start": 416.56,
       "end": 423.28,
       "text": "CyberGhost, c’était la boîte roumaine « rebelle », celle qui prônait la vie privée avant tout.",
@@ -5757,7 +5765,7 @@
       ]
     },
     {
-      "id": "cue-85",
+      "id": "cue-86",
       "start": 423.28,
       "end": 430.26,
       "text": "Et là, se faire racheter par une entreprise dont le passé est lié aux malwares, c’est super inquiétant.",
@@ -5855,7 +5863,7 @@
       ]
     },
     {
-      "id": "cue-86",
+      "id": "cue-87",
       "start": 430.26,
       "end": 434.64,
       "text": "Pour les utilisateurs que Kape tente de rassurer en disant “Vous inquiétez pas.",
@@ -5928,10 +5936,10 @@
       ]
     },
     {
-      "id": "cue-87",
+      "id": "cue-88",
       "start": 434.64,
-      "end": 439.44,
-      "text": "On ne touchera à rien.” En 2018, deuxième coup : ZenMate.",
+      "end": 436.04,
+      "text": "On ne touchera à rien.”",
       "words": [
         {
           "text": "On",
@@ -5957,7 +5965,15 @@
           "text": "rien.”",
           "start": 435.76,
           "end": 436.04
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-89",
+      "start": 436.08,
+      "end": 439.44,
+      "text": "En 2018, deuxième coup : ZenMate.",
+      "words": [
         {
           "text": "En",
           "start": 436.08,
@@ -5991,7 +6007,7 @@
       ]
     },
     {
-      "id": "cue-88",
+      "id": "cue-90",
       "start": 439.44,
       "end": 440.56,
       "text": "Même logique.",
@@ -6009,7 +6025,7 @@
       ]
     },
     {
-      "id": "cue-89",
+      "id": "cue-91",
       "start": 440.56,
       "end": 447.04,
       "text": "Un VPN connu, plutôt orienté grand public, très utilisé sur Chrome et Firefox.",
@@ -6082,7 +6098,7 @@
       ]
     },
     {
-      "id": "cue-90",
+      "id": "cue-92",
       "start": 447.08,
       "end": 454.9,
       "text": "En 2019, ils frappent encore plus fort en rachetant Private Internet Access, plus connu sous le nom de.",
@@ -6180,7 +6196,7 @@
       ]
     },
     {
-      "id": "cue-91",
+      "id": "cue-93",
       "start": 454.9,
       "end": 455.31,
       "text": "PIA.",
@@ -6193,7 +6209,7 @@
       ]
     },
     {
-      "id": "cue-92",
+      "id": "cue-94",
       "start": 455.31,
       "end": 462.96,
       "text": "Pour vous donner une idée, PIA, c'était l’un des piliers du milieu, un VPN qui avait prouvé devant.",
@@ -6291,7 +6307,7 @@
       ]
     },
     {
-      "id": "cue-93",
+      "id": "cue-95",
       "start": 462.96,
       "end": 469.48,
       "text": "La justice américaine qu’il ne gardait aucun log et aucune trace de ses utilisateurs.",
@@ -6369,7 +6385,7 @@
       ]
     },
     {
-      "id": "cue-94",
+      "id": "cue-96",
       "start": 469.52,
       "end": 479.62,
       "text": "Voir ce champion de la transparence passer sous le contrôle de l’ex-Crossrider, c’était pour beaucoup une trahison pure.",
@@ -6467,7 +6483,7 @@
       ]
     },
     {
-      "id": "cue-95",
+      "id": "cue-97",
       "start": 479.62,
       "end": 480.72,
       "text": "Et simple.",
@@ -6485,7 +6501,7 @@
       ]
     },
     {
-      "id": "cue-96",
+      "id": "cue-98",
       "start": 480.72,
       "end": 485.12,
       "text": "Et là, on arrive au coup de grâce.",
@@ -6533,7 +6549,7 @@
       ]
     },
     {
-      "id": "cue-97",
+      "id": "cue-99",
       "start": 485.12,
       "end": 486.22,
       "text": "Septembre 2021.",
@@ -6551,7 +6567,7 @@
       ]
     },
     {
-      "id": "cue-98",
+      "id": "cue-100",
       "start": 486.28,
       "end": 495.66,
       "text": "Kape annonce le rachat d’ExpressVPN pour la somme colossale de 936 millions de dollars.",
@@ -6629,7 +6645,7 @@
       ]
     },
     {
-      "id": "cue-99",
+      "id": "cue-101",
       "start": 495.68,
       "end": 500.3,
       "text": "Près d’un milliard pour une seule application.",
@@ -6672,7 +6688,7 @@
       ]
     },
     {
-      "id": "cue-100",
+      "id": "cue-102",
       "start": 500.3,
       "end": 508.84,
       "text": "ExpressVPN, c’est le leader mondial, la référence absolue que tout le monde recommande et qui sponsorise la moitié.",
@@ -6770,7 +6786,7 @@
       ]
     },
     {
-      "id": "cue-101",
+      "id": "cue-103",
       "start": 508.84,
       "end": 509.56,
       "text": "De Youtube.",
@@ -6788,7 +6804,7 @@
       ]
     },
     {
-      "id": "cue-102",
+      "id": "cue-104",
       "start": 509.6,
       "end": 517.46,
       "text": "Après ce rachat, ExpressVPN va se prendre un shitstorm monumental sur internet au point que le service va.",
@@ -6886,7 +6902,7 @@
       ]
     },
     {
-      "id": "cue-103",
+      "id": "cue-105",
       "start": 517.46,
       "end": 523.22,
       "text": "Sortir un communiqué de presse pour dire qu'à part le fric qu’il ont reçu, ils n’ont rien à.",
@@ -6984,7 +7000,7 @@
       ]
     },
     {
-      "id": "cue-104",
+      "id": "cue-106",
       "start": 523.22,
       "end": 524.12,
       "text": "Voir avec Kape.",
@@ -7007,7 +7023,7 @@
       ]
     },
     {
-      "id": "cue-105",
+      "id": "cue-107",
       "start": 524.16,
       "end": 529.75,
       "text": "Avec tous ces rachats, Kape a réussi à créer une illusion du choix.",
@@ -7080,7 +7096,7 @@
       ]
     },
     {
-      "id": "cue-106",
+      "id": "cue-108",
       "start": 529.75,
       "end": 535.33,
       "text": "Aujourd’hui, si vous n'êtes pas content de CyberGhost et que vous décidez de passer chez ExpressVPN ou chez.",
@@ -7178,7 +7194,7 @@
       ]
     },
     {
-      "id": "cue-107",
+      "id": "cue-109",
       "start": 535.33,
       "end": 541.27,
       "text": "PIA pour “ plus de sécurité “, vous ne faites en fait que changer de chambre dans le.",
@@ -7276,7 +7292,7 @@
       ]
     },
     {
-      "id": "cue-108",
+      "id": "cue-110",
       "start": 541.27,
       "end": 541.93,
       "text": "Même hotel.",
@@ -7294,7 +7310,7 @@
       ]
     },
     {
-      "id": "cue-109",
+      "id": "cue-111",
       "start": 542.0,
       "end": 549.12,
       "text": "Votre argent et vos données finissent exactement au même endroit : chez Kape Technologies.",
@@ -7372,7 +7388,7 @@
       ]
     },
     {
-      "id": "cue-110",
+      "id": "cue-112",
       "start": 549.12,
       "end": 553.91,
       "text": "Mais le plus inquiétant dans le rachat d'ExpressVPN, ce n'est pas seulement le prix.",
@@ -7450,7 +7466,7 @@
       ]
     },
     {
-      "id": "cue-111",
+      "id": "cue-113",
       "start": 553.91,
       "end": 559.55,
       "text": "C’est ce qu’on a découvert sur ses dirigeants juste après la vente.",
@@ -7518,7 +7534,7 @@
       ]
     },
     {
-      "id": "cue-112",
+      "id": "cue-114",
       "start": 559.6,
       "end": 567.6,
       "text": "On a appris que le directeur technique d'ExpressVPN, Daniel Gericke, aujourd’hui évacué, était lui aussi un ancien du.",
@@ -7616,7 +7632,7 @@
       ]
     },
     {
-      "id": "cue-113",
+      "id": "cue-115",
       "start": 567.6,
       "end": 571.48,
       "text": "Renseignement américain et qu'il avait été impliqué dans le projet Raven.",
@@ -7679,7 +7695,7 @@
       ]
     },
     {
-      "id": "cue-114",
+      "id": "cue-116",
       "start": 571.48,
       "end": 579.08,
       "text": "Une opération d’espionnage commanditée par les Emirats Arabes Unis pour surveiller des militants des droits de l’homme, des.",
@@ -7777,7 +7793,7 @@
       ]
     },
     {
-      "id": "cue-115",
+      "id": "cue-117",
       "start": 579.08,
       "end": 580.64,
       "text": "Diplomates étrangers et des journalistes.",
@@ -7810,7 +7826,7 @@
       ]
     },
     {
-      "id": "cue-116",
+      "id": "cue-118",
       "start": 580.64,
       "end": 587.32,
       "text": "On se retrouve donc avec une entreprise, gérée par des anciens espions et des experts en cyber-espionnage, qui.",
@@ -7908,7 +7924,7 @@
       ]
     },
     {
-      "id": "cue-117",
+      "id": "cue-119",
       "start": 587.32,
       "end": 591.28,
       "text": "Contrôle les trois ou quatre plus gros VPN au monde.",
@@ -7966,7 +7982,7 @@
       ]
     },
     {
-      "id": "cue-118",
+      "id": "cue-120",
       "start": 591.28,
       "end": 594.24,
       "text": "Mais Kape ne s’est pas arretée aux VPN.",
@@ -8014,7 +8030,7 @@
       ]
     },
     {
-      "id": "cue-119",
+      "id": "cue-121",
       "start": 594.24,
       "end": 599.62,
       "text": "Elle a aussi décidé de contrôler la manière dont vous les choisissez.",
@@ -8082,7 +8098,7 @@
       ]
     },
     {
-      "id": "cue-120",
+      "id": "cue-122",
       "start": 601.8,
       "end": 607.65,
       "text": "Et c’est sans doute la plus géniale et la plus folle de toute cette histoire.",
@@ -8165,7 +8181,7 @@
       ]
     },
     {
-      "id": "cue-121",
+      "id": "cue-123",
       "start": 607.65,
       "end": 613.68,
       "text": "Et là, laissez-moi vous poser une question simple : quand vous voulez choisir un VPN, qu’est ce que.",
@@ -8263,7 +8279,7 @@
       ]
     },
     {
-      "id": "cue-122",
+      "id": "cue-124",
       "start": 613.68,
       "end": 614.6,
       "text": "Vous faites ?",
@@ -8286,7 +8302,7 @@
       ]
     },
     {
-      "id": "cue-123",
+      "id": "cue-125",
       "start": 614.6,
       "end": 619.26,
       "text": "Je pars du principe que vous n'êtes pas expert en cybersécurité et que vous ne pouvez pas analyser.",
@@ -8384,7 +8400,7 @@
       ]
     },
     {
-      "id": "cue-124",
+      "id": "cue-126",
       "start": 619.26,
       "end": 620.96,
       "text": "Le code source d’une application.",
@@ -8417,7 +8433,7 @@
       ]
     },
     {
-      "id": "cue-125",
+      "id": "cue-127",
       "start": 620.96,
       "end": 626.19,
       "text": "Alors comme tout le monde, vous allez sur Google et vous tapez : “Quel est le meilleur VPN.",
@@ -8515,16 +8531,24 @@
       ]
     },
     {
-      "id": "cue-126",
+      "id": "cue-128",
       "start": 626.19,
-      "end": 631.33,
-      "text": "?” Et là, vous êtes tombé sur des sites qui ont l’air ultra sérieux, très complets, avec des.",
+      "end": 626.4,
+      "text": "?”",
       "words": [
         {
           "text": "?”",
           "start": 626.19,
           "end": 626.46
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-129",
+      "start": 626.4,
+      "end": 631.33,
+      "text": "Et là, vous êtes tombé sur des sites qui ont l’air ultra sérieux, très complets, avec des.",
+      "words": [
         {
           "text": "Et",
           "start": 626.4,
@@ -8613,7 +8637,7 @@
       ]
     },
     {
-      "id": "cue-127",
+      "id": "cue-130",
       "start": 631.33,
       "end": 633.72,
       "text": "Graphiques et des comparatifs techniques.",
@@ -8646,7 +8670,7 @@
       ]
     },
     {
-      "id": "cue-128",
+      "id": "cue-131",
       "start": 633.72,
       "end": 636.96,
       "text": "Des sites comme VPNMentor ou WizCase.",
@@ -8684,7 +8708,7 @@
       ]
     },
     {
-      "id": "cue-129",
+      "id": "cue-132",
       "start": 636.96,
       "end": 644.44,
       "text": "Ils testent des dizaines de services, ils comparent les vitesses, et ils vous donnent un classement indépendant.",
@@ -8777,7 +8801,7 @@
       ]
     },
     {
-      "id": "cue-130",
+      "id": "cue-133",
       "start": 644.44,
       "end": 649.12,
       "text": "Eh bien, en mai 2021, Kape Technologies a fait un coup de maître.",
@@ -8850,7 +8874,7 @@
       ]
     },
     {
-      "id": "cue-131",
+      "id": "cue-134",
       "start": 649.12,
       "end": 657.06,
       "text": "Ils ont racheté pour 149 millions de dollars une société qui s’appelle Webselence.",
@@ -8923,7 +8947,7 @@
       ]
     },
     {
-      "id": "cue-132",
+      "id": "cue-135",
       "start": 657.06,
       "end": 664.0,
       "text": "Et Webselence, c’est précisément l’entreprise qui possède VPNMentor et WizCase.",
@@ -8981,7 +9005,7 @@
       ]
     },
     {
-      "id": "cue-133",
+      "id": "cue-136",
       "start": 664.0,
       "end": 666.45,
       "text": "Est-ce que vous voyez le problème ?",
@@ -9024,7 +9048,7 @@
       ]
     },
     {
-      "id": "cue-134",
+      "id": "cue-137",
       "start": 666.45,
       "end": 674.19,
       "text": "On est dans une situation surréaliste où le propriétaire d’ExpressVPN, de CyberGhost et de PIA possède aussi les.",
@@ -9122,7 +9146,7 @@
       ]
     },
     {
-      "id": "cue-135",
+      "id": "cue-138",
       "start": 674.19,
       "end": 679.12,
       "text": "Sites qui sont censés juger ExpressVPN, CyberGhost et PIA.",
@@ -9175,7 +9199,7 @@
       ]
     },
     {
-      "id": "cue-136",
+      "id": "cue-139",
       "start": 679.12,
       "end": 683.92,
       "text": "Du jour au lendemain, l’indépendance de ces sites a volé en éclats.",
@@ -9243,7 +9267,7 @@
       ]
     },
     {
-      "id": "cue-137",
+      "id": "cue-140",
       "start": 683.92,
       "end": 693.22,
       "text": "Aujourd’hui, quand vous allez sur ces comparatifs, les trois premières places sont presque systématiquement occupées par les marques.",
@@ -9341,7 +9365,7 @@
       ]
     },
     {
-      "id": "cue-138",
+      "id": "cue-141",
       "start": 693.22,
       "end": 694.14,
       "text": "De Kape.",
@@ -9359,7 +9383,7 @@
       ]
     },
     {
-      "id": "cue-139",
+      "id": "cue-142",
       "start": 694.16,
       "end": 698.24,
       "text": "Et ces deux sites ne sont que la partie immergée de l'iceberg.",
@@ -9427,7 +9451,7 @@
       ]
     },
     {
-      "id": "cue-140",
+      "id": "cue-143",
       "start": 698.24,
       "end": 704.08,
       "text": "On ne connait pas les noms des autres sites mais on sait que Webselence détient des dizaines de.",
@@ -9525,7 +9549,7 @@
       ]
     },
     {
-      "id": "cue-141",
+      "id": "cue-144",
       "start": 704.08,
       "end": 707.68,
       "text": "Comparateurs à travers le monde et dans plusieurs langues.",
@@ -9578,7 +9602,7 @@
       ]
     },
     {
-      "id": "cue-142",
+      "id": "cue-145",
       "start": 707.68,
       "end": 709.83,
       "text": "Le paradoxe est donc total.",
@@ -9611,7 +9635,7 @@
       ]
     },
     {
-      "id": "cue-143",
+      "id": "cue-146",
       "start": 709.83,
       "end": 716.7,
       "text": "On utilise un VPN pour échapper à la surveillance, au controle et pour ne plus être pisté par.",
@@ -9709,7 +9733,7 @@
       ]
     },
     {
-      "id": "cue-144",
+      "id": "cue-147",
       "start": 716.7,
       "end": 719.6,
       "text": "Google et Facebook ou par notre fournisseur d'accès.",
@@ -9757,7 +9781,7 @@
       ]
     },
     {
-      "id": "cue-145",
+      "id": "cue-148",
       "start": 719.6,
       "end": 726.8,
       "text": "Mais on tombe dans les bras d'une entreprise fondée par des experts en interception de données et en.",
@@ -9855,7 +9879,7 @@
       ]
     },
     {
-      "id": "cue-146",
+      "id": "cue-149",
       "start": 726.8,
       "end": 728.0,
       "text": "Diffusion de malwares.",
@@ -9878,7 +9902,7 @@
       ]
     },
     {
-      "id": "cue-147",
+      "id": "cue-150",
       "start": 728.0,
       "end": 734.12,
       "text": "Mais je précise, l’objectif de cette vidéo n’est pas de faire un jugement, ni de vous diriger vers.",
@@ -9976,7 +10000,7 @@
       ]
     },
     {
-      "id": "cue-148",
+      "id": "cue-151",
       "start": 734.2,
       "end": 736.15,
       "text": "Une solution ou une autre.",
@@ -10009,7 +10033,7 @@
       ]
     },
     {
-      "id": "cue-149",
+      "id": "cue-152",
       "start": 736.15,
       "end": 742.96,
       "text": "Peut-être que Kape est devenue l’entreprise la plus moral du monde ou peut-être que les théories du complot.",
@@ -10107,7 +10131,7 @@
       ]
     },
     {
-      "id": "cue-150",
+      "id": "cue-153",
       "start": 742.96,
       "end": 747.24,
       "text": "Qui vous passent par la tête ne sont pas que des théories.",
@@ -10175,7 +10199,7 @@
       ]
     },
     {
-      "id": "cue-151",
+      "id": "cue-154",
       "start": 747.24,
       "end": 754.74,
       "text": "On ne le saura probablement jamais mais ce qu’on sait ce qu’une entreprise ne sacrifiera jamais ses intérêts.",
@@ -10273,7 +10297,7 @@
       ]
     },
     {
-      "id": "cue-152",
+      "id": "cue-155",
       "start": 754.74,
       "end": 758.24,
       "text": "Au profit de celui de ses clients.",
@@ -10316,7 +10340,7 @@
       ]
     },
     {
-      "id": "cue-153",
+      "id": "cue-156",
       "start": 758.24,
       "end": 765.24,
       "text": "Exactement ce qu'à fait Duolingo, l’application d’apprentissage de langues, mais à l’extrême.",
@@ -10384,7 +10408,7 @@
       ]
     },
     {
-      "id": "cue-154",
+      "id": "cue-157",
       "start": 765.24,
       "end": 770.28,
       "text": "Ca leur a couté très cher avec des millions d’utilisateurs qui ont désinstallé l’application.",
@@ -10462,7 +10486,7 @@
       ]
     },
     {
-      "id": "cue-155",
+      "id": "cue-158",
       "start": 770.28,
       "end": 774.87,
       "text": "J’en ai fait une vidéo dédiée que je vous affiche à l'écran et que je vous recommande fortement.",
@@ -10560,7 +10584,7 @@
       ]
     },
     {
-      "id": "cue-156",
+      "id": "cue-159",
       "start": 774.87,
       "end": 775.52,
       "text": "De regarder.",
@@ -10578,7 +10602,7 @@
       ]
     },
     {
-      "id": "cue-157",
+      "id": "cue-160",
       "start": 775.52,
       "end": 777.87,
       "text": "Allez, abonnez-vous et salut !",

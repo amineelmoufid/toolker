@@ -82,19 +82,7 @@ export const reconstructSubtitlesSemantically = (lines: SubtitleLine[]): Subtitl
 
   if (cleanWords.length === 0) return [];
 
-  // 3. Ensure monotonically increasing word timestamps
-  for (let i = 0; i < cleanWords.length; i++) {
-    if (i > 0) {
-      if (cleanWords[i].start < cleanWords[i - 1].start) {
-        cleanWords[i].start = Math.round(cleanWords[i - 1].end * 100) / 100;
-      }
-      if (cleanWords[i].end <= cleanWords[i].start) {
-        cleanWords[i].end = Math.round((cleanWords[i].start + 0.35) * 100) / 100;
-      }
-    }
-  }
-
-  // 4. Assemble into single, complete sentences ending with terminal punctuation (dot '.')
+  // 3. Assemble into single, complete sentences ending with terminal punctuation (dot '.')
   const sentences: SubtitleLine[] = [];
   let currentWords: { text: string; start: number; end: number }[] = [];
 
@@ -104,21 +92,31 @@ export const reconstructSubtitlesSemantically = (lines: SubtitleLine[]): Subtitl
     const isLast = i === cleanWords.length - 1;
 
     // Sentence termination check
-    const endsWithTerminal = /[.?!]["']?$/.test(word.text) && !COMMON_ABBREVIATIONS.has(word.text.toLowerCase());
+    const endsWithTerminal = /[.?!]["'”’]?$/.test(word.text) && !COMMON_ABBREVIATIONS.has(word.text.toLowerCase());
     
-    // Unpunctuated speech pause check
+    // Natural pause check: only break on speech pause if no punctuation for 8+ words
     let isPause = false;
     if (i < cleanWords.length - 1) {
       const gap = cleanWords[i + 1].start - word.end;
-      if (gap >= 0.85) {
+      if (gap >= 1.5 && currentWords.length >= 8) {
         isPause = true;
       }
     }
 
-    const isTooLong = currentWords.length >= 18;
-    const shouldBreak = isLast || endsWithTerminal || (isPause && currentWords.length >= 4) || isTooLong;
+    // Only force-break if a single sentence exceeds 35 words without punctuation
+    const isRunaway = currentWords.length >= 35;
+    const shouldBreak = isLast || endsWithTerminal || isPause || isRunaway;
 
     if (shouldBreak && currentWords.length > 0) {
+      // Monotonize word timestamps ONLY within this individual sentence (preserves true video sync)
+      for (let j = 1; j < currentWords.length; j++) {
+        if (currentWords[j].start < currentWords[j - 1].start) {
+          currentWords[j].start = currentWords[j - 1].end;
+        }
+        if (currentWords[j].end <= currentWords[j].start) {
+          currentWords[j].end = Math.round((currentWords[j].start + 0.25) * 100) / 100;
+        }
+      }
       let sentenceText = currentWords.map(w => w.text).join(' ').trim();
 
       // Ensure first character is uppercase

@@ -9586,8 +9586,8 @@
     {
       "id": "cue-99",
       "start": 619.54,
-      "end": 625.84,
-      "text": "C'était la vraie expérience de vrais gens quoi d'ordonner des piles de cartes perforie mais ce qui est.",
+      "end": 631.79,
+      "text": "C'était la vraie expérience de vrais gens quoi d'ordonner des piles de cartes perforie mais ce qui est. Marrant c'est que là on en parle au passé mais en fait c'est toujours le cas il.",
       "words": [
         {
           "text": "C'était",
@@ -9678,15 +9678,7 @@
           "text": "est.",
           "start": 625.49,
           "end": 625.84
-        }
-      ]
-    },
-    {
-      "id": "cue-100",
-      "start": 625.84,
-      "end": 632.14,
-      "text": "Marrant c'est que là on en parle au passé mais en fait c'est toujours le cas il y.",
-      "words": [
+        },
         {
           "text": "Marrant",
           "start": 625.84,
@@ -9768,12 +9760,20 @@
           "end": 631.44
         },
         {
-          "text": "il",
+          "text": "il.",
           "start": 631.44,
           "end": 631.79
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-100",
+      "start": 631.79,
+      "end": 632.14,
+      "text": "Y.",
+      "words": [
         {
-          "text": "y.",
+          "text": "Y.",
           "start": 631.79,
           "end": 632.14
         }
@@ -10561,8 +10561,8 @@
     {
       "id": "cue-109",
       "start": 682.54,
-      "end": 688.84,
-      "text": "Intéressant c'est quiibm est un peu propriétaire entre guillemets du coball comment ça se fait donc il est.",
+      "end": 694.79,
+      "text": "Intéressant c'est quiibm est un peu propriétaire entre guillemets du coball comment ça se fait donc il est. Pas propriétaire du coball en lui-même mais il est propriétaire du zos donc c'est en gros les.",
       "words": [
         {
           "text": "Intéressant",
@@ -10653,15 +10653,7 @@
           "text": "est.",
           "start": 688.49,
           "end": 688.84
-        }
-      ]
-    },
-    {
-      "id": "cue-110",
-      "start": 688.84,
-      "end": 695.14,
-      "text": "Pas propriétaire du coball en lui-même mais il est propriétaire du zos donc c'est en gros les machines.",
-      "words": [
+        },
         {
           "text": "Pas",
           "start": 688.84,
@@ -10743,12 +10735,20 @@
           "end": 694.44
         },
         {
-          "text": "les",
+          "text": "les.",
           "start": 694.44,
           "end": 694.79
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-110",
+      "start": 694.79,
+      "end": 695.14,
+      "text": "Machines.",
+      "words": [
         {
-          "text": "machines.",
+          "text": "Machines.",
           "start": 694.79,
           "end": 695.14
         }

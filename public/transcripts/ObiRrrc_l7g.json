@@ -10137,17 +10137,12 @@
     },
     {
       "id": "cue-158",
-      "start": 651.18,
+      "start": 651.37,
       "end": 658.63,
-      "text": "It won't just download CasaOS; it'll also install the dependencies it needs, like Docker and other components.",
+      "text": "Won't just download CasaOS; it'll also install the dependencies it needs, like Docker and other components.",
       "words": [
         {
-          "text": "It",
-          "start": 651.18,
-          "end": 651.37
-        },
-        {
-          "text": "won't",
+          "text": "Won't",
           "start": 651.37,
           "end": 652.22
         },
