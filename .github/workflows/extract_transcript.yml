@@ -20,33 +20,40 @@ permissions:
 
 jobs:
   extract:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
-      - name: Extract Transcript
-        shell: powershell
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
         run: |
-          $videoId = "${{ github.event.client_payload.videoId || github.event.inputs.videoId }}"
-          $lang = "${{ github.event.client_payload.lang || github.event.inputs.lang }}"
-          Write-Host "Running residential extraction for videoId: $videoId (lang: $lang)"
-          py scripts/extract_transcript.py "$videoId" "$lang"
+          python -m pip install --upgrade pip
+          pip install youtube-transcript-api yt-dlp
+
+      - name: Extract Transcript
+        run: |
+          VIDEO_ID="${{ github.event.client_payload.videoId || github.event.inputs.videoId }}"
+          LANG="${{ github.event.client_payload.lang || github.event.inputs.lang }}"
+          echo "Running cloud extraction for videoId: $VIDEO_ID (lang: $LANG)"
+          python scripts/extract_transcript.py "$VIDEO_ID" "$LANG"
 
       - name: Commit and Push Transcript
-        shell: powershell
         run: |
-          $videoId = "${{ github.event.client_payload.videoId || github.event.inputs.videoId }}"
+          VIDEO_ID="${{ github.event.client_payload.videoId || github.event.inputs.videoId }}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/transcripts/
-          git diff --cached --quiet
-          if ($LASTEXITCODE -ne 0) {
-            git commit -m "Auto-cache transcript for YouTube video $videoId"
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto-cache transcript for YouTube video $VIDEO_ID"
             git pull origin main --rebase -X ours
             git push origin main
-          } else {
-            Write-Host "No changes to commit for $videoId"
-          }
+          else
+            echo "No new transcript changes to commit."
+          fi

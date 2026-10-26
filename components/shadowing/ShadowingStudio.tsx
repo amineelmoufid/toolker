@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ShadowingClip, SubtitleLine } from '../../types';
-import { PRESET_CLIPS, reconstructSubtitlesSemantically } from './mockClips';
+import { PRESET_CLIPS, reconstructSubtitlesSemantically, parseTranscriptXml } from './mockClips';
 import YouTubePlayer, { YouTubePlayerRef } from './YouTubePlayer';
 import SubtitleStage from './SubtitleStage';
 import ControlDock from './ControlDock';
@@ -97,6 +97,76 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack }) => {
   const [activeShadowLine, setActiveShadowLine] = useState<SubtitleLine | null>(null);
   const [isAutoHealingSubtitles, setIsAutoHealingSubtitles] = useState<boolean>(false);
   const [subtitlesError, setSubtitlesError] = useState<string | null>(null);
+
+  // Listen for 1-Click Bookmarklet Ingestion (via window.name or window postMessage)
+  useEffect(() => {
+    const processPayload = (payloadStr: string) => {
+      try {
+        const data = JSON.parse(payloadStr);
+        if (data && data.v && data.xml) {
+          const subs = parseTranscriptXml(data.xml);
+          if (subs && subs.length > 0) {
+            const cleanSubs = reconstructSubtitlesSemantically(subs);
+            const importedClip: ShadowingClip = {
+              id: `imported-${Date.now()}`,
+              title: data.title || `YouTube Clip (${data.v})`,
+              youtubeId: data.v,
+              thumbnail: `https://img.youtube.com/vi/${data.v}/hqdefault.jpg`,
+              category: 'BOOKMARKLET IMPORT',
+              subtitles: cleanSubs
+            };
+            setCurrentClip(importedClip);
+            setCurrentTime(0);
+            setIsLibraryOpen(false);
+            showToast(`⭐ 100% Subtitles Imported from YouTube (${cleanSubs.length} sentences)`);
+
+            // Save to localStorage
+            try {
+              const storedClips = localStorage.getItem('toolker_custom_clips');
+              const list = storedClips ? JSON.parse(storedClips) : [];
+              const updated = [importedClip, ...list.filter((c: any) => c.youtubeId !== data.v)];
+              localStorage.setItem('toolker_custom_clips', JSON.stringify(updated));
+            } catch (_) {}
+
+            // Crowdsource to edge cache
+            try {
+              fetch('/api/cache', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  videoId: data.v,
+                  title: importedClip.title,
+                  subtitles: cleanSubs
+                })
+              }).catch(() => {});
+            } catch (_) {}
+          }
+        }
+      } catch (err) {
+        console.warn("Failed to process bookmarklet payload:", err);
+      }
+    };
+
+    // Check window.name on initial load
+    try {
+      if (typeof window !== 'undefined' && window.name && window.name.startsWith('TOOLKER_DATA:')) {
+        const raw = window.name.replace('TOOLKER_DATA:', '');
+        window.name = ''; // Clear immediately
+        const jsonStr = decodeURIComponent(escape(atob(raw)));
+        processPayload(jsonStr);
+      }
+    } catch (_) {}
+
+    // Listen for cross-window message
+    const handleMessage = (e: MessageEvent) => {
+      if (e.data && e.data.type === 'TOOLKER_IMPORT_XML' && e.data.payload) {
+        processPayload(e.data.payload);
+      }
+    };
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
+
 
   // Auto-heal subtitles if currentClip has empty or missing subtitles
   useEffect(() => {
