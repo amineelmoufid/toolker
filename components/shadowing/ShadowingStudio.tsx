@@ -103,7 +103,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack }) => {
     let isMounted = true;
     let pollInterval: any = null;
     let attempts = 0;
-    const maxAttempts = 30;
+    const maxAttempts = 60;
     const ytId = currentClip.youtubeId;
 
     setIsAutoHealingSubtitles(true);
@@ -138,7 +138,8 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack }) => {
       // 1. Direct static check
       try {
         const staticRes = await fetch(`/transcripts/${ytId}.json?_t=${Date.now()}`);
-        if (staticRes.ok) {
+        const contentType = staticRes.headers.get('content-type') || '';
+        if (staticRes.ok && contentType.includes('application/json')) {
           const staticData = await staticRes.json();
           if (staticData.ok && Array.isArray(staticData.subtitles) && staticData.subtitles.length > 0) {
             applySubtitles(staticData.subtitles);

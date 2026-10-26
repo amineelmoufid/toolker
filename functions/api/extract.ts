@@ -33,7 +33,8 @@ export const onRequestGet = async (context: any) => {
   try {
     const staticUrl = new URL(`/transcripts/${videoId}.json`, context.request.url);
     const staticRes = await fetch(staticUrl);
-    if (staticRes.ok) {
+    const contentType = staticRes.headers.get('content-type') || '';
+    if (staticRes.ok && contentType.includes('application/json')) {
       const staticData: any = await staticRes.json();
       if (staticData && staticData.ok && Array.isArray(staticData.subtitles) && staticData.subtitles.length > 0) {
         return new Response(JSON.stringify(staticData), {

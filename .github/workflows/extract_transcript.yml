@@ -41,8 +41,12 @@ jobs:
           $videoId = "${{ github.event.client_payload.videoId || github.event.inputs.videoId }}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull origin main --rebase
           git add public/transcripts/
-          git commit -m "Auto-cache transcript for YouTube video $videoId"
-          git pull origin main --rebase
-          git push origin main
+          git diff --cached --quiet
+          if ($LASTEXITCODE -ne 0) {
+            git commit -m "Auto-cache transcript for YouTube video $videoId"
+            git pull origin main --rebase -X ours
+            git push origin main
+          } else {
+            Write-Host "No changes to commit for $videoId"
+          }

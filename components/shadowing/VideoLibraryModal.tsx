@@ -46,7 +46,8 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
     // 1. Check static pre-cached JSON asset
     try {
       const staticRes = await fetch(`/transcripts/${ytId}.json?_t=${Date.now()}`);
-      if (staticRes.ok) {
+      const contentType = staticRes.headers.get('content-type') || '';
+      if (staticRes.ok && contentType.includes('application/json')) {
         const staticData = await staticRes.json();
         if (staticData.ok && Array.isArray(staticData.subtitles) && staticData.subtitles.length > 0) {
           return staticData.subtitles;
@@ -80,9 +81,9 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
           return extractData.subtitles;
         }
 
-        // Poll /api/extract every 2s for up to 30 attempts (~60s)
-        for (let i = 1; i <= 30; i++) {
-          setSyncMessage(`⚡ Extracting dialogue via cloud runner... (${i * 2}s)`);
+        // Poll /api/extract every 2s for up to 60 attempts (~120s)
+        for (let i = 1; i <= 60; i++) {
+          setSyncMessage(`⚡ Extracting original dialogue from YouTube... (${i * 2}s)`);
           await new Promise(r => setTimeout(r, 2000));
           try {
             const pollRes = await fetch(`/api/extract?v=${ytId}&_t=${Date.now()}`);
