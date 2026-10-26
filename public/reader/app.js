@@ -848,7 +848,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
           });
         }
 
-        return `<span class="bionic-sentence" data-sentence-index="${sentenceIdx}" title="1-click: Play/Pause | Double-click: Sentence Focus Reader">${bionicHtml}</span>`;
+        return `<span class="bionic-sentence" data-sentence-index="${sentenceIdx}" title="1-click: Play / Replay | Double-click: Sentence Focus Reader">${bionicHtml}</span>`;
       });
 
       htmlBlocks.push(`<p>${sentenceHtmlParts.join(' ')}</p>`);
@@ -874,7 +874,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
         });
       }
 
-      return `<${tag}><span class="bionic-sentence" data-sentence-index="${sentenceIdx}" title="1-click: Play/Pause | Double-click: Sentence Focus Reader">${bionicHtml}</span></${tag}>`;
+      return `<${tag}><span class="bionic-sentence" data-sentence-index="${sentenceIdx}" title="1-click: Play / Replay | Double-click: Sentence Focus Reader">${bionicHtml}</span></${tag}>`;
     }
 
     lines.forEach(line => {
@@ -932,7 +932,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
             rawText: itemText
           });
         }
-        htmlBlocks.push(`<ul><li><span class="bionic-sentence" data-sentence-index="${sentenceIdx}" title="1-click: Play/Pause | Double-click: Sentence Focus Reader">${bionicHtml}</span></li></ul>`);
+        htmlBlocks.push(`<ul><li><span class="bionic-sentence" data-sentence-index="${sentenceIdx}" title="1-click: Play / Replay | Double-click: Sentence Focus Reader">${bionicHtml}</span></li></ul>`);
         return;
       }
 
@@ -4071,6 +4071,24 @@ REMINDER: All generated content in the JSON above MUST BE STRICTLY AND EXCLUSIVE
   }
 
   function loadState() {
+    // 0. Check for imported subtitles/text from other modules (e.g. Shadowing Studio)
+    try {
+      const imported = localStorage.getItem('focusflow_imported_text');
+      if (imported && imported.trim()) {
+        localStorage.removeItem('focusflow_imported_text');
+        const lang = detectLanguage(imported);
+        setLanguage(lang, false);
+        state.text = imported;
+        if (rawInput) rawInput.value = imported;
+        saveState();
+        updateRender();
+        showToast('📖 Subtitles exported to Reader successfully!');
+        return;
+      }
+    } catch (e) {
+      console.warn('Error loading imported text:', e);
+    }
+
     // 1. Instant local load (0ms startup)
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
@@ -4370,7 +4388,7 @@ REMINDER: All generated content in the JSON above MUST BE STRICTLY AND EXCLUSIVE
       setSpeechRate(e.target.value, true);
     });
 
-    // 1-click Play/Pause | Double-click Sentence Focus Reader
+    // 1-click Play/Replay | Double-click Sentence Focus Reader
     let sentenceClickTimer = null;
 
     bionicOutput.addEventListener('click', e => {
@@ -4385,19 +4403,14 @@ REMINDER: All generated content in the JSON above MUST BE STRICTLY AND EXCLUSIVE
 
         sentenceClickTimer = setTimeout(() => {
           sentenceClickTimer = null;
-          // Single Click: Toggle Play / Pause!
-          if (state.isSpeaking && state.activeSentenceIdx === sIdx && !state.isPaused) {
-            stopSpeech();
-            showToast(`⏸ Paused at sentence #${sIdx + 1}`);
-          } else {
-            playSentence(sIdx);
-            if (state.rulerEnabled && readingRuler) {
-              const rect = sentenceEl.getBoundingClientRect();
-              readingRuler.style.top = `${Math.round(rect.top + rect.height / 2)}px`;
-            }
-            showToast(`▶ Reading sentence #${sIdx + 1}`);
+          // One click always means: Play (or Replay from start if already played / active)
+          stopSpeech();
+          playSentence(sIdx);
+          if (state.rulerEnabled && readingRuler) {
+            const rect = sentenceEl.getBoundingClientRect();
+            readingRuler.style.top = `${Math.round(rect.top + rect.height / 2)}px`;
           }
-        }, 260);
+        }, 180);
       }
     });
 
@@ -4420,7 +4433,6 @@ REMINDER: All generated content in the JSON above MUST BE STRICTLY AND EXCLUSIVE
         setTimeout(() => {
           playSentence(sIdx);
         }, 60);
-        showToast(`▶ Playing sentence #${sIdx + 1} in Focus Reader`);
       }
     });
 
@@ -4848,6 +4860,24 @@ REMINDER: All generated content in the JSON above MUST BE STRICTLY AND EXCLUSIVE
             navigator.sendBeacon('/api/sync', payload);
           }
         } catch (e) {}
+      });
+    }
+
+    // Live cross-module import listener
+    if (!window.__toolkerImportAttached) {
+      window.__toolkerImportAttached = true;
+      window.addEventListener('toolker:import-reader-text', e => {
+        const text = e?.detail?.text;
+        if (text && text.trim()) {
+          stopSpeech();
+          const lang = detectLanguage(text);
+          setLanguage(lang, false);
+          state.text = text;
+          if (rawInput) rawInput.value = text;
+          saveState();
+          updateRender();
+          showToast('📖 Subtitles exported to Reader successfully!');
+        }
       });
     }
 

@@ -18,6 +18,7 @@ interface SubtitleStageProps {
   isSyncing?: boolean;
   syncError?: string | null;
   onOpenLibrary?: () => void;
+  onExportToReader?: () => void;
 }
 
 const SubtitleStage: React.FC<SubtitleStageProps> = ({
@@ -34,7 +35,8 @@ const SubtitleStage: React.FC<SubtitleStageProps> = ({
   onReplayLine,
   isSyncing = false,
   syncError = null,
-  onOpenLibrary
+  onOpenLibrary,
+  onExportToReader
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -181,6 +183,19 @@ const SubtitleStage: React.FC<SubtitleStageProps> = ({
               <span>{translationFlag}</span>
               <span className="hidden xs:inline">TRANSLATION</span>
             </button>
+
+            {/* Export Subtitles to Reader */}
+            {onExportToReader && (
+              <button
+                type="button"
+                onClick={onExportToReader}
+                title="Export full transcript to Reader deck"
+                className="text-[8.5px] sm:text-[9px] font-mono font-bold uppercase px-2 py-0.5 rounded border border-[#3e4049] bg-[#24252a] text-[#85b991] hover:border-[#3d7a4d] hover:text-[#a0dbad] transition-all active:scale-95 flex items-center gap-1"
+              >
+                <span>📖</span>
+                <span className="hidden xs:inline">TO READER</span>
+              </button>
+            )}
           </div>
         </div>
 

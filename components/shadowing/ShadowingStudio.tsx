@@ -521,6 +521,49 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack }) => {
     }
   };
 
+  // Export full authentic subtitle transcript to Focus Reader Studio
+  const handleExportToReader = () => {
+    if (!currentClip || !currentClip.subtitles || currentClip.subtitles.length === 0) {
+      showToast("⚠️ No subtitles available to export");
+      return;
+    }
+
+    const sentences = currentClip.subtitles
+      .map(s => s.text.trim())
+      .filter(Boolean);
+
+    if (sentences.length === 0) {
+      showToast("⚠️ Subtitles are empty");
+      return;
+    }
+
+    // Group sentences into clean, readable paragraphs of 3 sentences each
+    const paragraphs: string[] = [];
+    for (let i = 0; i < sentences.length; i += 3) {
+      paragraphs.push(sentences.slice(i, i + 3).join(' '));
+    }
+    const fullText = paragraphs.join('\n\n');
+
+    // Store in localStorage for FocusFlow Reader bootstrap
+    try {
+      localStorage.setItem('focusflow_imported_text', fullText);
+    } catch (e) {
+      console.warn("Could not save to localStorage:", e);
+    }
+
+    // Broadcast live event in case Focus Reader is currently mounted
+    window.dispatchEvent(new CustomEvent('toolker:import-reader-text', {
+      detail: { text: fullText }
+    }));
+
+    showToast("📖 Exporting full subtitles to Reader...");
+
+    // Smooth navigation to Reader
+    setTimeout(() => {
+      window.location.hash = '#reader';
+    }, 200);
+  };
+
   // Open Shadowing Mic Modal on current line
   const handleOpenShadowModal = () => {
     playerRef.current?.pause();
@@ -651,6 +694,18 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack }) => {
           </div>
 
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            <button
+              type="button"
+              onClick={handleExportToReader}
+              disabled={!currentClip || !currentClip.subtitles || currentClip.subtitles.length === 0}
+              title="Export Full Subtitle Transcript to Bionic Reader"
+              className="text-[10px] sm:text-xs font-mono font-bold uppercase bg-[#3d7a4d] hover:bg-[#2e5d3a] disabled:opacity-40 disabled:cursor-not-allowed text-[#fbf8f2] border-2 border-[#1c1d20] shadow-[2px_2px_0px_#18191c] px-2 sm:px-3 py-1.5 sm:py-2 rounded-md transition-all active:translate-y-0.5 active:shadow-[0px_0px_0px_#18191c] flex items-center gap-1 sm:gap-1.5"
+            >
+              <span>📖</span>
+              <span className="hidden sm:inline">EXPORT TO</span>
+              <span>READER</span>
+            </button>
+
             <RoomShareButton 
               modeName="shadowing" 
               onClipSync={() => currentClip && syncClip(currentClip)} 
@@ -729,6 +784,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack }) => {
               isSyncing={isAutoHealingSubtitles}
               syncError={subtitlesError}
               onOpenLibrary={() => setIsLibraryOpen(true)}
+              onExportToReader={handleExportToReader}
             />
           ) : (
             <div className="flex items-center justify-center h-full w-full opacity-50">

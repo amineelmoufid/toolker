@@ -1899,7 +1899,7 @@ kbd {
 /* Toast */
 .toast {
   position: fixed;
-  bottom: 24px;
+  bottom: 88px;
   right: 24px;
   background: var(--text-bold);
   color: var(--bg-card);
@@ -1909,6 +1909,7 @@ kbd {
   font-weight: 600;
   box-shadow: var(--shadow-lg);
   z-index: 2000;
+  pointer-events: none;
   animation: slideIn 0.25s ease forwards;
 }
 
@@ -2031,6 +2032,10 @@ kbd {
     bottom: 16px;
     right: 16px;
     padding: 4px 8px 4px 4px;
+  }
+  .toast {
+    bottom: 76px;
+    right: 16px;
   }
 }
 
