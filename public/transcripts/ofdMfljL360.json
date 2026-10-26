@@ -1,0 +1,2284 @@
+{
+  "ok": true,
+  "videoId": "ofdMfljL360",
+  "language": "en",
+  "trackKind": "asr",
+  "subtitles": [
+    {
+      "id": "cue-1",
+      "start": 1.56,
+      "end": 5.25,
+      "text": ">> This is the story of the million-dollar",
+      "words": [
+        {
+          "text": ">>",
+          "start": 1.56,
+          "end": 2.02
+        },
+        {
+          "text": "This",
+          "start": 2.02,
+          "end": 2.48
+        },
+        {
+          "text": "is",
+          "start": 2.48,
+          "end": 2.94
+        },
+        {
+          "text": "the",
+          "start": 2.94,
+          "end": 3.4
+        },
+        {
+          "text": "story",
+          "start": 3.4,
+          "end": 3.86
+        },
+        {
+          "text": "of",
+          "start": 3.86,
+          "end": 4.33
+        },
+        {
+          "text": "the",
+          "start": 4.33,
+          "end": 4.79
+        },
+        {
+          "text": "million-dollar",
+          "start": 4.79,
+          "end": 5.25
+        }
+      ]
+    },
+    {
+      "id": "cue-2",
+      "start": 3.76,
+      "end": 7.92,
+      "text": "fork.",
+      "words": [
+        {
+          "text": "fork.",
+          "start": 3.76,
+          "end": 7.92
+        }
+      ]
+    },
+    {
+      "id": "cue-3",
+      "start": 5.28,
+      "end": 10.0,
+      "text": "A fork my dishwasher failed to clean. A",
+      "words": [
+        {
+          "text": "A",
+          "start": 5.28,
+          "end": 5.87
+        },
+        {
+          "text": "fork",
+          "start": 5.87,
+          "end": 6.46
+        },
+        {
+          "text": "my",
+          "start": 6.46,
+          "end": 7.05
+        },
+        {
+          "text": "dishwasher",
+          "start": 7.05,
+          "end": 7.64
+        },
+        {
+          "text": "failed",
+          "start": 7.64,
+          "end": 8.23
+        },
+        {
+          "text": "to",
+          "start": 8.23,
+          "end": 8.82
+        },
+        {
+          "text": "clean.",
+          "start": 8.82,
+          "end": 9.41
+        },
+        {
+          "text": "A",
+          "start": 9.41,
+          "end": 10.0
+        }
+      ]
+    },
+    {
+      "id": "cue-4",
+      "start": 7.92,
+      "end": 12.61,
+      "text": "fork [music] that finally made me take",
+      "words": [
+        {
+          "text": "fork",
+          "start": 7.92,
+          "end": 8.59
+        },
+        {
+          "text": "[music]",
+          "start": 8.59,
+          "end": 9.26
+        },
+        {
+          "text": "that",
+          "start": 9.26,
+          "end": 9.93
+        },
+        {
+          "text": "finally",
+          "start": 9.93,
+          "end": 10.6
+        },
+        {
+          "text": "made",
+          "start": 10.6,
+          "end": 11.27
+        },
+        {
+          "text": "me",
+          "start": 11.27,
+          "end": 11.94
+        },
+        {
+          "text": "take",
+          "start": 11.94,
+          "end": 12.61
+        }
+      ]
+    },
+    {
+      "id": "cue-5",
+      "start": 10.0,
+      "end": 12.6,
+      "text": "action.",
+      "words": [
+        {
+          "text": "action.",
+          "start": 10.0,
+          "end": 12.6
+        }
+      ]
+    },
+    {
+      "id": "cue-6",
+      "start": 17.2,
+      "end": 20.24,
+      "text": "Hey Astra, let's find the best way to",
+      "words": [
+        {
+          "text": "Hey",
+          "start": 17.2,
+          "end": 17.58
+        },
+        {
+          "text": "Astra,",
+          "start": 17.58,
+          "end": 17.96
+        },
+        {
+          "text": "let's",
+          "start": 17.96,
+          "end": 18.34
+        },
+        {
+          "text": "find",
+          "start": 18.34,
+          "end": 18.72
+        },
+        {
+          "text": "the",
+          "start": 18.72,
+          "end": 19.1
+        },
+        {
+          "text": "best",
+          "start": 19.1,
+          "end": 19.48
+        },
+        {
+          "text": "way",
+          "start": 19.48,
+          "end": 19.86
+        },
+        {
+          "text": "to",
+          "start": 19.86,
+          "end": 20.24
+        }
+      ]
+    },
+    {
+      "id": "cue-7",
+      "start": 18.84,
+      "end": 22.26,
+      "text": "load my dishwasher.",
+      "words": [
+        {
+          "text": "load",
+          "start": 18.84,
+          "end": 19.98
+        },
+        {
+          "text": "my",
+          "start": 19.98,
+          "end": 21.12
+        },
+        {
+          "text": "dishwasher.",
+          "start": 21.12,
+          "end": 22.26
+        }
+      ]
+    },
+    {
+      "id": "cue-8",
+      "start": 20.24,
+      "end": 23.96,
+      "text": ">> Sure, finding the optimal configuration",
+      "words": [
+        {
+          "text": ">>",
+          "start": 20.24,
+          "end": 20.86
+        },
+        {
+          "text": "Sure,",
+          "start": 20.86,
+          "end": 21.48
+        },
+        {
+          "text": "finding",
+          "start": 21.48,
+          "end": 22.1
+        },
+        {
+          "text": "the",
+          "start": 22.1,
+          "end": 22.72
+        },
+        {
+          "text": "optimal",
+          "start": 22.72,
+          "end": 23.34
+        },
+        {
+          "text": "configuration",
+          "start": 23.34,
+          "end": 23.96
+        }
+      ]
+    },
+    {
+      "id": "cue-9",
+      "start": 22.27,
+      "end": 26.39,
+      "text": "[music] for your dishes.",
+      "words": [
+        {
+          "text": "[music]",
+          "start": 22.27,
+          "end": 23.3
+        },
+        {
+          "text": "for",
+          "start": 23.3,
+          "end": 24.33
+        },
+        {
+          "text": "your",
+          "start": 24.33,
+          "end": 25.36
+        },
+        {
+          "text": "dishes.",
+          "start": 25.36,
+          "end": 26.39
+        }
+      ]
+    },
+    {
+      "id": "cue-10",
+      "start": 23.96,
+      "end": 28.76,
+      "text": "Initiating deep research.",
+      "words": [
+        {
+          "text": "Initiating",
+          "start": 23.96,
+          "end": 25.56
+        },
+        {
+          "text": "deep",
+          "start": 25.56,
+          "end": 27.16
+        },
+        {
+          "text": "research.",
+          "start": 27.16,
+          "end": 28.76
+        }
+      ]
+    },
+    {
+      "id": "cue-11",
+      "start": 26.4,
+      "end": 31.08,
+      "text": ">> I needed an eval, the ultimate test of",
+      "words": [
+        {
+          "text": ">>",
+          "start": 26.4,
+          "end": 26.92
+        },
+        {
+          "text": "I",
+          "start": 26.92,
+          "end": 27.44
+        },
+        {
+          "text": "needed",
+          "start": 27.44,
+          "end": 27.96
+        },
+        {
+          "text": "an",
+          "start": 27.96,
+          "end": 28.48
+        },
+        {
+          "text": "eval,",
+          "start": 28.48,
+          "end": 29.0
+        },
+        {
+          "text": "the",
+          "start": 29.0,
+          "end": 29.52
+        },
+        {
+          "text": "ultimate",
+          "start": 29.52,
+          "end": 30.04
+        },
+        {
+          "text": "test",
+          "start": 30.04,
+          "end": 30.56
+        },
+        {
+          "text": "of",
+          "start": 30.56,
+          "end": 31.08
+        }
+      ]
+    },
+    {
+      "id": "cue-12",
+      "start": 28.76,
+      "end": 32.54,
+      "text": "intelligence. Could it remove my damn",
+      "words": [
+        {
+          "text": "intelligence.",
+          "start": 28.76,
+          "end": 29.39
+        },
+        {
+          "text": "Could",
+          "start": 29.39,
+          "end": 30.02
+        },
+        {
+          "text": "it",
+          "start": 30.02,
+          "end": 30.65
+        },
+        {
+          "text": "remove",
+          "start": 30.65,
+          "end": 31.28
+        },
+        {
+          "text": "my",
+          "start": 31.28,
+          "end": 31.91
+        },
+        {
+          "text": "damn",
+          "start": 31.91,
+          "end": 32.54
+        }
+      ]
+    },
+    {
+      "id": "cue-13",
+      "start": 31.08,
+      "end": 34.8,
+      "text": "orange spaghetti stain [music] from my",
+      "words": [
+        {
+          "text": "orange",
+          "start": 31.08,
+          "end": 31.7
+        },
+        {
+          "text": "spaghetti",
+          "start": 31.7,
+          "end": 32.32
+        },
+        {
+          "text": "stain",
+          "start": 32.32,
+          "end": 32.94
+        },
+        {
+          "text": "[music]",
+          "start": 32.94,
+          "end": 33.56
+        },
+        {
+          "text": "from",
+          "start": 33.56,
+          "end": 34.18
+        },
+        {
+          "text": "my",
+          "start": 34.18,
+          "end": 34.8
+        }
+      ]
+    },
+    {
+      "id": "cue-14",
+      "start": 32.52,
+      "end": 39.45,
+      "text": "Tupperware? But first, I needed high-quality data. Tag that. Thermal",
+      "words": [
+        {
+          "text": "Tupperware?",
+          "start": 32.52,
+          "end": 33.42
+        },
+        {
+          "text": "But",
+          "start": 33.42,
+          "end": 34.32
+        },
+        {
+          "text": "first,",
+          "start": 34.32,
+          "end": 35.22
+        },
+        {
+          "text": "I",
+          "start": 35.22,
+          "end": 36.12
+        },
+        {
+          "text": "needed",
+          "start": 36.12,
+          "end": 37.02
+        },
+        {
+          "text": "high-quality",
+          "start": 34.8,
+          "end": 35.73
+        },
+        {
+          "text": "data.",
+          "start": 35.73,
+          "end": 36.66
+        },
+        {
+          "text": "Tag",
+          "start": 36.66,
+          "end": 37.59
+        },
+        {
+          "text": "that.",
+          "start": 37.59,
+          "end": 38.52
+        },
+        {
+          "text": "Thermal",
+          "start": 38.52,
+          "end": 39.45
+        }
+      ]
+    },
+    {
+      "id": "cue-15",
+      "start": 37.0,
+      "end": 42.4,
+      "text": "mass, material, curvature, whether it's dishwasher safe or not.",
+      "words": [
+        {
+          "text": "mass,",
+          "start": 37.0,
+          "end": 37.74
+        },
+        {
+          "text": "material,",
+          "start": 37.74,
+          "end": 38.48
+        },
+        {
+          "text": "curvature,",
+          "start": 38.48,
+          "end": 39.22
+        },
+        {
+          "text": "whether",
+          "start": 39.22,
+          "end": 39.96
+        },
+        {
+          "text": "it's",
+          "start": 39.96,
+          "end": 40.7
+        },
+        {
+          "text": "dishwasher",
+          "start": 39.44,
+          "end": 40.18
+        },
+        {
+          "text": "safe",
+          "start": 40.18,
+          "end": 40.92
+        },
+        {
+          "text": "or",
+          "start": 40.92,
+          "end": 41.66
+        },
+        {
+          "text": "not.",
+          "start": 41.66,
+          "end": 42.4
+        }
+      ]
+    },
+    {
+      "id": "cue-16",
+      "start": 40.72,
+      "end": 44.64,
+      "text": ">> Classifying material properties and geometry.",
+      "words": [
+        {
+          "text": ">>",
+          "start": 40.72,
+          "end": 41.48
+        },
+        {
+          "text": "Classifying",
+          "start": 41.48,
+          "end": 42.24
+        },
+        {
+          "text": "material",
+          "start": 42.24,
+          "end": 43.0
+        },
+        {
+          "text": "properties",
+          "start": 43.0,
+          "end": 43.76
+        },
+        {
+          "text": "and",
+          "start": 43.76,
+          "end": 44.52
+        },
+        {
+          "text": "geometry.",
+          "start": 42.4,
+          "end": 44.64
+        }
+      ]
+    },
+    {
+      "id": "cue-17",
+      "start": 44.54,
+      "end": 48.56,
+      "text": ">> [snorts] >> Done.",
+      "words": [
+        {
+          "text": ">>",
+          "start": 44.54,
+          "end": 45.03
+        },
+        {
+          "text": "[snorts]",
+          "start": 45.03,
+          "end": 45.52
+        },
+        {
+          "text": ">>",
+          "start": 44.64,
+          "end": 46.6
+        },
+        {
+          "text": "Done.",
+          "start": 46.6,
+          "end": 48.56
+        }
+      ]
+    },
+    {
+      "id": "cue-18",
+      "start": 45.52,
+      "end": 50.62,
+      "text": "Your dishware catalog is ready.",
+      "words": [
+        {
+          "text": "Your",
+          "start": 45.52,
+          "end": 46.54
+        },
+        {
+          "text": "dishware",
+          "start": 46.54,
+          "end": 47.56
+        },
+        {
+          "text": "catalog",
+          "start": 47.56,
+          "end": 48.58
+        },
+        {
+          "text": "is",
+          "start": 48.58,
+          "end": 49.6
+        },
+        {
+          "text": "ready.",
+          "start": 49.6,
+          "end": 50.62
+        }
+      ]
+    },
+    {
+      "id": "cue-19",
+      "start": 48.56,
+      "end": 54.24,
+      "text": ">> Put that there.",
+      "words": [
+        {
+          "text": ">>",
+          "start": 48.56,
+          "end": 49.98
+        },
+        {
+          "text": "Put",
+          "start": 49.98,
+          "end": 51.4
+        },
+        {
+          "text": "that",
+          "start": 51.4,
+          "end": 52.82
+        },
+        {
+          "text": "there.",
+          "start": 52.82,
+          "end": 54.24
+        }
+      ]
+    },
+    {
+      "id": "cue-20",
+      "start": 50.6,
+      "end": 57.71,
+      "text": ">> You don't need to point. Just say it.",
+      "words": [
+        {
+          "text": ">>",
+          "start": 50.6,
+          "end": 51.39
+        },
+        {
+          "text": "You",
+          "start": 51.39,
+          "end": 52.18
+        },
+        {
+          "text": "don't",
+          "start": 52.18,
+          "end": 52.97
+        },
+        {
+          "text": "need",
+          "start": 52.97,
+          "end": 53.76
+        },
+        {
+          "text": "to",
+          "start": 53.76,
+          "end": 54.55
+        },
+        {
+          "text": "point.",
+          "start": 54.55,
+          "end": 55.34
+        },
+        {
+          "text": "Just",
+          "start": 55.34,
+          "end": 56.13
+        },
+        {
+          "text": "say",
+          "start": 56.13,
+          "end": 56.92
+        },
+        {
+          "text": "it.",
+          "start": 56.92,
+          "end": 57.71
+        }
+      ]
+    },
+    {
+      "id": "cue-21",
+      "start": 54.24,
+      "end": 57.68,
+      "text": ">> And that there.",
+      "words": [
+        {
+          "text": ">>",
+          "start": 54.24,
+          "end": 55.1
+        },
+        {
+          "text": "And",
+          "start": 55.1,
+          "end": 55.96
+        },
+        {
+          "text": "that",
+          "start": 55.96,
+          "end": 56.82
+        },
+        {
+          "text": "there.",
+          "start": 56.82,
+          "end": 57.68
+        }
+      ]
+    },
+    {
+      "id": "cue-22",
+      "start": 60.72,
+      "end": 63.68,
+      "text": "Run it.",
+      "words": [
+        {
+          "text": "Run",
+          "start": 60.72,
+          "end": 62.2
+        },
+        {
+          "text": "it.",
+          "start": 62.2,
+          "end": 63.68
+        }
+      ]
+    },
+    {
+      "id": "cue-23",
+      "start": 61.56,
+      "end": 65.28,
+      "text": ">> Running virtual dishwasher.",
+      "words": [
+        {
+          "text": ">>",
+          "start": 61.56,
+          "end": 62.49
+        },
+        {
+          "text": "Running",
+          "start": 62.49,
+          "end": 63.42
+        },
+        {
+          "text": "virtual",
+          "start": 63.42,
+          "end": 64.35
+        },
+        {
+          "text": "dishwasher.",
+          "start": 64.35,
+          "end": 65.28
+        }
+      ]
+    },
+    {
+      "id": "cue-24",
+      "start": 63.68,
+      "end": 66.97,
+      "text": ">> Keep running simulations. I want the",
+      "words": [
+        {
+          "text": ">>",
+          "start": 63.68,
+          "end": 64.15
+        },
+        {
+          "text": "Keep",
+          "start": 64.15,
+          "end": 64.62
+        },
+        {
+          "text": "running",
+          "start": 64.62,
+          "end": 65.09
+        },
+        {
+          "text": "simulations.",
+          "start": 65.09,
+          "end": 65.56
+        },
+        {
+          "text": "I",
+          "start": 65.56,
+          "end": 66.03
+        },
+        {
+          "text": "want",
+          "start": 66.03,
+          "end": 66.5
+        },
+        {
+          "text": "the",
+          "start": 66.5,
+          "end": 66.97
+        }
+      ]
+    },
+    {
+      "id": "cue-25",
+      "start": 65.28,
+      "end": 70.64,
+      "text": "simulations as accurate as physically possible.",
+      "words": [
+        {
+          "text": "simulations",
+          "start": 65.28,
+          "end": 65.92
+        },
+        {
+          "text": "as",
+          "start": 65.92,
+          "end": 66.56
+        },
+        {
+          "text": "accurate",
+          "start": 66.56,
+          "end": 67.2
+        },
+        {
+          "text": "as",
+          "start": 67.2,
+          "end": 67.84
+        },
+        {
+          "text": "physically",
+          "start": 67.84,
+          "end": 68.48
+        },
+        {
+          "text": "possible.",
+          "start": 67.0,
+          "end": 70.64
+        }
+      ]
+    },
+    {
+      "id": "cue-26",
+      "start": 68.48,
+      "end": 74.24,
+      "text": ">> Refining the fluid simulation mesh.",
+      "words": [
+        {
+          "text": ">>",
+          "start": 68.48,
+          "end": 69.44
+        },
+        {
+          "text": "Refining",
+          "start": 69.44,
+          "end": 70.4
+        },
+        {
+          "text": "the",
+          "start": 70.4,
+          "end": 71.36
+        },
+        {
+          "text": "fluid",
+          "start": 71.36,
+          "end": 72.32
+        },
+        {
+          "text": "simulation",
+          "start": 72.32,
+          "end": 73.28
+        },
+        {
+          "text": "mesh.",
+          "start": 73.28,
+          "end": 74.24
+        }
+      ]
+    },
+    {
+      "id": "cue-27",
+      "start": 70.64,
+      "end": 76.28,
+      "text": "Increasing solver precision.",
+      "words": [
+        {
+          "text": "Increasing",
+          "start": 70.64,
+          "end": 72.52
+        },
+        {
+          "text": "solver",
+          "start": 72.52,
+          "end": 74.4
+        },
+        {
+          "text": "precision.",
+          "start": 74.4,
+          "end": 76.28
+        }
+      ]
+    },
+    {
+      "id": "cue-28",
+      "start": 74.24,
+      "end": 76.84,
+      "text": "Simulation complete.",
+      "words": [
+        {
+          "text": "Simulation",
+          "start": 74.24,
+          "end": 75.54
+        },
+        {
+          "text": "complete.",
+          "start": 75.54,
+          "end": 76.84
+        }
+      ]
+    },
+    {
+      "id": "cue-29",
+      "start": 76.28,
+      "end": 78.64,
+      "text": ">> What?",
+      "words": [
+        {
+          "text": ">>",
+          "start": 76.28,
+          "end": 77.46
+        },
+        {
+          "text": "What?",
+          "start": 77.46,
+          "end": 78.64
+        }
+      ]
+    },
+    {
+      "id": "cue-30",
+      "start": 76.84,
+      "end": 80.52,
+      "text": ">> Optimal configuration found.",
+      "words": [
+        {
+          "text": ">>",
+          "start": 76.84,
+          "end": 77.76
+        },
+        {
+          "text": "Optimal",
+          "start": 77.76,
+          "end": 78.68
+        },
+        {
+          "text": "configuration",
+          "start": 78.68,
+          "end": 79.6
+        },
+        {
+          "text": "found.",
+          "start": 79.6,
+          "end": 80.52
+        }
+      ]
+    },
+    {
+      "id": "cue-31",
+      "start": 78.64,
+      "end": 82.51,
+      "text": ">> No, that can't be right. The bowl is",
+      "words": [
+        {
+          "text": ">>",
+          "start": 78.64,
+          "end": 79.07
+        },
+        {
+          "text": "No,",
+          "start": 79.07,
+          "end": 79.5
+        },
+        {
+          "text": "that",
+          "start": 79.5,
+          "end": 79.93
+        },
+        {
+          "text": "can't",
+          "start": 79.93,
+          "end": 80.36
+        },
+        {
+          "text": "be",
+          "start": 80.36,
+          "end": 80.79
+        },
+        {
+          "text": "right.",
+          "start": 80.79,
+          "end": 81.22
+        },
+        {
+          "text": "The",
+          "start": 81.22,
+          "end": 81.65
+        },
+        {
+          "text": "bowl",
+          "start": 81.65,
+          "end": 82.08
+        },
+        {
+          "text": "is",
+          "start": 82.08,
+          "end": 82.51
+        }
+      ]
+    },
+    {
+      "id": "cue-32",
+      "start": 80.52,
+      "end": 84.0,
+      "text": "upside down. Astra, perform a full",
+      "words": [
+        {
+          "text": "upside",
+          "start": 80.52,
+          "end": 81.1
+        },
+        {
+          "text": "down.",
+          "start": 81.1,
+          "end": 81.68
+        },
+        {
+          "text": "Astra,",
+          "start": 81.68,
+          "end": 82.26
+        },
+        {
+          "text": "perform",
+          "start": 82.26,
+          "end": 82.84
+        },
+        {
+          "text": "a",
+          "start": 82.84,
+          "end": 83.42
+        },
+        {
+          "text": "full",
+          "start": 83.42,
+          "end": 84.0
+        }
+      ]
+    },
+    {
+      "id": "cue-33",
+      "start": 82.52,
+      "end": 88.77,
+      "text": "diagnostics. I think something's wrong with the code.",
+      "words": [
+        {
+          "text": "diagnostics.",
+          "start": 82.52,
+          "end": 83.05
+        },
+        {
+          "text": "I",
+          "start": 83.05,
+          "end": 83.58
+        },
+        {
+          "text": "think",
+          "start": 83.58,
+          "end": 84.11
+        },
+        {
+          "text": "something's",
+          "start": 84.11,
+          "end": 84.64
+        },
+        {
+          "text": "wrong",
+          "start": 84.64,
+          "end": 85.17
+        },
+        {
+          "text": "with",
+          "start": 84.0,
+          "end": 85.59
+        },
+        {
+          "text": "the",
+          "start": 85.59,
+          "end": 87.18
+        },
+        {
+          "text": "code.",
+          "start": 87.18,
+          "end": 88.77
+        }
+      ]
+    },
+    {
+      "id": "cue-34",
+      "start": 85.16,
+      "end": 88.76,
+      "text": ">> Reviewing the simulation code.",
+      "words": [
+        {
+          "text": ">>",
+          "start": 85.16,
+          "end": 85.88
+        },
+        {
+          "text": "Reviewing",
+          "start": 85.88,
+          "end": 86.6
+        },
+        {
+          "text": "the",
+          "start": 86.6,
+          "end": 87.32
+        },
+        {
+          "text": "simulation",
+          "start": 87.32,
+          "end": 88.04
+        },
+        {
+          "text": "code.",
+          "start": 88.04,
+          "end": 88.76
+        }
+      ]
+    },
+    {
+      "id": "cue-35",
+      "start": 93.72,
+      "end": 98.49,
+      "text": "Ah, got you. This is not a code issue.",
+      "words": [
+        {
+          "text": "Ah,",
+          "start": 93.72,
+          "end": 94.25
+        },
+        {
+          "text": "got",
+          "start": 94.25,
+          "end": 94.78
+        },
+        {
+          "text": "you.",
+          "start": 94.78,
+          "end": 95.31
+        },
+        {
+          "text": "This",
+          "start": 95.31,
+          "end": 95.84
+        },
+        {
+          "text": "is",
+          "start": 95.84,
+          "end": 96.37
+        },
+        {
+          "text": "not",
+          "start": 96.37,
+          "end": 96.9
+        },
+        {
+          "text": "a",
+          "start": 96.9,
+          "end": 97.43
+        },
+        {
+          "text": "code",
+          "start": 97.43,
+          "end": 97.96
+        },
+        {
+          "text": "issue.",
+          "start": 97.96,
+          "end": 98.49
+        }
+      ]
+    },
+    {
+      "id": "cue-36",
+      "start": 96.44,
+      "end": 100.57,
+      "text": "It's a mathematical one. Here is my",
+      "words": [
+        {
+          "text": "It's",
+          "start": 96.44,
+          "end": 97.03
+        },
+        {
+          "text": "a",
+          "start": 97.03,
+          "end": 97.62
+        },
+        {
+          "text": "mathematical",
+          "start": 97.62,
+          "end": 98.21
+        },
+        {
+          "text": "one.",
+          "start": 98.21,
+          "end": 98.8
+        },
+        {
+          "text": "Here",
+          "start": 98.8,
+          "end": 99.39
+        },
+        {
+          "text": "is",
+          "start": 99.39,
+          "end": 99.98
+        },
+        {
+          "text": "my",
+          "start": 99.98,
+          "end": 100.57
+        }
+      ]
+    },
+    {
+      "id": "cue-37",
+      "start": 98.48,
+      "end": 103.9,
+      "text": "formalized proof that our Navier-Stokes solution in our simulation is developing",
+      "words": [
+        {
+          "text": "formalized",
+          "start": 98.48,
+          "end": 99.28
+        },
+        {
+          "text": "proof",
+          "start": 99.28,
+          "end": 100.08
+        },
+        {
+          "text": "that",
+          "start": 100.08,
+          "end": 100.88
+        },
+        {
+          "text": "our",
+          "start": 100.88,
+          "end": 101.68
+        },
+        {
+          "text": "Navier-Stokes",
+          "start": 101.68,
+          "end": 102.48
+        },
+        {
+          "text": "solution",
+          "start": 100.6,
+          "end": 101.15
+        },
+        {
+          "text": "in",
+          "start": 101.15,
+          "end": 101.7
+        },
+        {
+          "text": "our",
+          "start": 101.7,
+          "end": 102.25
+        },
+        {
+          "text": "simulation",
+          "start": 102.25,
+          "end": 102.8
+        },
+        {
+          "text": "is",
+          "start": 102.8,
+          "end": 103.35
+        },
+        {
+          "text": "developing",
+          "start": 103.35,
+          "end": 103.9
+        }
+      ]
+    },
+    {
+      "id": "cue-38",
+      "start": 102.48,
+      "end": 105.6,
+      "text": "a singularity.",
+      "words": [
+        {
+          "text": "a",
+          "start": 102.48,
+          "end": 104.04
+        },
+        {
+          "text": "singularity.",
+          "start": 104.04,
+          "end": 105.6
+        }
+      ]
+    },
+    {
+      "id": "cue-39",
+      "start": 103.92,
+      "end": 109.17,
+      "text": "To proceed, we need to derive an",
+      "words": [
+        {
+          "text": "To",
+          "start": 103.92,
+          "end": 104.67
+        },
+        {
+          "text": "proceed,",
+          "start": 104.67,
+          "end": 105.42
+        },
+        {
+          "text": "we",
+          "start": 105.42,
+          "end": 106.17
+        },
+        {
+          "text": "need",
+          "start": 106.17,
+          "end": 106.92
+        },
+        {
+          "text": "to",
+          "start": 106.92,
+          "end": 107.67
+        },
+        {
+          "text": "derive",
+          "start": 107.67,
+          "end": 108.42
+        },
+        {
+          "text": "an",
+          "start": 108.42,
+          "end": 109.17
+        }
+      ]
+    },
+    {
+      "id": "cue-40",
+      "start": 105.6,
+      "end": 109.2,
+      "text": "equation that doesn't exist yet.",
+      "words": [
+        {
+          "text": "equation",
+          "start": 105.6,
+          "end": 106.32
+        },
+        {
+          "text": "that",
+          "start": 106.32,
+          "end": 107.04
+        },
+        {
+          "text": "doesn't",
+          "start": 107.04,
+          "end": 107.76
+        },
+        {
+          "text": "exist",
+          "start": 107.76,
+          "end": 108.48
+        },
+        {
+          "text": "yet.",
+          "start": 108.48,
+          "end": 109.2
+        }
+      ]
+    },
+    {
+      "id": "cue-41",
+      "start": 110.0,
+      "end": 113.15,
+      "text": ">> I don't know what that is, but please",
+      "words": [
+        {
+          "text": ">>",
+          "start": 110.0,
+          "end": 110.35
+        },
+        {
+          "text": "I",
+          "start": 110.35,
+          "end": 110.7
+        },
+        {
+          "text": "don't",
+          "start": 110.7,
+          "end": 111.05
+        },
+        {
+          "text": "know",
+          "start": 111.05,
+          "end": 111.4
+        },
+        {
+          "text": "what",
+          "start": 111.4,
+          "end": 111.75
+        },
+        {
+          "text": "that",
+          "start": 111.75,
+          "end": 112.1
+        },
+        {
+          "text": "is,",
+          "start": 112.1,
+          "end": 112.45
+        },
+        {
+          "text": "but",
+          "start": 112.45,
+          "end": 112.8
+        },
+        {
+          "text": "please",
+          "start": 112.8,
+          "end": 113.15
+        }
+      ]
+    },
+    {
+      "id": "cue-42",
+      "start": 111.36,
+      "end": 115.36,
+      "text": "just fix it before my food gets here.",
+      "words": [
+        {
+          "text": "just",
+          "start": 111.36,
+          "end": 111.86
+        },
+        {
+          "text": "fix",
+          "start": 111.86,
+          "end": 112.36
+        },
+        {
+          "text": "it",
+          "start": 112.36,
+          "end": 112.86
+        },
+        {
+          "text": "before",
+          "start": 112.86,
+          "end": 113.36
+        },
+        {
+          "text": "my",
+          "start": 113.36,
+          "end": 113.86
+        },
+        {
+          "text": "food",
+          "start": 113.86,
+          "end": 114.36
+        },
+        {
+          "text": "gets",
+          "start": 114.36,
+          "end": 114.86
+        },
+        {
+          "text": "here.",
+          "start": 114.86,
+          "end": 115.36
+        }
+      ]
+    },
+    {
+      "id": "cue-43",
+      "start": 113.12,
+      "end": 116.56,
+      "text": ">> Of course, but this might take more",
+      "words": [
+        {
+          "text": ">>",
+          "start": 113.12,
+          "end": 113.55
+        },
+        {
+          "text": "Of",
+          "start": 113.55,
+          "end": 113.98
+        },
+        {
+          "text": "course,",
+          "start": 113.98,
+          "end": 114.41
+        },
+        {
+          "text": "but",
+          "start": 114.41,
+          "end": 114.84
+        },
+        {
+          "text": "this",
+          "start": 114.84,
+          "end": 115.27
+        },
+        {
+          "text": "might",
+          "start": 115.27,
+          "end": 115.7
+        },
+        {
+          "text": "take",
+          "start": 115.7,
+          "end": 116.13
+        },
+        {
+          "text": "more",
+          "start": 116.13,
+          "end": 116.56
+        }
+      ]
+    },
+    {
+      "id": "cue-44",
+      "start": 115.36,
+      "end": 118.51,
+      "text": "tokens than usual.",
+      "words": [
+        {
+          "text": "tokens",
+          "start": 115.36,
+          "end": 116.41
+        },
+        {
+          "text": "than",
+          "start": 116.41,
+          "end": 117.46
+        },
+        {
+          "text": "usual.",
+          "start": 117.46,
+          "end": 118.51
+        }
+      ]
+    },
+    {
+      "id": "cue-45",
+      "start": 116.56,
+      "end": 120.36,
+      "text": ">> It's fine. I'm sponsored.",
+      "words": [
+        {
+          "text": ">>",
+          "start": 116.56,
+          "end": 117.32
+        },
+        {
+          "text": "It's",
+          "start": 117.32,
+          "end": 118.08
+        },
+        {
+          "text": "fine.",
+          "start": 118.08,
+          "end": 118.84
+        },
+        {
+          "text": "I'm",
+          "start": 118.84,
+          "end": 119.6
+        },
+        {
+          "text": "sponsored.",
+          "start": 119.6,
+          "end": 120.36
+        }
+      ]
+    },
+    {
+      "id": "cue-46",
+      "start": 118.52,
+      "end": 122.52,
+      "text": "I wasn't sure what Astro was doing, but",
+      "words": [
+        {
+          "text": "I",
+          "start": 118.52,
+          "end": 119.02
+        },
+        {
+          "text": "wasn't",
+          "start": 119.02,
+          "end": 119.52
+        },
+        {
+          "text": "sure",
+          "start": 119.52,
+          "end": 120.02
+        },
+        {
+          "text": "what",
+          "start": 120.02,
+          "end": 120.52
+        },
+        {
+          "text": "Astro",
+          "start": 120.52,
+          "end": 121.02
+        },
+        {
+          "text": "was",
+          "start": 121.02,
+          "end": 121.52
+        },
+        {
+          "text": "doing,",
+          "start": 121.52,
+          "end": 122.02
+        },
+        {
+          "text": "but",
+          "start": 122.02,
+          "end": 122.52
+        }
+      ]
+    },
+    {
+      "id": "cue-47",
+      "start": 120.36,
+      "end": 124.36,
+      "text": "it was determined to solve my problem. I",
+      "words": [
+        {
+          "text": "it",
+          "start": 120.36,
+          "end": 120.86
+        },
+        {
+          "text": "was",
+          "start": 120.86,
+          "end": 121.36
+        },
+        {
+          "text": "determined",
+          "start": 121.36,
+          "end": 121.86
+        },
+        {
+          "text": "to",
+          "start": 121.86,
+          "end": 122.36
+        },
+        {
+          "text": "solve",
+          "start": 122.36,
+          "end": 122.86
+        },
+        {
+          "text": "my",
+          "start": 122.86,
+          "end": 123.36
+        },
+        {
+          "text": "problem.",
+          "start": 123.36,
+          "end": 123.86
+        },
+        {
+          "text": "I",
+          "start": 123.86,
+          "end": 124.36
+        }
+      ]
+    },
+    {
+      "id": "cue-48",
+      "start": 122.56,
+      "end": 126.26,
+      "text": "lost count how many times I had to use a",
+      "words": [
+        {
+          "text": "lost",
+          "start": 122.56,
+          "end": 122.93
+        },
+        {
+          "text": "count",
+          "start": 122.93,
+          "end": 123.3
+        },
+        {
+          "text": "how",
+          "start": 123.3,
+          "end": 123.67
+        },
+        {
+          "text": "many",
+          "start": 123.67,
+          "end": 124.04
+        },
+        {
+          "text": "times",
+          "start": 124.04,
+          "end": 124.41
+        },
+        {
+          "text": "I",
+          "start": 124.41,
+          "end": 124.78
+        },
+        {
+          "text": "had",
+          "start": 124.78,
+          "end": 125.15
+        },
+        {
+          "text": "to",
+          "start": 125.15,
+          "end": 125.52
+        },
+        {
+          "text": "use",
+          "start": 125.52,
+          "end": 125.89
+        },
+        {
+          "text": "a",
+          "start": 125.89,
+          "end": 126.26
+        }
+      ]
+    },
+    {
+      "id": "cue-49",
+      "start": 124.4,
+      "end": 128.35,
+      "text": "reset to keep it running.",
+      "words": [
+        {
+          "text": "reset",
+          "start": 124.4,
+          "end": 125.19
+        },
+        {
+          "text": "to",
+          "start": 125.19,
+          "end": 125.98
+        },
+        {
+          "text": "keep",
+          "start": 125.98,
+          "end": 126.77
+        },
+        {
+          "text": "it",
+          "start": 126.77,
+          "end": 127.56
+        },
+        {
+          "text": "running.",
+          "start": 127.56,
+          "end": 128.35
+        }
+      ]
+    },
+    {
+      "id": "cue-50",
+      "start": 126.28,
+      "end": 132.84,
+      "text": "Somewhere, a researcher at OpenAI probably lost access to his GPU because",
+      "words": [
+        {
+          "text": "Somewhere,",
+          "start": 126.28,
+          "end": 127.14
+        },
+        {
+          "text": "a",
+          "start": 127.14,
+          "end": 128.0
+        },
+        {
+          "text": "researcher",
+          "start": 128.0,
+          "end": 128.86
+        },
+        {
+          "text": "at",
+          "start": 128.86,
+          "end": 129.72
+        },
+        {
+          "text": "OpenAI",
+          "start": 129.72,
+          "end": 130.58
+        },
+        {
+          "text": "probably",
+          "start": 128.36,
+          "end": 129.0
+        },
+        {
+          "text": "lost",
+          "start": 129.0,
+          "end": 129.64
+        },
+        {
+          "text": "access",
+          "start": 129.64,
+          "end": 130.28
+        },
+        {
+          "text": "to",
+          "start": 130.28,
+          "end": 130.92
+        },
+        {
+          "text": "his",
+          "start": 130.92,
+          "end": 131.56
+        },
+        {
+          "text": "GPU",
+          "start": 131.56,
+          "end": 132.2
+        },
+        {
+          "text": "because",
+          "start": 132.2,
+          "end": 132.84
+        }
+      ]
+    },
+    {
+      "id": "cue-51",
+      "start": 130.56,
+      "end": 134.24,
+      "text": "of me.",
+      "words": [
+        {
+          "text": "of",
+          "start": 130.56,
+          "end": 132.4
+        },
+        {
+          "text": "me.",
+          "start": 132.4,
+          "end": 134.24
+        }
+      ]
+    },
+    {
+      "id": "cue-52",
+      "start": 132.84,
+      "end": 135.48,
+      "text": "Was the optimal [music] load even",
+      "words": [
+        {
+          "text": "Was",
+          "start": 132.84,
+          "end": 133.28
+        },
+        {
+          "text": "the",
+          "start": 133.28,
+          "end": 133.72
+        },
+        {
+          "text": "optimal",
+          "start": 133.72,
+          "end": 134.16
+        },
+        {
+          "text": "[music]",
+          "start": 134.16,
+          "end": 134.6
+        },
+        {
+          "text": "load",
+          "start": 134.6,
+          "end": 135.04
+        },
+        {
+          "text": "even",
+          "start": 135.04,
+          "end": 135.48
+        }
+      ]
+    },
+    {
+      "id": "cue-53",
+      "start": 134.24,
+      "end": 138.68,
+      "text": "solvable?",
+      "words": [
+        {
+          "text": "solvable?",
+          "start": 134.24,
+          "end": 138.68
+        }
+      ]
+    },
+    {
+      "id": "cue-54",
+      "start": 135.48,
+      "end": 138.68,
+      "text": "And at what cost?",
+      "words": [
+        {
+          "text": "And",
+          "start": 135.48,
+          "end": 136.28
+        },
+        {
+          "text": "at",
+          "start": 136.28,
+          "end": 137.08
+        },
+        {
+          "text": "what",
+          "start": 137.08,
+          "end": 137.88
+        },
+        {
+          "text": "cost?",
+          "start": 137.88,
+          "end": 138.68
+        }
+      ]
+    },
+    {
+      "id": "cue-55",
+      "start": 145.84,
+      "end": 149.62,
+      "text": "The dishes were clean, not a single",
+      "words": [
+        {
+          "text": "The",
+          "start": 145.84,
+          "end": 146.38
+        },
+        {
+          "text": "dishes",
+          "start": 146.38,
+          "end": 146.92
+        },
+        {
+          "text": "were",
+          "start": 146.92,
+          "end": 147.46
+        },
+        {
+          "text": "clean,",
+          "start": 147.46,
+          "end": 148.0
+        },
+        {
+          "text": "not",
+          "start": 148.0,
+          "end": 148.54
+        },
+        {
+          "text": "a",
+          "start": 148.54,
+          "end": 149.08
+        },
+        {
+          "text": "single",
+          "start": 149.08,
+          "end": 149.62
+        }
+      ]
+    },
+    {
+      "id": "cue-56",
+      "start": 147.92,
+      "end": 152.48,
+      "text": "speck of residue.",
+      "words": [
+        {
+          "text": "speck",
+          "start": 147.92,
+          "end": 149.44
+        },
+        {
+          "text": "of",
+          "start": 149.44,
+          "end": 150.96
+        },
+        {
+          "text": "residue.",
+          "start": 150.96,
+          "end": 152.48
+        }
+      ]
+    },
+    {
+      "id": "cue-57",
+      "start": 149.64,
+      "end": 152.49,
+      "text": "And the forks?",
+      "words": [
+        {
+          "text": "And",
+          "start": 149.64,
+          "end": 150.59
+        },
+        {
+          "text": "the",
+          "start": 150.59,
+          "end": 151.54
+        },
+        {
+          "text": "forks?",
+          "start": 151.54,
+          "end": 152.49
+        }
+      ]
+    },
+    {
+      "id": "cue-58",
+      "start": 153.32,
+      "end": 156.47,
+      "text": "They were perfect.",
+      "words": [
+        {
+          "text": "They",
+          "start": 153.32,
+          "end": 154.37
+        },
+        {
+          "text": "were",
+          "start": 154.37,
+          "end": 155.42
+        },
+        {
+          "text": "perfect.",
+          "start": 155.42,
+          "end": 156.47
+        }
+      ]
+    },
+    {
+      "id": "cue-59",
+      "start": 156.92,
+      "end": 159.5,
+      "text": "Also, I'm not sure what [music]",
+      "words": [
+        {
+          "text": "Also,",
+          "start": 156.92,
+          "end": 157.35
+        },
+        {
+          "text": "I'm",
+          "start": 157.35,
+          "end": 157.78
+        },
+        {
+          "text": "not",
+          "start": 157.78,
+          "end": 158.21
+        },
+        {
+          "text": "sure",
+          "start": 158.21,
+          "end": 158.64
+        },
+        {
+          "text": "what",
+          "start": 158.64,
+          "end": 159.07
+        },
+        {
+          "text": "[music]",
+          "start": 159.07,
+          "end": 159.5
+        }
+      ]
+    },
+    {
+      "id": "cue-60",
+      "start": 157.92,
+      "end": 161.58,
+      "text": "happened, but someone at the Clay",
+      "words": [
+        {
+          "text": "happened,",
+          "start": 157.92,
+          "end": 158.53
+        },
+        {
+          "text": "but",
+          "start": 158.53,
+          "end": 159.14
+        },
+        {
+          "text": "someone",
+          "start": 159.14,
+          "end": 159.75
+        },
+        {
+          "text": "at",
+          "start": 159.75,
+          "end": 160.36
+        },
+        {
+          "text": "the",
+          "start": 160.36,
+          "end": 160.97
+        },
+        {
+          "text": "Clay",
+          "start": 160.97,
+          "end": 161.58
+        }
+      ]
+    },
+    {
+      "id": "cue-61",
+      "start": 159.48,
+      "end": 163.26,
+      "text": "Institute gave me a million dollars.",
+      "words": [
+        {
+          "text": "Institute",
+          "start": 159.48,
+          "end": 160.11
+        },
+        {
+          "text": "gave",
+          "start": 160.11,
+          "end": 160.74
+        },
+        {
+          "text": "me",
+          "start": 160.74,
+          "end": 161.37
+        },
+        {
+          "text": "a",
+          "start": 161.37,
+          "end": 162.0
+        },
+        {
+          "text": "million",
+          "start": 162.0,
+          "end": 162.63
+        },
+        {
+          "text": "dollars.",
+          "start": 162.63,
+          "end": 163.26
+        }
+      ]
+    },
+    {
+      "id": "cue-62",
+      "start": 161.56,
+      "end": 166.12,
+      "text": "Something about solving a millennium math problem.",
+      "words": [
+        {
+          "text": "Something",
+          "start": 161.56,
+          "end": 162.47
+        },
+        {
+          "text": "about",
+          "start": 162.47,
+          "end": 163.38
+        },
+        {
+          "text": "solving",
+          "start": 163.38,
+          "end": 164.29
+        },
+        {
+          "text": "a",
+          "start": 164.29,
+          "end": 165.2
+        },
+        {
+          "text": "millennium",
+          "start": 165.2,
+          "end": 166.11
+        },
+        {
+          "text": "math",
+          "start": 163.28,
+          "end": 164.7
+        },
+        {
+          "text": "problem.",
+          "start": 164.7,
+          "end": 166.12
+        }
+      ]
+    }
+  ]
+}
