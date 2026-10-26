@@ -598,21 +598,27 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
         state.font = 'font-cairo';
       }
       if (ttsDialect) ttsDialect.value = 'ar-SA';
+      if (ttsVoice) ttsVoice.value = 'stream-ar';
       state.dialect = 'ar-SA';
+      state.selectedVoiceIndex = 'stream-ar';
     } else if (lang === 'fr') {
       setDirection('ltr', false);
       if (state.font.includes('cairo') || state.font.includes('noto') || state.font.includes('tajawal')) {
         state.font = 'font-lexend';
       }
       if (ttsDialect) ttsDialect.value = 'fr-FR';
+      if (ttsVoice) ttsVoice.value = 'stream-fr';
       state.dialect = 'fr-FR';
+      state.selectedVoiceIndex = 'stream-fr';
     } else {
       setDirection('ltr', false);
       if (state.font.includes('cairo') || state.font.includes('noto') || state.font.includes('tajawal')) {
         state.font = 'font-lexend';
       }
       if (ttsDialect) ttsDialect.value = 'en-US';
+      if (ttsVoice) ttsVoice.value = 'stream-en';
       state.dialect = 'en-US';
+      state.selectedVoiceIndex = 'stream-en';
     }
 
     applySettings();
@@ -1256,106 +1262,53 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
   }
 
   function loadVoices() {
-    if (!synth) return;
-    const voices = synth.getVoices() || [];
-    availableVoices = voices;
+    if (!ttsVoice) return;
     ttsVoice.innerHTML = '';
 
-    const currentDialect = getTargetDialect(rawInput ? rawInput.value : '');
-
-    // Classify voices
-    const groups = {
-      en: { label: 'English Voices', voices: [] },
-      fr: { label: 'French Voices (Français)', voices: [] },
-      ar: { label: 'Arabic Voices (العربية)', voices: [] },
-      other: { label: 'Other Voices', voices: [] }
-    };
-
-    voices.forEach((voice, idx) => {
-      const vLang = (voice.lang || '').toLowerCase();
-      let grp = 'other';
-      if (vLang.startsWith('en')) grp = 'en';
-      else if (vLang.startsWith('fr')) grp = 'fr';
-      else if (vLang.startsWith('ar')) grp = 'ar';
-
-      groups[grp].voices.push({ voice, idx });
-    });
-
-    // Populate Groups
-    ['en', 'fr', 'ar', 'other'].forEach(key => {
-      const grp = groups[key];
-      if (grp.voices.length > 0) {
-        const optgroup = document.createElement('optgroup');
-        optgroup.label = grp.label;
-        grp.voices.forEach(({ voice, idx }) => {
-          const opt = document.createElement('option');
-          opt.value = idx.toString();
-          let label = voice.name;
-          if (voice.lang) label += ` [${voice.lang}]`;
-          if (voice.default) label += ' ★';
-          opt.textContent = label;
-          optgroup.appendChild(opt);
-        });
-        ttsVoice.appendChild(optgroup);
-      }
-    });
-
-    // High-Fidelity Cloud / Neural Voices (Always available for EN, FR, AR)
-    const cloudGroup = document.createElement('optgroup');
-    cloudGroup.label = '⚡ Cloud / Natural AI Voices (Recommended)';
-
+    // Instant Cloud Neural Voices ONLY - pure high-fidelity AI audio, 0% robotic SAPI
     const optEn = document.createElement('option');
     optEn.value = 'stream-en';
     optEn.textContent = '🇺🇸 English Natural Audio (Instant Cloud)';
-    cloudGroup.appendChild(optEn);
+    ttsVoice.appendChild(optEn);
 
     const optFr = document.createElement('option');
     optFr.value = 'stream-fr';
     optFr.textContent = '🇫🇷 French Native Audio (Instant Cloud)';
-    cloudGroup.appendChild(optFr);
+    ttsVoice.appendChild(optFr);
 
     const optAr = document.createElement('option');
     optAr.value = 'stream-ar';
     optAr.textContent = '🇸🇦 Arabic Native Audio (Instant Cloud)';
-    cloudGroup.appendChild(optAr);
+    ttsVoice.appendChild(optAr);
 
-    ttsVoice.appendChild(cloudGroup);
-
-    // Auto-select the voice matching current dialect
-    autoSelectVoiceForDialect(currentDialect, groups);
+    // Auto-select the Instant Cloud voice matching current dialect/language
+    const currentDialect = getTargetDialect(rawInput ? rawInput.value : '');
+    autoSelectVoiceForDialect(currentDialect);
   }
 
-  function autoSelectVoiceForDialect(dialect, groups) {
-    if (!groups) {
-      loadVoices();
-      return;
-    }
+  function autoSelectVoiceForDialect(dialect) {
+    if (!ttsVoice) return;
+    const shortLang = (dialect || state.dialect || state.lang || 'en').split('-')[0];
 
-    const shortLang = dialect.split('-')[0]; // 'en', 'fr', 'ar'
-
-    // If user previously chose a specific voice that exists in dropdown, keep it
-    if (state.selectedVoiceIndex) {
-      const existing = ttsVoice ? ttsVoice.querySelector(`option[value="${state.selectedVoiceIndex}"]`) : null;
-      if (existing) {
+    // If user previously chose a valid stream voice matching the current language, keep it
+    if (state.selectedVoiceIndex && String(state.selectedVoiceIndex).startsWith('stream-')) {
+      const existing = ttsVoice.querySelector(`option[value="${state.selectedVoiceIndex}"]`);
+      if (existing && String(state.selectedVoiceIndex) === `stream-${shortLang}`) {
         ttsVoice.value = state.selectedVoiceIndex;
         return;
       }
     }
 
-    // Default to natural high-fidelity Cloud Audio stream for all languages
-    if (shortLang === 'en') {
-      ttsVoice.value = 'stream-en';
-      state.selectedVoiceIndex = 'stream-en';
-    } else if (shortLang === 'fr') {
+    // Default automatically to that language's Instant Cloud voice
+    if (shortLang === 'fr') {
       ttsVoice.value = 'stream-fr';
       state.selectedVoiceIndex = 'stream-fr';
     } else if (shortLang === 'ar') {
       ttsVoice.value = 'stream-ar';
       state.selectedVoiceIndex = 'stream-ar';
-    } else if (groups[shortLang] && groups[shortLang].voices.length > 0) {
-      const firstVoiceIdx = groups[shortLang].voices[0].idx;
-      ttsVoice.value = firstVoiceIdx.toString();
-      state.selectedVoiceIndex = firstVoiceIdx;
+    } else {
+      ttsVoice.value = 'stream-en';
+      state.selectedVoiceIndex = 'stream-en';
     }
   }
 
@@ -4372,21 +4325,43 @@ REMINDER: All generated content in the JSON above MUST BE STRICTLY AND EXCLUSIVE
     if (ttsDialect) {
       ttsDialect.addEventListener('change', e => {
         state.dialect = e.target.value;
+        const shortLang = (e.target.value || '').split('-')[0];
+        if (shortLang === 'fr') {
+          if (ttsVoice) ttsVoice.value = 'stream-fr';
+          state.selectedVoiceIndex = 'stream-fr';
+        } else if (shortLang === 'ar') {
+          if (ttsVoice) ttsVoice.value = 'stream-ar';
+          state.selectedVoiceIndex = 'stream-ar';
+        } else {
+          if (ttsVoice) ttsVoice.value = 'stream-en';
+          state.selectedVoiceIndex = 'stream-en';
+        }
         saveState();
-        loadVoices();
         if (state.isSpeaking) {
           playSentence(state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0);
         }
       });
     }
 
-    ttsVoice.addEventListener('change', e => {
-      state.selectedVoiceIndex = e.target.value;
-      saveState();
-      if (state.isSpeaking) {
-        playSentence(state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0);
-      }
-    });
+    if (ttsVoice) {
+      ttsVoice.addEventListener('change', e => {
+        state.selectedVoiceIndex = e.target.value;
+        if (e.target.value === 'stream-fr') {
+          if (ttsDialect) ttsDialect.value = 'fr-FR';
+          state.dialect = 'fr-FR';
+        } else if (e.target.value === 'stream-ar') {
+          if (ttsDialect) ttsDialect.value = 'ar-SA';
+          state.dialect = 'ar-SA';
+        } else if (e.target.value === 'stream-en') {
+          if (ttsDialect) ttsDialect.value = 'en-US';
+          state.dialect = 'en-US';
+        }
+        saveState();
+        if (state.isSpeaking) {
+          playSentence(state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0);
+        }
+      });
+    }
 
     ttsSpeed.addEventListener('change', e => {
       setSpeechRate(e.target.value, true);
