@@ -4076,10 +4076,10 @@ REMINDER: All generated content in the JSON above MUST BE STRICTLY AND EXCLUSIVE
       const imported = localStorage.getItem('focusflow_imported_text');
       if (imported && imported.trim()) {
         localStorage.removeItem('focusflow_imported_text');
-        const lang = detectLanguage(imported);
-        setLanguage(lang, false);
         state.text = imported;
         if (rawInput) rawInput.value = imported;
+        const lang = detectLanguage(imported);
+        setLanguageMode(lang, false);
         saveState();
         updateRender();
         showToast('📖 Subtitles exported to Reader successfully!');
@@ -4870,10 +4870,10 @@ REMINDER: All generated content in the JSON above MUST BE STRICTLY AND EXCLUSIVE
         const text = e?.detail?.text;
         if (text && text.trim()) {
           stopSpeech();
-          const lang = detectLanguage(text);
-          setLanguage(lang, false);
           state.text = text;
           if (rawInput) rawInput.value = text;
+          const lang = detectLanguage(text);
+          setLanguageMode(lang, false);
           saveState();
           updateRender();
           showToast('📖 Subtitles exported to Reader successfully!');

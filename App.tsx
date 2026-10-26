@@ -209,10 +209,20 @@ const App: React.FC = () => {
 
   if (appMode === 'shadowing') {
     return (
-      <ShadowingStudio onBack={() => {
-        window.location.hash = '';
-        setAppMode('instrument');
-      }} />
+      <ShadowingStudio
+        onBack={() => {
+          window.location.hash = '';
+          setAppMode('instrument');
+        }}
+        onNavigate={(mode: AppMode) => {
+          setAppMode(mode);
+          if (mode === 'instrument') {
+            window.location.hash = '';
+          } else {
+            window.location.hash = `#${mode}`;
+          }
+        }}
+      />
     );
   }
 

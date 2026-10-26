@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ShadowingClip, SubtitleLine } from '../../types';
+import { ShadowingClip, SubtitleLine, AppMode } from '../../types';
 import { PRESET_CLIPS, reconstructSubtitlesSemantically, parseTranscriptXml } from './mockClips';
 import YouTubePlayer, { YouTubePlayerRef } from './YouTubePlayer';
 import SubtitleStage from './SubtitleStage';
@@ -14,9 +14,10 @@ import { blobToBase64, playStandardAudio, stopAllAudio } from '../../utils/audio
 
 interface ShadowingStudioProps {
   onBack: () => void;
+  onNavigate?: (mode: AppMode) => void;
 }
 
-const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack }) => {
+const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate }) => {
   // Initialize state from local storage if available
   const [currentClip, setCurrentClip] = useState<ShadowingClip | null>(() => {
     try {
@@ -558,10 +559,18 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack }) => {
 
     showToast("📖 Exporting full subtitles to Reader...");
 
-    // Smooth navigation to Reader
-    setTimeout(() => {
-      window.location.hash = '#reader';
-    }, 200);
+    // Immediate navigation to Reader
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('mode');
+      url.hash = '#reader';
+      window.history.pushState({}, '', url.toString());
+    } catch (_) {}
+
+    window.location.hash = '#reader';
+    if (onNavigate) {
+      onNavigate('reader');
+    }
   };
 
   // Open Shadowing Mic Modal on current line
@@ -681,7 +690,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack }) => {
           <div className="absolute bottom-2 left-2 w-2 h-2 rounded-full border border-[#7a776e] bg-[#c5bfb0] flex items-center justify-center text-[7px] text-[#4d4a43] select-none">+</div>
           
           <div className="flex items-center gap-1.5 shrink-0 ml-1">
-            <SectionNavigator activeMode="shadowing" />
+            <SectionNavigator activeMode="shadowing" onSelectMode={onNavigate} />
           </div>
 
           <div className="flex flex-col items-center text-center flex-1 min-w-0 px-1">
