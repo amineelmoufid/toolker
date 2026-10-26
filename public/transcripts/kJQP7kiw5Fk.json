@@ -1,0 +1,3473 @@
+{
+  "ok": true,
+  "videoId": "kJQP7kiw5Fk",
+  "language": "en",
+  "trackKind": "standard",
+  "subtitles": [
+    {
+      "id": "cue-1",
+      "start": 28.24,
+      "end": 29.58,
+      "text": "Oh,",
+      "words": [
+        {
+          "text": "Oh,",
+          "start": 28.24,
+          "end": 29.58
+        }
+      ]
+    },
+    {
+      "id": "cue-2",
+      "start": 30.29,
+      "end": 31.29,
+      "text": "Fonsi!",
+      "words": [
+        {
+          "text": "Fonsi!",
+          "start": 30.29,
+          "end": 31.29
+        }
+      ]
+    },
+    {
+      "id": "cue-3",
+      "start": 31.79,
+      "end": 32.79,
+      "text": "DY!",
+      "words": [
+        {
+          "text": "DY!",
+          "start": 31.79,
+          "end": 32.79
+        }
+      ]
+    },
+    {
+      "id": "cue-4",
+      "start": 33.54,
+      "end": 38.64,
+      "text": "Ooh, oh, no, oh, no, oh",
+      "words": [
+        {
+          "text": "Ooh,",
+          "start": 33.54,
+          "end": 34.39
+        },
+        {
+          "text": "oh,",
+          "start": 34.39,
+          "end": 35.24
+        },
+        {
+          "text": "no,",
+          "start": 35.24,
+          "end": 36.09
+        },
+        {
+          "text": "oh,",
+          "start": 36.09,
+          "end": 36.94
+        },
+        {
+          "text": "no,",
+          "start": 36.94,
+          "end": 37.79
+        },
+        {
+          "text": "oh",
+          "start": 37.79,
+          "end": 38.64
+        }
+      ]
+    },
+    {
+      "id": "cue-5",
+      "start": 38.72,
+      "end": 40.0,
+      "text": "Hey, yeah!",
+      "words": [
+        {
+          "text": "Hey,",
+          "start": 38.72,
+          "end": 39.36
+        },
+        {
+          "text": "yeah!",
+          "start": 39.36,
+          "end": 40.0
+        }
+      ]
+    },
+    {
+      "id": "cue-6",
+      "start": 40.09,
+      "end": 41.89,
+      "text": "Dididiri Daddy, go!",
+      "words": [
+        {
+          "text": "Dididiri",
+          "start": 40.09,
+          "end": 40.69
+        },
+        {
+          "text": "Daddy,",
+          "start": 40.69,
+          "end": 41.29
+        },
+        {
+          "text": "go!",
+          "start": 41.29,
+          "end": 41.89
+        }
+      ]
+    },
+    {
+      "id": "cue-7",
+      "start": 42.01,
+      "end": 46.69,
+      "text": "Yeah, you know that I’ve been looking at you for a long time",
+      "words": [
+        {
+          "text": "Yeah,",
+          "start": 42.01,
+          "end": 42.37
+        },
+        {
+          "text": "you",
+          "start": 42.37,
+          "end": 42.73
+        },
+        {
+          "text": "know",
+          "start": 42.73,
+          "end": 43.09
+        },
+        {
+          "text": "that",
+          "start": 43.09,
+          "end": 43.45
+        },
+        {
+          "text": "I’ve",
+          "start": 43.45,
+          "end": 43.81
+        },
+        {
+          "text": "been",
+          "start": 43.81,
+          "end": 44.17
+        },
+        {
+          "text": "looking",
+          "start": 44.17,
+          "end": 44.53
+        },
+        {
+          "text": "at",
+          "start": 44.53,
+          "end": 44.89
+        },
+        {
+          "text": "you",
+          "start": 44.89,
+          "end": 45.25
+        },
+        {
+          "text": "for",
+          "start": 45.25,
+          "end": 45.61
+        },
+        {
+          "text": "a",
+          "start": 45.61,
+          "end": 45.97
+        },
+        {
+          "text": "long",
+          "start": 45.97,
+          "end": 46.33
+        },
+        {
+          "text": "time",
+          "start": 46.33,
+          "end": 46.69
+        }
+      ]
+    },
+    {
+      "id": "cue-8",
+      "start": 47.6,
+      "end": 50.84,
+      "text": "I must dance with you today",
+      "words": [
+        {
+          "text": "I",
+          "start": 47.6,
+          "end": 48.14
+        },
+        {
+          "text": "must",
+          "start": 48.14,
+          "end": 48.68
+        },
+        {
+          "text": "dance",
+          "start": 48.68,
+          "end": 49.22
+        },
+        {
+          "text": "with",
+          "start": 49.22,
+          "end": 49.76
+        },
+        {
+          "text": "you",
+          "start": 49.76,
+          "end": 50.3
+        },
+        {
+          "text": "today",
+          "start": 50.3,
+          "end": 50.84
+        }
+      ]
+    },
+    {
+      "id": "cue-9",
+      "start": 51.48,
+      "end": 52.48,
+      "text": "DY!",
+      "words": [
+        {
+          "text": "DY!",
+          "start": 51.48,
+          "end": 52.48
+        }
+      ]
+    },
+    {
+      "id": "cue-10",
+      "start": 52.65,
+      "end": 57.27,
+      "text": "I saw that the look in your eyes was calling me",
+      "words": [
+        {
+          "text": "I",
+          "start": 52.65,
+          "end": 53.07
+        },
+        {
+          "text": "saw",
+          "start": 53.07,
+          "end": 53.49
+        },
+        {
+          "text": "that",
+          "start": 53.49,
+          "end": 53.91
+        },
+        {
+          "text": "the",
+          "start": 53.91,
+          "end": 54.33
+        },
+        {
+          "text": "look",
+          "start": 54.33,
+          "end": 54.75
+        },
+        {
+          "text": "in",
+          "start": 54.75,
+          "end": 55.17
+        },
+        {
+          "text": "your",
+          "start": 55.17,
+          "end": 55.59
+        },
+        {
+          "text": "eyes",
+          "start": 55.59,
+          "end": 56.01
+        },
+        {
+          "text": "was",
+          "start": 56.01,
+          "end": 56.43
+        },
+        {
+          "text": "calling",
+          "start": 56.43,
+          "end": 56.85
+        },
+        {
+          "text": "me",
+          "start": 56.85,
+          "end": 57.27
+        }
+      ]
+    },
+    {
+      "id": "cue-11",
+      "start": 57.91,
+      "end": 61.67,
+      "text": "Show me the path that I will take",
+      "words": [
+        {
+          "text": "Show",
+          "start": 57.91,
+          "end": 58.38
+        },
+        {
+          "text": "me",
+          "start": 58.38,
+          "end": 58.85
+        },
+        {
+          "text": "the",
+          "start": 58.85,
+          "end": 59.32
+        },
+        {
+          "text": "path",
+          "start": 59.32,
+          "end": 59.79
+        },
+        {
+          "text": "that",
+          "start": 59.79,
+          "end": 60.26
+        },
+        {
+          "text": "I",
+          "start": 60.26,
+          "end": 60.73
+        },
+        {
+          "text": "will",
+          "start": 60.73,
+          "end": 61.2
+        },
+        {
+          "text": "take",
+          "start": 61.2,
+          "end": 61.67
+        }
+      ]
+    },
+    {
+      "id": "cue-12",
+      "start": 62.41,
+      "end": 63.41,
+      "text": "Oh!",
+      "words": [
+        {
+          "text": "Oh!",
+          "start": 62.41,
+          "end": 63.41
+        }
+      ]
+    },
+    {
+      "id": "cue-13",
+      "start": 63.95,
+      "end": 66.83,
+      "text": "You, you're the magnet, and I'm the metal,",
+      "words": [
+        {
+          "text": "You,",
+          "start": 63.95,
+          "end": 64.31
+        },
+        {
+          "text": "you're",
+          "start": 64.31,
+          "end": 64.67
+        },
+        {
+          "text": "the",
+          "start": 64.67,
+          "end": 65.03
+        },
+        {
+          "text": "magnet,",
+          "start": 65.03,
+          "end": 65.39
+        },
+        {
+          "text": "and",
+          "start": 65.39,
+          "end": 65.75
+        },
+        {
+          "text": "I'm",
+          "start": 65.75,
+          "end": 66.11
+        },
+        {
+          "text": "the",
+          "start": 66.11,
+          "end": 66.47
+        },
+        {
+          "text": "metal,",
+          "start": 66.47,
+          "end": 66.83
+        }
+      ]
+    },
+    {
+      "id": "cue-14",
+      "start": 67.0,
+      "end": 69.4,
+      "text": "I am getting closer and making a plan",
+      "words": [
+        {
+          "text": "I",
+          "start": 67.0,
+          "end": 67.3
+        },
+        {
+          "text": "am",
+          "start": 67.3,
+          "end": 67.6
+        },
+        {
+          "text": "getting",
+          "start": 67.6,
+          "end": 67.9
+        },
+        {
+          "text": "closer",
+          "start": 67.9,
+          "end": 68.2
+        },
+        {
+          "text": "and",
+          "start": 68.2,
+          "end": 68.5
+        },
+        {
+          "text": "making",
+          "start": 68.5,
+          "end": 68.8
+        },
+        {
+          "text": "a",
+          "start": 68.8,
+          "end": 69.1
+        },
+        {
+          "text": "plan",
+          "start": 69.1,
+          "end": 69.4
+        }
+      ]
+    },
+    {
+      "id": "cue-15",
+      "start": 69.5,
+      "end": 72.62,
+      "text": "Simply thinking about it makes my heart race",
+      "words": [
+        {
+          "text": "Simply",
+          "start": 69.5,
+          "end": 69.89
+        },
+        {
+          "text": "thinking",
+          "start": 69.89,
+          "end": 70.28
+        },
+        {
+          "text": "about",
+          "start": 70.28,
+          "end": 70.67
+        },
+        {
+          "text": "it",
+          "start": 70.67,
+          "end": 71.06
+        },
+        {
+          "text": "makes",
+          "start": 71.06,
+          "end": 71.45
+        },
+        {
+          "text": "my",
+          "start": 71.45,
+          "end": 71.84
+        },
+        {
+          "text": "heart",
+          "start": 71.84,
+          "end": 72.23
+        },
+        {
+          "text": "race",
+          "start": 72.23,
+          "end": 72.62
+        }
+      ]
+    },
+    {
+      "id": "cue-16",
+      "start": 73.01,
+      "end": 74.22,
+      "text": "Oh, yeah!",
+      "words": [
+        {
+          "text": "Oh,",
+          "start": 73.01,
+          "end": 73.62
+        },
+        {
+          "text": "yeah!",
+          "start": 73.62,
+          "end": 74.22
+        }
+      ]
+    },
+    {
+      "id": "cue-17",
+      "start": 74.3,
+      "end": 77.66,
+      "text": "Now, I'm already liking it more than usual",
+      "words": [
+        {
+          "text": "Now,",
+          "start": 74.3,
+          "end": 74.72
+        },
+        {
+          "text": "I'm",
+          "start": 74.72,
+          "end": 75.14
+        },
+        {
+          "text": "already",
+          "start": 75.14,
+          "end": 75.56
+        },
+        {
+          "text": "liking",
+          "start": 75.56,
+          "end": 75.98
+        },
+        {
+          "text": "it",
+          "start": 75.98,
+          "end": 76.4
+        },
+        {
+          "text": "more",
+          "start": 76.4,
+          "end": 76.82
+        },
+        {
+          "text": "than",
+          "start": 76.82,
+          "end": 77.24
+        },
+        {
+          "text": "usual",
+          "start": 77.24,
+          "end": 77.66
+        }
+      ]
+    },
+    {
+      "id": "cue-18",
+      "start": 77.72,
+      "end": 80.38,
+      "text": "All my senses are asking for more",
+      "words": [
+        {
+          "text": "All",
+          "start": 77.72,
+          "end": 78.1
+        },
+        {
+          "text": "my",
+          "start": 78.1,
+          "end": 78.48
+        },
+        {
+          "text": "senses",
+          "start": 78.48,
+          "end": 78.86
+        },
+        {
+          "text": "are",
+          "start": 78.86,
+          "end": 79.24
+        },
+        {
+          "text": "asking",
+          "start": 79.24,
+          "end": 79.62
+        },
+        {
+          "text": "for",
+          "start": 79.62,
+          "end": 80.0
+        },
+        {
+          "text": "more",
+          "start": 80.0,
+          "end": 80.38
+        }
+      ]
+    },
+    {
+      "id": "cue-19",
+      "start": 80.48,
+      "end": 83.63,
+      "text": "We cannot do this in a rush",
+      "words": [
+        {
+          "text": "We",
+          "start": 80.48,
+          "end": 80.93
+        },
+        {
+          "text": "cannot",
+          "start": 80.93,
+          "end": 81.38
+        },
+        {
+          "text": "do",
+          "start": 81.38,
+          "end": 81.83
+        },
+        {
+          "text": "this",
+          "start": 81.83,
+          "end": 82.28
+        },
+        {
+          "text": "in",
+          "start": 82.28,
+          "end": 82.73
+        },
+        {
+          "text": "a",
+          "start": 82.73,
+          "end": 83.18
+        },
+        {
+          "text": "rush",
+          "start": 83.18,
+          "end": 83.63
+        }
+      ]
+    },
+    {
+      "id": "cue-20",
+      "start": 83.86,
+      "end": 88.6,
+      "text": "Slowly I want to breathe in your neck slowly",
+      "words": [
+        {
+          "text": "Slowly",
+          "start": 83.86,
+          "end": 86.28
+        },
+        {
+          "text": "I",
+          "start": 86.36,
+          "end": 86.64
+        },
+        {
+          "text": "want",
+          "start": 86.64,
+          "end": 86.92
+        },
+        {
+          "text": "to",
+          "start": 86.92,
+          "end": 87.2
+        },
+        {
+          "text": "breathe",
+          "start": 87.2,
+          "end": 87.48
+        },
+        {
+          "text": "in",
+          "start": 87.48,
+          "end": 87.76
+        },
+        {
+          "text": "your",
+          "start": 87.76,
+          "end": 88.04
+        },
+        {
+          "text": "neck",
+          "start": 88.04,
+          "end": 88.32
+        },
+        {
+          "text": "slowly",
+          "start": 88.32,
+          "end": 88.6
+        }
+      ]
+    },
+    {
+      "id": "cue-21",
+      "start": 88.65,
+      "end": 91.38,
+      "text": "Let me murmur things in your ear",
+      "words": [
+        {
+          "text": "Let",
+          "start": 88.65,
+          "end": 89.04
+        },
+        {
+          "text": "me",
+          "start": 89.04,
+          "end": 89.43
+        },
+        {
+          "text": "murmur",
+          "start": 89.43,
+          "end": 89.82
+        },
+        {
+          "text": "things",
+          "start": 89.82,
+          "end": 90.21
+        },
+        {
+          "text": "in",
+          "start": 90.21,
+          "end": 90.6
+        },
+        {
+          "text": "your",
+          "start": 90.6,
+          "end": 90.99
+        },
+        {
+          "text": "ear",
+          "start": 90.99,
+          "end": 91.38
+        }
+      ]
+    },
+    {
+      "id": "cue-22",
+      "start": 91.49,
+      "end": 95.0,
+      "text": "So you can remember when you're not with me",
+      "words": [
+        {
+          "text": "So",
+          "start": 91.49,
+          "end": 91.88
+        },
+        {
+          "text": "you",
+          "start": 91.88,
+          "end": 92.27
+        },
+        {
+          "text": "can",
+          "start": 92.27,
+          "end": 92.66
+        },
+        {
+          "text": "remember",
+          "start": 92.66,
+          "end": 93.05
+        },
+        {
+          "text": "when",
+          "start": 93.05,
+          "end": 93.44
+        },
+        {
+          "text": "you're",
+          "start": 93.44,
+          "end": 93.83
+        },
+        {
+          "text": "not",
+          "start": 93.83,
+          "end": 94.22
+        },
+        {
+          "text": "with",
+          "start": 94.22,
+          "end": 94.61
+        },
+        {
+          "text": "me",
+          "start": 94.61,
+          "end": 95.0
+        }
+      ]
+    },
+    {
+      "id": "cue-23",
+      "start": 95.08,
+      "end": 99.6,
+      "text": "Slowly I want to undress you in kisses slowly",
+      "words": [
+        {
+          "text": "Slowly",
+          "start": 95.08,
+          "end": 97.0
+        },
+        {
+          "text": "I",
+          "start": 97.12,
+          "end": 97.43
+        },
+        {
+          "text": "want",
+          "start": 97.43,
+          "end": 97.74
+        },
+        {
+          "text": "to",
+          "start": 97.74,
+          "end": 98.05
+        },
+        {
+          "text": "undress",
+          "start": 98.05,
+          "end": 98.36
+        },
+        {
+          "text": "you",
+          "start": 98.36,
+          "end": 98.67
+        },
+        {
+          "text": "in",
+          "start": 98.67,
+          "end": 98.98
+        },
+        {
+          "text": "kisses",
+          "start": 98.98,
+          "end": 99.29
+        },
+        {
+          "text": "slowly",
+          "start": 99.29,
+          "end": 99.6
+        }
+      ]
+    },
+    {
+      "id": "cue-24",
+      "start": 99.67,
+      "end": 102.19,
+      "text": "Sign the walls of your labyrinth",
+      "words": [
+        {
+          "text": "Sign",
+          "start": 99.67,
+          "end": 100.09
+        },
+        {
+          "text": "the",
+          "start": 100.09,
+          "end": 100.51
+        },
+        {
+          "text": "walls",
+          "start": 100.51,
+          "end": 100.93
+        },
+        {
+          "text": "of",
+          "start": 100.93,
+          "end": 101.35
+        },
+        {
+          "text": "your",
+          "start": 101.35,
+          "end": 101.77
+        },
+        {
+          "text": "labyrinth",
+          "start": 101.77,
+          "end": 102.19
+        }
+      ]
+    },
+    {
+      "id": "cue-25",
+      "start": 102.38,
+      "end": 105.18,
+      "text": "And of your body, I want to create a manuscript",
+      "words": [
+        {
+          "text": "And",
+          "start": 102.38,
+          "end": 102.66
+        },
+        {
+          "text": "of",
+          "start": 102.66,
+          "end": 102.94
+        },
+        {
+          "text": "your",
+          "start": 102.94,
+          "end": 103.22
+        },
+        {
+          "text": "body,",
+          "start": 103.22,
+          "end": 103.5
+        },
+        {
+          "text": "I",
+          "start": 103.5,
+          "end": 103.78
+        },
+        {
+          "text": "want",
+          "start": 103.78,
+          "end": 104.06
+        },
+        {
+          "text": "to",
+          "start": 104.06,
+          "end": 104.34
+        },
+        {
+          "text": "create",
+          "start": 104.34,
+          "end": 104.62
+        },
+        {
+          "text": "a",
+          "start": 104.62,
+          "end": 104.9
+        },
+        {
+          "text": "manuscript",
+          "start": 104.9,
+          "end": 105.18
+        }
+      ]
+    },
+    {
+      "id": "cue-26",
+      "start": 105.3,
+      "end": 111.25,
+      "text": "(Up, up, up; up, up) I wanna see your hair dance, I want to be your rhythm (Woo, yeah)",
+      "words": [
+        {
+          "text": "(Up,",
+          "start": 105.3,
+          "end": 105.72
+        },
+        {
+          "text": "up,",
+          "start": 105.72,
+          "end": 106.14
+        },
+        {
+          "text": "up;",
+          "start": 106.14,
+          "end": 106.56
+        },
+        {
+          "text": "up,",
+          "start": 106.56,
+          "end": 106.98
+        },
+        {
+          "text": "up)",
+          "start": 106.98,
+          "end": 107.4
+        },
+        {
+          "text": "I",
+          "start": 107.47,
+          "end": 107.74
+        },
+        {
+          "text": "wanna",
+          "start": 107.74,
+          "end": 108.01
+        },
+        {
+          "text": "see",
+          "start": 108.01,
+          "end": 108.28
+        },
+        {
+          "text": "your",
+          "start": 108.28,
+          "end": 108.55
+        },
+        {
+          "text": "hair",
+          "start": 108.55,
+          "end": 108.82
+        },
+        {
+          "text": "dance,",
+          "start": 108.82,
+          "end": 109.09
+        },
+        {
+          "text": "I",
+          "start": 109.09,
+          "end": 109.36
+        },
+        {
+          "text": "want",
+          "start": 109.36,
+          "end": 109.63
+        },
+        {
+          "text": "to",
+          "start": 109.63,
+          "end": 109.9
+        },
+        {
+          "text": "be",
+          "start": 109.9,
+          "end": 110.17
+        },
+        {
+          "text": "your",
+          "start": 110.17,
+          "end": 110.44
+        },
+        {
+          "text": "rhythm",
+          "start": 110.44,
+          "end": 110.71
+        },
+        {
+          "text": "(Woo,",
+          "start": 110.71,
+          "end": 110.98
+        },
+        {
+          "text": "yeah)",
+          "start": 110.98,
+          "end": 111.25
+        }
+      ]
+    },
+    {
+      "id": "cue-27",
+      "start": 111.31,
+      "end": 113.63,
+      "text": "Want you to show my mouth (Woo, yeah)",
+      "words": [
+        {
+          "text": "Want",
+          "start": 111.31,
+          "end": 111.6
+        },
+        {
+          "text": "you",
+          "start": 111.6,
+          "end": 111.89
+        },
+        {
+          "text": "to",
+          "start": 111.89,
+          "end": 112.18
+        },
+        {
+          "text": "show",
+          "start": 112.18,
+          "end": 112.47
+        },
+        {
+          "text": "my",
+          "start": 112.47,
+          "end": 112.76
+        },
+        {
+          "text": "mouth",
+          "start": 112.76,
+          "end": 113.05
+        },
+        {
+          "text": "(Woo,",
+          "start": 113.05,
+          "end": 113.34
+        },
+        {
+          "text": "yeah)",
+          "start": 113.34,
+          "end": 113.63
+        }
+      ]
+    },
+    {
+      "id": "cue-28",
+      "start": 113.72,
+      "end": 118.04,
+      "text": "Your favorite places (Favorite, favorite, baby)",
+      "words": [
+        {
+          "text": "Your",
+          "start": 113.72,
+          "end": 114.44
+        },
+        {
+          "text": "favorite",
+          "start": 114.44,
+          "end": 115.16
+        },
+        {
+          "text": "places",
+          "start": 115.16,
+          "end": 115.88
+        },
+        {
+          "text": "(Favorite,",
+          "start": 115.88,
+          "end": 116.6
+        },
+        {
+          "text": "favorite,",
+          "start": 116.6,
+          "end": 117.32
+        },
+        {
+          "text": "baby)",
+          "start": 117.32,
+          "end": 118.04
+        }
+      ]
+    },
+    {
+      "id": "cue-29",
+      "start": 118.19,
+      "end": 121.97,
+      "text": "Let me trespass your danger zones (Yeah, woo, yeah)",
+      "words": [
+        {
+          "text": "Let",
+          "start": 118.19,
+          "end": 118.61
+        },
+        {
+          "text": "me",
+          "start": 118.61,
+          "end": 119.03
+        },
+        {
+          "text": "trespass",
+          "start": 119.03,
+          "end": 119.45
+        },
+        {
+          "text": "your",
+          "start": 119.45,
+          "end": 119.87
+        },
+        {
+          "text": "danger",
+          "start": 119.87,
+          "end": 120.29
+        },
+        {
+          "text": "zones",
+          "start": 120.29,
+          "end": 120.71
+        },
+        {
+          "text": "(Yeah,",
+          "start": 120.71,
+          "end": 121.13
+        },
+        {
+          "text": "woo,",
+          "start": 121.13,
+          "end": 121.55
+        },
+        {
+          "text": "yeah)",
+          "start": 121.55,
+          "end": 121.97
+        }
+      ]
+    },
+    {
+      "id": "cue-30",
+      "start": 122.03,
+      "end": 124.34,
+      "text": "Until I make you scream (Woo, yeah)",
+      "words": [
+        {
+          "text": "Until",
+          "start": 122.03,
+          "end": 122.36
+        },
+        {
+          "text": "I",
+          "start": 122.36,
+          "end": 122.69
+        },
+        {
+          "text": "make",
+          "start": 122.69,
+          "end": 123.02
+        },
+        {
+          "text": "you",
+          "start": 123.02,
+          "end": 123.35
+        },
+        {
+          "text": "scream",
+          "start": 123.35,
+          "end": 123.68
+        },
+        {
+          "text": "(Woo,",
+          "start": 123.68,
+          "end": 124.01
+        },
+        {
+          "text": "yeah)",
+          "start": 124.01,
+          "end": 124.34
+        }
+      ]
+    },
+    {
+      "id": "cue-31",
+      "start": 124.45,
+      "end": 127.57,
+      "text": "And you forget your last name (Rrr; DY)",
+      "words": [
+        {
+          "text": "And",
+          "start": 124.45,
+          "end": 124.84
+        },
+        {
+          "text": "you",
+          "start": 124.84,
+          "end": 125.23
+        },
+        {
+          "text": "forget",
+          "start": 125.23,
+          "end": 125.62
+        },
+        {
+          "text": "your",
+          "start": 125.62,
+          "end": 126.01
+        },
+        {
+          "text": "last",
+          "start": 126.01,
+          "end": 126.4
+        },
+        {
+          "text": "name",
+          "start": 126.4,
+          "end": 126.79
+        },
+        {
+          "text": "(Rrr;",
+          "start": 126.79,
+          "end": 127.18
+        },
+        {
+          "text": "DY)",
+          "start": 127.18,
+          "end": 127.57
+        }
+      ]
+    },
+    {
+      "id": "cue-32",
+      "start": 127.62,
+      "end": 130.86,
+      "text": "If I ask for a kiss, come give it to me I know you're thinking about it (Yeah)",
+      "words": [
+        {
+          "text": "If",
+          "start": 127.62,
+          "end": 127.8
+        },
+        {
+          "text": "I",
+          "start": 127.8,
+          "end": 127.98
+        },
+        {
+          "text": "ask",
+          "start": 127.98,
+          "end": 128.16
+        },
+        {
+          "text": "for",
+          "start": 128.16,
+          "end": 128.34
+        },
+        {
+          "text": "a",
+          "start": 128.34,
+          "end": 128.52
+        },
+        {
+          "text": "kiss,",
+          "start": 128.52,
+          "end": 128.7
+        },
+        {
+          "text": "come",
+          "start": 128.7,
+          "end": 128.88
+        },
+        {
+          "text": "give",
+          "start": 128.88,
+          "end": 129.06
+        },
+        {
+          "text": "it",
+          "start": 129.06,
+          "end": 129.24
+        },
+        {
+          "text": "to",
+          "start": 129.24,
+          "end": 129.42
+        },
+        {
+          "text": "me",
+          "start": 129.42,
+          "end": 129.6
+        },
+        {
+          "text": "I",
+          "start": 129.6,
+          "end": 129.78
+        },
+        {
+          "text": "know",
+          "start": 129.78,
+          "end": 129.96
+        },
+        {
+          "text": "you're",
+          "start": 129.96,
+          "end": 130.14
+        },
+        {
+          "text": "thinking",
+          "start": 130.14,
+          "end": 130.32
+        },
+        {
+          "text": "about",
+          "start": 130.32,
+          "end": 130.5
+        },
+        {
+          "text": "it",
+          "start": 130.5,
+          "end": 130.68
+        },
+        {
+          "text": "(Yeah)",
+          "start": 130.68,
+          "end": 130.86
+        }
+      ]
+    },
+    {
+      "id": "cue-33",
+      "start": 130.91,
+      "end": 133.95,
+      "text": "I've been trying to do it for a while (Yeah) Babe, this is giving and giving it to you",
+      "words": [
+        {
+          "text": "I've",
+          "start": 130.91,
+          "end": 131.07
+        },
+        {
+          "text": "been",
+          "start": 131.07,
+          "end": 131.23
+        },
+        {
+          "text": "trying",
+          "start": 131.23,
+          "end": 131.39
+        },
+        {
+          "text": "to",
+          "start": 131.39,
+          "end": 131.55
+        },
+        {
+          "text": "do",
+          "start": 131.55,
+          "end": 131.71
+        },
+        {
+          "text": "it",
+          "start": 131.71,
+          "end": 131.87
+        },
+        {
+          "text": "for",
+          "start": 131.87,
+          "end": 132.03
+        },
+        {
+          "text": "a",
+          "start": 132.03,
+          "end": 132.19
+        },
+        {
+          "text": "while",
+          "start": 132.19,
+          "end": 132.35
+        },
+        {
+          "text": "(Yeah)",
+          "start": 132.35,
+          "end": 132.51
+        },
+        {
+          "text": "Babe,",
+          "start": 132.51,
+          "end": 132.67
+        },
+        {
+          "text": "this",
+          "start": 132.67,
+          "end": 132.83
+        },
+        {
+          "text": "is",
+          "start": 132.83,
+          "end": 132.99
+        },
+        {
+          "text": "giving",
+          "start": 132.99,
+          "end": 133.15
+        },
+        {
+          "text": "and",
+          "start": 133.15,
+          "end": 133.31
+        },
+        {
+          "text": "giving",
+          "start": 133.31,
+          "end": 133.47
+        },
+        {
+          "text": "it",
+          "start": 133.47,
+          "end": 133.63
+        },
+        {
+          "text": "to",
+          "start": 133.63,
+          "end": 133.79
+        },
+        {
+          "text": "you",
+          "start": 133.79,
+          "end": 133.95
+        }
+      ]
+    },
+    {
+      "id": "cue-34",
+      "start": 133.96,
+      "end": 136.46,
+      "text": "You know that with me your heart goes bam bam",
+      "words": [
+        {
+          "text": "You",
+          "start": 133.96,
+          "end": 134.21
+        },
+        {
+          "text": "know",
+          "start": 134.21,
+          "end": 134.46
+        },
+        {
+          "text": "that",
+          "start": 134.46,
+          "end": 134.71
+        },
+        {
+          "text": "with",
+          "start": 134.71,
+          "end": 134.96
+        },
+        {
+          "text": "me",
+          "start": 134.96,
+          "end": 135.21
+        },
+        {
+          "text": "your",
+          "start": 135.21,
+          "end": 135.46
+        },
+        {
+          "text": "heart",
+          "start": 135.46,
+          "end": 135.71
+        },
+        {
+          "text": "goes",
+          "start": 135.71,
+          "end": 135.96
+        },
+        {
+          "text": "bam",
+          "start": 135.96,
+          "end": 136.21
+        },
+        {
+          "text": "bam",
+          "start": 136.21,
+          "end": 136.46
+        }
+      ]
+    },
+    {
+      "id": "cue-35",
+      "start": 136.5,
+      "end": 138.78,
+      "text": "You know that from me babe is looking for a bam bam",
+      "words": [
+        {
+          "text": "You",
+          "start": 136.5,
+          "end": 136.69
+        },
+        {
+          "text": "know",
+          "start": 136.69,
+          "end": 136.88
+        },
+        {
+          "text": "that",
+          "start": 136.88,
+          "end": 137.07
+        },
+        {
+          "text": "from",
+          "start": 137.07,
+          "end": 137.26
+        },
+        {
+          "text": "me",
+          "start": 137.26,
+          "end": 137.45
+        },
+        {
+          "text": "babe",
+          "start": 137.45,
+          "end": 137.64
+        },
+        {
+          "text": "is",
+          "start": 137.64,
+          "end": 137.83
+        },
+        {
+          "text": "looking",
+          "start": 137.83,
+          "end": 138.02
+        },
+        {
+          "text": "for",
+          "start": 138.02,
+          "end": 138.21
+        },
+        {
+          "text": "a",
+          "start": 138.21,
+          "end": 138.4
+        },
+        {
+          "text": "bam",
+          "start": 138.4,
+          "end": 138.59
+        },
+        {
+          "text": "bam",
+          "start": 138.59,
+          "end": 138.78
+        }
+      ]
+    },
+    {
+      "id": "cue-36",
+      "start": 138.84,
+      "end": 142.09,
+      "text": "Come, try my mouth and see if you like its taste (Eh-eh, yo!)",
+      "words": [
+        {
+          "text": "Come,",
+          "start": 138.84,
+          "end": 139.09
+        },
+        {
+          "text": "try",
+          "start": 139.09,
+          "end": 139.34
+        },
+        {
+          "text": "my",
+          "start": 139.34,
+          "end": 139.59
+        },
+        {
+          "text": "mouth",
+          "start": 139.59,
+          "end": 139.84
+        },
+        {
+          "text": "and",
+          "start": 139.84,
+          "end": 140.09
+        },
+        {
+          "text": "see",
+          "start": 140.09,
+          "end": 140.34
+        },
+        {
+          "text": "if",
+          "start": 140.34,
+          "end": 140.59
+        },
+        {
+          "text": "you",
+          "start": 140.59,
+          "end": 140.84
+        },
+        {
+          "text": "like",
+          "start": 140.84,
+          "end": 141.09
+        },
+        {
+          "text": "its",
+          "start": 141.09,
+          "end": 141.34
+        },
+        {
+          "text": "taste",
+          "start": 141.34,
+          "end": 141.59
+        },
+        {
+          "text": "(Eh-eh,",
+          "start": 141.59,
+          "end": 141.84
+        },
+        {
+          "text": "yo!)",
+          "start": 141.84,
+          "end": 142.09
+        }
+      ]
+    },
+    {
+      "id": "cue-37",
+      "start": 142.14,
+      "end": 144.66,
+      "text": "I wanna, I wanna I want to see how much love fits in you",
+      "words": [
+        {
+          "text": "I",
+          "start": 142.14,
+          "end": 142.32
+        },
+        {
+          "text": "wanna,",
+          "start": 142.32,
+          "end": 142.5
+        },
+        {
+          "text": "I",
+          "start": 142.5,
+          "end": 142.68
+        },
+        {
+          "text": "wanna",
+          "start": 142.68,
+          "end": 142.86
+        },
+        {
+          "text": "I",
+          "start": 142.86,
+          "end": 143.04
+        },
+        {
+          "text": "want",
+          "start": 143.04,
+          "end": 143.22
+        },
+        {
+          "text": "to",
+          "start": 143.22,
+          "end": 143.4
+        },
+        {
+          "text": "see",
+          "start": 143.4,
+          "end": 143.58
+        },
+        {
+          "text": "how",
+          "start": 143.58,
+          "end": 143.76
+        },
+        {
+          "text": "much",
+          "start": 143.76,
+          "end": 143.94
+        },
+        {
+          "text": "love",
+          "start": 143.94,
+          "end": 144.12
+        },
+        {
+          "text": "fits",
+          "start": 144.12,
+          "end": 144.3
+        },
+        {
+          "text": "in",
+          "start": 144.3,
+          "end": 144.48
+        },
+        {
+          "text": "you",
+          "start": 144.48,
+          "end": 144.66
+        }
+      ]
+    },
+    {
+      "id": "cue-38",
+      "start": 144.72,
+      "end": 147.14,
+      "text": "I'm not in a rush, I want to experience this trip",
+      "words": [
+        {
+          "text": "I'm",
+          "start": 144.72,
+          "end": 144.94
+        },
+        {
+          "text": "not",
+          "start": 144.94,
+          "end": 145.16
+        },
+        {
+          "text": "in",
+          "start": 145.16,
+          "end": 145.38
+        },
+        {
+          "text": "a",
+          "start": 145.38,
+          "end": 145.6
+        },
+        {
+          "text": "rush,",
+          "start": 145.6,
+          "end": 145.82
+        },
+        {
+          "text": "I",
+          "start": 145.82,
+          "end": 146.04
+        },
+        {
+          "text": "want",
+          "start": 146.04,
+          "end": 146.26
+        },
+        {
+          "text": "to",
+          "start": 146.26,
+          "end": 146.48
+        },
+        {
+          "text": "experience",
+          "start": 146.48,
+          "end": 146.7
+        },
+        {
+          "text": "this",
+          "start": 146.7,
+          "end": 146.92
+        },
+        {
+          "text": "trip",
+          "start": 146.92,
+          "end": 147.14
+        }
+      ]
+    },
+    {
+      "id": "cue-39",
+      "start": 147.27,
+      "end": 152.38,
+      "text": "Let's start slowly, then savagely Step by step, soft then softly",
+      "words": [
+        {
+          "text": "Let's",
+          "start": 147.27,
+          "end": 147.71
+        },
+        {
+          "text": "start",
+          "start": 147.71,
+          "end": 148.15
+        },
+        {
+          "text": "slowly,",
+          "start": 148.15,
+          "end": 148.59
+        },
+        {
+          "text": "then",
+          "start": 148.59,
+          "end": 149.03
+        },
+        {
+          "text": "savagely",
+          "start": 149.03,
+          "end": 149.47
+        },
+        {
+          "text": "Step",
+          "start": 149.56,
+          "end": 150.03
+        },
+        {
+          "text": "by",
+          "start": 150.03,
+          "end": 150.5
+        },
+        {
+          "text": "step,",
+          "start": 150.5,
+          "end": 150.97
+        },
+        {
+          "text": "soft",
+          "start": 150.97,
+          "end": 151.44
+        },
+        {
+          "text": "then",
+          "start": 151.44,
+          "end": 151.91
+        },
+        {
+          "text": "softly",
+          "start": 151.91,
+          "end": 152.38
+        }
+      ]
+    },
+    {
+      "id": "cue-40",
+      "start": 152.44,
+      "end": 154.87,
+      "text": "We come up against each other, little by little",
+      "words": [
+        {
+          "text": "We",
+          "start": 152.44,
+          "end": 152.71
+        },
+        {
+          "text": "come",
+          "start": 152.71,
+          "end": 152.98
+        },
+        {
+          "text": "up",
+          "start": 152.98,
+          "end": 153.25
+        },
+        {
+          "text": "against",
+          "start": 153.25,
+          "end": 153.52
+        },
+        {
+          "text": "each",
+          "start": 153.52,
+          "end": 153.79
+        },
+        {
+          "text": "other,",
+          "start": 153.79,
+          "end": 154.06
+        },
+        {
+          "text": "little",
+          "start": 154.06,
+          "end": 154.33
+        },
+        {
+          "text": "by",
+          "start": 154.33,
+          "end": 154.6
+        },
+        {
+          "text": "little",
+          "start": 154.6,
+          "end": 154.87
+        }
+      ]
+    },
+    {
+      "id": "cue-41",
+      "start": 155.03,
+      "end": 157.76,
+      "text": "When you kiss me with that skill.",
+      "words": [
+        {
+          "text": "When",
+          "start": 155.03,
+          "end": 155.42
+        },
+        {
+          "text": "you",
+          "start": 155.42,
+          "end": 155.81
+        },
+        {
+          "text": "kiss",
+          "start": 155.81,
+          "end": 156.2
+        },
+        {
+          "text": "me",
+          "start": 156.2,
+          "end": 156.59
+        },
+        {
+          "text": "with",
+          "start": 156.59,
+          "end": 156.98
+        },
+        {
+          "text": "that",
+          "start": 156.98,
+          "end": 157.37
+        },
+        {
+          "text": "skill.",
+          "start": 157.37,
+          "end": 157.76
+        }
+      ]
+    },
+    {
+      "id": "cue-42",
+      "start": 157.82,
+      "end": 160.14,
+      "text": "I see that you are malice with delicacy",
+      "words": [
+        {
+          "text": "I",
+          "start": 157.82,
+          "end": 158.11
+        },
+        {
+          "text": "see",
+          "start": 158.11,
+          "end": 158.4
+        },
+        {
+          "text": "that",
+          "start": 158.4,
+          "end": 158.69
+        },
+        {
+          "text": "you",
+          "start": 158.69,
+          "end": 158.98
+        },
+        {
+          "text": "are",
+          "start": 158.98,
+          "end": 159.27
+        },
+        {
+          "text": "malice",
+          "start": 159.27,
+          "end": 159.56
+        },
+        {
+          "text": "with",
+          "start": 159.56,
+          "end": 159.85
+        },
+        {
+          "text": "delicacy",
+          "start": 159.85,
+          "end": 160.14
+        }
+      ]
+    },
+    {
+      "id": "cue-43",
+      "start": 160.24,
+      "end": 163.06,
+      "text": "Step by step, soft then softly",
+      "words": [
+        {
+          "text": "Step",
+          "start": 160.24,
+          "end": 160.71
+        },
+        {
+          "text": "by",
+          "start": 160.71,
+          "end": 161.18
+        },
+        {
+          "text": "step,",
+          "start": 161.18,
+          "end": 161.65
+        },
+        {
+          "text": "soft",
+          "start": 161.65,
+          "end": 162.12
+        },
+        {
+          "text": "then",
+          "start": 162.12,
+          "end": 162.59
+        },
+        {
+          "text": "softly",
+          "start": 162.59,
+          "end": 163.06
+        }
+      ]
+    },
+    {
+      "id": "cue-44",
+      "start": 163.16,
+      "end": 165.91,
+      "text": "We come up against each other, little by little (Oh, oh)",
+      "words": [
+        {
+          "text": "We",
+          "start": 163.16,
+          "end": 163.41
+        },
+        {
+          "text": "come",
+          "start": 163.41,
+          "end": 163.66
+        },
+        {
+          "text": "up",
+          "start": 163.66,
+          "end": 163.91
+        },
+        {
+          "text": "against",
+          "start": 163.91,
+          "end": 164.16
+        },
+        {
+          "text": "each",
+          "start": 164.16,
+          "end": 164.41
+        },
+        {
+          "text": "other,",
+          "start": 164.41,
+          "end": 164.66
+        },
+        {
+          "text": "little",
+          "start": 164.66,
+          "end": 164.91
+        },
+        {
+          "text": "by",
+          "start": 164.91,
+          "end": 165.16
+        },
+        {
+          "text": "little",
+          "start": 165.16,
+          "end": 165.41
+        },
+        {
+          "text": "(Oh,",
+          "start": 165.41,
+          "end": 165.66
+        },
+        {
+          "text": "oh)",
+          "start": 165.66,
+          "end": 165.91
+        }
+      ]
+    },
+    {
+      "id": "cue-45",
+      "start": 165.96,
+      "end": 168.6,
+      "text": "And it's just that your beauty is a puzzle (No, no)",
+      "words": [
+        {
+          "text": "And",
+          "start": 165.96,
+          "end": 166.2
+        },
+        {
+          "text": "it's",
+          "start": 166.2,
+          "end": 166.44
+        },
+        {
+          "text": "just",
+          "start": 166.44,
+          "end": 166.68
+        },
+        {
+          "text": "that",
+          "start": 166.68,
+          "end": 166.92
+        },
+        {
+          "text": "your",
+          "start": 166.92,
+          "end": 167.16
+        },
+        {
+          "text": "beauty",
+          "start": 167.16,
+          "end": 167.4
+        },
+        {
+          "text": "is",
+          "start": 167.4,
+          "end": 167.64
+        },
+        {
+          "text": "a",
+          "start": 167.64,
+          "end": 167.88
+        },
+        {
+          "text": "puzzle",
+          "start": 167.88,
+          "end": 168.12
+        },
+        {
+          "text": "(No,",
+          "start": 168.12,
+          "end": 168.36
+        },
+        {
+          "text": "no)",
+          "start": 168.36,
+          "end": 168.6
+        }
+      ]
+    },
+    {
+      "id": "cue-46",
+      "start": 168.71,
+      "end": 171.01,
+      "text": "But to finish it here I have the missing piece",
+      "words": [
+        {
+          "text": "But",
+          "start": 168.71,
+          "end": 168.94
+        },
+        {
+          "text": "to",
+          "start": 168.94,
+          "end": 169.17
+        },
+        {
+          "text": "finish",
+          "start": 169.17,
+          "end": 169.4
+        },
+        {
+          "text": "it",
+          "start": 169.4,
+          "end": 169.63
+        },
+        {
+          "text": "here",
+          "start": 169.63,
+          "end": 169.86
+        },
+        {
+          "text": "I",
+          "start": 169.86,
+          "end": 170.09
+        },
+        {
+          "text": "have",
+          "start": 170.09,
+          "end": 170.32
+        },
+        {
+          "text": "the",
+          "start": 170.32,
+          "end": 170.55
+        },
+        {
+          "text": "missing",
+          "start": 170.55,
+          "end": 170.78
+        },
+        {
+          "text": "piece",
+          "start": 170.78,
+          "end": 171.01
+        }
+      ]
+    },
+    {
+      "id": "cue-47",
+      "start": 171.13,
+      "end": 176.75,
+      "text": "Hey! (Yo, yo; yeah!) Slowly I want to breathe in your neck slowly (Yo)",
+      "words": [
+        {
+          "text": "Hey!",
+          "start": 171.13,
+          "end": 171.43
+        },
+        {
+          "text": "(Yo,",
+          "start": 171.43,
+          "end": 171.73
+        },
+        {
+          "text": "yo;",
+          "start": 171.73,
+          "end": 172.03
+        },
+        {
+          "text": "yeah!)",
+          "start": 172.03,
+          "end": 172.33
+        },
+        {
+          "text": "Slowly",
+          "start": 172.42,
+          "end": 173.97
+        },
+        {
+          "text": "I",
+          "start": 174.05,
+          "end": 174.35
+        },
+        {
+          "text": "want",
+          "start": 174.35,
+          "end": 174.65
+        },
+        {
+          "text": "to",
+          "start": 174.65,
+          "end": 174.95
+        },
+        {
+          "text": "breathe",
+          "start": 174.95,
+          "end": 175.25
+        },
+        {
+          "text": "in",
+          "start": 175.25,
+          "end": 175.55
+        },
+        {
+          "text": "your",
+          "start": 175.55,
+          "end": 175.85
+        },
+        {
+          "text": "neck",
+          "start": 175.85,
+          "end": 176.15
+        },
+        {
+          "text": "slowly",
+          "start": 176.15,
+          "end": 176.45
+        },
+        {
+          "text": "(Yo)",
+          "start": 176.45,
+          "end": 176.75
+        }
+      ]
+    },
+    {
+      "id": "cue-48",
+      "start": 176.85,
+      "end": 179.25,
+      "text": "Let me murmur things in your ear (Yo)",
+      "words": [
+        {
+          "text": "Let",
+          "start": 176.85,
+          "end": 177.15
+        },
+        {
+          "text": "me",
+          "start": 177.15,
+          "end": 177.45
+        },
+        {
+          "text": "murmur",
+          "start": 177.45,
+          "end": 177.75
+        },
+        {
+          "text": "things",
+          "start": 177.75,
+          "end": 178.05
+        },
+        {
+          "text": "in",
+          "start": 178.05,
+          "end": 178.35
+        },
+        {
+          "text": "your",
+          "start": 178.35,
+          "end": 178.65
+        },
+        {
+          "text": "ear",
+          "start": 178.65,
+          "end": 178.95
+        },
+        {
+          "text": "(Yo)",
+          "start": 178.95,
+          "end": 179.25
+        }
+      ]
+    },
+    {
+      "id": "cue-49",
+      "start": 179.35,
+      "end": 182.76,
+      "text": "So you can remember when you're not with me (Yeah, yeah)",
+      "words": [
+        {
+          "text": "So",
+          "start": 179.35,
+          "end": 179.66
+        },
+        {
+          "text": "you",
+          "start": 179.66,
+          "end": 179.97
+        },
+        {
+          "text": "can",
+          "start": 179.97,
+          "end": 180.28
+        },
+        {
+          "text": "remember",
+          "start": 180.28,
+          "end": 180.59
+        },
+        {
+          "text": "when",
+          "start": 180.59,
+          "end": 180.9
+        },
+        {
+          "text": "you're",
+          "start": 180.9,
+          "end": 181.21
+        },
+        {
+          "text": "not",
+          "start": 181.21,
+          "end": 181.52
+        },
+        {
+          "text": "with",
+          "start": 181.52,
+          "end": 181.83
+        },
+        {
+          "text": "me",
+          "start": 181.83,
+          "end": 182.14
+        },
+        {
+          "text": "(Yeah,",
+          "start": 182.14,
+          "end": 182.45
+        },
+        {
+          "text": "yeah)",
+          "start": 182.45,
+          "end": 182.76
+        }
+      ]
+    },
+    {
+      "id": "cue-50",
+      "start": 182.85,
+      "end": 187.15,
+      "text": "Slowly (Yeah!) I want to undress you in kisses slowly (Yeah-eh)",
+      "words": [
+        {
+          "text": "Slowly",
+          "start": 182.85,
+          "end": 183.79
+        },
+        {
+          "text": "(Yeah!)",
+          "start": 183.79,
+          "end": 184.73
+        },
+        {
+          "text": "I",
+          "start": 184.81,
+          "end": 185.07
+        },
+        {
+          "text": "want",
+          "start": 185.07,
+          "end": 185.33
+        },
+        {
+          "text": "to",
+          "start": 185.33,
+          "end": 185.59
+        },
+        {
+          "text": "undress",
+          "start": 185.59,
+          "end": 185.85
+        },
+        {
+          "text": "you",
+          "start": 185.85,
+          "end": 186.11
+        },
+        {
+          "text": "in",
+          "start": 186.11,
+          "end": 186.37
+        },
+        {
+          "text": "kisses",
+          "start": 186.37,
+          "end": 186.63
+        },
+        {
+          "text": "slowly",
+          "start": 186.63,
+          "end": 186.89
+        },
+        {
+          "text": "(Yeah-eh)",
+          "start": 186.89,
+          "end": 187.15
+        }
+      ]
+    },
+    {
+      "id": "cue-51",
+      "start": 187.28,
+      "end": 190.1,
+      "text": "Sign the walls of your labyrinth",
+      "words": [
+        {
+          "text": "Sign",
+          "start": 187.28,
+          "end": 187.75
+        },
+        {
+          "text": "the",
+          "start": 187.75,
+          "end": 188.22
+        },
+        {
+          "text": "walls",
+          "start": 188.22,
+          "end": 188.69
+        },
+        {
+          "text": "of",
+          "start": 188.69,
+          "end": 189.16
+        },
+        {
+          "text": "your",
+          "start": 189.16,
+          "end": 189.63
+        },
+        {
+          "text": "labyrinth",
+          "start": 189.63,
+          "end": 190.1
+        }
+      ]
+    },
+    {
+      "id": "cue-52",
+      "start": 190.2,
+      "end": 192.41,
+      "text": "And of your body, I want to create a manuscript",
+      "words": [
+        {
+          "text": "And",
+          "start": 190.2,
+          "end": 190.42
+        },
+        {
+          "text": "of",
+          "start": 190.42,
+          "end": 190.64
+        },
+        {
+          "text": "your",
+          "start": 190.64,
+          "end": 190.86
+        },
+        {
+          "text": "body,",
+          "start": 190.86,
+          "end": 191.09
+        },
+        {
+          "text": "I",
+          "start": 191.09,
+          "end": 191.31
+        },
+        {
+          "text": "want",
+          "start": 191.31,
+          "end": 191.53
+        },
+        {
+          "text": "to",
+          "start": 191.53,
+          "end": 191.75
+        },
+        {
+          "text": "create",
+          "start": 191.75,
+          "end": 191.97
+        },
+        {
+          "text": "a",
+          "start": 191.97,
+          "end": 192.19
+        },
+        {
+          "text": "manuscript",
+          "start": 192.19,
+          "end": 192.41
+        }
+      ]
+    },
+    {
+      "id": "cue-53",
+      "start": 192.53,
+      "end": 198.54,
+      "text": "(Up, up, up; up, up) I wanna see your hair dance, I want to be your rhythm (Woo, yeah)",
+      "words": [
+        {
+          "text": "(Up,",
+          "start": 192.53,
+          "end": 192.93
+        },
+        {
+          "text": "up,",
+          "start": 192.93,
+          "end": 193.33
+        },
+        {
+          "text": "up;",
+          "start": 193.33,
+          "end": 193.73
+        },
+        {
+          "text": "up,",
+          "start": 193.73,
+          "end": 194.13
+        },
+        {
+          "text": "up)",
+          "start": 194.13,
+          "end": 194.53
+        },
+        {
+          "text": "I",
+          "start": 194.62,
+          "end": 194.9
+        },
+        {
+          "text": "wanna",
+          "start": 194.9,
+          "end": 195.18
+        },
+        {
+          "text": "see",
+          "start": 195.18,
+          "end": 195.46
+        },
+        {
+          "text": "your",
+          "start": 195.46,
+          "end": 195.74
+        },
+        {
+          "text": "hair",
+          "start": 195.74,
+          "end": 196.02
+        },
+        {
+          "text": "dance,",
+          "start": 196.02,
+          "end": 196.3
+        },
+        {
+          "text": "I",
+          "start": 196.3,
+          "end": 196.58
+        },
+        {
+          "text": "want",
+          "start": 196.58,
+          "end": 196.86
+        },
+        {
+          "text": "to",
+          "start": 196.86,
+          "end": 197.14
+        },
+        {
+          "text": "be",
+          "start": 197.14,
+          "end": 197.42
+        },
+        {
+          "text": "your",
+          "start": 197.42,
+          "end": 197.7
+        },
+        {
+          "text": "rhythm",
+          "start": 197.7,
+          "end": 197.98
+        },
+        {
+          "text": "(Woo,",
+          "start": 197.98,
+          "end": 198.26
+        },
+        {
+          "text": "yeah)",
+          "start": 198.26,
+          "end": 198.54
+        }
+      ]
+    },
+    {
+      "id": "cue-54",
+      "start": 198.66,
+      "end": 201.3,
+      "text": "Want you to show my mouth (Woo, yeah)",
+      "words": [
+        {
+          "text": "Want",
+          "start": 198.66,
+          "end": 198.99
+        },
+        {
+          "text": "you",
+          "start": 198.99,
+          "end": 199.32
+        },
+        {
+          "text": "to",
+          "start": 199.32,
+          "end": 199.65
+        },
+        {
+          "text": "show",
+          "start": 199.65,
+          "end": 199.98
+        },
+        {
+          "text": "my",
+          "start": 199.98,
+          "end": 200.31
+        },
+        {
+          "text": "mouth",
+          "start": 200.31,
+          "end": 200.64
+        },
+        {
+          "text": "(Woo,",
+          "start": 200.64,
+          "end": 200.97
+        },
+        {
+          "text": "yeah)",
+          "start": 200.97,
+          "end": 201.3
+        }
+      ]
+    },
+    {
+      "id": "cue-55",
+      "start": 201.54,
+      "end": 205.56,
+      "text": "Your favorite places (Favorite, favorite, baby)",
+      "words": [
+        {
+          "text": "Your",
+          "start": 201.54,
+          "end": 202.21
+        },
+        {
+          "text": "favorite",
+          "start": 202.21,
+          "end": 202.88
+        },
+        {
+          "text": "places",
+          "start": 202.88,
+          "end": 203.55
+        },
+        {
+          "text": "(Favorite,",
+          "start": 203.55,
+          "end": 204.22
+        },
+        {
+          "text": "favorite,",
+          "start": 204.22,
+          "end": 204.89
+        },
+        {
+          "text": "baby)",
+          "start": 204.89,
+          "end": 205.56
+        }
+      ]
+    },
+    {
+      "id": "cue-56",
+      "start": 205.63,
+      "end": 209.41,
+      "text": "Let me trespass your danger zones (Yeah, woo, yeah)",
+      "words": [
+        {
+          "text": "Let",
+          "start": 205.63,
+          "end": 206.05
+        },
+        {
+          "text": "me",
+          "start": 206.05,
+          "end": 206.47
+        },
+        {
+          "text": "trespass",
+          "start": 206.47,
+          "end": 206.89
+        },
+        {
+          "text": "your",
+          "start": 206.89,
+          "end": 207.31
+        },
+        {
+          "text": "danger",
+          "start": 207.31,
+          "end": 207.73
+        },
+        {
+          "text": "zones",
+          "start": 207.73,
+          "end": 208.15
+        },
+        {
+          "text": "(Yeah,",
+          "start": 208.15,
+          "end": 208.57
+        },
+        {
+          "text": "woo,",
+          "start": 208.57,
+          "end": 208.99
+        },
+        {
+          "text": "yeah)",
+          "start": 208.99,
+          "end": 209.41
+        }
+      ]
+    },
+    {
+      "id": "cue-57",
+      "start": 209.51,
+      "end": 212.17,
+      "text": "Until I make you scream (Woo, yeah)",
+      "words": [
+        {
+          "text": "Until",
+          "start": 209.51,
+          "end": 209.89
+        },
+        {
+          "text": "I",
+          "start": 209.89,
+          "end": 210.27
+        },
+        {
+          "text": "make",
+          "start": 210.27,
+          "end": 210.65
+        },
+        {
+          "text": "you",
+          "start": 210.65,
+          "end": 211.03
+        },
+        {
+          "text": "scream",
+          "start": 211.03,
+          "end": 211.41
+        },
+        {
+          "text": "(Woo,",
+          "start": 211.41,
+          "end": 211.79
+        },
+        {
+          "text": "yeah)",
+          "start": 211.79,
+          "end": 212.17
+        }
+      ]
+    },
+    {
+      "id": "cue-58",
+      "start": 212.26,
+      "end": 214.66,
+      "text": "And you forget your last name",
+      "words": [
+        {
+          "text": "And",
+          "start": 212.26,
+          "end": 212.66
+        },
+        {
+          "text": "you",
+          "start": 212.66,
+          "end": 213.06
+        },
+        {
+          "text": "forget",
+          "start": 213.06,
+          "end": 213.46
+        },
+        {
+          "text": "your",
+          "start": 213.46,
+          "end": 213.86
+        },
+        {
+          "text": "last",
+          "start": 213.86,
+          "end": 214.26
+        },
+        {
+          "text": "name",
+          "start": 214.26,
+          "end": 214.66
+        }
+      ]
+    },
+    {
+      "id": "cue-59",
+      "start": 214.77,
+      "end": 219.7,
+      "text": "Slowly We're gonna do it on a beach in Puerto Rico",
+      "words": [
+        {
+          "text": "Slowly",
+          "start": 214.77,
+          "end": 216.81
+        },
+        {
+          "text": "We're",
+          "start": 216.9,
+          "end": 217.18
+        },
+        {
+          "text": "gonna",
+          "start": 217.18,
+          "end": 217.46
+        },
+        {
+          "text": "do",
+          "start": 217.46,
+          "end": 217.74
+        },
+        {
+          "text": "it",
+          "start": 217.74,
+          "end": 218.02
+        },
+        {
+          "text": "on",
+          "start": 218.02,
+          "end": 218.3
+        },
+        {
+          "text": "a",
+          "start": 218.3,
+          "end": 218.58
+        },
+        {
+          "text": "beach",
+          "start": 218.58,
+          "end": 218.86
+        },
+        {
+          "text": "in",
+          "start": 218.86,
+          "end": 219.14
+        },
+        {
+          "text": "Puerto",
+          "start": 219.14,
+          "end": 219.42
+        },
+        {
+          "text": "Rico",
+          "start": 219.42,
+          "end": 219.7
+        }
+      ]
+    },
+    {
+      "id": "cue-60",
+      "start": 219.82,
+      "end": 222.34,
+      "text": "Until the waves scream: “Oh Lord!”",
+      "words": [
+        {
+          "text": "Until",
+          "start": 219.82,
+          "end": 220.24
+        },
+        {
+          "text": "the",
+          "start": 220.24,
+          "end": 220.66
+        },
+        {
+          "text": "waves",
+          "start": 220.66,
+          "end": 221.08
+        },
+        {
+          "text": "scream:",
+          "start": 221.08,
+          "end": 221.5
+        },
+        {
+          "text": "“Oh",
+          "start": 221.5,
+          "end": 221.92
+        },
+        {
+          "text": "Lord!”",
+          "start": 221.92,
+          "end": 222.34
+        }
+      ]
+    },
+    {
+      "id": "cue-61",
+      "start": 222.4,
+      "end": 225.97,
+      "text": "So that my seal stays with you",
+      "words": [
+        {
+          "text": "So",
+          "start": 222.4,
+          "end": 222.91
+        },
+        {
+          "text": "that",
+          "start": 222.91,
+          "end": 223.42
+        },
+        {
+          "text": "my",
+          "start": 223.42,
+          "end": 223.93
+        },
+        {
+          "text": "seal",
+          "start": 223.93,
+          "end": 224.44
+        },
+        {
+          "text": "stays",
+          "start": 224.44,
+          "end": 224.95
+        },
+        {
+          "text": "with",
+          "start": 224.95,
+          "end": 225.46
+        },
+        {
+          "text": "you",
+          "start": 225.46,
+          "end": 225.97
+        }
+      ]
+    },
+    {
+      "id": "cue-62",
+      "start": 226.07,
+      "end": 229.22,
+      "text": "Step by step, soft then softly (Oh, yeah, yeah)",
+      "words": [
+        {
+          "text": "Step",
+          "start": 226.07,
+          "end": 226.42
+        },
+        {
+          "text": "by",
+          "start": 226.42,
+          "end": 226.77
+        },
+        {
+          "text": "step,",
+          "start": 226.77,
+          "end": 227.12
+        },
+        {
+          "text": "soft",
+          "start": 227.12,
+          "end": 227.47
+        },
+        {
+          "text": "then",
+          "start": 227.47,
+          "end": 227.82
+        },
+        {
+          "text": "softly",
+          "start": 227.82,
+          "end": 228.17
+        },
+        {
+          "text": "(Oh,",
+          "start": 228.17,
+          "end": 228.52
+        },
+        {
+          "text": "yeah,",
+          "start": 228.52,
+          "end": 228.87
+        },
+        {
+          "text": "yeah)",
+          "start": 228.87,
+          "end": 229.22
+        }
+      ]
+    },
+    {
+      "id": "cue-63",
+      "start": 229.29,
+      "end": 232.05,
+      "text": "We come up against each other, little by little (No, no; oh)",
+      "words": [
+        {
+          "text": "We",
+          "start": 229.29,
+          "end": 229.52
+        },
+        {
+          "text": "come",
+          "start": 229.52,
+          "end": 229.75
+        },
+        {
+          "text": "up",
+          "start": 229.75,
+          "end": 229.98
+        },
+        {
+          "text": "against",
+          "start": 229.98,
+          "end": 230.21
+        },
+        {
+          "text": "each",
+          "start": 230.21,
+          "end": 230.44
+        },
+        {
+          "text": "other,",
+          "start": 230.44,
+          "end": 230.67
+        },
+        {
+          "text": "little",
+          "start": 230.67,
+          "end": 230.9
+        },
+        {
+          "text": "by",
+          "start": 230.9,
+          "end": 231.13
+        },
+        {
+          "text": "little",
+          "start": 231.13,
+          "end": 231.36
+        },
+        {
+          "text": "(No,",
+          "start": 231.36,
+          "end": 231.59
+        },
+        {
+          "text": "no;",
+          "start": 231.59,
+          "end": 231.82
+        },
+        {
+          "text": "oh)",
+          "start": 231.82,
+          "end": 232.05
+        }
+      ]
+    },
+    {
+      "id": "cue-64",
+      "start": 232.08,
+      "end": 233.34,
+      "text": "Want you to show my mouth",
+      "words": [
+        {
+          "text": "Want",
+          "start": 232.08,
+          "end": 232.29
+        },
+        {
+          "text": "you",
+          "start": 232.29,
+          "end": 232.5
+        },
+        {
+          "text": "to",
+          "start": 232.5,
+          "end": 232.71
+        },
+        {
+          "text": "show",
+          "start": 232.71,
+          "end": 232.92
+        },
+        {
+          "text": "my",
+          "start": 232.92,
+          "end": 233.13
+        },
+        {
+          "text": "mouth",
+          "start": 233.13,
+          "end": 233.34
+        }
+      ]
+    },
+    {
+      "id": "cue-65",
+      "start": 233.42,
+      "end": 237.27,
+      "text": "Your favorite places Favorite, favorite, baby (Ooh)",
+      "words": [
+        {
+          "text": "Your",
+          "start": 233.42,
+          "end": 233.97
+        },
+        {
+          "text": "favorite",
+          "start": 233.97,
+          "end": 234.52
+        },
+        {
+          "text": "places",
+          "start": 234.52,
+          "end": 235.07
+        },
+        {
+          "text": "Favorite,",
+          "start": 235.07,
+          "end": 235.62
+        },
+        {
+          "text": "favorite,",
+          "start": 235.62,
+          "end": 236.17
+        },
+        {
+          "text": "baby",
+          "start": 236.17,
+          "end": 236.72
+        },
+        {
+          "text": "(Ooh)",
+          "start": 236.72,
+          "end": 237.27
+        }
+      ]
+    },
+    {
+      "id": "cue-66",
+      "start": 237.38,
+      "end": 239.96,
+      "text": "Step by step, soft then softly",
+      "words": [
+        {
+          "text": "Step",
+          "start": 237.38,
+          "end": 237.81
+        },
+        {
+          "text": "by",
+          "start": 237.81,
+          "end": 238.24
+        },
+        {
+          "text": "step,",
+          "start": 238.24,
+          "end": 238.67
+        },
+        {
+          "text": "soft",
+          "start": 238.67,
+          "end": 239.1
+        },
+        {
+          "text": "then",
+          "start": 239.1,
+          "end": 239.53
+        },
+        {
+          "text": "softly",
+          "start": 239.53,
+          "end": 239.96
+        }
+      ]
+    },
+    {
+      "id": "cue-67",
+      "start": 240.05,
+      "end": 242.3,
+      "text": "We come up against each other, little by little",
+      "words": [
+        {
+          "text": "We",
+          "start": 240.05,
+          "end": 240.3
+        },
+        {
+          "text": "come",
+          "start": 240.3,
+          "end": 240.55
+        },
+        {
+          "text": "up",
+          "start": 240.55,
+          "end": 240.8
+        },
+        {
+          "text": "against",
+          "start": 240.8,
+          "end": 241.05
+        },
+        {
+          "text": "each",
+          "start": 241.05,
+          "end": 241.3
+        },
+        {
+          "text": "other,",
+          "start": 241.3,
+          "end": 241.55
+        },
+        {
+          "text": "little",
+          "start": 241.55,
+          "end": 241.8
+        },
+        {
+          "text": "by",
+          "start": 241.8,
+          "end": 242.05
+        },
+        {
+          "text": "little",
+          "start": 242.05,
+          "end": 242.3
+        }
+      ]
+    },
+    {
+      "id": "cue-68",
+      "start": 242.39,
+      "end": 244.91,
+      "text": "Until I make you scream (Fonsi)",
+      "words": [
+        {
+          "text": "Until",
+          "start": 242.39,
+          "end": 242.81
+        },
+        {
+          "text": "I",
+          "start": 242.81,
+          "end": 243.23
+        },
+        {
+          "text": "make",
+          "start": 243.23,
+          "end": 243.65
+        },
+        {
+          "text": "you",
+          "start": 243.65,
+          "end": 244.07
+        },
+        {
+          "text": "scream",
+          "start": 244.07,
+          "end": 244.49
+        },
+        {
+          "text": "(Fonsi)",
+          "start": 244.49,
+          "end": 244.91
+        }
+      ]
+    },
+    {
+      "id": "cue-69",
+      "start": 245.01,
+      "end": 247.39,
+      "text": "And you forget your last name (DY)",
+      "words": [
+        {
+          "text": "And",
+          "start": 245.01,
+          "end": 245.35
+        },
+        {
+          "text": "you",
+          "start": 245.35,
+          "end": 245.69
+        },
+        {
+          "text": "forget",
+          "start": 245.69,
+          "end": 246.03
+        },
+        {
+          "text": "your",
+          "start": 246.03,
+          "end": 246.37
+        },
+        {
+          "text": "last",
+          "start": 246.37,
+          "end": 246.71
+        },
+        {
+          "text": "name",
+          "start": 246.71,
+          "end": 247.05
+        },
+        {
+          "text": "(DY)",
+          "start": 247.05,
+          "end": 247.39
+        }
+      ]
+    },
+    {
+      "id": "cue-70",
+      "start": 247.48,
+      "end": 249.6,
+      "text": "Slowly",
+      "words": [
+        {
+          "text": "Slowly",
+          "start": 247.48,
+          "end": 249.6
+        }
+      ]
+    }
+  ]
+}

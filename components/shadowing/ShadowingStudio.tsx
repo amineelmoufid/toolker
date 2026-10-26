@@ -135,6 +135,23 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack }) => {
     };
 
     const runExtraction = async () => {
+      // 0. Ultra-Fast Local Extractor Daemon (instant 2s on-the-fly extraction)
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 4500);
+        const localRes = await fetch(`http://127.0.0.1:38472/transcript?v=${ytId}`, {
+          signal: controller.signal
+        });
+        clearTimeout(timeoutId);
+        if (localRes.ok) {
+          const localData = await localRes.json();
+          if (localData.ok && Array.isArray(localData.subtitles) && localData.subtitles.length > 0) {
+            applySubtitles(localData.subtitles);
+            return;
+          }
+        }
+      } catch (_) {}
+
       // 1. Direct static check
       try {
         const staticRes = await fetch(`/transcripts/${ytId}.json?_t=${Date.now()}`);

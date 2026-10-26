@@ -43,6 +43,22 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
   };
 
   const fetchSubtitlesForVideo = async (ytId: string, _titleHint: string): Promise<SubtitleLine[]> => {
+    // 0. Ultra-Fast Local Extractor Daemon (instant 2s on-the-fly extraction)
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 4500);
+      const localRes = await fetch(`http://127.0.0.1:38472/transcript?v=${ytId}`, {
+        signal: controller.signal
+      });
+      clearTimeout(timeoutId);
+      if (localRes.ok) {
+        const localData = await localRes.json();
+        if (localData.ok && Array.isArray(localData.subtitles) && localData.subtitles.length > 0) {
+          return localData.subtitles;
+        }
+      }
+    } catch (_) {}
+
     // 1. Check static pre-cached JSON asset
     try {
       const staticRes = await fetch(`/transcripts/${ytId}.json?_t=${Date.now()}`);
@@ -93,8 +109,7 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
                 return pollData.subtitles;
               }
               if (pollData.ok === false && pollData.error && !pollData.pending) {
-                console.warn("Cloud extractor reported:", pollData.error);
-                break;
+                console.warn("Cloud extractor notice:", pollData.error);
               }
             }
           } catch (_) {}
@@ -159,14 +174,20 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
     setIsSyncing(false);
   };
 
-  // Instant fetch & sync when YouTube link is entered
+  const urlDebounceRef = React.useRef<any>(null);
+
+  // Instant fetch & sync when YouTube link is entered (debounced)
   const handleUrlChange = (newUrl: string) => {
     setCustomUrl(newUrl);
     setImportError('');
+    if (urlDebounceRef.current) clearTimeout(urlDebounceRef.current);
+
     const ytId = extractYouTubeId(newUrl.trim());
     if (ytId) {
       setVideoThumbnail(`https://img.youtube.com/vi/${ytId}/hqdefault.jpg`);
-      syncYouTubeVideo(ytId, newUrl.trim());
+      urlDebounceRef.current = setTimeout(() => {
+        syncYouTubeVideo(ytId, newUrl.trim());
+      }, 300);
     } else {
       setSyncStatus('idle');
       setSyncedSubtitles(null);
