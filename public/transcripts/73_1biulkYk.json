@@ -131,8 +131,8 @@
     {
       "id": "cue-4",
       "start": 6.58,
-      "end": 7.77,
-      "text": "LOGAN Just give me one more drink",
+      "end": 8.78,
+      "text": "LOGAN Just give me one more drink and then I'll leave.",
       "words": [
         {
           "text": "LOGAN",
@@ -168,15 +168,7 @@
           "text": "drink",
           "start": 7.6,
           "end": 7.77
-        }
-      ]
-    },
-    {
-      "id": "cue-5",
-      "start": 7.78,
-      "end": 8.78,
-      "text": "and then I'll leave.",
-      "words": [
+        },
         {
           "text": "and",
           "start": 7.78,
@@ -200,7 +192,7 @@
       ]
     },
     {
-      "id": "cue-6",
+      "id": "cue-5",
       "start": 10.66,
       "end": 11.44,
       "text": "DEADPOOL Hi, peanut.",
@@ -223,7 +215,7 @@
       ]
     },
     {
-      "id": "cue-7",
+      "id": "cue-6",
       "start": 11.53,
       "end": 13.51,
       "text": "I'm going to need you to come with me right now.",
@@ -286,7 +278,7 @@
       ]
     },
     {
-      "id": "cue-8",
+      "id": "cue-7",
       "start": 14.2,
       "end": 15.76,
       "text": "LOGAN Look, lady, I'm not interested.",
@@ -324,10 +316,10 @@
       ]
     },
     {
-      "id": "cue-9",
+      "id": "cue-8",
       "start": 16.62,
-      "end": 17.46,
-      "text": "DEADPOOL Alright, well, I'm sort of",
+      "end": 19.53,
+      "text": "DEADPOOL Alright, well, I'm sort of on the tick-tick, so upsy-daisy, here we go.",
       "words": [
         {
           "text": "DEADPOOL",
@@ -358,15 +350,7 @@
           "text": "of",
           "start": 17.32,
           "end": 17.46
-        }
-      ]
-    },
-    {
-      "id": "cue-10",
-      "start": 17.53,
-      "end": 19.53,
-      "text": "on the tick-tick, so upsy-daisy, here we go.",
-      "words": [
+        },
         {
           "text": "on",
           "start": 17.53,
@@ -410,10 +394,10 @@
       ]
     },
     {
-      "id": "cue-11",
+      "id": "cue-9",
       "start": 19.57,
-      "end": 20.41,
-      "text": "LOGAN Whoa, hey, hey!",
+      "end": 22.54,
+      "text": "LOGAN Whoa, hey, DEADPOOL Oh.",
       "words": [
         {
           "text": "LOGAN",
@@ -431,19 +415,6 @@
           "end": 20.2
         },
         {
-          "text": "hey!",
-          "start": 20.2,
-          "end": 20.41
-        }
-      ]
-    },
-    {
-      "id": "cue-12",
-      "start": 21.82,
-      "end": 22.54,
-      "text": "DEADPOOL Oh.",
-      "words": [
-        {
           "text": "DEADPOOL",
           "start": 21.82,
           "end": 22.18
@@ -456,10 +427,10 @@
       ]
     },
     {
-      "id": "cue-13",
+      "id": "cue-10",
       "start": 22.62,
-      "end": 25.86,
-      "text": "Whiskey dick of the claws. It's quite common in Wolverines over 40.",
+      "end": 23.97,
+      "text": "Whiskey dick of the claws.",
       "words": [
         {
           "text": "Whiskey",
@@ -485,7 +456,15 @@
           "text": "claws.",
           "start": 23.7,
           "end": 23.97
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-11",
+      "start": 23.97,
+      "end": 25.86,
+      "text": "It's quite common in Wolverines over 40.",
+      "words": [
         {
           "text": "It's",
           "start": 23.97,
@@ -524,7 +503,7 @@
       ]
     },
     {
-      "id": "cue-14",
+      "id": "cue-12",
       "start": 25.95,
       "end": 26.75,
       "text": "LOGAN You don't want this.",
@@ -557,10 +536,10 @@
       ]
     },
     {
-      "id": "cue-15",
+      "id": "cue-13",
       "start": 27.49,
-      "end": 28.66,
-      "text": "DEADPOOL Unless you want to take a deep breath",
+      "end": 31.98,
+      "text": "DEADPOOL Unless you want to take a deep breath through your f****** forehead, I suggest you reconsider.",
       "words": [
         {
           "text": "DEADPOOL",
@@ -606,15 +585,7 @@
           "text": "breath",
           "start": 28.53,
           "end": 28.66
-        }
-      ]
-    },
-    {
-      "id": "cue-16",
-      "start": 28.7,
-      "end": 31.98,
-      "text": "through your f****** forehead, I suggest you reconsider.",
-      "words": [
+        },
         {
           "text": "through",
           "start": 28.7,
@@ -658,10 +629,10 @@
       ]
     },
     {
-      "id": "cue-17",
+      "id": "cue-14",
       "start": 39.08,
-      "end": 40.1,
-      "text": "DEADPOOL I'm about to lose everything",
+      "end": 41.01,
+      "text": "DEADPOOL I'm about to lose everything that I've ever cared about.",
       "words": [
         {
           "text": "DEADPOOL",
@@ -692,15 +663,7 @@
           "text": "everything",
           "start": 39.93,
           "end": 40.1
-        }
-      ]
-    },
-    {
-      "id": "cue-18",
-      "start": 40.16,
-      "end": 41.01,
-      "text": "that I've ever cared about.",
-      "words": [
+        },
         {
           "text": "that",
           "start": 40.16,
@@ -729,7 +692,7 @@
       ]
     },
     {
-      "id": "cue-19",
+      "id": "cue-15",
       "start": 43.03,
       "end": 44.73,
       "text": "WOLVERINE Not my f****** problem.",
@@ -762,10 +725,10 @@
       ]
     },
     {
-      "id": "cue-20",
+      "id": "cue-16",
       "start": 44.83,
-      "end": 45.73,
-      "text": "DEADPOOL Is that what you said when your world",
+      "end": 46.74,
+      "text": "DEADPOOL Is that what you said when your world went to s***?",
       "words": [
         {
           "text": "DEADPOOL",
@@ -811,15 +774,7 @@
           "text": "world",
           "start": 45.63,
           "end": 45.73
-        }
-      ]
-    },
-    {
-      "id": "cue-21",
-      "start": 45.78,
-      "end": 46.74,
-      "text": "went to s***?",
-      "words": [
+        },
         {
           "text": "went",
           "start": 45.78,
@@ -838,7 +793,7 @@
       ]
     },
     {
-      "id": "cue-22",
+      "id": "cue-17",
       "start": 49.99,
       "end": 51.04,
       "text": "WOLVERINE Come again?",
@@ -861,7 +816,7 @@
       ]
     },
     {
-      "id": "cue-23",
+      "id": "cue-18",
       "start": 51.7,
       "end": 54.62,
       "text": "PARADOX This Wolverine let down his entire world.",
@@ -909,10 +864,10 @@
       ]
     },
     {
-      "id": "cue-24",
+      "id": "cue-19",
       "start": 61.37,
-      "end": 63.17,
-      "text": "WADE WILSON Want to talk about what's haunting you,",
+      "end": 65.13,
+      "text": "WADE WILSON Want to talk about what's haunting you, or should we wait for a third act flashback?",
       "words": [
         {
           "text": "WADE",
@@ -958,15 +913,7 @@
           "text": "you,",
           "start": 62.97,
           "end": 63.17
-        }
-      ]
-    },
-    {
-      "id": "cue-25",
-      "start": 63.24,
-      "end": 65.13,
-      "text": "or should we wait for a third act flashback?",
-      "words": [
+        },
         {
           "text": "or",
           "start": 63.24,
@@ -1015,7 +962,7 @@
       ]
     },
     {
-      "id": "cue-26",
+      "id": "cue-20",
       "start": 65.2,
       "end": 66.95,
       "text": "WOLVERINE Uh, go f*** yourself.",
@@ -1048,10 +995,10 @@
       ]
     },
     {
-      "id": "cue-27",
+      "id": "cue-21",
       "start": 75.45,
       "end": 77.05,
-      "text": "DEADPOOL I don't know anything about saving worlds,",
+      "text": "DEADPOOL I don't know anything about saving worlds.",
       "words": [
         {
           "text": "DEADPOOL",
@@ -1089,20 +1036,20 @@
           "end": 76.85
         },
         {
-          "text": "worlds,",
+          "text": "worlds.",
           "start": 76.85,
           "end": 77.05
         }
       ]
     },
     {
-      "id": "cue-28",
+      "id": "cue-22",
       "start": 78.16,
       "end": 79.54,
-      "text": "but you do!",
+      "text": "But you do!",
       "words": [
         {
-          "text": "but",
+          "text": "But",
           "start": 78.16,
           "end": 78.62
         },
@@ -1119,7 +1066,7 @@
       ]
     },
     {
-      "id": "cue-29",
+      "id": "cue-23",
       "start": 82.16,
       "end": 83.42,
       "text": "WOLVERINE Trust me, kid, I'm no hero.",
@@ -1162,7 +1109,7 @@
       ]
     },
     {
-      "id": "cue-30",
+      "id": "cue-24",
       "start": 85.16,
       "end": 86.54,
       "text": "WADE WILSON You were an X-Man.",
@@ -1200,7 +1147,7 @@
       ]
     },
     {
-      "id": "cue-31",
+      "id": "cue-25",
       "start": 87.91,
       "end": 89.17,
       "text": "WADE WILSON You were the X-Man.",
@@ -1238,7 +1185,7 @@
       ]
     },
     {
-      "id": "cue-32",
+      "id": "cue-26",
       "start": 92.33,
       "end": 94.64,
       "text": "DEADPOOL I am soaking wet right now.",
@@ -1281,7 +1228,7 @@
       ]
     },
     {
-      "id": "cue-33",
+      "id": "cue-27",
       "start": 107.91,
       "end": 109.63,
       "text": "Boys are so silly.",
@@ -1309,7 +1256,7 @@
       ]
     },
     {
-      "id": "cue-34",
+      "id": "cue-28",
       "start": 112.2,
       "end": 113.95,
       "text": "DEADPOOL This is what I'm talking about.",
@@ -1352,7 +1299,7 @@
       ]
     },
     {
-      "id": "cue-35",
+      "id": "cue-29",
       "start": 115.7,
       "end": 118.04,
       "text": "DEADPOOL Big slow motion action sequence!",
@@ -1390,7 +1337,7 @@
       ]
     },
     {
-      "id": "cue-36",
+      "id": "cue-30",
       "start": 120.41,
       "end": 122.01,
       "text": "DEADPOOL Who knows if you live or die?",
@@ -1438,7 +1385,7 @@
       ]
     },
     {
-      "id": "cue-37",
+      "id": "cue-31",
       "start": 126.12,
       "end": 127.96,
       "text": "DEADPOOL Let's f****** go!",
@@ -1466,7 +1413,7 @@
       ]
     },
     {
-      "id": "cue-38",
+      "id": "cue-32",
       "start": 128.49,
       "end": 130.02,
       "text": "WOLVERINE Let's f****** go.",
@@ -1494,7 +1441,7 @@
       ]
     },
     {
-      "id": "cue-39",
+      "id": "cue-33",
       "start": 132.7,
       "end": 134.44,
       "text": "DEADPOOL Yeah!",
@@ -1512,7 +1459,7 @@
       ]
     },
     {
-      "id": "cue-40",
+      "id": "cue-34",
       "start": 139.24,
       "end": 140.26,
       "text": "BLIND AL Wanna do some c******?",
@@ -1550,9 +1497,9 @@
       ]
     },
     {
-      "id": "cue-41",
+      "id": "cue-35",
       "start": 140.33,
-      "end": 140.81,
+      "end": 140.83,
       "text": "WADE WILSON Hey!",
       "words": [
         {
@@ -1573,7 +1520,7 @@
       ]
     },
     {
-      "id": "cue-42",
+      "id": "cue-36",
       "start": 140.87,
       "end": 143.73,
       "text": "C****** is the one thing that Feige said is off limits.",
@@ -1636,7 +1583,7 @@
       ]
     },
     {
-      "id": "cue-43",
+      "id": "cue-37",
       "start": 143.78,
       "end": 145.81,
       "text": "BLIND AL What about Bolivian marching powder?",
@@ -1679,7 +1626,7 @@
       ]
     },
     {
-      "id": "cue-44",
+      "id": "cue-38",
       "start": 145.87,
       "end": 146.83,
       "text": "WADE WILSON They know all the slang terms.",
@@ -1727,7 +1674,7 @@
       ]
     },
     {
-      "id": "cue-45",
+      "id": "cue-39",
       "start": 146.87,
       "end": 147.57,
       "text": "They have a list.",
@@ -1755,7 +1702,7 @@
       ]
     },
     {
-      "id": "cue-46",
+      "id": "cue-40",
       "start": 147.62,
       "end": 148.54,
       "text": "BLIND AL Even snowboarding?",
@@ -1783,7 +1730,7 @@
       ]
     },
     {
-      "id": "cue-47",
+      "id": "cue-41",
       "start": 148.57,
       "end": 149.37,
       "text": "WADE WILSON Even disco dust.",
@@ -1816,7 +1763,7 @@
       ]
     },
     {
-      "id": "cue-48",
+      "id": "cue-42",
       "start": 149.41,
       "end": 150.56,
       "text": "BLIND AL White Girl, Interrupted?",
@@ -1849,7 +1796,7 @@
       ]
     },
     {
-      "id": "cue-49",
+      "id": "cue-43",
       "start": 150.62,
       "end": 151.52,
       "text": "WADE WILSON Even Forrest Bump.",
@@ -1882,7 +1829,7 @@
       ]
     },
     {
-      "id": "cue-50",
+      "id": "cue-44",
       "start": 151.57,
       "end": 152.29,
       "text": "BLIND AL Do you want to build a snowman?",
@@ -1935,10 +1882,10 @@
       ]
     },
     {
-      "id": "cue-51",
+      "id": "cue-45",
       "start": 152.41,
-      "end": 154.93,
-      "text": "WADE WILSON Yes! But I can't!",
+      "end": 153.67,
+      "text": "WADE WILSON Yes!",
       "words": [
         {
           "text": "WADE",
@@ -1954,7 +1901,15 @@
           "text": "Yes!",
           "start": 153.25,
           "end": 153.67
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-46",
+      "start": 153.67,
+      "end": 154.93,
+      "text": "But I can't!",
+      "words": [
         {
           "text": "But",
           "start": 153.67,

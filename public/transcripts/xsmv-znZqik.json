@@ -7,11 +7,11 @@
     {
       "id": "cue-1",
       "start": 4.16,
-      "end": 9.6,
-      "text": "je et puis il arrive à que le petit prince",
+      "end": 13.6,
+      "text": "Je et puis il arrive à que le petit prince ayant longtemps archi à travers les sables l'erreur.",
       "words": [
         {
-          "text": "je",
+          "text": "Je",
           "start": 4.16,
           "end": 7.65
         },
@@ -59,33 +59,25 @@
           "text": "prince",
           "start": 9.17,
           "end": 9.6
-        }
-      ]
-    },
-    {
-      "id": "cue-2",
-      "start": 7.65,
-      "end": 12.9,
-      "text": "ayant longtemps archi à travers les",
-      "words": [
+        },
         {
           "text": "ayant",
-          "start": 7.65,
-          "end": 8.53
+          "start": 9.6,
+          "end": 9.95
         },
         {
           "text": "longtemps",
-          "start": 8.53,
-          "end": 9.4
+          "start": 9.95,
+          "end": 10.3
         },
         {
           "text": "archi",
-          "start": 9.4,
-          "end": 10.28
+          "start": 10.3,
+          "end": 10.65
         },
         {
           "text": "à",
-          "start": 10.28,
+          "start": 10.65,
           "end": 11.15
         },
         {
@@ -97,33 +89,33 @@
           "text": "les",
           "start": 12.03,
           "end": 12.9
+        },
+        {
+          "text": "sables",
+          "start": 12.9,
+          "end": 13.25
+        },
+        {
+          "text": "l'erreur.",
+          "start": 13.25,
+          "end": 13.6
         }
       ]
     },
     {
-      "id": "cue-3",
-      "start": 9.63,
-      "end": 15.5,
-      "text": "sables l'erreur qu'elle neiges rencontra le renard",
+      "id": "cue-2",
+      "start": 13.6,
+      "end": 16.18,
+      "text": "Qu'elle neiges rencontra le renard.",
       "words": [
         {
-          "text": "sables",
-          "start": 9.63,
-          "end": 10.8
-        },
-        {
-          "text": "l'erreur",
-          "start": 10.8,
-          "end": 11.97
-        },
-        {
-          "text": "qu'elle",
-          "start": 11.97,
-          "end": 13.14
+          "text": "Qu'elle",
+          "start": 13.6,
+          "end": 13.95
         },
         {
           "text": "neiges",
-          "start": 13.14,
+          "start": 13.95,
           "end": 14.31
         },
         {
@@ -133,24 +125,24 @@
         },
         {
           "text": "le",
-          "start": 12.9,
-          "end": 14.2
+          "start": 15.48,
+          "end": 15.83
         },
         {
-          "text": "renard",
-          "start": 14.2,
-          "end": 15.5
+          "text": "renard.",
+          "start": 15.83,
+          "end": 16.18
         }
       ]
     },
     {
-      "id": "cue-4",
+      "id": "cue-3",
       "start": 26.25,
-      "end": 31.83,
-      "text": "et oh qu'elle joue avec moi je ne peux",
+      "end": 35.2,
+      "text": "Et oh qu'elle joue avec moi je ne peux pas jouer avec toi je ne suis pas apprivoiser.",
       "words": [
         {
-          "text": "et",
+          "text": "Et",
           "start": 26.25,
           "end": 26.87
         },
@@ -193,76 +185,68 @@
           "text": "peux",
           "start": 31.21,
           "end": 31.83
-        }
-      ]
-    },
-    {
-      "id": "cue-5",
-      "start": 29.49,
-      "end": 34.85,
-      "text": "pas jouer avec toi je ne suis pas",
-      "words": [
+        },
         {
           "text": "pas",
-          "start": 29.49,
-          "end": 30.16
+          "start": 31.83,
+          "end": 32.18
         },
         {
           "text": "jouer",
-          "start": 30.16,
-          "end": 30.83
+          "start": 32.18,
+          "end": 32.53
         },
         {
           "text": "avec",
-          "start": 30.83,
-          "end": 31.5
+          "start": 32.53,
+          "end": 32.88
         },
         {
           "text": "toi",
-          "start": 31.5,
-          "end": 32.17
+          "start": 32.88,
+          "end": 33.23
         },
         {
           "text": "je",
-          "start": 32.17,
-          "end": 32.84
+          "start": 33.23,
+          "end": 33.58
         },
         {
           "text": "ne",
-          "start": 32.84,
-          "end": 33.51
+          "start": 33.58,
+          "end": 33.93
         },
         {
           "text": "suis",
-          "start": 33.51,
+          "start": 33.93,
           "end": 34.18
         },
         {
           "text": "pas",
           "start": 34.18,
           "end": 34.85
+        },
+        {
+          "text": "apprivoiser.",
+          "start": 34.85,
+          "end": 35.2
         }
       ]
     },
     {
-      "id": "cue-6",
-      "start": 31.8,
-      "end": 40.59,
-      "text": "apprivoiser qu'est signifie apprivoiser cela signifie créer des liens pour moi",
+      "id": "cue-4",
+      "start": 35.2,
+      "end": 43.84,
+      "text": "Qu'est signifie apprivoiser cela signifie créer des liens pour moi tu n'est encore qu'un petit garçon tout semblable.",
       "words": [
         {
-          "text": "apprivoiser",
-          "start": 31.8,
-          "end": 33.43
-        },
-        {
-          "text": "qu'est",
-          "start": 33.43,
-          "end": 35.06
+          "text": "Qu'est",
+          "start": 35.2,
+          "end": 35.55
         },
         {
           "text": "signifie",
-          "start": 35.06,
+          "start": 35.55,
           "end": 36.69
         },
         {
@@ -272,70 +256,62 @@
         },
         {
           "text": "cela",
-          "start": 34.85,
-          "end": 35.67
+          "start": 38.32,
+          "end": 38.67
         },
         {
           "text": "signifie",
-          "start": 35.67,
-          "end": 36.49
+          "start": 38.67,
+          "end": 39.02
         },
         {
           "text": "créer",
-          "start": 36.49,
-          "end": 37.31
+          "start": 39.02,
+          "end": 39.37
         },
         {
           "text": "des",
-          "start": 37.31,
-          "end": 38.13
+          "start": 39.37,
+          "end": 39.72
         },
         {
           "text": "liens",
-          "start": 38.13,
-          "end": 38.95
+          "start": 39.72,
+          "end": 40.07
         },
         {
           "text": "pour",
-          "start": 38.95,
-          "end": 39.77
+          "start": 40.07,
+          "end": 40.42
         },
         {
           "text": "moi",
-          "start": 39.77,
+          "start": 40.42,
           "end": 40.59
-        }
-      ]
-    },
-    {
-      "id": "cue-7",
-      "start": 38.31,
-      "end": 43.49,
-      "text": "tu n'est encore qu'un petit garçon tout",
-      "words": [
+        },
         {
           "text": "tu",
-          "start": 38.31,
-          "end": 39.05
+          "start": 40.59,
+          "end": 40.94
         },
         {
           "text": "n'est",
-          "start": 39.05,
-          "end": 39.79
+          "start": 40.94,
+          "end": 41.29
         },
         {
           "text": "encore",
-          "start": 39.79,
-          "end": 40.53
+          "start": 41.29,
+          "end": 41.64
         },
         {
           "text": "qu'un",
-          "start": 40.53,
-          "end": 41.27
+          "start": 41.64,
+          "end": 41.99
         },
         {
           "text": "petit",
-          "start": 41.27,
+          "start": 41.99,
           "end": 42.01
         },
         {
@@ -347,272 +323,256 @@
           "text": "tout",
           "start": 42.75,
           "end": 43.49
+        },
+        {
+          "text": "semblable.",
+          "start": 43.49,
+          "end": 43.84
         }
       ]
     },
     {
-      "id": "cue-8",
-      "start": 40.62,
-      "end": 46.01,
-      "text": "semblable à cent mille petits garçons et",
+      "id": "cue-5",
+      "start": 43.84,
+      "end": 50.21,
+      "text": "À cent mille petits garçons et je n'ai pas besoin de toi et tu n'as pas besoin de.",
       "words": [
         {
-          "text": "semblable",
-          "start": 40.62,
-          "end": 41.39
-        },
-        {
-          "text": "à",
-          "start": 41.39,
-          "end": 42.16
+          "text": "À",
+          "start": 43.84,
+          "end": 44.19
         },
         {
           "text": "cent",
-          "start": 42.16,
-          "end": 42.93
+          "start": 44.19,
+          "end": 44.54
         },
         {
           "text": "mille",
-          "start": 42.93,
-          "end": 43.7
+          "start": 44.54,
+          "end": 44.89
         },
         {
           "text": "petits",
-          "start": 43.7,
-          "end": 44.47
+          "start": 44.89,
+          "end": 45.24
         },
         {
           "text": "garçons",
-          "start": 44.47,
-          "end": 45.24
+          "start": 45.24,
+          "end": 45.59
         },
         {
           "text": "et",
           "start": 45.24,
           "end": 46.01
-        }
-      ]
-    },
-    {
-      "id": "cue-9",
-      "start": 43.5,
-      "end": 49.1,
-      "text": "je n'ai pas besoin de toi et tu n'as pas",
-      "words": [
+        },
         {
           "text": "je",
-          "start": 43.5,
-          "end": 44.06
+          "start": 46.01,
+          "end": 46.36
         },
         {
           "text": "n'ai",
-          "start": 44.06,
-          "end": 44.62
+          "start": 46.36,
+          "end": 46.71
         },
         {
           "text": "pas",
-          "start": 44.62,
-          "end": 45.18
+          "start": 46.71,
+          "end": 47.06
         },
         {
           "text": "besoin",
-          "start": 45.18,
-          "end": 45.74
+          "start": 47.06,
+          "end": 47.41
         },
         {
           "text": "de",
-          "start": 45.74,
-          "end": 46.3
+          "start": 47.41,
+          "end": 47.76
         },
         {
           "text": "toi",
-          "start": 46.3,
-          "end": 46.86
+          "start": 47.76,
+          "end": 48.11
         },
         {
           "text": "et",
-          "start": 46.86,
-          "end": 47.42
+          "start": 48.11,
+          "end": 48.46
         },
         {
           "text": "tu",
-          "start": 47.42,
-          "end": 47.98
+          "start": 48.46,
+          "end": 48.81
         },
         {
           "text": "n'as",
-          "start": 47.98,
-          "end": 48.54
+          "start": 48.81,
+          "end": 49.16
         },
         {
           "text": "pas",
-          "start": 48.54,
-          "end": 49.1
-        }
-      ]
-    },
-    {
-      "id": "cue-10",
-      "start": 46.02,
-      "end": 52.14,
-      "text": "besoin de moi pour toi je ne suis qu'un",
-      "words": [
+          "start": 49.16,
+          "end": 49.51
+        },
         {
           "text": "besoin",
-          "start": 46.02,
-          "end": 46.7
-        },
-        {
-          "text": "de",
-          "start": 46.7,
-          "end": 47.38
-        },
-        {
-          "text": "moi",
-          "start": 47.38,
-          "end": 48.06
-        },
-        {
-          "text": "pour",
-          "start": 48.06,
-          "end": 48.74
-        },
-        {
-          "text": "toi",
-          "start": 48.74,
-          "end": 49.42
-        },
-        {
-          "text": "je",
-          "start": 49.42,
-          "end": 50.1
-        },
-        {
-          "text": "ne",
-          "start": 50.1,
-          "end": 50.78
-        },
-        {
-          "text": "suis",
-          "start": 50.78,
-          "end": 51.46
-        },
-        {
-          "text": "qu'un",
-          "start": 51.46,
-          "end": 52.14
-        }
-      ]
-    },
-    {
-      "id": "cue-11",
-      "start": 49.14,
-      "end": 54.18,
-      "text": "renard semblable à 100000 renard mais si",
-      "words": [
-        {
-          "text": "renard",
-          "start": 49.14,
+          "start": 49.51,
           "end": 49.86
         },
         {
-          "text": "semblable",
+          "text": "de.",
           "start": 49.86,
-          "end": 50.58
+          "end": 50.21
+        }
+      ]
+    },
+    {
+      "id": "cue-6",
+      "start": 50.21,
+      "end": 56.51,
+      "text": "Moi pour toi je ne suis qu'un renard semblable à 100000 renard mais si tu m'as pris voise.",
+      "words": [
+        {
+          "text": "Moi",
+          "start": 50.21,
+          "end": 50.56
         },
         {
-          "text": "à",
-          "start": 50.58,
-          "end": 51.3
+          "text": "pour",
+          "start": 50.56,
+          "end": 50.91
         },
         {
-          "text": "100000",
-          "start": 51.3,
-          "end": 52.02
+          "text": "toi",
+          "start": 50.91,
+          "end": 51.26
+        },
+        {
+          "text": "je",
+          "start": 51.26,
+          "end": 51.61
+        },
+        {
+          "text": "ne",
+          "start": 51.61,
+          "end": 51.96
+        },
+        {
+          "text": "suis",
+          "start": 51.96,
+          "end": 52.31
+        },
+        {
+          "text": "qu'un",
+          "start": 52.31,
+          "end": 52.66
         },
         {
           "text": "renard",
-          "start": 52.02,
-          "end": 52.74
+          "start": 52.66,
+          "end": 53.01
+        },
+        {
+          "text": "semblable",
+          "start": 53.01,
+          "end": 53.36
+        },
+        {
+          "text": "à",
+          "start": 53.36,
+          "end": 53.71
+        },
+        {
+          "text": "100000",
+          "start": 53.71,
+          "end": 54.06
+        },
+        {
+          "text": "renard",
+          "start": 54.06,
+          "end": 54.41
         },
         {
           "text": "mais",
-          "start": 52.74,
-          "end": 53.46
+          "start": 54.41,
+          "end": 54.76
         },
         {
           "text": "si",
-          "start": 53.46,
-          "end": 54.18
-        }
-      ]
-    },
-    {
-      "id": "cue-12",
-      "start": 52.17,
-      "end": 56.16,
-      "text": "tu m'as pris voise nous aurons besoin",
-      "words": [
+          "start": 54.76,
+          "end": 55.11
+        },
         {
           "text": "tu",
-          "start": 52.17,
-          "end": 52.74
+          "start": 55.11,
+          "end": 55.46
         },
         {
           "text": "m'as",
-          "start": 52.74,
-          "end": 53.31
+          "start": 55.46,
+          "end": 55.81
         },
         {
           "text": "pris",
-          "start": 53.31,
-          "end": 53.88
-        },
-        {
-          "text": "voise",
-          "start": 53.88,
-          "end": 54.45
-        },
-        {
-          "text": "nous",
-          "start": 54.45,
-          "end": 55.02
-        },
-        {
-          "text": "aurons",
-          "start": 55.02,
-          "end": 55.59
-        },
-        {
-          "text": "besoin",
-          "start": 55.59,
+          "start": 55.81,
           "end": 56.16
+        },
+        {
+          "text": "voise.",
+          "start": 56.16,
+          "end": 56.51
         }
       ]
     },
     {
-      "id": "cue-13",
-      "start": 54.18,
-      "end": 97.23,
-      "text": "l'un de l'autre mais qui êtes vous nous sommes et",
+      "id": "cue-7",
+      "start": 56.51,
+      "end": 59.34,
+      "text": "Nous aurons besoin l'un de l'autre.",
       "words": [
         {
+          "text": "Nous",
+          "start": 56.51,
+          "end": 56.86
+        },
+        {
+          "text": "aurons",
+          "start": 56.86,
+          "end": 57.21
+        },
+        {
+          "text": "besoin",
+          "start": 57.21,
+          "end": 57.56
+        },
+        {
           "text": "l'un",
-          "start": 54.18,
-          "end": 55.9
+          "start": 57.56,
+          "end": 57.91
         },
         {
           "text": "de",
-          "start": 55.9,
-          "end": 57.62
+          "start": 57.91,
+          "end": 58.26
         },
         {
-          "text": "l'autre",
-          "start": 57.62,
+          "text": "l'autre.",
+          "start": 58.26,
           "end": 59.34
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-8",
+      "start": 88.27,
+      "end": 101.32,
+      "text": "Mais qui êtes vous nous sommes et intérêts mais là je ne possède qu'une rose ordinaire elle qui.",
+      "words": [
         {
-          "text": "mais",
+          "text": "Mais",
           "start": 88.27,
           "end": 89.55
         },
@@ -645,278 +605,246 @@
           "text": "et",
           "start": 95.95,
           "end": 97.23
-        }
-      ]
-    },
-    {
-      "id": "cue-14",
-      "start": 90.61,
-      "end": 99.92,
-      "text": "intérêts mais là je ne possède qu'une",
-      "words": [
+        },
         {
           "text": "intérêts",
-          "start": 90.61,
-          "end": 91.94
+          "start": 97.23,
+          "end": 97.58
         },
         {
           "text": "mais",
-          "start": 91.94,
-          "end": 93.27
+          "start": 97.58,
+          "end": 97.93
         },
         {
           "text": "là",
-          "start": 93.27,
-          "end": 94.6
+          "start": 97.93,
+          "end": 98.28
         },
         {
           "text": "je",
-          "start": 94.6,
-          "end": 95.93
+          "start": 98.28,
+          "end": 98.63
         },
         {
           "text": "ne",
-          "start": 95.93,
-          "end": 97.26
+          "start": 98.63,
+          "end": 98.98
         },
         {
           "text": "possède",
-          "start": 97.26,
-          "end": 98.59
+          "start": 98.98,
+          "end": 99.33
         },
         {
           "text": "qu'une",
-          "start": 98.59,
+          "start": 99.33,
           "end": 99.92
-        }
-      ]
-    },
-    {
-      "id": "cue-15",
-      "start": 97.24,
-      "end": 101.14,
-      "text": "rose ordinaire elle qui m'avait dit",
-      "words": [
+        },
         {
           "text": "rose",
-          "start": 97.24,
-          "end": 97.89
+          "start": 99.92,
+          "end": 100.27
         },
         {
           "text": "ordinaire",
-          "start": 97.89,
-          "end": 98.54
+          "start": 100.27,
+          "end": 100.62
         },
         {
           "text": "elle",
-          "start": 98.54,
-          "end": 99.19
+          "start": 100.62,
+          "end": 100.97
         },
         {
-          "text": "qui",
-          "start": 99.19,
-          "end": 99.84
-        },
+          "text": "qui.",
+          "start": 100.97,
+          "end": 101.32
+        }
+      ]
+    },
+    {
+      "id": "cue-9",
+      "start": 101.32,
+      "end": 108.46,
+      "text": "M'avait dit qu'elle était la seule de son espèce dans tout l'univers ce n'est pas une rose ordinaire.",
+      "words": [
         {
-          "text": "m'avait",
-          "start": 99.84,
-          "end": 100.49
+          "text": "M'avait",
+          "start": 101.32,
+          "end": 101.67
         },
         {
           "text": "dit",
-          "start": 100.49,
-          "end": 101.14
-        }
-      ]
-    },
-    {
-      "id": "cue-16",
-      "start": 99.94,
-      "end": 103.02,
-      "text": "qu'elle était la seule de son espèce",
-      "words": [
+          "start": 101.67,
+          "end": 102.02
+        },
         {
           "text": "qu'elle",
-          "start": 99.94,
-          "end": 100.38
+          "start": 102.02,
+          "end": 102.37
         },
         {
           "text": "était",
-          "start": 100.38,
-          "end": 100.82
+          "start": 102.37,
+          "end": 102.72
         },
         {
           "text": "la",
-          "start": 100.82,
-          "end": 101.26
+          "start": 102.72,
+          "end": 103.07
         },
         {
           "text": "seule",
-          "start": 101.26,
-          "end": 101.7
+          "start": 103.07,
+          "end": 103.42
         },
         {
           "text": "de",
-          "start": 101.7,
-          "end": 102.14
+          "start": 103.42,
+          "end": 103.77
         },
         {
           "text": "son",
-          "start": 102.14,
-          "end": 102.58
+          "start": 103.77,
+          "end": 104.12
         },
         {
           "text": "espèce",
-          "start": 102.58,
-          "end": 103.02
-        }
-      ]
-    },
-    {
-      "id": "cue-17",
-      "start": 101.14,
-      "end": 109.34,
-      "text": "dans tout l'univers ce n'est pas une rose ordinaire c'est ta",
-      "words": [
+          "start": 104.12,
+          "end": 104.47
+        },
         {
           "text": "dans",
-          "start": 101.14,
-          "end": 102.88
+          "start": 104.47,
+          "end": 104.82
         },
         {
           "text": "tout",
-          "start": 102.88,
-          "end": 104.62
+          "start": 104.82,
+          "end": 105.17
         },
         {
           "text": "l'univers",
-          "start": 104.62,
+          "start": 105.17,
           "end": 106.36
         },
         {
           "text": "ce",
-          "start": 103.02,
-          "end": 103.81
+          "start": 106.36,
+          "end": 106.71
         },
         {
           "text": "n'est",
-          "start": 103.81,
-          "end": 104.6
+          "start": 106.71,
+          "end": 107.06
         },
         {
           "text": "pas",
-          "start": 104.6,
-          "end": 105.39
+          "start": 107.06,
+          "end": 107.41
         },
         {
           "text": "une",
-          "start": 105.39,
-          "end": 106.18
-        },
-        {
-          "text": "rose",
-          "start": 106.18,
-          "end": 106.97
-        },
-        {
-          "text": "ordinaire",
-          "start": 106.97,
+          "start": 107.41,
           "end": 107.76
         },
         {
-          "text": "c'est",
+          "text": "rose",
           "start": 107.76,
+          "end": 108.11
+        },
+        {
+          "text": "ordinaire.",
+          "start": 108.11,
+          "end": 108.46
+        }
+      ]
+    },
+    {
+      "id": "cue-10",
+      "start": 108.46,
+      "end": 115.33,
+      "text": "C'est ta rose c'est le temps que tu as consacré pour elle qui fait ta rose si importante.",
+      "words": [
+        {
+          "text": "C'est",
+          "start": 108.46,
           "end": 108.55
         },
         {
           "text": "ta",
           "start": 108.55,
           "end": 109.34
-        }
-      ]
-    },
-    {
-      "id": "cue-18",
-      "start": 106.36,
-      "end": 111.86,
-      "text": "rose c'est le temps que tu as consacré",
-      "words": [
+        },
         {
           "text": "rose",
-          "start": 106.36,
-          "end": 107.05
+          "start": 109.34,
+          "end": 109.69
         },
         {
           "text": "c'est",
-          "start": 107.05,
-          "end": 107.73
+          "start": 109.69,
+          "end": 110.04
         },
         {
           "text": "le",
-          "start": 107.73,
-          "end": 108.42
+          "start": 110.04,
+          "end": 110.39
         },
         {
           "text": "temps",
-          "start": 108.42,
-          "end": 109.11
+          "start": 110.39,
+          "end": 110.74
         },
         {
           "text": "que",
-          "start": 109.11,
-          "end": 109.8
+          "start": 110.74,
+          "end": 111.09
         },
         {
           "text": "tu",
-          "start": 109.8,
-          "end": 110.48
+          "start": 111.09,
+          "end": 111.44
         },
         {
           "text": "as",
-          "start": 110.48,
-          "end": 111.17
+          "start": 111.44,
+          "end": 111.79
         },
         {
           "text": "consacré",
-          "start": 111.17,
+          "start": 111.79,
           "end": 111.86
-        }
-      ]
-    },
-    {
-      "id": "cue-19",
-      "start": 109.33,
-      "end": 115.33,
-      "text": "pour elle qui fait ta rose si importante",
-      "words": [
+        },
         {
           "text": "pour",
-          "start": 109.33,
-          "end": 110.08
+          "start": 111.86,
+          "end": 112.21
         },
         {
           "text": "elle",
-          "start": 110.08,
-          "end": 110.83
+          "start": 112.21,
+          "end": 112.56
         },
         {
           "text": "qui",
-          "start": 110.83,
-          "end": 111.58
+          "start": 112.56,
+          "end": 112.91
         },
         {
           "text": "fait",
-          "start": 111.58,
-          "end": 112.33
+          "start": 112.91,
+          "end": 113.26
         },
         {
           "text": "ta",
-          "start": 112.33,
-          "end": 113.08
+          "start": 113.26,
+          "end": 113.61
         },
         {
           "text": "rose",
-          "start": 113.08,
+          "start": 113.61,
           "end": 113.83
         },
         {
@@ -925,26 +853,26 @@
           "end": 114.58
         },
         {
-          "text": "importante",
+          "text": "importante.",
           "start": 114.58,
           "end": 115.33
         }
       ]
     },
     {
-      "id": "cue-20",
-      "start": 111.84,
-      "end": 117.96,
-      "text": "c'est la rose va la retrouver",
+      "id": "cue-11",
+      "start": 115.33,
+      "end": 119.01,
+      "text": "C'est la rose va la retrouver.",
       "words": [
         {
-          "text": "c'est",
-          "start": 111.84,
-          "end": 113.88
+          "text": "C'est",
+          "start": 115.33,
+          "end": 115.68
         },
         {
           "text": "la",
-          "start": 113.88,
+          "start": 115.68,
           "end": 115.92
         },
         {
@@ -954,29 +882,29 @@
         },
         {
           "text": "va",
-          "start": 115.29,
-          "end": 116.18
+          "start": 117.96,
+          "end": 118.31
         },
         {
           "text": "la",
-          "start": 116.18,
-          "end": 117.07
+          "start": 118.31,
+          "end": 118.66
         },
         {
-          "text": "retrouver",
-          "start": 117.07,
-          "end": 117.96
+          "text": "retrouver.",
+          "start": 118.66,
+          "end": 119.01
         }
       ]
     },
     {
-      "id": "cue-21",
+      "id": "cue-12",
       "start": 124.11,
-      "end": 135.31,
-      "text": "hall où tu vas pleurer alors jeté",
+      "end": 140.09,
+      "text": "Hall où tu vas pleurer alors jeté apprivoiser mais tu ne gagne rien je voudrais te faire cadeau.",
       "words": [
         {
-          "text": "hall",
+          "text": "Hall",
           "start": 124.11,
           "end": 125.71
         },
@@ -1009,114 +937,98 @@
           "text": "jeté",
           "start": 133.71,
           "end": 135.31
-        }
-      ]
-    },
-    {
-      "id": "cue-22",
-      "start": 128.82,
-      "end": 138.69,
-      "text": "apprivoiser mais tu ne gagne rien je",
-      "words": [
+        },
         {
           "text": "apprivoiser",
-          "start": 128.82,
-          "end": 130.23
+          "start": 135.31,
+          "end": 135.66
         },
         {
           "text": "mais",
-          "start": 130.23,
-          "end": 131.64
+          "start": 135.66,
+          "end": 136.01
         },
         {
           "text": "tu",
-          "start": 131.64,
-          "end": 133.05
+          "start": 136.01,
+          "end": 136.36
         },
         {
           "text": "ne",
-          "start": 133.05,
-          "end": 134.46
+          "start": 136.36,
+          "end": 136.71
         },
         {
           "text": "gagne",
-          "start": 134.46,
-          "end": 135.87
+          "start": 136.71,
+          "end": 137.06
         },
         {
           "text": "rien",
-          "start": 135.87,
+          "start": 137.06,
           "end": 137.28
         },
         {
           "text": "je",
           "start": 137.28,
           "end": 138.69
-        }
-      ]
-    },
-    {
-      "id": "cue-23",
-      "start": 135.33,
-      "end": 138.69,
-      "text": "voudrais te faire cadeau d'un secret",
-      "words": [
+        },
         {
           "text": "voudrais",
-          "start": 135.33,
-          "end": 135.89
+          "start": 138.69,
+          "end": 139.04
         },
         {
           "text": "te",
-          "start": 135.89,
-          "end": 136.45
+          "start": 139.04,
+          "end": 139.39
         },
         {
           "text": "faire",
-          "start": 136.45,
-          "end": 137.01
+          "start": 139.39,
+          "end": 139.74
         },
         {
-          "text": "cadeau",
-          "start": 137.01,
-          "end": 137.57
-        },
-        {
-          "text": "d'un",
-          "start": 137.57,
-          "end": 138.13
-        },
-        {
-          "text": "secret",
-          "start": 138.13,
-          "end": 138.69
+          "text": "cadeau.",
+          "start": 139.74,
+          "end": 140.09
         }
       ]
     },
     {
-      "id": "cue-24",
-      "start": 139.04,
-      "end": 145.04,
-      "text": "écoute il est très simple on ne voit",
+      "id": "cue-13",
+      "start": 140.09,
+      "end": 146.44,
+      "text": "D'un secret écoute il est très simple on ne voit bien qu'avec le coeur.",
       "words": [
         {
+          "text": "D'un",
+          "start": 140.09,
+          "end": 140.44
+        },
+        {
+          "text": "secret",
+          "start": 140.44,
+          "end": 140.79
+        },
+        {
           "text": "écoute",
-          "start": 139.04,
-          "end": 139.79
+          "start": 140.79,
+          "end": 141.14
         },
         {
           "text": "il",
-          "start": 139.79,
-          "end": 140.54
+          "start": 141.14,
+          "end": 141.49
         },
         {
           "text": "est",
-          "start": 140.54,
-          "end": 141.29
+          "start": 141.49,
+          "end": 141.84
         },
         {
           "text": "très",
-          "start": 141.29,
+          "start": 141.84,
           "end": 142.04
         },
         {
@@ -1138,34 +1050,26 @@
           "text": "voit",
           "start": 144.29,
           "end": 145.04
-        }
-      ]
-    },
-    {
-      "id": "cue-25",
-      "start": 142.1,
-      "end": 145.06,
-      "text": "bien qu'avec le coeur",
-      "words": [
+        },
         {
           "text": "bien",
-          "start": 142.1,
-          "end": 142.84
+          "start": 145.04,
+          "end": 145.39
         },
         {
           "text": "qu'avec",
-          "start": 142.84,
-          "end": 143.58
+          "start": 145.39,
+          "end": 145.74
         },
         {
           "text": "le",
-          "start": 143.58,
-          "end": 144.32
+          "start": 145.74,
+          "end": 146.09
         },
         {
-          "text": "coeur",
-          "start": 144.32,
-          "end": 145.06
+          "text": "coeur.",
+          "start": 146.09,
+          "end": 146.44
         }
       ]
     }

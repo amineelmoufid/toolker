@@ -3,6 +3,7 @@ import os
 import json
 import glob
 import subprocess
+import re
 
 def interpolate_words(text, start, end):
     words = [w for w in text.split() if w]
@@ -22,10 +23,101 @@ def interpolate_words(text, start, end):
         curr_start = w_end
     return result
 
-def assemble_semantic_sentences(raw_snippets):
+COMMON_ABBREVIATIONS = {
+    'mr.', 'mrs.', 'ms.', 'dr.', 'prof.', 'sr.', 'jr.', 'vs.', 'etc.',
+    'approx.', 'apt.', 'dept.', 'est.', 'u.s.', 'u.k.', 'e.g.', 'i.e.'
+}
+
+def build_sentences_from_words(raw_words):
+    if not raw_words:
+        return []
+
+    clean_words = []
+    prev_text = ""
+    prev_start = -1
+
+    for w in raw_words:
+        t = str(w.get('text', '')).strip()
+        t = re.sub(r'^[>\s]+', '', t)
+        if re.match(r'^\[.*?\]$', t) or re.match(r'^\(.*?\)$', t):
+            continue
+        t = t.replace('♪', '').replace('♫', '').strip()
+        if not t:
+            continue
+
+        w_clean = re.sub(r'[^\w]', '', t).lower()
+        p_clean = re.sub(r'[^\w]', '', prev_text).lower()
+        if w_clean and w_clean == p_clean and abs(w.get('start', 0) - prev_start) < 0.8:
+            continue
+
+        clean_words.append({
+            "text": t,
+            "start": round(float(w.get('start', 0)), 2),
+            "end": round(float(w.get('end', 0)), 2)
+        })
+        prev_text = t
+        prev_start = float(w.get('start', 0))
+
+    if not clean_words:
+        return []
+
+    for i in range(len(clean_words)):
+        if i > 0:
+            if clean_words[i]['start'] < clean_words[i - 1]['start']:
+                clean_words[i]['start'] = round(clean_words[i - 1]['end'], 2)
+            if clean_words[i]['end'] <= clean_words[i]['start']:
+                clean_words[i]['end'] = round(clean_words[i]['start'] + 0.35, 2)
+
     sentences = []
-    curr_words = []
-    
+    curr = []
+
+    for i, w in enumerate(clean_words):
+        curr.append(w)
+        txt = w['text']
+        is_last = (i == len(clean_words) - 1)
+
+        ends_punct = bool(re.search(r'[.?!][\"\']?$', txt)) and (txt.lower() not in COMMON_ABBREVIATIONS)
+        is_pause = False
+        if i < len(clean_words) - 1:
+            gap = clean_words[i + 1]['start'] - w['end']
+            if gap >= 0.85:
+                is_pause = True
+
+        is_too_long = len(curr) >= 18
+        should_break = is_last or ends_punct or (is_pause and len(curr) >= 4) or is_too_long
+
+        if should_break and curr:
+            s_text = " ".join(item['text'] for item in curr).strip()
+            if s_text:
+                s_text = s_text[0].upper() + s_text[1:]
+                curr[0]['text'] = curr[0]['text'][0].upper() + curr[0]['text'][1:]
+
+            if not re.search(r'[.?!][\"\']?$', s_text):
+                s_text = re.sub(r'[,;:-]$', '', s_text) + '.'
+                curr[-1]['text'] = re.sub(r'[,;:-]$', '', curr[-1]['text']) + '.'
+
+            s_start = curr[0]['start']
+            s_end = max(curr[-1]['end'], round(s_start + 0.5, 2))
+
+            sentences.append({
+                "id": f"cue-{len(sentences) + 1}",
+                "start": s_start,
+                "end": s_end,
+                "text": s_text,
+                "words": list(curr)
+            })
+            curr = []
+
+    for i in range(len(sentences) - 1):
+        if sentences[i]['end'] > sentences[i + 1]['start']:
+            sentences[i]['end'] = sentences[i + 1]['start']
+        if sentences[i]['end'] <= sentences[i]['start']:
+            sentences[i]['end'] = round(sentences[i]['start'] + 0.5, 2)
+
+    return sentences
+
+def assemble_semantic_sentences(raw_snippets):
+    raw_words = []
     for s in raw_snippets:
         if isinstance(s, dict):
             raw_text = s.get('text', '')
@@ -39,39 +131,13 @@ def assemble_semantic_sentences(raw_snippets):
         text = raw_text.replace('\n', ' ').strip()
         if not text or (text.startswith('[') and text.endswith(']')):
             continue
-            
+
         start = round(raw_start, 2)
         end = round(raw_start + raw_dur, 2)
         words = interpolate_words(text, start, end)
-        curr_words.extend(words)
-        
-        # Break on natural boundaries or sensible length
-        if len(curr_words) >= 6 or any(text.endswith(p) for p in ['.', '?', '!', ',', ';']):
-            s_start = curr_words[0]["start"]
-            s_end = curr_words[-1]["end"]
-            s_text = " ".join(w["text"] for w in curr_words)
-            sentences.append({
-                "id": f"cue-{len(sentences) + 1}",
-                "start": s_start,
-                "end": s_end,
-                "text": s_text,
-                "words": curr_words
-            })
-            curr_words = []
-            
-    if curr_words:
-        s_start = curr_words[0]["start"]
-        s_end = curr_words[-1]["end"]
-        s_text = " ".join(w["text"] for w in curr_words)
-        sentences.append({
-            "id": f"cue-{len(sentences) + 1}",
-            "start": s_start,
-            "end": s_end,
-            "text": s_text,
-            "words": curr_words
-        })
-        
-    return sentences
+        raw_words.extend(words)
+
+    return build_sentences_from_words(raw_words)
 
 def select_best_track(t_list, preferred_lang=None):
     tracks = list(t_list)
@@ -177,31 +243,7 @@ def extract_with_ytdlp(vid, preferred_lang=None):
         if raw_words[i]["end"] <= raw_words[i]["start"]:
             raw_words[i]["end"] = round(raw_words[i]["start"] + 0.25, 2)
 
-    sentences = []
-    curr = []
-    for w in raw_words:
-        curr.append(w)
-        if len(curr) >= 6 or any(w["text"].endswith(p) for p in ['.', '?', '!', ',', ';']):
-            s_text = " ".join(item["text"] for item in curr)
-            sentences.append({
-                "id": f"cue-{len(sentences) + 1}",
-                "start": curr[0]["start"],
-                "end": curr[-1]["end"],
-                "text": s_text,
-                "words": list(curr)
-            })
-            curr = []
-    if curr:
-        s_text = " ".join(item["text"] for item in curr)
-        sentences.append({
-            "id": f"cue-{len(sentences) + 1}",
-            "start": curr[0]["start"],
-            "end": curr[-1]["end"],
-            "text": s_text,
-            "words": list(curr)
-        })
-
-    return sentences, lang
+    return build_sentences_from_words(raw_words), lang
 
 def extract_video(vid, preferred_lang=None, output_dir="public/transcripts"):
     os.makedirs(output_dir, exist_ok=True)

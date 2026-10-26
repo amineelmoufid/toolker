@@ -62,7 +62,16 @@ function assembleSemanticSentences(words: any[]) {
           lastWord.end = lastWord.start + 0.5;
         }
 
-        const text = currentSentence.map((w: any) => w.text).join(' ');
+        let text = currentSentence.map((w: any) => w.text).join(' ').trim();
+        if (text.length > 0) {
+          text = text.charAt(0).toUpperCase() + text.slice(1);
+          currentSentence[0].text = currentSentence[0].text.charAt(0).toUpperCase() + currentSentence[0].text.slice(1);
+        }
+        if (!/[.?!]["']?$/.test(text)) {
+          text = text.replace(/[,;:-]$/, '') + '.';
+          const lastIdx = currentSentence.length - 1;
+          currentSentence[lastIdx].text = currentSentence[lastIdx].text.replace(/[,;:-]$/, '') + '.';
+        }
 
         sentences.push({
           id: `sub-${sentences.length + 1}`,

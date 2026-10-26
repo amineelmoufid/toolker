@@ -7,8 +7,8 @@
     {
       "id": "cue-1",
       "start": 4.96,
-      "end": 9.03,
-      "text": "Cela fait plusieurs mois que je reçois régulièrement des emails du",
+      "end": 12.3,
+      "text": "Cela fait plusieurs mois que je reçois régulièrement des emails du service VPN CyberGhost pour faire une collab.",
       "words": [
         {
           "text": "Cela",
@@ -64,15 +64,7 @@
           "text": "du",
           "start": 8.66,
           "end": 9.03
-        }
-      ]
-    },
-    {
-      "id": "cue-2",
-      "start": 9.08,
-      "end": 15.06,
-      "text": "service VPN CyberGhost pour faire une collab avec moi. A force de relances,",
-      "words": [
+        },
         {
           "text": "service",
           "start": 9.08,
@@ -104,12 +96,20 @@
           "end": 11.84
         },
         {
-          "text": "collab",
+          "text": "collab.",
           "start": 11.84,
           "end": 12.3
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-2",
+      "start": 12.3,
+      "end": 13.22,
+      "text": "Avec moi.",
+      "words": [
         {
-          "text": "avec",
+          "text": "Avec",
           "start": 12.3,
           "end": 12.76
         },
@@ -117,7 +117,15 @@
           "text": "moi.",
           "start": 12.76,
           "end": 13.22
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-3",
+      "start": 13.22,
+      "end": 18.51,
+      "text": "A force de relances, j’ai fini par m’y intéresser et faire quelques recherches.",
+      "words": [
         {
           "text": "A",
           "start": 13.22,
@@ -137,15 +145,7 @@
           "text": "relances,",
           "start": 14.6,
           "end": 15.06
-        }
-      ]
-    },
-    {
-      "id": "cue-3",
-      "start": 15.0,
-      "end": 18.51,
-      "text": "j’ai fini par m’y intéresser et faire quelques recherches.",
-      "words": [
+        },
         {
           "text": "j’ai",
           "start": 15.0,
@@ -196,8 +196,8 @@
     {
       "id": "cue-4",
       "start": 18.52,
-      "end": 21.56,
-      "text": "Des recherches qui ont fini par devenir une",
+      "end": 25.06,
+      "text": "Des recherches qui ont fini par devenir une enquête parce que ce que j’ai découvert m’a glacé le.",
       "words": [
         {
           "text": "Des",
@@ -238,15 +238,7 @@
           "text": "une",
           "start": 21.18,
           "end": 21.56
-        }
-      ]
-    },
-    {
-      "id": "cue-5",
-      "start": 21.56,
-      "end": 25.41,
-      "text": "enquête parce que ce que j’ai découvert m’a glacé le sang.",
-      "words": [
+        },
         {
           "text": "enquête",
           "start": 21.56,
@@ -293,12 +285,20 @@
           "end": 24.71
         },
         {
-          "text": "le",
+          "text": "le.",
           "start": 24.71,
           "end": 25.06
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-5",
+      "start": 25.06,
+      "end": 25.4,
+      "text": "Sang.",
+      "words": [
         {
-          "text": "sang.",
+          "text": "Sang.",
           "start": 25.06,
           "end": 25.41
         }
@@ -307,8 +307,8 @@
     {
       "id": "cue-6",
       "start": 25.4,
-      "end": 29.84,
-      "text": "Aujourd'hui, l'industrie des VPN pèse des milliards. Vous voyez leurs pubs partout",
+      "end": 27.99,
+      "text": "Aujourd'hui, l'industrie des VPN pèse des milliards.",
       "words": [
         {
           "text": "Aujourd'hui,",
@@ -344,7 +344,15 @@
           "text": "milliards.",
           "start": 27.62,
           "end": 27.99
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-7",
+      "start": 27.99,
+      "end": 35.08,
+      "text": "Vous voyez leurs pubs partout sur internet à coup de marketing de cryptage militaire et de politique zero.",
+      "words": [
         {
           "text": "Vous",
           "start": 27.99,
@@ -369,15 +377,7 @@
           "text": "partout",
           "start": 29.47,
           "end": 29.84
-        }
-      ]
-    },
-    {
-      "id": "cue-7",
-      "start": 29.88,
-      "end": 36.28,
-      "text": "sur internet à coup de marketing de cryptage militaire et de politique zero log. Mais derrière",
-      "words": [
+        },
         {
           "text": "sur",
           "start": 29.88,
@@ -439,15 +439,31 @@
           "end": 34.68
         },
         {
-          "text": "zero",
+          "text": "zero.",
           "start": 34.68,
           "end": 35.08
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-8",
+      "start": 35.08,
+      "end": 35.48,
+      "text": "Log.",
+      "words": [
         {
-          "text": "log.",
+          "text": "Log.",
           "start": 35.08,
           "end": 35.48
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-9",
+      "start": 35.48,
+      "end": 42.24,
+      "text": "Mais derrière ces promesses se cache une entreprise dont vous n'avez probablement jamais entendu parler.",
+      "words": [
         {
           "text": "Mais",
           "start": 35.48,
@@ -457,15 +473,7 @@
           "text": "derrière",
           "start": 35.88,
           "end": 36.28
-        }
-      ]
-    },
-    {
-      "id": "cue-8",
-      "start": 36.28,
-      "end": 42.26,
-      "text": "ces promesses se cache une entreprise dont vous n'avez probablement jamais entendu parler.",
-      "words": [
+        },
         {
           "text": "ces",
           "start": 36.28,
@@ -534,10 +542,10 @@
       ]
     },
     {
-      "id": "cue-9",
+      "id": "cue-10",
       "start": 42.24,
-      "end": 48.54,
-      "text": "Une entreprise qui possède de nombreux VPN et peut-être celui que vous utilisez en ce",
+      "end": 49.93,
+      "text": "Une entreprise qui possède de nombreux VPN et peut-être celui que vous utilisez en ce moment même, mais.",
       "words": [
         {
           "text": "Une",
@@ -613,15 +621,7 @@
           "text": "ce",
           "start": 48.12,
           "end": 48.54
-        }
-      ]
-    },
-    {
-      "id": "cue-10",
-      "start": 48.52,
-      "end": 53.22,
-      "text": "moment même, mais dont le passé est tellement trouble qu'elle",
-      "words": [
+        },
         {
           "text": "moment",
           "start": 48.52,
@@ -633,12 +633,20 @@
           "end": 49.46
         },
         {
-          "text": "mais",
+          "text": "mais.",
           "start": 49.46,
           "end": 49.93
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-11",
+      "start": 49.93,
+      "end": 56.65,
+      "text": "Dont le passé est tellement trouble qu'elle a dû changer de nom pour qu'on oublie qui elle était.",
+      "words": [
         {
-          "text": "dont",
+          "text": "Dont",
           "start": 49.93,
           "end": 50.4
         },
@@ -671,15 +679,7 @@
           "text": "qu'elle",
           "start": 52.75,
           "end": 53.22
-        }
-      ]
-    },
-    {
-      "id": "cue-11",
-      "start": 53.24,
-      "end": 56.96,
-      "text": "a dû changer de nom pour qu'on oublie qui elle était vraiment.",
-      "words": [
+        },
         {
           "text": "a",
           "start": 53.24,
@@ -731,22 +731,30 @@
           "end": 56.34
         },
         {
-          "text": "était",
+          "text": "était.",
           "start": 56.34,
           "end": 56.65
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-12",
+      "start": 56.65,
+      "end": 56.96,
+      "text": "Vraiment.",
+      "words": [
         {
-          "text": "vraiment.",
+          "text": "Vraiment.",
           "start": 56.65,
           "end": 56.96
         }
       ]
     },
     {
-      "id": "cue-12",
+      "id": "cue-13",
       "start": 56.96,
-      "end": 63.46,
-      "text": "Bienvenue dans les coulisses de Kape Technologies. Une entreprise dont l’histoire mèle logiciels",
+      "end": 60.46,
+      "text": "Bienvenue dans les coulisses de Kape Technologies.",
       "words": [
         {
           "text": "Bienvenue",
@@ -782,7 +790,15 @@
           "text": "Technologies.",
           "start": 59.96,
           "end": 60.46
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-14",
+      "start": 60.46,
+      "end": 70.19,
+      "text": "Une entreprise dont l’histoire mèle logiciels malveillants, services de renseignement israéliens, financement par un milliardaire au passé judiciaire.",
+      "words": [
         {
           "text": "Une",
           "start": 60.46,
@@ -812,15 +828,7 @@
           "text": "logiciels",
           "start": 62.96,
           "end": 63.46
-        }
-      ]
-    },
-    {
-      "id": "cue-13",
-      "start": 63.4,
-      "end": 68.62,
-      "text": "malveillants, services de renseignement israéliens, financement par un milliardaire",
-      "words": [
+        },
         {
           "text": "malveillants,",
           "start": 63.4,
@@ -865,15 +873,7 @@
           "text": "milliardaire",
           "start": 68.04,
           "end": 68.62
-        }
-      ]
-    },
-    {
-      "id": "cue-14",
-      "start": 68.6,
-      "end": 75.49,
-      "text": "au passé judiciaire trouble et une stratégie de rachat massif pour corrompre internet.",
-      "words": [
+        },
         {
           "text": "au",
           "start": 68.6,
@@ -885,12 +885,20 @@
           "end": 69.66
         },
         {
-          "text": "judiciaire",
+          "text": "judiciaire.",
           "start": 69.66,
           "end": 70.19
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-15",
+      "start": 70.19,
+      "end": 75.48,
+      "text": "Trouble et une stratégie de rachat massif pour corrompre internet.",
+      "words": [
         {
-          "text": "trouble",
+          "text": "Trouble",
           "start": 70.19,
           "end": 70.72
         },
@@ -942,10 +950,10 @@
       ]
     },
     {
-      "id": "cue-15",
+      "id": "cue-16",
       "start": 75.48,
-      "end": 78.99,
-      "text": "Aujourd’hui, on va donc voir à qui vous confiez votre vie privée sur",
+      "end": 81.55,
+      "text": "Aujourd’hui, on va donc voir à qui vous confiez votre vie privée sur Internet et pourquoi il ne.",
       "words": [
         {
           "text": "Aujourd’hui,",
@@ -1011,15 +1019,7 @@
           "text": "sur",
           "start": 78.72,
           "end": 78.99
-        }
-      ]
-    },
-    {
-      "id": "cue-16",
-      "start": 79.0,
-      "end": 85.12,
-      "text": "Internet et pourquoi il ne faut surtout pas que vous le sachiez.",
-      "words": [
+        },
         {
           "text": "Internet",
           "start": 79.0,
@@ -1041,12 +1041,20 @@
           "end": 81.04
         },
         {
-          "text": "ne",
+          "text": "ne.",
           "start": 81.04,
           "end": 81.55
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-17",
+      "start": 81.55,
+      "end": 85.12,
+      "text": "Faut surtout pas que vous le sachiez.",
+      "words": [
         {
-          "text": "faut",
+          "text": "Faut",
           "start": 81.55,
           "end": 82.06
         },
@@ -1083,10 +1091,10 @@
       ]
     },
     {
-      "id": "cue-17",
+      "id": "cue-18",
       "start": 87.8,
-      "end": 92.61,
-      "text": "Pour comprendre pourquoi Kape pose problème aujourd’hui, il faut oublier les VPN quelques",
+      "end": 94.2,
+      "text": "Pour comprendre pourquoi Kape pose problème aujourd’hui, il faut oublier les VPN quelques instants et remonter à une.",
       "words": [
         {
           "text": "Pour",
@@ -1152,15 +1160,7 @@
           "text": "quelques",
           "start": 92.24,
           "end": 92.61
-        }
-      ]
-    },
-    {
-      "id": "cue-18",
-      "start": 92.6,
-      "end": 96.76,
-      "text": "instants et remonter à une époque où cette entreprise portait un autre nom.",
-      "words": [
+        },
         {
           "text": "instants",
           "start": 92.6,
@@ -1182,12 +1182,20 @@
           "end": 93.88
         },
         {
-          "text": "une",
+          "text": "une.",
           "start": 93.88,
           "end": 94.2
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-19",
+      "start": 94.2,
+      "end": 96.76,
+      "text": "Époque où cette entreprise portait un autre nom.",
+      "words": [
         {
-          "text": "époque",
+          "text": "Époque",
           "start": 94.2,
           "end": 94.52
         },
@@ -1229,10 +1237,10 @@
       ]
     },
     {
-      "id": "cue-19",
+      "id": "cue-20",
       "start": 96.8,
-      "end": 102.26,
-      "text": "On est en 2011 et à l'époque, la boite s’appellait Crossrider. Ses fondateurs,",
+      "end": 101.42,
+      "text": "On est en 2011 et à l'époque, la boite s’appellait Crossrider.",
       "words": [
         {
           "text": "On",
@@ -1288,7 +1296,15 @@
           "text": "Crossrider.",
           "start": 101.0,
           "end": 101.42
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-21",
+      "start": 101.42,
+      "end": 110.06,
+      "text": "Ses fondateurs, Koby Menachemi et Teddy Sagi, lancent une plateforme qui permet aux développeurs de créer des extensions.",
+      "words": [
         {
           "text": "Ses",
           "start": 101.42,
@@ -1298,15 +1314,7 @@
           "text": "fondateurs,",
           "start": 101.84,
           "end": 102.26
-        }
-      ]
-    },
-    {
-      "id": "cue-20",
-      "start": 102.28,
-      "end": 106.27,
-      "text": "Koby Menachemi et Teddy Sagi, lancent une",
-      "words": [
+        },
         {
           "text": "Koby",
           "start": 102.28,
@@ -1341,15 +1349,7 @@
           "text": "une",
           "start": 105.7,
           "end": 106.27
-        }
-      ]
-    },
-    {
-      "id": "cue-21",
-      "start": 106.28,
-      "end": 110.9,
-      "text": "plateforme qui permet aux développeurs de créer des extensions de navigateur.",
-      "words": [
+        },
         {
           "text": "plateforme",
           "start": 106.28,
@@ -1391,12 +1391,20 @@
           "end": 109.64
         },
         {
-          "text": "extensions",
+          "text": "extensions.",
           "start": 109.64,
           "end": 110.06
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-22",
+      "start": 110.06,
+      "end": 110.88,
+      "text": "De navigateur.",
+      "words": [
         {
-          "text": "de",
+          "text": "De",
           "start": 110.06,
           "end": 110.48
         },
@@ -1408,10 +1416,10 @@
       ]
     },
     {
-      "id": "cue-22",
+      "id": "cue-23",
       "start": 110.88,
-      "end": 115.82,
-      "text": "Vous savez ces fameuses extensions qu’on installe sur Chrome et Firefox pour nous",
+      "end": 117.21,
+      "text": "Vous savez ces fameuses extensions qu’on installe sur Chrome et Firefox pour nous simplifier quelques tâches.",
       "words": [
         {
           "text": "Vous",
@@ -1477,15 +1485,7 @@
           "text": "nous",
           "start": 115.44,
           "end": 115.82
-        }
-      ]
-    },
-    {
-      "id": "cue-23",
-      "start": 115.8,
-      "end": 122.85,
-      "text": "simplifier quelques tâches. Sur le papier, c’est un ouil technique assez banal mais en réalité,",
-      "words": [
+        },
         {
           "text": "simplifier",
           "start": 115.8,
@@ -1500,7 +1500,15 @@
           "text": "tâches.",
           "start": 116.74,
           "end": 117.21
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-24",
+      "start": 117.21,
+      "end": 125.66,
+      "text": "Sur le papier, c’est un ouil technique assez banal mais en réalité, il est tellement permissif qu’il va.",
+      "words": [
         {
           "text": "Sur",
           "start": 117.21,
@@ -1560,15 +1568,7 @@
           "text": "réalité,",
           "start": 122.38,
           "end": 122.85
-        }
-      ]
-    },
-    {
-      "id": "cue-24",
-      "start": 122.84,
-      "end": 129.42,
-      "text": "il est tellement permissif qu’il va vite attirer un type de développeurs bien particulier.",
-      "words": [
+        },
         {
           "text": "il",
           "start": 122.84,
@@ -1595,12 +1595,20 @@
           "end": 125.19
         },
         {
-          "text": "va",
+          "text": "va.",
           "start": 125.19,
           "end": 125.66
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-25",
+      "start": 125.66,
+      "end": 129.36,
+      "text": "Vite attirer un type de développeurs bien particulier.",
+      "words": [
         {
-          "text": "vite",
+          "text": "Vite",
           "start": 125.66,
           "end": 126.13
         },
@@ -1642,10 +1650,10 @@
       ]
     },
     {
-      "id": "cue-25",
+      "id": "cue-26",
       "start": 129.36,
-      "end": 134.8,
-      "text": "Si vous avez utilisé internet dans les années 2010, vous vous souvenez surement de la plaie",
+      "end": 136.41,
+      "text": "Si vous avez utilisé internet dans les années 2010, vous souvenez surement de la plaie que représentait les.",
       "words": [
         {
           "text": "Si",
@@ -1698,11 +1706,6 @@
           "end": 132.76
         },
         {
-          "text": "vous",
-          "start": 132.76,
-          "end": 133.1
-        },
-        {
           "text": "souvenez",
           "start": 133.1,
           "end": 133.44
@@ -1726,15 +1729,7 @@
           "text": "plaie",
           "start": 134.46,
           "end": 134.8
-        }
-      ]
-    },
-    {
-      "id": "cue-26",
-      "start": 134.76,
-      "end": 140.81,
-      "text": "que représentait les pop-ups publicitaires qui apparaissaient de partout sans raison,",
-      "words": [
+        },
         {
           "text": "que",
           "start": 134.76,
@@ -1746,12 +1741,20 @@
           "end": 135.86
         },
         {
-          "text": "les",
+          "text": "les.",
           "start": 135.86,
           "end": 136.41
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-27",
+      "start": 136.41,
+      "end": 144.1,
+      "text": "Pop-ups publicitaires qui apparaissaient de partout sans raison, où même de votre page d’accueil qui changeait toute seule.",
+      "words": [
         {
-          "text": "pop-ups",
+          "text": "Pop-ups",
           "start": 136.41,
           "end": 136.96
         },
@@ -1789,15 +1792,7 @@
           "text": "raison,",
           "start": 140.26,
           "end": 140.81
-        }
-      ]
-    },
-    {
-      "id": "cue-27",
-      "start": 140.8,
-      "end": 144.76,
-      "text": "où même de votre page d’accueil qui changeait toute seule ou de",
-      "words": [
+        },
         {
           "text": "où",
           "start": 140.8,
@@ -1844,12 +1839,20 @@
           "end": 143.77
         },
         {
-          "text": "seule",
+          "text": "seule.",
           "start": 143.77,
           "end": 144.1
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-28",
+      "start": 144.1,
+      "end": 149.88,
+      "text": "Ou de vos recherches Google qui ouvraient un nouvel onglet sur un moteur de recherche douteux.",
+      "words": [
         {
-          "text": "ou",
+          "text": "Ou",
           "start": 144.1,
           "end": 144.43
         },
@@ -1857,15 +1860,7 @@
           "text": "de",
           "start": 144.43,
           "end": 144.76
-        }
-      ]
-    },
-    {
-      "id": "cue-28",
-      "start": 144.76,
-      "end": 149.94,
-      "text": "vos recherches Google qui ouvraient un nouvel onglet sur un moteur de recherche douteux.",
-      "words": [
+        },
         {
           "text": "vos",
           "start": 144.76,
@@ -1941,8 +1936,8 @@
     {
       "id": "cue-29",
       "start": 149.88,
-      "end": 155.73,
-      "text": "Et bah tout ça a été developpé par des développeurs spécialistes des adware",
+      "end": 158.62,
+      "text": "Et bah tout ça a été developpé par des développeurs spécialistes des adware et malware grâce à Crossrider.",
       "words": [
         {
           "text": "Et",
@@ -2008,15 +2003,7 @@
           "text": "adware",
           "start": 155.28,
           "end": 155.73
-        }
-      ]
-    },
-    {
-      "id": "cue-30",
-      "start": 155.72,
-      "end": 162.68,
-      "text": "et malware grâce à Crossrider pour faire ce qu’on appelle des injections",
-      "words": [
+        },
         {
           "text": "et",
           "start": 155.72,
@@ -2038,12 +2025,20 @@
           "end": 158.04
         },
         {
-          "text": "Crossrider",
+          "text": "Crossrider.",
           "start": 158.04,
           "end": 158.62
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-30",
+      "start": 158.62,
+      "end": 163.16,
+      "text": "Pour faire ce qu’on appelle des injections publicitaires.",
+      "words": [
         {
-          "text": "pour",
+          "text": "Pour",
           "start": 158.62,
           "end": 159.2
         },
@@ -2076,20 +2071,20 @@
           "text": "injections",
           "start": 162.1,
           "end": 162.68
+        },
+        {
+          "text": "publicitaires.",
+          "start": 162.64,
+          "end": 163.16
         }
       ]
     },
     {
       "id": "cue-31",
-      "start": 162.64,
-      "end": 167.84,
-      "text": "publicitaires. Et Crossrider prennait une petite commission sur les pubs.",
+      "start": 163.16,
+      "end": 167.8,
+      "text": "Et Crossrider prennait une petite commission sur les pubs.",
       "words": [
-        {
-          "text": "publicitaires.",
-          "start": 162.64,
-          "end": 163.16
-        },
         {
           "text": "Et",
           "start": 163.16,
@@ -2140,8 +2135,8 @@
     {
       "id": "cue-32",
       "start": 167.8,
-      "end": 174.18,
-      "text": "La boîte était devenue tellement toxique qu’elle a fini par être blacklistée par tous les antivirus",
+      "end": 174.92,
+      "text": "La boîte était devenue tellement toxique qu’elle a fini par être blacklistée par tous les antivirus et navigateur.",
       "words": [
         {
           "text": "La",
@@ -2222,27 +2217,27 @@
           "text": "antivirus",
           "start": 173.78,
           "end": 174.18
-        }
-      ]
-    },
-    {
-      "id": "cue-33",
-      "start": 174.12,
-      "end": 180.92,
-      "text": "et navigateur de la planète après que Google ait tiré la sonnette d’alarme sur son blog sécurité.",
-      "words": [
+        },
         {
           "text": "et",
           "start": 174.12,
           "end": 174.52
         },
         {
-          "text": "navigateur",
+          "text": "navigateur.",
           "start": 174.52,
           "end": 174.92
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-33",
+      "start": 174.92,
+      "end": 180.92,
+      "text": "De la planète après que Google ait tiré la sonnette d’alarme sur son blog sécurité.",
+      "words": [
         {
-          "text": "de",
+          "text": "De",
           "start": 174.92,
           "end": 175.32
         },
@@ -2321,8 +2316,8 @@
     {
       "id": "cue-34",
       "start": 180.92,
-      "end": 184.52,
-      "text": "Sur les forums, dès que le mot Crossrider était mentionné,",
+      "end": 187.2,
+      "text": "Sur les forums, dès que le mot Crossrider était mentionné, on conseillait directement de formater l’ordinateur.",
       "words": [
         {
           "text": "Sur",
@@ -2373,15 +2368,7 @@
           "text": "mentionné,",
           "start": 184.16,
           "end": 184.52
-        }
-      ]
-    },
-    {
-      "id": "cue-35",
-      "start": 184.56,
-      "end": 187.2,
-      "text": "on conseillait directement de formater l’ordinateur.",
-      "words": [
+        },
         {
           "text": "on",
           "start": 184.56,
@@ -2415,10 +2402,10 @@
       ]
     },
     {
-      "id": "cue-36",
+      "id": "cue-35",
       "start": 187.2,
-      "end": 190.98,
-      "text": "Et c’est là que l’histoire devient fascinante. En 2018,",
+      "end": 190.14,
+      "text": "Et c’est là que l’histoire devient fascinante.",
       "words": [
         {
           "text": "Et",
@@ -2454,7 +2441,15 @@
           "text": "fascinante.",
           "start": 189.72,
           "end": 190.14
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-36",
+      "start": 190.14,
+      "end": 196.28,
+      "text": "En 2018, la direction réalise que le nom Crossrider est grillé et que vous ne pouvez pas faire.",
+      "words": [
         {
           "text": "En",
           "start": 190.14,
@@ -2464,15 +2459,7 @@
           "text": "2018,",
           "start": 190.56,
           "end": 190.98
-        }
-      ]
-    },
-    {
-      "id": "cue-37",
-      "start": 190.96,
-      "end": 195.16,
-      "text": "la direction réalise que le nom Crossrider est grillé et que vous",
-      "words": [
+        },
         {
           "text": "la",
           "start": 190.96,
@@ -2532,15 +2519,7 @@
           "text": "vous",
           "start": 194.81,
           "end": 195.16
-        }
-      ]
-    },
-    {
-      "id": "cue-38",
-      "start": 195.2,
-      "end": 199.25,
-      "text": "ne pouvez pas faire de business quand tout le monde vous voit comme un virus.",
-      "words": [
+        },
         {
           "text": "ne",
           "start": 195.2,
@@ -2557,12 +2536,20 @@
           "end": 196.01
         },
         {
-          "text": "faire",
+          "text": "faire.",
           "start": 196.01,
           "end": 196.28
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-37",
+      "start": 196.28,
+      "end": 199.25,
+      "text": "De business quand tout le monde vous voit comme un virus.",
+      "words": [
         {
-          "text": "de",
+          "text": "De",
           "start": 196.28,
           "end": 196.55
         },
@@ -2619,10 +2606,10 @@
       ]
     },
     {
-      "id": "cue-39",
+      "id": "cue-38",
       "start": 199.32,
-      "end": 204.42,
-      "text": "Alors elle va changer de nom et changer de discours. En mode, “ On a passé des",
+      "end": 202.32,
+      "text": "Alors elle va changer de nom et changer de discours.",
       "words": [
         {
           "text": "Alors",
@@ -2673,7 +2660,15 @@
           "text": "discours.",
           "start": 202.02,
           "end": 202.32
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-39",
+      "start": 202.32,
+      "end": 207.14,
+      "text": "En mode, “ On a passé des années à pister les gens et à infiltrer leurs ordinateurs.",
+      "words": [
         {
           "text": "En",
           "start": 202.32,
@@ -2708,15 +2703,7 @@
           "text": "des",
           "start": 204.12,
           "end": 204.42
-        }
-      ]
-    },
-    {
-      "id": "cue-40",
-      "start": 204.44,
-      "end": 208.22,
-      "text": "années à pister les gens et à infiltrer leurs ordinateurs. On connaît toutes les",
-      "words": [
+        },
         {
           "text": "années",
           "start": 204.44,
@@ -2766,7 +2753,15 @@
           "text": "ordinateurs.",
           "start": 206.87,
           "end": 207.14
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-40",
+      "start": 207.14,
+      "end": 208.55,
+      "text": "On connaît toutes les failles.",
+      "words": [
         {
           "text": "On",
           "start": 207.14,
@@ -2786,20 +2781,20 @@
           "text": "les",
           "start": 207.95,
           "end": 208.22
+        },
+        {
+          "text": "failles.",
+          "start": 208.2,
+          "end": 208.55
         }
       ]
     },
     {
       "id": "cue-41",
-      "start": 208.2,
-      "end": 213.1,
-      "text": "failles. Et si maintenant on utilisait cette expertise pour vendre de la protection ?”",
+      "start": 208.55,
+      "end": 215.28,
+      "text": "Et si maintenant on utilisait cette expertise pour vendre de la protection ?” Crossrider va donc devenir Kape.",
       "words": [
-        {
-          "text": "failles.",
-          "start": 208.2,
-          "end": 208.55
-        },
         {
           "text": "Et",
           "start": 208.55,
@@ -2864,15 +2859,7 @@
           "text": "?”",
           "start": 212.75,
           "end": 213.1
-        }
-      ]
-    },
-    {
-      "id": "cue-42",
-      "start": 213.08,
-      "end": 219.68,
-      "text": "Crossrider va donc devenir Kape Technologies et faire un pivot vers la protection de la",
-      "words": [
+        },
         {
           "text": "Crossrider",
           "start": 213.08,
@@ -2894,10 +2881,18 @@
           "end": 214.84
         },
         {
-          "text": "Kape",
+          "text": "Kape.",
           "start": 214.84,
           "end": 215.28
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-42",
+      "start": 215.28,
+      "end": 220.25,
+      "text": "Technologies et faire un pivot vers la protection de la vie privée.",
+      "words": [
         {
           "text": "Technologies",
           "start": 215.28,
@@ -2947,15 +2942,7 @@
           "text": "la",
           "start": 219.24,
           "end": 219.68
-        }
-      ]
-    },
-    {
-      "id": "cue-43",
-      "start": 219.64,
-      "end": 224.58,
-      "text": "vie privée. Mais comme on va le voir, on ne change pas son ADN aussi facilement.",
-      "words": [
+        },
         {
           "text": "vie",
           "start": 219.64,
@@ -2965,7 +2952,15 @@
           "text": "privée.",
           "start": 219.94,
           "end": 220.25
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-43",
+      "start": 220.25,
+      "end": 224.52,
+      "text": "Mais comme on va le voir, on ne change pas son ADN aussi facilement.",
+      "words": [
         {
           "text": "Mais",
           "start": 220.25,
@@ -3041,8 +3036,8 @@
     {
       "id": "cue-44",
       "start": 224.52,
-      "end": 229.77,
-      "text": "Car derrière les fondateurs de Crossrider, il y a un réseau d'influence qui nous emmène",
+      "end": 231.68,
+      "text": "Car derrière les fondateurs de Crossrider, il y a un réseau d'influence qui nous emmène directement dans les.",
       "words": [
         {
           "text": "Car",
@@ -3118,15 +3113,7 @@
           "text": "emmène",
           "start": 229.42,
           "end": 229.77
-        }
-      ]
-    },
-    {
-      "id": "cue-45",
-      "start": 229.76,
-      "end": 239.36,
-      "text": "directement dans les bureaux de l'une des agences de renseignement les plus puissantes du monde.",
-      "words": [
+        },
         {
           "text": "directement",
           "start": 229.76,
@@ -3138,12 +3125,20 @@
           "end": 231.04
         },
         {
-          "text": "les",
+          "text": "les.",
           "start": 231.04,
           "end": 231.68
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-45",
+      "start": 231.68,
+      "end": 239.36,
+      "text": "Bureaux de l'une des agences de renseignement les plus puissantes du monde.",
+      "words": [
         {
-          "text": "bureaux",
+          "text": "Bureaux",
           "start": 231.68,
           "end": 232.32
         },
@@ -3207,8 +3202,8 @@
     {
       "id": "cue-46",
       "start": 239.4,
-      "end": 244.92,
-      "text": "Et c’est ici que l’histoire bascule car pour comprendre pourquoi Kape Technologies",
+      "end": 247.22,
+      "text": "Et c’est ici que l’histoire bascule car pour comprendre pourquoi Kape Technologies est si inquiétante, il ne faut.",
       "words": [
         {
           "text": "Et",
@@ -3269,15 +3264,7 @@
           "text": "Technologies",
           "start": 244.46,
           "end": 244.92
-        }
-      ]
-    },
-    {
-      "id": "cue-47",
-      "start": 244.88,
-      "end": 251.12,
-      "text": "est si inquiétante, il ne faut pas seulement regarder ce qu'ils font, mais d'où ils viennent.",
-      "words": [
+        },
         {
           "text": "est",
           "start": 244.88,
@@ -3304,12 +3291,20 @@
           "end": 246.83
         },
         {
-          "text": "faut",
+          "text": "faut.",
           "start": 246.83,
           "end": 247.22
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-47",
+      "start": 247.22,
+      "end": 251.08,
+      "text": "Pas seulement regarder ce qu'ils font, mais d'où ils viennent.",
+      "words": [
         {
-          "text": "pas",
+          "text": "Pas",
           "start": 247.22,
           "end": 247.61
         },
@@ -3363,8 +3358,8 @@
     {
       "id": "cue-48",
       "start": 251.08,
-      "end": 256.98,
-      "text": "L’un des fondateurs de Crossrider s’appelle Koby Menachemi. Et Koby",
+      "end": 255.8,
+      "text": "L’un des fondateurs de Crossrider s’appelle Koby Menachemi.",
       "words": [
         {
           "text": "L’un",
@@ -3405,7 +3400,15 @@
           "text": "Menachemi.",
           "start": 255.21,
           "end": 255.8
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-49",
+      "start": 255.8,
+      "end": 260.52,
+      "text": "Et Koby n’est pas l’entrepreneur lambda de la Silicon Valley.",
+      "words": [
         {
           "text": "Et",
           "start": 255.8,
@@ -3415,15 +3418,7 @@
           "text": "Koby",
           "start": 256.39,
           "end": 256.98
-        }
-      ]
-    },
-    {
-      "id": "cue-49",
-      "start": 257.0,
-      "end": 263.6,
-      "text": "n’est pas l’entrepreneur lambda de la Silicon Valley. C’est un ancien membre de l’Unité 8200.",
-      "words": [
+        },
         {
           "text": "n’est",
           "start": 257.0,
@@ -3463,7 +3458,15 @@
           "text": "Valley.",
           "start": 260.08,
           "end": 260.52
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-50",
+      "start": 260.52,
+      "end": 263.56,
+      "text": "C’est un ancien membre de l’Unité 8200.",
+      "words": [
         {
           "text": "C’est",
           "start": 260.52,
@@ -3502,7 +3505,7 @@
       ]
     },
     {
-      "id": "cue-50",
+      "id": "cue-51",
       "start": 263.56,
       "end": 268.24,
       "text": "Pour ceux qui ne connaissent pas, c’est l’élite absolue du renseignement israélien.",
@@ -3570,10 +3573,10 @@
       ]
     },
     {
-      "id": "cue-51",
+      "id": "cue-52",
       "start": 268.24,
-      "end": 271.87,
-      "text": "C’est l’équivalent de la NSA aux Etats Unis mais avec une",
+      "end": 273.48,
+      "text": "C’est l’équivalent de la NSA aux Etats Unis mais avec une culture encore plus agressive.",
       "words": [
         {
           "text": "C’est",
@@ -3629,15 +3632,7 @@
           "text": "une",
           "start": 271.54,
           "end": 271.87
-        }
-      ]
-    },
-    {
-      "id": "cue-52",
-      "start": 271.84,
-      "end": 276.35,
-      "text": "culture encore plus agressive. Leur métier, c’est de craquer des codes,",
-      "words": [
+        },
         {
           "text": "culture",
           "start": 271.84,
@@ -3657,7 +3652,15 @@
           "text": "agressive.",
           "start": 273.07,
           "end": 273.48
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-53",
+      "start": 273.48,
+      "end": 279.99,
+      "text": "Leur métier, c’est de craquer des codes, d’infiltrer des réseaux étrangers et de mettre en place des systèmes.",
+      "words": [
         {
           "text": "Leur",
           "start": 273.48,
@@ -3692,15 +3695,7 @@
           "text": "codes,",
           "start": 275.94,
           "end": 276.35
-        }
-      ]
-    },
-    {
-      "id": "cue-53",
-      "start": 276.36,
-      "end": 281.31,
-      "text": "d’infiltrer des réseaux étrangers et de mettre en place des systèmes de surveillance de masse.",
-      "words": [
+        },
         {
           "text": "d’infiltrer",
           "start": 276.36,
@@ -3752,12 +3747,20 @@
           "end": 279.66
         },
         {
-          "text": "systèmes",
+          "text": "systèmes.",
           "start": 279.66,
           "end": 279.99
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-54",
+      "start": 279.99,
+      "end": 281.28,
+      "text": "De surveillance de masse.",
+      "words": [
         {
-          "text": "de",
+          "text": "De",
           "start": 279.99,
           "end": 280.32
         },
@@ -3779,10 +3782,10 @@
       ]
     },
     {
-      "id": "cue-54",
+      "id": "cue-55",
       "start": 281.28,
-      "end": 285.96,
-      "text": "Ce n’est pas une accusation. C’est un fait documenté et revendiqué par l’État",
+      "end": 283.08,
+      "text": "Ce n’est pas une accusation.",
       "words": [
         {
           "text": "Ce",
@@ -3808,7 +3811,15 @@
           "text": "accusation.",
           "start": 282.72,
           "end": 283.08
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-56",
+      "start": 283.08,
+      "end": 285.96,
+      "text": "C’est un fait documenté et revendiqué par l’État.",
+      "words": [
         {
           "text": "C’est",
           "start": 283.08,
@@ -3845,14 +3856,14 @@
           "end": 285.6
         },
         {
-          "text": "l’État",
+          "text": "l’État.",
           "start": 285.6,
           "end": 285.96
         }
       ]
     },
     {
-      "id": "cue-55",
+      "id": "cue-57",
       "start": 292.0,
       "end": 296.16,
       "text": "Et quand ils sortent de là, ils créent souvent des boîtes tech ultra-performantes.",
@@ -3925,10 +3936,10 @@
       ]
     },
     {
-      "id": "cue-56",
+      "id": "cue-58",
       "start": 296.2,
-      "end": 300.36,
-      "text": "Bref, dans la vraie vie c’est comme si vous donniez la clé de votre coffre à",
+      "end": 301.0,
+      "text": "Bref, dans la vraie vie c’est comme si vous donniez la clé de votre coffre à un serrurier.",
       "words": [
         {
           "text": "Bref,",
@@ -4009,27 +4020,27 @@
           "text": "à",
           "start": 300.1,
           "end": 300.36
-        }
-      ]
-    },
-    {
-      "id": "cue-57",
-      "start": 300.36,
-      "end": 303.88,
-      "text": "un serrurier qui était il y a quelques mois braqueur de",
-      "words": [
+        },
         {
           "text": "un",
           "start": 300.36,
           "end": 300.68
         },
         {
-          "text": "serrurier",
+          "text": "serrurier.",
           "start": 300.68,
           "end": 301.0
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-59",
+      "start": 301.0,
+      "end": 304.3,
+      "text": "Qui était il y a quelques mois braqueur de banque.",
+      "words": [
         {
-          "text": "qui",
+          "text": "Qui",
           "start": 301.0,
           "end": 301.32
         },
@@ -4072,20 +4083,20 @@
           "text": "de",
           "start": 303.56,
           "end": 303.88
-        }
-      ]
-    },
-    {
-      "id": "cue-58",
-      "start": 303.88,
-      "end": 308.92,
-      "text": "banque. Et Menachemi n’est pas le seul personnage trouble dans cette affaire.",
-      "words": [
+        },
         {
           "text": "banque.",
           "start": 303.88,
           "end": 304.3
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-60",
+      "start": 304.3,
+      "end": 308.92,
+      "text": "Et Menachemi n’est pas le seul personnage trouble dans cette affaire.",
+      "words": [
         {
           "text": "Et",
           "start": 304.3,
@@ -4144,10 +4155,10 @@
       ]
     },
     {
-      "id": "cue-59",
+      "id": "cue-61",
       "start": 308.96,
-      "end": 314.91,
-      "text": "Derrière lui, dans l'ombre, il y a le véritable propriétaire de Kape : Teddy Sagi. C'est un",
+      "end": 314.21,
+      "text": "Derrière lui, dans l'ombre, il y a le véritable propriétaire de Kape : Teddy Sagi.",
       "words": [
         {
           "text": "Derrière",
@@ -4223,7 +4234,15 @@
           "text": "Sagi.",
           "start": 313.86,
           "end": 314.21
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-62",
+      "start": 314.21,
+      "end": 320.88,
+      "text": "C'est un milliardaire israélien qui a fait fortune dans les casinos en ligne et la pornographie en ligne.",
+      "words": [
         {
           "text": "C'est",
           "start": 314.21,
@@ -4233,15 +4252,7 @@
           "text": "un",
           "start": 314.56,
           "end": 314.91
-        }
-      ]
-    },
-    {
-      "id": "cue-60",
-      "start": 314.84,
-      "end": 320.16,
-      "text": "milliardaire israélien qui a fait fortune dans les casinos en ligne et la pornographie",
-      "words": [
+        },
         {
           "text": "milliardaire",
           "start": 314.84,
@@ -4311,15 +4322,7 @@
           "text": "pornographie",
           "start": 319.78,
           "end": 320.16
-        }
-      ]
-    },
-    {
-      "id": "cue-61",
-      "start": 320.2,
-      "end": 326.32,
-      "text": "en ligne. Sagi a même fait de la prison dans les années 90 pour délit d’initié et fraude.",
-      "words": [
+        },
         {
           "text": "en",
           "start": 320.2,
@@ -4329,7 +4332,15 @@
           "text": "ligne.",
           "start": 320.54,
           "end": 320.88
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-63",
+      "start": 320.88,
+      "end": 326.32,
+      "text": "Sagi a même fait de la prison dans les années 90 pour délit d’initié et fraude.",
+      "words": [
         {
           "text": "Sagi",
           "start": 320.88,
@@ -4413,10 +4424,10 @@
       ]
     },
     {
-      "id": "cue-62",
+      "id": "cue-64",
       "start": 326.4,
-      "end": 332.52,
-      "text": "Évidemment, la page A propos du site de Kape ne fait jamais mention de ces deux personnages",
+      "end": 332.85,
+      "text": "Évidemment, la page A propos du site de Kape ne fait jamais mention de ces deux personnages qui.",
       "words": [
         {
           "text": "Évidemment,",
@@ -4502,22 +4513,22 @@
           "text": "personnages",
           "start": 332.16,
           "end": 332.52
+        },
+        {
+          "text": "qui.",
+          "start": 332.44,
+          "end": 332.85
         }
       ]
     },
     {
-      "id": "cue-63",
-      "start": 332.44,
-      "end": 337.77,
-      "text": "qui sont un véritable cockail explosif et qui savent pertinnement que sur internet,",
+      "id": "cue-65",
+      "start": 332.85,
+      "end": 340.02,
+      "text": "Sont un véritable cockail explosif et qui savent pertinnement que sur internet, la donnée personnelle est l’actif le.",
       "words": [
         {
-          "text": "qui",
-          "start": 332.44,
-          "end": 332.85
-        },
-        {
-          "text": "sont",
+          "text": "Sont",
           "start": 332.85,
           "end": 333.26
         },
@@ -4575,15 +4586,7 @@
           "text": "internet,",
           "start": 337.36,
           "end": 337.77
-        }
-      ]
-    },
-    {
-      "id": "cue-64",
-      "start": 337.8,
-      "end": 340.76,
-      "text": "la donnée personnelle est l’actif le plus précieux.",
-      "words": [
+        },
         {
           "text": "la",
           "start": 337.8,
@@ -4610,12 +4613,20 @@
           "end": 339.65
         },
         {
-          "text": "le",
+          "text": "le.",
           "start": 339.65,
           "end": 340.02
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-66",
+      "start": 340.02,
+      "end": 340.76,
+      "text": "Plus précieux.",
+      "words": [
         {
-          "text": "plus",
+          "text": "Plus",
           "start": 340.02,
           "end": 340.39
         },
@@ -4627,10 +4638,10 @@
       ]
     },
     {
-      "id": "cue-65",
+      "id": "cue-67",
       "start": 340.76,
-      "end": 347.24,
-      "text": "Et quoi de mieux que la “protection” pour la monétiser ? Et là, il faut comprendre une chose",
+      "end": 344.72,
+      "text": "Et quoi de mieux que la “protection” pour la monétiser ?",
       "words": [
         {
           "text": "Et",
@@ -4686,7 +4697,15 @@
           "text": "?",
           "start": 344.36,
           "end": 344.72
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-68",
+      "start": 344.72,
+      "end": 347.74,
+      "text": "Et là, il faut comprendre une chose fondamentale.",
+      "words": [
         {
           "text": "Et",
           "start": 344.72,
@@ -4721,20 +4740,20 @@
           "text": "chose",
           "start": 346.88,
           "end": 347.24
-        }
-      ]
-    },
-    {
-      "id": "cue-66",
-      "start": 347.2,
-      "end": 355.3,
-      "text": "fondamentale. Un VPN ne vous rend pas invisible. Il vous déplace vers un autre intermédiaire.",
-      "words": [
+        },
         {
           "text": "fondamentale.",
           "start": 347.2,
           "end": 347.74
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-69",
+      "start": 347.74,
+      "end": 351.52,
+      "text": "Un VPN ne vous rend pas invisible.",
+      "words": [
         {
           "text": "Un",
           "start": 347.74,
@@ -4769,7 +4788,15 @@
           "text": "invisible.",
           "start": 350.98,
           "end": 351.52
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-70",
+      "start": 351.52,
+      "end": 355.28,
+      "text": "Il vous déplace vers un autre intermédiaire.",
+      "words": [
         {
           "text": "Il",
           "start": 351.52,
@@ -4808,10 +4835,10 @@
       ]
     },
     {
-      "id": "cue-67",
+      "id": "cue-71",
       "start": 355.28,
-      "end": 359.84,
-      "text": "Si vous utilisez un VPN, vous lui confiez l'intégralité de votre vie",
+      "end": 360.16,
+      "text": "Si vous utilisez un VPN, vous lui confiez l'intégralité de votre vie privée.",
       "words": [
         {
           "text": "Si",
@@ -4872,20 +4899,20 @@
           "text": "vie",
           "start": 359.46,
           "end": 359.84
-        }
-      ]
-    },
-    {
-      "id": "cue-68",
-      "start": 359.8,
-      "end": 363.4,
-      "text": "privée. Il voit quels sites vous visitez, à quelle heure,",
-      "words": [
+        },
         {
           "text": "privée.",
           "start": 359.8,
           "end": 360.16
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-72",
+      "start": 360.16,
+      "end": 365.76,
+      "text": "Il voit quels sites vous visitez, à quelle heure, et parfois même ce que vous y faites.",
+      "words": [
         {
           "text": "Il",
           "start": 360.16,
@@ -4930,15 +4957,7 @@
           "text": "heure,",
           "start": 363.04,
           "end": 363.4
-        }
-      ]
-    },
-    {
-      "id": "cue-69",
-      "start": 363.36,
-      "end": 367.86,
-      "text": "et parfois même ce que vous y faites. En gros, vous transférez votre confiance de",
-      "words": [
+        },
         {
           "text": "et",
           "start": 363.36,
@@ -4978,7 +4997,15 @@
           "text": "faites.",
           "start": 365.46,
           "end": 365.76
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-73",
+      "start": 365.76,
+      "end": 372.68,
+      "text": "En gros, vous transférez votre confiance de votre fournisseur d'accès internet comme Orange ou Free vers une entreprise.",
+      "words": [
         {
           "text": "En",
           "start": 365.76,
@@ -5013,15 +5040,7 @@
           "text": "de",
           "start": 367.56,
           "end": 367.86
-        }
-      ]
-    },
-    {
-      "id": "cue-70",
-      "start": 367.84,
-      "end": 373.12,
-      "text": "votre fournisseur d'accès internet comme Orange ou Free vers une entreprise privée.",
-      "words": [
+        },
         {
           "text": "votre",
           "start": 367.84,
@@ -5073,22 +5092,30 @@
           "end": 372.24
         },
         {
-          "text": "entreprise",
+          "text": "entreprise.",
           "start": 372.24,
           "end": 372.68
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-74",
+      "start": 372.68,
+      "end": 373.16,
+      "text": "Privée.",
+      "words": [
         {
-          "text": "privée.",
+          "text": "Privée.",
           "start": 372.68,
           "end": 373.12
         }
       ]
     },
     {
-      "id": "cue-71",
+      "id": "cue-75",
       "start": 373.16,
-      "end": 380.21,
-      "text": "Même lorsqu’il promet de ne rien conserver avec une politique no-log et des audits externes,",
+      "end": 382.95,
+      "text": "Même lorsqu’il promet de ne rien conserver avec une politique no-log et des audits externes, tout repose sur.",
       "words": [
         {
           "text": "Même",
@@ -5164,15 +5191,7 @@
           "text": "externes,",
           "start": 379.74,
           "end": 380.21
-        }
-      ]
-    },
-    {
-      "id": "cue-72",
-      "start": 380.28,
-      "end": 390.07,
-      "text": "tout repose sur la confiance. Et Kape va acheter cette confiance.",
-      "words": [
+        },
         {
           "text": "tout",
           "start": 380.28,
@@ -5184,12 +5203,20 @@
           "end": 382.06
         },
         {
-          "text": "sur",
+          "text": "sur.",
           "start": 382.06,
           "end": 382.95
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-76",
+      "start": 382.95,
+      "end": 384.73,
+      "text": "La confiance.",
+      "words": [
         {
-          "text": "la",
+          "text": "La",
           "start": 382.95,
           "end": 383.84
         },
@@ -5197,7 +5224,15 @@
           "text": "confiance.",
           "start": 383.84,
           "end": 384.73
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-77",
+      "start": 384.73,
+      "end": 390.07,
+      "text": "Et Kape va acheter cette confiance.",
+      "words": [
         {
           "text": "Et",
           "start": 384.73,
@@ -5231,10 +5266,10 @@
       ]
     },
     {
-      "id": "cue-73",
+      "id": "cue-78",
       "start": 390.12,
-      "end": 395.72,
-      "text": "À partir de 2017, Kape Technologies va lancer une offensive qu’internet n'avait jamais vue",
+      "end": 396.42,
+      "text": "À partir de 2017, Kape Technologies va lancer une offensive qu’internet n'avait jamais vue jusqu'à maintenant.",
       "words": [
         {
           "text": "À",
@@ -5305,15 +5340,7 @@
           "text": "vue",
           "start": 395.32,
           "end": 395.72
-        }
-      ]
-    },
-    {
-      "id": "cue-74",
-      "start": 395.72,
-      "end": 401.67,
-      "text": "jusqu'à maintenant. Ils ne veulent pas juste être un acteur du marché, ils veulent être le marché.",
-      "words": [
+        },
         {
           "text": "jusqu'à",
           "start": 395.72,
@@ -5323,7 +5350,15 @@
           "text": "maintenant.",
           "start": 396.07,
           "end": 396.42
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-79",
+      "start": 396.42,
+      "end": 401.67,
+      "text": "Ils ne veulent pas juste être un acteur du marché, ils veulent être le marché.",
+      "words": [
         {
           "text": "Ils",
           "start": 396.42,
@@ -5402,10 +5437,10 @@
       ]
     },
     {
-      "id": "cue-75",
+      "id": "cue-80",
       "start": 401.68,
-      "end": 406.86,
-      "text": "Et pour ça, Teddy Sagi va sortir le chéquier et racheter, un par un,",
+      "end": 408.2,
+      "text": "Et pour ça, Teddy Sagi va sortir le chéquier et racheter, un par un, les noms les plus.",
       "words": [
         {
           "text": "Et",
@@ -5476,15 +5511,7 @@
           "text": "un,",
           "start": 406.49,
           "end": 406.86
-        }
-      ]
-    },
-    {
-      "id": "cue-76",
-      "start": 406.84,
-      "end": 410.24,
-      "text": "les noms les plus respectés de la cybersécurité grand public.",
-      "words": [
+        },
         {
           "text": "les",
           "start": 406.84,
@@ -5501,12 +5528,20 @@
           "end": 407.86
         },
         {
-          "text": "plus",
+          "text": "plus.",
           "start": 407.86,
           "end": 408.2
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-81",
+      "start": 408.2,
+      "end": 410.24,
+      "text": "Respectés de la cybersécurité grand public.",
+      "words": [
         {
-          "text": "respectés",
+          "text": "Respectés",
           "start": 408.2,
           "end": 408.54
         },
@@ -5538,10 +5573,10 @@
       ]
     },
     {
-      "id": "cue-77",
+      "id": "cue-82",
       "start": 410.28,
-      "end": 416.52,
-      "text": "Le premier à tomber, c’est CyberGhost en 2017. À l’époque, c’est un choc pour la communauté.",
+      "end": 413.4,
+      "text": "Le premier à tomber, c’est CyberGhost en 2017.",
       "words": [
         {
           "text": "Le",
@@ -5582,7 +5617,15 @@
           "text": "2017.",
           "start": 413.01,
           "end": 413.4
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-83",
+      "start": 413.4,
+      "end": 416.52,
+      "text": "À l’époque, c’est un choc pour la communauté.",
+      "words": [
         {
           "text": "À",
           "start": 413.4,
@@ -5626,7 +5669,7 @@
       ]
     },
     {
-      "id": "cue-78",
+      "id": "cue-84",
       "start": 416.56,
       "end": 423.28,
       "text": "CyberGhost, c’était la boîte roumaine « rebelle », celle qui prônait la vie privée avant tout.",
@@ -5714,10 +5757,10 @@
       ]
     },
     {
-      "id": "cue-79",
+      "id": "cue-85",
       "start": 423.28,
-      "end": 428.83,
-      "text": "Et là, se faire racheter par une entreprise dont le passé est lié aux malwares,",
+      "end": 430.26,
+      "text": "Et là, se faire racheter par une entreprise dont le passé est lié aux malwares, c’est super inquiétant.",
       "words": [
         {
           "text": "Et",
@@ -5793,15 +5836,7 @@
           "text": "malwares,",
           "start": 428.46,
           "end": 428.83
-        }
-      ]
-    },
-    {
-      "id": "cue-80",
-      "start": 428.88,
-      "end": 432.1,
-      "text": "c’est super inquiétant pour les utilisateurs que",
-      "words": [
+        },
         {
           "text": "c’est",
           "start": 428.88,
@@ -5813,12 +5848,20 @@
           "end": 429.8
         },
         {
-          "text": "inquiétant",
+          "text": "inquiétant.",
           "start": 429.8,
           "end": 430.26
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-86",
+      "start": 430.26,
+      "end": 434.64,
+      "text": "Pour les utilisateurs que Kape tente de rassurer en disant “Vous inquiétez pas.",
+      "words": [
         {
-          "text": "pour",
+          "text": "Pour",
           "start": 430.26,
           "end": 430.72
         },
@@ -5836,15 +5879,7 @@
           "text": "que",
           "start": 431.64,
           "end": 432.1
-        }
-      ]
-    },
-    {
-      "id": "cue-81",
-      "start": 432.12,
-      "end": 436.04,
-      "text": "Kape tente de rassurer en disant “Vous inquiétez pas. On ne touchera à rien.”",
-      "words": [
+        },
         {
           "text": "Kape",
           "start": 432.12,
@@ -5889,7 +5924,15 @@
           "text": "pas.",
           "start": 434.36,
           "end": 434.64
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-87",
+      "start": 434.64,
+      "end": 439.44,
+      "text": "On ne touchera à rien.” En 2018, deuxième coup : ZenMate.",
+      "words": [
         {
           "text": "On",
           "start": 434.64,
@@ -5914,15 +5957,7 @@
           "text": "rien.”",
           "start": 435.76,
           "end": 436.04
-        }
-      ]
-    },
-    {
-      "id": "cue-82",
-      "start": 436.08,
-      "end": 442.24,
-      "text": "En 2018, deuxième coup : ZenMate. Même logique. Un VPN connu,",
-      "words": [
+        },
         {
           "text": "En",
           "start": 436.08,
@@ -5952,7 +5987,15 @@
           "text": "ZenMate.",
           "start": 438.88,
           "end": 439.44
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-88",
+      "start": 439.44,
+      "end": 440.56,
+      "text": "Même logique.",
+      "words": [
         {
           "text": "Même",
           "start": 439.44,
@@ -5962,7 +6005,15 @@
           "text": "logique.",
           "start": 440.0,
           "end": 440.56
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-89",
+      "start": 440.56,
+      "end": 447.04,
+      "text": "Un VPN connu, plutôt orienté grand public, très utilisé sur Chrome et Firefox.",
+      "words": [
         {
           "text": "Un",
           "start": 440.56,
@@ -5977,15 +6028,7 @@
           "text": "connu,",
           "start": 441.68,
           "end": 442.24
-        }
-      ]
-    },
-    {
-      "id": "cue-83",
-      "start": 442.24,
-      "end": 447.04,
-      "text": "plutôt orienté grand public, très utilisé sur Chrome et Firefox.",
-      "words": [
+        },
         {
           "text": "plutôt",
           "start": 442.24,
@@ -6039,10 +6082,10 @@
       ]
     },
     {
-      "id": "cue-84",
+      "id": "cue-90",
       "start": 447.08,
-      "end": 452.48,
-      "text": "En 2019, ils frappent encore plus fort en rachetant Private Internet Access,",
+      "end": 454.9,
+      "text": "En 2019, ils frappent encore plus fort en rachetant Private Internet Access, plus connu sous le nom de.",
       "words": [
         {
           "text": "En",
@@ -6103,15 +6146,7 @@
           "text": "Access,",
           "start": 452.03,
           "end": 452.48
-        }
-      ]
-    },
-    {
-      "id": "cue-85",
-      "start": 452.44,
-      "end": 457.77,
-      "text": "plus connu sous le nom de PIA. Pour vous donner une idée, PIA,",
-      "words": [
+        },
         {
           "text": "plus",
           "start": 452.44,
@@ -6138,15 +6173,31 @@
           "end": 454.49
         },
         {
-          "text": "de",
+          "text": "de.",
           "start": 454.49,
           "end": 454.9
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-91",
+      "start": 454.9,
+      "end": 455.31,
+      "text": "PIA.",
+      "words": [
         {
           "text": "PIA.",
           "start": 454.9,
           "end": 455.31
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-92",
+      "start": 455.31,
+      "end": 462.96,
+      "text": "Pour vous donner une idée, PIA, c'était l’un des piliers du milieu, un VPN qui avait prouvé devant.",
+      "words": [
         {
           "text": "Pour",
           "start": 455.31,
@@ -6176,15 +6227,7 @@
           "text": "PIA,",
           "start": 457.36,
           "end": 457.77
-        }
-      ]
-    },
-    {
-      "id": "cue-86",
-      "start": 457.8,
-      "end": 463.82,
-      "text": "c'était l’un des piliers du milieu, un VPN qui avait prouvé devant la justice",
-      "words": [
+        },
         {
           "text": "c'était",
           "start": 457.8,
@@ -6241,12 +6284,20 @@
           "end": 462.53
         },
         {
-          "text": "devant",
+          "text": "devant.",
           "start": 462.53,
           "end": 462.96
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-93",
+      "start": 462.96,
+      "end": 469.48,
+      "text": "La justice américaine qu’il ne gardait aucun log et aucune trace de ses utilisateurs.",
+      "words": [
         {
-          "text": "la",
+          "text": "La",
           "start": 462.96,
           "end": 463.39
         },
@@ -6254,15 +6305,7 @@
           "text": "justice",
           "start": 463.39,
           "end": 463.82
-        }
-      ]
-    },
-    {
-      "id": "cue-87",
-      "start": 463.84,
-      "end": 469.48,
-      "text": "américaine qu’il ne gardait aucun log et aucune trace de ses utilisateurs.",
-      "words": [
+        },
         {
           "text": "américaine",
           "start": 463.84,
@@ -6326,10 +6369,10 @@
       ]
     },
     {
-      "id": "cue-88",
+      "id": "cue-94",
       "start": 469.52,
-      "end": 476.36,
-      "text": "Voir ce champion de la transparence passer sous le contrôle de l’ex-Crossrider,",
+      "end": 479.62,
+      "text": "Voir ce champion de la transparence passer sous le contrôle de l’ex-Crossrider, c’était pour beaucoup une trahison pure.",
       "words": [
         {
           "text": "Voir",
@@ -6390,15 +6433,7 @@
           "text": "l’ex-Crossrider,",
           "start": 475.79,
           "end": 476.36
-        }
-      ]
-    },
-    {
-      "id": "cue-89",
-      "start": 476.32,
-      "end": 486.22,
-      "text": "c’était pour beaucoup une trahison pure et simple. Et là, on arrive au coup de grâce. Septembre 2021.",
-      "words": [
+        },
         {
           "text": "c’était",
           "start": 476.32,
@@ -6425,12 +6460,20 @@
           "end": 479.07
         },
         {
-          "text": "pure",
+          "text": "pure.",
           "start": 479.07,
           "end": 479.62
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-95",
+      "start": 479.62,
+      "end": 480.72,
+      "text": "Et simple.",
+      "words": [
         {
-          "text": "et",
+          "text": "Et",
           "start": 479.62,
           "end": 480.17
         },
@@ -6438,7 +6481,15 @@
           "text": "simple.",
           "start": 480.17,
           "end": 480.72
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-96",
+      "start": 480.72,
+      "end": 485.12,
+      "text": "Et là, on arrive au coup de grâce.",
+      "words": [
         {
           "text": "Et",
           "start": 480.72,
@@ -6478,7 +6529,15 @@
           "text": "grâce.",
           "start": 484.57,
           "end": 485.12
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-97",
+      "start": 485.12,
+      "end": 486.22,
+      "text": "Septembre 2021.",
+      "words": [
         {
           "text": "Septembre",
           "start": 485.12,
@@ -6492,7 +6551,7 @@
       ]
     },
     {
-      "id": "cue-90",
+      "id": "cue-98",
       "start": 486.28,
       "end": 495.66,
       "text": "Kape annonce le rachat d’ExpressVPN pour la somme colossale de 936 millions de dollars.",
@@ -6570,10 +6629,10 @@
       ]
     },
     {
-      "id": "cue-91",
+      "id": "cue-99",
       "start": 495.68,
-      "end": 504.92,
-      "text": "Près d’un milliard pour une seule application. ExpressVPN, c’est le leader mondial, la référence",
+      "end": 500.3,
+      "text": "Près d’un milliard pour une seule application.",
       "words": [
         {
           "text": "Près",
@@ -6609,7 +6668,15 @@
           "text": "application.",
           "start": 499.64,
           "end": 500.3
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-100",
+      "start": 500.3,
+      "end": 508.84,
+      "text": "ExpressVPN, c’est le leader mondial, la référence absolue que tout le monde recommande et qui sponsorise la moitié.",
+      "words": [
         {
           "text": "ExpressVPN,",
           "start": 500.3,
@@ -6644,15 +6711,7 @@
           "text": "référence",
           "start": 504.26,
           "end": 504.92
-        }
-      ]
-    },
-    {
-      "id": "cue-92",
-      "start": 504.88,
-      "end": 509.56,
-      "text": "absolue que tout le monde recommande et qui sponsorise la moitié de Youtube.",
-      "words": [
+        },
         {
           "text": "absolue",
           "start": 504.88,
@@ -6704,12 +6763,20 @@
           "end": 508.48
         },
         {
-          "text": "moitié",
+          "text": "moitié.",
           "start": 508.48,
           "end": 508.84
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-101",
+      "start": 508.84,
+      "end": 509.56,
+      "text": "De Youtube.",
+      "words": [
         {
-          "text": "de",
+          "text": "De",
           "start": 508.84,
           "end": 509.2
         },
@@ -6721,10 +6788,10 @@
       ]
     },
     {
-      "id": "cue-93",
+      "id": "cue-102",
       "start": 509.6,
-      "end": 514.77,
-      "text": "Après ce rachat, ExpressVPN va se prendre un shitstorm monumental sur",
+      "end": 517.46,
+      "text": "Après ce rachat, ExpressVPN va se prendre un shitstorm monumental sur internet au point que le service va.",
       "words": [
         {
           "text": "Après",
@@ -6780,15 +6847,7 @@
           "text": "sur",
           "start": 514.3,
           "end": 514.77
-        }
-      ]
-    },
-    {
-      "id": "cue-94",
-      "start": 514.8,
-      "end": 519.36,
-      "text": "internet au point que le service va sortir un communiqué de presse",
-      "words": [
+        },
         {
           "text": "internet",
           "start": 514.8,
@@ -6820,12 +6879,20 @@
           "end": 517.08
         },
         {
-          "text": "va",
+          "text": "va.",
           "start": 517.08,
           "end": 517.46
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-103",
+      "start": 517.46,
+      "end": 523.22,
+      "text": "Sortir un communiqué de presse pour dire qu'à part le fric qu’il ont reçu, ils n’ont rien à.",
+      "words": [
         {
-          "text": "sortir",
+          "text": "Sortir",
           "start": 517.46,
           "end": 517.84
         },
@@ -6848,15 +6915,7 @@
           "text": "presse",
           "start": 518.98,
           "end": 519.36
-        }
-      ]
-    },
-    {
-      "id": "cue-95",
-      "start": 519.32,
-      "end": 524.12,
-      "text": "pour dire qu'à part le fric qu’il ont reçu, ils n’ont rien à voir avec Kape.",
-      "words": [
+        },
         {
           "text": "pour",
           "start": 519.32,
@@ -6918,12 +6977,20 @@
           "end": 522.92
         },
         {
-          "text": "à",
+          "text": "à.",
           "start": 522.92,
           "end": 523.22
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-104",
+      "start": 523.22,
+      "end": 524.12,
+      "text": "Voir avec Kape.",
+      "words": [
         {
-          "text": "voir",
+          "text": "Voir",
           "start": 523.22,
           "end": 523.52
         },
@@ -6940,10 +7007,10 @@
       ]
     },
     {
-      "id": "cue-96",
+      "id": "cue-105",
       "start": 524.16,
-      "end": 530.18,
-      "text": "Avec tous ces rachats, Kape a réussi à créer une illusion du choix. Aujourd’hui,",
+      "end": 529.75,
+      "text": "Avec tous ces rachats, Kape a réussi à créer une illusion du choix.",
       "words": [
         {
           "text": "Avec",
@@ -7009,20 +7076,20 @@
           "text": "choix.",
           "start": 529.32,
           "end": 529.75
-        },
-        {
-          "text": "Aujourd’hui,",
-          "start": 529.75,
-          "end": 530.18
         }
       ]
     },
     {
-      "id": "cue-97",
-      "start": 530.12,
-      "end": 534.92,
-      "text": "si vous n'êtes pas content de CyberGhost et que vous décidez de passer chez ExpressVPN ou",
+      "id": "cue-106",
+      "start": 529.75,
+      "end": 535.33,
+      "text": "Aujourd’hui, si vous n'êtes pas content de CyberGhost et que vous décidez de passer chez ExpressVPN ou chez.",
       "words": [
+        {
+          "text": "Aujourd’hui,",
+          "start": 529.75,
+          "end": 530.18
+        },
         {
           "text": "si",
           "start": 530.12,
@@ -7102,20 +7169,20 @@
           "text": "ou",
           "start": 534.62,
           "end": 534.92
+        },
+        {
+          "text": "chez.",
+          "start": 535.0,
+          "end": 535.33
         }
       ]
     },
     {
-      "id": "cue-98",
-      "start": 535.0,
-      "end": 541.93,
-      "text": "chez PIA pour “ plus de sécurité “, vous ne faites en fait que changer de chambre dans le même hotel.",
+      "id": "cue-107",
+      "start": 535.33,
+      "end": 541.27,
+      "text": "PIA pour “ plus de sécurité “, vous ne faites en fait que changer de chambre dans le.",
       "words": [
-        {
-          "text": "chez",
-          "start": 535.0,
-          "end": 535.33
-        },
         {
           "text": "PIA",
           "start": 535.33,
@@ -7202,12 +7269,20 @@
           "end": 540.94
         },
         {
-          "text": "le",
+          "text": "le.",
           "start": 540.94,
           "end": 541.27
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-108",
+      "start": 541.27,
+      "end": 541.93,
+      "text": "Même hotel.",
+      "words": [
         {
-          "text": "même",
+          "text": "Même",
           "start": 541.27,
           "end": 541.6
         },
@@ -7219,9 +7294,9 @@
       ]
     },
     {
-      "id": "cue-99",
+      "id": "cue-109",
       "start": 542.0,
-      "end": 549.14,
+      "end": 549.12,
       "text": "Votre argent et vos données finissent exactement au même endroit : chez Kape Technologies.",
       "words": [
         {
@@ -7297,10 +7372,10 @@
       ]
     },
     {
-      "id": "cue-100",
+      "id": "cue-110",
       "start": 549.12,
-      "end": 553.41,
-      "text": "Mais le plus inquiétant dans le rachat d'ExpressVPN, ce n'est pas seulement le",
+      "end": 553.91,
+      "text": "Mais le plus inquiétant dans le rachat d'ExpressVPN, ce n'est pas seulement le prix.",
       "words": [
         {
           "text": "Mais",
@@ -7366,20 +7441,20 @@
           "text": "le",
           "start": 553.08,
           "end": 553.41
-        }
-      ]
-    },
-    {
-      "id": "cue-101",
-      "start": 553.44,
-      "end": 559.55,
-      "text": "prix. C’est ce qu’on a découvert sur ses dirigeants juste après la vente.",
-      "words": [
+        },
         {
           "text": "prix.",
           "start": 553.44,
           "end": 553.91
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-111",
+      "start": 553.91,
+      "end": 559.55,
+      "text": "C’est ce qu’on a découvert sur ses dirigeants juste après la vente.",
+      "words": [
         {
           "text": "C’est",
           "start": 553.91,
@@ -7443,10 +7518,10 @@
       ]
     },
     {
-      "id": "cue-102",
+      "id": "cue-112",
       "start": 559.6,
-      "end": 563.5,
-      "text": "On a appris que le directeur technique d'ExpressVPN, Daniel Gericke,",
+      "end": 567.6,
+      "text": "On a appris que le directeur technique d'ExpressVPN, Daniel Gericke, aujourd’hui évacué, était lui aussi un ancien du.",
       "words": [
         {
           "text": "On",
@@ -7497,15 +7572,7 @@
           "text": "Gericke,",
           "start": 563.11,
           "end": 563.5
-        }
-      ]
-    },
-    {
-      "id": "cue-103",
-      "start": 563.52,
-      "end": 568.62,
-      "text": "aujourd’hui évacué, était lui aussi un ancien du renseignement américain",
-      "words": [
+        },
         {
           "text": "aujourd’hui",
           "start": 563.52,
@@ -7542,12 +7609,20 @@
           "end": 567.09
         },
         {
-          "text": "du",
+          "text": "du.",
           "start": 567.09,
           "end": 567.6
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-113",
+      "start": 567.6,
+      "end": 571.48,
+      "text": "Renseignement américain et qu'il avait été impliqué dans le projet Raven.",
+      "words": [
         {
-          "text": "renseignement",
+          "text": "Renseignement",
           "start": 567.6,
           "end": 568.11
         },
@@ -7555,15 +7630,7 @@
           "text": "américain",
           "start": 568.11,
           "end": 568.62
-        }
-      ]
-    },
-    {
-      "id": "cue-104",
-      "start": 568.6,
-      "end": 571.48,
-      "text": "et qu'il avait été impliqué dans le projet Raven.",
-      "words": [
+        },
         {
           "text": "et",
           "start": 568.6,
@@ -7612,10 +7679,10 @@
       ]
     },
     {
-      "id": "cue-105",
+      "id": "cue-114",
       "start": 571.48,
-      "end": 576.87,
-      "text": "Une opération d’espionnage commanditée par les Emirats Arabes Unis pour surveiller",
+      "end": 579.08,
+      "text": "Une opération d’espionnage commanditée par les Emirats Arabes Unis pour surveiller des militants des droits de l’homme, des.",
       "words": [
         {
           "text": "Une",
@@ -7671,15 +7738,7 @@
           "text": "surveiller",
           "start": 576.38,
           "end": 576.87
-        }
-      ]
-    },
-    {
-      "id": "cue-106",
-      "start": 576.84,
-      "end": 580.68,
-      "text": "des militants des droits de l’homme, des diplomates étrangers et des journalistes.",
-      "words": [
+        },
         {
           "text": "des",
           "start": 576.84,
@@ -7711,12 +7770,20 @@
           "end": 578.76
         },
         {
-          "text": "des",
+          "text": "des.",
           "start": 578.76,
           "end": 579.08
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-115",
+      "start": 579.08,
+      "end": 580.64,
+      "text": "Diplomates étrangers et des journalistes.",
+      "words": [
         {
-          "text": "diplomates",
+          "text": "Diplomates",
           "start": 579.08,
           "end": 579.4
         },
@@ -7743,10 +7810,10 @@
       ]
     },
     {
-      "id": "cue-107",
+      "id": "cue-116",
       "start": 580.64,
-      "end": 585.68,
-      "text": "On se retrouve donc avec une entreprise, gérée par des anciens espions et des",
+      "end": 587.32,
+      "text": "On se retrouve donc avec une entreprise, gérée par des anciens espions et des experts en cyber-espionnage, qui.",
       "words": [
         {
           "text": "On",
@@ -7817,15 +7884,7 @@
           "text": "des",
           "start": 585.32,
           "end": 585.68
-        }
-      ]
-    },
-    {
-      "id": "cue-108",
-      "start": 585.72,
-      "end": 591.32,
-      "text": "experts en cyber-espionnage, qui contrôle les trois ou quatre plus gros VPN au monde.",
-      "words": [
+        },
         {
           "text": "experts",
           "start": 585.72,
@@ -7842,12 +7901,20 @@
           "end": 586.92
         },
         {
-          "text": "qui",
+          "text": "qui.",
           "start": 586.92,
           "end": 587.32
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-117",
+      "start": 587.32,
+      "end": 591.28,
+      "text": "Contrôle les trois ou quatre plus gros VPN au monde.",
+      "words": [
         {
-          "text": "contrôle",
+          "text": "Contrôle",
           "start": 587.32,
           "end": 587.72
         },
@@ -7899,10 +7966,10 @@
       ]
     },
     {
-      "id": "cue-109",
+      "id": "cue-118",
       "start": 591.28,
-      "end": 595.72,
-      "text": "Mais Kape ne s’est pas arretée aux VPN. Elle a aussi décidé",
+      "end": 594.24,
+      "text": "Mais Kape ne s’est pas arretée aux VPN.",
       "words": [
         {
           "text": "Mais",
@@ -7943,7 +8010,15 @@
           "text": "VPN.",
           "start": 593.87,
           "end": 594.24
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-119",
+      "start": 594.24,
+      "end": 599.62,
+      "text": "Elle a aussi décidé de contrôler la manière dont vous les choisissez.",
+      "words": [
         {
           "text": "Elle",
           "start": 594.24,
@@ -7963,15 +8038,7 @@
           "text": "décidé",
           "start": 595.35,
           "end": 595.72
-        }
-      ]
-    },
-    {
-      "id": "cue-110",
-      "start": 595.68,
-      "end": 599.62,
-      "text": "de contrôler la manière dont vous les choisissez.",
-      "words": [
+        },
         {
           "text": "de",
           "start": 595.68,
@@ -8015,10 +8082,10 @@
       ]
     },
     {
-      "id": "cue-111",
+      "id": "cue-120",
       "start": 601.8,
-      "end": 608.82,
-      "text": "Et c’est sans doute la plus géniale et la plus folle de toute cette histoire. Et là, laissez-moi",
+      "end": 607.65,
+      "text": "Et c’est sans doute la plus géniale et la plus folle de toute cette histoire.",
       "words": [
         {
           "text": "Et",
@@ -8094,7 +8161,15 @@
           "text": "histoire.",
           "start": 607.26,
           "end": 607.65
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-121",
+      "start": 607.65,
+      "end": 613.68,
+      "text": "Et là, laissez-moi vous poser une question simple : quand vous voulez choisir un VPN, qu’est ce que.",
+      "words": [
         {
           "text": "Et",
           "start": 607.65,
@@ -8109,15 +8184,7 @@
           "text": "laissez-moi",
           "start": 608.43,
           "end": 608.82
-        }
-      ]
-    },
-    {
-      "id": "cue-112",
-      "start": 608.88,
-      "end": 614.64,
-      "text": "vous poser une question simple : quand vous voulez choisir un VPN, qu’est ce que vous faites ?",
-      "words": [
+        },
         {
           "text": "vous",
           "start": 608.88,
@@ -8189,12 +8256,20 @@
           "end": 613.36
         },
         {
-          "text": "que",
+          "text": "que.",
           "start": 613.36,
           "end": 613.68
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-122",
+      "start": 613.68,
+      "end": 614.6,
+      "text": "Vous faites ?",
+      "words": [
         {
-          "text": "vous",
+          "text": "Vous",
           "start": 613.68,
           "end": 614.0
         },
@@ -8211,10 +8286,10 @@
       ]
     },
     {
-      "id": "cue-113",
+      "id": "cue-123",
       "start": 614.6,
-      "end": 618.2,
-      "text": "Je pars du principe que vous n'êtes pas expert en cybersécurité et que vous ne",
+      "end": 619.26,
+      "text": "Je pars du principe que vous n'êtes pas expert en cybersécurité et que vous ne pouvez pas analyser.",
       "words": [
         {
           "text": "Je",
@@ -8290,15 +8365,7 @@
           "text": "ne",
           "start": 617.96,
           "end": 618.2
-        }
-      ]
-    },
-    {
-      "id": "cue-114",
-      "start": 618.24,
-      "end": 622.66,
-      "text": "pouvez pas analyser le code source d’une application. Alors comme tout le monde,",
-      "words": [
+        },
         {
           "text": "pouvez",
           "start": 618.24,
@@ -8310,12 +8377,20 @@
           "end": 618.92
         },
         {
-          "text": "analyser",
+          "text": "analyser.",
           "start": 618.92,
           "end": 619.26
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-124",
+      "start": 619.26,
+      "end": 620.96,
+      "text": "Le code source d’une application.",
+      "words": [
         {
-          "text": "le",
+          "text": "Le",
           "start": 619.26,
           "end": 619.6
         },
@@ -8338,7 +8413,15 @@
           "text": "application.",
           "start": 620.62,
           "end": 620.96
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-125",
+      "start": 620.96,
+      "end": 626.19,
+      "text": "Alors comme tout le monde, vous allez sur Google et vous tapez : “Quel est le meilleur VPN.",
+      "words": [
         {
           "text": "Alors",
           "start": 620.96,
@@ -8363,15 +8446,7 @@
           "text": "monde,",
           "start": 622.32,
           "end": 622.66
-        }
-      ]
-    },
-    {
-      "id": "cue-115",
-      "start": 622.68,
-      "end": 626.46,
-      "text": "vous allez sur Google et vous tapez : “Quel est le meilleur VPN ?”",
-      "words": [
+        },
         {
           "text": "vous",
           "start": 622.68,
@@ -8433,23 +8508,23 @@
           "end": 625.92
         },
         {
-          "text": "VPN",
+          "text": "VPN.",
           "start": 625.92,
           "end": 626.19
-        },
-        {
-          "text": "?”",
-          "start": 626.19,
-          "end": 626.46
         }
       ]
     },
     {
-      "id": "cue-116",
-      "start": 626.4,
-      "end": 631.62,
-      "text": "Et là, vous êtes tombé sur des sites qui ont l’air ultra sérieux, très complets, avec des graphiques",
+      "id": "cue-126",
+      "start": 626.19,
+      "end": 631.33,
+      "text": "?” Et là, vous êtes tombé sur des sites qui ont l’air ultra sérieux, très complets, avec des.",
       "words": [
+        {
+          "text": "?”",
+          "start": 626.19,
+          "end": 626.46
+        },
         {
           "text": "Et",
           "start": 626.4,
@@ -8531,23 +8606,23 @@
           "end": 631.04
         },
         {
-          "text": "des",
+          "text": "des.",
           "start": 631.04,
           "end": 631.33
-        },
-        {
-          "text": "graphiques",
-          "start": 631.33,
-          "end": 631.62
         }
       ]
     },
     {
-      "id": "cue-117",
-      "start": 631.56,
-      "end": 639.12,
-      "text": "et des comparatifs techniques. Des sites comme VPNMentor ou WizCase. Ils testent des dizaines",
+      "id": "cue-127",
+      "start": 631.33,
+      "end": 633.72,
+      "text": "Graphiques et des comparatifs techniques.",
       "words": [
+        {
+          "text": "Graphiques",
+          "start": 631.33,
+          "end": 631.62
+        },
         {
           "text": "et",
           "start": 631.56,
@@ -8567,7 +8642,15 @@
           "text": "techniques.",
           "start": 633.18,
           "end": 633.72
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-128",
+      "start": 633.72,
+      "end": 636.96,
+      "text": "Des sites comme VPNMentor ou WizCase.",
+      "words": [
         {
           "text": "Des",
           "start": 633.72,
@@ -8597,7 +8680,15 @@
           "text": "WizCase.",
           "start": 636.42,
           "end": 636.96
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-129",
+      "start": 636.96,
+      "end": 644.44,
+      "text": "Ils testent des dizaines de services, ils comparent les vitesses, et ils vous donnent un classement indépendant.",
+      "words": [
         {
           "text": "Ils",
           "start": 636.96,
@@ -8617,15 +8708,7 @@
           "text": "dizaines",
           "start": 638.58,
           "end": 639.12
-        }
-      ]
-    },
-    {
-      "id": "cue-118",
-      "start": 639.16,
-      "end": 644.49,
-      "text": "de services, ils comparent les vitesses, et ils vous donnent un classement indépendant.",
-      "words": [
+        },
         {
           "text": "de",
           "start": 639.16,
@@ -8694,10 +8777,10 @@
       ]
     },
     {
-      "id": "cue-119",
+      "id": "cue-130",
       "start": 644.44,
-      "end": 650.2,
-      "text": "Eh bien, en mai 2021, Kape Technologies a fait un coup de maître. Ils ont racheté",
+      "end": 649.12,
+      "text": "Eh bien, en mai 2021, Kape Technologies a fait un coup de maître.",
       "words": [
         {
           "text": "Eh",
@@ -8763,7 +8846,15 @@
           "text": "maître.",
           "start": 648.76,
           "end": 649.12
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-131",
+      "start": 649.12,
+      "end": 657.06,
+      "text": "Ils ont racheté pour 149 millions de dollars une société qui s’appelle Webselence.",
+      "words": [
         {
           "text": "Ils",
           "start": 649.12,
@@ -8778,15 +8869,7 @@
           "text": "racheté",
           "start": 649.84,
           "end": 650.2
-        }
-      ]
-    },
-    {
-      "id": "cue-120",
-      "start": 650.16,
-      "end": 658.44,
-      "text": "pour 149 millions de dollars une société qui s’appelle Webselence. Et Webselence,",
-      "words": [
+        },
         {
           "text": "pour",
           "start": 650.16,
@@ -8836,7 +8919,15 @@
           "text": "Webselence.",
           "start": 656.37,
           "end": 657.06
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-132",
+      "start": 657.06,
+      "end": 664.0,
+      "text": "Et Webselence, c’est précisément l’entreprise qui possède VPNMentor et WizCase.",
+      "words": [
         {
           "text": "Et",
           "start": 657.06,
@@ -8846,15 +8937,7 @@
           "text": "Webselence,",
           "start": 657.75,
           "end": 658.44
-        }
-      ]
-    },
-    {
-      "id": "cue-121",
-      "start": 658.4,
-      "end": 664.0,
-      "text": "c’est précisément l’entreprise qui possède VPNMentor et WizCase.",
-      "words": [
+        },
         {
           "text": "c’est",
           "start": 658.4,
@@ -8898,10 +8981,10 @@
       ]
     },
     {
-      "id": "cue-122",
+      "id": "cue-133",
       "start": 664.0,
-      "end": 668.55,
-      "text": "Est-ce que vous voyez le problème ? On est dans une situation surréaliste",
+      "end": 666.45,
+      "text": "Est-ce que vous voyez le problème ?",
       "words": [
         {
           "text": "Est-ce",
@@ -8937,7 +9020,15 @@
           "text": "?",
           "start": 666.1,
           "end": 666.45
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-134",
+      "start": 666.45,
+      "end": 674.19,
+      "text": "On est dans une situation surréaliste où le propriétaire d’ExpressVPN, de CyberGhost et de PIA possède aussi les.",
+      "words": [
         {
           "text": "On",
           "start": 666.45,
@@ -8967,15 +9058,7 @@
           "text": "surréaliste",
           "start": 668.2,
           "end": 668.55
-        }
-      ]
-    },
-    {
-      "id": "cue-123",
-      "start": 668.52,
-      "end": 673.69,
-      "text": "où le propriétaire d’ExpressVPN, de CyberGhost et de PIA possède aussi",
-      "words": [
+        },
         {
           "text": "où",
           "start": 668.52,
@@ -9030,22 +9113,22 @@
           "text": "aussi",
           "start": 673.22,
           "end": 673.69
+        },
+        {
+          "text": "les.",
+          "start": 673.64,
+          "end": 674.19
         }
       ]
     },
     {
-      "id": "cue-124",
-      "start": 673.64,
-      "end": 679.14,
-      "text": "les sites qui sont censés juger ExpressVPN, CyberGhost et PIA.",
+      "id": "cue-135",
+      "start": 674.19,
+      "end": 679.12,
+      "text": "Sites qui sont censés juger ExpressVPN, CyberGhost et PIA.",
       "words": [
         {
-          "text": "les",
-          "start": 673.64,
-          "end": 674.19
-        },
-        {
-          "text": "sites",
+          "text": "Sites",
           "start": 674.19,
           "end": 674.74
         },
@@ -9092,10 +9175,10 @@
       ]
     },
     {
-      "id": "cue-125",
+      "id": "cue-136",
       "start": 679.12,
-      "end": 684.32,
-      "text": "Du jour au lendemain, l’indépendance de ces sites a volé en éclats. Aujourd’hui,",
+      "end": 683.92,
+      "text": "Du jour au lendemain, l’indépendance de ces sites a volé en éclats.",
       "words": [
         {
           "text": "Du",
@@ -9156,20 +9239,20 @@
           "text": "éclats.",
           "start": 683.52,
           "end": 683.92
-        },
-        {
-          "text": "Aujourd’hui,",
-          "start": 683.92,
-          "end": 684.32
         }
       ]
     },
     {
-      "id": "cue-126",
-      "start": 684.28,
-      "end": 690.88,
-      "text": "quand vous allez sur ces comparatifs, les trois premières places sont presque",
+      "id": "cue-137",
+      "start": 683.92,
+      "end": 693.22,
+      "text": "Aujourd’hui, quand vous allez sur ces comparatifs, les trois premières places sont presque systématiquement occupées par les marques.",
       "words": [
+        {
+          "text": "Aujourd’hui,",
+          "start": 683.92,
+          "end": 684.32
+        },
         {
           "text": "quand",
           "start": 684.28,
@@ -9229,15 +9312,7 @@
           "text": "presque",
           "start": 690.33,
           "end": 690.88
-        }
-      ]
-    },
-    {
-      "id": "cue-127",
-      "start": 690.92,
-      "end": 694.14,
-      "text": "systématiquement occupées par les marques de Kape.",
-      "words": [
+        },
         {
           "text": "systématiquement",
           "start": 690.92,
@@ -9259,12 +9334,20 @@
           "end": 692.76
         },
         {
-          "text": "marques",
+          "text": "marques.",
           "start": 692.76,
           "end": 693.22
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-138",
+      "start": 693.22,
+      "end": 694.14,
+      "text": "De Kape.",
+      "words": [
         {
-          "text": "de",
+          "text": "De",
           "start": 693.22,
           "end": 693.68
         },
@@ -9276,10 +9359,10 @@
       ]
     },
     {
-      "id": "cue-128",
+      "id": "cue-139",
       "start": 694.16,
-      "end": 698.58,
-      "text": "Et ces deux sites ne sont que la partie immergée de l'iceberg. On",
+      "end": 698.24,
+      "text": "Et ces deux sites ne sont que la partie immergée de l'iceberg.",
       "words": [
         {
           "text": "Et",
@@ -9340,20 +9423,20 @@
           "text": "l'iceberg.",
           "start": 697.9,
           "end": 698.24
-        },
-        {
-          "text": "On",
-          "start": 698.24,
-          "end": 698.58
         }
       ]
     },
     {
-      "id": "cue-129",
-      "start": 698.52,
-      "end": 703.32,
-      "text": "ne connait pas les noms des autres sites mais on sait que Webselence détient des",
+      "id": "cue-140",
+      "start": 698.24,
+      "end": 704.08,
+      "text": "On ne connait pas les noms des autres sites mais on sait que Webselence détient des dizaines de.",
       "words": [
+        {
+          "text": "On",
+          "start": 698.24,
+          "end": 698.58
+        },
         {
           "text": "ne",
           "start": 698.52,
@@ -9428,27 +9511,27 @@
           "text": "des",
           "start": 703.0,
           "end": 703.32
-        }
-      ]
-    },
-    {
-      "id": "cue-130",
-      "start": 703.28,
-      "end": 707.68,
-      "text": "dizaines de comparateurs à travers le monde et dans plusieurs langues.",
-      "words": [
+        },
         {
           "text": "dizaines",
           "start": 703.28,
           "end": 703.68
         },
         {
-          "text": "de",
+          "text": "de.",
           "start": 703.68,
           "end": 704.08
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-141",
+      "start": 704.08,
+      "end": 707.68,
+      "text": "Comparateurs à travers le monde et dans plusieurs langues.",
+      "words": [
         {
-          "text": "comparateurs",
+          "text": "Comparateurs",
           "start": 704.08,
           "end": 704.48
         },
@@ -9495,10 +9578,10 @@
       ]
     },
     {
-      "id": "cue-131",
+      "id": "cue-142",
       "start": 707.68,
-      "end": 713.7,
-      "text": "Le paradoxe est donc total. On utilise un VPN pour échapper à la surveillance,",
+      "end": 709.83,
+      "text": "Le paradoxe est donc total.",
       "words": [
         {
           "text": "Le",
@@ -9524,7 +9607,15 @@
           "text": "total.",
           "start": 709.4,
           "end": 709.83
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-143",
+      "start": 709.83,
+      "end": 716.7,
+      "text": "On utilise un VPN pour échapper à la surveillance, au controle et pour ne plus être pisté par.",
+      "words": [
         {
           "text": "On",
           "start": 709.83,
@@ -9569,15 +9660,7 @@
           "text": "surveillance,",
           "start": 713.27,
           "end": 713.7
-        }
-      ]
-    },
-    {
-      "id": "cue-132",
-      "start": 713.64,
-      "end": 718.06,
-      "text": "au controle et pour ne plus être pisté par Google et Facebook ou",
-      "words": [
+        },
         {
           "text": "au",
           "start": 713.64,
@@ -9619,10 +9702,18 @@
           "end": 716.36
         },
         {
-          "text": "par",
+          "text": "par.",
           "start": 716.36,
           "end": 716.7
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-144",
+      "start": 716.7,
+      "end": 719.6,
+      "text": "Google et Facebook ou par notre fournisseur d'accès.",
+      "words": [
         {
           "text": "Google",
           "start": 716.7,
@@ -9642,15 +9733,7 @@
           "text": "ou",
           "start": 717.72,
           "end": 718.06
-        }
-      ]
-    },
-    {
-      "id": "cue-133",
-      "start": 718.12,
-      "end": 722.56,
-      "text": "par notre fournisseur d'accès. Mais on tombe dans les bras d'une entreprise",
-      "words": [
+        },
         {
           "text": "par",
           "start": 718.12,
@@ -9670,7 +9753,15 @@
           "text": "d'accès.",
           "start": 719.23,
           "end": 719.6
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-145",
+      "start": 719.6,
+      "end": 726.8,
+      "text": "Mais on tombe dans les bras d'une entreprise fondée par des experts en interception de données et en.",
+      "words": [
         {
           "text": "Mais",
           "start": 719.6,
@@ -9710,15 +9801,7 @@
           "text": "entreprise",
           "start": 722.19,
           "end": 722.56
-        }
-      ]
-    },
-    {
-      "id": "cue-134",
-      "start": 722.6,
-      "end": 728.06,
-      "text": "fondée par des experts en interception de données et en diffusion de malwares.",
-      "words": [
+        },
         {
           "text": "fondée",
           "start": 722.6,
@@ -9765,12 +9848,20 @@
           "end": 726.38
         },
         {
-          "text": "en",
+          "text": "en.",
           "start": 726.38,
           "end": 726.8
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-146",
+      "start": 726.8,
+      "end": 728.0,
+      "text": "Diffusion de malwares.",
+      "words": [
         {
-          "text": "diffusion",
+          "text": "Diffusion",
           "start": 726.8,
           "end": 727.22
         },
@@ -9787,10 +9878,10 @@
       ]
     },
     {
-      "id": "cue-135",
+      "id": "cue-147",
       "start": 728.0,
       "end": 734.12,
-      "text": "Mais je précise, l’objectif de cette vidéo n’est pas de faire un jugement, ni de vous diriger vers",
+      "text": "Mais je précise, l’objectif de cette vidéo n’est pas de faire un jugement, ni de vous diriger vers.",
       "words": [
         {
           "text": "Mais",
@@ -9878,20 +9969,20 @@
           "end": 733.78
         },
         {
-          "text": "vers",
+          "text": "vers.",
           "start": 733.78,
           "end": 734.12
         }
       ]
     },
     {
-      "id": "cue-136",
+      "id": "cue-148",
       "start": 734.2,
-      "end": 740.44,
-      "text": "une solution ou une autre. Peut-être que Kape est devenue l’entreprise la plus moral du monde",
+      "end": 736.15,
+      "text": "Une solution ou une autre.",
       "words": [
         {
-          "text": "une",
+          "text": "Une",
           "start": 734.2,
           "end": 734.59
         },
@@ -9914,7 +10005,15 @@
           "text": "autre.",
           "start": 735.76,
           "end": 736.15
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-149",
+      "start": 736.15,
+      "end": 742.96,
+      "text": "Peut-être que Kape est devenue l’entreprise la plus moral du monde ou peut-être que les théories du complot.",
+      "words": [
         {
           "text": "Peut-être",
           "start": 736.15,
@@ -9969,15 +10068,7 @@
           "text": "monde",
           "start": 740.05,
           "end": 740.44
-        }
-      ]
-    },
-    {
-      "id": "cue-137",
-      "start": 740.44,
-      "end": 747.28,
-      "text": "ou peut-être que les théories du complot qui vous passent par la tête ne sont pas que des théories.",
-      "words": [
+        },
         {
           "text": "ou",
           "start": 740.44,
@@ -10009,12 +10100,20 @@
           "end": 742.6
         },
         {
-          "text": "complot",
+          "text": "complot.",
           "start": 742.6,
           "end": 742.96
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-150",
+      "start": 742.96,
+      "end": 747.24,
+      "text": "Qui vous passent par la tête ne sont pas que des théories.",
+      "words": [
         {
-          "text": "qui",
+          "text": "Qui",
           "start": 742.96,
           "end": 743.32
         },
@@ -10076,10 +10175,10 @@
       ]
     },
     {
-      "id": "cue-138",
+      "id": "cue-151",
       "start": 747.24,
-      "end": 753.24,
-      "text": "On ne le saura probablement jamais mais ce qu’on sait ce qu’une entreprise ne sacrifiera",
+      "end": 754.74,
+      "text": "On ne le saura probablement jamais mais ce qu’on sait ce qu’une entreprise ne sacrifiera jamais ses intérêts.",
       "words": [
         {
           "text": "On",
@@ -10155,15 +10254,7 @@
           "text": "sacrifiera",
           "start": 752.84,
           "end": 753.24
-        }
-      ]
-    },
-    {
-      "id": "cue-139",
-      "start": 753.24,
-      "end": 760.74,
-      "text": "jamais ses intérêts au profit de celui de ses clients. Exactement ce qu'à fait Duolingo,",
-      "words": [
+        },
         {
           "text": "jamais",
           "start": 753.24,
@@ -10175,12 +10266,20 @@
           "end": 754.24
         },
         {
-          "text": "intérêts",
+          "text": "intérêts.",
           "start": 754.24,
           "end": 754.74
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-152",
+      "start": 754.74,
+      "end": 758.24,
+      "text": "Au profit de celui de ses clients.",
+      "words": [
         {
-          "text": "au",
+          "text": "Au",
           "start": 754.74,
           "end": 755.24
         },
@@ -10213,7 +10312,15 @@
           "text": "clients.",
           "start": 757.74,
           "end": 758.24
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-153",
+      "start": 758.24,
+      "end": 765.24,
+      "text": "Exactement ce qu'à fait Duolingo, l’application d’apprentissage de langues, mais à l’extrême.",
+      "words": [
         {
           "text": "Exactement",
           "start": 758.24,
@@ -10238,15 +10345,7 @@
           "text": "Duolingo,",
           "start": 760.24,
           "end": 760.74
-        }
-      ]
-    },
-    {
-      "id": "cue-140",
-      "start": 760.72,
-      "end": 765.27,
-      "text": "l’application d’apprentissage de langues, mais à l’extrême.",
-      "words": [
+        },
         {
           "text": "l’application",
           "start": 760.72,
@@ -10285,7 +10384,7 @@
       ]
     },
     {
-      "id": "cue-141",
+      "id": "cue-154",
       "start": 765.24,
       "end": 770.28,
       "text": "Ca leur a couté très cher avec des millions d’utilisateurs qui ont désinstallé l’application.",
@@ -10363,10 +10462,10 @@
       ]
     },
     {
-      "id": "cue-142",
+      "id": "cue-155",
       "start": 770.28,
-      "end": 772.8,
-      "text": "J’en ai fait une vidéo dédiée que je vous affiche à l'écran",
+      "end": 774.87,
+      "text": "J’en ai fait une vidéo dédiée que je vous affiche à l'écran et que je vous recommande fortement.",
       "words": [
         {
           "text": "J’en",
@@ -10427,15 +10526,7 @@
           "text": "l'écran",
           "start": 772.59,
           "end": 772.8
-        }
-      ]
-    },
-    {
-      "id": "cue-143",
-      "start": 772.84,
-      "end": 775.55,
-      "text": "et que je vous recommande fortement de regarder.",
-      "words": [
+        },
         {
           "text": "et",
           "start": 772.84,
@@ -10462,12 +10553,20 @@
           "end": 774.53
         },
         {
-          "text": "fortement",
+          "text": "fortement.",
           "start": 774.53,
           "end": 774.87
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-156",
+      "start": 774.87,
+      "end": 775.52,
+      "text": "De regarder.",
+      "words": [
         {
-          "text": "de",
+          "text": "De",
           "start": 774.87,
           "end": 775.21
         },
@@ -10479,7 +10578,7 @@
       ]
     },
     {
-      "id": "cue-144",
+      "id": "cue-157",
       "start": 775.52,
       "end": 777.87,
       "text": "Allez, abonnez-vous et salut !",

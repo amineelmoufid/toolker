@@ -6,15 +6,10 @@
   "subtitles": [
     {
       "id": "cue-1",
-      "start": 1.64,
+      "start": 1.96,
       "end": 4.52,
-      "text": ">> (Phillip Roberts) hello, come in and sit down.",
+      "text": "(Phillip Roberts) hello, come in and sit down.",
       "words": [
-        {
-          "text": ">>",
-          "start": 1.64,
-          "end": 1.96
-        },
         {
           "text": "(Phillip",
           "start": 1.96,
@@ -60,8 +55,8 @@
     {
       "id": "cue-2",
       "start": 4.52,
-      "end": 10.28,
-      "text": "So for the last session before the afternoon break, we have Phillip Roberts who works at",
+      "end": 10.93,
+      "text": "So for the last session before the afternoon break, we have Phillip Roberts who works at Andea and.",
       "words": [
         {
           "text": "So",
@@ -142,27 +137,27 @@
           "text": "at",
           "start": 9.92,
           "end": 10.28
-        }
-      ]
-    },
-    {
-      "id": "cue-3",
-      "start": 10.3,
-      "end": 12.8,
-      "text": "Andea and is here from London ‑‑ Scotland.",
-      "words": [
+        },
         {
           "text": "Andea",
           "start": 10.3,
           "end": 10.62
         },
         {
-          "text": "and",
+          "text": "and.",
           "start": 10.62,
           "end": 10.93
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-3",
+      "start": 10.93,
+      "end": 12.8,
+      "text": "Is here from London ‑‑ Scotland.",
+      "words": [
         {
-          "text": "is",
+          "text": "Is",
           "start": 10.93,
           "end": 11.24
         },
@@ -344,15 +339,10 @@
     },
     {
       "id": "cue-7",
-      "start": 18.6,
-      "end": 21.0,
-      "text": ">> Phillip Roberts: Okay hello everyone, thanks for coming to the side track, it's awesome",
+      "start": 18.76,
+      "end": 21.9,
+      "text": "Phillip Roberts: Okay hello everyone, thanks for coming to the side track, it's awesome to see it packed.",
       "words": [
-        {
-          "text": ">>",
-          "start": 18.6,
-          "end": 18.76
-        },
         {
           "text": "Phillip",
           "start": 18.76,
@@ -422,15 +412,7 @@
           "text": "awesome",
           "start": 20.84,
           "end": 21.0
-        }
-      ]
-    },
-    {
-      "id": "cue-8",
-      "start": 20.94,
-      "end": 22.62,
-      "text": "to see it packed out in here.",
-      "words": [
+        },
         {
           "text": "to",
           "start": 20.94,
@@ -447,12 +429,20 @@
           "end": 21.66
         },
         {
-          "text": "packed",
+          "text": "packed.",
           "start": 21.66,
           "end": 21.9
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-8",
+      "start": 21.9,
+      "end": 22.62,
+      "text": "Out in here.",
+      "words": [
         {
-          "text": "out",
+          "text": "Out",
           "start": 21.9,
           "end": 22.14
         },
@@ -509,7 +499,7 @@
     {
       "id": "cue-10",
       "start": 24.82,
-      "end": 31.84,
+      "end": 31.81,
       "text": "I needed to stretch, so I look less weird.",
       "words": [
         {
@@ -562,8 +552,8 @@
     {
       "id": "cue-11",
       "start": 31.81,
-      "end": 37.21,
-      "text": "I want to talk about the event loop and what the heck is the event loop, as in the event",
+      "end": 36.67,
+      "text": "I want to talk about the event loop and what the heck is the event loop, as in.",
       "words": [
         {
           "text": "I",
@@ -651,12 +641,20 @@
           "end": 36.4
         },
         {
-          "text": "in",
+          "text": "in.",
           "start": 36.4,
           "end": 36.67
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-12",
+      "start": 36.67,
+      "end": 39.62,
+      "text": "The event loop inside JavaScript.",
+      "words": [
         {
-          "text": "the",
+          "text": "The",
           "start": 36.67,
           "end": 36.94
         },
@@ -664,15 +662,7 @@
           "text": "event",
           "start": 36.94,
           "end": 37.21
-        }
-      ]
-    },
-    {
-      "id": "cue-12",
-      "start": 37.22,
-      "end": 39.62,
-      "text": "loop inside JavaScript.",
-      "words": [
+        },
         {
           "text": "loop",
           "start": 37.22,
@@ -693,8 +683,8 @@
     {
       "id": "cue-13",
       "start": 39.62,
-      "end": 46.84,
-      "text": "So first up, as he said I work for AndYet which is an awesome little Dev shop in the",
+      "end": 46.46,
+      "text": "So first up, as he said I work for AndYet which is an awesome little Dev shop in.",
       "words": [
         {
           "text": "So",
@@ -782,23 +772,23 @@
           "end": 46.08
         },
         {
-          "text": "in",
+          "text": "in.",
           "start": 46.08,
           "end": 46.46
-        },
-        {
-          "text": "the",
-          "start": 46.46,
-          "end": 46.84
         }
       ]
     },
     {
       "id": "cue-14",
-      "start": 46.9,
+      "start": 46.46,
       "end": 50.75,
-      "text": "US, look us up if you need help with real‑time stuff.",
+      "text": "The US, look us up if you need help with real‑time stuff.",
       "words": [
+        {
+          "text": "The",
+          "start": 46.46,
+          "end": 46.84
+        },
         {
           "text": "US,",
           "start": 46.9,
@@ -892,8 +882,8 @@
     {
       "id": "cue-16",
       "start": 52.26,
-      "end": 60.06,
-      "text": "So, about 18 months ago--I'm a paid professional JavaScript developer--I thought to myself",
+      "end": 63.3,
+      "text": "So, about 18 months ago--I'm a paid professional JavaScript developer--I thought to myself how does, like JavaScript actually.",
       "words": [
         {
           "text": "So,",
@@ -959,15 +949,7 @@
           "text": "myself",
           "start": 59.46,
           "end": 60.06
-        }
-      ]
-    },
-    {
-      "id": "cue-17",
-      "start": 60.0,
-      "end": 63.96,
-      "text": "how does, like JavaScript actually work?",
-      "words": [
+        },
         {
           "text": "how",
           "start": 60.0,
@@ -989,12 +971,20 @@
           "end": 62.64
         },
         {
-          "text": "actually",
+          "text": "actually.",
           "start": 62.64,
           "end": 63.3
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-17",
+      "start": 63.3,
+      "end": 63.96,
+      "text": "Work?",
+      "words": [
         {
-          "text": "work?",
+          "text": "Work?",
           "start": 63.3,
           "end": 63.96
         }
@@ -1129,7 +1119,7 @@
     {
       "id": "cue-20",
       "start": 72.72,
-      "end": 76.32,
+      "end": 76.27,
       "text": "I'd heard things like single threaded, you know obviously I'm using callbacks.",
       "words": [
         {
@@ -1225,8 +1215,8 @@
     {
       "id": "cue-22",
       "start": 77.97,
-      "end": 85.22,
-      "text": "I started a journey of like reading and research and experimenting in the browser which basically",
+      "end": 85.91,
+      "text": "I started a journey of like reading and research and experimenting in the browser which basically started like.",
       "words": [
         {
           "text": "I",
@@ -1307,27 +1297,27 @@
           "text": "basically",
           "start": 84.77,
           "end": 85.22
-        }
-      ]
-    },
-    {
-      "id": "cue-23",
-      "start": 85.25,
-      "end": 86.24,
-      "text": "started like this.",
-      "words": [
+        },
         {
           "text": "started",
           "start": 85.25,
           "end": 85.58
         },
         {
-          "text": "like",
+          "text": "like.",
           "start": 85.58,
           "end": 85.91
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-23",
+      "start": 85.91,
+      "end": 86.25,
+      "text": "This.",
+      "words": [
         {
-          "text": "this.",
+          "text": "This.",
           "start": 85.91,
           "end": 86.24
         }
@@ -1336,7 +1326,7 @@
     {
       "id": "cue-24",
       "start": 86.25,
-      "end": 90.55,
+      "end": 90.54,
       "text": "‑‑ I was kind of like JavaScript what are you.",
       "words": [
         {
@@ -1447,11 +1437,11 @@
     {
       "id": "cue-26",
       "start": 95.68,
-      "end": 101.12,
-      "text": "yeah, cool, I have a call stack, an event loop, a callback queue, and some other APIs",
+      "end": 101.84,
+      "text": "Yeah, cool, I have a call stack, an event loop, a callback queue, and some other APIs and.",
       "words": [
         {
-          "text": "yeah,",
+          "text": "Yeah,",
           "start": 95.68,
           "end": 96.0
         },
@@ -1534,22 +1524,22 @@
           "text": "APIs",
           "start": 100.8,
           "end": 101.12
+        },
+        {
+          "text": "and.",
+          "start": 101.06,
+          "end": 101.84
         }
       ]
     },
     {
       "id": "cue-27",
-      "start": 101.06,
+      "start": 101.84,
       "end": 102.62,
-      "text": "and stuff.",
+      "text": "Stuff.",
       "words": [
         {
-          "text": "and",
-          "start": 101.06,
-          "end": 101.84
-        },
-        {
-          "text": "stuff.",
+          "text": "Stuff.",
           "start": 101.84,
           "end": 102.62
         }
@@ -1624,8 +1614,8 @@
     {
       "id": "cue-30",
       "start": 105.26,
-      "end": 111.38,
-      "text": "I mean, these words, they're words, so I heard about V8 and the various Runtimes and different",
+      "end": 111.65,
+      "text": "I mean, these words, they're words, so I heard about V8 and the various Runtimes and different browsers.",
       "words": [
         {
           "text": "I",
@@ -1711,22 +1701,22 @@
           "text": "different",
           "start": 111.02,
           "end": 111.38
+        },
+        {
+          "text": "browsers.",
+          "start": 111.42,
+          "end": 111.65
         }
       ]
     },
     {
       "id": "cue-31",
-      "start": 111.42,
+      "start": 111.65,
       "end": 115.79,
-      "text": "browsers so I looked to V8 do you have a call stack, an event loop, a callback queue, and",
+      "text": "So I looked to V8 do you have a call stack, an event loop, a callback queue, and.",
       "words": [
         {
-          "text": "browsers",
-          "start": 111.42,
-          "end": 111.65
-        },
-        {
-          "text": "so",
+          "text": "So",
           "start": 111.65,
           "end": 111.88
         },
@@ -1811,7 +1801,7 @@
           "end": 115.56
         },
         {
-          "text": "and",
+          "text": "and.",
           "start": 115.56,
           "end": 115.79
         }
@@ -1820,11 +1810,11 @@
     {
       "id": "cue-32",
       "start": 115.87,
-      "end": 120.24,
-      "text": "some other APIs and stuff, I have a call stack and a heap, I don't know what those other",
+      "end": 120.01,
+      "text": "Some other APIs and stuff, I have a call stack and a heap, I don't know what those.",
       "words": [
         {
-          "text": "some",
+          "text": "Some",
           "start": 115.87,
           "end": 116.1
         },
@@ -1909,23 +1899,23 @@
           "end": 119.78
         },
         {
-          "text": "those",
+          "text": "those.",
           "start": 119.78,
           "end": 120.01
-        },
-        {
-          "text": "other",
-          "start": 120.01,
-          "end": 120.24
         }
       ]
     },
     {
       "id": "cue-33",
-      "start": 120.3,
+      "start": 120.01,
       "end": 129.66,
-      "text": "things are, okay, interesting so basically 18 months passed.",
+      "text": "Other things are, okay, interesting so basically 18 months passed.",
       "words": [
+        {
+          "text": "Other",
+          "start": 120.01,
+          "end": 120.24
+        },
         {
           "text": "things",
           "start": 120.3,
@@ -2013,17 +2003,12 @@
     },
     {
       "id": "cue-35",
-      "start": 132.55,
+      "start": 132.81,
       "end": 135.93,
-      "text": "(Laughing) and so, this is what I want to share with you today.",
+      "text": "And so, this is what I want to share with you today.",
       "words": [
         {
-          "text": "(Laughing)",
-          "start": 132.55,
-          "end": 132.81
-        },
-        {
-          "text": "and",
+          "text": "And",
           "start": 132.81,
           "end": 133.07
         },
@@ -2087,8 +2072,8 @@
     {
       "id": "cue-36",
       "start": 135.97,
-      "end": 141.52,
-      "text": "Hopefully this will be useful if you're relatively new to JavaScript, help you understand why",
+      "end": 142.35,
+      "text": "Hopefully this will be useful if you're relatively new to JavaScript, help you understand why JavaScript is so.",
       "words": [
         {
           "text": "Hopefully",
@@ -2164,15 +2149,7 @@
           "text": "why",
           "start": 141.15,
           "end": 141.52
-        }
-      ]
-    },
-    {
-      "id": "cue-37",
-      "start": 141.51,
-      "end": 145.99,
-      "text": "JavaScript is so weird when you compare it to other languages you might used why callbacks",
-      "words": [
+        },
         {
           "text": "JavaScript",
           "start": 141.51,
@@ -2184,12 +2161,20 @@
           "end": 142.07
         },
         {
-          "text": "so",
+          "text": "so.",
           "start": 142.07,
           "end": 142.35
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-37",
+      "start": 142.35,
+      "end": 147.86,
+      "text": "Weird when you compare it to other languages you might used why callbacks are a thing, cause us.",
+      "words": [
         {
-          "text": "weird",
+          "text": "Weird",
           "start": 142.35,
           "end": 142.63
         },
@@ -2252,15 +2237,7 @@
           "text": "callbacks",
           "start": 145.71,
           "end": 145.99
-        }
-      ]
-    },
-    {
-      "id": "cue-38",
-      "start": 146.06,
-      "end": 149.3,
-      "text": "are a thing, cause us hell but are required.",
-      "words": [
+        },
         {
           "text": "are",
           "start": 146.06,
@@ -2282,12 +2259,20 @@
           "end": 147.5
         },
         {
-          "text": "us",
+          "text": "us.",
           "start": 147.5,
           "end": 147.86
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-38",
+      "start": 147.86,
+      "end": 149.29,
+      "text": "Hell but are required.",
+      "words": [
         {
-          "text": "hell",
+          "text": "Hell",
           "start": 147.86,
           "end": 148.22
         },
@@ -2311,8 +2296,8 @@
     {
       "id": "cue-39",
       "start": 149.29,
-      "end": 155.59,
-      "text": "And if you're an experienced JavaScript developer hopefully give you some fresh insights how",
+      "end": 157.06,
+      "text": "And if you're an experienced JavaScript developer hopefully give you some fresh insights how the Runtime you're using.",
       "words": [
         {
           "text": "And",
@@ -2383,15 +2368,7 @@
           "text": "how",
           "start": 155.14,
           "end": 155.59
-        }
-      ]
-    },
-    {
-      "id": "cue-40",
-      "start": 155.54,
-      "end": 160.86,
-      "text": "the Runtime you're using works so you can think about it a little better.",
-      "words": [
+        },
         {
           "text": "the",
           "start": 155.54,
@@ -2408,12 +2385,20 @@
           "end": 156.68
         },
         {
-          "text": "using",
+          "text": "using.",
           "start": 156.68,
           "end": 157.06
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-40",
+      "start": 157.06,
+      "end": 160.86,
+      "text": "Works so you can think about it a little better.",
+      "words": [
         {
-          "text": "works",
+          "text": "Works",
           "start": 157.06,
           "end": 157.44
         },
@@ -2467,7 +2452,7 @@
     {
       "id": "cue-41",
       "start": 160.89,
-      "end": 171.43,
+      "end": 171.38,
       "text": "So if we look at the JavaScript Runtime itself like V8 which is the Runtime inside Chrome.",
       "words": [
         {
@@ -2618,8 +2603,8 @@
     {
       "id": "cue-43",
       "start": 175.13,
-      "end": 181.85,
-      "text": "The heap, where memory allocation happens, and then there's the call stack, which is",
+      "end": 183.65,
+      "text": "The heap, where memory allocation happens, and then there's the call stack, which is where your stack frames.",
       "words": [
         {
           "text": "The",
@@ -2690,15 +2675,7 @@
           "text": "is",
           "start": 181.37,
           "end": 181.85
-        }
-      ]
-    },
-    {
-      "id": "cue-44",
-      "start": 181.85,
-      "end": 189.95,
-      "text": "where your stack frames are and all that kind of stuff, but, if you, like, clone the V8",
-      "words": [
+        },
         {
           "text": "where",
           "start": 181.85,
@@ -2715,12 +2692,20 @@
           "end": 183.2
         },
         {
-          "text": "frames",
+          "text": "frames.",
           "start": 183.2,
           "end": 183.65
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-44",
+      "start": 183.65,
+      "end": 191.77,
+      "text": "Are and all that kind of stuff, but, if you, like, clone the V8 code base and grep.",
+      "words": [
         {
-          "text": "are",
+          "text": "Are",
           "start": 183.65,
           "end": 184.1
         },
@@ -2788,15 +2773,7 @@
           "text": "V8",
           "start": 189.5,
           "end": 189.95
-        }
-      ]
-    },
-    {
-      "id": "cue-45",
-      "start": 189.93,
-      "end": 197.75,
-      "text": "code base and grep for things like setTimeout or DOM or HTTP request, they're not in there,",
-      "words": [
+        },
         {
           "text": "code",
           "start": 189.93,
@@ -2813,12 +2790,20 @@
           "end": 191.31
         },
         {
-          "text": "grep",
+          "text": "grep.",
           "start": 191.31,
           "end": 191.77
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-45",
+      "start": 191.77,
+      "end": 199.37,
+      "text": "For things like setTimeout or DOM or HTTP request, they're not in there, they don't exist in V8.",
+      "words": [
         {
-          "text": "for",
+          "text": "For",
           "start": 191.77,
           "end": 192.23
         },
@@ -2881,15 +2866,7 @@
           "text": "there,",
           "start": 197.29,
           "end": 197.75
-        }
-      ]
-    },
-    {
-      "id": "cue-46",
-      "start": 197.72,
-      "end": 201.35,
-      "text": "they don't exist in V8, which was a surprise to me.",
-      "words": [
+        },
         {
           "text": "they",
           "start": 197.72,
@@ -2911,12 +2888,20 @@
           "end": 199.04
         },
         {
-          "text": "V8,",
+          "text": "V8.",
           "start": 199.04,
           "end": 199.37
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-46",
+      "start": 199.37,
+      "end": 201.35,
+      "text": "Which was a surprise to me.",
+      "words": [
         {
-          "text": "which",
+          "text": "Which",
           "start": 199.37,
           "end": 199.7
         },
@@ -2950,8 +2935,8 @@
     {
       "id": "cue-47",
       "start": 201.38,
-      "end": 207.84,
-      "text": "It's first thing you use when you start thinking about async stuff and it's not in the V8 source.",
+      "end": 207.5,
+      "text": "It's first thing you use when you start thinking about async stuff and it's not in the V8.",
       "words": [
         {
           "text": "It's",
@@ -3039,22 +3024,30 @@
           "end": 207.16
         },
         {
-          "text": "V8",
+          "text": "V8.",
           "start": 207.16,
           "end": 207.5
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-48",
+      "start": 207.5,
+      "end": 207.93,
+      "text": "Source.",
+      "words": [
         {
-          "text": "source.",
+          "text": "Source.",
           "start": 207.5,
           "end": 207.84
         }
       ]
     },
     {
-      "id": "cue-48",
+      "id": "cue-49",
       "start": 207.93,
-      "end": 209.4,
-      "text": "Hmm ... interesting.",
+      "end": 208.91,
+      "text": "Hmm ...",
       "words": [
         {
           "text": "Hmm",
@@ -3065,19 +3058,27 @@
           "text": "...",
           "start": 208.42,
           "end": 208.91
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-50",
+      "start": 208.91,
+      "end": 209.39,
+      "text": "Interesting.",
+      "words": [
         {
-          "text": "interesting.",
+          "text": "Interesting.",
           "start": 208.91,
           "end": 209.4
         }
       ]
     },
     {
-      "id": "cue-49",
+      "id": "cue-51",
       "start": 209.39,
-      "end": 215.85,
-      "text": "So, over this 18 months of discovery I come to realize this is really, this is really",
+      "end": 216.11,
+      "text": "So, over this 18 months of discovery I come to realize this is really, this is really the.",
       "words": [
         {
           "text": "So,",
@@ -3163,22 +3164,22 @@
           "text": "really",
           "start": 215.47,
           "end": 215.85
+        },
+        {
+          "text": "the.",
+          "start": 215.86,
+          "end": 216.11
         }
       ]
     },
     {
-      "id": "cue-50",
-      "start": 215.86,
-      "end": 220.11,
-      "text": "the bigger picture, this is what I'm hoping to get you on board with today and understand",
+      "id": "cue-52",
+      "start": 216.11,
+      "end": 220.61,
+      "text": "Bigger picture, this is what I'm hoping to get you on board with today and understand what these.",
       "words": [
         {
-          "text": "the",
-          "start": 215.86,
-          "end": 216.11
-        },
-        {
-          "text": "bigger",
+          "text": "Bigger",
           "start": 216.11,
           "end": 216.36
         },
@@ -3256,27 +3257,27 @@
           "text": "understand",
           "start": 219.86,
           "end": 220.11
-        }
-      ]
-    },
-    {
-      "id": "cue-51",
-      "start": 220.05,
-      "end": 225.09,
-      "text": "what these pieces are, we have the V8 Runtime but then we have these things called web APIs",
-      "words": [
+        },
         {
           "text": "what",
           "start": 220.05,
           "end": 220.33
         },
         {
-          "text": "these",
+          "text": "these.",
           "start": 220.33,
           "end": 220.61
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-53",
+      "start": 220.61,
+      "end": 225.8,
+      "text": "Pieces are, we have the V8 Runtime but then we have these things called web APIs which are.",
+      "words": [
         {
-          "text": "pieces",
+          "text": "Pieces",
           "start": 220.61,
           "end": 220.89
         },
@@ -3354,27 +3355,27 @@
           "text": "APIs",
           "start": 224.81,
           "end": 225.09
-        }
-      ]
-    },
-    {
-      "id": "cue-52",
-      "start": 225.1,
-      "end": 227.9,
-      "text": "which are extra things that the browser provides.",
-      "words": [
+        },
         {
           "text": "which",
           "start": 225.1,
           "end": 225.45
         },
         {
-          "text": "are",
+          "text": "are.",
           "start": 225.45,
           "end": 225.8
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-54",
+      "start": 225.8,
+      "end": 227.9,
+      "text": "Extra things that the browser provides.",
+      "words": [
         {
-          "text": "extra",
+          "text": "Extra",
           "start": 225.8,
           "end": 226.15
         },
@@ -3406,10 +3407,10 @@
       ]
     },
     {
-      "id": "cue-53",
+      "id": "cue-55",
       "start": 227.91,
-      "end": 234.79,
-      "text": "DOM, AJAX, time out, things like that, we have this mythical event loop and the callback",
+      "end": 235.86,
+      "text": "DOM, AJAX, time out, things like that, we have this mythical event loop and the callback queue.",
       "words": [
         {
           "text": "DOM,",
@@ -3490,15 +3491,7 @@
           "text": "callback",
           "start": 234.36,
           "end": 234.79
-        }
-      ]
-    },
-    {
-      "id": "cue-54",
-      "start": 234.86,
-      "end": 235.86,
-      "text": "queue.",
-      "words": [
+        },
         {
           "text": "queue.",
           "start": 234.86,
@@ -3507,10 +3500,10 @@
       ]
     },
     {
-      "id": "cue-55",
+      "id": "cue-56",
       "start": 235.86,
-      "end": 239.46,
-      "text": "I'm sure you've heard some of these terms before, but maybe you don't quite understand",
+      "end": 240.9,
+      "text": "I'm sure you've heard some of these terms before, but maybe you don't quite understand how these pieces.",
       "words": [
         {
           "text": "I'm",
@@ -3586,15 +3579,7 @@
           "text": "understand",
           "start": 239.22,
           "end": 239.46
-        }
-      ]
-    },
-    {
-      "id": "cue-56",
-      "start": 239.43,
-      "end": 241.88,
-      "text": "how these pieces pull together.",
-      "words": [
+        },
         {
           "text": "how",
           "start": 239.43,
@@ -3606,12 +3591,20 @@
           "end": 240.41
         },
         {
-          "text": "pieces",
+          "text": "pieces.",
           "start": 240.41,
           "end": 240.9
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-57",
+      "start": 240.9,
+      "end": 241.87,
+      "text": "Pull together.",
+      "words": [
         {
-          "text": "pull",
+          "text": "Pull",
           "start": 240.9,
           "end": 241.39
         },
@@ -3623,10 +3616,10 @@
       ]
     },
     {
-      "id": "cue-57",
+      "id": "cue-58",
       "start": 241.87,
       "end": 246.55,
-      "text": "So, I'm going to start from the beginning, some of this will be new, to words might be",
+      "text": "So, I'm going to start from the beginning, some of this will be new, to words might be.",
       "words": [
         {
           "text": "So,",
@@ -3714,20 +3707,20 @@
           "end": 246.29
         },
         {
-          "text": "be",
+          "text": "be.",
           "start": 246.29,
           "end": 246.55
         }
       ]
     },
     {
-      "id": "cue-58",
+      "id": "cue-59",
       "start": 246.63,
       "end": 248.87,
-      "text": "new to people, other people will get this.",
+      "text": "New to people, other people will get this.",
       "words": [
         {
-          "text": "new",
+          "text": "New",
           "start": 246.63,
           "end": 246.91
         },
@@ -3769,10 +3762,10 @@
       ]
     },
     {
-      "id": "cue-59",
+      "id": "cue-60",
       "start": 248.89,
       "end": 253.93,
-      "text": "We're going to quickly move on from here, bear with me if this is obvious, I think for",
+      "text": "We're going to quickly move on from here, bear with me if this is obvious, I think for.",
       "words": [
         {
           "text": "We're",
@@ -3860,20 +3853,20 @@
           "end": 253.65
         },
         {
-          "text": "for",
+          "text": "for.",
           "start": 253.65,
           "end": 253.93
         }
       ]
     },
     {
-      "id": "cue-60",
+      "id": "cue-61",
       "start": 253.94,
       "end": 256.16,
-      "text": "a lot of people it's not.",
+      "text": "A lot of people it's not.",
       "words": [
         {
-          "text": "a",
+          "text": "A",
           "start": 253.94,
           "end": 254.31
         },
@@ -3905,10 +3898,10 @@
       ]
     },
     {
-      "id": "cue-61",
+      "id": "cue-62",
       "start": 256.18,
-      "end": 261.25,
-      "text": "So, JavaScript is a single threaded programming language, single threaded Runtime, it has",
+      "end": 263.38,
+      "text": "So, JavaScript is a single threaded programming language, single threaded Runtime, it has a single call stack.",
       "words": [
         {
           "text": "So,",
@@ -3974,15 +3967,7 @@
           "text": "has",
           "start": 260.86,
           "end": 261.25
-        }
-      ]
-    },
-    {
-      "id": "cue-62",
-      "start": 261.29,
-      "end": 263.38,
-      "text": "a single call stack.",
-      "words": [
+        },
         {
           "text": "a",
           "start": 261.29,
@@ -4008,8 +3993,8 @@
     {
       "id": "cue-63",
       "start": 263.39,
-      "end": 268.61,
-      "text": "And it can do one thing at a time, that's what a single thread means, the program can",
+      "end": 268.57,
+      "text": "And it can do one thing at a time, that's what a single thread means, the program can.",
       "words": [
         {
           "text": "And",
@@ -4097,7 +4082,7 @@
           "end": 268.32
         },
         {
-          "text": "can",
+          "text": "can.",
           "start": 268.32,
           "end": 268.61
         }
@@ -4107,10 +4092,10 @@
       "id": "cue-64",
       "start": 268.57,
       "end": 270.89,
-      "text": "run one piece of code at a time.",
+      "text": "Run one piece of code at a time.",
       "words": [
         {
-          "text": "run",
+          "text": "Run",
           "start": 268.57,
           "end": 268.86
         },
@@ -4154,8 +4139,8 @@
     {
       "id": "cue-65",
       "start": 270.92,
-      "end": 275.48,
-      "text": "So, let's try and visualize that just to get our heads around what that mean, so if I have",
+      "end": 275.24,
+      "text": "So, let's try and visualize that just to get our heads around what that mean, so if I.",
       "words": [
         {
           "text": "So,",
@@ -4243,23 +4228,23 @@
           "end": 275.0
         },
         {
-          "text": "I",
+          "text": "I.",
           "start": 275.0,
           "end": 275.24
-        },
-        {
-          "text": "have",
-          "start": 275.24,
-          "end": 275.48
         }
       ]
     },
     {
       "id": "cue-66",
-      "start": 275.39,
-      "end": 280.83,
-      "text": "some code like this on your left, we've got a few functions, a function multiplier which",
+      "start": 275.24,
+      "end": 281.26,
+      "text": "Have some code like this on your left, we've got a few functions, a function multiplier which multiplies.",
       "words": [
+        {
+          "text": "Have",
+          "start": 275.24,
+          "end": 275.48
+        },
         {
           "text": "some",
           "start": 275.39,
@@ -4339,22 +4324,22 @@
           "text": "which",
           "start": 280.49,
           "end": 280.83
+        },
+        {
+          "text": "multiplies.",
+          "start": 280.85,
+          "end": 281.26
         }
       ]
     },
     {
       "id": "cue-67",
-      "start": 280.85,
-      "end": 286.59,
-      "text": "multiplies two numbers, square which calls multiply with the same number twice, a function",
+      "start": 281.26,
+      "end": 288.17,
+      "text": "Two numbers, square which calls multiply with the same number twice, a function which prints the square of.",
       "words": [
         {
-          "text": "multiplies",
-          "start": 280.85,
-          "end": 281.26
-        },
-        {
-          "text": "two",
+          "text": "Two",
           "start": 281.26,
           "end": 281.67
         },
@@ -4417,15 +4402,7 @@
           "text": "function",
           "start": 286.18,
           "end": 286.59
-        }
-      ]
-    },
-    {
-      "id": "cue-68",
-      "start": 286.57,
-      "end": 291.69,
-      "text": "which prints the square of a number of calling square and then calling console.log and then",
-      "words": [
+        },
         {
           "text": "which",
           "start": 286.57,
@@ -4447,12 +4424,20 @@
           "end": 287.85
         },
         {
-          "text": "of",
+          "text": "of.",
           "start": 287.85,
           "end": 288.17
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-68",
+      "start": 288.17,
+      "end": 293.66,
+      "text": "A number of calling square and then calling console.log and then at the bottom of our file we.",
+      "words": [
         {
-          "text": "a",
+          "text": "A",
           "start": 288.17,
           "end": 288.49
         },
@@ -4505,15 +4490,7 @@
           "text": "then",
           "start": 291.37,
           "end": 291.69
-        }
-      ]
-    },
-    {
-      "id": "cue-69",
-      "start": 291.7,
-      "end": 295.9,
-      "text": "at the bottom of our file we actually run print square, this code all good?",
-      "words": [
+        },
         {
           "text": "at",
           "start": 291.7,
@@ -4545,12 +4522,20 @@
           "end": 293.38
         },
         {
-          "text": "we",
+          "text": "we.",
           "start": 293.38,
           "end": 293.66
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-69",
+      "start": 293.66,
+      "end": 295.86,
+      "text": "Actually run print square, this code all good?",
+      "words": [
         {
-          "text": "actually",
+          "text": "Actually",
           "start": 293.66,
           "end": 293.94
         },
@@ -4625,8 +4610,8 @@
     {
       "id": "cue-72",
       "start": 297.86,
-      "end": 304.51,
-      "text": "So, if we run this, well, I should back up a step, so the call stack is basically ‑‑",
+      "end": 304.16,
+      "text": "So, if we run this, well, I should back up a step, so the call stack is basically.",
       "words": [
         {
           "text": "So,",
@@ -4714,23 +4699,23 @@
           "end": 303.81
         },
         {
-          "text": "basically",
+          "text": "basically.",
           "start": 303.81,
           "end": 304.16
-        },
-        {
-          "text": "‑‑",
-          "start": 304.16,
-          "end": 304.51
         }
       ]
     },
     {
       "id": "cue-73",
-      "start": 304.44,
-      "end": 308.69,
-      "text": "it's a data structure which records basically where in the program we are, if we step into",
+      "start": 304.16,
+      "end": 308.66,
+      "text": "‑‑ it's a data structure which records basically where in the program we are, if we step into.",
       "words": [
+        {
+          "text": "‑‑",
+          "start": 304.16,
+          "end": 304.51
+        },
         {
           "text": "it's",
           "start": 304.44,
@@ -4812,7 +4797,7 @@
           "end": 308.44
         },
         {
-          "text": "into",
+          "text": "into.",
           "start": 308.44,
           "end": 308.69
         }
@@ -4821,11 +4806,11 @@
     {
       "id": "cue-74",
       "start": 308.66,
-      "end": 312.84,
-      "text": "a function, we put something on to the stack, if we return from a function, we pop off the",
+      "end": 312.62,
+      "text": "A function, we put something on to the stack, if we return from a function, we pop off.",
       "words": [
         {
-          "text": "a",
+          "text": "A",
           "start": 308.66,
           "end": 308.88
         },
@@ -4910,23 +4895,23 @@
           "end": 312.4
         },
         {
-          "text": "off",
+          "text": "off.",
           "start": 312.4,
           "end": 312.62
-        },
-        {
-          "text": "the",
-          "start": 312.62,
-          "end": 312.84
         }
       ]
     },
     {
       "id": "cue-75",
-      "start": 312.8,
-      "end": 318.56,
-      "text": "top of the stack that's all the stack can do, ‑‑ so if you run this file, there's",
+      "start": 312.62,
+      "end": 318.24,
+      "text": "The top of the stack that's all the stack can do, ‑‑ so if you run this file.",
       "words": [
+        {
+          "text": "The",
+          "start": 312.62,
+          "end": 312.84
+        },
         {
           "text": "top",
           "start": 312.8,
@@ -5008,23 +4993,23 @@
           "end": 317.92
         },
         {
-          "text": "file,",
+          "text": "file.",
           "start": 317.92,
           "end": 318.24
-        },
-        {
-          "text": "there's",
-          "start": 318.24,
-          "end": 318.56
         }
       ]
     },
     {
       "id": "cue-76",
-      "start": 318.62,
-      "end": 323.48,
-      "text": "kind of a main function, right, like the file itself, so, we push that on to the stack.",
+      "start": 318.24,
+      "end": 323.21,
+      "text": "There's kind of a main function, right, like the file itself, so, we push that on to the.",
       "words": [
+        {
+          "text": "There's",
+          "start": 318.24,
+          "end": 318.56
+        },
         {
           "text": "kind",
           "start": 318.62,
@@ -5106,22 +5091,30 @@
           "end": 322.94
         },
         {
-          "text": "the",
+          "text": "the.",
           "start": 322.94,
           "end": 323.21
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-77",
+      "start": 323.21,
+      "end": 323.47,
+      "text": "Stack.",
+      "words": [
         {
-          "text": "stack.",
+          "text": "Stack.",
           "start": 323.21,
           "end": 323.48
         }
       ]
     },
     {
-      "id": "cue-77",
+      "id": "cue-78",
       "start": 323.47,
-      "end": 328.42,
-      "text": "Then we have some function definitions, they're just like defining the state of the world,",
+      "end": 329.2,
+      "text": "Then we have some function definitions, they're just like defining the state of the world, and finally we.",
       "words": [
         {
           "text": "Then",
@@ -5197,15 +5190,7 @@
           "text": "world,",
           "start": 328.09,
           "end": 328.42
-        }
-      ]
-    },
-    {
-      "id": "cue-78",
-      "start": 328.45,
-      "end": 332.7,
-      "text": "and finally we got to print square, right, so print square is a function call, so we",
-      "words": [
+        },
         {
           "text": "and",
           "start": 328.45,
@@ -5217,12 +5202,20 @@
           "end": 328.95
         },
         {
-          "text": "we",
+          "text": "we.",
           "start": 328.95,
           "end": 329.2
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-79",
+      "start": 329.2,
+      "end": 334.01,
+      "text": "Got to print square, right, so print square is a function call, so we push that on to.",
+      "words": [
         {
-          "text": "got",
+          "text": "Got",
           "start": 329.2,
           "end": 329.45
         },
@@ -5290,15 +5283,7 @@
           "text": "we",
           "start": 332.45,
           "end": 332.7
-        }
-      ]
-    },
-    {
-      "id": "cue-79",
-      "start": 332.77,
-      "end": 337.73,
-      "text": "push that on to the stack, and immediately inside print square, push on to the stack,",
-      "words": [
+        },
         {
           "text": "push",
           "start": 332.77,
@@ -5315,12 +5300,20 @@
           "end": 333.7
         },
         {
-          "text": "to",
+          "text": "to.",
           "start": 333.7,
           "end": 334.01
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-80",
+      "start": 334.01,
+      "end": 339.93,
+      "text": "The stack, and immediately inside print square, push on to the stack, which calls multiply, now we have.",
+      "words": [
         {
-          "text": "the",
+          "text": "The",
           "start": 334.01,
           "end": 334.32
         },
@@ -5378,15 +5371,7 @@
           "text": "stack,",
           "start": 337.42,
           "end": 337.73
-        }
-      ]
-    },
-    {
-      "id": "cue-80",
-      "start": 337.71,
-      "end": 344.0,
-      "text": "which calls multiply, now we have a return statement, we multiply A and B and we return,",
-      "words": [
+        },
         {
           "text": "which",
           "start": 337.71,
@@ -5413,12 +5398,20 @@
           "end": 339.56
         },
         {
-          "text": "have",
+          "text": "have.",
           "start": 339.56,
           "end": 339.93
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-81",
+      "start": 339.93,
+      "end": 346.18,
+      "text": "A return statement, we multiply A and B and we return, when we return we pop something off.",
+      "words": [
         {
-          "text": "a",
+          "text": "A",
           "start": 339.93,
           "end": 340.3
         },
@@ -5471,15 +5464,7 @@
           "text": "return,",
           "start": 343.63,
           "end": 344.0
-        }
-      ]
-    },
-    {
-      "id": "cue-81",
-      "start": 343.94,
-      "end": 349.06,
-      "text": "when we return we pop something off the stack, so, pop, multiplier of the stack, returning",
-      "words": [
+        },
         {
           "text": "when",
           "start": 343.94,
@@ -5511,12 +5496,20 @@
           "end": 345.86
         },
         {
-          "text": "off",
+          "text": "off.",
           "start": 345.86,
           "end": 346.18
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-82",
+      "start": 346.18,
+      "end": 354.57,
+      "text": "The stack, so, pop, multiplier of the stack, returning to square, return to print square, console.log, there's no.",
+      "words": [
         {
-          "text": "the",
+          "text": "The",
           "start": 346.18,
           "end": 346.5
         },
@@ -5559,15 +5552,7 @@
           "text": "returning",
           "start": 348.74,
           "end": 349.06
-        }
-      ]
-    },
-    {
-      "id": "cue-82",
-      "start": 348.99,
-      "end": 357.05,
-      "text": "to square, return to print square, console.log, there's no return, it's implicit, because",
-      "words": [
+        },
         {
           "text": "to",
           "start": 348.99,
@@ -5609,12 +5594,20 @@
           "end": 353.95
         },
         {
-          "text": "no",
+          "text": "no.",
           "start": 353.95,
           "end": 354.57
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-83",
+      "start": 354.57,
+      "end": 360.68,
+      "text": "Return, it's implicit, because we got to the end of the function, and we're done so that's like.",
+      "words": [
         {
-          "text": "return,",
+          "text": "Return,",
           "start": 354.57,
           "end": 355.19
         },
@@ -5632,15 +5625,7 @@
           "text": "because",
           "start": 356.43,
           "end": 357.05
-        }
-      ]
-    },
-    {
-      "id": "cue-83",
-      "start": 357.04,
-      "end": 361.72,
-      "text": "we got to the end of the function, and we're done so that's like a visualization of the",
-      "words": [
+        },
         {
           "text": "we",
           "start": 357.04,
@@ -5707,12 +5692,20 @@
           "end": 360.42
         },
         {
-          "text": "like",
+          "text": "like.",
           "start": 360.42,
           "end": 360.68
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-84",
+      "start": 360.68,
+      "end": 365.09,
+      "text": "A visualization of the call stalk, does that make sense?",
+      "words": [
         {
-          "text": "a",
+          "text": "A",
           "start": 360.68,
           "end": 360.94
         },
@@ -5730,15 +5723,7 @@
           "text": "the",
           "start": 361.46,
           "end": 361.72
-        }
-      ]
-    },
-    {
-      "id": "cue-84",
-      "start": 361.68,
-      "end": 365.1,
-      "text": "call stalk, does that make sense?",
-      "words": [
+        },
         {
           "text": "call",
           "start": 361.68,
@@ -5774,8 +5759,8 @@
     {
       "id": "cue-85",
       "start": 365.09,
-      "end": 371.84,
-      "text": "(Yes, Phil) even if you haven't thought about the call stack before, you've come across",
+      "end": 372.94,
+      "text": "(Yes, Phil) even if you haven't thought about the call stack before, you've come across it when you've.",
       "words": [
         {
           "text": "(Yes,",
@@ -5851,15 +5836,7 @@
           "text": "across",
           "start": 371.39,
           "end": 371.84
-        }
-      ]
-    },
-    {
-      "id": "cue-86",
-      "start": 371.83,
-      "end": 378.12,
-      "text": "it when you've been doing browser‑side development, so if we have code like this, a function baz",
-      "words": [
+        },
         {
           "text": "it",
           "start": 371.83,
@@ -5871,12 +5848,20 @@
           "end": 372.57
         },
         {
-          "text": "you've",
+          "text": "you've.",
           "start": 372.57,
           "end": 372.94
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-86",
+      "start": 372.94,
+      "end": 379.93,
+      "text": "Been doing browser‑side development, so if we have code like this, a function baz which calls bar, which.",
+      "words": [
         {
-          "text": "been",
+          "text": "Been",
           "start": 372.94,
           "end": 373.31
         },
@@ -5944,15 +5929,7 @@
           "text": "baz",
           "start": 377.75,
           "end": 378.12
-        }
-      ]
-    },
-    {
-      "id": "cue-87",
-      "start": 378.05,
-      "end": 386.98,
-      "text": "which calls bar, which calls Foo, which throws an error if we run it in Chrome we see this.",
-      "words": [
+        },
         {
           "text": "which",
           "start": 378.05,
@@ -5969,12 +5946,20 @@
           "end": 379.46
         },
         {
-          "text": "which",
+          "text": "which.",
           "start": 379.46,
           "end": 379.93
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-87",
+      "start": 379.93,
+      "end": 386.98,
+      "text": "Calls Foo, which throws an error if we run it in Chrome we see this.",
+      "words": [
         {
-          "text": "calls",
+          "text": "Calls",
           "start": 379.93,
           "end": 380.4
         },
@@ -6053,8 +6038,8 @@
     {
       "id": "cue-88",
       "start": 386.99,
-      "end": 392.11,
-      "text": "And it prints the stack trace, right, the state of the stack when that error happened,",
+      "end": 393.33,
+      "text": "And it prints the stack trace, right, the state of the stack when that error happened, so, uncaught.",
       "words": [
         {
           "text": "And",
@@ -6135,27 +6120,27 @@
           "text": "happened,",
           "start": 391.79,
           "end": 392.11
-        }
-      ]
-    },
-    {
-      "id": "cue-89",
-      "start": 392.05,
-      "end": 400.37,
-      "text": "so, uncaught error oops Foo, bar, Baz, anonymous function, which is our main.",
-      "words": [
+        },
         {
           "text": "so,",
           "start": 392.05,
           "end": 392.69
         },
         {
-          "text": "uncaught",
+          "text": "uncaught.",
           "start": 392.69,
           "end": 393.33
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-89",
+      "start": 393.33,
+      "end": 400.37,
+      "text": "Error oops Foo, bar, Baz, anonymous function, which is our main.",
+      "words": [
         {
-          "text": "error",
+          "text": "Error",
           "start": 393.33,
           "end": 393.97
         },
@@ -6214,7 +6199,7 @@
     {
       "id": "cue-90",
       "start": 400.4,
-      "end": 406.32,
+      "end": 406.3,
       "text": "Equally, if you've heard the term like blowing the stack, this is an example of that.",
       "words": [
         {
@@ -6302,8 +6287,8 @@
     {
       "id": "cue-91",
       "start": 406.3,
-      "end": 412.76,
-      "text": "Have a function foo which calls Foo , so what's going to happen ? We have a function main",
+      "end": 411.06,
+      "text": "Have a function foo which calls Foo , so what's going to happen ?",
       "words": [
         {
           "text": "Have",
@@ -6374,7 +6359,15 @@
           "text": "?",
           "start": 410.72,
           "end": 411.06
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-92",
+      "start": 411.06,
+      "end": 419.85,
+      "text": "We have a function main which calls foo which calls foo, which calls foo, which calls foo, and.",
+      "words": [
         {
           "text": "We",
           "start": 411.06,
@@ -6399,15 +6392,7 @@
           "text": "main",
           "start": 412.42,
           "end": 412.76
-        }
-      ]
-    },
-    {
-      "id": "cue-92",
-      "start": 412.83,
-      "end": 420.93,
-      "text": "which calls foo which calls foo, which calls foo, which calls foo, and ultimately chrome",
-      "words": [
+        },
         {
           "text": "which",
           "start": 412.83,
@@ -6469,12 +6454,20 @@
           "end": 419.31
         },
         {
-          "text": "and",
+          "text": "and.",
           "start": 419.31,
           "end": 419.85
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-93",
+      "start": 419.85,
+      "end": 427.73,
+      "text": "Ultimately chrome says, you probably didn't mean to call foo 16,000 times recursively, I'll just kill things for.",
+      "words": [
         {
-          "text": "ultimately",
+          "text": "Ultimately",
           "start": 419.85,
           "end": 420.39
         },
@@ -6482,15 +6475,7 @@
           "text": "chrome",
           "start": 420.39,
           "end": 420.93
-        }
-      ]
-    },
-    {
-      "id": "cue-93",
-      "start": 420.87,
-      "end": 427.47,
-      "text": "says, you probably didn't mean to call foo 16,000 times recursively, I'll just kill things",
-      "words": [
+        },
         {
           "text": "says,",
           "start": 420.87,
@@ -6565,22 +6550,22 @@
           "text": "things",
           "start": 427.03,
           "end": 427.47
+        },
+        {
+          "text": "for.",
+          "start": 427.46,
+          "end": 427.73
         }
       ]
     },
     {
       "id": "cue-94",
-      "start": 427.46,
+      "start": 427.73,
       "end": 430.7,
-      "text": "for you and you can figure out where your bug lies, right.",
+      "text": "You and you can figure out where your bug lies, right.",
       "words": [
         {
-          "text": "for",
-          "start": 427.46,
-          "end": 427.73
-        },
-        {
-          "text": "you",
+          "text": "You",
           "start": 427.73,
           "end": 428.0
         },
@@ -6639,8 +6624,8 @@
     {
       "id": "cue-95",
       "start": 430.71,
-      "end": 436.6,
-      "text": "So although I may be representing a new side of the call stack you have some sense of it",
+      "end": 436.29,
+      "text": "So although I may be representing a new side of the call stack you have some sense of.",
       "words": [
         {
           "text": "So",
@@ -6728,23 +6713,23 @@
           "end": 435.98
         },
         {
-          "text": "of",
+          "text": "of.",
           "start": 435.98,
           "end": 436.29
-        },
-        {
-          "text": "it",
-          "start": 436.29,
-          "end": 436.6
         }
       ]
     },
     {
       "id": "cue-96",
-      "start": 436.58,
+      "start": 436.29,
       "end": 438.73,
-      "text": "in your development practice already.",
+      "text": "It in your development practice already.",
       "words": [
+        {
+          "text": "It",
+          "start": 436.29,
+          "end": 436.6
+        },
         {
           "text": "in",
           "start": 436.58,
@@ -6775,7 +6760,7 @@
     {
       "id": "cue-97",
       "start": 438.74,
-      "end": 444.48,
+      "end": 444.44,
       "text": "So, the big question then comes is like what happens when things are slow?",
       "words": [
         {
@@ -6853,8 +6838,8 @@
     {
       "id": "cue-98",
       "start": 444.44,
-      "end": 451.16,
-      "text": "So, we talk about blocking and blocking behavior and blocking, there's no strict definition",
+      "end": 452.74,
+      "text": "So, we talk about blocking and blocking behavior and blocking, there's no strict definition of what is and.",
       "words": [
         {
           "text": "So,",
@@ -6925,15 +6910,7 @@
           "text": "definition",
           "start": 450.68,
           "end": 451.16
-        }
-      ]
-    },
-    {
-      "id": "cue-99",
-      "start": 451.22,
-      "end": 455.78,
-      "text": "of what is and didn't blocking, really it's just code that's slow.",
-      "words": [
+        },
         {
           "text": "of",
           "start": 451.22,
@@ -6950,12 +6927,20 @@
           "end": 452.36
         },
         {
-          "text": "and",
+          "text": "and.",
           "start": 452.36,
           "end": 452.74
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-99",
+      "start": 452.74,
+      "end": 455.78,
+      "text": "Didn't blocking, really it's just code that's slow.",
+      "words": [
         {
-          "text": "didn't",
+          "text": "Didn't",
           "start": 452.74,
           "end": 453.12
         },
@@ -6999,8 +6984,8 @@
     {
       "id": "cue-100",
       "start": 455.83,
-      "end": 461.27,
-      "text": "So console.log isn't slow, doing a while loop from one to ten billion is slow, network requests",
+      "end": 461.73,
+      "text": "So console.log isn't slow, doing a while loop from one to ten billion is slow, network requests are.",
       "words": [
         {
           "text": "So",
@@ -7086,22 +7071,22 @@
           "text": "requests",
           "start": 460.95,
           "end": 461.27
+        },
+        {
+          "text": "are.",
+          "start": 461.23,
+          "end": 461.73
         }
       ]
     },
     {
       "id": "cue-101",
-      "start": 461.23,
+      "start": 461.73,
       "end": 462.23,
-      "text": "are slow.",
+      "text": "Slow.",
       "words": [
         {
-          "text": "are",
-          "start": 461.23,
-          "end": 461.73
-        },
-        {
-          "text": "slow.",
+          "text": "Slow.",
           "start": 461.73,
           "end": 462.23
         }
@@ -7138,7 +7123,7 @@
     {
       "id": "cue-103",
       "start": 466.33,
-      "end": 472.05,
+      "end": 472.01,
       "text": "Things which are slow and on that stack are what are blocking means.",
       "words": [
         {
@@ -7211,8 +7196,8 @@
     {
       "id": "cue-104",
       "start": 472.01,
-      "end": 479.04,
-      "text": "So heres a little example, so let's say we have, this is like a fake bit of code, getSynchronous,",
+      "end": 478.67,
+      "text": "So heres a little example, so let's say we have, this is like a fake bit of code.",
       "words": [
         {
           "text": "So",
@@ -7300,23 +7285,23 @@
           "end": 478.3
         },
         {
-          "text": "code,",
+          "text": "code.",
           "start": 478.3,
           "end": 478.67
-        },
-        {
-          "text": "getSynchronous,",
-          "start": 478.67,
-          "end": 479.04
         }
       ]
     },
     {
       "id": "cue-105",
-      "start": 479.12,
-      "end": 483.88,
-      "text": "right, like jQuery is like, AJAX request.",
+      "start": 478.67,
+      "end": 483.85,
+      "text": "GetSynchronous, right, like jQuery is like, AJAX request.",
       "words": [
+        {
+          "text": "GetSynchronous,",
+          "start": 478.67,
+          "end": 479.04
+        },
         {
           "text": "right,",
           "start": 479.12,
@@ -7357,8 +7342,8 @@
     {
       "id": "cue-106",
       "start": 483.85,
-      "end": 487.35,
-      "text": "What would happen if those were synchronous requests, forget what we know about async",
+      "end": 490.16,
+      "text": "What would happen if those were synchronous requests, forget what we know about async callbacks they're synchronous.",
       "words": [
         {
           "text": "What",
@@ -7429,15 +7414,7 @@
           "text": "async",
           "start": 487.1,
           "end": 487.35
-        }
-      ]
-    },
-    {
-      "id": "cue-107",
-      "start": 487.34,
-      "end": 490.16,
-      "text": "callbacks they're synchronous.",
-      "words": [
+        },
         {
           "text": "callbacks",
           "start": 487.34,
@@ -7456,10 +7433,10 @@
       ]
     },
     {
-      "id": "cue-108",
+      "id": "cue-107",
       "start": 490.16,
       "end": 496.16,
-      "text": "If we go through it like we have, we call getSync and then we wait, because then we're",
+      "text": "If we go through it like we have, we call getSync and then we wait, because then we're.",
       "words": [
         {
           "text": "If",
@@ -7547,20 +7524,20 @@
           "end": 495.83
         },
         {
-          "text": "we're",
+          "text": "we're.",
           "start": 495.83,
           "end": 496.16
         }
       ]
     },
     {
-      "id": "cue-109",
+      "id": "cue-108",
       "start": 496.19,
-      "end": 501.91,
-      "text": "doing network request, network is relative to computers, are slow, hopefully that network",
+      "end": 505.19,
+      "text": "Doing network request, network is relative to computers, are slow, hopefully that network requests completes, we can move.",
       "words": [
         {
-          "text": "doing",
+          "text": "Doing",
           "start": 496.19,
           "end": 496.63
         },
@@ -7623,15 +7600,7 @@
           "text": "network",
           "start": 501.47,
           "end": 501.91
-        }
-      ]
-    },
-    {
-      "id": "cue-110",
-      "start": 501.94,
-      "end": 507.79,
-      "text": "requests completes, we can move on, wait, move on.",
-      "words": [
+        },
         {
           "text": "requests",
           "start": 501.94,
@@ -7653,12 +7622,20 @@
           "end": 504.54
         },
         {
-          "text": "move",
+          "text": "move.",
           "start": 504.54,
           "end": 505.19
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-109",
+      "start": 505.19,
+      "end": 507.79,
+      "text": "On, wait, move on.",
+      "words": [
         {
-          "text": "on,",
+          "text": "On,",
           "start": 505.19,
           "end": 505.84
         },
@@ -7680,10 +7657,10 @@
       ]
     },
     {
-      "id": "cue-111",
+      "id": "cue-110",
       "start": 507.81,
-      "end": 517.16,
-      "text": "Wait, and, I mean, this network request might never finish, so ... yeah, I guess I'll go",
+      "end": 514.41,
+      "text": "Wait, and, I mean, this network request might never finish, so ...",
       "words": [
         {
           "text": "Wait,",
@@ -7744,9 +7721,17 @@
           "text": "...",
           "start": 513.86,
           "end": 514.41
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-111",
+      "start": 514.41,
+      "end": 518.08,
+      "text": "Yeah, I guess I'll go home.",
+      "words": [
         {
-          "text": "yeah,",
+          "text": "Yeah,",
           "start": 514.41,
           "end": 514.96
         },
@@ -7769,15 +7754,7 @@
           "text": "go",
           "start": 516.61,
           "end": 517.16
-        }
-      ]
-    },
-    {
-      "id": "cue-112",
-      "start": 517.08,
-      "end": 518.08,
-      "text": "home.",
-      "words": [
+        },
         {
           "text": "home.",
           "start": 517.08,
@@ -7786,7 +7763,7 @@
       ]
     },
     {
-      "id": "cue-113",
+      "id": "cue-112",
       "start": 518.08,
       "end": 523.03,
       "text": "Finally those three, you know blocking behaviors complete and we can clear the stack, right.",
@@ -7869,10 +7846,10 @@
       ]
     },
     {
-      "id": "cue-114",
+      "id": "cue-113",
       "start": 523.03,
-      "end": 529.91,
-      "text": "So in a programming language is single threaded you're not using threads like say Ruby, that's",
+      "end": 530.42,
+      "text": "So in a programming language is single threaded you're not using threads like say Ruby, that's what happens.",
       "words": [
         {
           "text": "So",
@@ -7953,27 +7930,27 @@
           "text": "that's",
           "start": 529.48,
           "end": 529.91
-        }
-      ]
-    },
-    {
-      "id": "cue-115",
-      "start": 529.9,
-      "end": 534.32,
-      "text": "what happens, right, we make a network request, we have to just wait till it's done, because",
-      "words": [
+        },
         {
           "text": "what",
           "start": 529.9,
           "end": 530.16
         },
         {
-          "text": "happens,",
+          "text": "happens.",
           "start": 530.16,
           "end": 530.42
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-114",
+      "start": 530.42,
+      "end": 535.43,
+      "text": "Right, we make a network request, we have to just wait till it's done, because we have no.",
+      "words": [
         {
-          "text": "right,",
+          "text": "Right,",
           "start": 530.42,
           "end": 530.68
         },
@@ -8046,15 +8023,7 @@
           "text": "because",
           "start": 534.06,
           "end": 534.32
-        }
-      ]
-    },
-    {
-      "id": "cue-116",
-      "start": 534.32,
-      "end": 536.91,
-      "text": "we have no way of handling that.",
-      "words": [
+        },
         {
           "text": "we",
           "start": 534.32,
@@ -8066,12 +8035,20 @@
           "end": 535.06
         },
         {
-          "text": "no",
+          "text": "no.",
           "start": 535.06,
           "end": 535.43
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-115",
+      "start": 535.43,
+      "end": 536.9,
+      "text": "Way of handling that.",
+      "words": [
         {
-          "text": "way",
+          "text": "Way",
           "start": 535.43,
           "end": 535.8
         },
@@ -8093,7 +8070,7 @@
       ]
     },
     {
-      "id": "cue-117",
+      "id": "cue-116",
       "start": 536.9,
       "end": 540.2,
       "text": "Why is this actually a problem?",
@@ -8131,7 +8108,7 @@
       ]
     },
     {
-      "id": "cue-118",
+      "id": "cue-117",
       "start": 540.21,
       "end": 544.35,
       "text": "The problem is because we're running code in browsers.",
@@ -8184,7 +8161,7 @@
       ]
     },
     {
-      "id": "cue-119",
+      "id": "cue-118",
       "start": 544.36,
       "end": 550.68,
       "text": "So, let's you ‑‑ here we go, okay.",
@@ -8232,7 +8209,7 @@
       ]
     },
     {
-      "id": "cue-120",
+      "id": "cue-119",
       "start": 550.71,
       "end": 555.89,
       "text": "So this is just, this is Chrome, this is the code I just ran.",
@@ -8310,10 +8287,10 @@
       ]
     },
     {
-      "id": "cue-121",
+      "id": "cue-120",
       "start": 555.94,
-      "end": 560.74,
-      "text": "Browsers don't give us ‑‑ well they do give us synchronous AJAX request, I'm faking",
+      "end": 561.74,
+      "text": "Browsers don't give us ‑‑ well they do give us synchronous AJAX request, I'm faking this out with.",
       "words": [
         {
           "text": "Browsers",
@@ -8389,15 +8366,7 @@
           "text": "faking",
           "start": 560.42,
           "end": 560.74
-        }
-      ]
-    },
-    {
-      "id": "cue-122",
-      "start": 560.72,
-      "end": 566.16,
-      "text": "this out with a big while loop, because it's synchronous, I basically while loop for five",
-      "words": [
+        },
         {
           "text": "this",
           "start": 560.72,
@@ -8409,12 +8378,20 @@
           "end": 561.4
         },
         {
-          "text": "with",
+          "text": "with.",
           "start": 561.4,
           "end": 561.74
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-121",
+      "start": 561.74,
+      "end": 569.67,
+      "text": "A big while loop, because it's synchronous, I basically while loop for five seconds before continuing, so if.",
+      "words": [
         {
-          "text": "a",
+          "text": "A",
           "start": 561.74,
           "end": 562.08
         },
@@ -8477,15 +8454,7 @@
           "text": "five",
           "start": 565.82,
           "end": 566.16
-        }
-      ]
-    },
-    {
-      "id": "cue-123",
-      "start": 566.12,
-      "end": 573.93,
-      "text": "seconds before continuing, so if I open up the console here.",
-      "words": [
+        },
         {
           "text": "seconds",
           "start": 566.12,
@@ -8507,10 +8476,18 @@
           "end": 568.96
         },
         {
-          "text": "if",
+          "text": "if.",
           "start": 568.96,
           "end": 569.67
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-122",
+      "start": 569.67,
+      "end": 573.93,
+      "text": "I open up the console here.",
+      "words": [
         {
           "text": "I",
           "start": 569.67,
@@ -8544,10 +8521,10 @@
       ]
     },
     {
-      "id": "cue-124",
+      "id": "cue-123",
       "start": 573.96,
-      "end": 580.59,
-      "text": "We can see what happens, so with request foo.com, why this is happening, I can't do anything,",
+      "end": 580.9,
+      "text": "We can see what happens, so with request foo.com, why this is happening, I can't do anything, right.",
       "words": [
         {
           "text": "We",
@@ -8633,22 +8610,22 @@
           "text": "anything,",
           "start": 580.2,
           "end": 580.59
+        },
+        {
+          "text": "right.",
+          "start": 580.6,
+          "end": 580.9
         }
       ]
     },
     {
-      "id": "cue-125",
-      "start": 580.6,
-      "end": 584.8,
-      "text": "right, even the run button hasn't finished rerendering the fact that I clicked it.",
+      "id": "cue-124",
+      "start": 580.9,
+      "end": 584.76,
+      "text": "Even the run button hasn't finished rerendering the fact that I clicked it.",
       "words": [
         {
-          "text": "right,",
-          "start": 580.6,
-          "end": 580.9
-        },
-        {
-          "text": "even",
+          "text": "Even",
           "start": 580.9,
           "end": 581.2
         },
@@ -8715,7 +8692,7 @@
       ]
     },
     {
-      "id": "cue-126",
+      "id": "cue-125",
       "start": 584.76,
       "end": 591.48,
       "text": "The browser is blocked, it's stuck, it can't do anything until those requests complete.",
@@ -8793,10 +8770,10 @@
       ]
     },
     {
-      "id": "cue-127",
+      "id": "cue-126",
       "start": 591.49,
-      "end": 595.74,
-      "text": "And then all hell breaks loose because I did some stuff,it figured that out I'd done it,",
+      "end": 596.92,
+      "text": "And then all hell breaks loose because I did some stuff,it figured that out I'd done it, couldn't.",
       "words": [
         {
           "text": "And",
@@ -8882,27 +8859,22 @@
           "text": "it,",
           "start": 595.49,
           "end": 595.74
+        },
+        {
+          "text": "couldn't.",
+          "start": 596.3,
+          "end": 596.92
         }
       ]
     },
     {
-      "id": "cue-128",
-      "start": 595.68,
+      "id": "cue-127",
+      "start": 596.92,
       "end": 598.78,
-      "text": "it couldn't actually render it.",
+      "text": "Actually render it.",
       "words": [
         {
-          "text": "it",
-          "start": 595.68,
-          "end": 596.3
-        },
-        {
-          "text": "couldn't",
-          "start": 596.3,
-          "end": 596.92
-        },
-        {
-          "text": "actually",
+          "text": "Actually",
           "start": 596.92,
           "end": 597.54
         },
@@ -8919,7 +8891,7 @@
       ]
     },
     {
-      "id": "cue-129",
+      "id": "cue-128",
       "start": 598.8,
       "end": 600.51,
       "text": "Couldn't do anything.",
@@ -8942,10 +8914,10 @@
       ]
     },
     {
-      "id": "cue-130",
+      "id": "cue-129",
       "start": 600.52,
-      "end": 606.98,
-      "text": "That's because if that call stack has things on it, and here it's got these yeah, it's",
+      "end": 607.71,
+      "text": "That's because if that call stack has things on it, and here it's got these yeah, it's still.",
       "words": [
         {
           "text": "That's",
@@ -9031,31 +9003,31 @@
           "text": "it's",
           "start": 606.6,
           "end": 606.98
+        },
+        {
+          "text": "still.",
+          "start": 607.01,
+          "end": 607.71
         }
       ]
     },
     {
-      "id": "cue-131",
-      "start": 607.01,
+      "id": "cue-130",
+      "start": 607.71,
       "end": 608.41,
-      "text": "still going.",
+      "text": "Going.",
       "words": [
         {
-          "text": "still",
-          "start": 607.01,
-          "end": 607.71
-        },
-        {
-          "text": "going.",
+          "text": "Going.",
           "start": 607.71,
           "end": 608.41
         }
       ]
     },
     {
-      "id": "cue-132",
+      "id": "cue-131",
       "start": 608.42,
-      "end": 612.27,
+      "end": 612.26,
       "text": "We've got the synchronous request, the browser can't do anything else.",
       "words": [
         {
@@ -9116,7 +9088,7 @@
       ]
     },
     {
-      "id": "cue-133",
+      "id": "cue-132",
       "start": 612.26,
       "end": 616.77,
       "text": "It can't render, it can't run any other code, it's stuck.",
@@ -9179,7 +9151,7 @@
       ]
     },
     {
-      "id": "cue-134",
+      "id": "cue-133",
       "start": 616.8,
       "end": 622.07,
       "text": "Not ideal, right if we want people to have nice fluid UIs, we can't block the stack.",
@@ -9272,7 +9244,7 @@
       ]
     },
     {
-      "id": "cue-135",
+      "id": "cue-134",
       "start": 622.11,
       "end": 624.63,
       "text": "So, how do we handle this?",
@@ -9310,10 +9282,10 @@
       ]
     },
     {
-      "id": "cue-136",
+      "id": "cue-135",
       "start": 624.65,
-      "end": 629.33,
-      "text": "Well the simplest solution we're provided with is asynchronous callbacks, there's almost",
+      "end": 632.4,
+      "text": "Well the simplest solution we're provided with is asynchronous callbacks, there's almost no blocking functions in the browser.",
       "words": [
         {
           "text": "Well",
@@ -9374,15 +9346,7 @@
           "text": "almost",
           "start": 628.94,
           "end": 629.33
-        }
-      ]
-    },
-    {
-      "id": "cue-137",
-      "start": 629.28,
-      "end": 636.56,
-      "text": "no blocking functions in the browser, equally in node, they're all made asynchronous, which",
-      "words": [
+        },
         {
           "text": "no",
           "start": 629.28,
@@ -9409,12 +9373,20 @@
           "end": 631.88
         },
         {
-          "text": "browser,",
+          "text": "browser.",
           "start": 631.88,
           "end": 632.4
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-136",
+      "start": 632.4,
+      "end": 640.07,
+      "text": "Equally in node, they're all made asynchronous, which basically means we run some code, give it a callback.",
+      "words": [
         {
-          "text": "equally",
+          "text": "Equally",
           "start": 632.4,
           "end": 632.92
         },
@@ -9452,15 +9424,7 @@
           "text": "which",
           "start": 636.04,
           "end": 636.56
-        }
-      ]
-    },
-    {
-      "id": "cue-138",
-      "start": 636.57,
-      "end": 642.17,
-      "text": "basically means we run some code, give it a callback, and run that later, if you've",
-      "words": [
+        },
         {
           "text": "basically",
           "start": 636.57,
@@ -9507,12 +9471,20 @@
           "end": 639.72
         },
         {
-          "text": "callback,",
+          "text": "callback.",
           "start": 639.72,
           "end": 640.07
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-137",
+      "start": 640.07,
+      "end": 647.43,
+      "text": "And run that later, if you've seen JavaScript you've seen asynchronous callbacks, what does this actually look like.",
+      "words": [
         {
-          "text": "and",
+          "text": "And",
           "start": 640.07,
           "end": 640.42
         },
@@ -9540,15 +9512,7 @@
           "text": "you've",
           "start": 641.82,
           "end": 642.17
-        }
-      ]
-    },
-    {
-      "id": "cue-139",
-      "start": 642.18,
-      "end": 647.46,
-      "text": "seen JavaScript you've seen asynchronous callbacks, what does this actually look like.",
-      "words": [
+        },
         {
           "text": "seen",
           "start": 642.18,
@@ -9612,7 +9576,7 @@
       ]
     },
     {
-      "id": "cue-140",
+      "id": "cue-138",
       "start": 647.43,
       "end": 651.11,
       "text": "Simple example to remind people where we're at.",
@@ -9660,7 +9624,7 @@
       ]
     },
     {
-      "id": "cue-141",
+      "id": "cue-139",
       "start": 651.13,
       "end": 653.53,
       "text": "Code like this, console.log hi.",
@@ -9693,10 +9657,10 @@
       ]
     },
     {
-      "id": "cue-142",
+      "id": "cue-140",
       "start": 653.53,
       "end": 660.37,
-      "text": "Write, we run the setTimeout, but that queue's the console log for future so we skip on to",
+      "text": "Write, we run the setTimeout, but that queue's the console log for future so we skip on to.",
       "words": [
         {
           "text": "Write,",
@@ -9784,14 +9748,14 @@
           "end": 659.99
         },
         {
-          "text": "to",
+          "text": "to.",
           "start": 659.99,
           "end": 660.37
         }
       ]
     },
     {
-      "id": "cue-143",
+      "id": "cue-141",
       "start": 660.39,
       "end": 666.51,
       "text": "JSConf and then five seconds later we log \"there\" right, make sense?",
@@ -9859,7 +9823,7 @@
       ]
     },
     {
-      "id": "cue-144",
+      "id": "cue-142",
       "start": 666.54,
       "end": 667.54,
       "text": "Happy.",
@@ -9872,9 +9836,9 @@
       ]
     },
     {
-      "id": "cue-145",
+      "id": "cue-143",
       "start": 667.54,
-      "end": 669.69,
+      "end": 669.67,
       "text": "Basically that's setTimeout is doing something.",
       "words": [
         {
@@ -9910,10 +9874,10 @@
       ]
     },
     {
-      "id": "cue-146",
+      "id": "cue-144",
       "start": 669.67,
-      "end": 675.07,
-      "text": "So, asynchronous callbacks with regards to the stacks we saw before ... how does this",
+      "end": 673.99,
+      "text": "So, asynchronous callbacks with regards to the stacks we saw before ...",
       "words": [
         {
           "text": "So,",
@@ -9974,9 +9938,17 @@
           "text": "...",
           "start": 673.63,
           "end": 673.99
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-145",
+      "start": 673.99,
+      "end": 676.76,
+      "text": "How does this work?",
+      "words": [
         {
-          "text": "how",
+          "text": "How",
           "start": 673.99,
           "end": 674.35
         },
@@ -9989,15 +9961,7 @@
           "text": "this",
           "start": 674.71,
           "end": 675.07
-        }
-      ]
-    },
-    {
-      "id": "cue-147",
-      "start": 675.04,
-      "end": 676.76,
-      "text": "work?",
-      "words": [
+        },
         {
           "text": "work?",
           "start": 675.04,
@@ -10006,7 +9970,7 @@
       ]
     },
     {
-      "id": "cue-148",
+      "id": "cue-146",
       "start": 676.76,
       "end": 678.48,
       "text": "Let's run the code.",
@@ -10034,7 +9998,7 @@
       ]
     },
     {
-      "id": "cue-149",
+      "id": "cue-147",
       "start": 678.48,
       "end": 681.18,
       "text": "Console.log hi.",
@@ -10052,23 +10016,23 @@
       ]
     },
     {
-      "id": "cue-150",
+      "id": "cue-148",
       "start": 681.18,
       "end": 682.54,
-      "text": "setTimeout.",
+      "text": "SetTimeout.",
       "words": [
         {
-          "text": "setTimeout.",
+          "text": "SetTimeout.",
           "start": 681.18,
           "end": 682.54
         }
       ]
     },
     {
-      "id": "cue-151",
+      "id": "cue-149",
       "start": 682.54,
-      "end": 688.32,
-      "text": "We know it doesn't run immediately, we know it's going to run in five seconds time, we",
+      "end": 688.71,
+      "text": "We know it doesn't run immediately, we know it's going to run in five seconds time, we can't.",
       "words": [
         {
           "text": "We",
@@ -10154,22 +10118,22 @@
           "text": "we",
           "start": 687.98,
           "end": 688.32
+        },
+        {
+          "text": "can't.",
+          "start": 688.37,
+          "end": 688.71
         }
       ]
     },
     {
-      "id": "cue-152",
-      "start": 688.37,
-      "end": 694.15,
-      "text": "can't push it on to the stack, somehow it just disappears, we don't have like a way",
+      "id": "cue-150",
+      "start": 688.71,
+      "end": 694.77,
+      "text": "Push it on to the stack, somehow it just disappears, we don't have like a way of describing.",
       "words": [
         {
-          "text": "can't",
-          "start": 688.37,
-          "end": 688.71
-        },
-        {
-          "text": "push",
+          "text": "Push",
           "start": 688.71,
           "end": 689.05
         },
@@ -10247,27 +10211,27 @@
           "text": "way",
           "start": 693.81,
           "end": 694.15
-        }
-      ]
-    },
-    {
-      "id": "cue-153",
-      "start": 694.07,
-      "end": 697.22,
-      "text": "of describing this yet, but we'll come to it.",
-      "words": [
+        },
         {
           "text": "of",
           "start": 694.07,
           "end": 694.42
         },
         {
-          "text": "describing",
+          "text": "describing.",
           "start": 694.42,
           "end": 694.77
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-151",
+      "start": 694.77,
+      "end": 697.22,
+      "text": "This yet, but we'll come to it.",
+      "words": [
         {
-          "text": "this",
+          "text": "This",
           "start": 694.77,
           "end": 695.12
         },
@@ -10304,7 +10268,7 @@
       ]
     },
     {
-      "id": "cue-154",
+      "id": "cue-152",
       "start": 697.24,
       "end": 704.8,
       "text": "We log JSConfEU, clear, five seconds later somehow magically \"there\" appears on the stack.",
@@ -10382,9 +10346,9 @@
       ]
     },
     {
-      "id": "cue-155",
+      "id": "cue-153",
       "start": 704.81,
-      "end": 708.97,
+      "end": 708.96,
       "text": "How does that happen?",
       "words": [
         {
@@ -10410,9 +10374,9 @@
       ]
     },
     {
-      "id": "cue-156",
+      "id": "cue-154",
       "start": 708.96,
-      "end": 713.72,
+      "end": 713.71,
       "text": "And that's ‑‑ this is basically where the event loop comes in on concurrency.",
       "words": [
         {
@@ -10488,10 +10452,10 @@
       ]
     },
     {
-      "id": "cue-157",
+      "id": "cue-155",
       "start": 713.71,
-      "end": 718.83,
-      "text": "Right, so I've been kind of partially lying do you and telling you that JavaScript can",
+      "end": 719.12,
+      "text": "Right, so I've been kind of partially lying do you and telling you that JavaScript can only do.",
       "words": [
         {
           "text": "Right,",
@@ -10572,27 +10536,27 @@
           "text": "can",
           "start": 718.51,
           "end": 718.83
-        }
-      ]
-    },
-    {
-      "id": "cue-158",
-      "start": 718.76,
-      "end": 720.02,
-      "text": "only do one thing at one time.",
-      "words": [
+        },
         {
           "text": "only",
           "start": 718.76,
           "end": 718.94
         },
         {
-          "text": "do",
+          "text": "do.",
           "start": 718.94,
           "end": 719.12
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-156",
+      "start": 719.12,
+      "end": 720.02,
+      "text": "One thing at one time.",
+      "words": [
         {
-          "text": "one",
+          "text": "One",
           "start": 719.12,
           "end": 719.3
         },
@@ -10619,9 +10583,9 @@
       ]
     },
     {
-      "id": "cue-159",
+      "id": "cue-157",
       "start": 720.05,
-      "end": 723.69,
+      "end": 723.66,
       "text": "That's true the JavaScript Runtime can only do one thing at one time.",
       "words": [
         {
@@ -10692,7 +10656,7 @@
       ]
     },
     {
-      "id": "cue-160",
+      "id": "cue-158",
       "start": 723.66,
       "end": 726.08,
       "text": "It can't make an AJAX request while you're doing other code.",
@@ -10755,9 +10719,9 @@
       ]
     },
     {
-      "id": "cue-161",
+      "id": "cue-159",
       "start": 726.12,
-      "end": 729.42,
+      "end": 729.38,
       "text": "It can't do a setTimeout while you're doing another code.",
       "words": [
         {
@@ -10813,7 +10777,7 @@
       ]
     },
     {
-      "id": "cue-162",
+      "id": "cue-160",
       "start": 729.38,
       "end": 734.99,
       "text": "The reason we can do things concurrently is that the browser is more than just the Runtime.",
@@ -10906,10 +10870,10 @@
       ]
     },
     {
-      "id": "cue-163",
+      "id": "cue-161",
       "start": 735.0,
-      "end": 739.48,
-      "text": "So, remember this diagram, the JavaScript Runtime can do one thing at a time, but the",
+      "end": 740.0,
+      "text": "So, remember this diagram, the JavaScript Runtime can do one thing at a time, but the browser gives.",
       "words": [
         {
           "text": "So,",
@@ -10990,27 +10954,27 @@
           "text": "the",
           "start": 739.2,
           "end": 739.48
-        }
-      ]
-    },
-    {
-      "id": "cue-164",
-      "start": 739.42,
-      "end": 743.77,
-      "text": "browser gives us these other things, gives us these we shall APIs, these are effectively",
-      "words": [
+        },
         {
           "text": "browser",
           "start": 739.42,
           "end": 739.71
         },
         {
-          "text": "gives",
+          "text": "gives.",
           "start": 739.71,
           "end": 740.0
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-162",
+      "start": 740.0,
+      "end": 745.84,
+      "text": "Us these other things, gives us these we shall APIs, these are effectively threads, you can just make.",
+      "words": [
         {
-          "text": "us",
+          "text": "Us",
           "start": 740.0,
           "end": 740.29
         },
@@ -11073,15 +11037,7 @@
           "text": "effectively",
           "start": 743.48,
           "end": 743.77
-        }
-      ]
-    },
-    {
-      "id": "cue-165",
-      "start": 743.84,
-      "end": 751.04,
-      "text": "threads, you can just make calls to, and those pieces of the browser are aware of this concurrency",
-      "words": [
+        },
         {
           "text": "threads,",
           "start": 743.84,
@@ -11103,12 +11059,20 @@
           "end": 745.44
         },
         {
-          "text": "make",
+          "text": "make.",
           "start": 745.44,
           "end": 745.84
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-163",
+      "start": 745.84,
+      "end": 753.06,
+      "text": "Calls to, and those pieces of the browser are aware of this concurrency kicks in.",
+      "words": [
         {
-          "text": "calls",
+          "text": "Calls",
           "start": 745.84,
           "end": 746.24
         },
@@ -11171,15 +11135,7 @@
           "text": "concurrency",
           "start": 750.64,
           "end": 751.04
-        }
-      ]
-    },
-    {
-      "id": "cue-166",
-      "start": 751.11,
-      "end": 753.07,
-      "text": "kicks in.",
-      "words": [
+        },
         {
           "text": "kicks",
           "start": 751.11,
@@ -11193,10 +11149,10 @@
       ]
     },
     {
-      "id": "cue-167",
+      "id": "cue-164",
       "start": 753.06,
-      "end": 758.16,
-      "text": "If you're back end person this diagram looks basically identical for node, instead of web",
+      "end": 760.25,
+      "text": "If you're back end person this diagram looks basically identical for node, instead of web APIs we have.",
       "words": [
         {
           "text": "If",
@@ -11272,15 +11228,7 @@
           "text": "web",
           "start": 757.82,
           "end": 758.16
-        }
-      ]
-    },
-    {
-      "id": "cue-168",
-      "start": 758.15,
-      "end": 768.65,
-      "text": "APIs we have C++ APIs and the threading is being hidden from you by C++.",
-      "words": [
+        },
         {
           "text": "APIs",
           "start": 758.15,
@@ -11292,10 +11240,18 @@
           "end": 759.55
         },
         {
-          "text": "have",
+          "text": "have.",
           "start": 759.55,
           "end": 760.25
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-165",
+      "start": 760.25,
+      "end": 768.65,
+      "text": "C++ APIs and the threading is being hidden from you by C++.",
+      "words": [
         {
           "text": "C++",
           "start": 760.25,
@@ -11359,10 +11315,10 @@
       ]
     },
     {
-      "id": "cue-169",
+      "id": "cue-166",
       "start": 768.68,
-      "end": 773.43,
-      "text": "Now we have this picture let's see how this code runs in a more full picture of what a",
+      "end": 773.18,
+      "text": "Now we have this picture let's see how this code runs in a more full picture of what.",
       "words": [
         {
           "text": "Now",
@@ -11450,23 +11406,23 @@
           "end": 772.93
         },
         {
-          "text": "what",
+          "text": "what.",
           "start": 772.93,
           "end": 773.18
-        },
-        {
-          "text": "a",
-          "start": 773.18,
-          "end": 773.43
         }
       ]
     },
     {
-      "id": "cue-170",
-      "start": 773.52,
+      "id": "cue-167",
+      "start": 773.18,
       "end": 774.63,
-      "text": "browser looks like.",
+      "text": "A browser looks like.",
       "words": [
+        {
+          "text": "A",
+          "start": 773.18,
+          "end": 773.43
+        },
         {
           "text": "browser",
           "start": 773.52,
@@ -11485,9 +11441,9 @@
       ]
     },
     {
-      "id": "cue-171",
+      "id": "cue-168",
       "start": 774.63,
-      "end": 781.98,
+      "end": 781.93,
       "text": "So, same as before, run code, console log hi, logs hi to the console, simple.",
       "words": [
         {
@@ -11568,13 +11524,13 @@
       ]
     },
     {
-      "id": "cue-172",
+      "id": "cue-169",
       "start": 781.93,
       "end": 785.03,
-      "text": "now we can see what happens when we call setTimeout.",
+      "text": "Now we can see what happens when we call setTimeout.",
       "words": [
         {
-          "text": "now",
+          "text": "Now",
           "start": 781.93,
           "end": 782.24
         },
@@ -11626,7 +11582,7 @@
       ]
     },
     {
-      "id": "cue-173",
+      "id": "cue-170",
       "start": 785.03,
       "end": 791.63,
       "text": "We are ‑‑ we pass this callback function and a delay to the setTimeout call.",
@@ -11709,10 +11665,10 @@
       ]
     },
     {
-      "id": "cue-174",
+      "id": "cue-171",
       "start": 791.68,
-      "end": 797.26,
-      "text": "Now setTimeout is an API provided to us by the browser, it doesn't live in the V8 source,",
+      "end": 797.21,
+      "text": "Now setTimeout is an API provided to us by the browser, it doesn't live in the V8 source.",
       "words": [
         {
           "text": "Now",
@@ -11800,20 +11756,20 @@
           "end": 796.95
         },
         {
-          "text": "source,",
+          "text": "source.",
           "start": 796.95,
           "end": 797.26
         }
       ]
     },
     {
-      "id": "cue-175",
+      "id": "cue-172",
       "start": 797.21,
-      "end": 802.61,
-      "text": "it's extra stuff we get in that we're running the JavaScript run",
+      "end": 805.17,
+      "text": "It's extra stuff we get in that we're running the JavaScript run time in.",
       "words": [
         {
-          "text": "it's",
+          "text": "It's",
           "start": 797.21,
           "end": 797.66
         },
@@ -11871,15 +11827,7 @@
           "text": "run",
           "start": 802.16,
           "end": 802.61
-        }
-      ]
-    },
-    {
-      "id": "cue-176",
-      "start": 802.63,
-      "end": 805.17,
-      "text": "time in.",
-      "words": [
+        },
         {
           "text": "time",
           "start": 802.63,
@@ -11893,7 +11841,7 @@
       ]
     },
     {
-      "id": "cue-177",
+      "id": "cue-173",
       "start": 805.18,
       "end": 807.66,
       "text": "The browser kicks off a timer for you.",
@@ -11941,10 +11889,10 @@
       ]
     },
     {
-      "id": "cue-178",
+      "id": "cue-174",
       "start": 807.66,
-      "end": 813.1,
-      "text": "And now it's going to handle the count down for you, right, so that means our setTimeout",
+      "end": 813.48,
+      "text": "And now it's going to handle the count down for you, right, so that means our setTimeout call.",
       "words": [
         {
           "text": "And",
@@ -12030,22 +11978,22 @@
           "text": "setTimeout",
           "start": 812.78,
           "end": 813.1
+        },
+        {
+          "text": "call.",
+          "start": 813.15,
+          "end": 813.48
         }
       ]
     },
     {
-      "id": "cue-179",
-      "start": 813.15,
-      "end": 817.11,
-      "text": "call, itself is now complete, so we can pop off the stack.",
+      "id": "cue-175",
+      "start": 813.48,
+      "end": 817.1,
+      "text": "Itself is now complete, so we can pop off the stack.",
       "words": [
         {
-          "text": "call,",
-          "start": 813.15,
-          "end": 813.48
-        },
-        {
-          "text": "itself",
+          "text": "Itself",
           "start": 813.48,
           "end": 813.81
         },
@@ -12102,10 +12050,10 @@
       ]
     },
     {
-      "id": "cue-180",
+      "id": "cue-176",
       "start": 817.1,
-      "end": 825.42,
-      "text": "“JSConfEU”, clear, so, now we've got this timer in the web API, which five seconds later",
+      "end": 826.2,
+      "text": "“JSConfEU”, clear, so, now we've got this timer in the web API, which five seconds later is going.",
       "words": [
         {
           "text": "“JSConfEU”,",
@@ -12186,27 +12134,27 @@
           "text": "later",
           "start": 824.9,
           "end": 825.42
-        }
-      ]
-    },
-    {
-      "id": "cue-181",
-      "start": 825.46,
-      "end": 826.94,
-      "text": "is going to complete.",
-      "words": [
+        },
         {
           "text": "is",
           "start": 825.46,
           "end": 825.83
         },
         {
-          "text": "going",
+          "text": "going.",
           "start": 825.83,
           "end": 826.2
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-177",
+      "start": 826.2,
+      "end": 826.92,
+      "text": "To complete.",
+      "words": [
         {
-          "text": "to",
+          "text": "To",
           "start": 826.2,
           "end": 826.57
         },
@@ -12218,10 +12166,10 @@
       ]
     },
     {
-      "id": "cue-182",
+      "id": "cue-178",
       "start": 826.92,
-      "end": 832.87,
-      "text": "Now the web API can't just start modifying your code, it can't chuck stuff onto the stack",
+      "end": 833.23,
+      "text": "Now the web API can't just start modifying your code, it can't chuck stuff onto the stack when.",
       "words": [
         {
           "text": "Now",
@@ -12307,22 +12255,22 @@
           "text": "stack",
           "start": 832.52,
           "end": 832.87
+        },
+        {
+          "text": "when.",
+          "start": 832.93,
+          "end": 833.23
         }
       ]
     },
     {
-      "id": "cue-183",
-      "start": 832.93,
-      "end": 838.33,
-      "text": "when it's ready if it did it would appear randomly in the middle of your code so this",
+      "id": "cue-179",
+      "start": 833.23,
+      "end": 838.56,
+      "text": "It's ready if it did it would appear randomly in the middle of your code so this is.",
       "words": [
         {
-          "text": "when",
-          "start": 832.93,
-          "end": 833.23
-        },
-        {
-          "text": "it's",
+          "text": "It's",
           "start": 833.23,
           "end": 833.53
         },
@@ -12405,22 +12353,22 @@
           "text": "this",
           "start": 838.03,
           "end": 838.33
+        },
+        {
+          "text": "is.",
+          "start": 838.34,
+          "end": 838.56
         }
       ]
     },
     {
-      "id": "cue-184",
-      "start": 838.34,
+      "id": "cue-180",
+      "start": 838.56,
       "end": 840.54,
-      "text": "is where the task queue or callback queue kicks in.",
+      "text": "Where the task queue or callback queue kicks in.",
       "words": [
         {
-          "text": "is",
-          "start": 838.34,
-          "end": 838.56
-        },
-        {
-          "text": "where",
+          "text": "Where",
           "start": 838.56,
           "end": 838.78
         },
@@ -12467,9 +12415,9 @@
       ]
     },
     {
-      "id": "cue-185",
+      "id": "cue-181",
       "start": 840.55,
-      "end": 847.91,
+      "end": 847.88,
       "text": "Any of the web APIs pushes the callback on to the task queue when it's done.",
       "words": [
         {
@@ -12555,10 +12503,10 @@
       ]
     },
     {
-      "id": "cue-186",
+      "id": "cue-182",
       "start": 847.88,
       "end": 852.92,
-      "text": "Finally we get to the event loop, title of the talk, what the heck is the event loop",
+      "text": "Finally we get to the event loop, title of the talk, what the heck is the event loop.",
       "words": [
         {
           "text": "Finally",
@@ -12646,20 +12594,20 @@
           "end": 852.64
         },
         {
-          "text": "loop",
+          "text": "loop.",
           "start": 852.64,
           "end": 852.92
         }
       ]
     },
     {
-      "id": "cue-187",
+      "id": "cue-183",
       "start": 852.93,
-      "end": 858.53,
-      "text": "is like the simplest little piece in this whole equation, and it has one very simple",
+      "end": 859.53,
+      "text": "Is like the simplest little piece in this whole equation, and it has one very simple job.",
       "words": [
         {
-          "text": "is",
+          "text": "Is",
           "start": 852.93,
           "end": 853.28
         },
@@ -12737,15 +12685,7 @@
           "text": "simple",
           "start": 858.18,
           "end": 858.53
-        }
-      ]
-    },
-    {
-      "id": "cue-188",
-      "start": 858.53,
-      "end": 859.53,
-      "text": "job.",
-      "words": [
+        },
         {
           "text": "job.",
           "start": 858.53,
@@ -12754,9 +12694,9 @@
       ]
     },
     {
-      "id": "cue-189",
+      "id": "cue-184",
       "start": 859.53,
-      "end": 862.73,
+      "end": 862.71,
       "text": "The event loops job is to look at the stack and look at the task queue.",
       "words": [
         {
@@ -12842,10 +12782,10 @@
       ]
     },
     {
-      "id": "cue-190",
+      "id": "cue-185",
       "start": 862.71,
-      "end": 866.91,
-      "text": "If the stack is empty it takes the first thing on the queue and pushes it on to the stack",
+      "end": 866.49,
+      "text": "If the stack is empty it takes the first thing on the queue and pushes it on to.",
       "words": [
         {
           "text": "If",
@@ -12933,12 +12873,20 @@
           "end": 866.28
         },
         {
-          "text": "to",
+          "text": "to.",
           "start": 866.28,
           "end": 866.49
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-186",
+      "start": 866.49,
+      "end": 869.24,
+      "text": "The stack which effectively run it.",
+      "words": [
         {
-          "text": "the",
+          "text": "The",
           "start": 866.49,
           "end": 866.7
         },
@@ -12946,15 +12894,7 @@
           "text": "stack",
           "start": 866.7,
           "end": 866.91
-        }
-      ]
-    },
-    {
-      "id": "cue-191",
-      "start": 866.84,
-      "end": 869.24,
-      "text": "which effectively run it.",
-      "words": [
+        },
         {
           "text": "which",
           "start": 866.84,
@@ -12978,10 +12918,10 @@
       ]
     },
     {
-      "id": "cue-192",
+      "id": "cue-187",
       "start": 869.25,
-      "end": 874.38,
-      "text": "So here we can see that now the stack is clear, there's a callback on the task queue, the",
+      "end": 874.11,
+      "text": "So here we can see that now the stack is clear, there's a callback on the task queue.",
       "words": [
         {
           "text": "So",
@@ -13069,23 +13009,23 @@
           "end": 873.84
         },
         {
-          "text": "queue,",
+          "text": "queue.",
           "start": 873.84,
           "end": 874.11
-        },
-        {
-          "text": "the",
-          "start": 874.11,
-          "end": 874.38
         }
       ]
     },
     {
-      "id": "cue-193",
-      "start": 874.44,
-      "end": 879.84,
-      "text": "event loop runs, it says, oh, I get to do something, pushes the callback on to the stack.",
+      "id": "cue-188",
+      "start": 874.11,
+      "end": 879.54,
+      "text": "The event loop runs, it says, oh, I get to do something, pushes the callback on to the.",
       "words": [
+        {
+          "text": "The",
+          "start": 874.11,
+          "end": 874.38
+        },
         {
           "text": "event",
           "start": 874.44,
@@ -13167,22 +13107,30 @@
           "end": 879.24
         },
         {
-          "text": "the",
+          "text": "the.",
           "start": 879.24,
           "end": 879.54
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-189",
+      "start": 879.54,
+      "end": 879.81,
+      "text": "Stack.",
+      "words": [
         {
-          "text": "stack.",
+          "text": "Stack.",
           "start": 879.54,
           "end": 879.84
         }
       ]
     },
     {
-      "id": "cue-194",
+      "id": "cue-190",
       "start": 879.81,
-      "end": 885.13,
-      "text": "Remember it's the stack is like JavaScript land, back inside V8, the callback appears",
+      "end": 887.22,
+      "text": "Remember it's the stack is like JavaScript land, back inside V8, the callback appears on the stack, run.",
       "words": [
         {
           "text": "Remember",
@@ -13253,15 +13201,7 @@
           "text": "appears",
           "start": 884.75,
           "end": 885.13
-        }
-      ]
-    },
-    {
-      "id": "cue-195",
-      "start": 885.18,
-      "end": 889.77,
-      "text": "on the stack, run, console.log “there”, and we're done.",
-      "words": [
+        },
         {
           "text": "on",
           "start": 885.18,
@@ -13278,12 +13218,20 @@
           "end": 886.71
         },
         {
-          "text": "run,",
+          "text": "run.",
           "start": 886.71,
           "end": 887.22
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-191",
+      "start": 887.22,
+      "end": 889.77,
+      "text": "Console.log “there”, and we're done.",
+      "words": [
         {
-          "text": "console.log",
+          "text": "Console.log",
           "start": 887.22,
           "end": 887.73
         },
@@ -13310,7 +13258,7 @@
       ]
     },
     {
-      "id": "cue-196",
+      "id": "cue-192",
       "start": 889.78,
       "end": 892.14,
       "text": "Does that make sense?",
@@ -13338,7 +13286,7 @@
       ]
     },
     {
-      "id": "cue-197",
+      "id": "cue-193",
       "start": 892.15,
       "end": 893.92,
       "text": "Everyone where me?",
@@ -13361,7 +13309,7 @@
       ]
     },
     {
-      "id": "cue-198",
+      "id": "cue-194",
       "start": 893.93,
       "end": 894.93,
       "text": "Awesome!",
@@ -13374,7 +13322,7 @@
       ]
     },
     {
-      "id": "cue-199",
+      "id": "cue-195",
       "start": 894.93,
       "end": 895.93,
       "text": "Okay.",
@@ -13387,10 +13335,10 @@
       ]
     },
     {
-      "id": "cue-200",
+      "id": "cue-196",
       "start": 895.93,
       "end": 900.43,
-      "text": "So, now we can see how this works with probably one of the first encounters you would have",
+      "text": "So, now we can see how this works with probably one of the first encounters you would have.",
       "words": [
         {
           "text": "So,",
@@ -13478,20 +13426,20 @@
           "end": 900.18
         },
         {
-          "text": "have",
+          "text": "have.",
           "start": 900.18,
           "end": 900.43
         }
       ]
     },
     {
-      "id": "cue-201",
+      "id": "cue-197",
       "start": 900.44,
-      "end": 904.92,
-      "text": "had with Async stuff which for some weird reason someone says says you have to call",
+      "end": 906.31,
+      "text": "Had with Async stuff which for some weird reason someone says you have to call setTimeout zero, ‑‑.",
       "words": [
         {
-          "text": "had",
+          "text": "Had",
           "start": 900.44,
           "end": 900.72
         },
@@ -13546,11 +13494,6 @@
           "end": 903.52
         },
         {
-          "text": "says",
-          "start": 903.52,
-          "end": 903.8
-        },
-        {
           "text": "you",
           "start": 903.8,
           "end": 904.08
@@ -13569,15 +13512,7 @@
           "text": "call",
           "start": 904.64,
           "end": 904.92
-        }
-      ]
-    },
-    {
-      "id": "cue-202",
-      "start": 904.9,
-      "end": 911.48,
-      "text": "setTimeout zero, ‑‑ okay, you want me to run the function in zero time?",
-      "words": [
+        },
         {
           "text": "setTimeout",
           "start": 904.9,
@@ -13589,12 +13524,20 @@
           "end": 905.84
         },
         {
-          "text": "‑‑",
+          "text": "‑‑.",
           "start": 905.84,
           "end": 906.31
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-198",
+      "start": 906.31,
+      "end": 911.44,
+      "text": "Okay, you want me to run the function in zero time?",
+      "words": [
         {
-          "text": "okay,",
+          "text": "Okay,",
           "start": 906.31,
           "end": 906.78
         },
@@ -13651,9 +13594,9 @@
       ]
     },
     {
-      "id": "cue-203",
+      "id": "cue-199",
       "start": 911.44,
-      "end": 912.96,
+      "end": 912.93,
       "text": "Why would I wrap it in a setTimeout?",
       "words": [
         {
@@ -13699,10 +13642,10 @@
       ]
     },
     {
-      "id": "cue-204",
+      "id": "cue-200",
       "start": 912.93,
-      "end": 917.35,
-      "text": "Like the first time you run across this, if you're like me,i see it doing something, but",
+      "end": 918.09,
+      "text": "Like the first time you run across this, if you're like me,i see it doing something, but I.",
       "words": [
         {
           "text": "Like",
@@ -13788,22 +13731,22 @@
           "text": "but",
           "start": 917.09,
           "end": 917.35
+        },
+        {
+          "text": "I.",
+          "start": 917.35,
+          "end": 918.09
         }
       ]
     },
     {
-      "id": "cue-205",
-      "start": 917.35,
-      "end": 920.31,
-      "text": "I don't know why.",
+      "id": "cue-201",
+      "start": 918.09,
+      "end": 920.3,
+      "text": "Don't know why.",
       "words": [
         {
-          "text": "I",
-          "start": 917.35,
-          "end": 918.09
-        },
-        {
-          "text": "don't",
+          "text": "Don't",
           "start": 918.09,
           "end": 918.83
         },
@@ -13820,9 +13763,9 @@
       ]
     },
     {
-      "id": "cue-206",
+      "id": "cue-202",
       "start": 920.3,
-      "end": 926.0,
+      "end": 925.97,
       "text": "The reason is, generally, if you're trying to defer something until the stack is clear.",
       "words": [
         {
@@ -13903,10 +13846,10 @@
       ]
     },
     {
-      "id": "cue-207",
+      "id": "cue-203",
       "start": 925.97,
-      "end": 929.2,
-      "text": "So we know looking at this, if you've written JavaScript, that we're going to see the same",
+      "end": 929.44,
+      "text": "So we know looking at this, if you've written JavaScript, that we're going to see the same result.",
       "words": [
         {
           "text": "So",
@@ -13992,22 +13935,22 @@
           "text": "same",
           "start": 929.01,
           "end": 929.2
+        },
+        {
+          "text": "result.",
+          "start": 929.14,
+          "end": 929.44
         }
       ]
     },
     {
-      "id": "cue-208",
-      "start": 929.14,
-      "end": 933.64,
-      "text": "result, we're going to see “hi” “JSConf”, and “there” is going to appear at the",
+      "id": "cue-204",
+      "start": 929.44,
+      "end": 935.48,
+      "text": "We're going to see “hi” “JSConf”, and “there” is going to appear at the end.",
       "words": [
         {
-          "text": "result,",
-          "start": 929.14,
-          "end": 929.44
-        },
-        {
-          "text": "we're",
+          "text": "We're",
           "start": 929.44,
           "end": 929.74
         },
@@ -14075,15 +14018,7 @@
           "text": "the",
           "start": 933.34,
           "end": 933.64
-        }
-      ]
-    },
-    {
-      "id": "cue-209",
-      "start": 933.65,
-      "end": 935.48,
-      "text": "end.",
-      "words": [
+        },
         {
           "text": "end.",
           "start": 933.65,
@@ -14092,7 +14027,7 @@
       ]
     },
     {
-      "id": "cue-210",
+      "id": "cue-205",
       "start": 935.48,
       "end": 938.42,
       "text": "We can see how that happens.",
@@ -14130,10 +14065,10 @@
       ]
     },
     {
-      "id": "cue-211",
+      "id": "cue-206",
       "start": 938.43,
-      "end": 944.21,
-      "text": "The setTimeout zero, now it's going to complete immediately and push it on to the queue, remember",
+      "end": 944.43,
+      "text": "The setTimeout zero, now it's going to complete immediately and push it on to the queue, remember what.",
       "words": [
         {
           "text": "The",
@@ -14219,20 +14154,20 @@
           "text": "remember",
           "start": 943.87,
           "end": 944.21
+        },
+        {
+          "text": "what.",
+          "start": 944.25,
+          "end": 944.43
         }
       ]
     },
     {
-      "id": "cue-212",
-      "start": 944.25,
+      "id": "cue-207",
+      "start": 944.43,
       "end": 947.67,
-      "text": "what I said about the event loop, it has to wait till the stack is clear before it can",
+      "text": "I said about the event loop, it has to wait till the stack is clear before it can.",
       "words": [
-        {
-          "text": "what",
-          "start": 944.25,
-          "end": 944.43
-        },
         {
           "text": "I",
           "start": 944.43,
@@ -14319,20 +14254,20 @@
           "end": 947.49
         },
         {
-          "text": "can",
+          "text": "can.",
           "start": 947.49,
           "end": 947.67
         }
       ]
     },
     {
-      "id": "cue-213",
+      "id": "cue-208",
       "start": 947.68,
-      "end": 953.12,
-      "text": "push the callback on to the stack, so your stack is going to continue to run, console.log",
+      "end": 953.61,
+      "text": "Push the callback on to the stack, so your stack is going to continue to run, console.log “hi”.",
       "words": [
         {
-          "text": "push",
+          "text": "Push",
           "start": 947.68,
           "end": 948.0
         },
@@ -14415,20 +14350,20 @@
           "text": "console.log",
           "start": 952.8,
           "end": 953.12
+        },
+        {
+          "text": "“hi”.",
+          "start": 953.1,
+          "end": 953.61
         }
       ]
     },
     {
-      "id": "cue-214",
-      "start": 953.1,
-      "end": 960.75,
-      "text": "“hi”, “JSConfEU” and clear, now the event loop can kick in and call your callback.",
+      "id": "cue-209",
+      "start": 953.61,
+      "end": 960.72,
+      "text": "“JSConfEU” and clear, now the event loop can kick in and call your callback.",
       "words": [
-        {
-          "text": "“hi”,",
-          "start": 953.1,
-          "end": 953.61
-        },
         {
           "text": "“JSConfEU”",
           "start": 953.61,
@@ -14502,10 +14437,10 @@
       ]
     },
     {
-      "id": "cue-215",
+      "id": "cue-210",
       "start": 960.72,
-      "end": 967.17,
-      "text": "That's like an example of setTimeout zero, is deferring that execution of code, for whatever",
+      "end": 968.86,
+      "text": "That's like an example of setTimeout zero, is deferring that execution of code, for whatever reason to the.",
       "words": [
         {
           "text": "That's",
@@ -14581,15 +14516,7 @@
           "text": "whatever",
           "start": 966.74,
           "end": 967.17
-        }
-      ]
-    },
-    {
-      "id": "cue-216",
-      "start": 967.24,
-      "end": 971.02,
-      "text": "reason to the end of the stack.",
-      "words": [
+        },
         {
           "text": "reason",
           "start": 967.24,
@@ -14601,12 +14528,20 @@
           "end": 968.32
         },
         {
-          "text": "the",
+          "text": "the.",
           "start": 968.32,
           "end": 968.86
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-211",
+      "start": 968.86,
+      "end": 971.02,
+      "text": "End of the stack.",
+      "words": [
         {
-          "text": "end",
+          "text": "End",
           "start": 968.86,
           "end": 969.4
         },
@@ -14628,7 +14563,7 @@
       ]
     },
     {
-      "id": "cue-217",
+      "id": "cue-212",
       "start": 971.04,
       "end": 973.14,
       "text": "Or until stack is clear.",
@@ -14661,7 +14596,7 @@
       ]
     },
     {
-      "id": "cue-218",
+      "id": "cue-213",
       "start": 973.15,
       "end": 974.73,
       "text": "Okay.",
@@ -14674,10 +14609,10 @@
       ]
     },
     {
-      "id": "cue-219",
+      "id": "cue-214",
       "start": 974.73,
-      "end": 981.57,
-      "text": "So, all these web APIs work the same way, if we have AJAX request, we make an AJAX request",
+      "end": 981.21,
+      "text": "So, all these web APIs work the same way, if we have AJAX request, we make an AJAX.",
       "words": [
         {
           "text": "So,",
@@ -14765,23 +14700,23 @@
           "end": 980.85
         },
         {
-          "text": "AJAX",
+          "text": "AJAX.",
           "start": 980.85,
           "end": 981.21
-        },
-        {
-          "text": "request",
-          "start": 981.21,
-          "end": 981.57
         }
       ]
     },
     {
-      "id": "cue-220",
-      "start": 981.48,
-      "end": 988.52,
-      "text": "to the URL with a callback, works the same way, oops sorry, console log, “hi”, make",
+      "id": "cue-215",
+      "start": 981.21,
+      "end": 988.74,
+      "text": "Request to the URL with a callback, works the same way, oops sorry, console log, “hi”, make an.",
       "words": [
+        {
+          "text": "Request",
+          "start": 981.21,
+          "end": 981.57
+        },
         {
           "text": "to",
           "start": 981.48,
@@ -14861,20 +14796,20 @@
           "text": "make",
           "start": 988.08,
           "end": 988.52
+        },
+        {
+          "text": "an.",
+          "start": 988.48,
+          "end": 988.74
         }
       ]
     },
     {
-      "id": "cue-221",
-      "start": 988.48,
-      "end": 992.64,
-      "text": "an AJAX request, the code for running that AJAX request does not live in JavaScript Runtime",
+      "id": "cue-216",
+      "start": 988.74,
+      "end": 993.73,
+      "text": "AJAX request, the code for running that AJAX request does not live in JavaScript Runtime but in the.",
       "words": [
-        {
-          "text": "an",
-          "start": 988.48,
-          "end": 988.74
-        },
         {
           "text": "AJAX",
           "start": 988.74,
@@ -14949,15 +14884,7 @@
           "text": "Runtime",
           "start": 992.38,
           "end": 992.64
-        }
-      ]
-    },
-    {
-      "id": "cue-222",
-      "start": 992.65,
-      "end": 1000.21,
-      "text": "but in the browser as a web API, so we spin it up with a callback in the URL, your code",
-      "words": [
+        },
         {
           "text": "but",
           "start": 992.65,
@@ -14969,12 +14896,20 @@
           "end": 993.37
         },
         {
-          "text": "the",
+          "text": "the.",
           "start": 993.37,
           "end": 993.73
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-217",
+      "start": 993.73,
+      "end": 1000.12,
+      "text": "Browser as a web API, so we spin it up with a callback in the URL, your code.",
+      "words": [
         {
-          "text": "browser",
+          "text": "Browser",
           "start": 993.73,
           "end": 994.09
         },
@@ -15059,20 +14994,20 @@
           "end": 999.85
         },
         {
-          "text": "code",
+          "text": "code.",
           "start": 999.85,
           "end": 1000.21
         }
       ]
     },
     {
-      "id": "cue-223",
+      "id": "cue-218",
       "start": 1000.12,
       "end": 1002.16,
-      "text": "can continue to run.",
+      "text": "Can continue to run.",
       "words": [
         {
-          "text": "can",
+          "text": "Can",
           "start": 1000.12,
           "end": 1000.63
         },
@@ -15094,10 +15029,10 @@
       ]
     },
     {
-      "id": "cue-224",
+      "id": "cue-219",
       "start": 1002.17,
-      "end": 1007.45,
-      "text": "Until that XHR request completes, or it may never complete, it's okay, the stack can continue",
+      "end": 1008.14,
+      "text": "Until that XHR request completes, or it may never complete, it's okay, the stack can continue to run.",
       "words": [
         {
           "text": "Until",
@@ -15178,27 +15113,27 @@
           "text": "continue",
           "start": 1007.12,
           "end": 1007.45
-        }
-      ]
-    },
-    {
-      "id": "cue-225",
-      "start": 1007.46,
-      "end": 1012.9,
-      "text": "to run, assuming it completes, gets pushed to the queue,picked up by the event loop and",
-      "words": [
+        },
         {
           "text": "to",
           "start": 1007.46,
           "end": 1007.8
         },
         {
-          "text": "run,",
+          "text": "run.",
           "start": 1007.8,
           "end": 1008.14
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-220",
+      "start": 1008.14,
+      "end": 1015.97,
+      "text": "Assuming it completes, gets pushed to the queue,picked up by the event loop and it's run.",
+      "words": [
         {
-          "text": "assuming",
+          "text": "Assuming",
           "start": 1008.14,
           "end": 1008.48
         },
@@ -15266,15 +15201,7 @@
           "text": "and",
           "start": 1012.56,
           "end": 1012.9
-        }
-      ]
-    },
-    {
-      "id": "cue-226",
-      "start": 1012.96,
-      "end": 1015.98,
-      "text": "it's run.",
-      "words": [
+        },
         {
           "text": "it's",
           "start": 1012.96,
@@ -15288,9 +15215,9 @@
       ]
     },
     {
-      "id": "cue-227",
+      "id": "cue-221",
       "start": 1015.97,
-      "end": 1018.4,
+      "end": 1018.36,
       "text": "That's all that happens when an Async call happens.",
       "words": [
         {
@@ -15341,10 +15268,10 @@
       ]
     },
     {
-      "id": "cue-228",
+      "id": "cue-222",
       "start": 1018.36,
-      "end": 1025.56,
-      "text": "Let's do a crazy complicated example, I hope this going to work, if you haven't realized",
+      "end": 1026.4,
+      "text": "Let's do a crazy complicated example, I hope this going to work, if you haven't realized all this.",
       "words": [
         {
           "text": "Let's",
@@ -15425,27 +15352,27 @@
           "text": "realized",
           "start": 1025.11,
           "end": 1025.56
-        }
-      ]
-    },
-    {
-      "id": "cue-229",
-      "start": 1025.6,
-      "end": 1032.4,
-      "text": "all this is in keynote there's like I don't know 500 animation steps in this whole deck.",
-      "words": [
+        },
         {
           "text": "all",
           "start": 1025.6,
           "end": 1026.0
         },
         {
-          "text": "this",
+          "text": "this.",
           "start": 1026.0,
           "end": 1026.4
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-223",
+      "start": 1026.4,
+      "end": 1032.4,
+      "text": "Is in keynote there's like I don't know 500 animation steps in this whole deck.",
+      "words": [
         {
-          "text": "is",
+          "text": "Is",
           "start": 1026.4,
           "end": 1026.8
         },
@@ -15522,10 +15449,10 @@
       ]
     },
     {
-      "id": "cue-230",
+      "id": "cue-224",
       "start": 1032.45,
-      "end": 1055.25,
-      "text": "(code blows up, flames animation) (Applause) J Whew ... no ... so ... interesting, we're",
+      "end": 1040.05,
+      "text": "(code blows up, flames animation).",
       "words": [
         {
           "text": "(code",
@@ -15548,15 +15475,18 @@
           "end": 1038.53
         },
         {
-          "text": "animation)",
+          "text": "animation).",
           "start": 1038.53,
           "end": 1040.05
-        },
-        {
-          "text": "(Applause)",
-          "start": 1040.05,
-          "end": 1041.57
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-225",
+      "start": 1041.57,
+      "end": 1046.13,
+      "text": "J Whew ...",
+      "words": [
         {
           "text": "J",
           "start": 1041.57,
@@ -15571,9 +15501,17 @@
           "text": "...",
           "start": 1044.61,
           "end": 1046.13
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-226",
+      "start": 1046.13,
+      "end": 1049.17,
+      "text": "No ...",
+      "words": [
         {
-          "text": "no",
+          "text": "No",
           "start": 1046.13,
           "end": 1047.65
         },
@@ -15581,9 +15519,17 @@
           "text": "...",
           "start": 1047.65,
           "end": 1049.17
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-227",
+      "start": 1049.17,
+      "end": 1052.21,
+      "text": "So ...",
+      "words": [
         {
-          "text": "so",
+          "text": "So",
           "start": 1049.17,
           "end": 1050.69
         },
@@ -15591,9 +15537,17 @@
           "text": "...",
           "start": 1050.69,
           "end": 1052.21
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-228",
+      "start": 1052.21,
+      "end": 1058.6,
+      "text": "Interesting, we're given a link.",
+      "words": [
         {
-          "text": "interesting,",
+          "text": "Interesting,",
           "start": 1052.21,
           "end": 1053.73
         },
@@ -15601,15 +15555,7 @@
           "text": "we're",
           "start": 1053.73,
           "end": 1055.25
-        }
-      ]
-    },
-    {
-      "id": "cue-231",
-      "start": 1055.18,
-      "end": 1058.6,
-      "text": "given a link.",
-      "words": [
+        },
         {
           "text": "given",
           "start": 1055.18,
@@ -15628,10 +15574,10 @@
       ]
     },
     {
-      "id": "cue-232",
+      "id": "cue-229",
       "start": 1058.6,
-      "end": 1062.11,
-      "text": "Hmm ... is this big enough, can people see?",
+      "end": 1059.38,
+      "text": "Hmm ...",
       "words": [
         {
           "text": "Hmm",
@@ -15642,9 +15588,17 @@
           "text": "...",
           "start": 1058.99,
           "end": 1059.38
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-230",
+      "start": 1059.38,
+      "end": 1062.11,
+      "text": "Is this big enough, can people see?",
+      "words": [
         {
-          "text": "is",
+          "text": "Is",
           "start": 1059.38,
           "end": 1059.77
         },
@@ -15681,10 +15635,10 @@
       ]
     },
     {
-      "id": "cue-233",
+      "id": "cue-231",
       "start": 1062.14,
-      "end": 1072.21,
-      "text": "Okay, so basically I wrote this talk for Scotland JS, after the talk I broke half of the slides",
+      "end": 1071.68,
+      "text": "Okay, so basically I wrote this talk for Scotland JS, after the talk I broke half of the.",
       "words": [
         {
           "text": "Okay,",
@@ -15772,23 +15726,23 @@
           "end": 1071.15
         },
         {
-          "text": "the",
+          "text": "the.",
           "start": 1071.15,
           "end": 1071.68
-        },
-        {
-          "text": "slides",
-          "start": 1071.68,
-          "end": 1072.21
         }
       ]
     },
     {
-      "id": "cue-234",
-      "start": 1072.22,
-      "end": 1076.36,
-      "text": "and could not be bothered to redo all the slides because it was a total pain in the",
+      "id": "cue-232",
+      "start": 1071.68,
+      "end": 1076.13,
+      "text": "Slides and could not be bothered to redo all the slides because it was a total pain in.",
       "words": [
+        {
+          "text": "Slides",
+          "start": 1071.68,
+          "end": 1072.21
+        },
         {
           "text": "and",
           "start": 1072.22,
@@ -15870,23 +15824,23 @@
           "end": 1075.9
         },
         {
-          "text": "in",
+          "text": "in.",
           "start": 1075.9,
           "end": 1076.13
-        },
-        {
-          "text": "the",
-          "start": 1076.13,
-          "end": 1076.36
         }
       ]
     },
     {
-      "id": "cue-235",
-      "start": 1076.36,
-      "end": 1085.1,
-      "text": "ass in keynote to do it so I took much easier route (Laughing) of writing a tool that can",
+      "id": "cue-233",
+      "start": 1076.13,
+      "end": 1084.64,
+      "text": "The ass in keynote to do it so I took much easier route of writing a tool that.",
       "words": [
+        {
+          "text": "The",
+          "start": 1076.13,
+          "end": 1076.36
+        },
         {
           "text": "ass",
           "start": 1076.36,
@@ -15948,11 +15902,6 @@
           "end": 1081.88
         },
         {
-          "text": "(Laughing)",
-          "start": 1081.88,
-          "end": 1082.34
-        },
-        {
           "text": "of",
           "start": 1082.34,
           "end": 1082.8
@@ -15973,23 +15922,23 @@
           "end": 1084.18
         },
         {
-          "text": "that",
+          "text": "that.",
           "start": 1084.18,
           "end": 1084.64
-        },
-        {
-          "text": "can",
-          "start": 1084.64,
-          "end": 1085.1
         }
       ]
     },
     {
-      "id": "cue-236",
-      "start": 1085.01,
-      "end": 1091.51,
-      "text": "visualize the JavaScript Runtime at Runtime, and it's called loop.",
+      "id": "cue-234",
+      "start": 1084.64,
+      "end": 1091.49,
+      "text": "Can visualize the JavaScript Runtime at Runtime, and it's called loop.",
       "words": [
+        {
+          "text": "Can",
+          "start": 1084.64,
+          "end": 1085.1
+        },
         {
           "text": "visualize",
           "start": 1085.01,
@@ -16043,10 +15992,10 @@
       ]
     },
     {
-      "id": "cue-237",
+      "id": "cue-235",
       "start": 1091.49,
       "end": 1096.53,
-      "text": "So, let's just run this example and, which was kind of the example that we had on the",
+      "text": "So, let's just run this example and, which was kind of the example that we had on the.",
       "words": [
         {
           "text": "So,",
@@ -16134,20 +16083,20 @@
           "end": 1096.25
         },
         {
-          "text": "the",
+          "text": "the.",
           "start": 1096.25,
           "end": 1096.53
         }
       ]
     },
     {
-      "id": "cue-238",
+      "id": "cue-236",
       "start": 1096.58,
-      "end": 1103.44,
-      "text": "previous slide, I haven't shimmed XHR yet, it's doable I just haven't done it.",
+      "end": 1103.43,
+      "text": "Previous slide, I haven't shimmed XHR yet, it's doable I just haven't done it.",
       "words": [
         {
-          "text": "previous",
+          "text": "Previous",
           "start": 1096.58,
           "end": 1097.07
         },
@@ -16219,10 +16168,10 @@
       ]
     },
     {
-      "id": "cue-239",
+      "id": "cue-237",
       "start": 1103.43,
-      "end": 1110.91,
-      "text": "As you can see the code, we're going to log something, this is a shim around addEventListener,",
+      "end": 1111.25,
+      "text": "As you can see the code, we're going to log something, this is a shim around addEventListener, setTimeout.",
       "words": [
         {
           "text": "As",
@@ -16308,22 +16257,22 @@
           "text": "addEventListener,",
           "start": 1110.47,
           "end": 1110.91
+        },
+        {
+          "text": "setTimeout.",
+          "start": 1110.96,
+          "end": 1111.25
         }
       ]
     },
     {
-      "id": "cue-240",
-      "start": 1110.96,
-      "end": 1113.57,
-      "text": "setTimeout and we're going to do a console.log. ‑‑",
+      "id": "cue-238",
+      "start": 1111.25,
+      "end": 1113.28,
+      "text": "And we're going to do a console.log.",
       "words": [
         {
-          "text": "setTimeout",
-          "start": 1110.96,
-          "end": 1111.25
-        },
-        {
-          "text": "and",
+          "text": "And",
           "start": 1111.25,
           "end": 1111.54
         },
@@ -16356,20 +16305,20 @@
           "text": "console.log.",
           "start": 1112.99,
           "end": 1113.28
-        },
-        {
-          "text": "‑‑",
-          "start": 1113.28,
-          "end": 1113.57
         }
       ]
     },
     {
-      "id": "cue-241",
-      "start": 1113.56,
-      "end": 1120.16,
-      "text": "I'm going to run it and see what happens so ... add a DOM API, add a timeout, code is",
+      "id": "cue-239",
+      "start": 1113.28,
+      "end": 1117.19,
+      "text": "‑‑ I'm going to run it and see what happens so ...",
       "words": [
+        {
+          "text": "‑‑",
+          "start": 1113.28,
+          "end": 1113.57
+        },
         {
           "text": "I'm",
           "start": 1113.56,
@@ -16424,9 +16373,17 @@
           "text": "...",
           "start": 1116.86,
           "end": 1117.19
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-240",
+      "start": 1117.19,
+      "end": 1125.31,
+      "text": "Add a DOM API, add a timeout, code is going to continue to run, pushes the callback into.",
+      "words": [
         {
-          "text": "add",
+          "text": "Add",
           "start": 1117.19,
           "end": 1117.52
         },
@@ -16469,15 +16426,7 @@
           "text": "is",
           "start": 1119.83,
           "end": 1120.16
-        }
-      ]
-    },
-    {
-      "id": "cue-242",
-      "start": 1120.18,
-      "end": 1129.3,
-      "text": "going to continue to run, pushes the callback into the queue which runs, and we're done.",
-      "words": [
+        },
         {
           "text": "going",
           "start": 1120.18,
@@ -16519,12 +16468,20 @@
           "end": 1124.74
         },
         {
-          "text": "into",
+          "text": "into.",
           "start": 1124.74,
           "end": 1125.31
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-241",
+      "start": 1125.31,
+      "end": 1129.29,
+      "text": "The queue which runs, and we're done.",
+      "words": [
         {
-          "text": "the",
+          "text": "The",
           "start": 1125.31,
           "end": 1125.88
         },
@@ -16561,10 +16518,10 @@
       ]
     },
     {
-      "id": "cue-243",
+      "id": "cue-242",
       "start": 1129.29,
-      "end": 1134.89,
-      "text": "If I click on here then it's going to ... trigger the web API, queue the callback for the click",
+      "end": 1132.09,
+      "text": "If I click on here then it's going to ...",
       "words": [
         {
           "text": "If",
@@ -16615,9 +16572,17 @@
           "text": "...",
           "start": 1131.81,
           "end": 1132.09
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-243",
+      "start": 1132.09,
+      "end": 1136.19,
+      "text": "Trigger the web API, queue the callback for the click and run it.",
+      "words": [
         {
-          "text": "trigger",
+          "text": "Trigger",
           "start": 1132.09,
           "end": 1132.37
         },
@@ -16665,15 +16630,7 @@
           "text": "click",
           "start": 1134.61,
           "end": 1134.89
-        }
-      ]
-    },
-    {
-      "id": "cue-244",
-      "start": 1134.97,
-      "end": 1136.2,
-      "text": "and run it.",
-      "words": [
+        },
         {
           "text": "and",
           "start": 1134.97,
@@ -16692,13 +16649,13 @@
       ]
     },
     {
-      "id": "cue-245",
+      "id": "cue-244",
       "start": 1136.19,
       "end": 1139.27,
-      "text": "if I cluck a hundred times we can see what happens.",
+      "text": "If I cluck a hundred times we can see what happens.",
       "words": [
         {
-          "text": "if",
+          "text": "If",
           "start": 1136.19,
           "end": 1136.47
         },
@@ -16755,10 +16712,10 @@
       ]
     },
     {
-      "id": "cue-246",
+      "id": "cue-245",
       "start": 1139.32,
-      "end": 1145.34,
-      "text": "I clicked, the click doesn't get processed immediately, itself gets pushed to the queue,",
+      "end": 1147.19,
+      "text": "I clicked, the click doesn't get processed immediately, itself gets pushed to the queue, as the queue gets.",
       "words": [
         {
           "text": "I",
@@ -16829,15 +16786,7 @@
           "text": "queue,",
           "start": 1144.91,
           "end": 1145.34
-        }
-      ]
-    },
-    {
-      "id": "cue-247",
-      "start": 1145.35,
-      "end": 1152.25,
-      "text": "as the queue gets processed, eventually my click is going to get dealt with, right.",
-      "words": [
+        },
         {
           "text": "as",
           "start": 1145.35,
@@ -16854,12 +16803,20 @@
           "end": 1146.73
         },
         {
-          "text": "gets",
+          "text": "gets.",
           "start": 1146.73,
           "end": 1147.19
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-246",
+      "start": 1147.19,
+      "end": 1152.25,
+      "text": "Processed, eventually my click is going to get dealt with, right.",
+      "words": [
         {
-          "text": "processed,",
+          "text": "Processed,",
           "start": 1147.19,
           "end": 1147.65
         },
@@ -16916,7 +16873,7 @@
       ]
     },
     {
-      "id": "cue-248",
+      "id": "cue-247",
       "start": 1152.3,
       "end": 1154.9,
       "text": "So I have a few more examples I'm going to run through here.",
@@ -16989,18 +16946,13 @@
       ]
     },
     {
-      "id": "cue-249",
-      "start": 1154.96,
+      "id": "cue-248",
+      "start": 1155.71,
       "end": 1169.21,
-      "text": "Here we go, okay, so, I'm just going to run through a few examples just to kind of talk",
+      "text": "We go, okay, so, I'm just going to run through a few examples just to kind of talk.",
       "words": [
         {
-          "text": "Here",
-          "start": 1154.96,
-          "end": 1155.71
-        },
-        {
-          "text": "we",
+          "text": "We",
           "start": 1155.71,
           "end": 1156.46
         },
@@ -17085,20 +17037,20 @@
           "end": 1168.46
         },
         {
-          "text": "talk",
+          "text": "talk.",
           "start": 1168.46,
           "end": 1169.21
         }
       ]
     },
     {
-      "id": "cue-250",
+      "id": "cue-249",
       "start": 1169.28,
       "end": 1173.96,
-      "text": "about a few things that you might have run in to and not thought about with Async APIs,",
+      "text": "About a few things that you might have run in to and not thought about with Async APIs.",
       "words": [
         {
-          "text": "about",
+          "text": "About",
           "start": 1169.28,
           "end": 1169.54
         },
@@ -17183,17 +17135,17 @@
           "end": 1173.7
         },
         {
-          "text": "APIs,",
+          "text": "APIs.",
           "start": 1173.7,
           "end": 1173.96
         }
       ]
     },
     {
-      "id": "cue-251",
+      "id": "cue-250",
       "start": 1173.97,
-      "end": 1180.42,
-      "text": "In this example we call setTimeout four times with the one second delay, and console.log",
+      "end": 1183.47,
+      "text": "In this example we call setTimeout four times with the one second delay, and console.log “hi”.",
       "words": [
         {
           "text": "In",
@@ -17269,15 +17221,7 @@
           "text": "console.log",
           "start": 1179.99,
           "end": 1180.42
-        }
-      ]
-    },
-    {
-      "id": "cue-252",
-      "start": 1180.41,
-      "end": 1183.47,
-      "text": "“hi”.",
-      "words": [
+        },
         {
           "text": "“hi”.",
           "start": 1180.41,
@@ -17286,10 +17230,10 @@
       ]
     },
     {
-      "id": "cue-253",
+      "id": "cue-251",
       "start": 1183.47,
-      "end": 1192.08,
-      "text": "By the time the callbacks get queued... that fourth callback we asked for a one second",
+      "end": 1187.23,
+      "text": "By the time the callbacks get queued...",
       "words": [
         {
           "text": "By",
@@ -17325,9 +17269,17 @@
           "text": "queued...",
           "start": 1186.69,
           "end": 1187.23
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-252",
+      "start": 1187.23,
+      "end": 1195.99,
+      "text": "That fourth callback we asked for a one second delay, and it's still waiting, the callback hasn't run.",
+      "words": [
         {
-          "text": "that",
+          "text": "That",
           "start": 1187.23,
           "end": 1187.77
         },
@@ -17370,15 +17322,7 @@
           "text": "second",
           "start": 1191.54,
           "end": 1192.08
-        }
-      ]
-    },
-    {
-      "id": "cue-254",
-      "start": 1192.03,
-      "end": 1196.87,
-      "text": "delay, and it's still waiting, the callback hasn't run, right .",
-      "words": [
+        },
         {
           "text": "delay,",
           "start": 1192.03,
@@ -17420,12 +17364,20 @@
           "end": 1195.55
         },
         {
-          "text": "run,",
+          "text": "run.",
           "start": 1195.55,
           "end": 1195.99
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-253",
+      "start": 1195.99,
+      "end": 1196.87,
+      "text": "Right .",
+      "words": [
         {
-          "text": "right",
+          "text": "Right",
           "start": 1195.99,
           "end": 1196.43
         },
@@ -17437,13 +17389,13 @@
       ]
     },
     {
-      "id": "cue-255",
+      "id": "cue-254",
       "start": 1196.9,
-      "end": 1202.45,
-      "text": "this illustrates the ‑‑ like what time out is actually doing, it's not a guaranteed",
+      "end": 1203.42,
+      "text": "This illustrates the ‑‑ like what time out is actually doing, it's not a guaranteed time to execution.",
       "words": [
         {
-          "text": "this",
+          "text": "This",
           "start": 1196.9,
           "end": 1197.27
         },
@@ -17516,15 +17468,7 @@
           "text": "guaranteed",
           "start": 1202.08,
           "end": 1202.45
-        }
-      ]
-    },
-    {
-      "id": "cue-256",
-      "start": 1202.47,
-      "end": 1206.92,
-      "text": "time to execution, it's a minimum time to execution, just like setTimeout zero doesn't",
-      "words": [
+        },
         {
           "text": "time",
           "start": 1202.47,
@@ -17536,12 +17480,20 @@
           "end": 1203.11
         },
         {
-          "text": "execution,",
+          "text": "execution.",
           "start": 1203.11,
           "end": 1203.42
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-255",
+      "start": 1203.42,
+      "end": 1212.9,
+      "text": "It's a minimum time to execution, just like setTimeout zero doesn't run the code immediately it runs the.",
+      "words": [
         {
-          "text": "it's",
+          "text": "It's",
           "start": 1203.42,
           "end": 1203.74
         },
@@ -17594,15 +17546,7 @@
           "text": "doesn't",
           "start": 1206.61,
           "end": 1206.92
-        }
-      ]
-    },
-    {
-      "id": "cue-257",
-      "start": 1206.88,
-      "end": 1216.34,
-      "text": "run the code immediately it runs the code next‑ish, sometime, right?",
-      "words": [
+        },
         {
           "text": "run",
           "start": 1206.88,
@@ -17634,12 +17578,20 @@
           "end": 1212.04
         },
         {
-          "text": "the",
+          "text": "the.",
           "start": 1212.04,
           "end": 1212.9
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-256",
+      "start": 1212.9,
+      "end": 1216.34,
+      "text": "Code next‑ish, sometime, right?",
+      "words": [
         {
-          "text": "code",
+          "text": "Code",
           "start": 1212.9,
           "end": 1213.76
         },
@@ -17661,10 +17613,10 @@
       ]
     },
     {
-      "id": "cue-258",
+      "id": "cue-257",
       "start": 1216.35,
-      "end": 1224.85,
-      "text": "So ... in this example I want to talk about callbacks, so, depending on who, speak to",
+      "end": 1217.35,
+      "text": "So ...",
       "words": [
         {
           "text": "So",
@@ -17675,9 +17627,17 @@
           "text": "...",
           "start": 1216.85,
           "end": 1217.35
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-258",
+      "start": 1217.35,
+      "end": 1225.61,
+      "text": "In this example I want to talk about callbacks, so, depending on who, speak to and how they.",
+      "words": [
         {
-          "text": "in",
+          "text": "In",
           "start": 1217.35,
           "end": 1217.85
         },
@@ -17750,15 +17710,7 @@
           "text": "to",
           "start": 1224.35,
           "end": 1224.85
-        }
-      ]
-    },
-    {
-      "id": "cue-259",
-      "start": 1224.77,
-      "end": 1229.25,
-      "text": "and how they phrase things, callbacks can be one of two things, callbacks can be any",
-      "words": [
+        },
         {
           "text": "and",
           "start": 1224.77,
@@ -17770,12 +17722,20 @@
           "end": 1225.33
         },
         {
-          "text": "they",
+          "text": "they.",
           "start": 1225.33,
           "end": 1225.61
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-259",
+      "start": 1225.61,
+      "end": 1231.18,
+      "text": "Phrase things, callbacks can be one of two things, callbacks can be any function that another function calls.",
+      "words": [
         {
-          "text": "phrase",
+          "text": "Phrase",
           "start": 1225.61,
           "end": 1225.89
         },
@@ -17838,15 +17798,7 @@
           "text": "any",
           "start": 1228.97,
           "end": 1229.25
-        }
-      ]
-    },
-    {
-      "id": "cue-260",
-      "start": 1229.18,
-      "end": 1234.78,
-      "text": "function that another function calls or callbacks can be more explicitly an asynchronous callback",
-      "words": [
+        },
         {
           "text": "function",
           "start": 1229.18,
@@ -17868,12 +17820,20 @@
           "end": 1230.78
         },
         {
-          "text": "calls",
+          "text": "calls.",
           "start": 1230.78,
           "end": 1231.18
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-260",
+      "start": 1231.18,
+      "end": 1237.37,
+      "text": "Or callbacks can be more explicitly an asynchronous callback as in one that will get pushed back on.",
+      "words": [
         {
-          "text": "or",
+          "text": "Or",
           "start": 1231.18,
           "end": 1231.58
         },
@@ -17916,15 +17876,7 @@
           "text": "callback",
           "start": 1234.38,
           "end": 1234.78
-        }
-      ]
-    },
-    {
-      "id": "cue-261",
-      "start": 1234.76,
-      "end": 1239.11,
-      "text": "as in one that will get pushed back on the callback queue in the future.",
-      "words": [
+        },
         {
           "text": "as",
           "start": 1234.76,
@@ -17966,12 +17918,20 @@
           "end": 1237.08
         },
         {
-          "text": "on",
+          "text": "on.",
           "start": 1237.08,
           "end": 1237.37
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-261",
+      "start": 1237.37,
+      "end": 1239.11,
+      "text": "The callback queue in the future.",
+      "words": [
         {
-          "text": "the",
+          "text": "The",
           "start": 1237.37,
           "end": 1237.66
         },
@@ -18053,8 +18013,8 @@
     {
       "id": "cue-263",
       "start": 1242.58,
-      "end": 1248.34,
-      "text": "The forEach method on an array, it doesn't run, it takes a function, which you could",
+      "end": 1249.29,
+      "text": "The forEach method on an array, it doesn't run, it takes a function, which you could call a.",
       "words": [
         {
           "text": "The",
@@ -18135,27 +18095,27 @@
           "text": "could",
           "start": 1247.98,
           "end": 1248.34
-        }
-      ]
-    },
-    {
-      "id": "cue-264",
-      "start": 1248.39,
-      "end": 1255.59,
-      "text": "call a callback, but it's not running it asynchronously, it's running it within the current stack.",
-      "words": [
+        },
         {
           "text": "call",
           "start": 1248.39,
           "end": 1248.84
         },
         {
-          "text": "a",
+          "text": "a.",
           "start": 1248.84,
           "end": 1249.29
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-264",
+      "start": 1249.29,
+      "end": 1255.59,
+      "text": "Callback, but it's not running it asynchronously, it's running it within the current stack.",
+      "words": [
         {
-          "text": "callback,",
+          "text": "Callback,",
           "start": 1249.29,
           "end": 1249.74
         },
@@ -18229,8 +18189,8 @@
     {
       "id": "cue-265",
       "start": 1255.64,
-      "end": 1262.1,
-      "text": "We could define an asynchronous forEach so it can take an array, a callback and for each",
+      "end": 1262.51,
+      "text": "We could define an asynchronous forEach so it can take an array, a callback and for each item.",
       "words": [
         {
           "text": "We",
@@ -18316,22 +18276,22 @@
           "text": "each",
           "start": 1261.72,
           "end": 1262.1
+        },
+        {
+          "text": "item.",
+          "start": 1262.17,
+          "end": 1262.51
         }
       ]
     },
     {
       "id": "cue-266",
-      "start": 1262.17,
-      "end": 1268.29,
-      "text": "item in the array it's going to do a setTimeout zero with that callback, I guess this should",
+      "start": 1262.51,
+      "end": 1268.53,
+      "text": "In the array it's going to do a setTimeout zero with that callback, I guess this should pass.",
       "words": [
         {
-          "text": "item",
-          "start": 1262.17,
-          "end": 1262.51
-        },
-        {
-          "text": "in",
+          "text": "In",
           "start": 1262.51,
           "end": 1262.85
         },
@@ -18414,22 +18374,22 @@
           "text": "should",
           "start": 1267.95,
           "end": 1268.29
+        },
+        {
+          "text": "pass.",
+          "start": 1268.25,
+          "end": 1268.53
         }
       ]
     },
     {
       "id": "cue-267",
-      "start": 1268.25,
-      "end": 1273.85,
-      "text": "pass in the value, but any way, so, I'm going to run it and we can see what the difference",
+      "start": 1268.53,
+      "end": 1273.57,
+      "text": "In the value, but any way, so, I'm going to run it and we can see what the.",
       "words": [
         {
-          "text": "pass",
-          "start": 1268.25,
-          "end": 1268.53
-        },
-        {
-          "text": "in",
+          "text": "In",
           "start": 1268.53,
           "end": 1268.81
         },
@@ -18514,23 +18474,23 @@
           "end": 1273.29
         },
         {
-          "text": "the",
+          "text": "the.",
           "start": 1273.29,
           "end": 1273.57
-        },
-        {
-          "text": "difference",
-          "start": 1273.57,
-          "end": 1273.85
         }
       ]
     },
     {
       "id": "cue-268",
-      "start": 1273.77,
-      "end": 1280.42,
-      "text": "is, so for the first block of code that runs, it's going to sit and block the stack, right?",
+      "start": 1273.57,
+      "end": 1279.72,
+      "text": "Difference is, so for the first block of code that runs, it's going to sit and block the.",
       "words": [
+        {
+          "text": "Difference",
+          "start": 1273.57,
+          "end": 1273.85
+        },
         {
           "text": "is,",
           "start": 1273.77,
@@ -18612,12 +18572,20 @@
           "end": 1279.37
         },
         {
-          "text": "the",
+          "text": "the.",
           "start": 1279.37,
           "end": 1279.72
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-269",
+      "start": 1279.72,
+      "end": 1280.42,
+      "text": "Stack, right?",
+      "words": [
         {
-          "text": "stack,",
+          "text": "Stack,",
           "start": 1279.72,
           "end": 1280.07
         },
@@ -18629,10 +18597,10 @@
       ]
     },
     {
-      "id": "cue-269",
+      "id": "cue-270",
       "start": 1280.5,
-      "end": 1286.1,
-      "text": "Until it's complete, whereas in the Async version, okay, it's slowed down, but we're",
+      "end": 1287.36,
+      "text": "Until it's complete, whereas in the Async version, okay, it's slowed down, but we're basically going to queue.",
       "words": [
         {
           "text": "Until",
@@ -18703,15 +18671,7 @@
           "text": "we're",
           "start": 1285.7,
           "end": 1286.1
-        }
-      ]
-    },
-    {
-      "id": "cue-270",
-      "start": 1286.08,
-      "end": 1291.52,
-      "text": "basically going to queue a bunch of callbacks and they're going to clear and then we can",
-      "words": [
+        },
         {
           "text": "basically",
           "start": 1286.08,
@@ -18728,12 +18688,20 @@
           "end": 1287.04
         },
         {
-          "text": "queue",
+          "text": "queue.",
           "start": 1287.04,
           "end": 1287.36
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-271",
+      "start": 1287.36,
+      "end": 1293.76,
+      "text": "A bunch of callbacks and they're going to clear and then we can actually run through and do.",
+      "words": [
         {
-          "text": "a",
+          "text": "A",
           "start": 1287.36,
           "end": 1287.68
         },
@@ -18796,15 +18764,7 @@
           "text": "can",
           "start": 1291.2,
           "end": 1291.52
-        }
-      ]
-    },
-    {
-      "id": "cue-271",
-      "start": 1291.56,
-      "end": 1294.64,
-      "text": "actually run through and do a console.log.",
-      "words": [
+        },
         {
           "text": "actually",
           "start": 1291.56,
@@ -18826,12 +18786,20 @@
           "end": 1293.32
         },
         {
-          "text": "do",
+          "text": "do.",
           "start": 1293.32,
           "end": 1293.76
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-272",
+      "start": 1293.76,
+      "end": 1294.64,
+      "text": "A console.log.",
+      "words": [
         {
-          "text": "a",
+          "text": "A",
           "start": 1293.76,
           "end": 1294.2
         },
@@ -18843,10 +18811,10 @@
       ]
     },
     {
-      "id": "cue-272",
+      "id": "cue-273",
       "start": 1294.66,
-      "end": 1299.31,
-      "text": "In this example the console.log is fast, so the benefit of doing it asynchronously is",
+      "end": 1301.13,
+      "text": "In this example the console.log is fast, so the benefit of doing it asynchronously is not obviously but.",
       "words": [
         {
           "text": "In",
@@ -18922,15 +18890,7 @@
           "text": "is",
           "start": 1299.0,
           "end": 1299.31
-        }
-      ]
-    },
-    {
-      "id": "cue-273",
-      "start": 1299.33,
-      "end": 1308.93,
-      "text": "not obviously but let's say you're doing some slow processing on each element in the array.",
-      "words": [
+        },
         {
           "text": "not",
           "start": 1299.33,
@@ -18942,12 +18902,20 @@
           "end": 1300.53
         },
         {
-          "text": "but",
+          "text": "but.",
           "start": 1300.53,
           "end": 1301.13
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-274",
+      "start": 1301.13,
+      "end": 1308.9,
+      "text": "Let's say you're doing some slow processing on each element in the array.",
+      "words": [
         {
-          "text": "let's",
+          "text": "Let's",
           "start": 1301.13,
           "end": 1301.73
         },
@@ -19014,10 +18982,10 @@
       ]
     },
     {
-      "id": "cue-274",
+      "id": "cue-275",
       "start": 1308.9,
-      "end": 1315.28,
-      "text": "I think I have that shown somewhere no, no, I don't.",
+      "end": 1315.26,
+      "text": "I think I have that shown somewhere no, I don't.",
       "words": [
         {
           "text": "I",
@@ -19060,11 +19028,6 @@
           "end": 1313.54
         },
         {
-          "text": "no,",
-          "start": 1313.54,
-          "end": 1314.12
-        },
-        {
           "text": "I",
           "start": 1314.12,
           "end": 1314.7
@@ -19077,7 +19040,7 @@
       ]
     },
     {
-      "id": "cue-275",
+      "id": "cue-276",
       "start": 1315.26,
       "end": 1316.26,
       "text": "Okay.",
@@ -19090,9 +19053,9 @@
       ]
     },
     {
-      "id": "cue-276",
+      "id": "cue-277",
       "start": 1316.26,
-      "end": 1320.26,
+      "end": 1320.24,
       "text": "So let's say ‑‑ Ooops.",
       "words": [
         {
@@ -19123,9 +19086,9 @@
       ]
     },
     {
-      "id": "cue-277",
+      "id": "cue-278",
       "start": 1320.24,
-      "end": 1326.69,
+      "end": 1326.62,
       "text": "So I have a delay function which is just slow, it's just a slow thing.",
       "words": [
         {
@@ -19206,10 +19169,10 @@
       ]
     },
     {
-      "id": "cue-278",
+      "id": "cue-279",
       "start": 1326.62,
-      "end": 1335.22,
-      "text": "So ... let's say processing Async and here processing Sync.",
+      "end": 1328.34,
+      "text": "So ...",
       "words": [
         {
           "text": "So",
@@ -19220,9 +19183,17 @@
           "text": "...",
           "start": 1327.48,
           "end": 1328.34
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-280",
+      "start": 1328.34,
+      "end": 1335.22,
+      "text": "Let's say processing Async and here processing Sync.",
+      "words": [
         {
-          "text": "let's",
+          "text": "Let's",
           "start": 1328.34,
           "end": 1329.2
         },
@@ -19264,10 +19235,10 @@
       ]
     },
     {
-      "id": "cue-279",
+      "id": "cue-281",
       "start": 1335.24,
-      "end": 1343.56,
-      "text": "Okay, now, I'm going to turn on a thing I've literally hacked together this morning, which",
+      "end": 1344.04,
+      "text": "Okay, now, I'm going to turn on a thing I've literally hacked together this morning, which is to.",
       "words": [
         {
           "text": "Okay,",
@@ -19348,27 +19319,27 @@
           "text": "which",
           "start": 1343.04,
           "end": 1343.56
-        }
-      ]
-    },
-    {
-      "id": "cue-280",
-      "start": 1343.5,
-      "end": 1347.82,
-      "text": "is to simulate the repaint or the render in the browser, something I haven't touched on",
-      "words": [
+        },
         {
           "text": "is",
           "start": 1343.5,
           "end": 1343.77
         },
         {
-          "text": "to",
+          "text": "to.",
           "start": 1343.77,
           "end": 1344.04
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-282",
+      "start": 1344.04,
+      "end": 1349.34,
+      "text": "Simulate the repaint or the render in the browser, something I haven't touched on is how all of.",
+      "words": [
         {
-          "text": "simulate",
+          "text": "Simulate",
           "start": 1344.04,
           "end": 1344.31
         },
@@ -19436,15 +19407,7 @@
           "text": "on",
           "start": 1347.55,
           "end": 1347.82
-        }
-      ]
-    },
-    {
-      "id": "cue-281",
-      "start": 1347.78,
-      "end": 1354.8,
-      "text": "is how all of this interacts with rendering ‑‑ I've kind of touched on it but not really",
-      "words": [
+        },
         {
           "text": "is",
           "start": 1347.78,
@@ -19461,12 +19424,20 @@
           "end": 1348.95
         },
         {
-          "text": "of",
+          "text": "of.",
           "start": 1348.95,
           "end": 1349.34
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-283",
+      "start": 1349.34,
+      "end": 1356.43,
+      "text": "This interacts with rendering ‑‑ I've kind of touched on it but not really explained it.",
+      "words": [
         {
-          "text": "this",
+          "text": "This",
           "start": 1349.34,
           "end": 1349.73
         },
@@ -19534,15 +19505,7 @@
           "text": "really",
           "start": 1354.41,
           "end": 1354.8
-        }
-      ]
-    },
-    {
-      "id": "cue-282",
-      "start": 1354.76,
-      "end": 1356.43,
-      "text": "explained it.",
-      "words": [
+        },
         {
           "text": "explained",
           "start": 1354.76,
@@ -19556,10 +19519,10 @@
       ]
     },
     {
-      "id": "cue-283",
+      "id": "cue-284",
       "start": 1356.43,
-      "end": 1362.28,
-      "text": "So, basically the browser is kind of constrained by what you're doing javaScript, the browser",
+      "end": 1363.5,
+      "text": "So, basically the browser is kind of constrained by what you're doing javaScript, the browser would like to.",
       "words": [
         {
           "text": "So,",
@@ -19635,15 +19598,7 @@
           "text": "browser",
           "start": 1361.89,
           "end": 1362.28
-        }
-      ]
-    },
-    {
-      "id": "cue-284",
-      "start": 1362.33,
-      "end": 1368.18,
-      "text": "would like to repaint the screen every 16.6 milliseconds, 60 frame a second is ideal,",
-      "words": [
+        },
         {
           "text": "would",
           "start": 1362.33,
@@ -19655,12 +19610,20 @@
           "end": 1363.11
         },
         {
-          "text": "to",
+          "text": "to.",
           "start": 1363.11,
           "end": 1363.5
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-285",
+      "start": 1363.5,
+      "end": 1371.0,
+      "text": "Repaint the screen every 16.6 milliseconds, 60 frame a second is ideal, that's the fastest it will do.",
+      "words": [
         {
-          "text": "repaint",
+          "text": "Repaint",
           "start": 1363.5,
           "end": 1363.89
         },
@@ -19718,15 +19681,7 @@
           "text": "ideal,",
           "start": 1367.79,
           "end": 1368.18
-        }
-      ]
-    },
-    {
-      "id": "cue-285",
-      "start": 1368.24,
-      "end": 1372.84,
-      "text": "that's the fastest it will do repaints if it can.",
-      "words": [
+        },
         {
           "text": "that's",
           "start": 1368.24,
@@ -19753,12 +19708,20 @@
           "end": 1370.54
         },
         {
-          "text": "do",
+          "text": "do.",
           "start": 1370.54,
           "end": 1371.0
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-286",
+      "start": 1371.0,
+      "end": 1372.84,
+      "text": "Repaints if it can.",
+      "words": [
         {
-          "text": "repaints",
+          "text": "Repaints",
           "start": 1371.0,
           "end": 1371.46
         },
@@ -19780,10 +19743,10 @@
       ]
     },
     {
-      "id": "cue-286",
+      "id": "cue-287",
       "start": 1372.88,
-      "end": 1377.83,
-      "text": "But it's constrained by what you're doing in JavaScript for various reasons, so it can't",
+      "end": 1378.92,
+      "text": "But it's constrained by what you're doing in JavaScript for various reasons, so it can't actually do a.",
       "words": [
         {
           "text": "But",
@@ -19859,15 +19822,7 @@
           "text": "can't",
           "start": 1377.5,
           "end": 1377.83
-        }
-      ]
-    },
-    {
-      "id": "cue-287",
-      "start": 1377.87,
-      "end": 1382.07,
-      "text": "actually do a render if there is code on the stack, right.",
-      "words": [
+        },
         {
           "text": "actually",
           "start": 1377.87,
@@ -19879,12 +19834,20 @@
           "end": 1378.57
         },
         {
-          "text": "a",
+          "text": "a.",
           "start": 1378.57,
           "end": 1378.92
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-288",
+      "start": 1378.92,
+      "end": 1382.07,
+      "text": "Render if there is code on the stack, right.",
+      "words": [
         {
-          "text": "render",
+          "text": "Render",
           "start": 1378.92,
           "end": 1379.27
         },
@@ -19931,7 +19894,7 @@
       ]
     },
     {
-      "id": "cue-288",
+      "id": "cue-289",
       "start": 1382.08,
       "end": 1385.2,
       "text": "Like the render kind of call is almost like a callback in itself.",
@@ -20004,7 +19967,7 @@
       ]
     },
     {
-      "id": "cue-289",
+      "id": "cue-290",
       "start": 1385.23,
       "end": 1387.3,
       "text": "It has to wait till the stack is clear.",
@@ -20057,10 +20020,10 @@
       ]
     },
     {
-      "id": "cue-290",
+      "id": "cue-291",
       "start": 1387.31,
-      "end": 1393.91,
-      "text": "The difference is that the render is given a higher priority than your callback, every",
+      "end": 1395.21,
+      "text": "The difference is that the render is given a higher priority than your callback, every 16 milliseconds it's.",
       "words": [
         {
           "text": "The",
@@ -20136,15 +20099,7 @@
           "text": "every",
           "start": 1393.47,
           "end": 1393.91
-        }
-      ]
-    },
-    {
-      "id": "cue-291",
-      "start": 1393.86,
-      "end": 1401.51,
-      "text": "16 milliseconds it's going to queue a rend, wait till the stack is clear before it can",
-      "words": [
+        },
         {
           "text": "16",
           "start": 1393.86,
@@ -20156,12 +20111,20 @@
           "end": 1394.76
         },
         {
-          "text": "it's",
+          "text": "it's.",
           "start": 1394.76,
           "end": 1395.21
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-292",
+      "start": 1395.21,
+      "end": 1403.32,
+      "text": "Going to queue a rend, wait till the stack is clear before it can actually do that render.",
+      "words": [
         {
-          "text": "going",
+          "text": "Going",
           "start": 1395.21,
           "end": 1395.66
         },
@@ -20229,15 +20192,7 @@
           "text": "can",
           "start": 1401.06,
           "end": 1401.51
-        }
-      ]
-    },
-    {
-      "id": "cue-292",
-      "start": 1401.48,
-      "end": 1403.32,
-      "text": "actually do that render.",
-      "words": [
+        },
         {
           "text": "actually",
           "start": 1401.48,
@@ -20263,8 +20218,8 @@
     {
       "id": "cue-293",
       "start": 1403.32,
-      "end": 1407.79,
-      "text": "So this is ‑‑ this render queue is just simulating a render, every second it's can",
+      "end": 1408.22,
+      "text": "So this is ‑‑ this render queue is just simulating a render, every second it's can I do.",
       "words": [
         {
           "text": "So",
@@ -20345,27 +20300,27 @@
           "text": "can",
           "start": 1407.51,
           "end": 1407.79
-        }
-      ]
-    },
-    {
-      "id": "cue-294",
-      "start": 1407.72,
-      "end": 1408.72,
-      "text": "I do a render?",
-      "words": [
+        },
         {
           "text": "I",
           "start": 1407.72,
           "end": 1407.97
         },
         {
-          "text": "do",
+          "text": "do.",
           "start": 1407.97,
           "end": 1408.22
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-294",
+      "start": 1408.22,
+      "end": 1408.72,
+      "text": "A render?",
+      "words": [
         {
-          "text": "a",
+          "text": "A",
           "start": 1408.22,
           "end": 1408.47
         },
@@ -20478,8 +20433,8 @@
     {
       "id": "cue-298",
       "start": 1413.13,
-      "end": 1419.93,
-      "text": "If I run the code, you can see while we're doing this slow synchronous loop through the",
+      "end": 1420.18,
+      "text": "If I run the code, you can see while we're doing this slow synchronous loop through the array.",
       "words": [
         {
           "text": "If",
@@ -20565,22 +20520,22 @@
           "text": "the",
           "start": 1419.53,
           "end": 1419.93
+        },
+        {
+          "text": "array.",
+          "start": 1419.91,
+          "end": 1420.18
         }
       ]
     },
     {
       "id": "cue-299",
-      "start": 1419.91,
-      "end": 1424.23,
-      "text": "array, our render is blocked, right, if our render is blocked you can't select text on",
+      "start": 1420.18,
+      "end": 1425.42,
+      "text": "Our render is blocked, right, if our render is blocked you can't select text on the screen, you.",
       "words": [
         {
-          "text": "array,",
-          "start": 1419.91,
-          "end": 1420.18
-        },
-        {
-          "text": "our",
+          "text": "Our",
           "start": 1420.18,
           "end": 1420.45
         },
@@ -20653,15 +20608,7 @@
           "text": "on",
           "start": 1423.96,
           "end": 1424.23
-        }
-      ]
-    },
-    {
-      "id": "cue-300",
-      "start": 1424.28,
-      "end": 1430.36,
-      "text": "the screen, you can't click things and see the response, right, like the example I showed",
-      "words": [
+        },
         {
           "text": "the",
           "start": 1424.28,
@@ -20673,12 +20620,20 @@
           "end": 1425.04
         },
         {
-          "text": "you",
+          "text": "you.",
           "start": 1425.04,
           "end": 1425.42
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-300",
+      "start": 1425.42,
+      "end": 1431.48,
+      "text": "Can't click things and see the response, right, like the example I showed earlier.",
+      "words": [
         {
-          "text": "can't",
+          "text": "Can't",
           "start": 1425.42,
           "end": 1425.8
         },
@@ -20741,15 +20696,7 @@
           "text": "showed",
           "start": 1429.98,
           "end": 1430.36
-        }
-      ]
-    },
-    {
-      "id": "cue-301",
-      "start": 1430.42,
-      "end": 1431.48,
-      "text": "earlier.",
-      "words": [
+        },
         {
           "text": "earlier.",
           "start": 1430.42,
@@ -20758,10 +20705,10 @@
       ]
     },
     {
-      "id": "cue-302",
+      "id": "cue-301",
       "start": 1431.48,
-      "end": 1437.24,
-      "text": "In this example, okay, it's blocked while we queue up the async time out, that relatively",
+      "end": 1438.13,
+      "text": "In this example, okay, it's blocked while we queue up the async time out, that relatively quick but.",
       "words": [
         {
           "text": "In",
@@ -20842,27 +20789,27 @@
           "text": "relatively",
           "start": 1436.88,
           "end": 1437.24
-        }
-      ]
-    },
-    {
-      "id": "cue-303",
-      "start": 1437.25,
-      "end": 1444.29,
-      "text": "quick but we're given ‑‑ we're kind of giving the render a chance between each element",
-      "words": [
+        },
         {
           "text": "quick",
           "start": 1437.25,
           "end": 1437.69
         },
         {
-          "text": "but",
+          "text": "but.",
           "start": 1437.69,
           "end": 1438.13
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-302",
+      "start": 1438.13,
+      "end": 1446.39,
+      "text": "We're given ‑‑ we're kind of giving the render a chance between each element because we've queued it.",
+      "words": [
         {
-          "text": "we're",
+          "text": "We're",
           "start": 1438.13,
           "end": 1438.57
         },
@@ -20930,15 +20877,7 @@
           "text": "element",
           "start": 1443.85,
           "end": 1444.29
-        }
-      ]
-    },
-    {
-      "id": "cue-304",
-      "start": 1444.31,
-      "end": 1452.63,
-      "text": "because we've queued it up asynchronously to jump in there and do the render, does that",
-      "words": [
+        },
         {
           "text": "because",
           "start": 1444.31,
@@ -20955,12 +20894,20 @@
           "end": 1445.87
         },
         {
-          "text": "it",
+          "text": "it.",
           "start": 1445.87,
           "end": 1446.39
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-303",
+      "start": 1446.39,
+      "end": 1453.59,
+      "text": "Up asynchronously to jump in there and do the render, does that make sense?",
+      "words": [
         {
-          "text": "up",
+          "text": "Up",
           "start": 1446.39,
           "end": 1446.91
         },
@@ -21018,15 +20965,7 @@
           "text": "that",
           "start": 1452.11,
           "end": 1452.63
-        }
-      ]
-    },
-    {
-      "id": "cue-305",
-      "start": 1452.59,
-      "end": 1453.59,
-      "text": "make sense?",
-      "words": [
+        },
         {
           "text": "make",
           "start": 1452.59,
@@ -21040,30 +20979,15 @@
       ]
     },
     {
-      "id": "cue-306",
-      "start": 1453.59,
+      "id": "cue-304",
+      "start": 1453.82,
       "end": 1454.74,
-      "text": ">> Yeah >> Yeah, cool.",
+      "text": "Yeah cool.",
       "words": [
-        {
-          "text": ">>",
-          "start": 1453.59,
-          "end": 1453.82
-        },
         {
           "text": "Yeah",
           "start": 1453.82,
           "end": 1454.05
-        },
-        {
-          "text": ">>",
-          "start": 1454.05,
-          "end": 1454.28
-        },
-        {
-          "text": "Yeah,",
-          "start": 1454.28,
-          "end": 1454.51
         },
         {
           "text": "cool.",
@@ -21073,10 +20997,10 @@
       ]
     },
     {
-      "id": "cue-307",
+      "id": "cue-305",
       "start": 1454.76,
-      "end": 1459.69,
-      "text": "So, that's just kind of ‑‑ this is just like a simulation of how the rendering works,",
+      "end": 1459.91,
+      "text": "So, that's just kind of ‑‑ this is just like a simulation of how the rendering works, but.",
       "words": [
         {
           "text": "So,",
@@ -21162,22 +21086,22 @@
           "text": "works,",
           "start": 1459.4,
           "end": 1459.69
+        },
+        {
+          "text": "but.",
+          "start": 1459.68,
+          "end": 1459.91
         }
       ]
     },
     {
-      "id": "cue-308",
-      "start": 1459.68,
-      "end": 1463.59,
-      "text": "but it just really shows you when people say don't block the event loop, this is exactly",
+      "id": "cue-306",
+      "start": 1459.91,
+      "end": 1464.1,
+      "text": "It just really shows you when people say don't block the event loop, this is exactly what they're.",
       "words": [
         {
-          "text": "but",
-          "start": 1459.68,
-          "end": 1459.91
-        },
-        {
-          "text": "it",
+          "text": "It",
           "start": 1459.91,
           "end": 1460.14
         },
@@ -21255,27 +21179,27 @@
           "text": "exactly",
           "start": 1463.36,
           "end": 1463.59
-        }
-      ]
-    },
-    {
-      "id": "cue-309",
-      "start": 1463.6,
-      "end": 1464.6,
-      "text": "what they're talking about.",
-      "words": [
+        },
         {
           "text": "what",
           "start": 1463.6,
           "end": 1463.85
         },
         {
-          "text": "they're",
+          "text": "they're.",
           "start": 1463.85,
           "end": 1464.1
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-307",
+      "start": 1464.1,
+      "end": 1464.6,
+      "text": "Talking about.",
+      "words": [
         {
-          "text": "talking",
+          "text": "Talking",
           "start": 1464.1,
           "end": 1464.35
         },
@@ -21287,10 +21211,10 @@
       ]
     },
     {
-      "id": "cue-310",
+      "id": "cue-308",
       "start": 1464.6,
-      "end": 1467.8,
-      "text": "They're saying don't put shitty slow code on the stack because when you do that the",
+      "end": 1468.72,
+      "text": "They're saying don't put shitty slow code on the stack because when you do that the browser can't.",
       "words": [
         {
           "text": "They're",
@@ -21371,27 +21295,27 @@
           "text": "the",
           "start": 1467.6,
           "end": 1467.8
-        }
-      ]
-    },
-    {
-      "id": "cue-311",
-      "start": 1467.84,
-      "end": 1473.56,
-      "text": "browser can't do what it needs to do, create a nice fluid UI.",
-      "words": [
+        },
         {
           "text": "browser",
           "start": 1467.84,
           "end": 1468.28
         },
         {
-          "text": "can't",
+          "text": "can't.",
           "start": 1468.28,
           "end": 1468.72
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-309",
+      "start": 1468.72,
+      "end": 1473.5,
+      "text": "Do what it needs to do, create a nice fluid UI.",
+      "words": [
         {
-          "text": "do",
+          "text": "Do",
           "start": 1468.72,
           "end": 1469.16
         },
@@ -21448,10 +21372,10 @@
       ]
     },
     {
-      "id": "cue-312",
+      "id": "cue-310",
       "start": 1473.5,
-      "end": 1478.15,
-      "text": "This is why when you're doing things like image processing or Animating too many things",
+      "end": 1479.57,
+      "text": "This is why when you're doing things like image processing or Animating too many things gets sluggish if.",
       "words": [
         {
           "text": "This",
@@ -21527,15 +21451,7 @@
           "text": "things",
           "start": 1477.84,
           "end": 1478.15
-        }
-      ]
-    },
-    {
-      "id": "cue-313",
-      "start": 1478.22,
-      "end": 1484.07,
-      "text": "gets sluggish if you're not careful about how you queue up that code.",
-      "words": [
+        },
         {
           "text": "gets",
           "start": 1478.22,
@@ -21547,12 +21463,20 @@
           "end": 1479.12
         },
         {
-          "text": "if",
+          "text": "if.",
           "start": 1479.12,
           "end": 1479.57
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-311",
+      "start": 1479.57,
+      "end": 1484.07,
+      "text": "You're not careful about how you queue up that code.",
+      "words": [
         {
-          "text": "you're",
+          "text": "You're",
           "start": 1479.57,
           "end": 1480.02
         },
@@ -21604,10 +21528,10 @@
       ]
     },
     {
-      "id": "cue-314",
+      "id": "cue-312",
       "start": 1484.08,
-      "end": 1493.09,
-      "text": "So an example of that, we can see with the scroll handlers ‑‑ so scroll handle ‑‑",
+      "end": 1493.41,
+      "text": "So an example of that, we can see with the scroll handlers ‑‑ so scroll handle ‑‑ like.",
       "words": [
         {
           "text": "So",
@@ -21693,22 +21617,22 @@
           "text": "‑‑",
           "start": 1492.56,
           "end": 1493.09
+        },
+        {
+          "text": "like.",
+          "start": 1493.06,
+          "end": 1493.41
         }
       ]
     },
     {
-      "id": "cue-315",
-      "start": 1493.06,
-      "end": 1498.66,
-      "text": "like scroll events in the DOM trigger a lot, right, they trigger like ‑‑ I presume",
+      "id": "cue-313",
+      "start": 1493.41,
+      "end": 1499.8,
+      "text": "Scroll events in the DOM trigger a lot, right, they trigger like ‑‑ I presume they trigger on.",
       "words": [
         {
-          "text": "like",
-          "start": 1493.06,
-          "end": 1493.41
-        },
-        {
-          "text": "scroll",
+          "text": "Scroll",
           "start": 1493.41,
           "end": 1493.76
         },
@@ -21781,15 +21705,7 @@
           "text": "presume",
           "start": 1498.31,
           "end": 1498.66
-        }
-      ]
-    },
-    {
-      "id": "cue-316",
-      "start": 1498.6,
-      "end": 1505.0,
-      "text": "they trigger on every frame like every 16 milliseconds, if I have code like this this",
-      "words": [
+        },
         {
           "text": "they",
           "start": 1498.6,
@@ -21801,12 +21717,20 @@
           "end": 1499.4
         },
         {
-          "text": "on",
+          "text": "on.",
           "start": 1499.4,
           "end": 1499.8
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-314",
+      "start": 1499.8,
+      "end": 1505.95,
+      "text": "Every frame like every 16 milliseconds, if I have code like this right.",
+      "words": [
         {
-          "text": "every",
+          "text": "Every",
           "start": 1499.8,
           "end": 1500.2
         },
@@ -21866,19 +21790,6 @@
           "end": 1504.6
         },
         {
-          "text": "this",
-          "start": 1504.6,
-          "end": 1505.0
-        }
-      ]
-    },
-    {
-      "id": "cue-317",
-      "start": 1504.95,
-      "end": 1505.95,
-      "text": "right.",
-      "words": [
-        {
           "text": "right.",
           "start": 1504.95,
           "end": 1505.95
@@ -21886,9 +21797,9 @@
       ]
     },
     {
-      "id": "cue-318",
+      "id": "cue-315",
       "start": 1505.95,
-      "end": 1511.07,
+      "end": 1511.05,
       "text": "On document.scroll, animate something, or do some work.",
       "words": [
         {
@@ -21934,10 +21845,10 @@
       ]
     },
     {
-      "id": "cue-319",
+      "id": "cue-316",
       "start": 1511.05,
-      "end": 1516.94,
-      "text": "If I have this code, like as I scroll it's going to queue up like a ton of callbacks",
+      "end": 1516.63,
+      "text": "If I have this code, like as I scroll it's going to queue up like a ton of.",
       "words": [
         {
           "text": "If",
@@ -22025,23 +21936,23 @@
           "end": 1516.32
         },
         {
-          "text": "of",
+          "text": "of.",
           "start": 1516.32,
           "end": 1516.63
-        },
-        {
-          "text": "callbacks",
-          "start": 1516.63,
-          "end": 1516.94
         }
       ]
     },
     {
-      "id": "cue-320",
-      "start": 1516.96,
+      "id": "cue-317",
+      "start": 1516.63,
       "end": 1518.09,
-      "text": "right.",
+      "text": "Callbacks right.",
       "words": [
+        {
+          "text": "Callbacks",
+          "start": 1516.63,
+          "end": 1516.94
+        },
         {
           "text": "right.",
           "start": 1516.96,
@@ -22050,10 +21961,10 @@
       ]
     },
     {
-      "id": "cue-321",
+      "id": "cue-318",
       "start": 1518.09,
-      "end": 1521.87,
-      "text": "And then it has to go through and process all of those and each of the processing of",
+      "end": 1521.79,
+      "text": "And then it has to go through and process all of those and each of the processing of.",
       "words": [
         {
           "text": "And",
@@ -22141,20 +22052,20 @@
           "end": 1521.66
         },
         {
-          "text": "of",
+          "text": "of.",
           "start": 1521.66,
           "end": 1521.87
         }
       ]
     },
     {
-      "id": "cue-322",
+      "id": "cue-319",
       "start": 1521.79,
-      "end": 1527.49,
-      "text": "those is slow, then, okay, you're not blocking the stack, you're flooding the queue with",
+      "end": 1529.21,
+      "text": "Those is slow, then, okay, you're not blocking the stack, you're flooding the queue with queued events.",
       "words": [
         {
-          "text": "those",
+          "text": "Those",
           "start": 1521.79,
           "end": 1522.17
         },
@@ -22227,15 +22138,7 @@
           "text": "with",
           "start": 1527.11,
           "end": 1527.49
-        }
-      ]
-    },
-    {
-      "id": "cue-323",
-      "start": 1527.47,
-      "end": 1529.21,
-      "text": "queued events.",
-      "words": [
+        },
         {
           "text": "queued",
           "start": 1527.47,
@@ -22249,10 +22152,10 @@
       ]
     },
     {
-      "id": "cue-324",
+      "id": "cue-320",
       "start": 1529.21,
-      "end": 1535.66,
-      "text": "So, this is like just helping visualize, I guess, what happens when you actually trigger",
+      "end": 1536.88,
+      "text": "So, this is like just helping visualize, I guess, what happens when you actually trigger all these callbacks.",
       "words": [
         {
           "text": "So,",
@@ -22328,15 +22231,7 @@
           "text": "trigger",
           "start": 1535.23,
           "end": 1535.66
-        }
-      ]
-    },
-    {
-      "id": "cue-325",
-      "start": 1535.62,
-      "end": 1542.34,
-      "text": "all these callbacks, there's way you can debounce that to basically say okay, we're going to",
-      "words": [
+        },
         {
           "text": "all",
           "start": 1535.62,
@@ -22348,12 +22243,20 @@
           "end": 1536.46
         },
         {
-          "text": "callbacks,",
+          "text": "callbacks.",
           "start": 1536.46,
           "end": 1536.88
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-321",
+      "start": 1536.88,
+      "end": 1543.99,
+      "text": "There's way you can debounce that to basically say okay, we're going to queue up all those events.",
+      "words": [
         {
-          "text": "there's",
+          "text": "There's",
           "start": 1536.88,
           "end": 1537.3
         },
@@ -22416,15 +22319,7 @@
           "text": "to",
           "start": 1541.92,
           "end": 1542.34
-        }
-      ]
-    },
-    {
-      "id": "cue-326",
-      "start": 1542.29,
-      "end": 1548.41,
-      "text": "queue up all those events, but let's do the slow work every few seconds or until the user",
-      "words": [
+        },
         {
           "text": "queue",
           "start": 1542.29,
@@ -22446,12 +22341,20 @@
           "end": 1543.65
         },
         {
-          "text": "events,",
+          "text": "events.",
           "start": 1543.65,
           "end": 1543.99
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-322",
+      "start": 1543.99,
+      "end": 1552.42,
+      "text": "But let's do the slow work every few seconds or until the user stops scrolling for some amount.",
+      "words": [
         {
-          "text": "but",
+          "text": "But",
           "start": 1543.99,
           "end": 1544.33
         },
@@ -22514,15 +22417,7 @@
           "text": "user",
           "start": 1548.07,
           "end": 1548.41
-        }
-      ]
-    },
-    {
-      "id": "cue-327",
-      "start": 1548.42,
-      "end": 1558.02,
-      "text": "stops scrolling for some amount of time I think that's basically it.",
-      "words": [
+        },
         {
           "text": "stops",
           "start": 1548.42,
@@ -22544,12 +22439,20 @@
           "end": 1551.62
         },
         {
-          "text": "amount",
+          "text": "amount.",
           "start": 1551.62,
           "end": 1552.42
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-323",
+      "start": 1552.42,
+      "end": 1558.02,
+      "text": "Of time I think that's basically it.",
+      "words": [
         {
-          "text": "of",
+          "text": "Of",
           "start": 1552.42,
           "end": 1553.22
         },
@@ -22586,7 +22489,7 @@
       ]
     },
     {
-      "id": "cue-328",
+      "id": "cue-324",
       "start": 1558.06,
       "end": 1563.67,
       "text": "There's a whole other talk in how the hell this works.",
@@ -22649,10 +22552,10 @@
       ]
     },
     {
-      "id": "cue-329",
+      "id": "cue-325",
       "start": 1563.69,
-      "end": 1569.54,
-      "text": "Because basically in running the code, like this code runs at Runtime, right, and it's",
+      "end": 1570.92,
+      "text": "Because basically in running the code, like this code runs at Runtime, right, and it's slowed down by.",
       "words": [
         {
           "text": "Because",
@@ -22728,15 +22631,7 @@
           "text": "it's",
           "start": 1569.15,
           "end": 1569.54
-        }
-      ]
-    },
-    {
-      "id": "cue-330",
-      "start": 1569.54,
-      "end": 1577.36,
-      "text": "slowed down by I run it through a Esprima a JavaScript parser, I insert a big while",
-      "words": [
+        },
         {
           "text": "slowed",
           "start": 1569.54,
@@ -22748,10 +22643,18 @@
           "end": 1570.46
         },
         {
-          "text": "by",
+          "text": "by.",
           "start": 1570.46,
           "end": 1570.92
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-326",
+      "start": 1570.92,
+      "end": 1579.56,
+      "text": "I run it through a Esprima a JavaScript parser, I insert a big while loop, that takes half.",
+      "words": [
         {
           "text": "I",
           "start": 1570.92,
@@ -22821,15 +22724,7 @@
           "text": "while",
           "start": 1576.9,
           "end": 1577.36
-        }
-      ]
-    },
-    {
-      "id": "cue-331",
-      "start": 1577.44,
-      "end": 1583.8,
-      "text": "loop, that takes half a second, it just slow motions the code.",
-      "words": [
+        },
         {
           "text": "loop,",
           "start": 1577.44,
@@ -22846,12 +22741,20 @@
           "end": 1579.03
         },
         {
-          "text": "half",
+          "text": "half.",
           "start": 1579.03,
           "end": 1579.56
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-327",
+      "start": 1579.56,
+      "end": 1583.8,
+      "text": "A second, it just slow motions the code.",
+      "words": [
         {
-          "text": "a",
+          "text": "A",
           "start": 1579.56,
           "end": 1580.09
         },
@@ -22893,10 +22796,10 @@
       ]
     },
     {
-      "id": "cue-332",
+      "id": "cue-328",
       "start": 1583.84,
-      "end": 1588.6,
-      "text": "Ship it to web worker and do a whole bunch of stuff to visualize what's happening while",
+      "end": 1588.93,
+      "text": "Ship it to web worker and do a whole bunch of stuff to visualize what's happening while doing.",
       "words": [
         {
           "text": "Ship",
@@ -22982,22 +22885,22 @@
           "text": "while",
           "start": 1588.32,
           "end": 1588.6
+        },
+        {
+          "text": "doing.",
+          "start": 1588.61,
+          "end": 1588.93
         }
       ]
     },
     {
-      "id": "cue-333",
-      "start": 1588.61,
+      "id": "cue-329",
+      "start": 1588.93,
       "end": 1591.17,
-      "text": "doing it at run time that makes sense.",
+      "text": "It at run time that makes sense.",
       "words": [
         {
-          "text": "doing",
-          "start": 1588.61,
-          "end": 1588.93
-        },
-        {
-          "text": "it",
+          "text": "It",
           "start": 1588.93,
           "end": 1589.25
         },
@@ -23034,9 +22937,9 @@
       ]
     },
     {
-      "id": "cue-334",
+      "id": "cue-330",
       "start": 1591.18,
-      "end": 1593.1,
+      "end": 1593.09,
       "text": "A whole other talk in that.",
       "words": [
         {
@@ -23072,10 +22975,10 @@
       ]
     },
     {
-      "id": "cue-335",
+      "id": "cue-331",
       "start": 1593.09,
-      "end": 1598.87,
-      "text": "I'm super excited about it and will talk to anyone about it after because I think it's",
+      "end": 1599.28,
+      "text": "I'm super excited about it and will talk to anyone about it after because I think it's kind.",
       "words": [
         {
           "text": "I'm",
@@ -23161,22 +23064,22 @@
           "text": "it's",
           "start": 1598.53,
           "end": 1598.87
+        },
+        {
+          "text": "kind.",
+          "start": 1598.84,
+          "end": 1599.28
         }
       ]
     },
     {
-      "id": "cue-336",
-      "start": 1598.84,
+      "id": "cue-332",
+      "start": 1599.28,
       "end": 1603.68,
-      "text": "kind of neat, so with that, thanks very much ( applause)",
+      "text": "Of neat, so with that, thanks very much ( applause).",
       "words": [
         {
-          "text": "kind",
-          "start": 1598.84,
-          "end": 1599.28
-        },
-        {
-          "text": "of",
+          "text": "Of",
           "start": 1599.28,
           "end": 1599.72
         },
@@ -23221,7 +23124,7 @@
           "end": 1603.24
         },
         {
-          "text": "applause)",
+          "text": "applause).",
           "start": 1603.24,
           "end": 1603.68
         }

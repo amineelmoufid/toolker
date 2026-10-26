@@ -15,7 +15,152 @@ export const interpolateWords = (text: string, start: number, end: number) => {
   });
 };
 
-export const reconstructSubtitlesSemantically = (lines: SubtitleLine[]) => lines;
+const COMMON_ABBREVIATIONS = new Set([
+  'mr.', 'mrs.', 'ms.', 'dr.', 'prof.', 'sr.', 'jr.', 'vs.', 'etc.',
+  'approx.', 'apt.', 'dept.', 'est.', 'u.s.', 'u.k.', 'e.g.', 'i.e.'
+]);
+
+export const reconstructSubtitlesSemantically = (lines: SubtitleLine[]): SubtitleLine[] => {
+  if (!lines || lines.length === 0) return [];
+
+  // 1. Flatten all word tokens
+  const rawWords: { text: string; start: number; end: number }[] = [];
+  for (const line of lines) {
+    if (line.words && line.words.length > 0) {
+      for (const w of line.words) {
+        if (w && w.text) {
+          rawWords.push({
+            text: w.text,
+            start: Number(w.start) || line.start,
+            end: Number(w.end) || line.end
+          });
+        }
+      }
+    } else if (line.text && line.text.trim()) {
+      const split = interpolateWords(line.text.trim(), line.start, line.end);
+      for (const w of split) {
+        rawWords.push(w);
+      }
+    }
+  }
+
+  if (rawWords.length === 0) return lines;
+
+  // 2. Clean word tokens: strip sound tags, music symbols, speaker prefixes, decode entities
+  const cleanWords: { text: string; start: number; end: number }[] = [];
+  let prevText = '';
+  let prevStart = -1;
+
+  for (const w of rawWords) {
+    let t = decodeEntities(w.text)
+      .replace(/<[^>]+>/g, '')
+      .replace(/^[>\s]+/, '')
+      .trim();
+
+    // Strip [music], (applause), etc.
+    if (/^\[.*?\]$/.test(t) || /^\(.*?\)$/.test(t)) continue;
+
+    // Strip music notes ♪ ♫
+    t = t.replace(/[♪♫]/g, '').trim();
+    if (!t) continue;
+
+    // Deduplicate repeated ASR rolling words within 0.8s window
+    const wClean = t.replace(/[^\w]/g, '').toLowerCase();
+    const pClean = prevText.replace(/[^\w]/g, '').toLowerCase();
+    if (wClean && wClean === pClean && Math.abs(w.start - prevStart) < 0.8) {
+      continue;
+    }
+
+    cleanWords.push({
+      text: t,
+      start: w.start,
+      end: w.end
+    });
+    prevText = t;
+    prevStart = w.start;
+  }
+
+  if (cleanWords.length === 0) return [];
+
+  // 3. Ensure monotonically increasing word timestamps
+  for (let i = 0; i < cleanWords.length; i++) {
+    if (i > 0) {
+      if (cleanWords[i].start < cleanWords[i - 1].start) {
+        cleanWords[i].start = Math.round(cleanWords[i - 1].end * 100) / 100;
+      }
+      if (cleanWords[i].end <= cleanWords[i].start) {
+        cleanWords[i].end = Math.round((cleanWords[i].start + 0.35) * 100) / 100;
+      }
+    }
+  }
+
+  // 4. Assemble into single, complete sentences ending with terminal punctuation (dot '.')
+  const sentences: SubtitleLine[] = [];
+  let currentWords: { text: string; start: number; end: number }[] = [];
+
+  for (let i = 0; i < cleanWords.length; i++) {
+    const word = cleanWords[i];
+    currentWords.push({ ...word });
+    const isLast = i === cleanWords.length - 1;
+
+    // Sentence termination check
+    const endsWithTerminal = /[.?!]["']?$/.test(word.text) && !COMMON_ABBREVIATIONS.has(word.text.toLowerCase());
+    
+    // Unpunctuated speech pause check
+    let isPause = false;
+    if (i < cleanWords.length - 1) {
+      const gap = cleanWords[i + 1].start - word.end;
+      if (gap >= 0.85) {
+        isPause = true;
+      }
+    }
+
+    const isTooLong = currentWords.length >= 18;
+    const shouldBreak = isLast || endsWithTerminal || (isPause && currentWords.length >= 4) || isTooLong;
+
+    if (shouldBreak && currentWords.length > 0) {
+      let sentenceText = currentWords.map(w => w.text).join(' ').trim();
+
+      // Ensure first character is uppercase
+      if (sentenceText.length > 0) {
+        sentenceText = sentenceText.charAt(0).toUpperCase() + sentenceText.slice(1);
+        currentWords[0].text = currentWords[0].text.charAt(0).toUpperCase() + currentWords[0].text.slice(1);
+      }
+
+      // Guarantee ending with terminal dot '.' (or ? / !)
+      if (!/[.?!]["']?$/.test(sentenceText)) {
+        sentenceText = sentenceText.replace(/[,;:-]$/, '') + '.';
+        const lastIdx = currentWords.length - 1;
+        currentWords[lastIdx].text = currentWords[lastIdx].text.replace(/[,;:-]$/, '') + '.';
+      }
+
+      const sStart = Math.round(currentWords[0].start * 100) / 100;
+      const sEnd = Math.max(Math.round(currentWords[currentWords.length - 1].end * 100) / 100, sStart + 0.5);
+
+      sentences.push({
+        id: `cue-${sentences.length + 1}`,
+        start: sStart,
+        end: sEnd,
+        text: sentenceText,
+        words: [...currentWords],
+        translation: ''
+      });
+      currentWords = [];
+    }
+  }
+
+  // 5. Ensure non-overlapping sentence timestamps
+  for (let i = 0; i < sentences.length - 1; i++) {
+    if (sentences[i].end > sentences[i + 1].start) {
+      sentences[i].end = sentences[i + 1].start;
+    }
+    if (sentences[i].end <= sentences[i].start) {
+      sentences[i].end = Math.round((sentences[i].start + 0.5) * 100) / 100;
+    }
+  }
+
+  return sentences;
+};
 
 function decodeEntities(text: string): string {
   return text
@@ -132,7 +277,7 @@ export function parseTranscriptXml(xml: string): SubtitleLine[] {
     }
   }
 
-  return sentences;
+  return reconstructSubtitlesSemantically(sentences);
 }
 
 export const parseRawSRTtoSubtitles = (rawText: string): SubtitleLine[] => {
@@ -194,7 +339,7 @@ export const parseRawSRTtoSubtitles = (rawText: string): SubtitleLine[] => {
     }
   });
 
-  return results;
+  return reconstructSubtitlesSemantically(results);
 };
 
 export const parsePlainTextToSubtitles = (text: string, baseStartSeconds: number = 0, secondsPerLine: number = 4.5): SubtitleLine[] => {
@@ -204,7 +349,7 @@ export const parsePlainTextToSubtitles = (text: string, baseStartSeconds: number
     .filter(l => l.length > 0 && !/^\d+$/.test(l));
 
   let currentStart = baseStartSeconds;
-  return lines.map((line, idx) => {
+  const res = lines.map((line, idx) => {
     const matchTime = line.match(/^\[?(\d{1,2}):(\d{2})\]?\s*(.*)$/);
     let lineText = line;
     let start = currentStart;
@@ -229,6 +374,7 @@ export const parsePlainTextToSubtitles = (text: string, baseStartSeconds: number
       translation: ""
     };
   });
+  return reconstructSubtitlesSemantically(res);
 };
 
 export const PRESET_CLIPS: ShadowingClip[] = [

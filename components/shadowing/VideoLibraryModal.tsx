@@ -162,7 +162,8 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
     }
 
     const subs = await fetchSubtitlesForVideo(ytId, detectedTitle);
-    setSyncedSubtitles(subs);
+    const cleanSubs = reconstructSubtitlesSemantically(subs);
+    setSyncedSubtitles(cleanSubs);
     setSyncStatus('success');
 
     if (subs.length > 0) {
@@ -207,7 +208,7 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
 
     const title = customTitle.trim() || `YouTube Clip (${ytId})`;
     const subtitles: SubtitleLine[] = (syncedSubtitles && syncedSubtitles.length > 0)
-      ? syncedSubtitles
+      ? reconstructSubtitlesSemantically(syncedSubtitles)
       : [];
 
     const newClip: ShadowingClip = {
@@ -267,7 +268,8 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
     e.stopPropagation();
     setIsResyncingId(clip.id);
 
-    const newSubs = await fetchSubtitlesForVideo(clip.youtubeId, clip.title);
+    const rawSubs = await fetchSubtitlesForVideo(clip.youtubeId, clip.title);
+    const newSubs = reconstructSubtitlesSemantically(rawSubs);
     if (newSubs && newSubs.length > 0) {
       const updatedClip = { ...clip, subtitles: newSubs };
       const updatedClips = customClips.map(c => c.id === clip.id ? updatedClip : c);

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ShadowingClip, SubtitleLine } from '../../types';
-import { PRESET_CLIPS } from './mockClips';
+import { PRESET_CLIPS, reconstructSubtitlesSemantically } from './mockClips';
 import YouTubePlayer, { YouTubePlayerRef } from './YouTubePlayer';
 import SubtitleStage from './SubtitleStage';
 import ControlDock from './ControlDock';
@@ -24,7 +24,10 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack }) => {
       if (storedSession) {
         const parsed = JSON.parse(storedSession);
         if (parsed.clip && parsed.clip.youtubeId && parsed.clip.youtubeId !== 'qB254u2N5gQ') {
-          return parsed.clip;
+          return {
+            ...parsed.clip,
+            subtitles: reconstructSubtitlesSemantically(parsed.clip.subtitles || [])
+          };
         }
       }
     } catch (e) {}
@@ -35,7 +38,12 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack }) => {
       if (storedClips) {
         const parsedClips = JSON.parse(storedClips);
         const validClip = parsedClips.find((c: any) => c.youtubeId && c.youtubeId !== 'qB254u2N5gQ');
-        if (validClip) return validClip;
+        if (validClip) {
+          return {
+            ...validClip,
+            subtitles: reconstructSubtitlesSemantically(validClip.subtitles || [])
+          };
+        }
       }
     } catch (e) {}
 
@@ -111,9 +119,10 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack }) => {
 
     const applySubtitles = (subs: SubtitleLine[]) => {
       if (!isMounted || !subs || subs.length === 0) return;
+      const cleanSubs = reconstructSubtitlesSemantically(subs);
       setCurrentClip(prev => {
         if (!prev || prev.youtubeId !== ytId) return prev;
-        const updated = { ...prev, subtitles: subs };
+        const updated = { ...prev, subtitles: cleanSubs };
         try {
           const stored = localStorage.getItem('toolker_last_session');
           if (stored) {
@@ -636,7 +645,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack }) => {
         <div className="bg-[#e4dfd3] rounded-lg border-2 border-[#1c1d20] shadow-[5px_5px_0px_#18191c] relative w-full flex-1 flex flex-col items-center">
           {currentClip ? (
             <SubtitleStage
-              subtitles={currentClip.subtitles}
+              subtitles={reconstructSubtitlesSemantically(currentClip.subtitles || [])}
               currentTime={currentTime}
               onSelectLine={handleSelectLine}
               isDictationMode={isDictationMode}
@@ -705,7 +714,11 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack }) => {
         <VideoLibraryModal
           currentClipId={currentClip?.id || null}
           onSelectClip={(newClip) => {
-            setCurrentClip(newClip);
+            const cleanClip = {
+              ...newClip,
+              subtitles: reconstructSubtitlesSemantically(newClip.subtitles || [])
+            };
+            setCurrentClip(cleanClip);
             setCurrentTime(0);
             if (roomId) {
               syncClip(newClip);
