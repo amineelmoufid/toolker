@@ -1300,27 +1300,26 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       }
     });
 
-    // If local system has 0 French or 0 Arabic voices (common on English Windows),
-    // provide instant high-fidelity audio options so user is NEVER stuck with Microsoft David!
-    const fallbackGroup = document.createElement('optgroup');
-    fallbackGroup.label = 'Cloud / Instant Fallback Voices';
+    // High-Fidelity Cloud / Neural Voices (Always available for EN, FR, AR)
+    const cloudGroup = document.createElement('optgroup');
+    cloudGroup.label = '⚡ Cloud / Natural AI Voices (Recommended)';
 
-    if (groups.fr.voices.length === 0) {
-      const optFr = document.createElement('option');
-      optFr.value = 'stream-fr';
-      optFr.textContent = '🇫🇷 French Native Audio (Instant Cloud)';
-      fallbackGroup.appendChild(optFr);
-    }
-    if (groups.ar.voices.length === 0) {
-      const optAr = document.createElement('option');
-      optAr.value = 'stream-ar';
-      optAr.textContent = '🇸🇦 Arabic Native Audio (Instant Cloud)';
-      fallbackGroup.appendChild(optAr);
-    }
+    const optEn = document.createElement('option');
+    optEn.value = 'stream-en';
+    optEn.textContent = '🇺🇸 English Natural Audio (Instant Cloud)';
+    cloudGroup.appendChild(optEn);
 
-    if (fallbackGroup.children.length > 0) {
-      ttsVoice.appendChild(fallbackGroup);
-    }
+    const optFr = document.createElement('option');
+    optFr.value = 'stream-fr';
+    optFr.textContent = '🇫🇷 French Native Audio (Instant Cloud)';
+    cloudGroup.appendChild(optFr);
+
+    const optAr = document.createElement('option');
+    optAr.value = 'stream-ar';
+    optAr.textContent = '🇸🇦 Arabic Native Audio (Instant Cloud)';
+    cloudGroup.appendChild(optAr);
+
+    ttsVoice.appendChild(cloudGroup);
 
     // Auto-select the voice matching current dialect
     autoSelectVoiceForDialect(currentDialect, groups);
@@ -1334,24 +1333,29 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
 
     const shortLang = dialect.split('-')[0]; // 'en', 'fr', 'ar'
 
-    // If target language has local voices, pick the first local voice
-    if (groups[shortLang] && groups[shortLang].voices.length > 0) {
-      const firstVoiceIdx = groups[shortLang].voices[0].idx;
-      ttsVoice.value = firstVoiceIdx.toString();
-      state.selectedVoiceIndex = firstVoiceIdx;
-      return;
+    // If user previously chose a specific voice that exists in dropdown, keep it
+    if (state.selectedVoiceIndex) {
+      const existing = ttsVoice ? ttsVoice.querySelector(`option[value="${state.selectedVoiceIndex}"]`) : null;
+      if (existing) {
+        ttsVoice.value = state.selectedVoiceIndex;
+        return;
+      }
     }
 
-    // If no local voice for French or Arabic, pick the Cloud Audio stream
-    if (shortLang === 'fr') {
+    // Default to natural high-fidelity Cloud Audio stream for all languages
+    if (shortLang === 'en') {
+      ttsVoice.value = 'stream-en';
+      state.selectedVoiceIndex = 'stream-en';
+    } else if (shortLang === 'fr') {
       ttsVoice.value = 'stream-fr';
       state.selectedVoiceIndex = 'stream-fr';
     } else if (shortLang === 'ar') {
       ttsVoice.value = 'stream-ar';
       state.selectedVoiceIndex = 'stream-ar';
-    } else if (groups.en.voices.length > 0) {
-      ttsVoice.value = groups.en.voices[0].idx.toString();
-      state.selectedVoiceIndex = groups.en.voices[0].idx;
+    } else if (groups[shortLang] && groups[shortLang].voices.length > 0) {
+      const firstVoiceIdx = groups[shortLang].voices[0].idx;
+      ttsVoice.value = firstVoiceIdx.toString();
+      state.selectedVoiceIndex = firstVoiceIdx;
     }
   }
 
@@ -1545,7 +1549,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     // Check if voice should be stream fallback
     const selectedVoiceVal = ttsVoice ? ttsVoice.value : '';
     const hasLocalVoice = availableVoices.some(v => (v.lang || '').toLowerCase().startsWith(shortLang));
-    const useStream = selectedVoiceVal === 'stream-fr' || selectedVoiceVal === 'stream-ar' || (!hasLocalVoice && shortLang !== 'en');
+    const useStream = (selectedVoiceVal && selectedVoiceVal.startsWith('stream-')) || (!hasLocalVoice && shortLang !== 'en');
 
     if (useStream) {
       stopAudioStream();
@@ -2687,7 +2691,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     // Check if voice should be stream fallback (e.g. French/Arabic cloud audio stream)
     const selectedVoiceVal = ttsVoice ? ttsVoice.value : '';
     const hasLocalVoice = availableVoices.some(v => (v.lang || '').toLowerCase().startsWith(shortLang));
-    const useStream = selectedVoiceVal === 'stream-fr' || selectedVoiceVal === 'stream-ar' || (!hasLocalVoice && shortLang !== 'en');
+    const useStream = (selectedVoiceVal && selectedVoiceVal.startsWith('stream-')) || (!hasLocalVoice && shortLang !== 'en');
 
     if (useStream) {
       playAudioStreamFallback(
