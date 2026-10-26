@@ -1581,7 +1581,7 @@
       "id": "cue-22",
       "start": 100.16,
       "end": 106.46,
-      "text": "Request goes over it, it uses an old C trick to jump straight to the end of the.",
+      "text": "Request goes over it, uses an old C trick to jump straight to the end of the.",
       "words": [
         {
           "text": "Request",
@@ -1602,11 +1602,6 @@
           "text": "it,",
           "start": 101.21,
           "end": 101.56
-        },
-        {
-          "text": "it",
-          "start": 101.56,
-          "end": 101.91
         },
         {
           "text": "uses",

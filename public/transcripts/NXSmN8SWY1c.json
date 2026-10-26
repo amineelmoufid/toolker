@@ -1026,17 +1026,12 @@
     },
     {
       "id": "cue-16",
-      "start": 83.24,
+      "start": 83.59,
       "end": 86.39,
-      "text": "And the fact that we're regulated as well, right?",
+      "text": "The fact that we're regulated as well, right?",
       "words": [
         {
-          "text": "And",
-          "start": 83.24,
-          "end": 83.59
-        },
-        {
-          "text": "the",
+          "text": "The",
           "start": 83.59,
           "end": 83.94
         },
@@ -1280,17 +1275,12 @@
       "id": "cue-20",
       "start": 98.64,
       "end": 101.44,
-      "text": "It's it's nothing super daunting, it's completely fine.",
+      "text": "It's nothing super daunting, it's completely fine.",
       "words": [
         {
           "text": "It's",
           "start": 98.64,
           "end": 98.99
-        },
-        {
-          "text": "it's",
-          "start": 98.99,
-          "end": 99.34
         },
         {
           "text": "nothing",
@@ -1328,7 +1318,7 @@
       "id": "cue-21",
       "start": 101.44,
       "end": 107.74,
-      "text": "If you think about it, um so Alt Thomas is also a uh uh I'll give you context.",
+      "text": "If you think about it, um so Alt Thomas is also a uh I'll give you context.",
       "words": [
         {
           "text": "If",
@@ -1396,11 +1386,6 @@
           "end": 105.99
         },
         {
-          "text": "uh",
-          "start": 105.99,
-          "end": 106.34
-        },
-        {
           "text": "I'll",
           "start": 106.34,
           "end": 106.69
@@ -1459,7 +1444,7 @@
       "id": "cue-23",
       "start": 109.49,
       "end": 112.99,
-      "text": "Um we handle around 3.9 trillion uh in in assets.",
+      "text": "Um we handle around 3.9 trillion uh in assets.",
       "words": [
         {
           "text": "Um",
@@ -1502,11 +1487,6 @@
           "end": 112.29
         },
         {
-          "text": "in",
-          "start": 112.29,
-          "end": 112.64
-        },
-        {
           "text": "assets.",
           "start": 112.64,
           "end": 112.99
@@ -1517,7 +1497,7 @@
       "id": "cue-24",
       "start": 112.99,
       "end": 115.79,
-      "text": "So, we administer 3.9 trillion of of assets.",
+      "text": "So, we administer 3.9 trillion of assets.",
       "words": [
         {
           "text": "So,",
@@ -1548,11 +1528,6 @@
           "text": "of",
           "start": 114.74,
           "end": 115.09
-        },
-        {
-          "text": "of",
-          "start": 115.09,
-          "end": 115.44
         },
         {
           "text": "assets.",
@@ -2147,7 +2122,7 @@
       "id": "cue-34",
       "start": 156.2,
       "end": 161.1,
-      "text": "You've got a process, which is how you actually implement that that policy, right?",
+      "text": "You've got a process, which is how you actually implement that policy, right?",
       "words": [
         {
           "text": "You've",
@@ -2203,11 +2178,6 @@
           "text": "that",
           "start": 159.7,
           "end": 160.05
-        },
-        {
-          "text": "that",
-          "start": 160.05,
-          "end": 160.4
         },
         {
           "text": "policy,",
@@ -2568,7 +2538,7 @@
       "id": "cue-41",
       "start": 182.48,
       "end": 188.55,
-      "text": "So, one of the big issues that we had with with this whole regulation thing, and we kind.",
+      "text": "So, one of the big issues that we had with this whole regulation thing, and we kind.",
       "words": [
         {
           "text": "So,",
@@ -2619,11 +2589,6 @@
           "text": "with",
           "start": 185.56,
           "end": 185.91
-        },
-        {
-          "text": "with",
-          "start": 185.91,
-          "end": 186.26
         },
         {
           "text": "this",
@@ -3504,7 +3469,7 @@
       "id": "cue-58",
       "start": 238.12,
       "end": 241.44,
-      "text": "Now, we kind of started changing that that pattern, right?",
+      "text": "Now, we kind of started changing that pattern, right?",
       "words": [
         {
           "text": "Now,",
@@ -3540,11 +3505,6 @@
           "text": "that",
           "start": 240.04,
           "end": 240.39
-        },
-        {
-          "text": "that",
-          "start": 240.39,
-          "end": 240.74
         },
         {
           "text": "pattern,",
@@ -4398,7 +4358,7 @@
       "id": "cue-71",
       "start": 293.96,
       "end": 300.26,
-      "text": "Now, there's always this this small customizations that you have to do on the API, which the platform.",
+      "text": "Now, there's always this small customizations that you have to do on the API, which the platform.",
       "words": [
         {
           "text": "Now,",
@@ -4419,11 +4379,6 @@
           "text": "this",
           "start": 295.01,
           "end": 295.36
-        },
-        {
-          "text": "this",
-          "start": 295.36,
-          "end": 295.71
         },
         {
           "text": "small",
@@ -4544,7 +4499,7 @@
       "id": "cue-73",
       "start": 303.06,
       "end": 305.16,
-      "text": "That's the the nits of it.",
+      "text": "That's the nits of it.",
       "words": [
         {
           "text": "That's",
@@ -4555,11 +4510,6 @@
           "text": "the",
           "start": 303.41,
           "end": 303.76
-        },
-        {
-          "text": "the",
-          "start": 303.76,
-          "end": 304.11
         },
         {
           "text": "nits",
@@ -5393,7 +5343,7 @@
       "id": "cue-86",
       "start": 355.21,
       "end": 359.41,
-      "text": "Um configures your configuration your your CI/CD pipelines, your environment, config management.",
+      "text": "Um configures your configuration your CI/CD pipelines, your environment, config management.",
       "words": [
         {
           "text": "Um",
@@ -5419,11 +5369,6 @@
           "text": "your",
           "start": 356.61,
           "end": 356.96
-        },
-        {
-          "text": "your",
-          "start": 356.96,
-          "end": 357.31
         },
         {
           "text": "CI/CD",
@@ -5795,8 +5740,8 @@
     {
       "id": "cue-92",
       "start": 380.06,
-      "end": 386.36,
-      "text": "Um and whenever we first went on Kong, the thing that really we really wanted uh to to.",
+      "end": 386.71,
+      "text": "Um and whenever we first went on Kong, the thing that really we really wanted uh to Simplify.",
       "words": [
         {
           "text": "Um",
@@ -5884,25 +5829,20 @@
           "end": 386.01
         },
         {
-          "text": "to.",
-          "start": 386.01,
-          "end": 386.36
+          "text": "Simplify.",
+          "start": 386.36,
+          "end": 386.71
         }
       ]
     },
     {
       "id": "cue-93",
-      "start": 386.36,
+      "start": 386.71,
       "end": 391.61,
-      "text": "Simplify as much as possible was making every single step of your API deployment self-service.",
+      "text": "As much as possible was making every single step of your API deployment self-service.",
       "words": [
         {
-          "text": "Simplify",
-          "start": 386.36,
-          "end": 386.71
-        },
-        {
-          "text": "as",
+          "text": "As",
           "start": 386.71,
           "end": 387.06
         },
@@ -8600,7 +8540,7 @@
       "id": "cue-135",
       "start": 552.26,
       "end": 558.56,
-      "text": "So, we've got a nice pipeline with the the API ops uh configuration, which was actually uh built.",
+      "text": "So, we've got a nice pipeline with the API ops uh configuration, which was actually uh built.",
       "words": [
         {
           "text": "So,",
@@ -8641,11 +8581,6 @@
           "text": "the",
           "start": 554.71,
           "end": 555.06
-        },
-        {
-          "text": "the",
-          "start": 555.06,
-          "end": 555.41
         },
         {
           "text": "API",
@@ -8698,17 +8633,12 @@
       "id": "cue-136",
       "start": 558.56,
       "end": 563.46,
-      "text": "In in uh collaboration with uh Panagiotis from um the the Kong PS team.",
+      "text": "In uh collaboration with uh Panagiotis from um the Kong PS team.",
       "words": [
         {
           "text": "In",
           "start": 558.56,
           "end": 558.91
-        },
-        {
-          "text": "in",
-          "start": 558.91,
-          "end": 559.26
         },
         {
           "text": "uh",
@@ -8749,11 +8679,6 @@
           "text": "the",
           "start": 561.71,
           "end": 562.06
-        },
-        {
-          "text": "the",
-          "start": 562.06,
-          "end": 562.41
         },
         {
           "text": "Kong",
@@ -9793,7 +9718,7 @@
       "id": "cue-151",
       "start": 626.81,
       "end": 633.11,
-      "text": "Not with the same context as the developer, and it's also very very segmented and focused on a.",
+      "text": "Not with the same context as the developer, and it's also very segmented and focused on a.",
       "words": [
         {
           "text": "Not",
@@ -9854,11 +9779,6 @@
           "text": "very",
           "start": 630.66,
           "end": 631.01
-        },
-        {
-          "text": "very",
-          "start": 631.01,
-          "end": 631.36
         },
         {
           "text": "segmented",
@@ -10007,7 +9927,7 @@
       "id": "cue-154",
       "start": 640.11,
       "end": 644.31,
-      "text": "We haven't found um uh the the the policy validation um line.",
+      "text": "We haven't found um uh the policy validation um line.",
       "words": [
         {
           "text": "We",
@@ -10038,16 +9958,6 @@
           "text": "the",
           "start": 641.86,
           "end": 642.21
-        },
-        {
-          "text": "the",
-          "start": 642.21,
-          "end": 642.56
-        },
-        {
-          "text": "the",
-          "start": 642.56,
-          "end": 642.91
         },
         {
           "text": "policy",
@@ -11760,17 +11670,12 @@
       "id": "cue-185",
       "start": 745.46,
       "end": 748.61,
-      "text": "Let's let's send it to somebody for an approval.\"",
+      "text": "Let's send it to somebody for an approval.\"",
       "words": [
         {
           "text": "Let's",
           "start": 745.46,
           "end": 745.81
-        },
-        {
-          "text": "let's",
-          "start": 745.81,
-          "end": 746.16
         },
         {
           "text": "send",
@@ -11866,7 +11771,7 @@
       "id": "cue-187",
       "start": 751.76,
       "end": 758.06,
-      "text": "Um and that's really how um we we went into uh well, just to give you went from.",
+      "text": "Um and that's really how um we went into uh well, just to give you went from.",
       "words": [
         {
           "text": "Um",
@@ -11902,11 +11807,6 @@
           "text": "we",
           "start": 753.86,
           "end": 754.21
-        },
-        {
-          "text": "we",
-          "start": 754.21,
-          "end": 754.56
         },
         {
           "text": "went",
@@ -11964,7 +11864,7 @@
       "id": "cue-188",
       "start": 758.06,
       "end": 763.31,
-      "text": "Quarters uh to to building API, because all of these steps here were all manual.",
+      "text": "Quarters uh to building API, because all of these steps here were all manual.",
       "words": [
         {
           "text": "Quarters",
@@ -11980,11 +11880,6 @@
           "text": "to",
           "start": 758.76,
           "end": 759.11
-        },
-        {
-          "text": "to",
-          "start": 759.11,
-          "end": 759.46
         },
         {
           "text": "building",
@@ -13048,7 +12943,7 @@
       "id": "cue-206",
       "start": 823.86,
       "end": 828.41,
-      "text": "So, all of these controls are all baked in into the the pipeline.",
+      "text": "So, all of these controls are all baked in into the pipeline.",
       "words": [
         {
           "text": "So,",
@@ -13106,11 +13001,6 @@
           "end": 827.71
         },
         {
-          "text": "the",
-          "start": 827.71,
-          "end": 828.06
-        },
-        {
           "text": "pipeline.",
           "start": 828.06,
           "end": 828.41
@@ -13121,7 +13011,7 @@
       "id": "cue-207",
       "start": 828.41,
       "end": 834.71,
-      "text": "And so, really, our our compliance teams, um, are now looking at our policies and now are now.",
+      "text": "And so, really, our compliance teams, um, are now looking at our policies and now are now.",
       "words": [
         {
           "text": "And",
@@ -13142,11 +13032,6 @@
           "text": "our",
           "start": 829.46,
           "end": 829.81
-        },
-        {
-          "text": "our",
-          "start": 829.81,
-          "end": 830.16
         },
         {
           "text": "compliance",
@@ -13920,7 +13805,7 @@
       "id": "cue-220",
       "start": 877.06,
       "end": 879.51,
-      "text": "And it's it's self-service all the way.",
+      "text": "And it's self-service all the way.",
       "words": [
         {
           "text": "And",
@@ -13931,11 +13816,6 @@
           "text": "it's",
           "start": 877.41,
           "end": 877.76
-        },
-        {
-          "text": "it's",
-          "start": 877.76,
-          "end": 878.11
         },
         {
           "text": "self-service",
@@ -15455,17 +15335,12 @@
       "id": "cue-250",
       "start": 975.5,
       "end": 979.0,
-      "text": "I I need to have an open telemetry or something.",
+      "text": "I need to have an open telemetry or something.",
       "words": [
         {
           "text": "I",
           "start": 975.5,
           "end": 975.85
-        },
-        {
-          "text": "I",
-          "start": 975.85,
-          "end": 976.2
         },
         {
           "text": "need",
@@ -15513,7 +15388,7 @@
       "id": "cue-251",
       "start": 979.0,
       "end": 985.3,
-      "text": "Going in the portal, open telemetry is configured like this and I'll I'll bake it in the API.",
+      "text": "Going in the portal, open telemetry is configured like this and I'll bake it in the API.",
       "words": [
         {
           "text": "Going",
@@ -15574,11 +15449,6 @@
           "text": "I'll",
           "start": 982.85,
           "end": 983.2
-        },
-        {
-          "text": "I'll",
-          "start": 983.2,
-          "end": 983.55
         },
         {
           "text": "bake",
@@ -15757,7 +15627,7 @@
       "id": "cue-254",
       "start": 994.4,
       "end": 1000.0,
-      "text": "And I think that's that's simply because we've scoped it to like a specific policy, right?",
+      "text": "And I think that's simply because we've scoped it to like a specific policy, right?",
       "words": [
         {
           "text": "And",
@@ -15778,11 +15648,6 @@
           "text": "that's",
           "start": 995.45,
           "end": 995.8
-        },
-        {
-          "text": "that's",
-          "start": 995.8,
-          "end": 996.15
         },
         {
           "text": "simply",
@@ -16861,7 +16726,7 @@
       "id": "cue-272",
       "start": 1091.52,
       "end": 1095.37,
-      "text": "No, the human gate is is on the actual deployment path.",
+      "text": "No, the human gate is on the actual deployment path.",
       "words": [
         {
           "text": "No,",
@@ -16887,11 +16752,6 @@
           "text": "is",
           "start": 1092.92,
           "end": 1093.27
-        },
-        {
-          "text": "is",
-          "start": 1093.27,
-          "end": 1093.62
         },
         {
           "text": "on",
@@ -17244,7 +17104,7 @@
       "id": "cue-278",
       "start": 1114.97,
       "end": 1121.27,
-      "text": "And that's the the thing that the AI now that is actually deploying it is now saying, \"Okay.",
+      "text": "And that's the thing that the AI now that is actually deploying it is now saying, \"Okay.",
       "words": [
         {
           "text": "And",
@@ -17260,11 +17120,6 @@
           "text": "the",
           "start": 1115.67,
           "end": 1116.02
-        },
-        {
-          "text": "the",
-          "start": 1116.02,
-          "end": 1116.37
         },
         {
           "text": "thing",
@@ -18110,7 +17965,7 @@
       "id": "cue-295",
       "start": 1166.07,
       "end": 1171.32,
-      "text": "Let me implement the the open telemetry in the way that it's it's configured there.\"",
+      "text": "Let me implement the open telemetry in the way that it's configured there.\"",
       "words": [
         {
           "text": "Let",
@@ -18131,11 +17986,6 @@
           "text": "the",
           "start": 1167.12,
           "end": 1167.47
-        },
-        {
-          "text": "the",
-          "start": 1167.47,
-          "end": 1167.82
         },
         {
           "text": "open",
@@ -18171,11 +18021,6 @@
           "text": "it's",
           "start": 1169.92,
           "end": 1170.27
-        },
-        {
-          "text": "it's",
-          "start": 1170.27,
-          "end": 1170.62
         },
         {
           "text": "configured",

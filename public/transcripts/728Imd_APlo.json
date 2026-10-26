@@ -6667,7 +6667,7 @@
       "id": "cue-204",
       "start": 506.93,
       "end": 509.38,
-      "text": "Connor uh is also a a vegetarian.",
+      "text": "Connor uh is also a vegetarian.",
       "words": [
         {
           "text": "Connor",
@@ -6693,11 +6693,6 @@
           "text": "a",
           "start": 508.33,
           "end": 508.68
-        },
-        {
-          "text": "a",
-          "start": 508.68,
-          "end": 509.03
         },
         {
           "text": "vegetarian.",
@@ -22712,22 +22707,12 @@
       "id": "cue-634",
       "start": 1631.09,
       "end": 1634.59,
-      "text": "No, no, no, That's not the one on the coupon.",
+      "text": "No, That's not the one on the coupon.",
       "words": [
         {
           "text": "No,",
           "start": 1631.09,
           "end": 1631.44
-        },
-        {
-          "text": "no,",
-          "start": 1631.44,
-          "end": 1631.79
-        },
-        {
-          "text": "no,",
-          "start": 1631.79,
-          "end": 1632.14
         },
         {
           "text": "That's",

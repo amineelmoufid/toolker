@@ -2948,7 +2948,7 @@
       "id": "cue-31",
       "start": 191.14,
       "end": 197.44,
-      "text": "Exécute le code le langage il est né comme ça en 59 et du coup c'était c'était pour.",
+      "text": "Exécute le code le langage il est né comme ça en 59 et du coup c'était pour.",
       "words": [
         {
           "text": "Exécute",
@@ -3029,11 +3029,6 @@
           "text": "c'était",
           "start": 196.39,
           "end": 196.74
-        },
-        {
-          "text": "c'était",
-          "start": 196.74,
-          "end": 197.09
         },
         {
           "text": "pour.",
@@ -3438,7 +3433,7 @@
       "id": "cue-36",
       "start": 222.64,
       "end": 228.94,
-      "text": "Virgule fixe ce qui aujourd'hui paraît un peu aberrant aujourd'hui on utilise tous des flot des des floating.",
+      "text": "Virgule fixe ce qui aujourd'hui paraît un peu aberrant aujourd'hui on utilise tous des flot des floating.",
       "words": [
         {
           "text": "Virgule",
@@ -3519,11 +3514,6 @@
           "text": "des",
           "start": 227.89,
           "end": 228.24
-        },
-        {
-          "text": "des",
-          "start": 228.24,
-          "end": 228.59
         },
         {
           "text": "floating.",
@@ -4124,7 +4114,7 @@
       "id": "cue-43",
       "start": 266.74,
       "end": 273.04,
-      "text": "Cetera qui du coup voit ce langage arrivé pendu par par l'armée et qui se disent bah très.",
+      "text": "Cetera qui du coup voit ce langage arrivé pendu par l'armée et qui se disent bah très.",
       "words": [
         {
           "text": "Cetera",
@@ -4175,11 +4165,6 @@
           "text": "par",
           "start": 269.89,
           "end": 270.24
-        },
-        {
-          "text": "par",
-          "start": 270.24,
-          "end": 270.59
         },
         {
           "text": "l'armée",
@@ -4808,17 +4793,12 @@
     },
     {
       "id": "cue-50",
-      "start": 310.84,
+      "start": 311.19,
       "end": 317.14,
-      "text": "Non oui alors ouais bah oui non c'est vrai que le clavier souris et cetera c'est arrivé avec.",
+      "text": "Oui alors ouais bah oui non c'est vrai que le clavier souris et cetera c'est arrivé avec.",
       "words": [
         {
-          "text": "Non",
-          "start": 310.84,
-          "end": 311.19
-        },
-        {
-          "text": "oui",
+          "text": "Oui",
           "start": 311.19,
           "end": 311.54
         },
@@ -4908,7 +4888,7 @@
       "id": "cue-51",
       "start": 317.14,
       "end": 323.44,
-      "text": "Les Mac donc bien bien après donc vraiment à l'époque il y avait à peine des moniteurs quoi.",
+      "text": "Les Mac donc bien après donc vraiment à l'époque il y avait à peine des moniteurs quoi.",
       "words": [
         {
           "text": "Les",
@@ -4929,11 +4909,6 @@
           "text": "bien",
           "start": 318.19,
           "end": 318.54
-        },
-        {
-          "text": "bien",
-          "start": 318.54,
-          "end": 318.89
         },
         {
           "text": "après",
@@ -10494,7 +10469,7 @@
       "id": "cue-108",
       "start": 676.24,
       "end": 682.54,
-      "text": "Si tu tu t'étais téléporté là-bas quoi exactement et il y a un dernier point qui est hyper.",
+      "text": "Si tu t'étais téléporté là-bas quoi exactement et il y a un dernier point qui est hyper.",
       "words": [
         {
           "text": "Si",
@@ -10505,11 +10480,6 @@
           "text": "tu",
           "start": 676.59,
           "end": 676.94
-        },
-        {
-          "text": "tu",
-          "start": 676.94,
-          "end": 677.29
         },
         {
           "text": "t'étais",
@@ -11374,17 +11344,12 @@
     },
     {
       "id": "cue-117",
-      "start": 732.94,
+      "start": 733.29,
       "end": 739.24,
-      "text": "Qui gère tout et donc tu avait des bandes magnétiques par exemple je sais pas si tu voulais.",
+      "text": "Gère tout et donc tu avait des bandes magnétiques par exemple je sais pas si tu voulais.",
       "words": [
         {
-          "text": "Qui",
-          "start": 732.94,
-          "end": 733.29
-        },
-        {
-          "text": "gère",
+          "text": "Gère",
           "start": 733.29,
           "end": 733.64
         },
@@ -12454,7 +12419,7 @@
       "id": "cue-128",
       "start": 802.24,
       "end": 808.54,
-      "text": "Faut une machine spécifique oui parce que en fait les puces IBM elles sont vraiment c'est c'est physique.",
+      "text": "Faut une machine spécifique oui parce que en fait les puces IBM elles sont vraiment c'est physique.",
       "words": [
         {
           "text": "Faut",
@@ -12535,11 +12500,6 @@
           "text": "c'est",
           "start": 807.49,
           "end": 807.84
-        },
-        {
-          "text": "c'est",
-          "start": 807.84,
-          "end": 808.19
         },
         {
           "text": "physique.",
@@ -12846,7 +12806,7 @@
       "id": "cue-132",
       "start": 827.44,
       "end": 833.74,
-      "text": "Avaient leur leur mainframe mais maintenant on loue et on loue au MIPS millions d'instructions par seconde un.",
+      "text": "Avaient leur mainframe mais maintenant on loue et on loue au MIPS millions d'instructions par seconde un.",
       "words": [
         {
           "text": "Avaient",
@@ -12857,11 +12817,6 @@
           "text": "leur",
           "start": 827.79,
           "end": 828.14
-        },
-        {
-          "text": "leur",
-          "start": 828.14,
-          "end": 828.49
         },
         {
           "text": "mainframe",
@@ -16177,8 +16132,8 @@
     {
       "id": "cue-166",
       "start": 1041.64,
-      "end": 1047.94,
-      "text": "Qui des gens intelligents mais moi mes collègues aujourd'hui c'est des astrophysiciens des chimistes tu vois qui qui.",
+      "end": 1048.29,
+      "text": "Qui des gens intelligents mais moi mes collègues aujourd'hui c'est des astrophysiciens des chimistes tu vois qui Sont.",
       "words": [
         {
           "text": "Qui",
@@ -16266,25 +16221,20 @@
           "end": 1047.59
         },
         {
-          "text": "qui.",
-          "start": 1047.59,
-          "end": 1047.94
+          "text": "Sont.",
+          "start": 1047.94,
+          "end": 1048.29
         }
       ]
     },
     {
       "id": "cue-167",
-      "start": 1047.94,
+      "start": 1048.29,
       "end": 1054.24,
-      "text": "Sont devenus un jour cobolistes parce que on avait besoin entre autres pour corriger les futur de 2000.",
+      "text": "Devenus un jour cobolistes parce que on avait besoin entre autres pour corriger les futur de 2000.",
       "words": [
         {
-          "text": "Sont",
-          "start": 1047.94,
-          "end": 1048.29
-        },
-        {
-          "text": "devenus",
+          "text": "Devenus",
           "start": 1048.29,
           "end": 1048.64
         },
@@ -16570,7 +16520,7 @@
       "id": "cue-170",
       "start": 1066.84,
       "end": 1073.14,
-      "text": "Fond et au final qu'est-ce final il y a rien eu rien rien mais parce que on a.",
+      "text": "Fond et au final qu'est-ce final il y a rien eu rien mais parce que on a.",
       "words": [
         {
           "text": "Fond",
@@ -16631,11 +16581,6 @@
           "text": "rien",
           "start": 1070.69,
           "end": 1071.04
-        },
-        {
-          "text": "rien",
-          "start": 1071.04,
-          "end": 1071.39
         },
         {
           "text": "mais",
@@ -18628,7 +18573,7 @@
       "id": "cue-191",
       "start": 1199.14,
       "end": 1205.44,
-      "text": "Point de vue mais bah ça s'arrête jamais c'est quoi le le scénario alternatif d'utiliser un autre langage.",
+      "text": "Point de vue mais bah ça s'arrête jamais c'est quoi le scénario alternatif d'utiliser un autre langage.",
       "words": [
         {
           "text": "Point",
@@ -18684,11 +18629,6 @@
           "text": "le",
           "start": 1202.64,
           "end": 1202.99
-        },
-        {
-          "text": "le",
-          "start": 1202.99,
-          "end": 1203.34
         },
         {
           "text": "scénario",
@@ -21176,7 +21116,7 @@
       "id": "cue-217",
       "start": 1362.94,
       "end": 1369.24,
-      "text": "Rapidement obsolète tu vois parce que au bout de 5 ans tuasas des nouvelles lib comme comme phrase.",
+      "text": "Rapidement obsolète tu vois parce que au bout de 5 ans tuasas des nouvelles lib comme phrase.",
       "words": [
         {
           "text": "Rapidement",
@@ -21257,11 +21197,6 @@
           "text": "comme",
           "start": 1368.19,
           "end": 1368.54
-        },
-        {
-          "text": "comme",
-          "start": 1368.54,
-          "end": 1368.89
         },
         {
           "text": "phrase.",
@@ -23136,7 +23071,7 @@
       "id": "cue-237",
       "start": 1488.94,
       "end": 1495.24,
-      "text": "Cobol c'est pas toi quand même non non non c'est alors c'est l'avantage he du Cobol c'est que.",
+      "text": "Cobol c'est pas toi quand même non c'est alors c'est l'avantage he du Cobol c'est que.",
       "words": [
         {
           "text": "Cobol",
@@ -23172,16 +23107,6 @@
           "text": "non",
           "start": 1491.04,
           "end": 1491.39
-        },
-        {
-          "text": "non",
-          "start": 1491.39,
-          "end": 1491.74
-        },
-        {
-          "text": "non",
-          "start": 1491.74,
-          "end": 1492.09
         },
         {
           "text": "c'est",
@@ -25096,7 +25021,7 @@
       "id": "cue-257",
       "start": 1614.94,
       "end": 1621.24,
-      "text": "De la personne aigrie qui a fait ça depuis depuis 30 ans et qui en a marre B.",
+      "text": "De la personne aigrie qui a fait ça depuis 30 ans et qui en a marre B.",
       "words": [
         {
           "text": "De",
@@ -25142,11 +25067,6 @@
           "text": "depuis",
           "start": 1617.74,
           "end": 1618.09
-        },
-        {
-          "text": "depuis",
-          "start": 1618.09,
-          "end": 1618.44
         },
         {
           "text": "30",
@@ -25586,7 +25506,7 @@
       "id": "cue-262",
       "start": 1646.44,
       "end": 1652.74,
-      "text": "L'éclat total moi je te montrerai des schémas euh de d'architecture c'est c'est enfin voilà ça te prendrait.",
+      "text": "L'éclat total moi je te montrerai des schémas euh de d'architecture c'est enfin voilà ça te prendrait.",
       "words": [
         {
           "text": "L'éclat",
@@ -25647,11 +25567,6 @@
           "text": "c'est",
           "start": 1650.29,
           "end": 1650.64
-        },
-        {
-          "text": "c'est",
-          "start": 1650.64,
-          "end": 1650.99
         },
         {
           "text": "enfin",
@@ -26272,7 +26187,7 @@
       "id": "cue-269",
       "start": 1690.54,
       "end": 1696.84,
-      "text": "Temps ce qui tourne derrière quoi donc là effectivement c'est c'est royal petite question mais est-ce que vu.",
+      "text": "Temps ce qui tourne derrière quoi donc là effectivement c'est royal petite question mais est-ce que vu.",
       "words": [
         {
           "text": "Temps",
@@ -26323,11 +26238,6 @@
           "text": "c'est",
           "start": 1693.69,
           "end": 1694.04
-        },
-        {
-          "text": "c'est",
-          "start": 1694.04,
-          "end": 1694.39
         },
         {
           "text": "royal",
@@ -27054,17 +26964,12 @@
     },
     {
       "id": "cue-277",
-      "start": 1740.94,
+      "start": 1741.29,
       "end": 1747.24,
-      "text": "C'est l'anarchie tu vois tu as 12 milliards de protocoles différents machin tu pourrais rentrer euh sur une.",
+      "text": "L'anarchie tu vois tu as 12 milliards de protocoles différents machin tu pourrais rentrer euh sur une.",
       "words": [
         {
-          "text": "C'est",
-          "start": 1740.94,
-          "end": 1741.29
-        },
-        {
-          "text": "l'anarchie",
+          "text": "L'anarchie",
           "start": 1741.29,
           "end": 1741.64
         },
@@ -27742,7 +27647,7 @@
       "id": "cue-284",
       "start": 1785.04,
       "end": 1791.34,
-      "text": "C'est plutôt en fait l'ingénierie sociale quoi c'est c'est comme ça que tu peux attaquer je suis j'ai.",
+      "text": "C'est plutôt en fait l'ingénierie sociale quoi c'est comme ça que tu peux attaquer je suis j'ai.",
       "words": [
         {
           "text": "C'est",
@@ -27783,11 +27688,6 @@
           "text": "c'est",
           "start": 1787.49,
           "end": 1787.84
-        },
-        {
-          "text": "c'est",
-          "start": 1787.84,
-          "end": 1788.19
         },
         {
           "text": "comme",
@@ -28036,7 +27936,7 @@
       "id": "cue-287",
       "start": 1803.94,
       "end": 1810.24,
-      "text": "Centimes quoi tu vois parce que bah justement qu'on multiplie des chiffres à virgule bah des des fois.",
+      "text": "Centimes quoi tu vois parce que bah justement qu'on multiplie des chiffres à virgule bah des fois.",
       "words": [
         {
           "text": "Centimes",
@@ -28119,11 +28019,6 @@
           "end": 1809.54
         },
         {
-          "text": "des",
-          "start": 1809.54,
-          "end": 1809.89
-        },
-        {
           "text": "fois.",
           "start": 1809.89,
           "end": 1810.24
@@ -28134,7 +28029,7 @@
       "id": "cue-288",
       "start": 1810.24,
       "end": 1816.54,
-      "text": "Tu as des millièes de de centimes et sont pas comptabilisé ça me dit grave un truc cette.",
+      "text": "Tu as des millièes de centimes et sont pas comptabilisé ça me dit grave un truc cette.",
       "words": [
         {
           "text": "Tu",
@@ -28160,11 +28055,6 @@
           "text": "de",
           "start": 1811.64,
           "end": 1811.99
-        },
-        {
-          "text": "de",
-          "start": 1811.99,
-          "end": 1812.34
         },
         {
           "text": "centimes",
@@ -28428,7 +28318,7 @@
       "id": "cue-291",
       "start": 1829.14,
       "end": 1835.44,
-      "text": "Moi j'ai déjà entendu des des des théories fantasmes comme quoi même tu as des développeurs cobble tellement.",
+      "text": "Moi j'ai déjà entendu des théories fantasmes comme quoi même tu as des développeurs cobble tellement.",
       "words": [
         {
           "text": "Moi",
@@ -28454,16 +28344,6 @@
           "text": "des",
           "start": 1830.54,
           "end": 1830.89
-        },
-        {
-          "text": "des",
-          "start": 1830.89,
-          "end": 1831.24
-        },
-        {
-          "text": "des",
-          "start": 1831.24,
-          "end": 1831.59
         },
         {
           "text": "théories",
@@ -29800,7 +29680,7 @@
       "id": "cue-305",
       "start": 1917.34,
       "end": 1923.64,
-      "text": "Ans qui a de l'expérience en coball machin c'est c'est impossible à trouver je te dis comme come.",
+      "text": "Ans qui a de l'expérience en coball machin c'est impossible à trouver je te dis comme come.",
       "words": [
         {
           "text": "Ans",
@@ -29846,11 +29726,6 @@
           "text": "c'est",
           "start": 1920.14,
           "end": 1920.49
-        },
-        {
-          "text": "c'est",
-          "start": 1920.49,
-          "end": 1920.84
         },
         {
           "text": "impossible",
@@ -30290,7 +30165,7 @@
       "id": "cue-310",
       "start": 1948.84,
       "end": 1955.14,
-      "text": "Qui ce qui est sûr et certain c'est qu'aujourd'hui il y a encore des des énormes infrastructures Cobol.",
+      "text": "Qui ce qui est sûr et certain c'est qu'aujourd'hui il y a encore des énormes infrastructures Cobol.",
       "words": [
         {
           "text": "Qui",
@@ -30361,11 +30236,6 @@
           "text": "des",
           "start": 1953.39,
           "end": 1953.74
-        },
-        {
-          "text": "des",
-          "start": 1953.74,
-          "end": 1954.09
         },
         {
           "text": "énormes",
@@ -30780,7 +30650,7 @@
       "id": "cue-315",
       "start": 1980.34,
       "end": 1986.64,
-      "text": "Moi franchement je dis c'est c'est l'ambiance est vraiment sympa et puis en plus on peut toujours si.",
+      "text": "Moi franchement je dis c'est l'ambiance est vraiment sympa et puis en plus on peut toujours si.",
       "words": [
         {
           "text": "Moi",
@@ -30806,11 +30676,6 @@
           "text": "c'est",
           "start": 1981.74,
           "end": 1982.09
-        },
-        {
-          "text": "c'est",
-          "start": 1982.09,
-          "end": 1982.44
         },
         {
           "text": "l'ambiance",
@@ -31758,17 +31623,12 @@
     },
     {
       "id": "cue-325",
-      "start": 2043.34,
+      "start": 2043.69,
       "end": 2049.64,
-      "text": "Par la programmation C est peut-être pas voà alors que le Cobol c'est tellement des architecture complexe il.",
+      "text": "La programmation C est peut-être pas voà alors que le Cobol c'est tellement des architecture complexe il.",
       "words": [
         {
-          "text": "Par",
-          "start": 2043.34,
-          "end": 2043.69
-        },
-        {
-          "text": "la",
+          "text": "La",
           "start": 2043.69,
           "end": 2044.04
         },

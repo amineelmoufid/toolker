@@ -2897,7 +2897,7 @@
       "id": "cue-44",
       "start": 183.28,
       "end": 189.58,
-      "text": "For you, that really, really beautiful view that I love of all the different layers of change that.",
+      "text": "For you, that really, beautiful view that I love of all the different layers of change that.",
       "words": [
         {
           "text": "For",
@@ -2918,11 +2918,6 @@
           "text": "really,",
           "start": 184.33,
           "end": 184.68
-        },
-        {
-          "text": "really",
-          "start": 184.68,
-          "end": 185.03
         },
         {
           "text": "beautiful",
@@ -9341,7 +9336,7 @@
       "id": "cue-137",
       "start": 582.28,
       "end": 583.68,
-      "text": "It's really, really close.",
+      "text": "It's really, close.",
       "words": [
         {
           "text": "It's",
@@ -9352,11 +9347,6 @@
           "text": "really,",
           "start": 582.63,
           "end": 582.98
-        },
-        {
-          "text": "really",
-          "start": 582.98,
-          "end": 583.33
         },
         {
           "text": "close.",
@@ -10502,7 +10492,7 @@
       "id": "cue-159",
       "start": 651.23,
       "end": 657.53,
-      "text": "If you go to like your your your terminal and you say which gnome calculator and then you.",
+      "text": "If you go to like your terminal and you say which gnome calculator and then you.",
       "words": [
         {
           "text": "If",
@@ -10533,16 +10523,6 @@
           "text": "your",
           "start": 652.98,
           "end": 653.33
-        },
-        {
-          "text": "your",
-          "start": 653.33,
-          "end": 653.68
-        },
-        {
-          "text": "your",
-          "start": 653.68,
-          "end": 654.03
         },
         {
           "text": "terminal",
@@ -17955,7 +17935,7 @@
       "id": "cue-265",
       "start": 1113.58,
       "end": 1117.78,
-      "text": "And this last one is going to be my my primary concern.",
+      "text": "And this last one is going to be my primary concern.",
       "words": [
         {
           "text": "And",
@@ -18001,11 +17981,6 @@
           "text": "my",
           "start": 1116.38,
           "end": 1116.73
-        },
-        {
-          "text": "my",
-          "start": 1116.73,
-          "end": 1117.08
         },
         {
           "text": "primary",
