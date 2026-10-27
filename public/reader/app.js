@@ -4347,15 +4347,18 @@ REMINDER: All generated content in the JSON above MUST BE STRICTLY AND EXCLUSIVE
       ttsVoice.addEventListener('change', e => {
         state.selectedVoiceIndex = e.target.value;
         if (e.target.value === 'stream-fr') {
-          if (ttsDialect) ttsDialect.value = 'fr-FR';
           state.dialect = 'fr-FR';
+          state.lang = 'fr';
         } else if (e.target.value === 'stream-ar') {
-          if (ttsDialect) ttsDialect.value = 'ar-SA';
           state.dialect = 'ar-SA';
-        } else if (e.target.value === 'stream-en') {
-          if (ttsDialect) ttsDialect.value = 'en-US';
+          state.lang = 'ar';
+        } else {
           state.dialect = 'en-US';
+          state.lang = 'en';
         }
+        [btnLangEn, btnLangFr, btnLangAr].forEach(btn => {
+          if (btn) btn.classList.toggle('active', btn.dataset.lang === state.lang);
+        });
         saveState();
         if (state.isSpeaking) {
           playSentence(state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0);

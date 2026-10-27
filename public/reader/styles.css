@@ -1349,7 +1349,7 @@ body.subtle-dimming .bionic-tail {
 }
 
 .max-w-voice {
-  max-width: 140px;
+  max-width: 200px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -1357,7 +1357,7 @@ body.subtle-dimming .bionic-tail {
 
 @media (max-width: 640px) {
   .max-w-voice {
-    max-width: 90px;
+    max-width: 130px;
   }
 }
 
