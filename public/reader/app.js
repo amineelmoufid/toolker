@@ -1348,9 +1348,16 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
 
   function stopAudioStream() {
     if (activeAudioStream) {
-      activeAudioStream.pause();
-      activeAudioStream.removeAttribute('src');
+      const stream = activeAudioStream;
       activeAudioStream = null;
+      stream.__stopped = true;
+      stream.onended = null;
+      stream.onerror = null;
+      try {
+        stream.pause();
+        stream.removeAttribute('src');
+        stream.load();
+      } catch (err) {}
     }
   }
 
@@ -1439,7 +1446,10 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       audio.playbackRate = getEffectiveSpeechRate();
     });
 
+    audio.__stopped = false;
+
     audio.onended = () => {
+      if (audio.__stopped || !state.isSpeaking || state.isPaused) return;
       if (activeAudioStream === audio) {
         activeAudioStream = null;
         onEnd();
@@ -1447,6 +1457,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     };
 
     audio.onerror = (err) => {
+      if (audio.__stopped || !state.isSpeaking || state.isPaused) return;
       console.warn('Audio stream error on /api/tts:', err);
       if (activeAudioStream === audio) {
         activeAudioStream = null;
@@ -1457,6 +1468,10 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     const p = audio.play();
     if (p !== undefined) {
       p.catch(err => {
+        // Discard intentional pause / abort errors
+        if (audio.__stopped || !state.isSpeaking || state.isPaused || err.name === 'AbortError') {
+          return;
+        }
         console.warn('Audio play catch:', err);
         if (activeAudioStream === audio) {
           activeAudioStream = null;
@@ -1515,7 +1530,8 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
           handleSentenceAudioCompleted(index);
         },
         () => {
-          // If streaming fails, attempt pure Web Speech
+          // If streaming fails, attempt pure Web Speech ONLY IF user didn't stop or pause
+          if (!state.isSpeaking || state.isPaused) return;
           speakViaWebSpeech(textToSpeak, targetDialect, index);
         }
       );
@@ -1527,6 +1543,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
   }
 
   function speakViaWebSpeech(textToSpeak, targetDialect, index) {
+    if (!state.isSpeaking || state.isPaused) return;
     stopAudioStream();
     if (synth.speaking || synth.paused) {
       try { synth.resume(); } catch (e) {}
@@ -1552,6 +1569,16 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     // 2. If selected voice doesn't match target language, find best matching local voice
     if (!chosenVoice) {
       chosenVoice = availableVoices.find(v => (v.lang || '').toLowerCase().startsWith(shortLang)) || null;
+    }
+
+    // SAFETY GUARD: If target is non-English (French or Arabic) and the system has NO local voice for it,
+    // NEVER speak with utterance.voice = null because Windows/Chromium falls back to Microsoft David (English)
+    // and speaks French words with a heavy English robot accent!
+    if (!chosenVoice && shortLang !== 'en') {
+      console.warn('[TTS] No native ' + shortLang + ' voice found on system. Aborting WebSpeech fallback.');
+      stopSpeech();
+      showToast('Speech audio temporarily unavailable for ' + shortLang.toUpperCase() + '.');
+      return;
     }
 
     if (chosenVoice) {
@@ -1641,13 +1668,13 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
   }
 
   function stopSpeech() {
+    state.isSpeaking = false;
+    state.isPaused = false;
     stopKeepAlive();
     stopAudioStream();
     if (synth) {
-      synth.cancel();
+      try { synth.cancel(); } catch (e) {}
     }
-    state.isSpeaking = false;
-    state.isPaused = false;
     state.activeSentenceIdx = -1;
     highlightActiveSentence(-1);
     updateTtsUI();
@@ -2655,6 +2682,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
         },
         () => {
           // Fallback to Web Speech if stream encounters network issue
+          if (!state.isSpeaking) return;
           speakViaWebSpeech(clean, targetDialect, undefined);
         }
       );
