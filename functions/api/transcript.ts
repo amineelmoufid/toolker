@@ -290,10 +290,13 @@ export const onRequestGet = async (context: any) => {
     let watchHasCaptions = false;
     let watchParsedCount = 0;
 
-    // 1. PRIMARY ENGINE: Exact Kakulukian InnerTube Android specification
+    // 1. PRIMARY ENGINE: Android InnerTube specification
     const INNERTUBE_API_URL = 'https://www.youtube.com/youtubei/v1/player?prettyPrint=false';
     const INNERTUBE_CLIENT_VERSION = '20.10.38';
     const INNERTUBE_USER_AGENT = `com.google.android.youtube/${INNERTUBE_CLIENT_VERSION} (Linux; U; Android 14)`;
+
+    let detectedAudioLang: string | null = null;
+    let primaryCaptionIdxFromAudio: number | null = null;
 
     try {
       const itRes = await fetch(INNERTUBE_API_URL, {
@@ -315,39 +318,69 @@ export const onRequestGet = async (context: any) => {
 
       if (itRes.ok) {
         itData = await itRes.json();
-        const tracks = itData?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
+        const renderer = itData?.captions?.playerCaptionsTracklistRenderer;
+        const tracks = renderer?.captionTracks;
         if (Array.isArray(tracks) && tracks.length > 0) {
           captionTracks = tracks;
+        }
+
+        const audioTracks = renderer?.audioTracks;
+        const defaultAudioIdx = renderer?.defaultAudioTrackIndex ?? 0;
+        if (Array.isArray(audioTracks) && audioTracks[defaultAudioIdx]) {
+          const defAudio = audioTracks[defaultAudioIdx];
+          if (defAudio.audioTrackId) {
+            detectedAudioLang = defAudio.audioTrackId.split('.')[0].split('-')[0].toLowerCase();
+          }
+          if (Array.isArray(defAudio.captionTrackIndices) && defAudio.captionTrackIndices.length > 0) {
+            primaryCaptionIdxFromAudio = defAudio.captionTrackIndices[0];
+          }
         }
       }
     } catch (itErr) {
       console.warn("InnerTube fetch notice:", itErr);
     }
 
-    // 2. SECONDARY ENGINE: Watch page HTML parsing with depth-parser
+    // 2. FALLBACK ENGINE: Web InnerTube specification if Android tracks empty
     if (!captionTracks.length) {
       try {
-        const watchRes = await fetch(`https://www.youtube.com/watch?v=${videoId}`, {
+        const webRes = await fetch(INNERTUBE_API_URL, {
+          method: 'POST',
           headers: {
+            'Content-Type': 'application/json',
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-            'Accept-Language': 'fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7',
-            'Cookie': 'CONSENT=YES+cb.20210328-17-p0.en+FX+478; SOCS=CAESEwgDEgk2MTQ5Mjc4NjIaAmZyIAEaBgiA_L20Bg'
-          }
+            'Referer': `https://www.youtube.com/watch?v=${videoId}`
+          },
+          body: JSON.stringify({
+            context: {
+              client: {
+                clientName: 'WEB',
+                clientVersion: '2.20240313.01.00',
+                originalUrl: `https://www.youtube.com/watch?v=${videoId}`
+              }
+            },
+            videoId
+          })
         });
 
-        watchStatus = watchRes.status;
-        if (watchRes.ok) {
-          const html = await watchRes.text();
-          watchHtmlLen = html.length;
-          watchHasCaptions = html.includes('captionTracks');
-          const parsedTracks = extractCaptionTracksFromHtml(html);
-          if (parsedTracks && parsedTracks.length > 0) {
-            watchParsedCount = parsedTracks.length;
-            captionTracks = parsedTracks;
+        if (webRes.ok) {
+          const webData: any = await webRes.json();
+          const renderer = webData?.captions?.playerCaptionsTracklistRenderer;
+          const webTracks = renderer?.captionTracks;
+          if (Array.isArray(webTracks) && webTracks.length > 0) {
+            captionTracks = webTracks;
+            if (!itData) itData = webData;
+            const audioTracks = renderer?.audioTracks;
+            const defaultAudioIdx = renderer?.defaultAudioTrackIndex ?? 0;
+            if (Array.isArray(audioTracks) && audioTracks[defaultAudioIdx]) {
+              const defAudio = audioTracks[defaultAudioIdx];
+              if (defAudio.audioTrackId) {
+                detectedAudioLang = defAudio.audioTrackId.split('.')[0].split('-')[0].toLowerCase();
+              }
+            }
           }
         }
-      } catch (watchErr) {
-        console.warn("Watch page fallback notice:", watchErr);
+      } catch (webErr) {
+        console.warn("Web InnerTube fallback notice:", webErr);
       }
     }
 
@@ -375,30 +408,48 @@ export const onRequestGet = async (context: any) => {
       });
     }
 
-    // 3. SELECT TRACK PRIORITIZING ORIGINAL SPOKEN LANGUAGE CAPTIONS
+    // 3. SELECT TRACK STRICTLY IN THE ORIGINAL SPOKEN LANGUAGE
     let selectedTrack: any = null;
 
     // A. Explicit language requested (e.g. ?lang=fr or ?lang=en)
     if (requestedLang) {
-      selectedTrack = captionTracks.find((t: any) => t.languageCode?.toLowerCase().startsWith(requestedLang) && t.kind === 'asr')
+      selectedTrack = captionTracks.find((t: any) => t.languageCode?.toLowerCase().startsWith(requestedLang) && t.kind !== 'asr')
                    || captionTracks.find((t: any) => t.languageCode?.toLowerCase().startsWith(requestedLang));
     }
 
-    // B. Detect original spoken audio language:
-    if (!selectedTrack) {
-      const nativeAsrTrack = captionTracks.find((t: any) => t.kind === 'asr');
-      if (nativeAsrTrack) {
-        const spokenLang = nativeAsrTrack.languageCode?.toLowerCase();
-        const manualSpokenTrack = captionTracks.find((t: any) => t.languageCode?.toLowerCase() === spokenLang && t.kind !== 'asr');
-        selectedTrack = manualSpokenTrack || nativeAsrTrack;
-      } else {
-        const defaultTrack = captionTracks.find((t: any) => t.isDefault) || captionTracks[0];
-        selectedTrack = defaultTrack;
+    // B. Prioritize track linked directly to original audioTrack in InnerTube
+    if (!selectedTrack && primaryCaptionIdxFromAudio !== null && captionTracks[primaryCaptionIdxFromAudio]) {
+      selectedTrack = captionTracks[primaryCaptionIdxFromAudio];
+    }
+
+    // C. Detect original spoken audio language from audioTrackId
+    if (!selectedTrack && detectedAudioLang) {
+      const manualTrack = captionTracks.find((t: any) => t.languageCode?.toLowerCase().startsWith(detectedAudioLang) && t.kind !== 'asr');
+      const asrTrack = captionTracks.find((t: any) => t.languageCode?.toLowerCase().startsWith(detectedAudioLang));
+      selectedTrack = manualTrack || asrTrack;
+    }
+
+    // D. Detect language from video title
+    if (!selectedTrack && videoTitle) {
+      const isArabic = /[\u0600-\u06FF\u0750-\u077F]/.test(videoTitle);
+      const isFrench = /[éèêëàâôûùçîïœæ]|\b(pourquoi|comment|quand|dans|avec|pour|sens|mal|sans|raison|le|la|les|un|une|des|du|qui|que)\b/i.test(videoTitle);
+      const isSpanish = /[áéíóúüñ¿¡]|\b(por qué|como|cuando|en|con|para|el|la|los|las|un|una|del)\b/i.test(videoTitle);
+      const isGerman = /[äöüß]|\b(warum|wie|wenn|in|mit|für|der|die|das|ein|eine|des|dem|den)\b/i.test(videoTitle);
+
+      const titleLang = isArabic ? 'ar' : isFrench ? 'fr' : isSpanish ? 'es' : isGerman ? 'de' : null;
+      if (titleLang) {
+        selectedTrack = captionTracks.find((t: any) => t.languageCode?.toLowerCase().startsWith(titleLang) && t.kind !== 'asr')
+                     || captionTracks.find((t: any) => t.languageCode?.toLowerCase().startsWith(titleLang));
       }
     }
 
+    // E. Fallback: authentic original track (avoiding auto-translations)
     if (!selectedTrack) {
-      selectedTrack = captionTracks[0];
+      const authenticTracks = captionTracks.filter((t: any) => !t.vssId?.startsWith('t.'));
+      const defaultTrack = authenticTracks.find((t: any) => t.isDefault && t.kind !== 'asr')
+                         || authenticTracks.find((t: any) => t.isDefault)
+                         || authenticTracks[0];
+      selectedTrack = defaultTrack || captionTracks[0];
     }
 
     const detectedLang = selectedTrack.languageCode || 'en';
@@ -413,7 +464,7 @@ export const onRequestGet = async (context: any) => {
     try {
       const aRes = await fetch(trackUrl, {
         headers: {
-          'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36,gzip(gfe)',
+          'User-Agent': INNERTUBE_USER_AGENT,
           'Accept-Language': requestedLang || detectedLang
         }
       });

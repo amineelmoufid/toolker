@@ -48,7 +48,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
       }
     } catch (e) {}
 
-    return PRESET_CLIPS.length > 0 ? PRESET_CLIPS[0] : null;
+    return null;
   });
   
   const [currentTime, setCurrentTime] = useState<number>(() => {
@@ -215,7 +215,24 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     };
 
     const runExtraction = async () => {
-      // 0. Ultra-Fast Local Extractor Daemon (instant 2s on-the-fly extraction)
+      // 0. Instant Serverless Edge Extractor (/api/transcript)
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 6000);
+        const edgeRes = await fetch(`/api/transcript?v=${ytId}&_t=${Date.now()}`, {
+          signal: controller.signal
+        });
+        clearTimeout(timeoutId);
+        if (edgeRes.ok) {
+          const edgeData = await edgeRes.json();
+          if (edgeData.ok && Array.isArray(edgeData.subtitles) && edgeData.subtitles.length > 0) {
+            applySubtitles(edgeData.subtitles);
+            return;
+          }
+        }
+      } catch (_) {}
+
+      // 0.5. Ultra-Fast Local Extractor Daemon (instant 2s on-the-fly extraction)
       try {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 4500);
@@ -703,17 +720,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
           </div>
 
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-            <button
-              type="button"
-              onClick={handleExportToReader}
-              disabled={!currentClip || !currentClip.subtitles || currentClip.subtitles.length === 0}
-              title="Export Full Subtitle Transcript to Bionic Reader"
-              className="text-[10px] sm:text-xs font-mono font-bold uppercase bg-[#3d7a4d] hover:bg-[#2e5d3a] disabled:opacity-40 disabled:cursor-not-allowed text-[#fbf8f2] border-2 border-[#1c1d20] shadow-[2px_2px_0px_#18191c] px-2 sm:px-3 py-1.5 sm:py-2 rounded-md transition-all active:translate-y-0.5 active:shadow-[0px_0px_0px_#18191c] flex items-center gap-1 sm:gap-1.5"
-            >
-              <span>📖</span>
-              <span className="hidden sm:inline">EXPORT TO</span>
-              <span>READER</span>
-            </button>
+
 
             <RoomShareButton 
               modeName="shadowing" 
@@ -786,14 +793,11 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
               onToggleDictationMode={handleToggleDictationMode}
               maskMode={maskMode}
               onToggleMaskMode={handleToggleMaskMode}
-              showTranslation={showTranslation}
-              onToggleTranslation={handleToggleTranslation}
               onLineCompleted={handleLineCompleted}
               onReplayLine={handleReplayActiveLine}
               isSyncing={isAutoHealingSubtitles}
               syncError={subtitlesError}
               onOpenLibrary={() => setIsLibraryOpen(true)}
-              onExportToReader={handleExportToReader}
             />
           ) : (
             <div className="flex items-center justify-center h-full w-full opacity-50">

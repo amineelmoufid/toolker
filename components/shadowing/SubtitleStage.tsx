@@ -119,9 +119,6 @@ const SubtitleStage: React.FC<SubtitleStageProps> = ({
   // Upcoming lines after the active line
   const upcomingLines = currentIndex !== -1 ? subtitles.slice(currentIndex + 1, currentIndex + 4) : [];
 
-  const isFrenchText = (txt: string) => /[éèêëàâôûùçîïœæ]|\b(le|la|les|un|une|des|du|dans|avec|pour|pas|ne|vous|nous|cette|est|sont)\b/i.test(txt);
-  const activeIsFrench = activeLine ? isFrenchText(activeLine.text) : false;
-  const translationFlag = activeIsFrench ? '🇬🇧' : '🇫🇷';
 
   return (
     <div 
@@ -169,33 +166,6 @@ const SubtitleStage: React.FC<SubtitleStageProps> = ({
               </button>
             )}
 
-            {/* Translation Toggle */}
-            <button
-              type="button"
-              onClick={onToggleTranslation}
-              title={showTranslation ? "Masquer la traduction" : "Afficher la traduction"}
-              className={`text-[8.5px] sm:text-[9px] font-mono font-bold uppercase px-2 py-0.5 rounded border transition-all active:scale-95 flex items-center gap-1 ${
-                showTranslation
-                  ? 'bg-[#cf573c]/20 text-[#cf573c] border-[#cf573c]/50'
-                  : 'bg-[#24252a] text-[#7a776e] border-[#3e4049]'
-              }`}
-            >
-              <span>{translationFlag}</span>
-              <span className="hidden xs:inline">TRANSLATION</span>
-            </button>
-
-            {/* Export Subtitles to Reader */}
-            {onExportToReader && (
-              <button
-                type="button"
-                onClick={onExportToReader}
-                title="Export full transcript to Reader deck"
-                className="text-[8.5px] sm:text-[9px] font-mono font-bold uppercase px-2 py-0.5 rounded border border-[#3e4049] bg-[#24252a] text-[#85b991] hover:border-[#3d7a4d] hover:text-[#a0dbad] transition-all active:scale-95 flex items-center gap-1"
-              >
-                <span>📖</span>
-                <span className="hidden xs:inline">TO READER</span>
-              </button>
-            )}
           </div>
         </div>
 
@@ -210,13 +180,7 @@ const SubtitleStage: React.FC<SubtitleStageProps> = ({
                 onReplayRequest={onReplayLine}
               />
 
-              {activeLine.translation && showTranslation && (
-                <div className="mt-3.5 flex items-center justify-center animate-in fade-in duration-200">
-                  <span className="font-sans text-xs sm:text-sm font-medium text-[#cf573c] bg-[#1c1d20] px-3.5 py-1.5 rounded-md border border-[#cf573c]/50 shadow-[2px_2px_0px_#cf573c] tracking-normal">
-                    {translationFlag} {activeLine.translation}
-                  </span>
-                </div>
-              )}
+
             </div>
           ) : (
             <div 
@@ -251,11 +215,7 @@ const SubtitleStage: React.FC<SubtitleStageProps> = ({
                 )}
               </div>
 
-              {activeLine.translation && showTranslation && (
-                <div className="mt-2.5 sm:mt-4 text-[11px] sm:text-xs text-[#cf573c] font-sans font-medium text-center w-full leading-normal">
-                  {translationFlag} {activeLine.translation}
-                </div>
-              )}
+
             </div>
           )
         ) : (
@@ -289,11 +249,7 @@ const SubtitleStage: React.FC<SubtitleStageProps> = ({
                 <p className="leading-relaxed group-hover:translate-x-1 transition-transform">
                   {line.text}
                 </p>
-                {line.translation && showTranslation && (
-                  <span className="text-[10px] font-sans text-[#a09c91] font-normal">
-                    {isFrenchText(line.text) ? '🇬🇧' : '🇫🇷'} {line.translation}
-                  </span>
-                )}
+
               </div>
               <span className="text-[8.5px] sm:text-[9px] font-mono font-bold text-[#cf573c] opacity-0 group-hover:opacity-100 transition-opacity shrink-0 ml-2">
                 ▶ JUMP

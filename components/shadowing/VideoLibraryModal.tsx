@@ -24,7 +24,15 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
   onSelectClip,
   onClose
 }) => {
-  const [activeTab, setActiveTab] = useState<'presets' | 'custom'>('presets');
+  const [activeTab, setActiveTab] = useState<'presets' | 'custom'>(() => {
+    try {
+      const stored = localStorage.getItem('toolker_custom_clips');
+      const parsed = stored ? JSON.parse(stored) : [];
+      return (parsed && parsed.length > 0) ? 'presets' : 'custom';
+    } catch (_) {
+      return 'custom';
+    }
+  });
   const [customUrl, setCustomUrl] = useState('');
   const [customTitle, setCustomTitle] = useState('');
   const [importError, setImportError] = useState('');
@@ -33,7 +41,6 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
   // Subtitle auto-sync states
   const [isSyncing, setIsSyncing] = useState<boolean>(false);
   const [isResyncingId, setIsResyncingId] = useState<string | null>(null);
-  const [isTranslatingId, setIsTranslatingId] = useState<string | null>(null);
   const [syncStatus, setSyncStatus] = useState<'idle' | 'loading' | 'success'>('idle');
   const [syncMessage, setSyncMessage] = useState<string>('');
   const [syncedSubtitles, setSyncedSubtitles] = useState<SubtitleLine[] | null>(null);
@@ -60,11 +67,24 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
   };
 
   const fetchSubtitlesForVideo = async (ytId: string, _titleHint: string): Promise<SubtitleLine[]> => {
-    // 0. Check Toolker Companion Extension (Instant 0.8s residential browser fetch)
+    // 0. Check window.name or bookmarklet payload (0ms)
+    try {
+      if (window.name && window.name.startsWith('TOOLKER_DATA:')) {
+        const payloadStr = decodeURIComponent(escape(atob(window.name.replace('TOOLKER_DATA:', ''))));
+        const payload = JSON.parse(payloadStr);
+        if (payload.v === ytId && payload.xml) {
+          const raw = parseTranscriptXml(payload.xml);
+          const clean = reconstructSubtitlesSemantically(raw);
+          if (clean.length > 0) return clean;
+        }
+      }
+    } catch (_) {}
+
+    // 0.5. Check Toolker Companion Extension (Instant residential browser fetch)
     try {
       const extResult = await new Promise<any>((resolve) => {
         const reqId = `req-${Date.now()}-${Math.random()}`;
-        const timer = setTimeout(() => resolve(null), 1800);
+        const timer = setTimeout(() => resolve(null), 800);
         const listener = (event: MessageEvent) => {
           if (event.data && event.data.type === 'TOOLKER_RES_SUBTITLES' && event.data.requestId === reqId) {
             clearTimeout(timer);
@@ -80,37 +100,33 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
         const parsed = parseTranscriptXml(extResult.xml);
         if (parsed && parsed.length > 0) {
           const clean = reconstructSubtitlesSemantically(parsed);
-          setSyncMessage(`✓ Extracted via Toolker Companion Extension (${clean.length} sentences)`);
-          // Crowdsource to edge cache
-          try {
-            fetch('/api/cache', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ videoId: ytId, subtitles: clean })
-            }).catch(() => {});
-          } catch (_) {}
+          setSyncMessage(`✓ Extracted original dialogue via Extension (${clean.length} sentences)`);
           return clean;
         }
       }
     } catch (_) {}
 
-    // 0.5. Ultra-Fast Local Extractor Daemon (instant 2s on-the-fly extraction)
+    // 1. PRIMARY FAST-PATH: Direct Serverless Edge Extractor (/api/transcript)
+    // Instant ~300ms YouTube caption extraction in the video's original spoken language
     try {
+      setSyncMessage('⚡ Extracting original dialogue from YouTube in real-time...');
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 4500);
-      const localRes = await fetch(`http://127.0.0.1:38472/transcript?v=${ytId}`, {
+      const timeoutId = setTimeout(() => controller.abort(), 6000);
+      const res = await fetch(`/api/transcript?v=${ytId}&_t=${Date.now()}`, {
         signal: controller.signal
       });
       clearTimeout(timeoutId);
-      if (localRes.ok) {
-        const localData = await localRes.json();
-        if (localData.ok && Array.isArray(localData.subtitles) && localData.subtitles.length > 0) {
-          return localData.subtitles;
+      if (res.ok) {
+        const data = await res.json();
+        if (data.ok && Array.isArray(data.subtitles) && data.subtitles.length > 0) {
+          return data.subtitles;
         }
       }
-    } catch (_) {}
+    } catch (apiErr) {
+      console.warn("API transcript notice:", apiErr);
+    }
 
-    // 1. Check static pre-cached JSON asset
+    // 2. Static pre-cached asset check
     try {
       const staticRes = await fetch(`/transcripts/${ytId}.json?_t=${Date.now()}`);
       const contentType = staticRes.headers.get('content-type') || '';
@@ -122,7 +138,7 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
       }
     } catch (_) {}
 
-    // 1.5. Check Crowdsourced Cloudflare Edge Cache
+    // 3. Crowdsourced Cloudflare Edge Cache
     try {
       const cacheRes = await fetch(`/api/cache?v=${ytId}&_t=${Date.now()}`);
       if (cacheRes.ok) {
@@ -132,73 +148,6 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
         }
       }
     } catch (_) {}
-
-    // 2. Check if already extracted via /api/extract
-    try {
-      const checkRes = await fetch(`/api/extract?v=${ytId}&_t=${Date.now()}`);
-      if (checkRes.ok) {
-        const checkData = await checkRes.json();
-        if (checkData.ok && Array.isArray(checkData.subtitles) && checkData.subtitles.length > 0) {
-          return checkData.subtitles;
-        }
-      }
-    } catch (_) {}
-
-    // 3. Trigger Autonomous Cloud Extractor via /api/extract
-    try {
-      setSyncMessage('⚡ Autonomous cloud runner started! Extracting 100% authentic captions...');
-      const extractRes = await fetch('/api/extract', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ videoId: ytId })
-      });
-
-      if (extractRes.ok) {
-        const extractData = await extractRes.json();
-        if (extractData.ready && Array.isArray(extractData.subtitles) && extractData.subtitles.length > 0) {
-          return extractData.subtitles;
-        }
-
-        // Poll /api/extract every 2s for up to 60 attempts (~120s)
-        for (let i = 1; i <= 60; i++) {
-          setSyncMessage(`⚡ Extracting original dialogue from YouTube... (${i * 2}s)`);
-          await new Promise(r => setTimeout(r, 2000));
-          try {
-            const pollRes = await fetch(`/api/extract?v=${ytId}&_t=${Date.now()}`);
-            if (pollRes.ok) {
-              const pollData = await pollRes.json();
-              if (pollData.ok && Array.isArray(pollData.subtitles) && pollData.subtitles.length > 0) {
-                return pollData.subtitles;
-              }
-              if (pollData.ok === false && pollData.error && !pollData.pending) {
-                console.warn("Cloud extractor notice:", pollData.error);
-              }
-            }
-          } catch (_) {}
-        }
-      }
-    } catch (extractErr) {
-      console.warn("Cloud extractor trigger notice:", extractErr);
-    }
-
-    // 4. Query Cloudflare Pages transcript API (backup)
-    try {
-      const res = await fetch(`/api/transcript?v=${ytId}&_t=${Date.now()}`);
-      if (res.ok) {
-        const data = await res.json();
-        if (data.ok && Array.isArray(data.subtitles) && data.subtitles.length > 0) {
-          return data.subtitles;
-        }
-      }
-    } catch (apiErr) {
-      console.warn("API transcript notice:", apiErr);
-    }
-
-    // 5. Check preset clips
-    const preset = PRESET_CLIPS.find(p => p.youtubeId === ytId);
-    if (preset && preset.subtitles && preset.subtitles.length > 0) {
-      return preset.subtitles;
-    }
 
     return [];
   };
@@ -347,26 +296,7 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
     setIsResyncingId(null);
   };
 
-  const handleTranslateClip = async (e: React.MouseEvent, clip: ShadowingClip) => {
-    e.stopPropagation();
-    setIsTranslatingId(clip.id);
-    try {
-      const translatedSubs = await translateSubtitlesToFrench(clip.subtitles);
-      const updatedClip = { ...clip, subtitles: translatedSubs };
-      const updatedClips = customClips.map(c => c.id === clip.id ? updatedClip : c);
-      setCustomClips(updatedClips);
-      try {
-        localStorage.setItem('toolker_custom_clips', JSON.stringify(updatedClips));
-      } catch (err) {}
 
-      if (clip.id === currentClipId) {
-        onSelectClip(updatedClip);
-      }
-    } catch (err) {
-      console.warn("Failed to translate clip", err);
-    }
-    setIsTranslatingId(null);
-  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
@@ -423,13 +353,13 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
         {/* Tab 1: Presets & Saved */}
         {activeTab === 'presets' && (
           <div className="flex-1 overflow-y-auto space-y-3 pr-1">
-            {[...customClips, ...PRESET_CLIPS].length === 0 ? (
+            {customClips.length === 0 ? (
               <div className="text-center p-8 bg-[#c5bfb0] rounded border-2 border-[#1c1d20] shadow-[inset_2px_2px_5px_rgba(0,0,0,0.2)]">
                 <p className="font-mono text-sm font-bold text-[#5c5950] uppercase mb-2">No Saved Clips</p>
                 <p className="font-mono text-xs text-[#7a776e]">Click "IMPORT URL" to add a new video.</p>
               </div>
             ) : (
-              [...customClips, ...PRESET_CLIPS].map((clip) => {
+              customClips.map((clip) => {
                 const isSelected = clip.id === currentClipId;
                 return (
                   <div
@@ -463,14 +393,7 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
 
                     {clip.category === 'SAVED CLIP' && (
                       <div className="flex flex-col gap-1.5 shrink-0 ml-2">
-                        <button
-                          onClick={(e) => handleTranslateClip(e, clip)}
-                          disabled={isTranslatingId === clip.id || clip.subtitles.length === 0}
-                          title="Translate dialogue between French and English"
-                          className="text-[9.5px] font-mono font-bold uppercase px-2 py-1 bg-[#3d7a4d] hover:bg-[#346942] text-[#ebe6d8] rounded border-2 border-[#1c1d20] disabled:opacity-50 shadow-[2px_2px_0px_#1c1d20] active:shadow-none active:translate-y-[2px] active:translate-x-[2px]"
-                        >
-                          {isTranslatingId === clip.id ? 'TRADUCTION...' : '🇫🇷 ⇄ 🇬🇧 TRANSLATE'}
-                        </button>
+
                         <button
                           onClick={(e) => handleResyncClip(e, clip)}
                           disabled={isResyncingId === clip.id}

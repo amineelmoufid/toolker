@@ -182,11 +182,6 @@ const ShadowRecorderModal: React.FC<ShadowRecorderModalProps> = ({
           <p className="font-mono text-sm sm:text-base text-[#ebe6d8] font-bold leading-relaxed">
             "{line.text}"
           </p>
-          {line.translation && (
-            <p className="font-sans text-xs text-[#9d9aa8] mt-1.5 border-t border-[#2b2c32] pt-1.5">
-              {line.translation}
-            </p>
-          )}
         </div>
 
         {/* Error message */}
