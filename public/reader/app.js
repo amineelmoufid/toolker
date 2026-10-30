@@ -1419,7 +1419,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     saveState();
   }
 
-  function playAudioStreamFallback(textToSpeak, langCode, onEnd, onError) {
+  function playAudioStreamFallback(textToSpeak, langCode, onEnd, onError, sentenceIdx) {
     stopAudioStream();
     const shortLang = langCode.split('-')[0] || 'en';
     const cleanText = textToSpeak.replace(/[*_~`#\\]/g, ' ').replace(/\s+/g, ' ').trim();
@@ -1432,6 +1432,8 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     const url = `/api/tts?lang=${encodeURIComponent(shortLang)}&text=${encodeURIComponent(cleanText)}`;
 
     const audio = new Audio(url);
+    audio.__stopped = false;
+    audio.__sentenceIdx = typeof sentenceIdx === 'number' ? sentenceIdx : state.activeSentenceIdx;
     activeAudioStream = audio;
 
     const rate = getEffectiveSpeechRate();
@@ -1533,7 +1535,8 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
           // If streaming fails, attempt pure Web Speech ONLY IF user didn't stop or pause
           if (!state.isSpeaking || state.isPaused) return;
           speakViaWebSpeech(textToSpeak, targetDialect, index);
-        }
+        },
+        index
       );
       return;
     }
@@ -1642,11 +1645,11 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       if (state.isPaused) {
         // Resume
         state.isPaused = false;
-        if (activeAudioStream) {
+        if (activeAudioStream && activeAudioStream.__sentenceIdx === state.activeSentenceIdx) {
           activeAudioStream.play();
-        } else if (synth.paused) {
-          synth.resume();
         } else {
+          stopAudioStream();
+          if (synth) { try { synth.cancel(); } catch (e) {} }
           playSentence(state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0);
         }
         updateTtsUI();
@@ -1663,11 +1666,12 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       return;
     }
 
-    // Instant Start from sentence 0
-    playSentence(0);
+    // Start from active sentence
+    const startIdx = Math.max(0, Math.min(state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0, sentenceRegistry.length - 1));
+    playSentence(startIdx);
   }
 
-  function stopSpeech() {
+  function stopSpeech(resetIndex = false) {
     state.isSpeaking = false;
     state.isPaused = false;
     stopKeepAlive();
@@ -1675,7 +1679,9 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     if (synth) {
       try { synth.cancel(); } catch (e) {}
     }
-    state.activeSentenceIdx = -1;
+    if (resetIndex) {
+      state.activeSentenceIdx = -1;
+    }
     highlightActiveSentence(-1);
     updateTtsUI();
   }
@@ -1985,6 +1991,8 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     if (state.isSpeaking && !state.isPaused) {
       playSentence(targetIdx);
     } else {
+      stopAudioStream();
+      if (synth) { try { synth.cancel(); } catch (e) {} }
       state.activeSentenceIdx = targetIdx;
       highlightActiveSentence(targetIdx);
       updateSentenceFocusDisplay();
@@ -1997,6 +2005,8 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     if (state.isSpeaking && !state.isPaused) {
       playSentence(targetIdx);
     } else {
+      stopAudioStream();
+      if (synth) { try { synth.cancel(); } catch (e) {} }
       state.activeSentenceIdx = targetIdx;
       highlightActiveSentence(targetIdx);
       updateSentenceFocusDisplay();
@@ -2006,6 +2016,8 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
   function replayCurrentSentence() {
     if (!sentenceRegistry || sentenceRegistry.length === 0) return;
     const targetIdx = Math.max(0, Math.min(state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0, sentenceRegistry.length - 1));
+    stopAudioStream();
+    if (synth) { try { synth.cancel(); } catch (e) {} }
     playSentence(targetIdx);
   }
 
@@ -2019,12 +2031,12 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       if (state.isPaused) {
         // Resume
         state.isPaused = false;
-        if (activeAudioStream) {
+        if (activeAudioStream && activeAudioStream.__sentenceIdx === state.activeSentenceIdx) {
           activeAudioStream.play();
-        } else if (synth && synth.paused) {
-          synth.resume();
         } else {
-          playSentence(Math.max(0, state.activeSentenceIdx));
+          stopAudioStream();
+          if (synth) { try { synth.cancel(); } catch (e) {} }
+          playSentence(state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0);
         }
         updateTtsUI();
         updateSentenceFocusDisplay();
@@ -2070,9 +2082,18 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     }
   }
 
+  let activeShadowSentenceIdx = -1;
+
   function playShadowAudioBlob(base64, onEnd) {
     stopActiveShadowAudio();
-    stopSpeech();
+    stopAudioStream();
+    if (synth) {
+      try { synth.cancel(); } catch (e) {}
+    }
+    state.isSpeaking = false;
+    state.isPaused = false;
+    updateTtsUI();
+
     try {
       const audio = new Audio(base64);
       activeShadowAudioPlayer = audio;
@@ -2096,8 +2117,18 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
 
   async function startSentenceShadowRecording() {
     if (isRecordingShadow) return;
-    stopSpeech();
+
+    // Pinpoint and preserve active sentence index
+    const targetIdx = state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0;
+    activeShadowSentenceIdx = targetIdx;
+
+    stopSpeech(false);
     stopActiveShadowAudio();
+
+    // Keep sentence index pinned to targetIdx
+    state.activeSentenceIdx = targetIdx;
+    highlightActiveSentence(targetIdx);
+    updateSentenceFocusDisplay();
 
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -2125,13 +2156,18 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
           const reader = new FileReader();
           reader.onloadend = () => {
             const base64 = reader.result;
-            const currentIdx = state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0;
+            const currentIdx = activeShadowSentenceIdx >= 0 ? activeShadowSentenceIdx : (state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0);
             localShadowAudios[currentIdx] = base64;
+
+            // Keep sentence index pinned to currentIdx
+            state.activeSentenceIdx = currentIdx;
+            highlightActiveSentence(currentIdx);
+            updateSentenceFocusDisplay();
 
             // Update UI
             if (btnSentencePlayLocalShadow) btnSentencePlayLocalShadow.classList.remove('hidden');
             if (sentenceShadowStatus) {
-              sentenceShadowStatus.textContent = `Shadow saved (${shadowRecordSeconds}s)`;
+              sentenceShadowStatus.textContent = `Shadow S.${currentIdx + 1} saved (${shadowRecordSeconds}s)`;
               sentenceShadowStatus.classList.remove('recording');
             }
 
@@ -2147,7 +2183,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
                 timestamp: Date.now()
               }
             }));
-            showToast('✓ Shadow recorded & broadcast to room');
+            showToast(`✓ Shadow for Sentence ${currentIdx + 1} recorded & sent to room`);
           };
           reader.readAsDataURL(audioBlob);
         }
@@ -2170,7 +2206,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
         if (shadowRecBtnLabel) shadowRecBtnLabel.textContent = 'Stop Shadow';
       }
       if (sentenceShadowStatus) {
-        sentenceShadowStatus.textContent = 'Recording 00:00';
+        sentenceShadowStatus.textContent = `Recording S.${targetIdx + 1} 00:00`;
         sentenceShadowStatus.classList.add('recording');
       }
 
@@ -2179,7 +2215,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
         const mins = String(Math.floor(shadowRecordSeconds / 60));
         const secs = String(shadowRecordSeconds % 60).padStart(2, '0');
         if (toolbarShadowLabel) toolbarShadowLabel.textContent = `REC ${mins}:${secs}`;
-        if (sentenceShadowStatus) sentenceShadowStatus.textContent = `Recording ${mins}:${secs}`;
+        if (sentenceShadowStatus) sentenceShadowStatus.textContent = `Recording S.${targetIdx + 1} ${mins}:${secs}`;
       }, 1000);
 
     } catch (err) {
@@ -4497,16 +4533,40 @@ REMINDER: All generated content in the JSON above MUST BE STRICTLY AND EXCLUSIVE
     wireShadowTriggerButton(btnFloatShadow);
 
     // Partner Shadow Playback Handlers
-    function handlePlayPartnerAudio() {
+    function handlePlayPartnerAudio(forcedIdx) {
       stopActiveShadowAudio();
-      stopSpeech();
-      const currentIdx = state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0;
-      const audioData = partnerShadowAudios[currentIdx] || partnerShadowAudios['_latest'];
+      stopSpeech(false);
+
+      let targetIdx = -1;
+      if (typeof forcedIdx === 'number' && forcedIdx >= 0) {
+        targetIdx = forcedIdx;
+      } else if (typeof partnerShadowAudios['_latestSentenceIdx'] === 'number') {
+        targetIdx = partnerShadowAudios['_latestSentenceIdx'];
+      } else if (state.activeSentenceIdx >= 0 && partnerShadowAudios[state.activeSentenceIdx]) {
+        targetIdx = state.activeSentenceIdx;
+      } else {
+        targetIdx = state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0;
+      }
+
+      const audioData = partnerShadowAudios[targetIdx] || partnerShadowAudios['_latest'];
       if (audioData) {
         if (btnToolbarPartnerAudio) btnToolbarPartnerAudio.classList.remove('has-new');
         if (btnFloatPartnerAudio) btnFloatPartnerAudio.classList.remove('has-new');
+        if (btnSentencePlayPartnerShadow) btnSentencePlayPartnerShadow.classList.remove('has-new');
+
+        // Open Sentence Focus Reader at this exact sentence so partner sees what was recorded
+        state.activeSentenceIdx = targetIdx;
+        highlightActiveSentence(targetIdx);
+        openSentenceFocusModal();
+        updateSentenceFocusDisplay();
+
+        const sentenceEl = document.querySelector(`.bionic-sentence[data-sentence-index="${targetIdx}"]`);
+        if (sentenceEl) {
+          sentenceEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
         playShadowAudioBlob(audioData);
-        showToast('▶ Playing partner shadow recording');
+        showToast(`🎙️ Playing partner recording for Sentence ${targetIdx + 1}`);
       } else {
         showToast('No partner shadow recorded yet.');
       }
@@ -4569,7 +4629,9 @@ REMINDER: All generated content in the JSON above MUST BE STRICTLY AND EXCLUSIVE
     if (btnSentencePlayPartnerShadow) {
       btnSentencePlayPartnerShadow.addEventListener('click', () => {
         btnSentencePlayPartnerShadow.classList.remove('has-new');
-        handlePlayPartnerAudio();
+        const currentIdx = state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0;
+        const targetIdx = partnerShadowAudios[currentIdx] ? currentIdx : partnerShadowAudios['_latestSentenceIdx'];
+        handlePlayPartnerAudio(targetIdx);
       });
     }
 
@@ -4590,26 +4652,31 @@ REMINDER: All generated content in the JSON above MUST BE STRICTLY AND EXCLUSIVE
         if (!action) return;
 
         if (action.type === 'AUDIO_SYNC' && action.payload) {
-          const targetIdx = action.sentenceIdx !== undefined ? action.sentenceIdx : (state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0);
+          const targetIdx = (typeof action.sentenceIdx === 'number' && action.sentenceIdx >= 0)
+            ? action.sentenceIdx
+            : (state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0);
           partnerShadowAudios[targetIdx] = action.payload;
           partnerShadowAudios['_latest'] = action.payload;
+          partnerShadowAudios['_latestSentenceIdx'] = targetIdx;
 
           if (btnToolbarPartnerAudio) {
             btnToolbarPartnerAudio.classList.remove('hidden');
             btnToolbarPartnerAudio.classList.add('has-new');
+            btnToolbarPartnerAudio.title = `Listen to partner shadow for Sentence ${targetIdx + 1}`;
           }
           if (btnFloatPartnerAudio) {
             btnFloatPartnerAudio.classList.remove('hidden');
             btnFloatPartnerAudio.classList.add('has-new');
+            btnFloatPartnerAudio.title = `Listen to partner shadow for Sentence ${targetIdx + 1}`;
           }
           if (btnSentencePlayPartnerShadow) {
             btnSentencePlayPartnerShadow.classList.remove('hidden');
             btnSentencePlayPartnerShadow.classList.add('has-new');
             if (partnerShadowBtnLabel) {
-              partnerShadowBtnLabel.textContent = 'Partner Shadow ▶';
+              partnerShadowBtnLabel.textContent = `Partner (S.${targetIdx + 1}) ▶`;
             }
           }
-          showToast('🎙️ Partner shadowed a sentence! Click "Partner"');
+          showToast(`🎙️ Partner shadowed Sentence ${targetIdx + 1}! Click "Partner" to listen`);
         }
       });
     }
@@ -4624,6 +4691,8 @@ REMINDER: All generated content in the JSON above MUST BE STRICTLY AND EXCLUSIVE
         if (state.isSpeaking && !state.isPaused) {
           playSentence(targetIdx);
         } else {
+          stopAudioStream();
+          if (synth) { try { synth.cancel(); } catch (e) {} }
           state.activeSentenceIdx = targetIdx;
           highlightActiveSentence(targetIdx);
           updateSentenceFocusDisplay();
