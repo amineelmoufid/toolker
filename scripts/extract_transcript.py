@@ -249,6 +249,22 @@ def extract_video(vid, preferred_lang=None, output_dir="public/transcripts"):
     os.makedirs(output_dir, exist_ok=True)
     out_file = os.path.join(output_dir, f"{vid}.json")
     
+    if not preferred_lang:
+        try:
+            import urllib.request
+            o_url = f"https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v={vid}&format=json"
+            with urllib.request.urlopen(o_url, timeout=4) as r:
+                t_data = json.loads(r.read().decode('utf-8'))
+                v_title = t_data.get('title', '')
+                if re.search(r'[éèêëàâôûùçîïœæ]|\b(pourquoi|comment|quand|dans|avec|pour|sens|mal|sans|raison|le|la|les|un|une|des|du|qui|que)\b', v_title, re.I):
+                    preferred_lang = 'fr'
+                elif re.search(r'[\u0600-\u06FF\u0750-\u077F]', v_title):
+                    preferred_lang = 'ar'
+                elif re.search(r'[áéíóúüñ¿¡]|\b(por qué|como|cuando|en|con|para|el|la|los|las|un|una|del)\b', v_title, re.I):
+                    preferred_lang = 'es'
+        except Exception:
+            pass
+
     print(f"--> Extracting transcript for YouTube ID: {vid} (preferred: {preferred_lang})")
     sentences = None
     lang_code = preferred_lang or "en"
