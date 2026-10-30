@@ -1985,6 +1985,21 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     }
   }
 
+  function alignReaderViewToSentence(targetIdx) {
+    if (sentenceFocusModal && !sentenceFocusModal.classList.contains('hidden')) {
+      updateSentenceFocusDisplay();
+      return;
+    }
+    const sentenceEl = document.querySelector(`.bionic-sentence[data-sentence-index="${targetIdx}"]`);
+    if (sentenceEl) {
+      sentenceEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (state.rulerEnabled && readingRuler) {
+        const rect = sentenceEl.getBoundingClientRect();
+        readingRuler.style.top = `${Math.round(rect.top + rect.height / 2)}px`;
+      }
+    }
+  }
+
   function stepPrevSentence() {
     if (!sentenceRegistry || sentenceRegistry.length === 0) return;
     const targetIdx = Math.max(0, (state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0) - 1);
@@ -1997,6 +2012,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       highlightActiveSentence(targetIdx);
       updateSentenceFocusDisplay();
     }
+    alignReaderViewToSentence(targetIdx);
   }
 
   function stepNextSentence() {
@@ -2011,6 +2027,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       highlightActiveSentence(targetIdx);
       updateSentenceFocusDisplay();
     }
+    alignReaderViewToSentence(targetIdx);
   }
 
   function replayCurrentSentence() {
@@ -2019,6 +2036,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     stopAudioStream();
     if (synth) { try { synth.cancel(); } catch (e) {} }
     playSentence(targetIdx);
+    alignReaderViewToSentence(targetIdx);
   }
 
   function toggleSentenceFocusPlay() {
@@ -4874,6 +4892,12 @@ REMINDER: All generated content in the JSON above MUST BE STRICTLY AND EXCLUSIVE
           } else if (e.code === 'ArrowRight') {
             e.preventDefault();
             stepNextSentence();
+          } else if (e.code === 'ArrowUp') {
+            e.preventDefault();
+            replayCurrentSentence();
+          } else if (e.code === 'ArrowDown') {
+            e.preventDefault();
+            toggleSentenceFocusPlay();
           } else if (e.code === 'KeyR' || e.key === 'r' || e.key === 'R') {
             e.preventDefault();
             replayCurrentSentence();
@@ -4891,12 +4915,26 @@ REMINDER: All generated content in the JSON above MUST BE STRICTLY AND EXCLUSIVE
             closeSentenceFocusModal();
           }
           return;
-        } else if (e.code === 'Space' && !isInput) {
-          e.preventDefault();
-          toggleSpeech();
-        } else if ((e.key === 'r' || e.key === 'R') && !isInput && !e.ctrlKey && !e.metaKey && !e.altKey) {
-          setReadingRulerActive(!state.rulerEnabled);
-          showToast(state.rulerEnabled ? 'Reading ruler enabled' : 'Reading ruler disabled');
+        } else if (!isInput) {
+          if (e.code === 'ArrowRight') {
+            e.preventDefault();
+            stepNextSentence();
+          } else if (e.code === 'ArrowLeft') {
+            e.preventDefault();
+            stepPrevSentence();
+          } else if (e.code === 'ArrowUp') {
+            e.preventDefault();
+            replayCurrentSentence();
+          } else if (e.code === 'ArrowDown') {
+            e.preventDefault();
+            toggleSpeech();
+          } else if (e.code === 'Space') {
+            e.preventDefault();
+            toggleSpeech();
+          } else if ((e.key === 'r' || e.key === 'R') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+            setReadingRulerActive(!state.rulerEnabled);
+            showToast(state.rulerEnabled ? 'Reading ruler enabled' : 'Reading ruler disabled');
+          }
         }
       });
     }
