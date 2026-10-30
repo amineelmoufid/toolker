@@ -824,7 +824,6 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     const htmlBlocks = [];
     let currentParagraphLines = [];
     let globalWordCounter = 0;
-    let globalSentenceIndex = 0;
 
     function flushParagraph() {
       if (currentParagraphLines.length === 0) return;
@@ -833,8 +832,8 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
 
       const sentences = extractSentences(paragraphRaw);
       const sentenceHtmlParts = sentences.map(sentenceText => {
-        const sentenceIdx = globalSentenceIndex++;
-        const spokenText = sanitizeForSpeech(sentenceText);
+        const sentenceIdx = sentenceRegistry.length;
+        const spokenText = sanitizeForSpeech(sentenceText) || sentenceText.trim();
 
         const words = sentenceText.split(/\s+/).filter(Boolean);
         const bionicWords = words.map(w => {
@@ -844,15 +843,13 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
         });
         const bionicHtml = bionicWords.join(' ');
 
-        // Register for TTS and Sentence Focus
-        if (spokenText) {
-          sentenceRegistry.push({
-            index: sentenceIdx,
-            text: spokenText,
-            bionicHtml: bionicHtml,
-            rawText: sentenceText
-          });
-        }
+        // Register for TTS and Sentence Focus (guarantees strict 1:1 index alignment)
+        sentenceRegistry.push({
+          index: sentenceIdx,
+          text: spokenText,
+          bionicHtml: bionicHtml,
+          rawText: sentenceText
+        });
 
         return `<span class="bionic-sentence" data-sentence-index="${sentenceIdx}" title="1-click: Play / Replay | Double-click: Sentence Focus Reader">${bionicHtml}</span>`;
       });
@@ -861,8 +858,8 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     }
 
     function formatHeadingOrQuote(str, tag) {
-      const sentenceIdx = globalSentenceIndex++;
-      const spokenText = sanitizeForSpeech(str);
+      const sentenceIdx = sentenceRegistry.length;
+      const spokenText = sanitizeForSpeech(str) || str.trim();
       const words = str.split(/\s+/).filter(Boolean);
       const bionicWords = words.map(w => {
         const b = bionifyWord(w, globalWordCounter, cadence, intensity);
@@ -871,14 +868,12 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       });
       const bionicHtml = bionicWords.join(' ');
 
-      if (spokenText) {
-        sentenceRegistry.push({
-          index: sentenceIdx,
-          text: spokenText,
-          bionicHtml: bionicHtml,
-          rawText: str
-        });
-      }
+      sentenceRegistry.push({
+        index: sentenceIdx,
+        text: spokenText,
+        bionicHtml: bionicHtml,
+        rawText: str
+      });
 
       return `<${tag}><span class="bionic-sentence" data-sentence-index="${sentenceIdx}" title="1-click: Play / Replay | Double-click: Sentence Focus Reader">${bionicHtml}</span></${tag}>`;
     }
@@ -898,17 +893,13 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
         return;
       }
 
-      if (trimmed.startsWith('# ')) {
+      // Headings 1 through 6 (# through ######)
+      const headingMatch = trimmed.match(/^(#{1,6})\s+(.*)$/);
+      if (headingMatch) {
         flushParagraph();
-        htmlBlocks.push(formatHeadingOrQuote(trimmed.slice(2), 'h1'));
-        return;
-      } else if (trimmed.startsWith('## ')) {
-        flushParagraph();
-        htmlBlocks.push(formatHeadingOrQuote(trimmed.slice(3), 'h2'));
-        return;
-      } else if (trimmed.startsWith('### ')) {
-        flushParagraph();
-        htmlBlocks.push(formatHeadingOrQuote(trimmed.slice(4), 'h3'));
+        const level = headingMatch[1].length;
+        const headingText = headingMatch[2];
+        htmlBlocks.push(formatHeadingOrQuote(headingText, `h${level}`));
         return;
       }
 
@@ -920,9 +911,9 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
 
       if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
         flushParagraph();
-        const sentenceIdx = globalSentenceIndex++;
+        const sentenceIdx = sentenceRegistry.length;
         const itemText = trimmed.slice(2);
-        const spokenText = sanitizeForSpeech(itemText);
+        const spokenText = sanitizeForSpeech(itemText) || itemText.trim();
         const words = itemText.split(/\s+/).filter(Boolean);
         const bionicWords = words.map(w => {
           const b = bionifyWord(w, globalWordCounter, cadence, intensity);
@@ -930,15 +921,37 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
           return b;
         });
         const bionicHtml = bionicWords.join(' ');
-        if (spokenText) {
-          sentenceRegistry.push({
-            index: sentenceIdx,
-            text: spokenText,
-            bionicHtml: bionicHtml,
-            rawText: itemText
-          });
-        }
+        sentenceRegistry.push({
+          index: sentenceIdx,
+          text: spokenText,
+          bionicHtml: bionicHtml,
+          rawText: itemText
+        });
         htmlBlocks.push(`<ul><li><span class="bionic-sentence" data-sentence-index="${sentenceIdx}" title="1-click: Play / Replay | Double-click: Sentence Focus Reader">${bionicHtml}</span></li></ul>`);
+        return;
+      }
+
+      // Numbered lists (1. 2. etc.)
+      const olMatch = trimmed.match(/^(\d+\.)\s+(.*)$/);
+      if (olMatch) {
+        flushParagraph();
+        const sentenceIdx = sentenceRegistry.length;
+        const itemText = olMatch[2];
+        const spokenText = sanitizeForSpeech(itemText) || itemText.trim();
+        const words = itemText.split(/\s+/).filter(Boolean);
+        const bionicWords = words.map(w => {
+          const b = bionifyWord(w, globalWordCounter, cadence, intensity);
+          globalWordCounter++;
+          return b;
+        });
+        const bionicHtml = bionicWords.join(' ');
+        sentenceRegistry.push({
+          index: sentenceIdx,
+          text: spokenText,
+          bionicHtml: bionicHtml,
+          rawText: itemText
+        });
+        htmlBlocks.push(`<ol><li><span class="bionic-sentence" data-sentence-index="${sentenceIdx}" title="1-click: Play / Replay | Double-click: Sentence Focus Reader">${bionicHtml}</span></li></ol>`);
         return;
       }
 
@@ -1750,21 +1763,25 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
      8. Sentence Focus TTS Reader & Audio Player
      -------------------------------------------------------------------------- */
 
-  function openSentenceFocusModal() {
+  function openSentenceFocusModal(targetIdx) {
     const text = rawInput.value.trim();
     if (!text || !sentenceRegistry || sentenceRegistry.length === 0) {
       showToast('Please enter text first to use Sentence Focus.');
       return;
     }
 
-    state.sentenceFocusActive = true;
-    if (state.activeSentenceIdx < 0 || state.activeSentenceIdx >= sentenceRegistry.length) {
+    if (typeof targetIdx === 'number' && !isNaN(targetIdx)) {
+      state.activeSentenceIdx = Math.max(0, Math.min(targetIdx, sentenceRegistry.length - 1));
+    } else if (state.activeSentenceIdx < 0 || state.activeSentenceIdx >= sentenceRegistry.length) {
       state.activeSentenceIdx = 0;
     }
 
-    updateSentenceFocusDisplay();
+    state.sentenceFocusActive = true;
+    // Remove 'hidden' BEFORE updateSentenceFocusDisplay() so the display update guard does not abort
     sentenceFocusModal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
+    updateSentenceFocusDisplay();
+    highlightActiveSentence(state.activeSentenceIdx);
   }
 
   function closeSentenceFocusModal() {
@@ -4400,7 +4417,7 @@ REMINDER: All generated content in the JSON above MUST BE STRICTLY AND EXCLUSIVE
         if (e.target.closest('#btnFloatPlay') || e.target.closest('#btnFloatStop')) {
           return;
         }
-        openSentenceFocusModal();
+        openSentenceFocusModal(state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0);
       });
     }
 
@@ -4492,11 +4509,8 @@ REMINDER: All generated content in the JSON above MUST BE STRICTLY AND EXCLUSIVE
         const sIdx = parseInt(sentenceEl.dataset.sentenceIndex, 10);
         stopActiveShadowAudio();
         stopSpeech();
-        state.activeSentenceIdx = sIdx;
-        openSentenceFocusModal();
-        setTimeout(() => {
-          playSentence(sIdx);
-        }, 60);
+        openSentenceFocusModal(sIdx);
+        playSentence(sIdx);
       }
     });
 
@@ -4597,12 +4611,12 @@ REMINDER: All generated content in the JSON above MUST BE STRICTLY AND EXCLUSIVE
     if (btnOpenSentenceFocus) {
       btnOpenSentenceFocus.addEventListener('click', e => {
         e.stopPropagation();
-        openSentenceFocusModal();
+        openSentenceFocusModal(state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0);
       });
       btnOpenSentenceFocus.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          openSentenceFocusModal();
+          openSentenceFocusModal(state.activeSentenceIdx >= 0 ? state.activeSentenceIdx : 0);
         }
       });
     }
