@@ -91,6 +91,7 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
   const [syncMessage, setSyncMessage] = useState<string>('');
 
   const [syncedSubtitles, setSyncedSubtitles] = useState<SubtitleLine[] | null>(null);
+  const [isEmbedRestricted, setIsEmbedRestricted] = useState<boolean>(false);
 
   const [hasExtension, setHasExtension] = useState<boolean>(false);
 
@@ -304,32 +305,23 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
 
 
 
+    setIsEmbedRestricted(false);
     let detectedTitle = customTitle.trim();
 
-
-
     try {
-
       const oembedRes = await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${ytId}&format=json`);
-
       if (oembedRes.ok) {
-
         const oembedData = await oembedRes.json();
-
         if (oembedData.title) {
-
           detectedTitle = oembedData.title;
-
           setCustomTitle(oembedData.title);
-
         }
-
+      } else if (oembedRes.status === 401) {
+        console.warn("YouTube oEmbed returned 401: Video embedding restricted by creator (Error 150)");
+        setIsEmbedRestricted(true);
       }
-
     } catch (e) {
-
       console.warn("oEmbed fetch notice:", e);
-
     }
 
 
@@ -362,11 +354,9 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
   // Instant fetch & sync when YouTube link is entered (debounced)
 
   const handleUrlChange = (newUrl: string) => {
-
     setCustomUrl(newUrl);
-
     setImportError('');
-
+    setIsEmbedRestricted(false);
     if (urlDebounceRef.current) clearTimeout(urlDebounceRef.current);
 
 
@@ -918,10 +908,22 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
                 </button>
 
               </div>
-
             )}
 
-
+            {/* Creator Embed Restriction Alert */}
+            {isEmbedRestricted && (
+              <div className="p-3 rounded border-2 border-[#1c1d20] bg-[#3a201c] text-[#f8a896] text-xs font-mono shadow-[2px_2px_0px_#18191c] flex items-start gap-2.5">
+                <span className="text-base leading-none">⚠️</span>
+                <div className="flex-1 leading-snug">
+                  <div className="font-bold text-[#ffb4a2] uppercase tracking-wide">
+                    External Playback Restricted by Video Owner (Error 150)
+                  </div>
+                  <div className="text-[11px] opacity-90 mt-1">
+                    Subtitles and timing are 100% extracted. You can practice in the studio using the Synced YouTube Pop-up alongside Toolker!
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Instant Subtitle Sync Status Card */}
 
