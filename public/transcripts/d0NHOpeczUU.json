@@ -1,0 +1,1096 @@
+{
+  "ok": true,
+  "videoId": "d0NHOpeczUU",
+  "language": "en",
+  "trackKind": "standard",
+  "subtitles": [
+    {
+      "id": "cue-1",
+      "start": 0.0,
+      "end": 4.47,
+      "text": "Transcriber: Dana Retová Reviewer: Debora Policarpo Getting access to great ideas hasn't always been easy.",
+      "words": [
+        {
+          "text": "Transcriber:",
+          "start": 0.0,
+          "end": 1.17
+        },
+        {
+          "text": "Dana",
+          "start": 1.17,
+          "end": 2.34
+        },
+        {
+          "text": "Retová",
+          "start": 2.34,
+          "end": 3.51
+        },
+        {
+          "text": "Reviewer:",
+          "start": 3.51,
+          "end": 4.68
+        },
+        {
+          "text": "Debora",
+          "start": 4.68,
+          "end": 5.85
+        },
+        {
+          "text": "Policarpo",
+          "start": 5.85,
+          "end": 7.02
+        },
+        {
+          "text": "Getting",
+          "start": 7.02,
+          "end": 7.27
+        },
+        {
+          "text": "access",
+          "start": 7.27,
+          "end": 7.52
+        },
+        {
+          "text": "to",
+          "start": 7.52,
+          "end": 7.77
+        },
+        {
+          "text": "great",
+          "start": 7.77,
+          "end": 8.02
+        },
+        {
+          "text": "ideas",
+          "start": 8.02,
+          "end": 8.27
+        },
+        {
+          "text": "hasn't",
+          "start": 8.27,
+          "end": 8.52
+        },
+        {
+          "text": "always",
+          "start": 8.52,
+          "end": 8.77
+        },
+        {
+          "text": "been",
+          "start": 8.77,
+          "end": 9.02
+        },
+        {
+          "text": "easy.",
+          "start": 9.02,
+          "end": 9.27
+        }
+      ]
+    },
+    {
+      "id": "cue-2",
+      "start": 4.47,
+      "end": 10.43,
+      "text": "Back in the day, you would only be in the loop if you were literate, educated, rich, and a man.",
+      "words": [
+        {
+          "text": "Back",
+          "start": 4.47,
+          "end": 4.7
+        },
+        {
+          "text": "in",
+          "start": 4.7,
+          "end": 4.93
+        },
+        {
+          "text": "the",
+          "start": 4.93,
+          "end": 5.16
+        },
+        {
+          "text": "day,",
+          "start": 5.16,
+          "end": 5.39
+        },
+        {
+          "text": "you",
+          "start": 5.39,
+          "end": 5.62
+        },
+        {
+          "text": "would",
+          "start": 5.62,
+          "end": 5.85
+        },
+        {
+          "text": "only",
+          "start": 5.85,
+          "end": 6.08
+        },
+        {
+          "text": "be",
+          "start": 6.08,
+          "end": 6.31
+        },
+        {
+          "text": "in",
+          "start": 6.31,
+          "end": 6.54
+        },
+        {
+          "text": "the",
+          "start": 6.54,
+          "end": 6.77
+        },
+        {
+          "text": "loop",
+          "start": 6.77,
+          "end": 7.0
+        },
+        {
+          "text": "if",
+          "start": 7.02,
+          "end": 7.4
+        },
+        {
+          "text": "you",
+          "start": 7.4,
+          "end": 7.78
+        },
+        {
+          "text": "were",
+          "start": 7.78,
+          "end": 8.16
+        },
+        {
+          "text": "literate,",
+          "start": 8.16,
+          "end": 8.54
+        },
+        {
+          "text": "educated,",
+          "start": 8.54,
+          "end": 8.92
+        },
+        {
+          "text": "rich,",
+          "start": 8.92,
+          "end": 9.3
+        },
+        {
+          "text": "and",
+          "start": 9.3,
+          "end": 9.68
+        },
+        {
+          "text": "a",
+          "start": 9.68,
+          "end": 10.06
+        },
+        {
+          "text": "man.",
+          "start": 10.06,
+          "end": 10.44
+        }
+      ]
+    },
+    {
+      "id": "cue-3",
+      "start": 10.43,
+      "end": 12.08,
+      "text": "Good thing times have changed.",
+      "words": [
+        {
+          "text": "Good",
+          "start": 10.43,
+          "end": 10.76
+        },
+        {
+          "text": "thing",
+          "start": 10.76,
+          "end": 11.09
+        },
+        {
+          "text": "times",
+          "start": 11.09,
+          "end": 11.42
+        },
+        {
+          "text": "have",
+          "start": 11.42,
+          "end": 11.75
+        },
+        {
+          "text": "changed.",
+          "start": 11.75,
+          "end": 12.08
+        }
+      ]
+    },
+    {
+      "id": "cue-4",
+      "start": 12.1,
+      "end": 14.94,
+      "text": "The internet has made sharing ideas a breeze.",
+      "words": [
+        {
+          "text": "The",
+          "start": 12.1,
+          "end": 12.46
+        },
+        {
+          "text": "internet",
+          "start": 12.46,
+          "end": 12.82
+        },
+        {
+          "text": "has",
+          "start": 12.82,
+          "end": 13.18
+        },
+        {
+          "text": "made",
+          "start": 13.18,
+          "end": 13.54
+        },
+        {
+          "text": "sharing",
+          "start": 13.54,
+          "end": 13.89
+        },
+        {
+          "text": "ideas",
+          "start": 13.89,
+          "end": 14.25
+        },
+        {
+          "text": "a",
+          "start": 14.25,
+          "end": 14.61
+        },
+        {
+          "text": "breeze.",
+          "start": 14.61,
+          "end": 14.96
+        }
+      ]
+    },
+    {
+      "id": "cue-5",
+      "start": 14.94,
+      "end": 17.82,
+      "text": "And no one is doing it better than TED.",
+      "words": [
+        {
+          "text": "And",
+          "start": 14.94,
+          "end": 15.26
+        },
+        {
+          "text": "no",
+          "start": 15.26,
+          "end": 15.58
+        },
+        {
+          "text": "one",
+          "start": 15.58,
+          "end": 15.9
+        },
+        {
+          "text": "is",
+          "start": 15.9,
+          "end": 16.22
+        },
+        {
+          "text": "doing",
+          "start": 16.22,
+          "end": 16.54
+        },
+        {
+          "text": "it",
+          "start": 16.54,
+          "end": 16.86
+        },
+        {
+          "text": "better",
+          "start": 16.86,
+          "end": 17.18
+        },
+        {
+          "text": "than",
+          "start": 17.18,
+          "end": 17.5
+        },
+        {
+          "text": "TED.",
+          "start": 17.5,
+          "end": 17.82
+        }
+      ]
+    },
+    {
+      "id": "cue-6",
+      "start": 17.82,
+      "end": 19.82,
+      "text": "No, not you, Ted!",
+      "words": [
+        {
+          "text": "No,",
+          "start": 17.82,
+          "end": 18.32
+        },
+        {
+          "text": "not",
+          "start": 18.32,
+          "end": 18.82
+        },
+        {
+          "text": "you,",
+          "start": 18.82,
+          "end": 19.32
+        },
+        {
+          "text": "Ted!",
+          "start": 19.32,
+          "end": 19.82
+        }
+      ]
+    },
+    {
+      "id": "cue-7",
+      "start": 19.82,
+      "end": 24.58,
+      "text": "I'm talking about the non-profit organization that's big on spreading awesome ideas.",
+      "words": [
+        {
+          "text": "I'm",
+          "start": 19.82,
+          "end": 20.19
+        },
+        {
+          "text": "talking",
+          "start": 20.19,
+          "end": 20.56
+        },
+        {
+          "text": "about",
+          "start": 20.56,
+          "end": 20.93
+        },
+        {
+          "text": "the",
+          "start": 20.93,
+          "end": 21.3
+        },
+        {
+          "text": "non-profit",
+          "start": 21.3,
+          "end": 21.67
+        },
+        {
+          "text": "organization",
+          "start": 21.67,
+          "end": 22.04
+        },
+        {
+          "text": "that's",
+          "start": 22.02,
+          "end": 22.45
+        },
+        {
+          "text": "big",
+          "start": 22.45,
+          "end": 22.88
+        },
+        {
+          "text": "on",
+          "start": 22.88,
+          "end": 23.31
+        },
+        {
+          "text": "spreading",
+          "start": 23.31,
+          "end": 23.74
+        },
+        {
+          "text": "awesome",
+          "start": 23.74,
+          "end": 24.17
+        },
+        {
+          "text": "ideas.",
+          "start": 24.17,
+          "end": 24.6
+        }
+      ]
+    },
+    {
+      "id": "cue-8",
+      "start": 24.58,
+      "end": 31.37,
+      "text": "Twice a year, TED holds this conference, where thought leaders from around the world give some mind-blowing talks.",
+      "words": [
+        {
+          "text": "Twice",
+          "start": 24.58,
+          "end": 24.93
+        },
+        {
+          "text": "a",
+          "start": 24.93,
+          "end": 25.28
+        },
+        {
+          "text": "year,",
+          "start": 25.28,
+          "end": 25.63
+        },
+        {
+          "text": "TED",
+          "start": 25.63,
+          "end": 25.98
+        },
+        {
+          "text": "holds",
+          "start": 25.98,
+          "end": 26.33
+        },
+        {
+          "text": "this",
+          "start": 26.33,
+          "end": 26.68
+        },
+        {
+          "text": "conference,",
+          "start": 26.68,
+          "end": 27.03
+        },
+        {
+          "text": "where",
+          "start": 27.02,
+          "end": 27.29
+        },
+        {
+          "text": "thought",
+          "start": 27.29,
+          "end": 27.56
+        },
+        {
+          "text": "leaders",
+          "start": 27.56,
+          "end": 27.83
+        },
+        {
+          "text": "from",
+          "start": 27.83,
+          "end": 28.1
+        },
+        {
+          "text": "around",
+          "start": 28.1,
+          "end": 28.37
+        },
+        {
+          "text": "the",
+          "start": 28.37,
+          "end": 28.64
+        },
+        {
+          "text": "world",
+          "start": 28.64,
+          "end": 28.91
+        },
+        {
+          "text": "give",
+          "start": 28.89,
+          "end": 29.51
+        },
+        {
+          "text": "some",
+          "start": 29.51,
+          "end": 30.13
+        },
+        {
+          "text": "mind-blowing",
+          "start": 30.13,
+          "end": 30.75
+        },
+        {
+          "text": "talks.",
+          "start": 30.75,
+          "end": 31.37
+        }
+      ]
+    },
+    {
+      "id": "cue-9",
+      "start": 31.38,
+      "end": 34.86,
+      "text": "Then TED sticks them online so you can watch them for free.",
+      "words": [
+        {
+          "text": "Then",
+          "start": 31.38,
+          "end": 31.67
+        },
+        {
+          "text": "TED",
+          "start": 31.67,
+          "end": 31.96
+        },
+        {
+          "text": "sticks",
+          "start": 31.96,
+          "end": 32.25
+        },
+        {
+          "text": "them",
+          "start": 32.25,
+          "end": 32.54
+        },
+        {
+          "text": "online",
+          "start": 32.54,
+          "end": 32.83
+        },
+        {
+          "text": "so",
+          "start": 32.83,
+          "end": 33.12
+        },
+        {
+          "text": "you",
+          "start": 33.12,
+          "end": 33.41
+        },
+        {
+          "text": "can",
+          "start": 33.41,
+          "end": 33.7
+        },
+        {
+          "text": "watch",
+          "start": 33.7,
+          "end": 33.99
+        },
+        {
+          "text": "them",
+          "start": 33.99,
+          "end": 34.28
+        },
+        {
+          "text": "for",
+          "start": 34.28,
+          "end": 34.57
+        },
+        {
+          "text": "free.",
+          "start": 34.57,
+          "end": 34.86
+        }
+      ]
+    },
+    {
+      "id": "cue-10",
+      "start": 34.9,
+      "end": 42.93,
+      "text": "Volunteers translate the videos, which means anyone can be inspired by the likes of Bill Gates, Malcolm Gladwell or Jane Goodall.",
+      "words": [
+        {
+          "text": "Volunteers",
+          "start": 34.9,
+          "end": 35.24
+        },
+        {
+          "text": "translate",
+          "start": 35.24,
+          "end": 35.58
+        },
+        {
+          "text": "the",
+          "start": 35.58,
+          "end": 35.92
+        },
+        {
+          "text": "videos,",
+          "start": 35.92,
+          "end": 36.26
+        },
+        {
+          "text": "which",
+          "start": 36.26,
+          "end": 36.6
+        },
+        {
+          "text": "means",
+          "start": 36.6,
+          "end": 36.94
+        },
+        {
+          "text": "anyone",
+          "start": 36.94,
+          "end": 37.28
+        },
+        {
+          "text": "can",
+          "start": 37.28,
+          "end": 37.62
+        },
+        {
+          "text": "be",
+          "start": 37.62,
+          "end": 38.03
+        },
+        {
+          "text": "inspired",
+          "start": 38.03,
+          "end": 38.44
+        },
+        {
+          "text": "by",
+          "start": 38.44,
+          "end": 38.85
+        },
+        {
+          "text": "the",
+          "start": 38.85,
+          "end": 39.26
+        },
+        {
+          "text": "likes",
+          "start": 39.26,
+          "end": 39.67
+        },
+        {
+          "text": "of",
+          "start": 39.67,
+          "end": 40.08
+        },
+        {
+          "text": "Bill",
+          "start": 40.08,
+          "end": 40.49
+        },
+        {
+          "text": "Gates,",
+          "start": 40.49,
+          "end": 40.9
+        },
+        {
+          "text": "Malcolm",
+          "start": 40.9,
+          "end": 41.31
+        },
+        {
+          "text": "Gladwell",
+          "start": 41.31,
+          "end": 41.72
+        },
+        {
+          "text": "or",
+          "start": 41.72,
+          "end": 42.13
+        },
+        {
+          "text": "Jane",
+          "start": 42.13,
+          "end": 42.54
+        },
+        {
+          "text": "Goodall.",
+          "start": 42.54,
+          "end": 42.95
+        }
+      ]
+    },
+    {
+      "id": "cue-11",
+      "start": 42.93,
+      "end": 44.61,
+      "text": "So what is TEDx?",
+      "words": [
+        {
+          "text": "So",
+          "start": 42.93,
+          "end": 43.35
+        },
+        {
+          "text": "what",
+          "start": 43.35,
+          "end": 43.77
+        },
+        {
+          "text": "is",
+          "start": 43.77,
+          "end": 44.19
+        },
+        {
+          "text": "TEDx?",
+          "start": 44.19,
+          "end": 44.61
+        }
+      ]
+    },
+    {
+      "id": "cue-12",
+      "start": 44.87,
+      "end": 55.5,
+      "text": "Is a way for you to run a mini TED-style event in your own town, hold talks around issues that matter to your community, free from corporate, political and religious agendas.",
+      "words": [
+        {
+          "text": "Is",
+          "start": 44.87,
+          "end": 45.12
+        },
+        {
+          "text": "a",
+          "start": 45.12,
+          "end": 45.37
+        },
+        {
+          "text": "way",
+          "start": 45.37,
+          "end": 45.62
+        },
+        {
+          "text": "for",
+          "start": 45.62,
+          "end": 45.87
+        },
+        {
+          "text": "you",
+          "start": 45.87,
+          "end": 46.12
+        },
+        {
+          "text": "to",
+          "start": 46.12,
+          "end": 46.37
+        },
+        {
+          "text": "run",
+          "start": 46.37,
+          "end": 46.62
+        },
+        {
+          "text": "a",
+          "start": 46.62,
+          "end": 46.87
+        },
+        {
+          "text": "mini",
+          "start": 46.87,
+          "end": 47.12
+        },
+        {
+          "text": "TED-style",
+          "start": 47.12,
+          "end": 47.37
+        },
+        {
+          "text": "event",
+          "start": 47.37,
+          "end": 47.62
+        },
+        {
+          "text": "in",
+          "start": 47.62,
+          "end": 47.87
+        },
+        {
+          "text": "your",
+          "start": 47.87,
+          "end": 48.12
+        },
+        {
+          "text": "own",
+          "start": 48.12,
+          "end": 48.37
+        },
+        {
+          "text": "town,",
+          "start": 48.37,
+          "end": 48.62
+        },
+        {
+          "text": "hold",
+          "start": 48.62,
+          "end": 48.98
+        },
+        {
+          "text": "talks",
+          "start": 48.98,
+          "end": 49.34
+        },
+        {
+          "text": "around",
+          "start": 49.34,
+          "end": 49.7
+        },
+        {
+          "text": "issues",
+          "start": 49.7,
+          "end": 50.06
+        },
+        {
+          "text": "that",
+          "start": 50.06,
+          "end": 50.42
+        },
+        {
+          "text": "matter",
+          "start": 50.42,
+          "end": 50.78
+        },
+        {
+          "text": "to",
+          "start": 50.78,
+          "end": 51.14
+        },
+        {
+          "text": "your",
+          "start": 51.14,
+          "end": 51.5
+        },
+        {
+          "text": "community,",
+          "start": 51.5,
+          "end": 51.86
+        },
+        {
+          "text": "free",
+          "start": 51.82,
+          "end": 52.35
+        },
+        {
+          "text": "from",
+          "start": 52.35,
+          "end": 52.88
+        },
+        {
+          "text": "corporate,",
+          "start": 52.88,
+          "end": 53.41
+        },
+        {
+          "text": "political",
+          "start": 53.41,
+          "end": 53.94
+        },
+        {
+          "text": "and",
+          "start": 53.94,
+          "end": 54.47
+        },
+        {
+          "text": "religious",
+          "start": 54.47,
+          "end": 55.0
+        },
+        {
+          "text": "agendas.",
+          "start": 55.0,
+          "end": 55.53
+        }
+      ]
+    },
+    {
+      "id": "cue-13",
+      "start": 55.5,
+      "end": 56.64,
+      "text": "So take part!",
+      "words": [
+        {
+          "text": "So",
+          "start": 55.5,
+          "end": 55.88
+        },
+        {
+          "text": "take",
+          "start": 55.88,
+          "end": 56.26
+        },
+        {
+          "text": "part!",
+          "start": 56.26,
+          "end": 56.64
+        }
+      ]
+    },
+    {
+      "id": "cue-14",
+      "start": 56.64,
+      "end": 63.95,
+      "text": "Don't stop watching videos at TED.com, keep an eye for your nearest TEDx events and if you are up to it, apply to start your own.",
+      "words": [
+        {
+          "text": "Don't",
+          "start": 56.64,
+          "end": 57.02
+        },
+        {
+          "text": "stop",
+          "start": 57.02,
+          "end": 57.4
+        },
+        {
+          "text": "watching",
+          "start": 57.4,
+          "end": 57.78
+        },
+        {
+          "text": "videos",
+          "start": 57.78,
+          "end": 58.16
+        },
+        {
+          "text": "at",
+          "start": 58.16,
+          "end": 58.54
+        },
+        {
+          "text": "TED.com,",
+          "start": 58.54,
+          "end": 58.92
+        },
+        {
+          "text": "keep",
+          "start": 58.94,
+          "end": 59.18
+        },
+        {
+          "text": "an",
+          "start": 59.18,
+          "end": 59.42
+        },
+        {
+          "text": "eye",
+          "start": 59.42,
+          "end": 59.66
+        },
+        {
+          "text": "for",
+          "start": 59.66,
+          "end": 59.9
+        },
+        {
+          "text": "your",
+          "start": 59.9,
+          "end": 60.14
+        },
+        {
+          "text": "nearest",
+          "start": 60.14,
+          "end": 60.38
+        },
+        {
+          "text": "TEDx",
+          "start": 60.38,
+          "end": 60.62
+        },
+        {
+          "text": "events",
+          "start": 60.62,
+          "end": 60.86
+        },
+        {
+          "text": "and",
+          "start": 60.86,
+          "end": 61.1
+        },
+        {
+          "text": "if",
+          "start": 61.09,
+          "end": 61.35
+        },
+        {
+          "text": "you",
+          "start": 61.35,
+          "end": 61.61
+        },
+        {
+          "text": "are",
+          "start": 61.61,
+          "end": 61.87
+        },
+        {
+          "text": "up",
+          "start": 61.87,
+          "end": 62.13
+        },
+        {
+          "text": "to",
+          "start": 62.13,
+          "end": 62.39
+        },
+        {
+          "text": "it,",
+          "start": 62.39,
+          "end": 62.65
+        },
+        {
+          "text": "apply",
+          "start": 62.65,
+          "end": 62.91
+        },
+        {
+          "text": "to",
+          "start": 62.91,
+          "end": 63.17
+        },
+        {
+          "text": "start",
+          "start": 63.17,
+          "end": 63.43
+        },
+        {
+          "text": "your",
+          "start": 63.43,
+          "end": 63.69
+        },
+        {
+          "text": "own.",
+          "start": 63.69,
+          "end": 63.95
+        }
+      ]
+    },
+    {
+      "id": "cue-15",
+      "start": 63.98,
+      "end": 64.9,
+      "text": "TED.",
+      "words": [
+        {
+          "text": "TED.",
+          "start": 63.98,
+          "end": 64.9
+        }
+      ]
+    },
+    {
+      "id": "cue-16",
+      "start": 64.9,
+      "end": 67.66,
+      "text": "Ideas worth spreading.",
+      "words": [
+        {
+          "text": "Ideas",
+          "start": 64.9,
+          "end": 65.82
+        },
+        {
+          "text": "worth",
+          "start": 65.82,
+          "end": 66.74
+        },
+        {
+          "text": "spreading.",
+          "start": 66.74,
+          "end": 67.66
+        }
+      ]
+    }
+  ]
+}

@@ -55,9 +55,12 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           return;
         }
 
-        // 2. Select best track: prioritize ASR / spoken language
-        const selectedTrack = captionTracks.find(t => t.kind === 'asr') ||
-                              captionTracks.find(t => t.isDefault) ||
+        // 2. Select best authentic track in original spoken language
+        const authenticTracks = captionTracks.filter(t => !t.vssId || !t.vssId.startsWith('t.'));
+        const selectedTrack = authenticTracks.find(t => t.isDefault && t.kind !== 'asr') ||
+                              authenticTracks.find(t => t.isDefault) ||
+                              authenticTracks.find(t => t.kind !== 'asr') ||
+                              captionTracks.find(t => t.kind === 'asr') ||
                               captionTracks[0];
 
         let trackUrl = selectedTrack.baseUrl;

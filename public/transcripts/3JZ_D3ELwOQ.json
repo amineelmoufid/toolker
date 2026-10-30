@@ -1,0 +1,4163 @@
+{
+  "ok": true,
+  "videoId": "3JZ_D3ELwOQ",
+  "language": "en",
+  "trackKind": "asr",
+  "subtitles": [
+    {
+      "id": "cue-1",
+      "start": 3.12,
+      "end": 17.55,
+      "text": "Do you guys go to the gym I go to the gym but you already knew that but I don't think I'll ever be as buff as this kangaroo look at that oh my.",
+      "words": [
+        {
+          "text": "Do",
+          "start": 3.12,
+          "end": 3.51
+        },
+        {
+          "text": "you",
+          "start": 3.51,
+          "end": 3.9
+        },
+        {
+          "text": "guys",
+          "start": 3.9,
+          "end": 4.29
+        },
+        {
+          "text": "go",
+          "start": 4.29,
+          "end": 4.68
+        },
+        {
+          "text": "to",
+          "start": 4.68,
+          "end": 5.07
+        },
+        {
+          "text": "the",
+          "start": 5.07,
+          "end": 5.46
+        },
+        {
+          "text": "gym",
+          "start": 5.46,
+          "end": 5.85
+        },
+        {
+          "text": "I",
+          "start": 5.85,
+          "end": 6.24
+        },
+        {
+          "text": "go",
+          "start": 6.24,
+          "end": 6.63
+        },
+        {
+          "text": "to",
+          "start": 6.63,
+          "end": 7.02
+        },
+        {
+          "text": "the",
+          "start": 7.02,
+          "end": 7.41
+        },
+        {
+          "text": "gym",
+          "start": 7.41,
+          "end": 7.66
+        },
+        {
+          "text": "but",
+          "start": 7.66,
+          "end": 7.91
+        },
+        {
+          "text": "you",
+          "start": 7.91,
+          "end": 8.16
+        },
+        {
+          "text": "already",
+          "start": 8.16,
+          "end": 8.41
+        },
+        {
+          "text": "knew",
+          "start": 8.41,
+          "end": 8.52
+        },
+        {
+          "text": "that",
+          "start": 8.52,
+          "end": 9.24
+        },
+        {
+          "text": "but",
+          "start": 9.24,
+          "end": 9.96
+        },
+        {
+          "text": "I",
+          "start": 9.96,
+          "end": 10.68
+        },
+        {
+          "text": "don't",
+          "start": 10.68,
+          "end": 10.93
+        },
+        {
+          "text": "think",
+          "start": 10.93,
+          "end": 11.18
+        },
+        {
+          "text": "I'll",
+          "start": 11.18,
+          "end": 11.43
+        },
+        {
+          "text": "ever",
+          "start": 11.43,
+          "end": 11.68
+        },
+        {
+          "text": "be",
+          "start": 11.68,
+          "end": 11.93
+        },
+        {
+          "text": "as",
+          "start": 11.93,
+          "end": 12.18
+        },
+        {
+          "text": "buff",
+          "start": 12.18,
+          "end": 12.43
+        },
+        {
+          "text": "as",
+          "start": 12.43,
+          "end": 12.68
+        },
+        {
+          "text": "this",
+          "start": 12.68,
+          "end": 13.02
+        },
+        {
+          "text": "kangaroo",
+          "start": 13.02,
+          "end": 13.27
+        },
+        {
+          "text": "look",
+          "start": 13.27,
+          "end": 14.76
+        },
+        {
+          "text": "at",
+          "start": 14.76,
+          "end": 16.8
+        },
+        {
+          "text": "that",
+          "start": 16.8,
+          "end": 17.05
+        },
+        {
+          "text": "oh",
+          "start": 17.05,
+          "end": 17.3
+        },
+        {
+          "text": "my.",
+          "start": 17.3,
+          "end": 17.55
+        }
+      ]
+    },
+    {
+      "id": "cue-2",
+      "start": 18.96,
+      "end": 32.7,
+      "text": "God he's like an alien holy [ __ ] like he is jacked like has he been stacking do you even lift bro yes I'm intimidating I feel like he's about to kick my ass.",
+      "words": [
+        {
+          "text": "God",
+          "start": 18.96,
+          "end": 20.77
+        },
+        {
+          "text": "he's",
+          "start": 20.77,
+          "end": 22.58
+        },
+        {
+          "text": "like",
+          "start": 22.58,
+          "end": 24.39
+        },
+        {
+          "text": "an",
+          "start": 24.39,
+          "end": 26.2
+        },
+        {
+          "text": "alien",
+          "start": 26.2,
+          "end": 26.45
+        },
+        {
+          "text": "holy",
+          "start": 26.45,
+          "end": 26.7
+        },
+        {
+          "text": "[",
+          "start": 26.7,
+          "end": 26.95
+        },
+        {
+          "text": "__",
+          "start": 26.95,
+          "end": 27.2
+        },
+        {
+          "text": "]",
+          "start": 27.2,
+          "end": 27.45
+        },
+        {
+          "text": "like",
+          "start": 27.45,
+          "end": 27.7
+        },
+        {
+          "text": "he",
+          "start": 27.7,
+          "end": 27.95
+        },
+        {
+          "text": "is",
+          "start": 27.95,
+          "end": 28.2
+        },
+        {
+          "text": "jacked",
+          "start": 28.2,
+          "end": 28.45
+        },
+        {
+          "text": "like",
+          "start": 28.45,
+          "end": 28.7
+        },
+        {
+          "text": "has",
+          "start": 28.7,
+          "end": 28.95
+        },
+        {
+          "text": "he",
+          "start": 28.95,
+          "end": 29.2
+        },
+        {
+          "text": "been",
+          "start": 29.2,
+          "end": 29.45
+        },
+        {
+          "text": "stacking",
+          "start": 29.45,
+          "end": 29.7
+        },
+        {
+          "text": "do",
+          "start": 29.7,
+          "end": 29.95
+        },
+        {
+          "text": "you",
+          "start": 29.95,
+          "end": 30.2
+        },
+        {
+          "text": "even",
+          "start": 30.2,
+          "end": 30.45
+        },
+        {
+          "text": "lift",
+          "start": 30.45,
+          "end": 30.7
+        },
+        {
+          "text": "bro",
+          "start": 30.7,
+          "end": 30.95
+        },
+        {
+          "text": "yes",
+          "start": 30.95,
+          "end": 31.2
+        },
+        {
+          "text": "I'm",
+          "start": 31.2,
+          "end": 31.45
+        },
+        {
+          "text": "intimidating",
+          "start": 31.45,
+          "end": 31.7
+        },
+        {
+          "text": "I",
+          "start": 31.7,
+          "end": 31.95
+        },
+        {
+          "text": "feel",
+          "start": 31.95,
+          "end": 32.2
+        },
+        {
+          "text": "like",
+          "start": 32.2,
+          "end": 32.25
+        },
+        {
+          "text": "he's",
+          "start": 32.25,
+          "end": 32.5
+        },
+        {
+          "text": "about",
+          "start": 32.5,
+          "end": 32.75
+        },
+        {
+          "text": "to",
+          "start": 32.75,
+          "end": 33.0
+        },
+        {
+          "text": "kick",
+          "start": 33.0,
+          "end": 33.25
+        },
+        {
+          "text": "my",
+          "start": 33.25,
+          "end": 33.5
+        },
+        {
+          "text": "ass.",
+          "start": 33.5,
+          "end": 33.75
+        }
+      ]
+    },
+    {
+      "id": "cue-3",
+      "start": 32.7,
+      "end": 39.59,
+      "text": "Like yo bro I'll rip your head off and stuff it in my pouch like a trophy [ __ ] now the version you guys sent me only has 12,000 views so unless there's another.",
+      "words": [
+        {
+          "text": "Like",
+          "start": 32.7,
+          "end": 33.09
+        },
+        {
+          "text": "yo",
+          "start": 33.48,
+          "end": 33.87
+        },
+        {
+          "text": "bro",
+          "start": 33.87,
+          "end": 34.12
+        },
+        {
+          "text": "I'll",
+          "start": 34.12,
+          "end": 34.37
+        },
+        {
+          "text": "rip",
+          "start": 34.37,
+          "end": 34.62
+        },
+        {
+          "text": "your",
+          "start": 34.62,
+          "end": 34.87
+        },
+        {
+          "text": "head",
+          "start": 34.87,
+          "end": 35.12
+        },
+        {
+          "text": "off",
+          "start": 35.12,
+          "end": 35.37
+        },
+        {
+          "text": "and",
+          "start": 35.37,
+          "end": 35.62
+        },
+        {
+          "text": "stuff",
+          "start": 35.62,
+          "end": 35.87
+        },
+        {
+          "text": "it",
+          "start": 35.87,
+          "end": 36.12
+        },
+        {
+          "text": "in",
+          "start": 36.12,
+          "end": 36.37
+        },
+        {
+          "text": "my",
+          "start": 36.37,
+          "end": 36.62
+        },
+        {
+          "text": "pouch",
+          "start": 36.62,
+          "end": 36.87
+        },
+        {
+          "text": "like",
+          "start": 36.87,
+          "end": 37.12
+        },
+        {
+          "text": "a",
+          "start": 37.12,
+          "end": 37.37
+        },
+        {
+          "text": "trophy",
+          "start": 37.37,
+          "end": 37.62
+        },
+        {
+          "text": "[",
+          "start": 37.62,
+          "end": 37.87
+        },
+        {
+          "text": "__",
+          "start": 37.87,
+          "end": 38.12
+        },
+        {
+          "text": "]",
+          "start": 38.12,
+          "end": 38.37
+        },
+        {
+          "text": "now",
+          "start": 38.37,
+          "end": 38.62
+        },
+        {
+          "text": "the",
+          "start": 38.62,
+          "end": 38.87
+        },
+        {
+          "text": "version",
+          "start": 38.87,
+          "end": 39.12
+        },
+        {
+          "text": "you",
+          "start": 39.12,
+          "end": 39.37
+        },
+        {
+          "text": "guys",
+          "start": 39.37,
+          "end": 39.62
+        },
+        {
+          "text": "sent",
+          "start": 39.62,
+          "end": 39.87
+        },
+        {
+          "text": "me",
+          "start": 39.87,
+          "end": 40.12
+        },
+        {
+          "text": "only",
+          "start": 40.12,
+          "end": 40.37
+        },
+        {
+          "text": "has",
+          "start": 40.37,
+          "end": 40.62
+        },
+        {
+          "text": "12,000",
+          "start": 40.62,
+          "end": 40.87
+        },
+        {
+          "text": "views",
+          "start": 40.87,
+          "end": 41.12
+        },
+        {
+          "text": "so",
+          "start": 41.12,
+          "end": 41.37
+        },
+        {
+          "text": "unless",
+          "start": 41.37,
+          "end": 41.62
+        },
+        {
+          "text": "there's",
+          "start": 41.62,
+          "end": 41.7
+        },
+        {
+          "text": "another.",
+          "start": 41.7,
+          "end": 41.95
+        }
+      ]
+    },
+    {
+      "id": "cue-4",
+      "start": 39.59,
+      "end": 50.76,
+      "text": "Copy out there I think fairly fresh look at that oh my God and I don't blame the cameraman for laughing his ass off me how do you even get this buff yeah I've been.",
+      "words": [
+        {
+          "text": "Copy",
+          "start": 39.59,
+          "end": 40.62
+        },
+        {
+          "text": "out",
+          "start": 40.62,
+          "end": 41.65
+        },
+        {
+          "text": "there",
+          "start": 41.65,
+          "end": 42.68
+        },
+        {
+          "text": "I",
+          "start": 42.68,
+          "end": 43.71
+        },
+        {
+          "text": "think",
+          "start": 43.71,
+          "end": 44.74
+        },
+        {
+          "text": "fairly",
+          "start": 44.74,
+          "end": 45.77
+        },
+        {
+          "text": "fresh",
+          "start": 45.77,
+          "end": 46.02
+        },
+        {
+          "text": "look",
+          "start": 46.02,
+          "end": 46.27
+        },
+        {
+          "text": "at",
+          "start": 46.27,
+          "end": 46.52
+        },
+        {
+          "text": "that",
+          "start": 46.52,
+          "end": 46.77
+        },
+        {
+          "text": "oh",
+          "start": 46.77,
+          "end": 47.02
+        },
+        {
+          "text": "my",
+          "start": 47.02,
+          "end": 47.27
+        },
+        {
+          "text": "God",
+          "start": 47.27,
+          "end": 47.52
+        },
+        {
+          "text": "and",
+          "start": 47.52,
+          "end": 47.77
+        },
+        {
+          "text": "I",
+          "start": 47.77,
+          "end": 48.02
+        },
+        {
+          "text": "don't",
+          "start": 48.02,
+          "end": 48.27
+        },
+        {
+          "text": "blame",
+          "start": 48.27,
+          "end": 48.52
+        },
+        {
+          "text": "the",
+          "start": 48.52,
+          "end": 48.77
+        },
+        {
+          "text": "cameraman",
+          "start": 48.77,
+          "end": 49.02
+        },
+        {
+          "text": "for",
+          "start": 49.02,
+          "end": 49.27
+        },
+        {
+          "text": "laughing",
+          "start": 49.27,
+          "end": 49.52
+        },
+        {
+          "text": "his",
+          "start": 49.52,
+          "end": 49.77
+        },
+        {
+          "text": "ass",
+          "start": 49.77,
+          "end": 50.02
+        },
+        {
+          "text": "off",
+          "start": 50.02,
+          "end": 50.27
+        },
+        {
+          "text": "me",
+          "start": 50.27,
+          "end": 50.52
+        },
+        {
+          "text": "how",
+          "start": 50.52,
+          "end": 50.77
+        },
+        {
+          "text": "do",
+          "start": 50.77,
+          "end": 51.02
+        },
+        {
+          "text": "you",
+          "start": 51.02,
+          "end": 51.27
+        },
+        {
+          "text": "even",
+          "start": 51.27,
+          "end": 51.52
+        },
+        {
+          "text": "get",
+          "start": 51.52,
+          "end": 51.77
+        },
+        {
+          "text": "this",
+          "start": 51.77,
+          "end": 52.02
+        },
+        {
+          "text": "buff",
+          "start": 52.02,
+          "end": 52.27
+        },
+        {
+          "text": "yeah",
+          "start": 52.27,
+          "end": 52.52
+        },
+        {
+          "text": "I've",
+          "start": 52.52,
+          "end": 52.77
+        },
+        {
+          "text": "been.",
+          "start": 52.77,
+          "end": 53.02
+        }
+      ]
+    },
+    {
+      "id": "cue-5",
+      "start": 50.76,
+      "end": 59.7,
+      "text": "Bench pressing koala bears all day you know I typically eat plants and berries but no trans fat you know can you spot me you know it even seems like he's looking for an excuse.",
+      "words": [
+        {
+          "text": "Bench",
+          "start": 50.76,
+          "end": 51.28
+        },
+        {
+          "text": "pressing",
+          "start": 51.28,
+          "end": 51.8
+        },
+        {
+          "text": "koala",
+          "start": 51.8,
+          "end": 52.32
+        },
+        {
+          "text": "bears",
+          "start": 52.32,
+          "end": 52.57
+        },
+        {
+          "text": "all",
+          "start": 52.57,
+          "end": 52.82
+        },
+        {
+          "text": "day",
+          "start": 52.82,
+          "end": 53.07
+        },
+        {
+          "text": "you",
+          "start": 53.07,
+          "end": 53.32
+        },
+        {
+          "text": "know",
+          "start": 53.32,
+          "end": 53.57
+        },
+        {
+          "text": "I",
+          "start": 53.57,
+          "end": 53.61
+        },
+        {
+          "text": "typically",
+          "start": 53.61,
+          "end": 54.12
+        },
+        {
+          "text": "eat",
+          "start": 54.12,
+          "end": 54.63
+        },
+        {
+          "text": "plants",
+          "start": 54.63,
+          "end": 54.88
+        },
+        {
+          "text": "and",
+          "start": 54.88,
+          "end": 55.13
+        },
+        {
+          "text": "berries",
+          "start": 55.13,
+          "end": 55.38
+        },
+        {
+          "text": "but",
+          "start": 55.38,
+          "end": 55.63
+        },
+        {
+          "text": "no",
+          "start": 55.63,
+          "end": 55.88
+        },
+        {
+          "text": "trans",
+          "start": 55.88,
+          "end": 56.13
+        },
+        {
+          "text": "fat",
+          "start": 56.13,
+          "end": 56.38
+        },
+        {
+          "text": "you",
+          "start": 56.38,
+          "end": 56.48
+        },
+        {
+          "text": "know",
+          "start": 56.48,
+          "end": 56.73
+        },
+        {
+          "text": "can",
+          "start": 56.73,
+          "end": 56.98
+        },
+        {
+          "text": "you",
+          "start": 56.98,
+          "end": 57.23
+        },
+        {
+          "text": "spot",
+          "start": 57.23,
+          "end": 57.48
+        },
+        {
+          "text": "me",
+          "start": 57.48,
+          "end": 57.73
+        },
+        {
+          "text": "you",
+          "start": 57.73,
+          "end": 57.98
+        },
+        {
+          "text": "know",
+          "start": 57.98,
+          "end": 58.23
+        },
+        {
+          "text": "it",
+          "start": 58.23,
+          "end": 58.48
+        },
+        {
+          "text": "even",
+          "start": 58.48,
+          "end": 58.73
+        },
+        {
+          "text": "seems",
+          "start": 58.73,
+          "end": 58.98
+        },
+        {
+          "text": "like",
+          "start": 58.98,
+          "end": 59.23
+        },
+        {
+          "text": "he's",
+          "start": 59.23,
+          "end": 59.48
+        },
+        {
+          "text": "looking",
+          "start": 59.48,
+          "end": 59.73
+        },
+        {
+          "text": "for",
+          "start": 59.73,
+          "end": 59.98
+        },
+        {
+          "text": "an",
+          "start": 59.98,
+          "end": 60.23
+        },
+        {
+          "text": "excuse.",
+          "start": 60.23,
+          "end": 60.48
+        }
+      ]
+    },
+    {
+      "id": "cue-6",
+      "start": 59.7,
+      "end": 69.96,
+      "text": "To flex like yep you should check out the other exhibits over there so this next video is great it's really squirrel so this is someone's pet squirrel trying to bury a nut in a.",
+      "words": [
+        {
+          "text": "To",
+          "start": 59.7,
+          "end": 60.16
+        },
+        {
+          "text": "flex",
+          "start": 60.16,
+          "end": 60.41
+        },
+        {
+          "text": "like",
+          "start": 60.41,
+          "end": 60.66
+        },
+        {
+          "text": "yep",
+          "start": 60.66,
+          "end": 60.91
+        },
+        {
+          "text": "you",
+          "start": 60.91,
+          "end": 61.16
+        },
+        {
+          "text": "should",
+          "start": 61.16,
+          "end": 61.41
+        },
+        {
+          "text": "check",
+          "start": 61.41,
+          "end": 61.62
+        },
+        {
+          "text": "out",
+          "start": 61.62,
+          "end": 62.17
+        },
+        {
+          "text": "the",
+          "start": 62.17,
+          "end": 62.73
+        },
+        {
+          "text": "other",
+          "start": 62.73,
+          "end": 62.98
+        },
+        {
+          "text": "exhibits",
+          "start": 62.98,
+          "end": 63.5
+        },
+        {
+          "text": "over",
+          "start": 63.5,
+          "end": 65.17
+        },
+        {
+          "text": "there",
+          "start": 65.17,
+          "end": 65.42
+        },
+        {
+          "text": "so",
+          "start": 65.42,
+          "end": 65.67
+        },
+        {
+          "text": "this",
+          "start": 65.67,
+          "end": 65.92
+        },
+        {
+          "text": "next",
+          "start": 65.92,
+          "end": 66.17
+        },
+        {
+          "text": "video",
+          "start": 66.17,
+          "end": 66.42
+        },
+        {
+          "text": "is",
+          "start": 66.42,
+          "end": 66.67
+        },
+        {
+          "text": "great",
+          "start": 66.67,
+          "end": 66.92
+        },
+        {
+          "text": "it's",
+          "start": 66.92,
+          "end": 67.17
+        },
+        {
+          "text": "really",
+          "start": 67.17,
+          "end": 67.42
+        },
+        {
+          "text": "squirrel",
+          "start": 67.42,
+          "end": 67.67
+        },
+        {
+          "text": "so",
+          "start": 67.67,
+          "end": 67.92
+        },
+        {
+          "text": "this",
+          "start": 67.92,
+          "end": 68.12
+        },
+        {
+          "text": "is",
+          "start": 68.12,
+          "end": 68.86
+        },
+        {
+          "text": "someone's",
+          "start": 68.86,
+          "end": 69.6
+        },
+        {
+          "text": "pet",
+          "start": 69.6,
+          "end": 70.34
+        },
+        {
+          "text": "squirrel",
+          "start": 70.34,
+          "end": 70.59
+        },
+        {
+          "text": "trying",
+          "start": 70.59,
+          "end": 70.84
+        },
+        {
+          "text": "to",
+          "start": 70.84,
+          "end": 71.09
+        },
+        {
+          "text": "bury",
+          "start": 71.09,
+          "end": 71.34
+        },
+        {
+          "text": "a",
+          "start": 71.34,
+          "end": 71.59
+        },
+        {
+          "text": "nut",
+          "start": 71.59,
+          "end": 71.84
+        },
+        {
+          "text": "in",
+          "start": 71.84,
+          "end": 72.09
+        },
+        {
+          "text": "a.",
+          "start": 72.09,
+          "end": 72.34
+        }
+      ]
+    },
+    {
+      "id": "cue-7",
+      "start": 69.96,
+      "end": 89.52,
+      "text": "Dog spur a I have nothing to say about this other than it's [ __ ] cute and like it is cute but he makes a serious attempt to cover up that nut no one.",
+      "words": [
+        {
+          "text": "Dog",
+          "start": 69.96,
+          "end": 70.36
+        },
+        {
+          "text": "spur",
+          "start": 77.08,
+          "end": 77.76
+        },
+        {
+          "text": "a",
+          "start": 77.76,
+          "end": 78.44
+        },
+        {
+          "text": "I",
+          "start": 78.44,
+          "end": 79.12
+        },
+        {
+          "text": "have",
+          "start": 79.12,
+          "end": 79.8
+        },
+        {
+          "text": "nothing",
+          "start": 79.8,
+          "end": 80.48
+        },
+        {
+          "text": "to",
+          "start": 80.48,
+          "end": 81.16
+        },
+        {
+          "text": "say",
+          "start": 81.16,
+          "end": 81.84
+        },
+        {
+          "text": "about",
+          "start": 81.84,
+          "end": 82.52
+        },
+        {
+          "text": "this",
+          "start": 82.52,
+          "end": 83.2
+        },
+        {
+          "text": "other",
+          "start": 83.2,
+          "end": 83.45
+        },
+        {
+          "text": "than",
+          "start": 83.45,
+          "end": 83.7
+        },
+        {
+          "text": "it's",
+          "start": 83.7,
+          "end": 83.95
+        },
+        {
+          "text": "[",
+          "start": 83.95,
+          "end": 84.2
+        },
+        {
+          "text": "__",
+          "start": 84.2,
+          "end": 84.45
+        },
+        {
+          "text": "]",
+          "start": 84.45,
+          "end": 84.7
+        },
+        {
+          "text": "cute",
+          "start": 84.7,
+          "end": 84.95
+        },
+        {
+          "text": "and",
+          "start": 84.95,
+          "end": 85.2
+        },
+        {
+          "text": "like",
+          "start": 85.2,
+          "end": 85.45
+        },
+        {
+          "text": "it",
+          "start": 85.45,
+          "end": 85.7
+        },
+        {
+          "text": "is",
+          "start": 85.7,
+          "end": 85.95
+        },
+        {
+          "text": "cute",
+          "start": 85.95,
+          "end": 86.2
+        },
+        {
+          "text": "but",
+          "start": 86.2,
+          "end": 86.45
+        },
+        {
+          "text": "he",
+          "start": 86.45,
+          "end": 86.7
+        },
+        {
+          "text": "makes",
+          "start": 86.7,
+          "end": 86.95
+        },
+        {
+          "text": "a",
+          "start": 86.95,
+          "end": 87.2
+        },
+        {
+          "text": "serious",
+          "start": 87.2,
+          "end": 87.45
+        },
+        {
+          "text": "attempt",
+          "start": 87.45,
+          "end": 87.62
+        },
+        {
+          "text": "to",
+          "start": 87.62,
+          "end": 87.87
+        },
+        {
+          "text": "cover",
+          "start": 87.87,
+          "end": 88.12
+        },
+        {
+          "text": "up",
+          "start": 88.12,
+          "end": 88.37
+        },
+        {
+          "text": "that",
+          "start": 88.37,
+          "end": 88.62
+        },
+        {
+          "text": "nut",
+          "start": 88.62,
+          "end": 88.87
+        },
+        {
+          "text": "no",
+          "start": 88.87,
+          "end": 89.12
+        },
+        {
+          "text": "one.",
+          "start": 88.97,
+          "end": 89.52
+        }
+      ]
+    },
+    {
+      "id": "cue-8",
+      "start": 89.52,
+      "end": 97.64,
+      "text": "Will think to look here so I found this over on a Blog I read sometimes called io9 and it has 4 million views damn so it's blowing up and why do they have a.",
+      "words": [
+        {
+          "text": "Will",
+          "start": 89.52,
+          "end": 90.07
+        },
+        {
+          "text": "think",
+          "start": 90.07,
+          "end": 90.32
+        },
+        {
+          "text": "to",
+          "start": 90.32,
+          "end": 90.57
+        },
+        {
+          "text": "look",
+          "start": 90.57,
+          "end": 90.82
+        },
+        {
+          "text": "here",
+          "start": 90.82,
+          "end": 91.07
+        },
+        {
+          "text": "so",
+          "start": 91.07,
+          "end": 91.32
+        },
+        {
+          "text": "I",
+          "start": 91.32,
+          "end": 91.57
+        },
+        {
+          "text": "found",
+          "start": 91.57,
+          "end": 91.82
+        },
+        {
+          "text": "this",
+          "start": 91.82,
+          "end": 92.07
+        },
+        {
+          "text": "over",
+          "start": 92.07,
+          "end": 92.32
+        },
+        {
+          "text": "on",
+          "start": 92.32,
+          "end": 92.57
+        },
+        {
+          "text": "a",
+          "start": 92.57,
+          "end": 92.82
+        },
+        {
+          "text": "Blog",
+          "start": 92.82,
+          "end": 93.07
+        },
+        {
+          "text": "I",
+          "start": 93.07,
+          "end": 93.32
+        },
+        {
+          "text": "read",
+          "start": 93.32,
+          "end": 93.57
+        },
+        {
+          "text": "sometimes",
+          "start": 93.57,
+          "end": 93.82
+        },
+        {
+          "text": "called",
+          "start": 93.82,
+          "end": 93.96
+        },
+        {
+          "text": "io9",
+          "start": 93.96,
+          "end": 94.52
+        },
+        {
+          "text": "and",
+          "start": 94.52,
+          "end": 94.77
+        },
+        {
+          "text": "it",
+          "start": 94.77,
+          "end": 95.02
+        },
+        {
+          "text": "has",
+          "start": 95.02,
+          "end": 95.27
+        },
+        {
+          "text": "4",
+          "start": 95.27,
+          "end": 95.52
+        },
+        {
+          "text": "million",
+          "start": 95.52,
+          "end": 95.77
+        },
+        {
+          "text": "views",
+          "start": 95.77,
+          "end": 96.02
+        },
+        {
+          "text": "damn",
+          "start": 96.02,
+          "end": 96.27
+        },
+        {
+          "text": "so",
+          "start": 96.27,
+          "end": 96.52
+        },
+        {
+          "text": "it's",
+          "start": 96.52,
+          "end": 96.77
+        },
+        {
+          "text": "blowing",
+          "start": 96.77,
+          "end": 97.02
+        },
+        {
+          "text": "up",
+          "start": 97.02,
+          "end": 97.27
+        },
+        {
+          "text": "and",
+          "start": 97.27,
+          "end": 97.52
+        },
+        {
+          "text": "why",
+          "start": 97.52,
+          "end": 97.77
+        },
+        {
+          "text": "do",
+          "start": 97.77,
+          "end": 98.02
+        },
+        {
+          "text": "they",
+          "start": 98.02,
+          "end": 98.27
+        },
+        {
+          "text": "have",
+          "start": 98.27,
+          "end": 98.52
+        },
+        {
+          "text": "a.",
+          "start": 98.52,
+          "end": 98.77
+        }
+      ]
+    },
+    {
+      "id": "cue-9",
+      "start": 97.64,
+      "end": 104.4,
+      "text": "Pet squirrel and like why isn't that dog murdering that squirrel look I'm not saying the dog should murder the squirrel it's just all right I have four cats and when they see a squirrel.",
+      "words": [
+        {
+          "text": "Pet",
+          "start": 97.64,
+          "end": 98.03
+        },
+        {
+          "text": "squirrel",
+          "start": 98.03,
+          "end": 98.28
+        },
+        {
+          "text": "and",
+          "start": 98.28,
+          "end": 98.53
+        },
+        {
+          "text": "like",
+          "start": 98.53,
+          "end": 98.78
+        },
+        {
+          "text": "why",
+          "start": 98.78,
+          "end": 99.03
+        },
+        {
+          "text": "isn't",
+          "start": 99.03,
+          "end": 99.28
+        },
+        {
+          "text": "that",
+          "start": 99.28,
+          "end": 99.53
+        },
+        {
+          "text": "dog",
+          "start": 99.53,
+          "end": 99.58
+        },
+        {
+          "text": "murdering",
+          "start": 99.58,
+          "end": 99.83
+        },
+        {
+          "text": "that",
+          "start": 99.83,
+          "end": 100.08
+        },
+        {
+          "text": "squirrel",
+          "start": 100.08,
+          "end": 100.33
+        },
+        {
+          "text": "look",
+          "start": 100.33,
+          "end": 100.58
+        },
+        {
+          "text": "I'm",
+          "start": 100.58,
+          "end": 100.83
+        },
+        {
+          "text": "not",
+          "start": 100.83,
+          "end": 101.08
+        },
+        {
+          "text": "saying",
+          "start": 101.08,
+          "end": 101.33
+        },
+        {
+          "text": "the",
+          "start": 101.33,
+          "end": 101.58
+        },
+        {
+          "text": "dog",
+          "start": 101.58,
+          "end": 101.83
+        },
+        {
+          "text": "should",
+          "start": 101.83,
+          "end": 102.08
+        },
+        {
+          "text": "murder",
+          "start": 102.08,
+          "end": 102.21
+        },
+        {
+          "text": "the",
+          "start": 102.21,
+          "end": 102.74
+        },
+        {
+          "text": "squirrel",
+          "start": 102.74,
+          "end": 102.99
+        },
+        {
+          "text": "it's",
+          "start": 102.99,
+          "end": 103.24
+        },
+        {
+          "text": "just",
+          "start": 103.24,
+          "end": 103.49
+        },
+        {
+          "text": "all",
+          "start": 103.49,
+          "end": 103.74
+        },
+        {
+          "text": "right",
+          "start": 103.74,
+          "end": 103.99
+        },
+        {
+          "text": "I",
+          "start": 103.99,
+          "end": 104.24
+        },
+        {
+          "text": "have",
+          "start": 104.24,
+          "end": 104.49
+        },
+        {
+          "text": "four",
+          "start": 104.49,
+          "end": 104.74
+        },
+        {
+          "text": "cats",
+          "start": 104.74,
+          "end": 104.99
+        },
+        {
+          "text": "and",
+          "start": 104.99,
+          "end": 105.24
+        },
+        {
+          "text": "when",
+          "start": 105.24,
+          "end": 105.49
+        },
+        {
+          "text": "they",
+          "start": 105.49,
+          "end": 105.74
+        },
+        {
+          "text": "see",
+          "start": 105.74,
+          "end": 105.99
+        },
+        {
+          "text": "a",
+          "start": 105.99,
+          "end": 106.02
+        },
+        {
+          "text": "squirrel.",
+          "start": 106.02,
+          "end": 106.57
+        }
+      ]
+    },
+    {
+      "id": "cue-10",
+      "start": 104.4,
+      "end": 117.2,
+      "text": "They're like and if you look at the dog the dog just couldn't be more apathetic I mean he just doesn't care he's like you know all those [ __ ] I have to give.",
+      "words": [
+        {
+          "text": "They're",
+          "start": 104.4,
+          "end": 106.6
+        },
+        {
+          "text": "like",
+          "start": 107.92,
+          "end": 108.4
+        },
+        {
+          "text": "and",
+          "start": 108.4,
+          "end": 108.88
+        },
+        {
+          "text": "if",
+          "start": 108.88,
+          "end": 109.36
+        },
+        {
+          "text": "you",
+          "start": 109.36,
+          "end": 109.84
+        },
+        {
+          "text": "look",
+          "start": 109.84,
+          "end": 110.32
+        },
+        {
+          "text": "at",
+          "start": 110.32,
+          "end": 110.8
+        },
+        {
+          "text": "the",
+          "start": 110.8,
+          "end": 111.28
+        },
+        {
+          "text": "dog",
+          "start": 111.28,
+          "end": 111.76
+        },
+        {
+          "text": "the",
+          "start": 111.76,
+          "end": 112.24
+        },
+        {
+          "text": "dog",
+          "start": 112.24,
+          "end": 112.72
+        },
+        {
+          "text": "just",
+          "start": 112.72,
+          "end": 112.97
+        },
+        {
+          "text": "couldn't",
+          "start": 112.97,
+          "end": 113.22
+        },
+        {
+          "text": "be",
+          "start": 113.22,
+          "end": 113.47
+        },
+        {
+          "text": "more",
+          "start": 113.47,
+          "end": 113.72
+        },
+        {
+          "text": "apathetic",
+          "start": 113.72,
+          "end": 113.97
+        },
+        {
+          "text": "I",
+          "start": 113.97,
+          "end": 114.22
+        },
+        {
+          "text": "mean",
+          "start": 114.22,
+          "end": 114.32
+        },
+        {
+          "text": "he",
+          "start": 114.32,
+          "end": 114.57
+        },
+        {
+          "text": "just",
+          "start": 114.57,
+          "end": 114.82
+        },
+        {
+          "text": "doesn't",
+          "start": 114.82,
+          "end": 115.07
+        },
+        {
+          "text": "care",
+          "start": 115.07,
+          "end": 115.32
+        },
+        {
+          "text": "he's",
+          "start": 115.32,
+          "end": 115.57
+        },
+        {
+          "text": "like",
+          "start": 115.57,
+          "end": 115.72
+        },
+        {
+          "text": "you",
+          "start": 115.72,
+          "end": 116.22
+        },
+        {
+          "text": "know",
+          "start": 116.22,
+          "end": 116.72
+        },
+        {
+          "text": "all",
+          "start": 116.72,
+          "end": 116.97
+        },
+        {
+          "text": "those",
+          "start": 116.97,
+          "end": 117.22
+        },
+        {
+          "text": "[",
+          "start": 117.22,
+          "end": 117.47
+        },
+        {
+          "text": "__",
+          "start": 117.47,
+          "end": 117.72
+        },
+        {
+          "text": "]",
+          "start": 117.72,
+          "end": 117.97
+        },
+        {
+          "text": "I",
+          "start": 117.97,
+          "end": 118.22
+        },
+        {
+          "text": "have",
+          "start": 118.22,
+          "end": 118.47
+        },
+        {
+          "text": "to",
+          "start": 118.47,
+          "end": 118.72
+        },
+        {
+          "text": "give.",
+          "start": 118.72,
+          "end": 118.97
+        }
+      ]
+    },
+    {
+      "id": "cue-11",
+      "start": 117.2,
+      "end": 125.68,
+      "text": "I buried them in the backyard and if you're curious how the video ends it looks like the squirrel and up hiding his nuts in the laundry basket now high-s speed chases will never not.",
+      "words": [
+        {
+          "text": "I",
+          "start": 117.2,
+          "end": 117.52
+        },
+        {
+          "text": "buried",
+          "start": 117.52,
+          "end": 117.84
+        },
+        {
+          "text": "them",
+          "start": 117.84,
+          "end": 118.09
+        },
+        {
+          "text": "in",
+          "start": 118.09,
+          "end": 118.34
+        },
+        {
+          "text": "the",
+          "start": 118.34,
+          "end": 118.59
+        },
+        {
+          "text": "backyard",
+          "start": 118.59,
+          "end": 118.84
+        },
+        {
+          "text": "and",
+          "start": 118.84,
+          "end": 119.09
+        },
+        {
+          "text": "if",
+          "start": 119.09,
+          "end": 119.34
+        },
+        {
+          "text": "you're",
+          "start": 119.34,
+          "end": 119.59
+        },
+        {
+          "text": "curious",
+          "start": 119.59,
+          "end": 119.84
+        },
+        {
+          "text": "how",
+          "start": 119.84,
+          "end": 120.09
+        },
+        {
+          "text": "the",
+          "start": 120.09,
+          "end": 120.34
+        },
+        {
+          "text": "video",
+          "start": 120.34,
+          "end": 120.59
+        },
+        {
+          "text": "ends",
+          "start": 120.59,
+          "end": 120.84
+        },
+        {
+          "text": "it",
+          "start": 120.84,
+          "end": 121.09
+        },
+        {
+          "text": "looks",
+          "start": 121.09,
+          "end": 121.34
+        },
+        {
+          "text": "like",
+          "start": 121.34,
+          "end": 121.59
+        },
+        {
+          "text": "the",
+          "start": 121.59,
+          "end": 121.84
+        },
+        {
+          "text": "squirrel",
+          "start": 121.84,
+          "end": 122.09
+        },
+        {
+          "text": "and",
+          "start": 122.09,
+          "end": 122.34
+        },
+        {
+          "text": "up",
+          "start": 122.34,
+          "end": 122.59
+        },
+        {
+          "text": "hiding",
+          "start": 122.59,
+          "end": 122.84
+        },
+        {
+          "text": "his",
+          "start": 122.84,
+          "end": 123.09
+        },
+        {
+          "text": "nuts",
+          "start": 123.09,
+          "end": 123.34
+        },
+        {
+          "text": "in",
+          "start": 123.34,
+          "end": 123.52
+        },
+        {
+          "text": "the",
+          "start": 123.52,
+          "end": 123.77
+        },
+        {
+          "text": "laundry",
+          "start": 123.77,
+          "end": 124.02
+        },
+        {
+          "text": "basket",
+          "start": 124.02,
+          "end": 124.27
+        },
+        {
+          "text": "now",
+          "start": 124.27,
+          "end": 124.52
+        },
+        {
+          "text": "high-s",
+          "start": 124.52,
+          "end": 125.0
+        },
+        {
+          "text": "speed",
+          "start": 125.0,
+          "end": 125.8
+        },
+        {
+          "text": "chases",
+          "start": 125.8,
+          "end": 126.05
+        },
+        {
+          "text": "will",
+          "start": 126.05,
+          "end": 126.3
+        },
+        {
+          "text": "never",
+          "start": 126.3,
+          "end": 126.55
+        },
+        {
+          "text": "not.",
+          "start": 126.55,
+          "end": 126.8
+        }
+      ]
+    },
+    {
+      "id": "cue-12",
+      "start": 125.68,
+      "end": 133.28,
+      "text": "Be exciting but this is the first time I've ever seen one where the cop was actually wearing a.",
+      "words": [
+        {
+          "text": "Be",
+          "start": 125.68,
+          "end": 126.22
+        },
+        {
+          "text": "exciting",
+          "start": 126.22,
+          "end": 126.76
+        },
+        {
+          "text": "but",
+          "start": 126.76,
+          "end": 127.3
+        },
+        {
+          "text": "this",
+          "start": 127.3,
+          "end": 127.55
+        },
+        {
+          "text": "is",
+          "start": 127.55,
+          "end": 127.8
+        },
+        {
+          "text": "the",
+          "start": 127.8,
+          "end": 127.86
+        },
+        {
+          "text": "first",
+          "start": 127.86,
+          "end": 128.54
+        },
+        {
+          "text": "time",
+          "start": 128.54,
+          "end": 129.22
+        },
+        {
+          "text": "I've",
+          "start": 129.22,
+          "end": 129.91
+        },
+        {
+          "text": "ever",
+          "start": 129.91,
+          "end": 130.59
+        },
+        {
+          "text": "seen",
+          "start": 130.59,
+          "end": 131.28
+        },
+        {
+          "text": "one",
+          "start": 131.28,
+          "end": 131.53
+        },
+        {
+          "text": "where",
+          "start": 131.53,
+          "end": 131.78
+        },
+        {
+          "text": "the",
+          "start": 131.78,
+          "end": 132.03
+        },
+        {
+          "text": "cop",
+          "start": 132.03,
+          "end": 132.28
+        },
+        {
+          "text": "was",
+          "start": 132.28,
+          "end": 132.53
+        },
+        {
+          "text": "actually",
+          "start": 132.53,
+          "end": 132.78
+        },
+        {
+          "text": "wearing",
+          "start": 132.78,
+          "end": 133.03
+        },
+        {
+          "text": "a.",
+          "start": 133.03,
+          "end": 133.28
+        }
+      ]
+    },
+    {
+      "id": "cue-13",
+      "start": 139.4,
+      "end": 149.86,
+      "text": "Camera [ __ ] now this cop's actually not a traditional cop he's apparently part of the Arkansas Game and Fish Commission so if you're thinking about fishing without a permit he will [ __.",
+      "words": [
+        {
+          "text": "Camera",
+          "start": 139.4,
+          "end": 139.98
+        },
+        {
+          "text": "[",
+          "start": 139.98,
+          "end": 140.56
+        },
+        {
+          "text": "__",
+          "start": 140.56,
+          "end": 141.14
+        },
+        {
+          "text": "]",
+          "start": 141.14,
+          "end": 141.72
+        },
+        {
+          "text": "now",
+          "start": 141.72,
+          "end": 142.3
+        },
+        {
+          "text": "this",
+          "start": 142.3,
+          "end": 142.88
+        },
+        {
+          "text": "cop's",
+          "start": 142.88,
+          "end": 143.46
+        },
+        {
+          "text": "actually",
+          "start": 143.46,
+          "end": 143.71
+        },
+        {
+          "text": "not",
+          "start": 143.71,
+          "end": 143.96
+        },
+        {
+          "text": "a",
+          "start": 143.96,
+          "end": 144.21
+        },
+        {
+          "text": "traditional",
+          "start": 144.21,
+          "end": 144.46
+        },
+        {
+          "text": "cop",
+          "start": 144.46,
+          "end": 144.66
+        },
+        {
+          "text": "he's",
+          "start": 144.66,
+          "end": 145.12
+        },
+        {
+          "text": "apparently",
+          "start": 145.12,
+          "end": 145.37
+        },
+        {
+          "text": "part",
+          "start": 145.37,
+          "end": 145.62
+        },
+        {
+          "text": "of",
+          "start": 145.62,
+          "end": 145.87
+        },
+        {
+          "text": "the",
+          "start": 145.87,
+          "end": 146.12
+        },
+        {
+          "text": "Arkansas",
+          "start": 146.12,
+          "end": 146.37
+        },
+        {
+          "text": "Game",
+          "start": 146.37,
+          "end": 146.48
+        },
+        {
+          "text": "and",
+          "start": 146.48,
+          "end": 146.98
+        },
+        {
+          "text": "Fish",
+          "start": 146.98,
+          "end": 147.23
+        },
+        {
+          "text": "Commission",
+          "start": 147.23,
+          "end": 147.48
+        },
+        {
+          "text": "so",
+          "start": 147.48,
+          "end": 147.73
+        },
+        {
+          "text": "if",
+          "start": 147.73,
+          "end": 147.84
+        },
+        {
+          "text": "you're",
+          "start": 147.84,
+          "end": 148.52
+        },
+        {
+          "text": "thinking",
+          "start": 148.52,
+          "end": 149.2
+        },
+        {
+          "text": "about",
+          "start": 149.2,
+          "end": 149.45
+        },
+        {
+          "text": "fishing",
+          "start": 149.45,
+          "end": 149.7
+        },
+        {
+          "text": "without",
+          "start": 149.7,
+          "end": 149.95
+        },
+        {
+          "text": "a",
+          "start": 149.95,
+          "end": 150.2
+        },
+        {
+          "text": "permit",
+          "start": 150.2,
+          "end": 150.45
+        },
+        {
+          "text": "he",
+          "start": 150.45,
+          "end": 150.7
+        },
+        {
+          "text": "will",
+          "start": 150.7,
+          "end": 150.95
+        },
+        {
+          "text": "[",
+          "start": 150.95,
+          "end": 151.2
+        },
+        {
+          "text": "__.",
+          "start": 151.2,
+          "end": 151.45
+        }
+      ]
+    },
+    {
+      "id": "cue-14",
+      "start": 149.86,
+      "end": 157.29,
+      "text": "] you up now the video gets unfortunately funny when the officer catches the suspect who appears to be a total.",
+      "words": [
+        {
+          "text": "]",
+          "start": 149.86,
+          "end": 150.19
+        },
+        {
+          "text": "you",
+          "start": 150.19,
+          "end": 150.52
+        },
+        {
+          "text": "up",
+          "start": 150.52,
+          "end": 150.85
+        },
+        {
+          "text": "now",
+          "start": 150.85,
+          "end": 151.18
+        },
+        {
+          "text": "the",
+          "start": 151.18,
+          "end": 151.51
+        },
+        {
+          "text": "video",
+          "start": 151.51,
+          "end": 151.84
+        },
+        {
+          "text": "gets",
+          "start": 151.84,
+          "end": 152.17
+        },
+        {
+          "text": "unfortunately",
+          "start": 152.17,
+          "end": 152.42
+        },
+        {
+          "text": "funny",
+          "start": 152.42,
+          "end": 152.67
+        },
+        {
+          "text": "when",
+          "start": 152.67,
+          "end": 153.05
+        },
+        {
+          "text": "the",
+          "start": 153.05,
+          "end": 153.88
+        },
+        {
+          "text": "officer",
+          "start": 153.88,
+          "end": 154.71
+        },
+        {
+          "text": "catches",
+          "start": 154.71,
+          "end": 154.96
+        },
+        {
+          "text": "the",
+          "start": 154.96,
+          "end": 155.21
+        },
+        {
+          "text": "suspect",
+          "start": 155.21,
+          "end": 155.46
+        },
+        {
+          "text": "who",
+          "start": 155.46,
+          "end": 155.71
+        },
+        {
+          "text": "appears",
+          "start": 155.71,
+          "end": 155.96
+        },
+        {
+          "text": "to",
+          "start": 155.96,
+          "end": 156.21
+        },
+        {
+          "text": "be",
+          "start": 156.21,
+          "end": 156.43
+        },
+        {
+          "text": "a",
+          "start": 156.43,
+          "end": 157.04
+        },
+        {
+          "text": "total.",
+          "start": 157.04,
+          "end": 157.29
+        }
+      ]
+    },
+    {
+      "id": "cue-15",
+      "start": 165.28,
+      "end": 176.28,
+      "text": "Methhead [ __ ] now this whole scene apparently went down back in August of 2012 and it's just now blowing up either that or it's an elaborate commercial for Google Glass see to me.",
+      "words": [
+        {
+          "text": "Methhead",
+          "start": 165.28,
+          "end": 168.84
+        },
+        {
+          "text": "[",
+          "start": 166.88,
+          "end": 167.41
+        },
+        {
+          "text": "__",
+          "start": 167.41,
+          "end": 167.94
+        },
+        {
+          "text": "]",
+          "start": 167.94,
+          "end": 168.47
+        },
+        {
+          "text": "now",
+          "start": 168.47,
+          "end": 169.0
+        },
+        {
+          "text": "this",
+          "start": 169.0,
+          "end": 169.53
+        },
+        {
+          "text": "whole",
+          "start": 169.53,
+          "end": 170.06
+        },
+        {
+          "text": "scene",
+          "start": 170.06,
+          "end": 170.59
+        },
+        {
+          "text": "apparently",
+          "start": 170.59,
+          "end": 171.12
+        },
+        {
+          "text": "went",
+          "start": 171.12,
+          "end": 171.37
+        },
+        {
+          "text": "down",
+          "start": 171.37,
+          "end": 171.62
+        },
+        {
+          "text": "back",
+          "start": 171.62,
+          "end": 171.87
+        },
+        {
+          "text": "in",
+          "start": 171.87,
+          "end": 172.12
+        },
+        {
+          "text": "August",
+          "start": 172.12,
+          "end": 172.37
+        },
+        {
+          "text": "of",
+          "start": 172.37,
+          "end": 172.62
+        },
+        {
+          "text": "2012",
+          "start": 172.62,
+          "end": 172.76
+        },
+        {
+          "text": "and",
+          "start": 172.76,
+          "end": 173.32
+        },
+        {
+          "text": "it's",
+          "start": 173.32,
+          "end": 173.57
+        },
+        {
+          "text": "just",
+          "start": 173.57,
+          "end": 173.82
+        },
+        {
+          "text": "now",
+          "start": 173.82,
+          "end": 174.07
+        },
+        {
+          "text": "blowing",
+          "start": 174.07,
+          "end": 174.32
+        },
+        {
+          "text": "up",
+          "start": 174.32,
+          "end": 174.57
+        },
+        {
+          "text": "either",
+          "start": 174.57,
+          "end": 174.82
+        },
+        {
+          "text": "that",
+          "start": 174.82,
+          "end": 175.07
+        },
+        {
+          "text": "or",
+          "start": 175.07,
+          "end": 175.32
+        },
+        {
+          "text": "it's",
+          "start": 175.32,
+          "end": 175.57
+        },
+        {
+          "text": "an",
+          "start": 175.57,
+          "end": 175.82
+        },
+        {
+          "text": "elaborate",
+          "start": 175.82,
+          "end": 176.07
+        },
+        {
+          "text": "commercial",
+          "start": 176.07,
+          "end": 176.32
+        },
+        {
+          "text": "for",
+          "start": 176.32,
+          "end": 176.57
+        },
+        {
+          "text": "Google",
+          "start": 176.57,
+          "end": 176.82
+        },
+        {
+          "text": "Glass",
+          "start": 176.82,
+          "end": 177.07
+        },
+        {
+          "text": "see",
+          "start": 177.07,
+          "end": 177.32
+        },
+        {
+          "text": "to",
+          "start": 177.32,
+          "end": 177.57
+        },
+        {
+          "text": "me.",
+          "start": 177.57,
+          "end": 177.82
+        }
+      ]
+    },
+    {
+      "id": "cue-16",
+      "start": 176.28,
+      "end": 184.92,
+      "text": "This is like the real life Breaking Bad people fantasize about living this Breaking Bad life but in reality that's what the real Jesse Pinkman would look like now there's a lot of contention about.",
+      "words": [
+        {
+          "text": "This",
+          "start": 176.28,
+          "end": 176.67
+        },
+        {
+          "text": "is",
+          "start": 176.67,
+          "end": 177.06
+        },
+        {
+          "text": "like",
+          "start": 177.06,
+          "end": 177.45
+        },
+        {
+          "text": "the",
+          "start": 177.45,
+          "end": 177.84
+        },
+        {
+          "text": "real",
+          "start": 177.84,
+          "end": 178.23
+        },
+        {
+          "text": "life",
+          "start": 178.23,
+          "end": 178.48
+        },
+        {
+          "text": "Breaking",
+          "start": 178.48,
+          "end": 178.73
+        },
+        {
+          "text": "Bad",
+          "start": 178.73,
+          "end": 178.98
+        },
+        {
+          "text": "people",
+          "start": 178.98,
+          "end": 179.04
+        },
+        {
+          "text": "fantasize",
+          "start": 179.04,
+          "end": 179.73
+        },
+        {
+          "text": "about",
+          "start": 179.73,
+          "end": 180.42
+        },
+        {
+          "text": "living",
+          "start": 180.42,
+          "end": 180.67
+        },
+        {
+          "text": "this",
+          "start": 180.67,
+          "end": 180.92
+        },
+        {
+          "text": "Breaking",
+          "start": 180.92,
+          "end": 181.17
+        },
+        {
+          "text": "Bad",
+          "start": 181.17,
+          "end": 181.42
+        },
+        {
+          "text": "life",
+          "start": 181.42,
+          "end": 181.67
+        },
+        {
+          "text": "but",
+          "start": 181.66,
+          "end": 182.23
+        },
+        {
+          "text": "in",
+          "start": 182.23,
+          "end": 182.48
+        },
+        {
+          "text": "reality",
+          "start": 182.48,
+          "end": 182.73
+        },
+        {
+          "text": "that's",
+          "start": 182.73,
+          "end": 182.98
+        },
+        {
+          "text": "what",
+          "start": 182.98,
+          "end": 183.23
+        },
+        {
+          "text": "the",
+          "start": 183.23,
+          "end": 183.48
+        },
+        {
+          "text": "real",
+          "start": 183.48,
+          "end": 183.73
+        },
+        {
+          "text": "Jesse",
+          "start": 183.73,
+          "end": 183.98
+        },
+        {
+          "text": "Pinkman",
+          "start": 183.98,
+          "end": 184.23
+        },
+        {
+          "text": "would",
+          "start": 184.23,
+          "end": 184.48
+        },
+        {
+          "text": "look",
+          "start": 184.48,
+          "end": 184.73
+        },
+        {
+          "text": "like",
+          "start": 184.73,
+          "end": 184.98
+        },
+        {
+          "text": "now",
+          "start": 184.98,
+          "end": 185.23
+        },
+        {
+          "text": "there's",
+          "start": 185.23,
+          "end": 185.48
+        },
+        {
+          "text": "a",
+          "start": 185.48,
+          "end": 185.73
+        },
+        {
+          "text": "lot",
+          "start": 185.73,
+          "end": 185.98
+        },
+        {
+          "text": "of",
+          "start": 185.98,
+          "end": 186.23
+        },
+        {
+          "text": "contention",
+          "start": 186.23,
+          "end": 186.48
+        },
+        {
+          "text": "about.",
+          "start": 186.48,
+          "end": 186.73
+        }
+      ]
+    },
+    {
+      "id": "cue-17",
+      "start": 184.92,
+      "end": 191.81,
+      "text": "How the officer handled the arrest after the suspect got out of the car but you know if you're on met driving on the wrong side of the highway endangering lives I'd say getting cursed.",
+      "words": [
+        {
+          "text": "How",
+          "start": 184.92,
+          "end": 185.32
+        },
+        {
+          "text": "the",
+          "start": 185.32,
+          "end": 185.72
+        },
+        {
+          "text": "officer",
+          "start": 185.72,
+          "end": 186.12
+        },
+        {
+          "text": "handled",
+          "start": 186.12,
+          "end": 186.37
+        },
+        {
+          "text": "the",
+          "start": 186.37,
+          "end": 186.62
+        },
+        {
+          "text": "arrest",
+          "start": 186.62,
+          "end": 186.87
+        },
+        {
+          "text": "after",
+          "start": 186.87,
+          "end": 187.12
+        },
+        {
+          "text": "the",
+          "start": 187.12,
+          "end": 187.37
+        },
+        {
+          "text": "suspect",
+          "start": 187.37,
+          "end": 187.62
+        },
+        {
+          "text": "got",
+          "start": 187.62,
+          "end": 187.74
+        },
+        {
+          "text": "out",
+          "start": 187.74,
+          "end": 187.99
+        },
+        {
+          "text": "of",
+          "start": 187.99,
+          "end": 188.24
+        },
+        {
+          "text": "the",
+          "start": 188.24,
+          "end": 188.49
+        },
+        {
+          "text": "car",
+          "start": 188.49,
+          "end": 188.74
+        },
+        {
+          "text": "but",
+          "start": 188.74,
+          "end": 188.99
+        },
+        {
+          "text": "you",
+          "start": 188.99,
+          "end": 189.24
+        },
+        {
+          "text": "know",
+          "start": 189.24,
+          "end": 189.49
+        },
+        {
+          "text": "if",
+          "start": 189.49,
+          "end": 189.74
+        },
+        {
+          "text": "you're",
+          "start": 189.74,
+          "end": 189.99
+        },
+        {
+          "text": "on",
+          "start": 189.99,
+          "end": 190.24
+        },
+        {
+          "text": "met",
+          "start": 190.24,
+          "end": 190.49
+        },
+        {
+          "text": "driving",
+          "start": 190.49,
+          "end": 190.74
+        },
+        {
+          "text": "on",
+          "start": 190.74,
+          "end": 190.99
+        },
+        {
+          "text": "the",
+          "start": 190.99,
+          "end": 191.24
+        },
+        {
+          "text": "wrong",
+          "start": 191.24,
+          "end": 191.49
+        },
+        {
+          "text": "side",
+          "start": 191.49,
+          "end": 191.74
+        },
+        {
+          "text": "of",
+          "start": 191.74,
+          "end": 191.99
+        },
+        {
+          "text": "the",
+          "start": 191.99,
+          "end": 192.24
+        },
+        {
+          "text": "highway",
+          "start": 192.24,
+          "end": 192.49
+        },
+        {
+          "text": "endangering",
+          "start": 192.49,
+          "end": 192.74
+        },
+        {
+          "text": "lives",
+          "start": 192.74,
+          "end": 192.99
+        },
+        {
+          "text": "I'd",
+          "start": 192.99,
+          "end": 193.24
+        },
+        {
+          "text": "say",
+          "start": 193.24,
+          "end": 193.49
+        },
+        {
+          "text": "getting",
+          "start": 193.49,
+          "end": 193.74
+        },
+        {
+          "text": "cursed.",
+          "start": 193.74,
+          "end": 193.99
+        }
+      ]
+    },
+    {
+      "id": "cue-18",
+      "start": 191.81,
+      "end": 199.36,
+      "text": "At with a gun stuck to your neck it's a possibility you know I got of feel bad for the guy but it's like that with 80% of the videos that you send me it's.",
+      "words": [
+        {
+          "text": "At",
+          "start": 191.81,
+          "end": 192.31
+        },
+        {
+          "text": "with",
+          "start": 192.31,
+          "end": 192.81
+        },
+        {
+          "text": "a",
+          "start": 192.81,
+          "end": 193.31
+        },
+        {
+          "text": "gun",
+          "start": 193.31,
+          "end": 193.81
+        },
+        {
+          "text": "stuck",
+          "start": 193.81,
+          "end": 194.31
+        },
+        {
+          "text": "to",
+          "start": 194.31,
+          "end": 194.81
+        },
+        {
+          "text": "your",
+          "start": 194.81,
+          "end": 195.06
+        },
+        {
+          "text": "neck",
+          "start": 195.06,
+          "end": 195.31
+        },
+        {
+          "text": "it's",
+          "start": 195.31,
+          "end": 195.56
+        },
+        {
+          "text": "a",
+          "start": 195.56,
+          "end": 195.81
+        },
+        {
+          "text": "possibility",
+          "start": 195.81,
+          "end": 196.06
+        },
+        {
+          "text": "you",
+          "start": 196.06,
+          "end": 196.31
+        },
+        {
+          "text": "know",
+          "start": 196.31,
+          "end": 196.56
+        },
+        {
+          "text": "I",
+          "start": 196.56,
+          "end": 196.81
+        },
+        {
+          "text": "got",
+          "start": 196.81,
+          "end": 197.06
+        },
+        {
+          "text": "of",
+          "start": 197.06,
+          "end": 197.31
+        },
+        {
+          "text": "feel",
+          "start": 197.31,
+          "end": 197.56
+        },
+        {
+          "text": "bad",
+          "start": 197.56,
+          "end": 197.81
+        },
+        {
+          "text": "for",
+          "start": 197.81,
+          "end": 198.06
+        },
+        {
+          "text": "the",
+          "start": 198.06,
+          "end": 198.31
+        },
+        {
+          "text": "guy",
+          "start": 198.31,
+          "end": 198.56
+        },
+        {
+          "text": "but",
+          "start": 198.56,
+          "end": 198.81
+        },
+        {
+          "text": "it's",
+          "start": 198.81,
+          "end": 199.06
+        },
+        {
+          "text": "like",
+          "start": 199.06,
+          "end": 199.31
+        },
+        {
+          "text": "that",
+          "start": 199.31,
+          "end": 199.56
+        },
+        {
+          "text": "with",
+          "start": 199.56,
+          "end": 199.81
+        },
+        {
+          "text": "80%",
+          "start": 199.81,
+          "end": 200.06
+        },
+        {
+          "text": "of",
+          "start": 200.06,
+          "end": 200.31
+        },
+        {
+          "text": "the",
+          "start": 200.31,
+          "end": 200.56
+        },
+        {
+          "text": "videos",
+          "start": 200.56,
+          "end": 200.81
+        },
+        {
+          "text": "that",
+          "start": 200.81,
+          "end": 201.06
+        },
+        {
+          "text": "you",
+          "start": 201.06,
+          "end": 201.31
+        },
+        {
+          "text": "send",
+          "start": 201.31,
+          "end": 201.56
+        },
+        {
+          "text": "me",
+          "start": 201.56,
+          "end": 201.81
+        },
+        {
+          "text": "it's.",
+          "start": 201.81,
+          "end": 202.06
+        }
+      ]
+    },
+    {
+      "id": "cue-19",
+      "start": 199.36,
+      "end": 206.23,
+      "text": "Like I feel bad for the person but at the same time I'm like dude what the [ __ ] were you thinking see and now this guy he's busted he's going to go to.",
+      "words": [
+        {
+          "text": "Like",
+          "start": 199.36,
+          "end": 199.75
+        },
+        {
+          "text": "I",
+          "start": 199.75,
+          "end": 200.14
+        },
+        {
+          "text": "feel",
+          "start": 200.14,
+          "end": 200.53
+        },
+        {
+          "text": "bad",
+          "start": 200.53,
+          "end": 200.92
+        },
+        {
+          "text": "for",
+          "start": 200.92,
+          "end": 201.31
+        },
+        {
+          "text": "the",
+          "start": 201.31,
+          "end": 201.7
+        },
+        {
+          "text": "person",
+          "start": 201.7,
+          "end": 201.95
+        },
+        {
+          "text": "but",
+          "start": 201.95,
+          "end": 202.2
+        },
+        {
+          "text": "at",
+          "start": 202.2,
+          "end": 202.45
+        },
+        {
+          "text": "the",
+          "start": 202.45,
+          "end": 202.7
+        },
+        {
+          "text": "same",
+          "start": 202.7,
+          "end": 202.95
+        },
+        {
+          "text": "time",
+          "start": 202.95,
+          "end": 203.2
+        },
+        {
+          "text": "I'm",
+          "start": 203.2,
+          "end": 203.45
+        },
+        {
+          "text": "like",
+          "start": 203.45,
+          "end": 203.48
+        },
+        {
+          "text": "dude",
+          "start": 203.48,
+          "end": 203.73
+        },
+        {
+          "text": "what",
+          "start": 203.73,
+          "end": 203.98
+        },
+        {
+          "text": "the",
+          "start": 203.98,
+          "end": 204.23
+        },
+        {
+          "text": "[",
+          "start": 204.23,
+          "end": 204.48
+        },
+        {
+          "text": "__",
+          "start": 204.48,
+          "end": 204.73
+        },
+        {
+          "text": "]",
+          "start": 204.73,
+          "end": 204.98
+        },
+        {
+          "text": "were",
+          "start": 204.98,
+          "end": 205.23
+        },
+        {
+          "text": "you",
+          "start": 205.23,
+          "end": 205.48
+        },
+        {
+          "text": "thinking",
+          "start": 205.48,
+          "end": 205.73
+        },
+        {
+          "text": "see",
+          "start": 205.73,
+          "end": 205.98
+        },
+        {
+          "text": "and",
+          "start": 205.98,
+          "end": 206.23
+        },
+        {
+          "text": "now",
+          "start": 206.23,
+          "end": 206.48
+        },
+        {
+          "text": "this",
+          "start": 206.48,
+          "end": 206.73
+        },
+        {
+          "text": "guy",
+          "start": 206.73,
+          "end": 206.98
+        },
+        {
+          "text": "he's",
+          "start": 206.98,
+          "end": 207.23
+        },
+        {
+          "text": "busted",
+          "start": 207.23,
+          "end": 207.48
+        },
+        {
+          "text": "he's",
+          "start": 207.48,
+          "end": 207.73
+        },
+        {
+          "text": "going",
+          "start": 207.73,
+          "end": 207.98
+        },
+        {
+          "text": "to",
+          "start": 207.98,
+          "end": 208.23
+        },
+        {
+          "text": "go",
+          "start": 208.23,
+          "end": 208.48
+        },
+        {
+          "text": "to.",
+          "start": 208.48,
+          "end": 208.73
+        }
+      ]
+    },
+    {
+      "id": "cue-20",
+      "start": 206.23,
+      "end": 215.5,
+      "text": "Jail this will probably be his cellmate do you even [ __ ] bro and you know what else after seeing this video I'm seriously having second thoughts about ever doing meth but that's all.",
+      "words": [
+        {
+          "text": "Jail",
+          "start": 206.23,
+          "end": 206.64
+        },
+        {
+          "text": "this",
+          "start": 206.64,
+          "end": 207.05
+        },
+        {
+          "text": "will",
+          "start": 207.05,
+          "end": 207.46
+        },
+        {
+          "text": "probably",
+          "start": 207.46,
+          "end": 207.87
+        },
+        {
+          "text": "be",
+          "start": 207.87,
+          "end": 208.28
+        },
+        {
+          "text": "his",
+          "start": 208.28,
+          "end": 208.69
+        },
+        {
+          "text": "cellmate",
+          "start": 208.69,
+          "end": 208.94
+        },
+        {
+          "text": "do",
+          "start": 208.94,
+          "end": 209.19
+        },
+        {
+          "text": "you",
+          "start": 209.19,
+          "end": 209.44
+        },
+        {
+          "text": "even",
+          "start": 209.44,
+          "end": 209.69
+        },
+        {
+          "text": "[",
+          "start": 209.69,
+          "end": 209.94
+        },
+        {
+          "text": "__",
+          "start": 209.94,
+          "end": 210.19
+        },
+        {
+          "text": "]",
+          "start": 210.19,
+          "end": 210.44
+        },
+        {
+          "text": "bro",
+          "start": 210.44,
+          "end": 210.69
+        },
+        {
+          "text": "and",
+          "start": 210.69,
+          "end": 210.72
+        },
+        {
+          "text": "you",
+          "start": 210.72,
+          "end": 211.16
+        },
+        {
+          "text": "know",
+          "start": 211.16,
+          "end": 211.41
+        },
+        {
+          "text": "what",
+          "start": 211.41,
+          "end": 211.66
+        },
+        {
+          "text": "else",
+          "start": 211.66,
+          "end": 211.91
+        },
+        {
+          "text": "after",
+          "start": 211.91,
+          "end": 212.16
+        },
+        {
+          "text": "seeing",
+          "start": 212.16,
+          "end": 212.41
+        },
+        {
+          "text": "this",
+          "start": 212.41,
+          "end": 212.66
+        },
+        {
+          "text": "video",
+          "start": 212.66,
+          "end": 212.91
+        },
+        {
+          "text": "I'm",
+          "start": 212.91,
+          "end": 213.16
+        },
+        {
+          "text": "seriously",
+          "start": 213.16,
+          "end": 213.41
+        },
+        {
+          "text": "having",
+          "start": 213.41,
+          "end": 213.66
+        },
+        {
+          "text": "second",
+          "start": 213.66,
+          "end": 213.68
+        },
+        {
+          "text": "thoughts",
+          "start": 213.68,
+          "end": 214.31
+        },
+        {
+          "text": "about",
+          "start": 214.31,
+          "end": 214.56
+        },
+        {
+          "text": "ever",
+          "start": 214.56,
+          "end": 214.81
+        },
+        {
+          "text": "doing",
+          "start": 214.81,
+          "end": 215.06
+        },
+        {
+          "text": "meth",
+          "start": 215.06,
+          "end": 215.31
+        },
+        {
+          "text": "but",
+          "start": 215.31,
+          "end": 215.56
+        },
+        {
+          "text": "that's",
+          "start": 215.56,
+          "end": 215.81
+        },
+        {
+          "text": "all.",
+          "start": 215.81,
+          "end": 216.06
+        }
+      ]
+    },
+    {
+      "id": "cue-21",
+      "start": 215.5,
+      "end": 224.17,
+      "text": "My time guys I'll see you later in the week uh don't forget to check out the full videos links are down below in the description I'm Ray William Johnson and I approve this.",
+      "words": [
+        {
+          "text": "My",
+          "start": 215.5,
+          "end": 215.92
+        },
+        {
+          "text": "time",
+          "start": 215.92,
+          "end": 216.17
+        },
+        {
+          "text": "guys",
+          "start": 216.17,
+          "end": 216.42
+        },
+        {
+          "text": "I'll",
+          "start": 216.42,
+          "end": 216.67
+        },
+        {
+          "text": "see",
+          "start": 216.67,
+          "end": 216.92
+        },
+        {
+          "text": "you",
+          "start": 216.92,
+          "end": 217.17
+        },
+        {
+          "text": "later",
+          "start": 217.17,
+          "end": 217.42
+        },
+        {
+          "text": "in",
+          "start": 217.42,
+          "end": 217.67
+        },
+        {
+          "text": "the",
+          "start": 217.67,
+          "end": 217.92
+        },
+        {
+          "text": "week",
+          "start": 217.92,
+          "end": 218.17
+        },
+        {
+          "text": "uh",
+          "start": 218.17,
+          "end": 218.42
+        },
+        {
+          "text": "don't",
+          "start": 218.42,
+          "end": 218.67
+        },
+        {
+          "text": "forget",
+          "start": 218.67,
+          "end": 218.92
+        },
+        {
+          "text": "to",
+          "start": 218.92,
+          "end": 219.17
+        },
+        {
+          "text": "check",
+          "start": 219.17,
+          "end": 219.42
+        },
+        {
+          "text": "out",
+          "start": 219.42,
+          "end": 219.67
+        },
+        {
+          "text": "the",
+          "start": 219.67,
+          "end": 219.92
+        },
+        {
+          "text": "full",
+          "start": 219.92,
+          "end": 220.17
+        },
+        {
+          "text": "videos",
+          "start": 220.17,
+          "end": 220.42
+        },
+        {
+          "text": "links",
+          "start": 220.42,
+          "end": 220.67
+        },
+        {
+          "text": "are",
+          "start": 220.67,
+          "end": 220.92
+        },
+        {
+          "text": "down",
+          "start": 220.92,
+          "end": 221.17
+        },
+        {
+          "text": "below",
+          "start": 221.17,
+          "end": 221.42
+        },
+        {
+          "text": "in",
+          "start": 221.42,
+          "end": 221.67
+        },
+        {
+          "text": "the",
+          "start": 221.67,
+          "end": 221.92
+        },
+        {
+          "text": "description",
+          "start": 221.92,
+          "end": 222.17
+        },
+        {
+          "text": "I'm",
+          "start": 222.17,
+          "end": 222.42
+        },
+        {
+          "text": "Ray",
+          "start": 222.42,
+          "end": 222.67
+        },
+        {
+          "text": "William",
+          "start": 222.67,
+          "end": 222.92
+        },
+        {
+          "text": "Johnson",
+          "start": 222.92,
+          "end": 223.17
+        },
+        {
+          "text": "and",
+          "start": 223.17,
+          "end": 223.42
+        },
+        {
+          "text": "I",
+          "start": 223.42,
+          "end": 223.67
+        },
+        {
+          "text": "approve",
+          "start": 223.67,
+          "end": 223.92
+        },
+        {
+          "text": "this.",
+          "start": 223.92,
+          "end": 224.17
+        }
+      ]
+    },
+    {
+      "id": "cue-22",
+      "start": 227.44,
+      "end": 236.7,
+      "text": "Message yeah I've been bench pressing koala bears all day you know I typically eat plants and berries but no trans fats you know can you spot me can you give me a spot you.",
+      "words": [
+        {
+          "text": "Message",
+          "start": 227.44,
+          "end": 228.08
+        },
+        {
+          "text": "yeah",
+          "start": 228.08,
+          "end": 228.72
+        },
+        {
+          "text": "I've",
+          "start": 228.72,
+          "end": 229.36
+        },
+        {
+          "text": "been",
+          "start": 229.36,
+          "end": 230.0
+        },
+        {
+          "text": "bench",
+          "start": 230.0,
+          "end": 230.64
+        },
+        {
+          "text": "pressing",
+          "start": 230.64,
+          "end": 231.28
+        },
+        {
+          "text": "koala",
+          "start": 231.28,
+          "end": 231.53
+        },
+        {
+          "text": "bears",
+          "start": 231.53,
+          "end": 231.78
+        },
+        {
+          "text": "all",
+          "start": 231.78,
+          "end": 232.03
+        },
+        {
+          "text": "day",
+          "start": 232.03,
+          "end": 232.28
+        },
+        {
+          "text": "you",
+          "start": 232.28,
+          "end": 232.53
+        },
+        {
+          "text": "know",
+          "start": 232.53,
+          "end": 232.66
+        },
+        {
+          "text": "I",
+          "start": 232.66,
+          "end": 233.21
+        },
+        {
+          "text": "typically",
+          "start": 233.21,
+          "end": 233.76
+        },
+        {
+          "text": "eat",
+          "start": 233.76,
+          "end": 234.01
+        },
+        {
+          "text": "plants",
+          "start": 234.01,
+          "end": 234.26
+        },
+        {
+          "text": "and",
+          "start": 234.26,
+          "end": 234.51
+        },
+        {
+          "text": "berries",
+          "start": 234.51,
+          "end": 234.76
+        },
+        {
+          "text": "but",
+          "start": 234.76,
+          "end": 235.01
+        },
+        {
+          "text": "no",
+          "start": 235.01,
+          "end": 235.26
+        },
+        {
+          "text": "trans",
+          "start": 235.26,
+          "end": 235.51
+        },
+        {
+          "text": "fats",
+          "start": 235.51,
+          "end": 235.68
+        },
+        {
+          "text": "you",
+          "start": 235.68,
+          "end": 235.93
+        },
+        {
+          "text": "know",
+          "start": 235.93,
+          "end": 236.18
+        },
+        {
+          "text": "can",
+          "start": 236.18,
+          "end": 236.43
+        },
+        {
+          "text": "you",
+          "start": 236.43,
+          "end": 236.68
+        },
+        {
+          "text": "spot",
+          "start": 236.68,
+          "end": 236.93
+        },
+        {
+          "text": "me",
+          "start": 236.93,
+          "end": 237.18
+        },
+        {
+          "text": "can",
+          "start": 237.18,
+          "end": 237.43
+        },
+        {
+          "text": "you",
+          "start": 237.43,
+          "end": 237.68
+        },
+        {
+          "text": "give",
+          "start": 237.68,
+          "end": 237.93
+        },
+        {
+          "text": "me",
+          "start": 237.93,
+          "end": 238.18
+        },
+        {
+          "text": "a",
+          "start": 238.18,
+          "end": 238.43
+        },
+        {
+          "text": "spot",
+          "start": 238.43,
+          "end": 238.68
+        },
+        {
+          "text": "you.",
+          "start": 238.68,
+          "end": 238.93
+        }
+      ]
+    },
+    {
+      "id": "cue-23",
+      "start": 236.7,
+      "end": 244.29,
+      "text": "A spot can you get a spot Can you spot over there you spot you spot me to spot you spot him I'll spot you sp is spot on my wall dog name spot somebody.",
+      "words": [
+        {
+          "text": "A",
+          "start": 236.7,
+          "end": 237.04
+        },
+        {
+          "text": "spot",
+          "start": 237.04,
+          "end": 237.38
+        },
+        {
+          "text": "can",
+          "start": 237.38,
+          "end": 237.72
+        },
+        {
+          "text": "you",
+          "start": 237.72,
+          "end": 238.06
+        },
+        {
+          "text": "get",
+          "start": 238.06,
+          "end": 238.4
+        },
+        {
+          "text": "a",
+          "start": 238.4,
+          "end": 238.74
+        },
+        {
+          "text": "spot",
+          "start": 238.74,
+          "end": 239.08
+        },
+        {
+          "text": "Can",
+          "start": 239.08,
+          "end": 239.42
+        },
+        {
+          "text": "you",
+          "start": 239.42,
+          "end": 239.67
+        },
+        {
+          "text": "spot",
+          "start": 239.67,
+          "end": 239.92
+        },
+        {
+          "text": "over",
+          "start": 239.92,
+          "end": 240.17
+        },
+        {
+          "text": "there",
+          "start": 240.17,
+          "end": 240.42
+        },
+        {
+          "text": "you",
+          "start": 240.42,
+          "end": 240.67
+        },
+        {
+          "text": "spot",
+          "start": 240.67,
+          "end": 240.92
+        },
+        {
+          "text": "you",
+          "start": 240.7,
+          "end": 241.15
+        },
+        {
+          "text": "spot",
+          "start": 241.15,
+          "end": 241.4
+        },
+        {
+          "text": "me",
+          "start": 241.4,
+          "end": 241.65
+        },
+        {
+          "text": "to",
+          "start": 241.65,
+          "end": 241.9
+        },
+        {
+          "text": "spot",
+          "start": 241.9,
+          "end": 242.15
+        },
+        {
+          "text": "you",
+          "start": 242.15,
+          "end": 242.4
+        },
+        {
+          "text": "spot",
+          "start": 242.4,
+          "end": 242.65
+        },
+        {
+          "text": "him",
+          "start": 242.65,
+          "end": 242.76
+        },
+        {
+          "text": "I'll",
+          "start": 242.76,
+          "end": 243.24
+        },
+        {
+          "text": "spot",
+          "start": 243.24,
+          "end": 243.72
+        },
+        {
+          "text": "you",
+          "start": 243.72,
+          "end": 243.97
+        },
+        {
+          "text": "sp",
+          "start": 243.97,
+          "end": 244.22
+        },
+        {
+          "text": "is",
+          "start": 244.22,
+          "end": 244.47
+        },
+        {
+          "text": "spot",
+          "start": 244.47,
+          "end": 244.72
+        },
+        {
+          "text": "on",
+          "start": 244.72,
+          "end": 244.97
+        },
+        {
+          "text": "my",
+          "start": 244.97,
+          "end": 245.22
+        },
+        {
+          "text": "wall",
+          "start": 245.22,
+          "end": 245.47
+        },
+        {
+          "text": "dog",
+          "start": 245.47,
+          "end": 245.72
+        },
+        {
+          "text": "name",
+          "start": 245.72,
+          "end": 245.97
+        },
+        {
+          "text": "spot",
+          "start": 245.97,
+          "end": 246.22
+        },
+        {
+          "text": "somebody.",
+          "start": 246.22,
+          "end": 246.47
+        }
+      ]
+    },
+    {
+      "id": "cue-24",
+      "start": 244.29,
+      "end": 249.2,
+      "text": "Not know how to flush the toilet after they've had a.",
+      "words": [
+        {
+          "text": "Not",
+          "start": 244.29,
+          "end": 244.9
+        },
+        {
+          "text": "know",
+          "start": 244.9,
+          "end": 245.51
+        },
+        {
+          "text": "how",
+          "start": 245.51,
+          "end": 246.12
+        },
+        {
+          "text": "to",
+          "start": 246.12,
+          "end": 246.73
+        },
+        {
+          "text": "flush",
+          "start": 246.73,
+          "end": 247.34
+        },
+        {
+          "text": "the",
+          "start": 247.34,
+          "end": 247.95
+        },
+        {
+          "text": "toilet",
+          "start": 247.95,
+          "end": 248.2
+        },
+        {
+          "text": "after",
+          "start": 248.2,
+          "end": 248.45
+        },
+        {
+          "text": "they've",
+          "start": 248.45,
+          "end": 248.7
+        },
+        {
+          "text": "had",
+          "start": 248.7,
+          "end": 248.95
+        },
+        {
+          "text": "a.",
+          "start": 248.95,
+          "end": 249.2
+        }
+      ]
+    },
+    {
+      "id": "cue-25",
+      "start": 249.88,
+      "end": 255.83,
+      "text": "[ __ ] oh it's you hey.",
+      "words": [
+        {
+          "text": "[",
+          "start": 249.88,
+          "end": 250.73
+        },
+        {
+          "text": "__",
+          "start": 250.73,
+          "end": 251.58
+        },
+        {
+          "text": "]",
+          "start": 251.58,
+          "end": 252.43
+        },
+        {
+          "text": "oh",
+          "start": 252.43,
+          "end": 253.28
+        },
+        {
+          "text": "it's",
+          "start": 253.28,
+          "end": 254.13
+        },
+        {
+          "text": "you",
+          "start": 254.13,
+          "end": 254.98
+        },
+        {
+          "text": "hey.",
+          "start": 254.98,
+          "end": 255.83
+        }
+      ]
+    }
+  ]
+}

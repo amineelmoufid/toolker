@@ -1,0 +1,2130 @@
+{
+  "ok": true,
+  "videoId": "fJ9rUzIMcZQ",
+  "language": "en",
+  "trackKind": "standard",
+  "subtitles": [
+    {
+      "id": "cue-1",
+      "start": 2.47,
+      "end": 15.5,
+      "text": "Is this the real life Is this just fantasy Caught in a landslide No escape from reality.",
+      "words": [
+        {
+          "text": "Is",
+          "start": 2.47,
+          "end": 2.98
+        },
+        {
+          "text": "this",
+          "start": 2.98,
+          "end": 3.49
+        },
+        {
+          "text": "the",
+          "start": 3.49,
+          "end": 4.0
+        },
+        {
+          "text": "real",
+          "start": 4.0,
+          "end": 4.51
+        },
+        {
+          "text": "life",
+          "start": 4.51,
+          "end": 5.02
+        },
+        {
+          "text": "Is",
+          "start": 6.26,
+          "end": 6.82
+        },
+        {
+          "text": "this",
+          "start": 6.82,
+          "end": 7.38
+        },
+        {
+          "text": "just",
+          "start": 7.38,
+          "end": 7.94
+        },
+        {
+          "text": "fantasy",
+          "start": 7.94,
+          "end": 8.5
+        },
+        {
+          "text": "Caught",
+          "start": 9.72,
+          "end": 10.18
+        },
+        {
+          "text": "in",
+          "start": 10.18,
+          "end": 10.64
+        },
+        {
+          "text": "a",
+          "start": 10.64,
+          "end": 11.1
+        },
+        {
+          "text": "landslide",
+          "start": 11.1,
+          "end": 11.56
+        },
+        {
+          "text": "No",
+          "start": 12.7,
+          "end": 13.4
+        },
+        {
+          "text": "escape",
+          "start": 13.4,
+          "end": 14.1
+        },
+        {
+          "text": "from",
+          "start": 14.1,
+          "end": 14.8
+        },
+        {
+          "text": "reality.",
+          "start": 14.8,
+          "end": 15.5
+        }
+      ]
+    },
+    {
+      "id": "cue-2",
+      "start": 17.12,
+      "end": 25.7,
+      "text": "Open your eyes Look up to the skies and see.",
+      "words": [
+        {
+          "text": "Open",
+          "start": 17.12,
+          "end": 17.66
+        },
+        {
+          "text": "your",
+          "start": 17.66,
+          "end": 18.2
+        },
+        {
+          "text": "eyes",
+          "start": 18.2,
+          "end": 18.74
+        },
+        {
+          "text": "Look",
+          "start": 20.17,
+          "end": 20.96
+        },
+        {
+          "text": "up",
+          "start": 20.96,
+          "end": 21.75
+        },
+        {
+          "text": "to",
+          "start": 21.75,
+          "end": 22.54
+        },
+        {
+          "text": "the",
+          "start": 22.54,
+          "end": 23.33
+        },
+        {
+          "text": "skies",
+          "start": 23.33,
+          "end": 24.12
+        },
+        {
+          "text": "and",
+          "start": 24.12,
+          "end": 24.91
+        },
+        {
+          "text": "see.",
+          "start": 24.91,
+          "end": 25.7
+        }
+      ]
+    },
+    {
+      "id": "cue-3",
+      "start": 27.47,
+      "end": 48.92,
+      "text": "I'm just a poor boy I need no sympathy Because I'm easy come, easy go Little high, little low Any way the wind blows Doesn't really matter to me.",
+      "words": [
+        {
+          "text": "I'm",
+          "start": 27.47,
+          "end": 27.94
+        },
+        {
+          "text": "just",
+          "start": 27.94,
+          "end": 28.41
+        },
+        {
+          "text": "a",
+          "start": 28.41,
+          "end": 28.88
+        },
+        {
+          "text": "poor",
+          "start": 28.88,
+          "end": 29.35
+        },
+        {
+          "text": "boy",
+          "start": 29.35,
+          "end": 29.82
+        },
+        {
+          "text": "I",
+          "start": 30.88,
+          "end": 31.3
+        },
+        {
+          "text": "need",
+          "start": 31.3,
+          "end": 31.72
+        },
+        {
+          "text": "no",
+          "start": 31.72,
+          "end": 32.14
+        },
+        {
+          "text": "sympathy",
+          "start": 32.14,
+          "end": 32.56
+        },
+        {
+          "text": "Because",
+          "start": 33.44,
+          "end": 33.92
+        },
+        {
+          "text": "I'm",
+          "start": 33.92,
+          "end": 34.4
+        },
+        {
+          "text": "easy",
+          "start": 34.4,
+          "end": 34.88
+        },
+        {
+          "text": "come,",
+          "start": 34.88,
+          "end": 35.36
+        },
+        {
+          "text": "easy",
+          "start": 35.36,
+          "end": 35.84
+        },
+        {
+          "text": "go",
+          "start": 35.84,
+          "end": 36.32
+        },
+        {
+          "text": "Little",
+          "start": 37.43,
+          "end": 37.98
+        },
+        {
+          "text": "high,",
+          "start": 37.98,
+          "end": 38.53
+        },
+        {
+          "text": "little",
+          "start": 38.53,
+          "end": 39.08
+        },
+        {
+          "text": "low",
+          "start": 39.08,
+          "end": 39.63
+        },
+        {
+          "text": "Any",
+          "start": 40.82,
+          "end": 41.3
+        },
+        {
+          "text": "way",
+          "start": 41.3,
+          "end": 41.78
+        },
+        {
+          "text": "the",
+          "start": 41.78,
+          "end": 42.26
+        },
+        {
+          "text": "wind",
+          "start": 42.26,
+          "end": 42.74
+        },
+        {
+          "text": "blows",
+          "start": 42.74,
+          "end": 43.22
+        },
+        {
+          "text": "Doesn't",
+          "start": 44.62,
+          "end": 45.48
+        },
+        {
+          "text": "really",
+          "start": 45.48,
+          "end": 46.34
+        },
+        {
+          "text": "matter",
+          "start": 46.34,
+          "end": 47.2
+        },
+        {
+          "text": "to",
+          "start": 47.2,
+          "end": 48.06
+        },
+        {
+          "text": "me.",
+          "start": 48.06,
+          "end": 48.92
+        }
+      ]
+    },
+    {
+      "id": "cue-4",
+      "start": 50.61,
+      "end": 76.02,
+      "text": "To me Mama, just killed a man Put a gun against his head Pulled my trigger, now he's dead Mama, life had just begun.",
+      "words": [
+        {
+          "text": "To",
+          "start": 50.61,
+          "end": 51.42
+        },
+        {
+          "text": "me",
+          "start": 51.42,
+          "end": 52.23
+        },
+        {
+          "text": "Mama,",
+          "start": 58.15,
+          "end": 58.92
+        },
+        {
+          "text": "just",
+          "start": 58.92,
+          "end": 59.69
+        },
+        {
+          "text": "killed",
+          "start": 59.69,
+          "end": 60.46
+        },
+        {
+          "text": "a",
+          "start": 60.46,
+          "end": 61.23
+        },
+        {
+          "text": "man",
+          "start": 61.23,
+          "end": 62.0
+        },
+        {
+          "text": "Put",
+          "start": 64.14,
+          "end": 64.5
+        },
+        {
+          "text": "a",
+          "start": 64.5,
+          "end": 64.86
+        },
+        {
+          "text": "gun",
+          "start": 64.86,
+          "end": 65.22
+        },
+        {
+          "text": "against",
+          "start": 65.22,
+          "end": 65.58
+        },
+        {
+          "text": "his",
+          "start": 65.58,
+          "end": 65.94
+        },
+        {
+          "text": "head",
+          "start": 65.94,
+          "end": 66.3
+        },
+        {
+          "text": "Pulled",
+          "start": 67.29,
+          "end": 67.78
+        },
+        {
+          "text": "my",
+          "start": 67.78,
+          "end": 68.27
+        },
+        {
+          "text": "trigger,",
+          "start": 68.27,
+          "end": 68.76
+        },
+        {
+          "text": "now",
+          "start": 68.76,
+          "end": 69.25
+        },
+        {
+          "text": "he's",
+          "start": 69.25,
+          "end": 69.74
+        },
+        {
+          "text": "dead",
+          "start": 69.74,
+          "end": 70.23
+        },
+        {
+          "text": "Mama,",
+          "start": 71.62,
+          "end": 72.5
+        },
+        {
+          "text": "life",
+          "start": 72.5,
+          "end": 73.38
+        },
+        {
+          "text": "had",
+          "start": 73.38,
+          "end": 74.26
+        },
+        {
+          "text": "just",
+          "start": 74.26,
+          "end": 75.14
+        },
+        {
+          "text": "begun.",
+          "start": 75.14,
+          "end": 76.02
+        }
+      ]
+    },
+    {
+      "id": "cue-5",
+      "start": 77.99,
+      "end": 83.84,
+      "text": "But now I've gone and thrown it all away.",
+      "words": [
+        {
+          "text": "But",
+          "start": 77.99,
+          "end": 78.64
+        },
+        {
+          "text": "now",
+          "start": 78.64,
+          "end": 79.29
+        },
+        {
+          "text": "I've",
+          "start": 79.29,
+          "end": 79.94
+        },
+        {
+          "text": "gone",
+          "start": 79.94,
+          "end": 80.59
+        },
+        {
+          "text": "and",
+          "start": 80.59,
+          "end": 81.24
+        },
+        {
+          "text": "thrown",
+          "start": 81.24,
+          "end": 81.89
+        },
+        {
+          "text": "it",
+          "start": 81.89,
+          "end": 82.54
+        },
+        {
+          "text": "all",
+          "start": 82.54,
+          "end": 83.19
+        },
+        {
+          "text": "away.",
+          "start": 83.19,
+          "end": 83.84
+        }
+      ]
+    },
+    {
+      "id": "cue-6",
+      "start": 86.03,
+      "end": 123.66,
+      "text": "Mama, ooh Didn't mean to make you cry If I'm not back again this time tomorrow Carry on, carry on As if nothing really matters (gentle piano solo) Too late, my time has come Sends.",
+      "words": [
+        {
+          "text": "Mama,",
+          "start": 86.03,
+          "end": 87.56
+        },
+        {
+          "text": "ooh",
+          "start": 87.56,
+          "end": 89.09
+        },
+        {
+          "text": "Didn't",
+          "start": 91.3,
+          "end": 91.75
+        },
+        {
+          "text": "mean",
+          "start": 91.75,
+          "end": 92.2
+        },
+        {
+          "text": "to",
+          "start": 92.2,
+          "end": 92.66
+        },
+        {
+          "text": "make",
+          "start": 92.66,
+          "end": 93.11
+        },
+        {
+          "text": "you",
+          "start": 93.11,
+          "end": 93.56
+        },
+        {
+          "text": "cry",
+          "start": 93.56,
+          "end": 94.02
+        },
+        {
+          "text": "If",
+          "start": 94.94,
+          "end": 95.4
+        },
+        {
+          "text": "I'm",
+          "start": 95.4,
+          "end": 95.86
+        },
+        {
+          "text": "not",
+          "start": 95.86,
+          "end": 96.32
+        },
+        {
+          "text": "back",
+          "start": 96.32,
+          "end": 96.78
+        },
+        {
+          "text": "again",
+          "start": 96.78,
+          "end": 97.24
+        },
+        {
+          "text": "this",
+          "start": 97.24,
+          "end": 97.7
+        },
+        {
+          "text": "time",
+          "start": 97.7,
+          "end": 98.16
+        },
+        {
+          "text": "tomorrow",
+          "start": 98.16,
+          "end": 98.62
+        },
+        {
+          "text": "Carry",
+          "start": 99.85,
+          "end": 100.46
+        },
+        {
+          "text": "on,",
+          "start": 100.46,
+          "end": 101.07
+        },
+        {
+          "text": "carry",
+          "start": 101.07,
+          "end": 101.68
+        },
+        {
+          "text": "on",
+          "start": 101.68,
+          "end": 102.29
+        },
+        {
+          "text": "As",
+          "start": 103.48,
+          "end": 104.04
+        },
+        {
+          "text": "if",
+          "start": 104.04,
+          "end": 104.6
+        },
+        {
+          "text": "nothing",
+          "start": 104.6,
+          "end": 105.16
+        },
+        {
+          "text": "really",
+          "start": 105.16,
+          "end": 105.72
+        },
+        {
+          "text": "matters",
+          "start": 105.72,
+          "end": 106.28
+        },
+        {
+          "text": "(gentle",
+          "start": 106.9,
+          "end": 110.17
+        },
+        {
+          "text": "piano",
+          "start": 110.17,
+          "end": 113.44
+        },
+        {
+          "text": "solo)",
+          "start": 113.44,
+          "end": 116.71
+        },
+        {
+          "text": "Too",
+          "start": 117.45,
+          "end": 118.18
+        },
+        {
+          "text": "late,",
+          "start": 118.18,
+          "end": 118.91
+        },
+        {
+          "text": "my",
+          "start": 118.91,
+          "end": 119.64
+        },
+        {
+          "text": "time",
+          "start": 119.64,
+          "end": 120.37
+        },
+        {
+          "text": "has",
+          "start": 120.37,
+          "end": 121.1
+        },
+        {
+          "text": "come",
+          "start": 121.1,
+          "end": 121.83
+        },
+        {
+          "text": "Sends.",
+          "start": 123.19,
+          "end": 123.66
+        }
+      ]
+    },
+    {
+      "id": "cue-7",
+      "start": 123.66,
+      "end": 134.56,
+      "text": "Shivers down my spine Body's aching all the time Goodbye everybody, I've got to go.",
+      "words": [
+        {
+          "text": "Shivers",
+          "start": 123.66,
+          "end": 124.13
+        },
+        {
+          "text": "down",
+          "start": 124.13,
+          "end": 124.6
+        },
+        {
+          "text": "my",
+          "start": 124.6,
+          "end": 125.07
+        },
+        {
+          "text": "spine",
+          "start": 125.07,
+          "end": 125.54
+        },
+        {
+          "text": "Body's",
+          "start": 126.63,
+          "end": 127.18
+        },
+        {
+          "text": "aching",
+          "start": 127.18,
+          "end": 127.73
+        },
+        {
+          "text": "all",
+          "start": 127.73,
+          "end": 128.28
+        },
+        {
+          "text": "the",
+          "start": 128.28,
+          "end": 128.83
+        },
+        {
+          "text": "time",
+          "start": 128.83,
+          "end": 129.38
+        },
+        {
+          "text": "Goodbye",
+          "start": 130.81,
+          "end": 131.44
+        },
+        {
+          "text": "everybody,",
+          "start": 131.44,
+          "end": 132.06
+        },
+        {
+          "text": "I've",
+          "start": 132.06,
+          "end": 132.69
+        },
+        {
+          "text": "got",
+          "start": 132.69,
+          "end": 133.31
+        },
+        {
+          "text": "to",
+          "start": 133.31,
+          "end": 133.94
+        },
+        {
+          "text": "go.",
+          "start": 133.94,
+          "end": 134.56
+        }
+      ]
+    },
+    {
+      "id": "cue-8",
+      "start": 137.32,
+      "end": 143.08,
+      "text": "Gotta leave you all behind and face the truth.",
+      "words": [
+        {
+          "text": "Gotta",
+          "start": 137.32,
+          "end": 137.96
+        },
+        {
+          "text": "leave",
+          "start": 137.96,
+          "end": 138.6
+        },
+        {
+          "text": "you",
+          "start": 138.6,
+          "end": 139.24
+        },
+        {
+          "text": "all",
+          "start": 139.24,
+          "end": 139.88
+        },
+        {
+          "text": "behind",
+          "start": 139.88,
+          "end": 140.52
+        },
+        {
+          "text": "and",
+          "start": 140.52,
+          "end": 141.16
+        },
+        {
+          "text": "face",
+          "start": 141.16,
+          "end": 141.8
+        },
+        {
+          "text": "the",
+          "start": 141.8,
+          "end": 142.44
+        },
+        {
+          "text": "truth.",
+          "start": 142.44,
+          "end": 143.08
+        }
+      ]
+    },
+    {
+      "id": "cue-9",
+      "start": 145.02,
+      "end": 191.28,
+      "text": "Mama, ooh As the wind blows I don't want to die I sometimes wish I'd never been born at all (electric guitar solo) (rhythmic piano solo) I see a little silhouetto of a man Scaramouche.",
+      "words": [
+        {
+          "text": "Mama,",
+          "start": 145.02,
+          "end": 146.16
+        },
+        {
+          "text": "ooh",
+          "start": 146.16,
+          "end": 147.3
+        },
+        {
+          "text": "As",
+          "start": 148.77,
+          "end": 149.1
+        },
+        {
+          "text": "the",
+          "start": 149.1,
+          "end": 149.43
+        },
+        {
+          "text": "wind",
+          "start": 149.43,
+          "end": 149.76
+        },
+        {
+          "text": "blows",
+          "start": 149.76,
+          "end": 150.09
+        },
+        {
+          "text": "I",
+          "start": 151.15,
+          "end": 151.62
+        },
+        {
+          "text": "don't",
+          "start": 151.62,
+          "end": 152.09
+        },
+        {
+          "text": "want",
+          "start": 152.09,
+          "end": 152.56
+        },
+        {
+          "text": "to",
+          "start": 152.56,
+          "end": 153.03
+        },
+        {
+          "text": "die",
+          "start": 153.03,
+          "end": 153.5
+        },
+        {
+          "text": "I",
+          "start": 154.49,
+          "end": 154.94
+        },
+        {
+          "text": "sometimes",
+          "start": 154.94,
+          "end": 155.39
+        },
+        {
+          "text": "wish",
+          "start": 155.39,
+          "end": 155.84
+        },
+        {
+          "text": "I'd",
+          "start": 155.84,
+          "end": 156.29
+        },
+        {
+          "text": "never",
+          "start": 156.29,
+          "end": 156.74
+        },
+        {
+          "text": "been",
+          "start": 156.74,
+          "end": 157.19
+        },
+        {
+          "text": "born",
+          "start": 157.19,
+          "end": 157.64
+        },
+        {
+          "text": "at",
+          "start": 157.64,
+          "end": 158.09
+        },
+        {
+          "text": "all",
+          "start": 158.09,
+          "end": 158.54
+        },
+        {
+          "text": "(electric",
+          "start": 159.08,
+          "end": 167.65
+        },
+        {
+          "text": "guitar",
+          "start": 167.65,
+          "end": 176.22
+        },
+        {
+          "text": "solo)",
+          "start": 176.22,
+          "end": 184.79
+        },
+        {
+          "text": "(rhythmic",
+          "start": 184.78,
+          "end": 185.84
+        },
+        {
+          "text": "piano",
+          "start": 185.84,
+          "end": 186.9
+        },
+        {
+          "text": "solo)",
+          "start": 186.9,
+          "end": 187.96
+        },
+        {
+          "text": "I",
+          "start": 188.21,
+          "end": 188.46
+        },
+        {
+          "text": "see",
+          "start": 188.46,
+          "end": 188.71
+        },
+        {
+          "text": "a",
+          "start": 188.71,
+          "end": 188.96
+        },
+        {
+          "text": "little",
+          "start": 188.96,
+          "end": 189.21
+        },
+        {
+          "text": "silhouetto",
+          "start": 189.21,
+          "end": 189.46
+        },
+        {
+          "text": "of",
+          "start": 189.46,
+          "end": 189.71
+        },
+        {
+          "text": "a",
+          "start": 189.71,
+          "end": 189.96
+        },
+        {
+          "text": "man",
+          "start": 189.96,
+          "end": 190.21
+        },
+        {
+          "text": "Scaramouche.",
+          "start": 190.89,
+          "end": 191.28
+        }
+      ]
+    },
+    {
+      "id": "cue-10",
+      "start": 191.67,
+      "end": 210.74,
+      "text": "Will you do the Fandango Thunderbolt and lightning Very, frightening me Galileo, Galileo, Galileo Figaro Magnifico o o I'm just a poor boy, nobody loves me He's just a poor boy from a poor family.",
+      "words": [
+        {
+          "text": "Will",
+          "start": 191.67,
+          "end": 192.06
+        },
+        {
+          "text": "you",
+          "start": 192.06,
+          "end": 192.45
+        },
+        {
+          "text": "do",
+          "start": 192.45,
+          "end": 192.84
+        },
+        {
+          "text": "the",
+          "start": 192.84,
+          "end": 193.23
+        },
+        {
+          "text": "Fandango",
+          "start": 193.23,
+          "end": 193.62
+        },
+        {
+          "text": "Thunderbolt",
+          "start": 194.47,
+          "end": 194.84
+        },
+        {
+          "text": "and",
+          "start": 194.84,
+          "end": 195.21
+        },
+        {
+          "text": "lightning",
+          "start": 195.21,
+          "end": 195.58
+        },
+        {
+          "text": "Very,",
+          "start": 196.29,
+          "end": 196.62
+        },
+        {
+          "text": "frightening",
+          "start": 196.95,
+          "end": 197.28
+        },
+        {
+          "text": "me",
+          "start": 197.28,
+          "end": 197.61
+        },
+        {
+          "text": "Galileo,",
+          "start": 198.32,
+          "end": 198.7
+        },
+        {
+          "text": "Galileo,",
+          "start": 199.88,
+          "end": 200.31
+        },
+        {
+          "text": "Galileo",
+          "start": 201.51,
+          "end": 201.87
+        },
+        {
+          "text": "Figaro",
+          "start": 201.87,
+          "end": 202.23
+        },
+        {
+          "text": "Magnifico",
+          "start": 202.92,
+          "end": 203.22
+        },
+        {
+          "text": "o",
+          "start": 203.22,
+          "end": 203.52
+        },
+        {
+          "text": "o",
+          "start": 204.12,
+          "end": 204.42
+        },
+        {
+          "text": "I'm",
+          "start": 205.03,
+          "end": 205.36
+        },
+        {
+          "text": "just",
+          "start": 205.36,
+          "end": 205.69
+        },
+        {
+          "text": "a",
+          "start": 205.69,
+          "end": 206.02
+        },
+        {
+          "text": "poor",
+          "start": 206.02,
+          "end": 206.35
+        },
+        {
+          "text": "boy,",
+          "start": 206.35,
+          "end": 206.68
+        },
+        {
+          "text": "nobody",
+          "start": 206.68,
+          "end": 207.01
+        },
+        {
+          "text": "loves",
+          "start": 207.01,
+          "end": 207.34
+        },
+        {
+          "text": "me",
+          "start": 207.34,
+          "end": 207.67
+        },
+        {
+          "text": "He's",
+          "start": 208.31,
+          "end": 208.58
+        },
+        {
+          "text": "just",
+          "start": 208.58,
+          "end": 208.85
+        },
+        {
+          "text": "a",
+          "start": 208.85,
+          "end": 209.12
+        },
+        {
+          "text": "poor",
+          "start": 209.12,
+          "end": 209.39
+        },
+        {
+          "text": "boy",
+          "start": 209.39,
+          "end": 209.66
+        },
+        {
+          "text": "from",
+          "start": 209.66,
+          "end": 209.93
+        },
+        {
+          "text": "a",
+          "start": 209.93,
+          "end": 210.2
+        },
+        {
+          "text": "poor",
+          "start": 210.2,
+          "end": 210.47
+        },
+        {
+          "text": "family.",
+          "start": 210.47,
+          "end": 210.74
+        }
+      ]
+    },
+    {
+      "id": "cue-11",
+      "start": 211.45,
+      "end": 224.83,
+      "text": "Spare him his life from this monstrosity Easy come, easy go, will you let me go Bismillah No, we will not let you go, let him go Bismillah, we will not let you go, let.",
+      "words": [
+        {
+          "text": "Spare",
+          "start": 211.45,
+          "end": 211.84
+        },
+        {
+          "text": "him",
+          "start": 211.84,
+          "end": 212.23
+        },
+        {
+          "text": "his",
+          "start": 212.23,
+          "end": 212.62
+        },
+        {
+          "text": "life",
+          "start": 212.62,
+          "end": 213.01
+        },
+        {
+          "text": "from",
+          "start": 213.01,
+          "end": 213.4
+        },
+        {
+          "text": "this",
+          "start": 213.4,
+          "end": 213.79
+        },
+        {
+          "text": "monstrosity",
+          "start": 213.79,
+          "end": 214.18
+        },
+        {
+          "text": "Easy",
+          "start": 215.81,
+          "end": 216.08
+        },
+        {
+          "text": "come,",
+          "start": 216.08,
+          "end": 216.35
+        },
+        {
+          "text": "easy",
+          "start": 216.35,
+          "end": 216.62
+        },
+        {
+          "text": "go,",
+          "start": 216.62,
+          "end": 216.89
+        },
+        {
+          "text": "will",
+          "start": 216.89,
+          "end": 217.16
+        },
+        {
+          "text": "you",
+          "start": 217.16,
+          "end": 217.43
+        },
+        {
+          "text": "let",
+          "start": 217.43,
+          "end": 217.7
+        },
+        {
+          "text": "me",
+          "start": 217.7,
+          "end": 217.97
+        },
+        {
+          "text": "go",
+          "start": 217.97,
+          "end": 218.24
+        },
+        {
+          "text": "Bismillah",
+          "start": 218.89,
+          "end": 219.26
+        },
+        {
+          "text": "No,",
+          "start": 219.96,
+          "end": 220.18
+        },
+        {
+          "text": "we",
+          "start": 220.18,
+          "end": 220.4
+        },
+        {
+          "text": "will",
+          "start": 220.4,
+          "end": 220.62
+        },
+        {
+          "text": "not",
+          "start": 220.62,
+          "end": 220.84
+        },
+        {
+          "text": "let",
+          "start": 220.84,
+          "end": 221.06
+        },
+        {
+          "text": "you",
+          "start": 221.06,
+          "end": 221.28
+        },
+        {
+          "text": "go,",
+          "start": 221.28,
+          "end": 221.5
+        },
+        {
+          "text": "let",
+          "start": 221.5,
+          "end": 221.72
+        },
+        {
+          "text": "him",
+          "start": 221.72,
+          "end": 221.94
+        },
+        {
+          "text": "go",
+          "start": 221.94,
+          "end": 222.16
+        },
+        {
+          "text": "Bismillah,",
+          "start": 222.67,
+          "end": 222.94
+        },
+        {
+          "text": "we",
+          "start": 222.94,
+          "end": 223.21
+        },
+        {
+          "text": "will",
+          "start": 223.21,
+          "end": 223.48
+        },
+        {
+          "text": "not",
+          "start": 223.48,
+          "end": 223.75
+        },
+        {
+          "text": "let",
+          "start": 223.75,
+          "end": 224.02
+        },
+        {
+          "text": "you",
+          "start": 224.02,
+          "end": 224.29
+        },
+        {
+          "text": "go,",
+          "start": 224.29,
+          "end": 224.56
+        },
+        {
+          "text": "let.",
+          "start": 224.56,
+          "end": 224.83
+        }
+      ]
+    },
+    {
+      "id": "cue-12",
+      "start": 224.83,
+      "end": 236.54,
+      "text": "Him go Bismillah, we will not let you go, let me go Will not let you go, let me go Never let you go, never, let me go Oh oh No, no, no Oh, mama.",
+      "words": [
+        {
+          "text": "Him",
+          "start": 224.83,
+          "end": 225.1
+        },
+        {
+          "text": "go",
+          "start": 225.1,
+          "end": 225.37
+        },
+        {
+          "text": "Bismillah,",
+          "start": 225.96,
+          "end": 226.2
+        },
+        {
+          "text": "we",
+          "start": 226.2,
+          "end": 226.44
+        },
+        {
+          "text": "will",
+          "start": 226.44,
+          "end": 226.68
+        },
+        {
+          "text": "not",
+          "start": 226.68,
+          "end": 226.92
+        },
+        {
+          "text": "let",
+          "start": 226.92,
+          "end": 227.16
+        },
+        {
+          "text": "you",
+          "start": 227.16,
+          "end": 227.4
+        },
+        {
+          "text": "go,",
+          "start": 227.4,
+          "end": 227.64
+        },
+        {
+          "text": "let",
+          "start": 227.64,
+          "end": 227.88
+        },
+        {
+          "text": "me",
+          "start": 227.88,
+          "end": 228.12
+        },
+        {
+          "text": "go",
+          "start": 228.12,
+          "end": 228.36
+        },
+        {
+          "text": "Will",
+          "start": 228.8,
+          "end": 228.96
+        },
+        {
+          "text": "not",
+          "start": 228.96,
+          "end": 229.12
+        },
+        {
+          "text": "let",
+          "start": 229.12,
+          "end": 229.28
+        },
+        {
+          "text": "you",
+          "start": 229.28,
+          "end": 229.44
+        },
+        {
+          "text": "go,",
+          "start": 229.44,
+          "end": 229.6
+        },
+        {
+          "text": "let",
+          "start": 229.6,
+          "end": 229.76
+        },
+        {
+          "text": "me",
+          "start": 229.76,
+          "end": 229.92
+        },
+        {
+          "text": "go",
+          "start": 229.92,
+          "end": 230.08
+        },
+        {
+          "text": "Never",
+          "start": 230.37,
+          "end": 230.5
+        },
+        {
+          "text": "let",
+          "start": 230.5,
+          "end": 230.63
+        },
+        {
+          "text": "you",
+          "start": 230.63,
+          "end": 230.76
+        },
+        {
+          "text": "go,",
+          "start": 230.76,
+          "end": 230.89
+        },
+        {
+          "text": "never,",
+          "start": 230.89,
+          "end": 231.02
+        },
+        {
+          "text": "let",
+          "start": 231.41,
+          "end": 231.54
+        },
+        {
+          "text": "me",
+          "start": 231.54,
+          "end": 231.67
+        },
+        {
+          "text": "go",
+          "start": 231.67,
+          "end": 231.8
+        },
+        {
+          "text": "Oh",
+          "start": 232.24,
+          "end": 232.5
+        },
+        {
+          "text": "oh",
+          "start": 233.02,
+          "end": 233.28
+        },
+        {
+          "text": "No,",
+          "start": 233.76,
+          "end": 234.0
+        },
+        {
+          "text": "no,",
+          "start": 234.48,
+          "end": 234.72
+        },
+        {
+          "text": "no",
+          "start": 235.2,
+          "end": 235.44
+        },
+        {
+          "text": "Oh,",
+          "start": 235.98,
+          "end": 236.26
+        },
+        {
+          "text": "mama.",
+          "start": 236.26,
+          "end": 236.54
+        }
+      ]
+    },
+    {
+      "id": "cue-13",
+      "start": 236.54,
+      "end": 243.33,
+      "text": "Mia, mama mia, mama mia, let me go Beelzebub has a devil put aside for me.",
+      "words": [
+        {
+          "text": "Mia,",
+          "start": 236.54,
+          "end": 236.82
+        },
+        {
+          "text": "mama",
+          "start": 236.82,
+          "end": 237.1
+        },
+        {
+          "text": "mia,",
+          "start": 237.1,
+          "end": 237.38
+        },
+        {
+          "text": "mama",
+          "start": 237.38,
+          "end": 237.66
+        },
+        {
+          "text": "mia,",
+          "start": 237.66,
+          "end": 237.94
+        },
+        {
+          "text": "let",
+          "start": 237.94,
+          "end": 238.22
+        },
+        {
+          "text": "me",
+          "start": 238.22,
+          "end": 238.5
+        },
+        {
+          "text": "go",
+          "start": 238.5,
+          "end": 238.78
+        },
+        {
+          "text": "Beelzebub",
+          "start": 239.57,
+          "end": 240.04
+        },
+        {
+          "text": "has",
+          "start": 240.04,
+          "end": 240.51
+        },
+        {
+          "text": "a",
+          "start": 240.51,
+          "end": 240.98
+        },
+        {
+          "text": "devil",
+          "start": 240.98,
+          "end": 241.45
+        },
+        {
+          "text": "put",
+          "start": 241.45,
+          "end": 241.92
+        },
+        {
+          "text": "aside",
+          "start": 241.92,
+          "end": 242.39
+        },
+        {
+          "text": "for",
+          "start": 242.39,
+          "end": 242.86
+        },
+        {
+          "text": "me.",
+          "start": 242.86,
+          "end": 243.33
+        }
+      ]
+    },
+    {
+      "id": "cue-14",
+      "start": 244.86,
+      "end": 261.26,
+      "text": "For me, for me (energetic guitar music) So you think you can stone me and spit in my eye.",
+      "words": [
+        {
+          "text": "For",
+          "start": 244.86,
+          "end": 245.64
+        },
+        {
+          "text": "me,",
+          "start": 245.64,
+          "end": 246.42
+        },
+        {
+          "text": "for",
+          "start": 246.42,
+          "end": 247.2
+        },
+        {
+          "text": "me",
+          "start": 247.2,
+          "end": 247.98
+        },
+        {
+          "text": "(energetic",
+          "start": 248.78,
+          "end": 251.47
+        },
+        {
+          "text": "guitar",
+          "start": 251.47,
+          "end": 254.16
+        },
+        {
+          "text": "music)",
+          "start": 254.16,
+          "end": 256.85
+        },
+        {
+          "text": "So",
+          "start": 257.18,
+          "end": 257.52
+        },
+        {
+          "text": "you",
+          "start": 257.52,
+          "end": 257.86
+        },
+        {
+          "text": "think",
+          "start": 257.86,
+          "end": 258.2
+        },
+        {
+          "text": "you",
+          "start": 258.2,
+          "end": 258.54
+        },
+        {
+          "text": "can",
+          "start": 258.54,
+          "end": 258.88
+        },
+        {
+          "text": "stone",
+          "start": 258.88,
+          "end": 259.22
+        },
+        {
+          "text": "me",
+          "start": 259.22,
+          "end": 259.56
+        },
+        {
+          "text": "and",
+          "start": 259.56,
+          "end": 259.9
+        },
+        {
+          "text": "spit",
+          "start": 259.9,
+          "end": 260.24
+        },
+        {
+          "text": "in",
+          "start": 260.24,
+          "end": 260.58
+        },
+        {
+          "text": "my",
+          "start": 260.58,
+          "end": 260.92
+        },
+        {
+          "text": "eye.",
+          "start": 260.92,
+          "end": 261.26
+        }
+      ]
+    },
+    {
+      "id": "cue-15",
+      "start": 263.29,
+      "end": 273.63,
+      "text": "So you think you can love me and leave me to die Oh, baby, can't do this to me, baby.",
+      "words": [
+        {
+          "text": "So",
+          "start": 263.29,
+          "end": 263.64
+        },
+        {
+          "text": "you",
+          "start": 263.64,
+          "end": 263.99
+        },
+        {
+          "text": "think",
+          "start": 263.99,
+          "end": 264.34
+        },
+        {
+          "text": "you",
+          "start": 264.34,
+          "end": 264.69
+        },
+        {
+          "text": "can",
+          "start": 264.69,
+          "end": 265.04
+        },
+        {
+          "text": "love",
+          "start": 265.04,
+          "end": 265.39
+        },
+        {
+          "text": "me",
+          "start": 265.39,
+          "end": 265.74
+        },
+        {
+          "text": "and",
+          "start": 265.74,
+          "end": 266.09
+        },
+        {
+          "text": "leave",
+          "start": 266.09,
+          "end": 266.44
+        },
+        {
+          "text": "me",
+          "start": 266.44,
+          "end": 266.79
+        },
+        {
+          "text": "to",
+          "start": 266.79,
+          "end": 267.14
+        },
+        {
+          "text": "die",
+          "start": 267.14,
+          "end": 267.49
+        },
+        {
+          "text": "Oh,",
+          "start": 268.43,
+          "end": 269.08
+        },
+        {
+          "text": "baby,",
+          "start": 269.08,
+          "end": 269.73
+        },
+        {
+          "text": "can't",
+          "start": 269.73,
+          "end": 270.38
+        },
+        {
+          "text": "do",
+          "start": 270.38,
+          "end": 271.03
+        },
+        {
+          "text": "this",
+          "start": 271.03,
+          "end": 271.68
+        },
+        {
+          "text": "to",
+          "start": 271.68,
+          "end": 272.33
+        },
+        {
+          "text": "me,",
+          "start": 272.33,
+          "end": 272.98
+        },
+        {
+          "text": "baby.",
+          "start": 272.98,
+          "end": 273.63
+        }
+      ]
+    },
+    {
+      "id": "cue-16",
+      "start": 275.18,
+      "end": 296.35,
+      "text": "Just gotta get out, just gotta get right outta here (energetic rock music).",
+      "words": [
+        {
+          "text": "Just",
+          "start": 275.18,
+          "end": 275.6
+        },
+        {
+          "text": "gotta",
+          "start": 275.6,
+          "end": 276.02
+        },
+        {
+          "text": "get",
+          "start": 276.02,
+          "end": 276.44
+        },
+        {
+          "text": "out,",
+          "start": 276.44,
+          "end": 276.86
+        },
+        {
+          "text": "just",
+          "start": 276.86,
+          "end": 277.28
+        },
+        {
+          "text": "gotta",
+          "start": 277.28,
+          "end": 277.7
+        },
+        {
+          "text": "get",
+          "start": 277.7,
+          "end": 278.12
+        },
+        {
+          "text": "right",
+          "start": 278.12,
+          "end": 278.54
+        },
+        {
+          "text": "outta",
+          "start": 278.54,
+          "end": 278.96
+        },
+        {
+          "text": "here",
+          "start": 278.96,
+          "end": 279.38
+        },
+        {
+          "text": "(energetic",
+          "start": 279.82,
+          "end": 285.33
+        },
+        {
+          "text": "rock",
+          "start": 285.33,
+          "end": 290.84
+        },
+        {
+          "text": "music).",
+          "start": 290.84,
+          "end": 296.35
+        }
+      ]
+    },
+    {
+      "id": "cue-17",
+      "start": 298.24,
+      "end": 319.5,
+      "text": "Ooooh, ooh yeah, ooh yeah (slow rock music) Nothing really matters Anyone can see.",
+      "words": [
+        {
+          "text": "Ooooh,",
+          "start": 298.24,
+          "end": 299.52
+        },
+        {
+          "text": "ooh",
+          "start": 299.52,
+          "end": 300.8
+        },
+        {
+          "text": "yeah,",
+          "start": 300.8,
+          "end": 302.08
+        },
+        {
+          "text": "ooh",
+          "start": 302.08,
+          "end": 303.36
+        },
+        {
+          "text": "yeah",
+          "start": 303.36,
+          "end": 304.64
+        },
+        {
+          "text": "(slow",
+          "start": 306.14,
+          "end": 308.64
+        },
+        {
+          "text": "rock",
+          "start": 308.64,
+          "end": 311.14
+        },
+        {
+          "text": "music)",
+          "start": 311.14,
+          "end": 313.64
+        },
+        {
+          "text": "Nothing",
+          "start": 314.28,
+          "end": 314.92
+        },
+        {
+          "text": "really",
+          "start": 314.92,
+          "end": 315.56
+        },
+        {
+          "text": "matters",
+          "start": 315.56,
+          "end": 316.2
+        },
+        {
+          "text": "Anyone",
+          "start": 317.52,
+          "end": 318.18
+        },
+        {
+          "text": "can",
+          "start": 318.18,
+          "end": 318.84
+        },
+        {
+          "text": "see.",
+          "start": 318.84,
+          "end": 319.5
+        }
+      ]
+    },
+    {
+      "id": "cue-18",
+      "start": 321.13,
+      "end": 342.2,
+      "text": "Nothing really matters Nothing really matters to me (slow quiet piano music) (slow quiet electric guitar).",
+      "words": [
+        {
+          "text": "Nothing",
+          "start": 321.13,
+          "end": 321.92
+        },
+        {
+          "text": "really",
+          "start": 321.92,
+          "end": 322.71
+        },
+        {
+          "text": "matters",
+          "start": 322.71,
+          "end": 323.5
+        },
+        {
+          "text": "Nothing",
+          "start": 325.59,
+          "end": 326.68
+        },
+        {
+          "text": "really",
+          "start": 326.68,
+          "end": 327.77
+        },
+        {
+          "text": "matters",
+          "start": 327.77,
+          "end": 328.86
+        },
+        {
+          "text": "to",
+          "start": 328.86,
+          "end": 329.95
+        },
+        {
+          "text": "me",
+          "start": 329.95,
+          "end": 331.04
+        },
+        {
+          "text": "(slow",
+          "start": 332.22,
+          "end": 333.08
+        },
+        {
+          "text": "quiet",
+          "start": 333.08,
+          "end": 333.93
+        },
+        {
+          "text": "piano",
+          "start": 333.93,
+          "end": 334.78
+        },
+        {
+          "text": "music)",
+          "start": 334.78,
+          "end": 335.63
+        },
+        {
+          "text": "(slow",
+          "start": 335.82,
+          "end": 337.41
+        },
+        {
+          "text": "quiet",
+          "start": 337.41,
+          "end": 339.0
+        },
+        {
+          "text": "electric",
+          "start": 339.0,
+          "end": 340.6
+        },
+        {
+          "text": "guitar).",
+          "start": 340.6,
+          "end": 342.2
+        }
+      ]
+    },
+    {
+      "id": "cue-19",
+      "start": 345.67,
+      "end": 352.7,
+      "text": "Any way the wind blows (soft cymbal crash).",
+      "words": [
+        {
+          "text": "Any",
+          "start": 345.67,
+          "end": 346.16
+        },
+        {
+          "text": "way",
+          "start": 346.16,
+          "end": 346.65
+        },
+        {
+          "text": "the",
+          "start": 346.65,
+          "end": 347.14
+        },
+        {
+          "text": "wind",
+          "start": 347.14,
+          "end": 347.63
+        },
+        {
+          "text": "blows",
+          "start": 347.63,
+          "end": 348.12
+        },
+        {
+          "text": "(soft",
+          "start": 349.7,
+          "end": 350.7
+        },
+        {
+          "text": "cymbal",
+          "start": 350.7,
+          "end": 351.7
+        },
+        {
+          "text": "crash).",
+          "start": 351.7,
+          "end": 352.7
+        }
+      ]
+    }
+  ]
+}
