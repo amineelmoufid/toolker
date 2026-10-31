@@ -6,10 +6,6 @@ import {
 
   PRESET_CLIPS,
 
-  parseRawSRTtoSubtitles,
-
-  parsePlainTextToSubtitles,
-
   parseTranscriptXml,
 
   reconstructSubtitlesSemantically
@@ -99,10 +95,6 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
 
   const [copiedBookmarklet, setCopiedBookmarklet] = useState<boolean>(false);
 
-  const [showManualPaste, setShowManualPaste] = useState<boolean>(false);
-
-  const [manualText, setManualText] = useState<string>('');
-
 
 
   // Detect Toolker Companion Extension
@@ -180,7 +172,7 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
       try {
         const extResult = await new Promise<any>((resolve) => {
           const reqId = `req-${Date.now()}-${Math.random()}`;
-          const timer = setTimeout(() => resolve(null), 1500);
+          const timer = setTimeout(() => resolve(null), 5000);
           const listener = (event: MessageEvent) => {
             if (event.data && event.data.type === 'TOOLKER_RES_SUBTITLES' && event.data.requestId === reqId) {
               clearTimeout(timer);
@@ -338,8 +330,7 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
       setSyncMessage(`✓ Synchronized original dialogue (${cleanSubs.length} cues, ${wordCount} words)`);
     } else {
       setSyncStatus('error');
-      setSyncMessage(`⚠️ No captions found. Drag the 1-Click Bookmarklet or paste subtitles below.`);
-      setShowManualPaste(true);
+      setSyncMessage(`⚠️ No captions available on YouTube for this video.`);
     }
     setIsSyncing(false);
 
@@ -959,23 +950,8 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
 
                   </div>
 
-                  {syncStatus === 'success' && (!syncedSubtitles || syncedSubtitles.length === 0) && (
 
-                    <button
-
-                      type="button"
-
-                      onClick={() => setShowManualPaste(!showManualPaste)}
-
-                      className="text-[10px] text-[#cf573c] hover:underline uppercase shrink-0 ml-2"
-
-                    >
-
-                      {showManualPaste ? '✕ Hide Paste' : '+ Paste Subtitles'}
-
-                    </button>
-
-                  )}
+                    
 
                 </div>
 
@@ -1013,75 +989,7 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
 
 
 
-                {/* Optional Manual Subtitle Paste Box */}
-
-                {showManualPaste && (
-
-                  <div className="mt-2.5 pt-2 border-t border-[#7a776e]/40 space-y-2">
-
-                    <p className="text-[10px] text-[#c5bfb0]">
-
-                      Paste SRT or timed dialogue lines (e.g. <code>[00:04] Hello world</code>) below:
-
-                    </p>
-
-                    <textarea
-
-                      rows={3}
-
-                      value={manualText}
-
-                      onChange={(e) => setManualText(e.target.value)}
-
-                      placeholder="1&#10;00:00:01,000 --> 00:00:04,000&#10;Hello and welcome..."
-
-                      className="w-full bg-[#16171a] border border-[#7a776e] rounded p-2 text-[10px] font-mono text-[#ebe6d8] outline-none"
-
-                    />
-
-                    <button
-
-                      type="button"
-
-                      onClick={() => {
-
-                        if (!manualText.trim()) return;
-
-                        let parsed: SubtitleLine[] = [];
-
-                        if (manualText.includes('-->')) {
-
-                          parsed = parseRawSRTtoSubtitles(manualText);
-
-                        } else {
-
-                          parsed = parsePlainTextToSubtitles(manualText);
-
-                        }
-
-                        if (parsed.length > 0) {
-
-                          setSyncedSubtitles(parsed);
-
-                          setShowManualPaste(false);
-
-                          setSyncMessage(`✓ Added ${parsed.length} custom subtitle lines`);
-
-                        }
-
-                      }}
-
-                      className="px-2 py-1 bg-[#476171] hover:bg-[#374c59] text-white rounded text-[10px] font-bold uppercase border border-[#1c1d20]"
-
-                    >
-
-                      Apply Pasted Subtitles
-
-                    </button>
-
-                  </div>
-
-                )}
+                
 
               </div>
 

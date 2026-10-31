@@ -48,7 +48,33 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         }
 
         const html = await watchRes.text();
-        const captionTracks = extractCaptionTracksFromHtml(html);
+        let captionTracks = extractCaptionTracksFromHtml(html);
+
+        if (!captionTracks || captionTracks.length === 0) {
+          // Fallback to Native Android InnerTube with Official Key in residential session
+          try {
+            const itRes = await fetch('https://www.youtube.com/youtubei/v1/player?key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'User-Agent': 'com.google.android.youtube/20.10.38 (Linux; U; Android 14)'
+              },
+              body: JSON.stringify({
+                context: {
+                  client: {
+                    clientName: 'ANDROID',
+                    clientVersion: '20.10.38'
+                  }
+                },
+                videoId
+              })
+            });
+            if (itRes.ok) {
+              const itData = await itRes.json();
+              captionTracks = itData?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
+            }
+          } catch (_) {}
+        }
 
         if (!captionTracks || captionTracks.length === 0) {
           sendResponse({ ok: false, error: 'No subtitles found on YouTube for this video.' });
