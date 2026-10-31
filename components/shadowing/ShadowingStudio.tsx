@@ -557,7 +557,9 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
       return;
     }
 
-    const sentences = currentClip.subtitles
+    const reconstructed = reconstructSubtitlesSemantically(currentClip.subtitles);
+    const sourceList = reconstructed && reconstructed.length > 0 ? reconstructed : currentClip.subtitles;
+    const sentences = sourceList
       .map(s => s.text.trim())
       .filter(Boolean);
 
@@ -809,6 +811,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
               isSyncing={isAutoHealingSubtitles}
               syncError={subtitlesError}
               onOpenLibrary={() => setIsLibraryOpen(true)}
+              onExportToReader={handleExportToReader}
             />
           ) : (
             <div className="flex items-center justify-center h-full w-full opacity-50">

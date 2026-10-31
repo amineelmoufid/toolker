@@ -139,6 +139,19 @@ const SubtitleStage: React.FC<SubtitleStageProps> = ({
 
           {/* Dictation Mode Controls Strip */}
           <div className="flex items-center gap-1 sm:gap-1.5">
+            {/* 1-Click Export Subtitles to Reader */}
+            {onExportToReader && (
+              <button
+                type="button"
+                onClick={onExportToReader}
+                title="Export all extracted subtitles to Reader (1-Click)"
+                className="text-[8.5px] sm:text-[9px] font-mono font-bold uppercase px-2 py-0.5 rounded border border-[#3e4049] bg-[#24252a] text-[#a09c91] hover:text-[#ebe6d8] hover:border-[#386b52] hover:bg-[#1a2e22] transition-all active:scale-95 flex items-center gap-1"
+              >
+                <span>📖</span>
+                <span><span className="hidden sm:inline">EXPORT TO </span>READER</span>
+              </button>
+            )}
+
             {/* Dictation Mode Toggle */}
             <button
               type="button"
