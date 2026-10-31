@@ -64,6 +64,16 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
 
   const [duration, setDuration] = useState<number>(0);
 
+  // Sync fallback duration from subtitles if YouTube player duration is unavailable or restricted
+  useEffect(() => {
+    if (currentClip && currentClip.subtitles && currentClip.subtitles.length > 0) {
+      const last = currentClip.subtitles[currentClip.subtitles.length - 1];
+      if (last.end && last.end > 0) {
+        setDuration(prev => (prev > 0 ? prev : last.end));
+      }
+    }
+  }, [currentClip]);
+
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [playbackMode, setPlaybackMode] = useState<'slow' | 'normal'>('normal');
   const [autoPause, setAutoPause] = useState<boolean>(false);

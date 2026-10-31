@@ -140,13 +140,6 @@ const YouTubePlayer = forwardRef<YouTubePlayerRef, YouTubePlayerProps>(({
             onError: (event: any) => {
               console.warn("YouTube Player error event:", event.data);
               if (event.data === 101 || event.data === 150) {
-                // Try fallback to nocookie once if not tried yet
-                if (!isFallbackHostRef.current) {
-                  isFallbackHostRef.current = true;
-                  console.log("Retrying with youtube-nocookie.com host fallback...");
-                  setTimeout(() => initPlayer(true), 250);
-                  return;
-                }
                 setPlayerError("RESTRICTED_150");
               } else if (event.data === 100) {
                 setPlayerError("This YouTube video could not be found or has been removed.");
