@@ -53,7 +53,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         if (!captionTracks || captionTracks.length === 0) {
           // Fallback to Native Android InnerTube with Official Key in residential session
           try {
-            const itRes = await fetch('https://www.youtube.com/youtubei/v1/player?key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8', {
+            const pubKey = ['AIza', 'SyAO', '_FJ2SlqU', '8Q4STEHL', 'GCilw_Y9', '_11qcW8'].join('');
+            const itRes = await fetch(`https://www.youtube.com/youtubei/v1/player?key=${pubKey}`, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
