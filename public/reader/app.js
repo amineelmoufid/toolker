@@ -761,37 +761,41 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     protectedText = protectedText.replace(/([\u0621-\u064A])\.(?=\s+)/g, '$1__DOT__');
     protectedText = protectedText.replace(/(إلخ)\.(?=\s+)/g, '$1__DOT__');
 
-    // 6. Protect single uppercase initials like "J. K. Rowling" or "M. Dupont"
+    // 6. Protect single uppercase initials and acronyms (e.g. "S.A.", "U.S.A.", "J. K. Rowling", "M. Dupont")
+    protectedText = protectedText.replace(/\b([A-ZÀ-ÖØ-ß])\.(?=[A-ZÀ-ÖØ-ß]\.?)/g, '$1__DOT__');
+    protectedText = protectedText.replace(/\b([A-ZÀ-ÖØ-ß])\.(?=\s+[a-zà-öø-ÿ])/g, '$1__DOT__');
+    protectedText = protectedText.replace(/\b([A-ZÀ-ÖØ-ß])\.(?=\s+[A-ZÀ-ÖØ-ß])/g, '$1__DOT__');
     protectedText = protectedText.replace(/\b([A-ZÀ-ÖØ-ß])\.(?=\s+)/g, '$1__DOT__');
 
-    // 7. Robust Sentence Splitting on (. ! ? ؟ …):
-    // Match any sequence of non-terminator characters up to sentence terminators (. ! ? ؟ …)
-    // optionally followed by closing quotes or brackets (» " ' ” ’ ) ] ),
-    // and followed by whitespace, newline, or end of string.
-    // Handles French quotes « ... », English quotes " ... ", and nested punctuation cleanly.
-    const terminatorPattern = /[^.!?؟…\n]+(?:[.!?؟…]+[»"'”’\)\]]*|(?:\r?\n)+|$)(?:\s+|$)/g;
-    const rawMatches = protectedText.match(terminatorPattern);
+    // 7. Protect URLs and domains (e.g. google.com, example.fr)
+    protectedText = protectedText.replace(/([a-zA-Z0-9_\-]+)\.([a-zA-Z]{2,})(?=[^a-zA-Z]|$)/g, '$1__DOT__$2');
 
-    if (!rawMatches || rawMatches.length === 0) {
-      return [cleanInput.trim()].filter(Boolean);
+    // 8. Robust Boundary-Based Sentence Segmentation:
+    // Guarantees zero dropped text even with unspaced dots, acronyms, or French quote marks
+    const sentences = [];
+    const boundaryRegex = /([.!?؟…]+(?:\s*[»"'”’\)\]]+)*)(?:\s+|$)|(?:\r?\n)+/g;
+    let match;
+    let lastIndex = 0;
+
+    while ((match = boundaryRegex.exec(protectedText)) !== null) {
+      const matchEnd = match.index + match[0].length;
+      const segment = protectedText.slice(lastIndex, matchEnd).trim();
+      if (segment) {
+        sentences.push(segment.replace(/__DOT__/g, '.'));
+      }
+      lastIndex = matchEnd;
     }
 
-    // 8. Restore protected dots and merge isolated stray closing quotes
-    const initialSentences = [];
-    for (let raw of rawMatches) {
-      let s = raw.replace(/__DOT__/g, '.').trim();
-      if (!s) continue;
-      // If a match is solely closing punctuation (e.g., '»' or '")'), attach it to the previous sentence
-      if (/^[»"'”’\)\]\.!?؟…]+$/.test(s) && initialSentences.length > 0) {
-        initialSentences[initialSentences.length - 1] += ' ' + s;
-      } else {
-        initialSentences.push(s);
+    if (lastIndex < protectedText.length) {
+      const tail = protectedText.slice(lastIndex).trim();
+      if (tail) {
+        sentences.push(tail.replace(/__DOT__/g, '.'));
       }
     }
 
     // 9. Extra Polish: Split excessively long run-on sentences (> 38 words) separated by semicolons
     const finalSentences = [];
-    for (let s of initialSentences) {
+    for (let s of sentences) {
       const words = s.split(/\s+/).filter(Boolean);
       if (words.length > 38 && s.includes(';')) {
         const subParts = s.split(/;\s+/);
