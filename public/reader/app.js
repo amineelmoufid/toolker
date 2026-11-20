@@ -506,7 +506,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
         .replace(/XKMATH[A-Z0-9]+KX/g, '');
 
       const words = stripped.match(/[a-zA-Z\u00C0-\u024F]{3,}/g) || [];
-      const proseWords = words.filter(w => !['Cov', 'det', 'MVP', 'avec', 'lim', 'sup', 'inf', 'max', 'min', 'MASI', 'Var', 'PR'].includes(w));
+      const proseWords = words.filter(w => !['Cov', 'det', 'MVP', 'avec', 'lim', 'sup', 'inf', 'max', 'min', 'MASI', 'Var', 'PR', 'VaR', 'DH'].includes(w));
       return proseWords.length === 0;
     }
 
@@ -541,13 +541,19 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     });
 
     // B. Auto-detect standalone equations on full lines or bullet lines:
-    // e.g. "E(R_A) = 8%, \sigma_A = 20% \implies \sigma_A^2 = 0{,}04"
-    text = text.replace(/(^|\n)(?:[-*]\s+)?([^:\n]+)$/gm, (match, nl, expr) => {
+    // e.g. "E(R_A) = 8%, \sigma_A = 20% \implies \sigma_A^2 = 0{,}04" or step-by-step VaR calculations
+    text = text.replace(/(^|\n)([-*]\s+)?([^:\n]+)$/gm, (match, nl, bullet, expr) => {
       const trimmed = expr.trim();
       if (isPureMath(trimmed)) {
-        const key = `XKMATHINLINE${mathCounter++}KX`;
-        mathFormulaStore[key] = { formula: trimmed, display: false };
-        return `${nl}- ${key}`;
+        if (bullet) {
+          const key = `XKMATHINLINE${mathCounter++}KX`;
+          mathFormulaStore[key] = { formula: trimmed, display: false };
+          return `${nl}- ${key}`;
+        } else {
+          const key = `XKMATHBLOCK${mathCounter++}KX`;
+          mathFormulaStore[key] = { formula: trimmed, display: true };
+          return `\n\n${key}\n\n`;
+        }
       }
       return match;
     });
@@ -591,6 +597,19 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     return text;
   }
 
+  const KATEX_MACROS = {
+    "\\Var": "\\operatorname{Var}",
+    "\\Cov": "\\operatorname{Cov}",
+    "\\E": "\\operatorname{E}",
+    "\\Corr": "\\operatorname{Corr}",
+    "\\Bias": "\\operatorname{Bias}",
+    "\\MSE": "\\operatorname{MSE}",
+    "\\Prob": "\\operatorname{P}",
+    "\\VaR": "\\operatorname{VaR}",
+    "\\sigmaA": "\\sigma_A",
+    "\\sigmaB": "\\sigma_B"
+  };
+
   function renderMathItem(key) {
     const item = mathFormulaStore[key];
     if (!item) return key;
@@ -605,11 +624,31 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     // Auto-escape unescaped percentage signs in math formulas so TeX does not treat % as a comment
     cleanFormula = cleanFormula.replace(/(^|[^\\])%/g, '$1\\%');
 
+    // Auto-fix common typos: \sigmaA -> \sigma_A, \sigmaB -> \sigma_B
+    cleanFormula = cleanFormula.replace(/\\sigma([ABM])\b/g, '\\sigma_$1');
+
+    // Units, acronyms and formatting
+    cleanFormula = cleanFormula.replace(/\bDH\b/g, '\\text{ DH}');
+    cleanFormula = cleanFormula.replace(/\bVaR\b/g, '\\text{VaR}');
+    cleanFormula = cleanFormula.replace(/(\d+)\s*j\b/g, '$1\\text{j}');
+    // Numbers with spaces: 20 000 -> 20\,000
+    cleanFormula = cleanFormula.replace(/(\d+)\s+(\d{3})\b/g, '$1\\,$2');
+    // Decimal commas: 0, 1975 -> 0{,}1975
+    cleanFormula = cleanFormula.replace(/(\d+),\s*(\d+)/g, '$1{,}$2');
+
+    // Balance unclosed curly braces if formula was split across lines
+    const openBraces = (cleanFormula.match(/\{/g) || []).length;
+    const closeBraces = (cleanFormula.match(/\}/g) || []).length;
+    if (openBraces > closeBraces) {
+      cleanFormula += '}'.repeat(openBraces - closeBraces);
+    }
+
     if (typeof window.katex !== 'undefined') {
       try {
         const rendered = window.katex.renderToString(cleanFormula, {
           displayMode: item.display,
-          throwOnError: false
+          throwOnError: false,
+          macros: KATEX_MACROS
         });
         if (item.display) {
           return `<div class="katex-display-wrapper">${rendered}</div>`;
@@ -949,34 +988,59 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       const tLines = [...currentTableLines];
       currentTableLines = [];
 
-      if (tLines.length >= 2 && /^\|[\s\-:|]+\|$/.test(tLines[1].trim())) {
-        const parseRow = (line) => {
-          let inner = line.trim();
-          if (inner.startsWith('|')) inner = inner.slice(1);
-          if (inner.endsWith('|')) inner = inner.slice(0, -1);
-          return inner.split('|').map(c => c.trim());
-        };
+      const isTsv = tLines[0].includes('\t');
+      const isMd = tLines.length >= 2 && (/^\|[\s\-:|]+\|$/.test(tLines[1].trim()) || tLines[1].includes('---'));
 
+      const parseRow = (line) => {
+        if (isTsv) {
+          return line.split('\t').map(c => c.trim());
+        }
+        let inner = line.trim();
+        if (inner.startsWith('|')) inner = inner.slice(1);
+        if (inner.endsWith('|')) inner = inner.slice(0, -1);
+        return inner.split('|').map(c => c.trim());
+      };
+
+      const formatCellContent = (cell) => {
+        if (!cell) return '';
+        const words = cell.split(/\s+/).filter(Boolean);
+        return words.map(w => {
+          if (/^XKMATH(INLINE|BLOCK)\d+KX$/.test(w)) {
+            return renderMathItem(w);
+          }
+          if (w.includes('XKMATHINLINE') || w.includes('XKMATHBLOCK')) {
+            return bionifyWord(w, globalWordCounter, cadence, intensity);
+          }
+          const b = bionifyWord(w, globalWordCounter, cadence, intensity);
+          globalWordCounter++;
+          return b;
+        }).join(' ');
+      };
+
+      if (isMd || (isTsv && tLines.length >= 2)) {
         const headerCells = parseRow(tLines[0]);
-        const alignMatch = parseRow(tLines[1]);
-        const alignments = alignMatch.map(col => {
-          const c = col.trim();
-          if (c.startsWith(':') && c.endsWith(':')) return 'center';
-          if (c.endsWith(':')) return 'right';
-          return 'left';
-        });
+        let dataRowStartIndex = 1;
+        let alignments = [];
 
-        const rows = tLines.slice(2).map(r => parseRow(r));
+        if (isMd) {
+          const alignMatch = parseRow(tLines[1]);
+          alignments = alignMatch.map(col => {
+            const c = col.trim();
+            if (c.startsWith(':') && c.endsWith(':')) return 'center';
+            if (c.endsWith(':')) return 'right';
+            return 'left';
+          });
+          dataRowStartIndex = 2;
+        } else {
+          alignments = headerCells.map(() => 'left');
+        }
+
+        const rows = tLines.slice(dataRowStartIndex).map(r => parseRow(r));
 
         let tableHtml = '<div class="reader-table-wrapper"><table class="reader-table"><thead><tr>';
         headerCells.forEach((cell, idx) => {
           const align = alignments[idx] || 'left';
-          const bionicCell = cell.split(/\s+/).filter(Boolean).map(w => {
-            const b = bionifyWord(w, globalWordCounter, cadence, intensity);
-            globalWordCounter++;
-            return b;
-          }).join(' ');
-          tableHtml += `<th style="text-align: ${align}">${bionicCell}</th>`;
+          tableHtml += `<th style="text-align: ${align}">${formatCellContent(cell)}</th>`;
         });
         tableHtml += '</tr></thead><tbody>';
 
@@ -984,12 +1048,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
           tableHtml += '<tr>';
           row.forEach((cell, idx) => {
             const align = alignments[idx] || 'left';
-            const bionicCell = cell.split(/\s+/).filter(Boolean).map(w => {
-              const b = bionifyWord(w, globalWordCounter, cadence, intensity);
-              globalWordCounter++;
-              return b;
-            }).join(' ');
-            tableHtml += `<td style="text-align: ${align}">${bionicCell}</td>`;
+            tableHtml += `<td style="text-align: ${align}">${formatCellContent(cell)}</td>`;
           });
           tableHtml += '</tr>';
         });
@@ -1002,7 +1061,6 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     }
 
     function flushParagraph() {
-      if (currentTableLines.length > 0) flushTable();
       if (currentParagraphLines.length === 0) return;
       const paragraphRaw = currentParagraphLines.join(' ');
       currentParagraphLines = [];
@@ -1059,13 +1117,19 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       const trimmed = line.trim();
 
       if (!trimmed) {
+        if (currentTableLines.length > 0) flushTable();
         flushParagraph();
         return;
       }
 
-      // Check for Markdown table lines
-      if (/^\|.*\|$/.test(trimmed)) {
-        flushParagraph();
+      // Check for Markdown table lines or TSV table lines
+      const isMdTable = /^\|.*\|$/.test(trimmed) || (trimmed.includes('|') && trimmed.split('|').length >= 3);
+      const isTsvTable = trimmed.includes('\t') && trimmed.split('\t').length >= 2;
+
+      if (isMdTable || isTsvTable) {
+        if (currentParagraphLines.length > 0) {
+          flushParagraph();
+        }
         currentTableLines.push(trimmed);
         return;
       } else if (currentTableLines.length > 0) {
@@ -1144,6 +1208,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       currentParagraphLines.push(trimmed);
     });
 
+    if (currentTableLines.length > 0) flushTable();
     flushParagraph();
     return htmlBlocks.join('\n');
   }

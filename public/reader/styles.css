@@ -3293,6 +3293,58 @@ body.theme-dark .spotlight-label-row {
   }
 }
 
+/* ==========================================================================
+   Toolker Reader Table Styles
+   ========================================================================== */
+.reader-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border: 2px solid var(--border-color, #1c1d20);
+  border-radius: 8px;
+  background: var(--bg-card, #e4dfd3);
+  box-shadow: var(--shadow-sm, 2px 2px 0px #18191c);
+}
+
+.reader-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.reader-table thead {
+  background: var(--bg-card-subtle, #ded8cb);
+  border-bottom: 2px solid var(--border-color, #1c1d20);
+}
+
+.reader-table th {
+  padding: 0.75rem 1rem;
+  font-weight: 750;
+  color: var(--text-bold, #16171a);
+  border-right: 1px solid var(--border-color, #1c1d20);
+}
+
+.reader-table th:last-child {
+  border-right: none;
+}
+
+.reader-table td {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--border-color, #1c1d20);
+  border-right: 1px solid var(--border-color, #1c1d20);
+  vertical-align: middle;
+}
+
+.reader-table td:last-child {
+  border-right: none;
+}
+
+.reader-table tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.025);
+}
+
 /* Print Stylesheet */
 @media print {
   .app-header, .settings-panel, .input-pane, .pane-header, .pane-footer, .reading-ruler, .modal-backdrop, .toast, .floating-tts-bar {
