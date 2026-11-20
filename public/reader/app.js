@@ -427,6 +427,11 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     text = text.replace(/&#x20;[ \t]*\\\*/g, '  *');
     text = text.replace(/&#x20;[ \t]*\*/g, '  *');
 
+    // Normalize French LaTeX decimal comma in numbers: 0{,}09 -> 0,09
+    text = text.replace(/(\d+)\{,\}(\d+)/g, '$1,$2');
+    // Normalize \text{ } in prose
+    text = text.replace(/\\text\{\s*\}/g, ' ');
+
     // 1. Block math: \\[ ... \\] or \[ ... \] or $$ ... $$
     // Process first so block formulas enclosing environments (e.g. $$\Sigma = \begin{pmatrix}...\end{pmatrix}$$) are captured intact
     text = text.replace(/(?:\\{1,2}\[|(?:\$\$))([\s\S]*?)(?:\\{1,2}\]|(?:\$\$))/g, (match, formula, offset, fullStr) => {
@@ -499,7 +504,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       if (!trimmed) return false;
       // Exclude markdown table alignment dashes like :--- or ---: or ---
       if (/^[:\-\s|]+$/.test(trimmed)) return false;
-      const hasMathIndicator = /\\[a-zA-Z]+|[=<>+\-*/^_]|\\times|\\implies|\\approx/.test(trimmed);
+      const hasMathIndicator = /\\[a-zA-Z]+|[=<>+\-*/^_]|\\times|\\implies|\\approx|\\,|\\%|\{,\}/.test(trimmed);
       if (!hasMathIndicator) return false;
 
       const stripped = trimmed
@@ -553,6 +558,19 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       return match;
     });
 
+    // 8B. Math formulas BEFORE colon at start of line or bullet:
+    // e.g. "\Big[E( R_M ) - R_f\Big] : Prime de risque..." or "\beta_i \Big[E( R_M ) - R_f\Big] : Prime..."
+    text = text.replace(/(^|\n)([-*]\s*)?([A-Za-z\\][^\n:]+?)\s*:\s*([a-zA-Z\u00C0-\u024F].*)$/gm, (match, nl, bullet, expr, desc) => {
+      const trimmed = expr.trim();
+      if (trimmed && !trimmed.includes('XKMATH') && isPureMath(trimmed)) {
+        const key = `XKMATHINLINE${mathCounter++}KX`;
+        mathFormulaStore[key] = { formula: trimmed, display: false };
+        const b = bullet || '';
+        return `${nl}${b}${key} : ${desc}`;
+      }
+      return match;
+    });
+
     // 9. Balanced parenthetical math: e.g. (\sigma^2), (E(\varepsilon_i) = 0), (R_S = \frac{E(R_p)-R_f}{\sigma_p})
     let parenResult = '';
     let pIdx = 0;
@@ -594,8 +612,8 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     text = parenResult;
 
     // 10. Inline equations & inequalities in prose with balanced bracket/paren awareness:
-    // e.g. "K_{\min} = R_f + \beta_p [E(R_m) - R_f] ;" or "E(R_p) > K_{\min}" or "\sigma_p^2 = W^T \Sigma W où ..."
-    const opRegex = /(?:^|(?<=[\s:;(«]))([A-Za-z\\][a-zA-Z0-9_{}\\^]*(?:\([^)]*\)|[_\^][a-zA-Z0-9{}\\^]+)?\s*(?:=|<=|>=|>|<|\\le|\\ge|\\approx|\\implies)\s*)/g;
+    // e.g. "K_{\min} = R_f + \beta_p [E(R_m) - R_f] ;" or "W_A^* = \frac{...}{...}" or "\text{Cov}(...) = ..."
+    const opRegex = /(?:^|(?<=[\s:;(«]))((?:\\(?:text|operatorname)\{[a-zA-Z]+\}|[A-Za-z\\][a-zA-Z0-9_{}\\^*]*)(?:[_\^]\{?[a-zA-Z0-9*\\-]+\}?)*(?:\s*\([^)]*\))?\s*(?:=|<=|>=|>|<|\\le|\\ge|\\approx|\\implies)\s*)/g;
     let eqResult = '';
     let eqLastIndex = 0;
     let eqMatch;
@@ -628,9 +646,9 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
         } else if (depthParen === 0 && depthBracket === 0 && depthBrace === 0) {
           if (ch === ';' || ch === '\n' || ch === '»') break;
           if (ch === '.' && (k + 1 >= text.length || /\s/.test(text[k + 1]))) break;
-          if (ch === ',' && (k + 1 < text.length && /\s+[a-zA-Z\u00C0-\u024F]{2,}/.test(text.slice(k + 1)))) break;
+          if (ch === ',' && (k > 0 && text[k - 1] !== '\\') && (k + 1 < text.length && /^\s+[a-zA-Z\u00C0-\u024F]{2,}/.test(text.slice(k + 1)))) break;
           const remaining = text.slice(k);
-          if (/^\s+(?:est|sont|avec|pour|dans|qui|que|mais|soit|supérieur|inférieur|intégrant|dégage|traduisant|offrant|sur|où|where)(?:[\s,;:.!?]|$)/i.test(remaining)) {
+          if (/^\s+(?:est|sont|avec|pour|dans|qui|que|mais|soit|supérieur|inférieur|intégrant|dégage|traduisant|offrant|sur|où|where|agit|comme|donne|vaut|représente|mesure|exprime)(?:[\s,;:.!?]|$)/i.test(remaining)) {
             break;
           }
         }
@@ -660,7 +678,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     });
 
     // 12. Isolated mathematical variables with subscripts, function notation, or Greek letters: e.g. K_{\min}, R_f, E(R_p), (P_1), \alpha, \det(\Sigma)
-    text = text.replace(/(?:^|(?<=[\s:;(«]))([A-Za-z\\][a-zA-Z0-9\\]*_[a-zA-Z0-9{}\\^]+(?:\([^)]*\))?|[A-Z]\([a-zA-Z0-9_{}\\]+\)|\\\b(?:alpha|beta|gamma|delta|epsilon|theta|lambda|mu|pi|rho|sigma|Sigma|phi|omega|Omega|det|Cov|Var)\b(?:\s*\([^)]*\))?)(?=[,;:.!?»)\s]|$)/g, (match, variable) => {
+    text = text.replace(/(?:^|(?<=[\s:;(«]))([A-Za-z\\][a-zA-Z0-9\\]*_[a-zA-Z0-9{}\\^]+(?:\([^)]*\))?|[A-Z]\(\s*[a-zA-Z0-9_{}\\]+\s*\)|\\\b(?:alpha|beta|gamma|delta|epsilon|theta|lambda|mu|pi|rho|sigma|Sigma|phi|omega|Omega|det|Cov|Var)\b(?:\s*\([^)]*\))?)(?=[,;:.!?»)\s]|$)/g, (match, variable) => {
       const trimmed = variable.trim();
       if (trimmed && !trimmed.includes('XKMATH') && isPureMath(trimmed)) {
         const key = `XKMATHINLINE${mathCounter++}KX`;
@@ -676,6 +694,8 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     text = text.replace(/\\%/g, '%');
     text = text.replace(/\\\[([^\s\\])/g, '[$1');
     text = text.replace(/\\\]/g, ']');
+    text = text.replace(/\\text\{\s*DH\s*\}/gi, ' DH');
+    text = text.replace(/\\text\{([A-Za-z]+)\}/g, '$1');
 
     return text;
   }
