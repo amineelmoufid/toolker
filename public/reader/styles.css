@@ -1239,6 +1239,62 @@ body.theme-cyber .katex-inline-wrapper {
   color: var(--text-bold) !important;
 }
 
+/* Markdown Tables */
+.reader-table-wrapper {
+  width: 100%;
+  margin: 1.5em 0;
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-card);
+  box-shadow: 2px 2px 0px #18191c;
+}
+
+.reader-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.reader-table th {
+  background: var(--bg-card-subtle);
+  color: var(--text-bold);
+  font-weight: 800;
+  padding: 10px 14px;
+  border-bottom: 2px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.reader-table th:last-child {
+  border-right: none;
+}
+
+.reader-table td {
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+
+.reader-table td:last-child {
+  border-right: none;
+}
+
+.reader-table tr:last-child td {
+  border-bottom: none;
+}
+
+.reader-table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+body.theme-dark .reader-table tbody tr:hover,
+body.theme-cyber .reader-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
 /* Bionic Formatting */
 .bionic-bold {
   font-weight: var(--bold-weight);

@@ -420,6 +420,13 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
 
     let text = rawText;
 
+    // 0. Auto-normalize markdown list escapes from AI models and document exporters
+    text = text.replace(/^[ \t]*\\([*\-+])[ \t]+/gm, '$1 ');
+    text = text.replace(/^[ \t]*(\d+)\\\.[ \t]+/gm, '$1. ');
+    text = text.replace(/(?:^|\n)\\\*[ \t]+/g, '\n* ');
+    text = text.replace(/&#x20;[ \t]*\\\*/g, '  *');
+    text = text.replace(/&#x20;[ \t]*\*/g, '  *');
+
     // 1. Environments: \begin{equation}...\end{equation}, \begin{align}...\end{align}
     text = text.replace(/\\begin\{(equation\*?|align\*?|gather\*?|matrix|pmatrix|bmatrix)\}([\s\S]*?)\\end\{\1\}/g, (match) => {
       const key = `XKMATHBLOCK${mathCounter++}KX`;
@@ -482,6 +489,13 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       }
       return match;
     });
+
+    // 6. Safe post-math unescaping for remaining prose (math formulas are already stored)
+    text = text.replace(/\\_/g, '_');
+    text = text.replace(/\\&/g, '&');
+    text = text.replace(/\\%/g, '%');
+    text = text.replace(/\\\[([^\s\\])/g, '[$1');
+    text = text.replace(/\\\]/g, ']');
 
     return text;
   }
@@ -827,9 +841,68 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     const lines = textWithMathPlaceholders.split(/\r?\n/);
     const htmlBlocks = [];
     let currentParagraphLines = [];
+    let currentTableLines = [];
     let globalWordCounter = 0;
 
+    function flushTable() {
+      if (currentTableLines.length === 0) return;
+      const tLines = [...currentTableLines];
+      currentTableLines = [];
+
+      if (tLines.length >= 2 && /^\|[\s\-:|]+\|$/.test(tLines[1].trim())) {
+        const parseRow = (line) => {
+          let inner = line.trim();
+          if (inner.startsWith('|')) inner = inner.slice(1);
+          if (inner.endsWith('|')) inner = inner.slice(0, -1);
+          return inner.split('|').map(c => c.trim());
+        };
+
+        const headerCells = parseRow(tLines[0]);
+        const alignMatch = parseRow(tLines[1]);
+        const alignments = alignMatch.map(col => {
+          const c = col.trim();
+          if (c.startsWith(':') && c.endsWith(':')) return 'center';
+          if (c.endsWith(':')) return 'right';
+          return 'left';
+        });
+
+        const rows = tLines.slice(2).map(r => parseRow(r));
+
+        let tableHtml = '<div class="reader-table-wrapper"><table class="reader-table"><thead><tr>';
+        headerCells.forEach((cell, idx) => {
+          const align = alignments[idx] || 'left';
+          const bionicCell = cell.split(/\s+/).filter(Boolean).map(w => {
+            const b = bionifyWord(w, globalWordCounter, cadence, intensity);
+            globalWordCounter++;
+            return b;
+          }).join(' ');
+          tableHtml += `<th style="text-align: ${align}">${bionicCell}</th>`;
+        });
+        tableHtml += '</tr></thead><tbody>';
+
+        rows.forEach(row => {
+          tableHtml += '<tr>';
+          row.forEach((cell, idx) => {
+            const align = alignments[idx] || 'left';
+            const bionicCell = cell.split(/\s+/).filter(Boolean).map(w => {
+              const b = bionifyWord(w, globalWordCounter, cadence, intensity);
+              globalWordCounter++;
+              return b;
+            }).join(' ');
+            tableHtml += `<td style="text-align: ${align}">${bionicCell}</td>`;
+          });
+          tableHtml += '</tr>';
+        });
+
+        tableHtml += '</tbody></table></div>';
+        htmlBlocks.push(tableHtml);
+      } else {
+        tLines.forEach(tl => currentParagraphLines.push(tl));
+      }
+    }
+
     function flushParagraph() {
+      if (currentTableLines.length > 0) flushTable();
       if (currentParagraphLines.length === 0) return;
       const paragraphRaw = currentParagraphLines.join(' ');
       currentParagraphLines = [];
@@ -888,6 +961,15 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       if (!trimmed) {
         flushParagraph();
         return;
+      }
+
+      // Check for Markdown table lines
+      if (/^\|.*\|$/.test(trimmed)) {
+        flushParagraph();
+        currentTableLines.push(trimmed);
+        return;
+      } else if (currentTableLines.length > 0) {
+        flushTable();
       }
 
       // Check if this line is a standalone Block Math formula
