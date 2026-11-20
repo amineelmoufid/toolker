@@ -427,21 +427,24 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     text = text.replace(/&#x20;[ \t]*\\\*/g, '  *');
     text = text.replace(/&#x20;[ \t]*\*/g, '  *');
 
-    // 1. Environments: \begin{equation}...\end{equation}, \begin{align}...\end{align}
+    // 1. Block math: \\[ ... \\] or \[ ... \] or $$ ... $$
+    // Process first so block formulas enclosing environments (e.g. $$\Sigma = \begin{pmatrix}...\end{pmatrix}$$) are captured intact
+    text = text.replace(/(?:\\{1,2}\[|(?:\$\$))([\s\S]*?)(?:\\{1,2}\]|(?:\$\$))/g, (match, formula, offset, fullStr) => {
+      const key = `XKMATHBLOCK${mathCounter++}KX`;
+      mathFormulaStore[key] = {
+        formula: formula.trim(),
+        display: true
+      };
+      const before = fullStr.slice(Math.max(0, offset - 30), offset);
+      const isStandalone = /(?:^|\n)\s*$/.test(before);
+      return isStandalone ? `\n\n${key}\n\n` : ` ${key} `;
+    });
+
+    // 2. Standalone environments outside of $$: \begin{equation}...\end{equation}, \begin{pmatrix}...\end{pmatrix}, etc.
     text = text.replace(/\\begin\{(equation\*?|align\*?|gather\*?|matrix|pmatrix|bmatrix)\}([\s\S]*?)\\end\{\1\}/g, (match) => {
       const key = `XKMATHBLOCK${mathCounter++}KX`;
       mathFormulaStore[key] = {
         formula: match.trim(),
-        display: true
-      };
-      return `\n\n${key}\n\n`;
-    });
-
-    // 2. Block math: \\[ ... \\] or \[ ... \] or $$ ... $$
-    text = text.replace(/(?:\\{1,2}\[|(?:\$\$))([\s\S]*?)(?:\\{1,2}\]|(?:\$\$))/g, (match, formula) => {
-      const key = `XKMATHBLOCK${mathCounter++}KX`;
-      mathFormulaStore[key] = {
-        formula: formula.trim(),
         display: true
       };
       return `\n\n${key}\n\n`;
@@ -485,6 +488,53 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
           formula: trimmed,
           display: false
         };
+        return key;
+      }
+      return match;
+    });
+
+    // 6. Parenthetical math containing LaTeX: e.g. (\sigma_i^2) or (\text{Cov}(i,j))
+    text = text.replace(/\(([^()\n]*\\[a-zA-Z]+[^()\n]*)\)/g, (match, formula) => {
+      const trimmed = formula.trim();
+      if (trimmed) {
+        const key = `XKMATHINLINE${mathCounter++}KX`;
+        mathFormulaStore[key] = { formula: trimmed, display: false };
+        return `(${key})`;
+      }
+      return match;
+    });
+
+    // 7. Universal Bare LaTeX Auto-Detection (academic/scientific notes pasted without delimiters)
+    const latexCommands = 'sum|prod|int|sigma|Sigma|alpha|beta|gamma|delta|epsilon|theta|lambda|mu|pi|rho|phi|omega|Omega|det|Cov|text|implies|iff|cdot|times|dots|quad|qquad|frac|sqrt|pmatrix|matrix|bmatrix|mathbf|mathbb|mathcal|le|ge|neq|approx|in|forall|exists|partial|infty|pm|mp';
+
+    // A. Formulas after colon ": <formula with latex>" e.g. ": \text{Cov}(A,B) = \text{Cov}(A,C) = 0{,}01"
+    text = text.replace(new RegExp(`(:\\s+)([^\\n]*\\\\(?:${latexCommands})\\b[^\\n]*)`, 'g'), (match, prefix, expr) => {
+      const trimmed = expr.trim();
+      if (trimmed && !trimmed.includes('XKMATH')) {
+        const key = `XKMATHINLINE${mathCounter++}KX`;
+        mathFormulaStore[key] = { formula: trimmed, display: false };
+        return `${prefix}${key}`;
+      }
+      return match;
+    });
+
+    // B. Full-line equations with LaTeX commands
+    text = text.replace(new RegExp(`(^|\\n)(?:-\\s+|\\*\\s+)?([^\\n]*\\\\(?:${latexCommands})\\b[^\\n]*)`, 'g'), (match, nl, expr) => {
+      const trimmed = expr.trim();
+      if (trimmed && !trimmed.includes('XKMATH') && (trimmed.includes('=') || trimmed.includes('\\implies') || trimmed.includes('\\approx'))) {
+        const key = `XKMATHINLINE${mathCounter++}KX`;
+        mathFormulaStore[key] = { formula: trimmed, display: false };
+        return `${nl}- ${key}`;
+      }
+      return match;
+    });
+
+    // C. Standalone LaTeX tokens like "3 \times 3" or "\Sigma" or "\sigma_p^2 = W^T \Sigma W"
+    text = text.replace(new RegExp(`(?:\\b\\d+\\s+)?\\\\(?:${latexCommands})\\b(?:\\{[^}]*\\}|\\([^)]*\\)|_[a-zA-Z0-9{}]+|\\^[a-zA-Z0-9{}]+|\\s*\\w+)*(?:\\s*[=+\\-*/<>]\\s*[^\\s,;:.!?]+)*`, 'g'), (match) => {
+      const trimmed = match.trim();
+      if (trimmed && !trimmed.includes('XKMATH')) {
+        const key = `XKMATHINLINE${mathCounter++}KX`;
+        mathFormulaStore[key] = { formula: trimmed, display: false };
         return key;
       }
       return match;
@@ -742,8 +792,9 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     if (!text) return '';
     // Preserve bullet lists by turning '* ' at line start into standard '- '
     let cleaned = text.replace(/^(\s*)\*\s+/gm, '$1- ');
-    // Remove all remaining asterisks (*, **, ***, etc.)
-    cleaned = cleaned.replace(/\*/g, '');
+    // Remove markdown bold/italic asterisks (**bold** -> bold, *italic* -> italic) while preserving math operators (e.g. 3 * 4)
+    cleaned = cleaned.replace(/\*\*([^\*\n]+)\*\*/g, '$1');
+    cleaned = cleaned.replace(/(^|[^\w*])\*([^\*\n\s]+)\*([^\w*]|$)/g, '$1$2$3');
     return cleaned;
   }
 
@@ -753,8 +804,13 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     // Pre-clean any asterisks (* or **) so bold/italic markers don't glue punctuation
     let cleanInput = cleanAsterisks(text);
 
+    // 0. Protect section numbering like 1.2. or 1.1. or 2.3.4. at line start
+    let protectedText = cleanInput.replace(/(^|\n)(\s*\d+(?:\.\d+)*\.)(?=\s+)/g, (match, nl, num) => {
+      return `${nl}${num.replace(/\./g, '__DOT__')}`;
+    });
+
     // 1. Protect numbers with decimals like 0.3, 3.14, 1.5
-    let protectedText = cleanInput.replace(/(\d+)\.(\d+)/g, '$1__DOT__$2');
+    protectedText = protectedText.replace(/(\d+)\.(\d+)/g, '$1__DOT__$2');
 
     // 2. Protect numbered list references like "Fig. 1. 2" or "1. a"
     protectedText = protectedText.replace(/(\d+)\.(?=\s+(?:\d|[a-z\u00C0-\u024F]))/g, '$1__DOT__');
