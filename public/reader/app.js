@@ -553,27 +553,104 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       return match;
     });
 
-    // 9. Inline equations in prose: e.g. "W_A = 45%, W_B = 55%" or "E(R_{P1}) = 15,30%" or "K_{\min} = R_f + ..."
-    text = text.replace(/(?:^|(?<=[\s:;(«]))([A-Za-z\\][a-zA-Z0-9_{}\\]*(?:\([^)]*\)|_[a-zA-Z0-9{}\\]+)?\s*=\s*(?:[^\n,;:.!?»]|,\d|\[[^\]]*\]|\([^\)]*\))+?)(?=(?:,\s+[a-zA-Z\u00C0-\u024F]{2,})|[;:.!?»)\n]|\s+\b(?:est|sont|avec|pour|dans|qui|que|mais|soit|supérieur|inférieur|intégrant)\b|$)/g, (match, expr) => {
-      const trimmed = expr.trim();
-      if (trimmed && !trimmed.includes('XKMATH') && isPureMath(trimmed)) {
-        const key = `XKMATHINLINE${mathCounter++}KX`;
-        mathFormulaStore[key] = { formula: trimmed, display: false };
-        return key;
-      }
-      return match;
-    });
+    // 9. Balanced parenthetical math: e.g. (\sigma^2), (E(\varepsilon_i) = 0), (R_S = \frac{E(R_p)-R_f}{\sigma_p})
+    let parenResult = '';
+    let pIdx = 0;
+    while (pIdx < text.length) {
+      const prevChar = pIdx > 0 ? text[pIdx - 1] : '';
+      const isParenStart = text[pIdx] === '(' && (!prevChar || /[\s«—\-]/.test(prevChar));
 
-    // 10. Parenthetical math containing LaTeX or math operators: e.g. (\beta_p = \sum W_i \beta_i), (\alpha > 0), (K_{min})
-    text = text.replace(/\(([^()\n]*(?:\([^()\n]*\)[^()\n]*)*)\)/g, (match, inner) => {
-      const trimmed = inner.trim();
-      if (trimmed && !trimmed.includes('XKMATH') && isPureMath(trimmed)) {
-        const key = `XKMATHINLINE${mathCounter++}KX`;
-        mathFormulaStore[key] = { formula: trimmed, display: false };
-        return `(${key})`;
+      if (isParenStart) {
+        let depthParen = 1;
+        let depthBrace = 0;
+        let depthBracket = 0;
+        let j = pIdx + 1;
+        while (j < text.length && depthParen > 0) {
+          const ch = text[j];
+          if (ch === '(') depthParen++;
+          else if (ch === ')') depthParen--;
+          else if (ch === '{') depthBrace++;
+          else if (ch === '}') depthBrace--;
+          else if (ch === '[') depthBracket++;
+          else if (ch === ']') depthBracket--;
+          else if (ch === '\n') break;
+          j++;
+        }
+
+        if (depthParen === 0) {
+          const inner = text.slice(pIdx + 1, j - 1);
+          if (isPureMath(inner)) {
+            const key = `XKMATHINLINE${mathCounter++}KX`;
+            mathFormulaStore[key] = { formula: inner.trim(), display: false };
+            parenResult += `(${key})`;
+            pIdx = j;
+            continue;
+          }
+        }
       }
-      return match;
-    });
+      parenResult += text[pIdx];
+      pIdx++;
+    }
+    text = parenResult;
+
+    // 10. Inline equations & inequalities in prose with balanced bracket/paren awareness:
+    // e.g. "K_{\min} = R_f + \beta_p [E(R_m) - R_f] ;" or "E(R_p) > K_{\min}" or "\sigma_p^2 = W^T \Sigma W où ..."
+    const opRegex = /(?:^|(?<=[\s:;(«]))([A-Za-z\\][a-zA-Z0-9_{}\\^]*(?:\([^)]*\)|[_\^][a-zA-Z0-9{}\\^]+)?\s*(?:=|<=|>=|>|<|\\le|\\ge|\\approx|\\implies)\s*)/g;
+    let eqResult = '';
+    let eqLastIndex = 0;
+    let eqMatch;
+
+    while ((eqMatch = opRegex.exec(text)) !== null) {
+      const matchStart = eqMatch.index;
+      const matchEnd = opRegex.lastIndex;
+
+      eqResult += text.slice(eqLastIndex, matchStart);
+
+      let depthParen = 0;
+      let depthBracket = 0;
+      let depthBrace = 0;
+      let k = matchEnd;
+
+      while (k < text.length) {
+        const ch = text[k];
+        if (ch === '(') depthParen++;
+        else if (ch === ')') {
+          if (depthParen > 0) depthParen--;
+          else break;
+        } else if (ch === '[') depthBracket++;
+        else if (ch === ']') {
+          if (depthBracket > 0) depthBracket--;
+          else break;
+        } else if (ch === '{') depthBrace++;
+        else if (ch === '}') {
+          if (depthBrace > 0) depthBrace--;
+          else break;
+        } else if (depthParen === 0 && depthBracket === 0 && depthBrace === 0) {
+          if (ch === ';' || ch === '\n' || ch === '»') break;
+          if (ch === '.' && (k + 1 >= text.length || /\s/.test(text[k + 1]))) break;
+          if (ch === ',' && (k + 1 < text.length && /\s+[a-zA-Z\u00C0-\u024F]{2,}/.test(text.slice(k + 1)))) break;
+          const remaining = text.slice(k);
+          if (/^\s+(?:est|sont|avec|pour|dans|qui|que|mais|soit|supérieur|inférieur|intégrant|dégage|traduisant|offrant|sur|où|where)(?:[\s,;:.!?]|$)/i.test(remaining)) {
+            break;
+          }
+        }
+        k++;
+      }
+
+      const candidate = text.slice(matchStart, k).trim();
+      if (candidate && !candidate.includes('XKMATH') && isPureMath(candidate)) {
+        const key = `XKMATHINLINE${mathCounter++}KX`;
+        mathFormulaStore[key] = { formula: candidate, display: false };
+        eqResult += key;
+        eqLastIndex = k;
+        opRegex.lastIndex = k;
+      } else {
+        eqResult += text.slice(matchStart, matchEnd);
+        eqLastIndex = matchEnd;
+      }
+    }
+    eqResult += text.slice(eqLastIndex);
+    text = eqResult;
 
     // 11. Dimensions / operations like "3 \times 3" or "N \times N"
     text = text.replace(new RegExp(`\\b([0-9a-zA-Z]+)\\s*\\\\times\\s*([0-9a-zA-Z]+)\\b`, 'g'), (match, left, right) => {
@@ -582,8 +659,8 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       return key;
     });
 
-    // 12. Isolated mathematical variables with subscripts, function notation, or Greek letters: e.g. K_{\min}, K_{min}, R_f, E(R_p), (P_1), \alpha
-    text = text.replace(/(?:^|(?<=[\s:;(«]))([A-Za-z\\][a-zA-Z0-9\\]*_[a-zA-Z0-9{}\\]+(?:\([^)]*\))?|[A-Z]\([a-zA-Z0-9_{}\\]+\)|\\\b(?:alpha|beta|gamma|delta|epsilon|theta|lambda|mu|pi|rho|sigma|Sigma|phi|omega|Omega)\b)(?=[,;:.!?»)\s]|$)/g, (match, variable) => {
+    // 12. Isolated mathematical variables with subscripts, function notation, or Greek letters: e.g. K_{\min}, R_f, E(R_p), (P_1), \alpha, \det(\Sigma)
+    text = text.replace(/(?:^|(?<=[\s:;(«]))([A-Za-z\\][a-zA-Z0-9\\]*_[a-zA-Z0-9{}\\^]+(?:\([^)]*\))?|[A-Z]\([a-zA-Z0-9_{}\\]+\)|\\\b(?:alpha|beta|gamma|delta|epsilon|theta|lambda|mu|pi|rho|sigma|Sigma|phi|omega|Omega|det|Cov|Var)\b(?:\s*\([^)]*\))?)(?=[,;:.!?»)\s]|$)/g, (match, variable) => {
       const trimmed = variable.trim();
       if (trimmed && !trimmed.includes('XKMATH') && isPureMath(trimmed)) {
         const key = `XKMATHINLINE${mathCounter++}KX`;
@@ -644,8 +721,8 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
 
     // Auto-fix common typos & symbols
     cleanFormula = cleanFormula.replace(/\\sigma([ABM])\b/g, '\\sigma_$1');
-    cleanFormula = cleanFormula.replace(/\bK_\{min\}\b/g, 'K_{\\min}');
-    cleanFormula = cleanFormula.replace(/\bK_min\b/g, 'K_{\\min}');
+    cleanFormula = cleanFormula.replace(/\b([a-zA-Z\\]+)_\{?min\}?\b/g, '$1_{\\min}');
+    cleanFormula = cleanFormula.replace(/\b([a-zA-Z\\]+)_\{?max\}?\b/g, '$1_{\\max}');
 
     // French conjunction 'et' inside math: \beta_A = 0,63 et \beta_B = 1,26 -> \text{ et }
     cleanFormula = cleanFormula.replace(/\b(\d+(?:,\d+)?|\\[a-zA-Z]+|[a-zA-Z0-9_{}]+)\s+et\s+/g, '$1 \\text{ et } ');
