@@ -602,6 +602,9 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       .replace(/(\\{1,2}\]|\$\$|\\{1,2}\))$/, '')
       .trim();
 
+    // Auto-escape unescaped percentage signs in math formulas so TeX does not treat % as a comment
+    cleanFormula = cleanFormula.replace(/(^|[^\\])%/g, '$1\\%');
+
     if (typeof window.katex !== 'undefined') {
       try {
         const rendered = window.katex.renderToString(cleanFormula, {
