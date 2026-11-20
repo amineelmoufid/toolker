@@ -493,10 +493,27 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       return match;
     });
 
+    // Helper to distinguish genuine mathematical expressions from human language prose
+    function isPureMath(str) {
+      const trimmed = str.trim();
+      if (!trimmed) return false;
+      const hasMathIndicator = /\\[a-zA-Z]+|[=<>+\-*/^_]|\\times|\\implies/.test(trimmed);
+      if (!hasMathIndicator) return false;
+
+      const stripped = trimmed
+        .replace(/\\(text|mathrm|mathbf)\{[^}]*\}/g, '')
+        .replace(/\\[a-zA-Z]+/g, '')
+        .replace(/XKMATH[A-Z0-9]+KX/g, '');
+
+      const words = stripped.match(/[a-zA-Z\u00C0-\u024F]{3,}/g) || [];
+      const proseWords = words.filter(w => !['Cov', 'det', 'MVP', 'avec', 'lim', 'sup', 'inf', 'max', 'min', 'MASI', 'Var', 'PR'].includes(w));
+      return proseWords.length === 0;
+    }
+
     // 6. Parenthetical math containing LaTeX: e.g. (\sigma_i^2) or (\text{Cov}(i,j))
     text = text.replace(/\(([^()\n]*\\[a-zA-Z]+[^()\n]*)\)/g, (match, formula) => {
       const trimmed = formula.trim();
-      if (trimmed && !/\b[a-zA-Z]{3,}\b/.test(trimmed.replace(/\\(text|mathrm|mathbf)\{[^}]*\}/g, '').replace(/\\[a-zA-Z]+/g, ''))) {
+      if (isPureMath(trimmed)) {
         const key = `XKMATHINLINE${mathCounter++}KX`;
         mathFormulaStore[key] = { formula: trimmed, display: false };
         return `(${key})`;
@@ -507,18 +524,56 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     // 7. Precise Bare LaTeX expressions (dimensions, Greek letters, isolated symbols):
     const latexCommands = 'sum|prod|int|sigma|Sigma|alpha|beta|gamma|delta|epsilon|theta|lambda|mu|pi|rho|phi|omega|Omega|det|Cov|implies|iff|cdot|times|dots|quad|qquad|frac|sqrt|pmatrix|matrix|bmatrix|mathbf|mathbb|mathcal|le|ge|neq|approx|in|forall|exists|partial|infty|pm|mp';
 
-    // A. Dimensions / operations like "3 \times 3" or "N \times N"
+    // A. Auto-detect math formulas after colon (e.g. ": E(R_p) = \sum... \text{avec} ...", or ": \sigma_p^2 = W^T \Sigma W où ...")
+    text = text.replace(/(:\s+)([^:\n]+)/g, (match, prefix, expr) => {
+      const splitMatch = expr.match(/^(.+?)\s+(où|where)\s+(.*)$/i);
+      if (splitMatch && isPureMath(splitMatch[1])) {
+        const key = `XKMATHINLINE${mathCounter++}KX`;
+        mathFormulaStore[key] = { formula: splitMatch[1].trim(), display: false };
+        return `${prefix}${key} ${splitMatch[2]} ${splitMatch[3]}`;
+      }
+      if (isPureMath(expr)) {
+        const key = `XKMATHINLINE${mathCounter++}KX`;
+        mathFormulaStore[key] = { formula: expr.trim(), display: false };
+        return `${prefix}${key}`;
+      }
+      return match;
+    });
+
+    // B. Auto-detect standalone equations on full lines or bullet lines:
+    // e.g. "E(R_A) = 8%, \sigma_A = 20% \implies \sigma_A^2 = 0{,}04"
+    text = text.replace(/(^|\n)(?:[-*]\s+)?([^:\n]+)$/gm, (match, nl, expr) => {
+      const trimmed = expr.trim();
+      if (isPureMath(trimmed)) {
+        const key = `XKMATHINLINE${mathCounter++}KX`;
+        mathFormulaStore[key] = { formula: trimmed, display: false };
+        return `${nl}- ${key}`;
+      }
+      return match;
+    });
+
+    // C. Dimensions / operations like "3 \times 3" or "N \times N"
     text = text.replace(new RegExp(`\\b([0-9a-zA-Z]+)\\s*\\\\times\\s*([0-9a-zA-Z]+)\\b`, 'g'), (match, left, right) => {
       const key = `XKMATHINLINE${mathCounter++}KX`;
       mathFormulaStore[key] = { formula: `${left} \\times ${right}`, display: false };
       return key;
     });
 
-    // B. Individual LaTeX symbols, variables, or functions: e.g. \Sigma, \sigma_i^2, \det(\Sigma), \text{Cov}(A,B)
-    // Only captures mathematical arguments (brackets, subscripts, superscripts, single characters), NEVER prose words with spaces
+    // D. Equations starting with variables: e.g. "W = ( w_1, w_2, ..., w_N )^T"
+    text = text.replace(/(?:^|\s)([a-zA-Z][0-9a-zA-Z_]*\s*=\s*[^,;:.!?\n]+?\^[a-zA-Z0-9{}]+)(?=(?:\s+\b(?:est|sont|avec|pour|dans|qui|que|mais|soit)\b|[.,;!?]|$))/g, (match, expr) => {
+      const trimmed = expr.trim();
+      if (isPureMath(trimmed)) {
+        const key = `XKMATHINLINE${mathCounter++}KX`;
+        mathFormulaStore[key] = { formula: trimmed, display: false };
+        return ` ${key}`;
+      }
+      return match;
+    });
+
+    // E. Individual LaTeX symbols, variables, or functions: e.g. \Sigma, \sigma_i^2, \det(\Sigma), \text{Cov}(A,B)
     text = text.replace(new RegExp(`\\\\(?:${latexCommands})\\b(?:\\{[^}]*\\}|\\([^)]*\\)|_[a-zA-Z0-9{}]+|\\^[a-zA-Z0-9{}]+)*(?:\\s*[=+\\-*/<>]\\s*[^\\s,;:.!?()]+)*`, 'g'), (match) => {
       const trimmed = match.trim();
-      if (trimmed && !trimmed.includes('XKMATH')) {
+      if (trimmed && !trimmed.includes('XKMATH') && isPureMath(trimmed)) {
         const key = `XKMATHINLINE${mathCounter++}KX`;
         mathFormulaStore[key] = { formula: trimmed, display: false };
         return key;
@@ -711,10 +766,10 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
   function bionifyWord(token, wordIdx, cadence = 'all', intensity = 45) {
     if (!token || !token.trim()) return token;
 
-    // Check if token contains inline math: if so, replace without bolding formula, stripping any outer markdown wrappers
-    if (token.includes('XKMATHINLINE')) {
+    // Check if token contains inline or block math: if so, replace without bolding formula, stripping any outer markdown wrappers
+    if (token.includes('XKMATHINLINE') || token.includes('XKMATHBLOCK')) {
       const stripped = token.replace(/[*_~`]/g, '');
-      return stripped.replace(/XKMATHINLINE\d+KX/g, match => renderMathItem(match));
+      return stripped.replace(/XKMATH(INLINE|BLOCK)\d+KX/g, match => renderMathItem(match));
     }
 
     // Strip outer markdown formatting symbols: **word**, *word*, __word__, _word_, including trailing punctuation
