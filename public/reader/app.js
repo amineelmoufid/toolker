@@ -511,7 +511,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     }
 
     // 6. Parenthetical math containing LaTeX: e.g. (\sigma_i^2) or (\text{Cov}(i,j))
-    text = text.replace(/\(([^()\n]*\\[a-zA-Z]+[^()\n]*)\)/g, (match, formula) => {
+    text = text.replace(/\(([^()\n]*(?:\([^()\n]*\)[^()\n]*)*\\[a-zA-Z]+[^()\n]*(?:\([^()\n]*\)[^()\n]*)*)\)/g, (match, formula) => {
       const trimmed = formula.trim();
       if (isPureMath(trimmed)) {
         const key = `XKMATHINLINE${mathCounter++}KX`;
@@ -522,7 +522,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     });
 
     // 7. Precise Bare LaTeX expressions (dimensions, Greek letters, isolated symbols):
-    const latexCommands = 'sum|prod|int|sigma|Sigma|alpha|beta|gamma|delta|epsilon|theta|lambda|mu|pi|rho|phi|omega|Omega|det|Cov|implies|iff|cdot|times|dots|quad|qquad|frac|sqrt|pmatrix|matrix|bmatrix|mathbf|mathbb|mathcal|le|ge|neq|approx|in|forall|exists|partial|infty|pm|mp';
+    const latexCommands = 'sum|prod|int|sigma|Sigma|alpha|beta|gamma|delta|epsilon|theta|lambda|mu|pi|rho|phi|omega|Omega|det|Cov|text|implies|iff|cdot|times|dots|quad|qquad|frac|sqrt|pmatrix|matrix|bmatrix|mathbf|mathbb|mathcal|le|ge|neq|approx|in|forall|exists|partial|infty|pm|mp';
 
     // A. Auto-detect math formulas after colon (e.g. ": E(R_p) = \sum... \text{avec} ...", or ": \sigma_p^2 = W^T \Sigma W où ...")
     text = text.replace(/(:\s+)([^:\n]+)/g, (match, prefix, expr) => {
@@ -571,7 +571,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     });
 
     // E. Individual LaTeX symbols, variables, or functions: e.g. \Sigma, \sigma_i^2, \det(\Sigma), \text{Cov}(A,B)
-    text = text.replace(new RegExp(`\\\\(?:${latexCommands})\\b(?:\\{[^}]*\\}|\\([^)]*\\)|_[a-zA-Z0-9{}]+|\\^[a-zA-Z0-9{}]+)*(?:\\s*[=+\\-*/<>]\\s*[^\\s,;:.!?()]+)*`, 'g'), (match) => {
+    text = text.replace(new RegExp(`\\\\(?:${latexCommands})\\b(?:\\{[^}]*\\}|\\([^)]*\\)|_[a-zA-Z0-9{}]+|\\^[a-zA-Z0-9{}]+)*(?:\\s*[=+\\-*/<>]\\s*[^\\s,;:.!?()]+(?:\\([^)]*\\))?)*`, 'g'), (match) => {
       const trimmed = match.trim();
       if (trimmed && !trimmed.includes('XKMATH') && isPureMath(trimmed)) {
         const key = `XKMATHINLINE${mathCounter++}KX`;
