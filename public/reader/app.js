@@ -496,7 +496,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     // 6. Parenthetical math containing LaTeX: e.g. (\sigma_i^2) or (\text{Cov}(i,j))
     text = text.replace(/\(([^()\n]*\\[a-zA-Z]+[^()\n]*)\)/g, (match, formula) => {
       const trimmed = formula.trim();
-      if (trimmed) {
+      if (trimmed && !/\b[a-zA-Z]{3,}\b/.test(trimmed.replace(/\\(text|mathrm|mathbf)\{[^}]*\}/g, '').replace(/\\[a-zA-Z]+/g, ''))) {
         const key = `XKMATHINLINE${mathCounter++}KX`;
         mathFormulaStore[key] = { formula: trimmed, display: false };
         return `(${key})`;
@@ -504,33 +504,19 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       return match;
     });
 
-    // 7. Universal Bare LaTeX Auto-Detection (academic/scientific notes pasted without delimiters)
-    const latexCommands = 'sum|prod|int|sigma|Sigma|alpha|beta|gamma|delta|epsilon|theta|lambda|mu|pi|rho|phi|omega|Omega|det|Cov|text|implies|iff|cdot|times|dots|quad|qquad|frac|sqrt|pmatrix|matrix|bmatrix|mathbf|mathbb|mathcal|le|ge|neq|approx|in|forall|exists|partial|infty|pm|mp';
+    // 7. Precise Bare LaTeX expressions (dimensions, Greek letters, isolated symbols):
+    const latexCommands = 'sum|prod|int|sigma|Sigma|alpha|beta|gamma|delta|epsilon|theta|lambda|mu|pi|rho|phi|omega|Omega|det|Cov|implies|iff|cdot|times|dots|quad|qquad|frac|sqrt|pmatrix|matrix|bmatrix|mathbf|mathbb|mathcal|le|ge|neq|approx|in|forall|exists|partial|infty|pm|mp';
 
-    // A. Formulas after colon ": <formula with latex>" e.g. ": \text{Cov}(A,B) = \text{Cov}(A,C) = 0{,}01"
-    text = text.replace(new RegExp(`(:\\s+)([^\\n]*\\\\(?:${latexCommands})\\b[^\\n]*)`, 'g'), (match, prefix, expr) => {
-      const trimmed = expr.trim();
-      if (trimmed && !trimmed.includes('XKMATH')) {
-        const key = `XKMATHINLINE${mathCounter++}KX`;
-        mathFormulaStore[key] = { formula: trimmed, display: false };
-        return `${prefix}${key}`;
-      }
-      return match;
+    // A. Dimensions / operations like "3 \times 3" or "N \times N"
+    text = text.replace(new RegExp(`\\b([0-9a-zA-Z]+)\\s*\\\\times\\s*([0-9a-zA-Z]+)\\b`, 'g'), (match, left, right) => {
+      const key = `XKMATHINLINE${mathCounter++}KX`;
+      mathFormulaStore[key] = { formula: `${left} \\times ${right}`, display: false };
+      return key;
     });
 
-    // B. Full-line equations with LaTeX commands
-    text = text.replace(new RegExp(`(^|\\n)(?:-\\s+|\\*\\s+)?([^\\n]*\\\\(?:${latexCommands})\\b[^\\n]*)`, 'g'), (match, nl, expr) => {
-      const trimmed = expr.trim();
-      if (trimmed && !trimmed.includes('XKMATH') && (trimmed.includes('=') || trimmed.includes('\\implies') || trimmed.includes('\\approx'))) {
-        const key = `XKMATHINLINE${mathCounter++}KX`;
-        mathFormulaStore[key] = { formula: trimmed, display: false };
-        return `${nl}- ${key}`;
-      }
-      return match;
-    });
-
-    // C. Standalone LaTeX tokens like "3 \times 3" or "\Sigma" or "\sigma_p^2 = W^T \Sigma W"
-    text = text.replace(new RegExp(`(?:\\b\\d+\\s+)?\\\\(?:${latexCommands})\\b(?:\\{[^}]*\\}|\\([^)]*\\)|_[a-zA-Z0-9{}]+|\\^[a-zA-Z0-9{}]+|\\s*\\w+)*(?:\\s*[=+\\-*/<>]\\s*[^\\s,;:.!?]+)*`, 'g'), (match) => {
+    // B. Individual LaTeX symbols, variables, or functions: e.g. \Sigma, \sigma_i^2, \det(\Sigma), \text{Cov}(A,B)
+    // Only captures mathematical arguments (brackets, subscripts, superscripts, single characters), NEVER prose words with spaces
+    text = text.replace(new RegExp(`\\\\(?:${latexCommands})\\b(?:\\{[^}]*\\}|\\([^)]*\\)|_[a-zA-Z0-9{}]+|\\^[a-zA-Z0-9{}]+)*(?:\\s*[=+\\-*/<>]\\s*[^\\s,;:.!?()]+)*`, 'g'), (match) => {
       const trimmed = match.trim();
       if (trimmed && !trimmed.includes('XKMATH')) {
         const key = `XKMATHINLINE${mathCounter++}KX`;
