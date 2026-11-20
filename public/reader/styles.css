@@ -3308,6 +3308,7 @@ body.theme-dark .spotlight-label-row {
 
 .reader-table {
   width: 100%;
+  min-width: 650px;
   border-collapse: collapse;
   font-size: 0.95rem;
   line-height: 1.5;

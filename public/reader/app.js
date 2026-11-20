@@ -497,6 +497,8 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     function isPureMath(str) {
       const trimmed = str.trim();
       if (!trimmed) return false;
+      // Exclude markdown table alignment dashes like :--- or ---: or ---
+      if (/^[:\-\s|]+$/.test(trimmed)) return false;
       const hasMathIndicator = /\\[a-zA-Z]+|[=<>+\-*/^_]|\\times|\\implies/.test(trimmed);
       if (!hasMathIndicator) return false;
 
@@ -521,11 +523,22 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       return match;
     });
 
-    // 7. Precise Bare LaTeX expressions (dimensions, Greek letters, isolated symbols):
+    // 7. Auto-detect pure math inside markdown table cells or TSV cells: e.g. "| \beta_i = \frac{...}{...} |"
+    text = text.replace(/(\||\t)([ \t]*)([^|\t\r\n]+?)([ \t]*)(?=\||\t|\r?\n|$)/g, (match, sep, pre, cell, post) => {
+      const trimmed = cell.trim();
+      if (trimmed && !trimmed.includes('XKMATH') && isPureMath(trimmed)) {
+        const key = `XKMATHINLINE${mathCounter++}KX`;
+        mathFormulaStore[key] = { formula: trimmed, display: false };
+        return `${sep}${pre}${key}${post}`;
+      }
+      return match;
+    });
+
+    // 8. Precise Bare LaTeX expressions (dimensions, Greek letters, isolated symbols):
     const latexCommands = 'sum|prod|int|sigma|Sigma|alpha|beta|gamma|delta|epsilon|theta|lambda|mu|pi|rho|phi|omega|Omega|det|Cov|text|implies|iff|cdot|times|dots|quad|qquad|frac|sqrt|pmatrix|matrix|bmatrix|mathbf|mathbb|mathcal|le|ge|neq|approx|in|forall|exists|partial|infty|pm|mp';
 
-    // A. Auto-detect math formulas after colon (e.g. ": E(R_p) = \sum... \text{avec} ...", or ": \sigma_p^2 = W^T \Sigma W où ...")
-    text = text.replace(/(:\s+)([^:\n]+)/g, (match, prefix, expr) => {
+    // A. Auto-detect math formulas after colon on the same line (e.g. ": E(R_p) = \sum... \text{avec} ...", or ": \sigma_p^2 = W^T \Sigma W où ...")
+    text = text.replace(/(:[ \t]+)([^:\n]+)/g, (match, prefix, expr) => {
       const splitMatch = expr.match(/^(.+?)\s+(où|where)\s+(.*)$/i);
       if (splitMatch && isPureMath(splitMatch[1])) {
         const key = `XKMATHINLINE${mathCounter++}KX`;
@@ -989,7 +1002,8 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       currentTableLines = [];
 
       const isTsv = tLines[0].includes('\t');
-      const isMd = tLines.length >= 2 && (/^\|[\s\-:|]+\|$/.test(tLines[1].trim()) || tLines[1].includes('---'));
+      const hasAlignRow = tLines.length >= 2 && (/^\|?[\s\-:|]+\|?$/.test(tLines[1].trim()) || tLines[1].includes('---'));
+      const isMd = tLines.length >= 2 && (hasAlignRow || tLines.every(l => l.includes('|')));
 
       const parseRow = (line) => {
         if (isTsv) {
@@ -1022,7 +1036,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
         let dataRowStartIndex = 1;
         let alignments = [];
 
-        if (isMd) {
+        if (isMd && hasAlignRow) {
           const alignMatch = parseRow(tLines[1]);
           alignments = alignMatch.map(col => {
             const c = col.trim();
@@ -1033,6 +1047,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
           dataRowStartIndex = 2;
         } else {
           alignments = headerCells.map(() => 'left');
+          dataRowStartIndex = 1;
         }
 
         const rows = tLines.slice(dataRowStartIndex).map(r => parseRow(r));
