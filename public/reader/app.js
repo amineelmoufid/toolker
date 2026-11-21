@@ -820,14 +820,14 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     cleanFormula = cleanFormula.replace(/\b([a-zA-Z\\]+)_\{?min\}?\b/g, '$1_{\\min}');
     cleanFormula = cleanFormula.replace(/\b([a-zA-Z\\]+)_\{?max\}?\b/g, '$1_{\\max}');
 
-    // French conjunction 'et' inside math: \beta_A = 0,63 et \beta_B = 1,26 -> \text{ et }
-    cleanFormula = cleanFormula.replace(/\b(\d+(?:,\d+)?|\\[a-zA-Z]+|[a-zA-Z0-9_{}]+)\s+et\s+/g, '$1 \\text{ et } ');
+    // French conjunctions inside math: \beta_A = 0,63 et \beta_B = 1,26 -> \text{ et }
+    cleanFormula = cleanFormula.replace(/(^|[^a-zA-Z\u00C0-\u024F\\])(et|ou|avec)(?=[^a-zA-Z\u00C0-\u024F]|$)/g, '$1 \\text{ $2 } ');
 
     // Units, acronyms and formatting
     cleanFormula = cleanFormula.replace(/\bDH\b/g, '\\text{ DH}');
     cleanFormula = cleanFormula.replace(/\bVaR\b/g, '\\text{VaR}');
     cleanFormula = cleanFormula.replace(/\bnote\b/g, '\\text{note}');
-    cleanFormula = cleanFormula.replace(/\bCx\b/g, '\\text{Cx}');
+    cleanFormula = cleanFormula.replace(/\bCx\b/g, '\\,\\text{Cx}');
     cleanFormula = cleanFormula.replace(/\bdr\b/g, '\\text{dr}');
     cleanFormula = cleanFormula.replace(/(\d+)\s*j\b/g, '$1\\text{j}');
     // Numbers with spaces: 20 000 -> 20\,000
