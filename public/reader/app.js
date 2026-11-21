@@ -498,23 +498,39 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       return match;
     });
 
+    // Whitelist of valid mathematical terms, financial variables, and operators
+    const MATH_WHITELIST = new Set([
+      'cov', 'det', 'mvp', 'com', 'var', 'pr', 'dh', 'masi', 'pvm', 'sml',
+      'avec', 'et', 'and', 'ou', 'où', 'where', 'approx', 'lim', 'sup', 'inf', 'max', 'min',
+      'note', 'bb', 'bbb', 'aaa', 'aa', 'ccc', 'dr', 'cx'
+    ]);
+
     // Helper to distinguish genuine mathematical expressions from human language prose
     function isPureMath(str) {
       const trimmed = str.trim();
       if (!trimmed) return false;
       // Exclude markdown table alignment dashes like :--- or ---: or ---
       if (/^[:\-\s|]+$/.test(trimmed)) return false;
-      const hasMathIndicator = /\\[a-zA-Z]+|[=<>+\-*/^_]|\\times|\\implies|\\approx|\\,|\\%|\{,\}/.test(trimmed);
+      const hasMathIndicator = /\\[a-zA-Z]+|[=<>+\-*/^_]|\\times|\\implies|\\approx|\\neq|\\le|\\ge|\\,|\\%|\{,\}/.test(trimmed);
       if (!hasMathIndicator) return false;
 
       const stripped = trimmed
-        .replace(/\\(text|mathrm|mathbf)\{[^}]*\}/g, '')
+        .replace(/\\(text|mathrm|mathbf|operatorname)\{[^}]*\}/g, '')
         .replace(/\\[a-zA-Z]+/g, '')
         .replace(/XKMATH[A-Z0-9]+KX/g, '');
 
-      const words = stripped.match(/[a-zA-Z\u00C0-\u024F]{3,}/g) || [];
-      const proseWords = words.filter(w => !['Cov', 'det', 'MVP', 'avec', 'et', 'and', 'ou', 'où', 'where', 'approx', 'lim', 'sup', 'inf', 'max', 'min', 'MASI', 'Var', 'PR', 'VaR', 'DH'].includes(w));
+      const words = stripped.match(/[a-zA-Z\u00C0-\u024F]{2,}/g) || [];
+      const proseWords = words.filter(w => !MATH_WHITELIST.has(w.toLowerCase()));
       return proseWords.length === 0;
+    }
+
+    // Check if a following token is a prose word stopping math capture
+    function isProseTransition(textFromK) {
+      const m = textFromK.match(/^\s+(?:([scdlnjmt]'[a-zA-Z\u00C0-\u024F]+)|([a-zA-Z\u00C0-\u024F]{2,}))(?:[\s,;:.!?]|$)/i);
+      if (!m) return false;
+      const word = (m[1] || m[2]).toLowerCase();
+      if (MATH_WHITELIST.has(word)) return false;
+      return true;
     }
 
     // 6. Standalone equations on full lines or bullet lines (e.g. \beta_{P1} = ..., step-by-step VaR):
@@ -611,9 +627,9 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     }
     text = parenResult;
 
-    // 10. Inline equations & inequalities in prose with balanced bracket/paren awareness:
-    // e.g. "K_{\min} = R_f + \beta_p [E(R_m) - R_f] ;" or "W_A^* = \frac{...}{...}" or "\text{Cov}(...) = ..."
-    const opRegex = /(?:^|(?<=[\s:;(«]))((?:\\(?:text|operatorname)\{[a-zA-Z]+\}|[A-Za-z\\][a-zA-Z0-9_{}\\^*]*)(?:[_\^]\{?[a-zA-Z0-9*\\-]+\}?)*(?:\s*\([^)]*\))?\s*(?:=|<=|>=|>|<|\\le|\\ge|\\approx|\\implies)\s*)/g;
+    // 10. Inline equations & inequalities in prose with multi-term LHS and chained RHS:
+    // Allows function calls e.g. \det(\Sigma), vector products W^T \cdot \mathbf{1}, etc.
+    const opRegex = /(?:^|(?<=[\s:;(«]))((?:\\(?:mathbf|mathit|mathrm|operatorname|text)\{[^}]+\}(?:\([^)]*\))?|\\[a-zA-Z]+(?:\([^)]*\))?|[A-Za-z](?:_[a-zA-Z0-9{}]+)?(?:\^[a-zA-Z0-9{}*]+)?|\([a-zA-Z0-9_{}\\]+\)|[A-Za-z]+\([^)]*\))(?:[ \t]*(?:\\cdot|\\times|[+\-*/^_\^])[ \t]*(?:\\(?:mathbf|mathit|mathrm|operatorname|text)\{[^}]+\}(?:\([^)]*\))?|\\[a-zA-Z]+(?:\([^)]*\))?|[a-zA-Z0-9_{}\^*()]+))*\s*(?:=|<=|>=|>|<|\\le|\\ge|\\approx|\\implies|\\neq)\s*)/g;
     let eqResult = '';
     let eqLastIndex = 0;
     let eqMatch;
@@ -644,11 +660,11 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
           if (depthBrace > 0) depthBrace--;
           else break;
         } else if (depthParen === 0 && depthBracket === 0 && depthBrace === 0) {
-          if (ch === ';' || ch === '\n' || ch === '»') break;
+          if (ch === ':' || ch === ';' || ch === '\n' || ch === '»') break;
           if (ch === '.' && (k + 1 >= text.length || /\s/.test(text[k + 1]))) break;
           if (ch === ',' && (k > 0 && text[k - 1] !== '\\') && (k + 1 < text.length && /^\s+[a-zA-Z\u00C0-\u024F]{2,}/.test(text.slice(k + 1)))) break;
           const remaining = text.slice(k);
-          if (/^\s+(?:est|sont|avec|pour|dans|qui|que|mais|soit|supérieur|inférieur|intégrant|dégage|traduisant|offrant|sur|où|where|agit|comme|donne|vaut|représente|mesure|exprime)(?:[\s,;:.!?]|$)/i.test(remaining)) {
+          if (isProseTransition(remaining)) {
             break;
           }
         }
@@ -670,6 +686,63 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     eqResult += text.slice(eqLastIndex);
     text = eqResult;
 
+    // 10B. Standalone LaTeX Expressions in Prose without '=':
+    // e.g. \frac{1}{2} Cx \cdot (dr)^2, \Sigma^{-1} \cdot \mathbf{1}, \text{Com}(\Sigma)^T
+    const exprStartRegex = /(?:^|(?<=[\s:;(«]))(\\(?:frac|sqrt|sum|prod|int|Sigma|sigma|beta|alpha|gamma|mathbf|mathit|text|operatorname|det|Cov|Var)\b)/g;
+    let exprResult = '';
+    let exprLastIndex = 0;
+    let exprMatch;
+
+    while ((exprMatch = exprStartRegex.exec(text)) !== null) {
+      const matchStart = exprMatch.index;
+      let depthParen = 0;
+      let depthBracket = 0;
+      let depthBrace = 0;
+      let k = matchStart;
+
+      while (k < text.length) {
+        const ch = text[k];
+        if (ch === '(') depthParen++;
+        else if (ch === ')') {
+          if (depthParen > 0) depthParen--;
+          else break;
+        } else if (ch === '[') depthBracket++;
+        else if (ch === ']') {
+          if (depthBracket > 0) depthBracket--;
+          else break;
+        } else if (ch === '{') depthBrace++;
+        else if (ch === '}') {
+          if (depthBrace > 0) depthBrace--;
+          else break;
+        } else if (depthParen === 0 && depthBracket === 0 && depthBrace === 0) {
+          if (ch === ':' || ch === ';' || ch === '\n' || ch === '»') break;
+          if (ch === '.' && (k + 1 >= text.length || /\s/.test(text[k + 1]))) break;
+          if (ch === ',' && (k > 0 && text[k - 1] !== '\\') && (k + 1 < text.length && /^\s+[a-zA-Z\u00C0-\u024F]{2,}/.test(text.slice(k + 1)))) break;
+          if (ch === '(') break;
+          const remaining = text.slice(k);
+          if (/^\s*\([a-zA-Z\u00C0-\u024F]{2,}/.test(remaining)) break;
+          if (isProseTransition(remaining)) break;
+        }
+        k++;
+      }
+
+      const candidate = text.slice(matchStart, k).trim();
+      if (candidate && !candidate.includes('XKMATH') && isPureMath(candidate)) {
+        exprResult += text.slice(exprLastIndex, matchStart);
+        const key = `XKMATHINLINE${mathCounter++}KX`;
+        mathFormulaStore[key] = { formula: candidate, display: false };
+        exprResult += key;
+        exprLastIndex = k;
+        exprStartRegex.lastIndex = k;
+      } else {
+        exprResult += text.slice(exprLastIndex, matchStart + exprMatch[0].length);
+        exprLastIndex = matchStart + exprMatch[0].length;
+        exprStartRegex.lastIndex = exprLastIndex;
+      }
+    }
+    exprResult += text.slice(exprLastIndex);
+    text = exprResult;
+
     // 11. Dimensions / operations like "3 \times 3" or "N \times N"
     text = text.replace(new RegExp(`\\b([0-9a-zA-Z]+)\\s*\\\\times\\s*([0-9a-zA-Z]+)\\b`, 'g'), (match, left, right) => {
       const key = `XKMATHINLINE${mathCounter++}KX`;
@@ -677,8 +750,8 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       return key;
     });
 
-    // 12. Isolated mathematical variables with subscripts, function notation, or Greek letters: e.g. K_{\min}, R_f, E(R_p), (P_1), \alpha, \det(\Sigma)
-    text = text.replace(/(?:^|(?<=[\s:;(«]))([A-Za-z\\][a-zA-Z0-9\\]*_[a-zA-Z0-9{}\\^]+(?:\([^)]*\))?|[A-Z]\(\s*[a-zA-Z0-9_{}\\]+\s*\)|\\\b(?:alpha|beta|gamma|delta|epsilon|theta|lambda|mu|pi|rho|sigma|Sigma|phi|omega|Omega|det|Cov|Var)\b(?:\s*\([^)]*\))?)(?=[,;:.!?»)\s]|$)/g, (match, variable) => {
+    // 12. Isolated mathematical variables with subscripts, function notation, or Greek letters: e.g. K_{\min}, R_f, E(R_p), (P_1), \alpha, \det(\Sigma), (dr)^2
+    text = text.replace(/(?:^|(?<=[\s:;(«]))(\\(?:text|operatorname)\{[a-zA-Z]+\}(?:\([^)]*\))?(?:\^[a-zA-Z0-9{}*]+)?|[A-Za-z\\][a-zA-Z0-9\\]*_[a-zA-Z0-9{}\\^]+(?:\([^)]*\))?|[A-Z]\(\s*[a-zA-Z0-9_{}\\]+\s*\)|\([a-zA-Z0-9_]+\)\^[0-9]+|\\\b(?:alpha|beta|gamma|delta|epsilon|theta|lambda|mu|pi|rho|sigma|Sigma|phi|omega|Omega|det|Cov|Var)\b(?:\s*\([^)]*\))?)(?=[,;:.!?»)\s]|$)/g, (match, variable) => {
       const trimmed = variable.trim();
       if (trimmed && !trimmed.includes('XKMATH') && isPureMath(trimmed)) {
         const key = `XKMATHINLINE${mathCounter++}KX`;
@@ -688,7 +761,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
       return match;
     });
 
-    // 6. Safe post-math unescaping for remaining prose (math formulas are already stored)
+    // Post-math unescaping for remaining prose (math formulas are already stored)
     text = text.replace(/\\_/g, '_');
     text = text.replace(/\\&/g, '&');
     text = text.replace(/\\%/g, '%');
@@ -709,6 +782,9 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     "\\MSE": "\\operatorname{MSE}",
     "\\Prob": "\\operatorname{P}",
     "\\VaR": "\\operatorname{VaR}",
+    "\\Com": "\\operatorname{Com}",
+    "\\MVP": "\\text{MVP}",
+    "\\PVM": "\\text{PVM}",
     "\\sigmaA": "\\sigma_A",
     "\\sigmaB": "\\sigma_B"
   };
@@ -750,6 +826,9 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
     // Units, acronyms and formatting
     cleanFormula = cleanFormula.replace(/\bDH\b/g, '\\text{ DH}');
     cleanFormula = cleanFormula.replace(/\bVaR\b/g, '\\text{VaR}');
+    cleanFormula = cleanFormula.replace(/\bnote\b/g, '\\text{note}');
+    cleanFormula = cleanFormula.replace(/\bCx\b/g, '\\text{Cx}');
+    cleanFormula = cleanFormula.replace(/\bdr\b/g, '\\text{dr}');
     cleanFormula = cleanFormula.replace(/(\d+)\s*j\b/g, '$1\\text{j}');
     // Numbers with spaces: 20 000 -> 20\,000
     cleanFormula = cleanFormula.replace(/(\d+)\s+(\d{3})\b/g, '$1\\,$2');
