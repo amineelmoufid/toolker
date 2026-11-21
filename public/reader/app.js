@@ -688,7 +688,7 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
 
     // 10B. Standalone LaTeX Expressions in Prose without '=':
     // e.g. \frac{1}{2} Cx \cdot (dr)^2, \Sigma^{-1} \cdot \mathbf{1}, \text{Com}(\Sigma)^T
-    const exprStartRegex = /(?:^|(?<=[\s:;(«]))(\\(?:frac|sqrt|sum|prod|int|Sigma|sigma|beta|alpha|gamma|mathbf|mathit|text|operatorname|det|Cov|Var)\b)/g;
+    const exprStartRegex = /(?:^|(?<=[\s:;(«]))(\\(?:frac|sqrt|sum|prod|int|Sigma|sigma|beta|alpha|gamma|delta|Delta|mathbf|mathit|text|operatorname|det|Cov|Var)\b)/g;
     let exprResult = '';
     let exprLastIndex = 0;
     let exprMatch;
@@ -868,20 +868,213 @@ Le terme **\\(\\beta_0\\)** représente la constante (l'intercept), c'est-à-dir
   }
 
   /**
-   * Sanitizes sentences for speech synthesis:
-   * Strips LaTeX placeholders, LaTeX commands (\beta, \alpha, etc.),
-   * markdown asterisks (*, **), underscores, backticks, hashes,
-   * so TTS reads clean, natural human text without pronouncing symbols ("étoile", "star").
+   * Translates mathematical and econometric formulas into natural spoken text
+   * tailored to the detected language (French, English, or Arabic) for fluent TTS reading.
    */
-  function sanitizeForSpeech(rawSentence) {
+  function mathToSpokenText(formula, lang = 'fr') {
+    if (!formula) return '';
+    let s = formula.trim();
+
+    // Recursively unwrap nested XKMATH placeholders if any exist
+    let resolveCount = 0;
+    while (/XKMATH(INLINE|BLOCK)\d+KX/.test(s) && resolveCount < 10) {
+      resolveCount++;
+      s = s.replace(/XKMATH(INLINE|BLOCK)\d+KX/g, (placeholder) => {
+        const subItem = mathFormulaStore[placeholder];
+        return subItem ? subItem.formula : '';
+      });
+    }
+
+    s = s.replace(/^(\\{1,2}\[|\$\$|\\{1,2}\()/, '').replace(/(\\{1,2}\]|\$\$|\\{1,2}\))$/, '').trim();
+
+    // 1. Language-specific common fractions
+    if (lang === 'fr') {
+      s = s.replace(/\\frac\{1\}\{2\}/g, 'un demi');
+      s = s.replace(/\\frac\{1\}\{3\}/g, 'un tiers');
+      s = s.replace(/\\frac\{1\}\{4\}/g, 'un quart');
+      s = s.replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, '$1 sur $2');
+    } else if (lang === 'ar') {
+      s = s.replace(/\\frac\{1\}\{2\}/g, 'نصف');
+      s = s.replace(/\\frac\{1\}\{3\}/g, 'ثلث');
+      s = s.replace(/\\frac\{1\}\{4\}/g, 'ربع');
+      s = s.replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, '$1 على $2');
+    } else {
+      s = s.replace(/\\frac\{1\}\{2\}/g, 'one half');
+      s = s.replace(/\\frac\{1\}\{3\}/g, 'one third');
+      s = s.replace(/\\frac\{1\}\{4\}/g, 'one fourth');
+      s = s.replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, '$1 over $2');
+    }
+
+    // 2. Greek letters - use lookahead (?![a-zA-Z]) so \beta_0 matches \beta!
+    if (lang === 'ar') {
+      s = s.replace(/\\alpha(?![a-zA-Z])/gi, 'ألفا');
+      s = s.replace(/\\beta(?![a-zA-Z])/gi, 'بيتا');
+      s = s.replace(/\\gamma(?![a-zA-Z])/gi, 'غاما');
+      s = s.replace(/\\Delta(?![a-zA-Z])|\\delta(?![a-zA-Z])/gi, 'دلتا');
+      s = s.replace(/\\epsilon(?![a-zA-Z])|\\varepsilon(?![a-zA-Z])/gi, 'إبسيلون');
+      s = s.replace(/\\theta(?![a-zA-Z])/gi, 'ثيتا');
+      s = s.replace(/\\lambda(?![a-zA-Z])/gi, 'لامدا');
+      s = s.replace(/\\mu(?![a-zA-Z])/gi, 'ميو');
+      s = s.replace(/\\pi(?![a-zA-Z])/gi, 'باي');
+      s = s.replace(/\\rho(?![a-zA-Z])/gi, 'رو');
+      s = s.replace(/\\sigma(?![a-zA-Z])|\\Sigma(?![a-zA-Z])/gi, 'سيغما');
+      s = s.replace(/\\phi(?![a-zA-Z])/gi, 'فاي');
+      s = s.replace(/\\omega(?![a-zA-Z])|\\Omega(?![a-zA-Z])/gi, 'أوميغا');
+    } else {
+      s = s.replace(/\\alpha(?![a-zA-Z])/gi, 'alpha');
+      s = s.replace(/\\beta(?![a-zA-Z])/gi, lang === 'fr' ? 'bêta' : 'beta');
+      s = s.replace(/\\gamma(?![a-zA-Z])/gi, 'gamma');
+      s = s.replace(/\\Delta(?![a-zA-Z])|\\delta(?![a-zA-Z])/gi, 'delta');
+      s = s.replace(/\\epsilon(?![a-zA-Z])|\\varepsilon(?![a-zA-Z])/gi, 'epsilon');
+      s = s.replace(/\\theta(?![a-zA-Z])/gi, 'thêta');
+      s = s.replace(/\\lambda(?![a-zA-Z])/gi, 'lambda');
+      s = s.replace(/\\mu(?![a-zA-Z])/gi, 'mu');
+      s = s.replace(/\\pi(?![a-zA-Z])/gi, 'pi');
+      s = s.replace(/\\rho(?![a-zA-Z])/gi, 'rho');
+      s = s.replace(/\\sigma(?![a-zA-Z])|\\Sigma(?![a-zA-Z])/gi, 'sigma');
+      s = s.replace(/\\phi(?![a-zA-Z])/gi, 'phi');
+      s = s.replace(/\\omega(?![a-zA-Z])|\\Omega(?![a-zA-Z])/gi, 'oméga');
+    }
+
+    // 3. Division slashes between symbols/variables (e.g. delta Y / delta X)
+    s = s.replace(/([a-zA-Z0-9_\u00C0-\u024F\u0600-\u06FF]+)\s*\/\s*([a-zA-Z0-9_\u00C0-\u024F\u0600-\u06FF]+)/g,
+      lang === 'fr' ? '$1 sur $2' : lang === 'ar' ? '$1 على $2' : '$1 over $2');
+
+    // 4. Roots: \sqrt{...}
+    s = s.replace(/\\sqrt\{([^}]+)\}/g, lang === 'fr' ? 'racine carrée de $1' : lang === 'ar' ? 'جذر $1' : 'square root of $1');
+
+    // 5. Sums, Integrals, Products
+    s = s.replace(/\\sum(?:_\{[^}]+\})?(?:\^\{[^}]+\})?/g, lang === 'fr' ? 'somme' : lang === 'ar' ? 'مجموع' : 'sum');
+
+    // 6. Comparison operators and arithmetic
+    if (lang === 'fr') {
+      s = s.replace(/\\approx/g, ' environ égal à ');
+      s = s.replace(/\\implies/g, ' implique ');
+      s = s.replace(/\\neq/g, ' différent de ');
+      s = s.replace(/(?:\\le|<=)/g, ' inférieur ou égal à ');
+      s = s.replace(/(?:\\ge|>=)/g, ' supérieur ou égal à ');
+      s = s.replace(/=/g, ' égal à ');
+      s = s.replace(/</g, ' inférieur à ');
+      s = s.replace(/>/g, ' supérieur à ');
+      s = s.replace(/\+/g, ' plus ');
+      s = s.replace(/(?:^|\s)-(\s|$)/g, ' moins ');
+      s = s.replace(/\\pm/g, ' plus ou moins ');
+      s = s.replace(/(?:\\times|\\cdot|\*)/g, ' fois ');
+    } else if (lang === 'ar') {
+      s = s.replace(/\\approx/g, ' تقريبا ');
+      s = s.replace(/\\implies/g, ' يؤدي إلى ');
+      s = s.replace(/\\neq/g, ' لا يساوي ');
+      s = s.replace(/(?:\\le|<=)/g, ' أصغر من أو يساوي ');
+      s = s.replace(/(?:\\ge|>=)/g, ' أكبر من أو يساوي ');
+      s = s.replace(/=/g, ' يساوي ');
+      s = s.replace(/</g, ' أصغر من ');
+      s = s.replace(/>/g, ' أكبر من ');
+      s = s.replace(/\+/g, ' زائد ');
+      s = s.replace(/(?:^|\s)-(\s|$)/g, ' ناقص ');
+      s = s.replace(/\\pm/g, ' زائد أو ناقص ');
+      s = s.replace(/(?:\\times|\\cdot|\*)/g, ' في ');
+    } else {
+      s = s.replace(/\\approx/g, ' approximately ');
+      s = s.replace(/\\implies/g, ' implies ');
+      s = s.replace(/\\neq/g, ' not equal to ');
+      s = s.replace(/(?:\\le|<=)/g, ' less than or equal to ');
+      s = s.replace(/(?:\\ge|>=)/g, ' greater than or equal to ');
+      s = s.replace(/=/g, ' equals ');
+      s = s.replace(/</g, ' less than ');
+      s = s.replace(/>/g, ' greater than ');
+      s = s.replace(/\+/g, ' plus ');
+      s = s.replace(/(?:^|\s)-(\s|$)/g, ' minus ');
+      s = s.replace(/\\pm/g, ' plus or minus ');
+      s = s.replace(/(?:\\times|\\cdot|\*)/g, ' times ');
+    }
+
+    // 7. Functions & statistics terms
+    s = s.replace(/\\det(?![a-zA-Z])/gi, lang === 'fr' ? 'déterminant' : lang === 'ar' ? 'محدد' : 'determinant');
+    s = s.replace(/\\text\{Cov\}|\\Cov(?![a-zA-Z])|\bCov\b/gi, lang === 'ar' ? 'التباين المشترك' : 'covariance');
+    s = s.replace(/\\text\{Var\}|\\Var(?![a-zA-Z])|\bVar\b/gi, lang === 'ar' ? 'التباين' : 'variance');
+    s = s.replace(/\\text\{VaR\}|\\VaR(?![a-zA-Z])|\bVaR\b/gi, 'Value at Risk');
+    s = s.replace(/\\text\{Com\}|\\Com(?![a-zA-Z])|\bCom\b/gi, lang === 'fr' ? 'comatrice' : 'comatrix');
+
+    // 8. Superscripts (exponents)
+    if (lang === 'fr') {
+      s = s.replace(/\^2\b|\^{2}/g, ' au carré ');
+      s = s.replace(/\^3\b|\^{3}/g, ' au cube ');
+      s = s.replace(/\^[tT]\b|\^{[tT]}/g, ' transposé ');
+      s = s.replace(/\^-1\b|\^{-1}/g, ' inverse ');
+      s = s.replace(/\^([0-9a-zA-Z]+)|\^\{([^}]+)\}/g, (m, p1, p2) => ` puissance ${p1 || p2} `);
+    } else if (lang === 'ar') {
+      s = s.replace(/\^2\b|\^{2}/g, ' تربيع ');
+      s = s.replace(/\^3\b|\^{3}/g, ' تكعيب ');
+      s = s.replace(/\^[tT]\b|\^{[tT]}/g, ' منقول ');
+      s = s.replace(/\^-1\b|\^{-1}/g, ' معكوس ');
+      s = s.replace(/\^([0-9a-zA-Z]+)|\^\{([^}]+)\}/g, (m, p1, p2) => ` أس ${p1 || p2} `);
+    } else {
+      s = s.replace(/\^2\b|\^{2}/g, ' squared ');
+      s = s.replace(/\^3\b|\^{3}/g, ' cubed ');
+      s = s.replace(/\^[tT]\b|\^{[tT]}/g, ' transposed ');
+      s = s.replace(/\^-1\b|\^{-1}/g, ' inverse ');
+      s = s.replace(/\^([0-9a-zA-Z]+)|\^\{([^}]+)\}/g, (m, p1, p2) => ` to the power of ${p1 || p2} `);
+    }
+
+    // 9. Subscripts
+    // Named subscripts
+    s = s.replace(/_\{?\\?(min)\b\}?/gi, lang === 'fr' ? ' minimum' : ' min');
+    s = s.replace(/_\{?\\?(max)\b\}?/gi, lang === 'fr' ? ' maximum' : ' max');
+    s = s.replace(/_\{?MVP\}?/gi, ' MVP');
+    s = s.replace(/_\{?PVM\}?/gi, ' PVM');
+    // Numerical subscripts
+    s = s.replace(/_\{0\}|_0\b/g, lang === 'fr' ? ' zéro' : lang === 'ar' ? ' صفر' : ' zero');
+    s = s.replace(/_\{1\}|_1\b/g, lang === 'fr' ? ' un' : lang === 'ar' ? ' واحد' : ' one');
+    s = s.replace(/_\{2\}|_2\b/g, lang === 'fr' ? ' deux' : lang === 'ar' ? ' اثنان' : ' two');
+    s = s.replace(/_\{3\}|_3\b/g, lang === 'fr' ? ' trois' : lang === 'ar' ? ' ثلاثة' : ' three');
+    s = s.replace(/_([0-9a-zA-Z])/g, ' $1');
+    s = s.replace(/_\{([^}]+)\}/g, ' $1');
+
+    // 10. Units & Percentages
+    s = s.replace(/\\text\{\s*DH\s*\}|\bDH\b/g, lang === 'fr' ? ' dirhams ' : lang === 'ar' ? ' درهم ' : ' DH ');
+    s = s.replace(/\\%|%/g, lang === 'fr' ? ' pour cent ' : lang === 'ar' ? ' بالمائة ' : ' percent ');
+
+    // 11. Decimals: 0,09 or 0{,}09 -> 0 virgule 09
+    if (lang === 'fr') {
+      s = s.replace(/(\d+)(?:\{,\}|,)(\d+)/g, '$1 virgule $2');
+    } else if (lang === 'ar') {
+      s = s.replace(/(\d+)(?:\{,\}|,)(\d+)/g, '$1 فاصلة $2');
+    } else {
+      s = s.replace(/(\d+)\.(\d+)/g, '$1 point $2');
+    }
+
+    // 12. Clean LaTeX text/wrapper commands
+    s = s.replace(/\\(text|mathrm|mathbf|mathit|operatorname)\{([^}]+)\}/g, ' $2 ');
+    s = s.replace(/\\[a-zA-Z]+/g, ' ');
+    s = s.replace(/[{}]/g, ' ');
+
+    return s.replace(/\s+/g, ' ').trim();
+  }
+
+  /**
+   * Sanitizes sentences for speech synthesis:
+   * Translates LaTeX formulas into spoken words,
+   * strips markdown symbols (*, **, _, #, ~),
+   * ensuring clear, natural human speech.
+   */
+  function sanitizeForSpeech(rawSentence, customLang) {
     if (!rawSentence) return '';
-    let clean = rawSentence.replace(/XKMATH(INLINE|BLOCK)\d+KX/g, ' ');
-    // Strip LaTeX commands like \beta, \alpha, \varepsilon, \frac, etc.
-    clean = clean.replace(/\\+[a-zA-Z]+/g, ' ');
+    const lang = customLang || detectLanguage(rawSentence || (state ? state.text : ''));
+
+    // Replace each math placeholder with its verbalized spoken equivalent
+    let clean = rawSentence.replace(/XKMATH(INLINE|BLOCK)\d+KX/g, match => {
+      const item = mathFormulaStore[match];
+      if (item && item.formula) {
+        const spoken = mathToSpokenText(item.formula, lang);
+        return ` ${spoken} `;
+      }
+      return ' ';
+    });
+
     // Strip markdown formatting symbols: asterisks, underscores, backticks, hashes, tildes
     clean = clean.replace(/[*_~`#]/g, ' ');
-    // Strip raw brackets, braces, math symbols, and comparison operators
-    clean = clean.replace(/[{}\[\]\\^\$><+=|]/g, ' ');
+    // Strip raw brackets and braces that are not needed in speech
+    clean = clean.replace(/[{}[\]\\|]/g, ' ');
     // Collapse spacing
     clean = clean.replace(/\s+/g, ' ').trim();
     return clean;
