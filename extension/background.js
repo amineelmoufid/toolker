@@ -1,29 +1,140 @@
 // Toolker Subtitle Companion - Background Service Worker
 // Extracts authentic YouTube subtitle XML directly using the user's residential browser session (0 CORS, 0 Datacenter blocks)
 
-function extractCaptionTracksFromHtml(html) {
-  const key = '"captionTracks":';
-  const keyIdx = html.indexOf(key);
-  if (keyIdx === -1) return null;
-  const startIdx = html.indexOf('[', keyIdx);
-  if (startIdx === -1) return null;
+const OFFICIAL_KEY = ['AIza', 'SyAO', '_FJ2SlqU', '8Q4STEHL', 'GCilw_Y9', '_11qcW8'].join('');
 
-  let depth = 0;
-  for (let i = startIdx; i < html.length; i++) {
-    if (html[i] === '[') depth++;
-    else if (html[i] === ']') {
-      depth--;
-      if (depth === 0) {
-        try {
-          const jsonStr = html.slice(startIdx, i + 1);
-          return JSON.parse(jsonStr);
-        } catch (_) {
-          return null;
-        }
+function decodeEntities(text) {
+  return text
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&apos;/g, "'")
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, dec) => String.fromCodePoint(parseInt(dec, 10)));
+}
+
+async function extractYouTubeSubtitles(videoId) {
+  let captionTracks = [];
+  let itData = null;
+
+  // 1. PRIMARY BULLETPROOF ENGINE: Android InnerTube with Official Key in residential session
+  try {
+    const itUrl = `https://www.youtube.com/youtubei/v1/player?key=${OFFICIAL_KEY}`;
+    const itRes = await fetch(itUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        context: {
+          client: {
+            clientName: 'ANDROID',
+            clientVersion: '20.10.38'
+          }
+        },
+        videoId
+      })
+    });
+
+    if (itRes.ok) {
+      itData = await itRes.json();
+      const tracks = itData?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
+      if (Array.isArray(tracks) && tracks.length > 0) {
+        captionTracks = tracks;
       }
     }
+  } catch (err) {
+    console.warn('[Toolker Companion] Android InnerTube notice:', err);
   }
-  return null;
+
+  // 2. FALLBACK ENGINE: Extract dynamic INNERTUBE_API_KEY from watch page
+  if (captionTracks.length === 0) {
+    try {
+      const watchRes = await fetch(`https://www.youtube.com/watch?v=${videoId}`, {
+        headers: {
+          'Accept-Language': 'en-US,en;q=0.9,fr;q=0.8'
+        }
+      });
+      if (watchRes.ok) {
+        const html = await watchRes.text();
+        const keyMatch = html.match(/"INNERTUBE_API_KEY":\s*"([a-zA-Z0-9_-]+)"/);
+        if (keyMatch && keyMatch[1]) {
+          const dynamicKey = keyMatch[1];
+          const dynRes = await fetch(`https://www.youtube.com/youtubei/v1/player?key=${dynamicKey}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              context: {
+                client: {
+                  clientName: 'ANDROID',
+                  clientVersion: '20.10.38'
+                }
+              },
+              videoId
+            })
+          });
+          if (dynRes.ok) {
+            const dynData = await dynRes.json();
+            const tracks = dynData?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
+            if (Array.isArray(tracks) && tracks.length > 0) {
+              captionTracks = tracks;
+              if (!itData) itData = dynData;
+            }
+          }
+        }
+      }
+    } catch (watchErr) {
+      console.warn('[Toolker Companion] Watch page fallback notice:', watchErr);
+    }
+  }
+
+  if (captionTracks.length === 0) {
+    throw new Error('No caption tracks found on YouTube for this video');
+  }
+
+  // 3. Select track: prefer original language / manual track over ASR if available
+  const authenticTracks = captionTracks.filter(t => !t.vssId || !t.vssId.startsWith('t.'));
+  const selectedTrack = authenticTracks.find(t => t.languageCode === 'en' && t.kind !== 'asr') ||
+                        authenticTracks.find(t => t.languageCode === 'en') ||
+                        authenticTracks.find(t => t.isDefault && t.kind !== 'asr') ||
+                        authenticTracks.find(t => t.isDefault) ||
+                        authenticTracks.find(t => t.kind !== 'asr') ||
+                        captionTracks.find(t => t.languageCode === 'en') ||
+                        captionTracks[0];
+
+  let trackUrl = selectedTrack.baseUrl;
+  if (!trackUrl.includes('fmt=')) {
+    trackUrl += '&fmt=srv3';
+  }
+
+  // 4. Fetch timedtext XML directly using residential session
+  let xmlRes = await fetch(trackUrl);
+  let xmlText = '';
+  if (xmlRes.ok) {
+    xmlText = await xmlRes.text();
+  }
+
+  // Fallback to baseUrl without &fmt=srv3 if empty
+  if (!xmlText || xmlText.length < 50) {
+    const rawRes = await fetch(selectedTrack.baseUrl);
+    if (rawRes.ok) {
+      xmlText = await rawRes.text();
+    }
+  }
+
+  if (!xmlText || xmlText.length < 50) {
+    throw new Error('Timedtext XML returned empty response');
+  }
+
+  return {
+    ok: true,
+    videoId,
+    lang: selectedTrack.languageCode || 'en',
+    xml: xmlText,
+    track: selectedTrack
+  };
 }
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
@@ -34,86 +145,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       return true;
     }
 
-    (async () => {
-      try {
-        // 1. Fetch YouTube watch page using the browser's residential connection
-        const watchRes = await fetch(`https://www.youtube.com/watch?v=${videoId}`, {
-          headers: {
-            'Accept-Language': 'en-US,en;q=0.9,fr;q=0.8'
-          }
-        });
-
-        if (!watchRes.ok) {
-          throw new Error(`YouTube watch page returned status ${watchRes.status}`);
-        }
-
-        const html = await watchRes.text();
-        let captionTracks = extractCaptionTracksFromHtml(html);
-
-        if (!captionTracks || captionTracks.length === 0) {
-          // Fallback to Native Android InnerTube with Official Key in residential session
-          try {
-            const pubKey = ['AIza', 'SyAO', '_FJ2SlqU', '8Q4STEHL', 'GCilw_Y9', '_11qcW8'].join('');
-            const itRes = await fetch(`https://www.youtube.com/youtubei/v1/player?key=${pubKey}`, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'User-Agent': 'com.google.android.youtube/20.10.38 (Linux; U; Android 14)'
-              },
-              body: JSON.stringify({
-                context: {
-                  client: {
-                    clientName: 'ANDROID',
-                    clientVersion: '20.10.38'
-                  }
-                },
-                videoId
-              })
-            });
-            if (itRes.ok) {
-              const itData = await itRes.json();
-              captionTracks = itData?.captions?.playerCaptionsTracklistRenderer?.captionTracks;
-            }
-          } catch (_) {}
-        }
-
-        if (!captionTracks || captionTracks.length === 0) {
-          sendResponse({ ok: false, error: 'No subtitles found on YouTube for this video.' });
-          return;
-        }
-
-        // 2. Select best authentic track in original spoken language
-        const authenticTracks = captionTracks.filter(t => !t.vssId || !t.vssId.startsWith('t.'));
-        const selectedTrack = authenticTracks.find(t => t.isDefault && t.kind !== 'asr') ||
-                              authenticTracks.find(t => t.isDefault) ||
-                              authenticTracks.find(t => t.kind !== 'asr') ||
-                              captionTracks.find(t => t.kind === 'asr') ||
-                              captionTracks[0];
-
-        let trackUrl = selectedTrack.baseUrl;
-        if (!trackUrl.includes('fmt=')) {
-          trackUrl += '&fmt=srv3';
-        }
-
-        // 3. Fetch timedtext XML directly
-        const xmlRes = await fetch(trackUrl);
-        if (!xmlRes.ok) {
-          throw new Error(`Timedtext XML returned status ${xmlRes.status}`);
-        }
-
-        const xmlText = await xmlRes.text();
-
-        sendResponse({
-          ok: true,
-          videoId,
-          lang: selectedTrack.languageCode || 'en',
-          xml: xmlText,
-          track: selectedTrack
-        });
-      } catch (err) {
+    extractYouTubeSubtitles(videoId)
+      .then((result) => {
+        sendResponse(result);
+      })
+      .catch((err) => {
+        console.error('[Toolker Companion] Extraction error:', err);
         sendResponse({ ok: false, error: err.message || 'Extraction failed' });
-      }
-    })();
+      });
 
     return true; // Keep message channel open for async response
   }

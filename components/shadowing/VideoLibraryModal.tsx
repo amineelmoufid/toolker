@@ -174,7 +174,7 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
 
     if (/^[a-zA-Z0-9_-]{11}$/.test(clean)) return clean;
 
-    const regExp = /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=|shorts\/))([a-zA-Z0-9_-]{11})/;
+    const regExp = /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=|shorts\/|live\/))([a-zA-Z0-9_-]{11})/;
 
     const match = clean.match(regExp);
 
@@ -212,33 +212,31 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
 
 
 
-    // 0.5. Check Toolker Companion Extension (if connected, instant residential browser fetch)
-    if (hasExtension) {
-      try {
-        const extResult = await new Promise<any>((resolve) => {
-          const reqId = `req-${Date.now()}-${Math.random()}`;
-          const timer = setTimeout(() => resolve(null), 5000);
-          const listener = (event: MessageEvent) => {
-            if (event.data && event.data.type === 'TOOLKER_RES_SUBTITLES' && event.data.requestId === reqId) {
-              clearTimeout(timer);
-              window.removeEventListener('message', listener);
-              resolve(event.data);
-            }
-          };
-          window.addEventListener('message', listener);
-          window.postMessage({ type: 'TOOLKER_REQ_SUBTITLES', videoId: ytId, requestId: reqId }, '*');
-        });
-        if (extResult && extResult.ok && extResult.xml) {
-          const parsed = parseTranscriptXml(extResult.xml);
-          if (parsed && parsed.length > 0) {
-            const clean = reconstructSubtitlesSemantically(parsed);
-            console.log('[Toolker Subtitles] Loaded via Companion Extension:', clean.length);
-            setSyncMessage(`✓ Extracted dialogue via Extension (${clean.length} sentences)`);
-            return clean;
+    // 0.5. Check Toolker Companion Extension (instant residential browser fetch)
+    try {
+      const extResult = await new Promise<any>((resolve) => {
+        const reqId = `req-${Date.now()}-${Math.random()}`;
+        const timer = setTimeout(() => resolve(null), 6000);
+        const listener = (event: MessageEvent) => {
+          if (event.data && event.data.type === 'TOOLKER_RES_SUBTITLES' && event.data.requestId === reqId) {
+            clearTimeout(timer);
+            window.removeEventListener('message', listener);
+            resolve(event.data);
           }
+        };
+        window.addEventListener('message', listener);
+        window.postMessage({ type: 'TOOLKER_REQ_SUBTITLES', videoId: ytId, requestId: reqId }, '*');
+      });
+      if (extResult && extResult.ok && extResult.xml) {
+        const parsed = parseTranscriptXml(extResult.xml);
+        if (parsed && parsed.length > 0) {
+          const clean = reconstructSubtitlesSemantically(parsed);
+          console.log('[Toolker Subtitles] Loaded via Companion Extension:', clean.length);
+          setSyncMessage(`✓ Extracted dialogue via Extension (${clean.length} sentences)`);
+          return clean;
         }
-      } catch (_) {}
-    }
+      }
+    } catch (_) {}
     // 1. PRIMARY FAST-PATH: Direct Serverless Edge Extractor (/api/transcript)
 
     // Instant ~300ms YouTube caption extraction in the video's original spoken language

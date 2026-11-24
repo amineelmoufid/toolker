@@ -231,6 +231,30 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     };
 
     const runExtraction = async () => {
+      // -0.5. Instant Toolker Extension Residential Fetch (sub-second, 100% authentic)
+      try {
+        const extResult = await new Promise<any>((resolve) => {
+          const reqId = `req-studio-${Date.now()}-${Math.random()}`;
+          const timer = setTimeout(() => resolve(null), 4000);
+          const listener = (event: MessageEvent) => {
+            if (event.data && event.data.type === 'TOOLKER_RES_SUBTITLES' && event.data.requestId === reqId) {
+              clearTimeout(timer);
+              window.removeEventListener('message', listener);
+              resolve(event.data);
+            }
+          };
+          window.addEventListener('message', listener);
+          window.postMessage({ type: 'TOOLKER_REQ_SUBTITLES', videoId: ytId, requestId: reqId }, '*');
+        });
+        if (extResult && extResult.ok && extResult.xml) {
+          const parsed = parseTranscriptXml(extResult.xml);
+          if (parsed && parsed.length > 0) {
+            applySubtitles(parsed);
+            return;
+          }
+        }
+      } catch (_) {}
+
       // 0. Instant Serverless Edge Extractor (/api/transcript)
       try {
         const controller = new AbortController();
