@@ -375,4 +375,88 @@ export const parsePlainTextToSubtitles = (text: string, baseStartSeconds: number
   return reconstructSubtitlesSemantically(res);
 };
 
+export const parseUniversalSubtitles = (input: string): SubtitleLine[] => {
+  if (!input || !input.trim()) return [];
+  const trimmed = input.trim();
+
+  // 1. JSON
+  if (trimmed.startsWith('{') || trimmed.startsWith('[')) {
+    try {
+      const parsed = JSON.parse(trimmed);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        return reconstructSubtitlesSemantically(parsed);
+      }
+      if (parsed && Array.isArray(parsed.subtitles) && parsed.subtitles.length > 0) {
+        return reconstructSubtitlesSemantically(parsed.subtitles);
+      }
+    } catch (_) {}
+  }
+
+  // 2. XML
+  if (trimmed.includes('<p ') || trimmed.includes('<text ') || trimmed.includes('<transcript>')) {
+    return parseTranscriptXml(trimmed);
+  }
+
+  // 3. SRT / VTT
+  if (trimmed.includes('-->')) {
+    return parseRawSRTtoSubtitles(trimmed);
+  }
+
+  // 4. YouTube Transcript format (timestamp lines followed by text, or inline timestamp)
+  const lines = trimmed.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n').map(l => l.trim()).filter(Boolean);
+  const timeRegex = /^(?:(\d{1,2}):)?(\d{1,2}):(\d{2})$/;
+  const inlineTimeRegex = /^(?:(\d{1,2}):)?(\d{1,2}):(\d{2})\s+(.+)$/;
+
+  const cues: { start: number; text: string }[] = [];
+  let pendingTime: number | null = null;
+
+  for (const line of lines) {
+    const inlineMatch = line.match(inlineTimeRegex);
+    if (inlineMatch) {
+      const h = inlineMatch[1] ? parseInt(inlineMatch[1], 10) : 0;
+      const m = parseInt(inlineMatch[2], 10);
+      const s = parseInt(inlineMatch[3], 10);
+      const timeInSec = h * 3600 + m * 60 + s;
+      cues.push({ start: timeInSec, text: inlineMatch[4].trim() });
+      pendingTime = null;
+      continue;
+    }
+
+    const timeMatch = line.match(timeRegex);
+    if (timeMatch) {
+      const h = timeMatch[1] ? parseInt(timeMatch[1], 10) : 0;
+      const m = parseInt(timeMatch[2], 10);
+      const s = parseInt(timeMatch[3], 10);
+      pendingTime = h * 3600 + m * 60 + s;
+      continue;
+    }
+
+    if (pendingTime !== null) {
+      cues.push({ start: pendingTime, text: line });
+      pendingTime = null;
+    } else if (cues.length > 0) {
+      cues[cues.length - 1].text += ' ' + line;
+    }
+  }
+
+  if (cues.length > 0) {
+    const subLines: SubtitleLine[] = [];
+    for (let i = 0; i < cues.length; i++) {
+      const start = cues[i].start;
+      const nextStart = (i < cues.length - 1) ? cues[i + 1].start : start + 4.5;
+      const end = Math.max(start + 0.5, nextStart);
+      subLines.push({
+        id: `cue-${i + 1}`,
+        start,
+        end,
+        text: cues[i].text,
+        words: interpolateWords(cues[i].text, start, end)
+      });
+    }
+    return reconstructSubtitlesSemantically(subLines);
+  }
+
+  return parsePlainTextToSubtitles(trimmed);
+};
+
 export const PRESET_CLIPS: ShadowingClip[] = [];

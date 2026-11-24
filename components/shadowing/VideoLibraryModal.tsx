@@ -3,13 +3,10 @@ import React, { useState } from 'react';
 import { ShadowingClip, SubtitleLine } from '../../types';
 
 import {
-
   PRESET_CLIPS,
-
   parseTranscriptXml,
-
-  reconstructSubtitlesSemantically
-
+  reconstructSubtitlesSemantically,
+  parseUniversalSubtitles
 } from './mockClips';
 
 import {
@@ -94,6 +91,54 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
   const [showExtensionModal, setShowExtensionModal] = useState<boolean>(false);
 
   const [copiedBookmarklet, setCopiedBookmarklet] = useState<boolean>(false);
+  const [showManualTranscript, setShowManualTranscript] = useState<boolean>(false);
+  const [manualTranscriptText, setManualTranscriptText] = useState<string>('');
+  const [manualParseError, setManualParseError] = useState<string>('');
+
+  const handleApplyManualTranscript = () => {
+    setManualParseError('');
+    if (!manualTranscriptText.trim()) {
+      setManualParseError('Please paste some subtitle text or transcript first.');
+      return;
+    }
+    try {
+      const parsed = parseUniversalSubtitles(manualTranscriptText);
+      if (!parsed || parsed.length === 0) {
+        setManualParseError('Could not find valid timestamps or sentences. Please ensure the transcript has timestamps (e.g. 0:14) or SRT format.');
+        return;
+      }
+      setSyncedSubtitles(parsed);
+      setSyncStatus('success');
+      const wordCount = parsed.reduce((acc, sub) => acc + (sub.words?.length || 0), 0);
+      setSyncMessage(`✓ Loaded ${parsed.length} cues (${wordCount} words) from custom transcript`);
+      setShowManualTranscript(false);
+    } catch (err: any) {
+      setManualParseError(`Parsing error: ${err.message || err}`);
+    }
+  };
+
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const text = event.target?.result as string;
+      if (text) {
+        setManualTranscriptText(text);
+        try {
+          const parsed = parseUniversalSubtitles(text);
+          if (parsed && parsed.length > 0) {
+            setSyncedSubtitles(parsed);
+            setSyncStatus('success');
+            const wordCount = parsed.reduce((acc, sub) => acc + (sub.words?.length || 0), 0);
+            setSyncMessage(`✓ Loaded ${parsed.length} cues (${wordCount} words) from ${file.name}`);
+            setShowManualTranscript(false);
+          }
+        } catch (_) {}
+      }
+    };
+    reader.readAsText(file);
+  };
 
 
 
@@ -268,18 +313,44 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
       if (cacheRes.ok) {
 
         const cacheData = await cacheRes.json();
-
         if (cacheData.ok && Array.isArray(cacheData.subtitles) && cacheData.subtitles.length > 0) {
-
           return cacheData.subtitles;
-
         }
-
       }
-
     } catch (_) {}
 
+    // 4. Check GitHub Cloud Extractor API
+    try {
+      setSyncMessage('Checking cloud transcript cache...');
+      const extRes = await fetch(`/api/extract?v=${ytId}&_t=${Date.now()}`);
+      if (extRes.ok) {
+        const extData = await extRes.json();
+        if (extData.ok && Array.isArray(extData.subtitles) && extData.subtitles.length > 0) {
+          return extData.subtitles;
+        }
+      }
+    } catch (_) {}
 
+    // 5. Trigger Cloud Actions Runner if not yet ready
+    try {
+      setSyncMessage('🚀 Launching autonomous cloud runner...');
+      await fetch('/api/extract', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ videoId: ytId })
+      });
+      // Short initial poll (3 attempts = 6s)
+      for (let p = 0; p < 3; p++) {
+        await new Promise(r => setTimeout(r, 2000));
+        const poll = await fetch(`/api/extract?v=${ytId}&_t=${Date.now()}`);
+        if (poll.ok) {
+          const pData = await poll.json();
+          if (pData.ok && Array.isArray(pData.subtitles) && pData.subtitles.length > 0) {
+            return pData.subtitles;
+          }
+        }
+      }
+    } catch (_) {}
 
     return [];
 
@@ -330,7 +401,8 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
       setSyncMessage(`✓ Synchronized original dialogue (${cleanSubs.length} cues, ${wordCount} words)`);
     } else {
       setSyncStatus('error');
-      setSyncMessage(`⚠️ No captions available on YouTube for this video.`);
+      setSyncMessage(`⚠️ Cloud runner queued in background. You can also paste transcript below!`);
+      setShowManualTranscript(true);
     }
     setIsSyncing(false);
 
@@ -994,6 +1066,53 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
               </div>
 
             )}
+
+            {/* Direct Paste Transcript / SRT Option */}
+            <div className="bg-[#e4dfd3] p-3 rounded border-2 border-[#1c1d20] shadow-[2px_2px_0px_#18191c] space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-mono font-bold text-[#1c1d20] uppercase flex items-center gap-1.5">
+                  <span>📋</span> MANUAL SUBTITLES / TRANSCRIPT
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setShowManualTranscript(!showManualTranscript)}
+                  className="text-[9.5px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-[#1c1d20] text-[#ebe6d8] hover:bg-[#cf573c] transition-colors"
+                >
+                  {showManualTranscript ? 'HIDE ▲' : (syncedSubtitles && syncedSubtitles.length > 0 ? 'REPLACE ▼' : 'PASTE TRANSCRIPT / SRT ▼')}
+                </button>
+              </div>
+
+              {showManualTranscript && (
+                <div className="space-y-2 pt-1 border-t border-[#1c1d20]/20">
+                  <p className="text-[10px] font-mono text-[#636056] leading-snug">
+                    Paste YouTube transcript (<span className="font-bold">... &gt; Show transcript</span>), SRT, VTT, or JSON:
+                  </p>
+                  <textarea
+                    value={manualTranscriptText}
+                    onChange={(e) => setManualTranscriptText(e.target.value)}
+                    rows={4}
+                    placeholder={"0:00 In 2012, I got a job offer that today gives me the ick.\n0:05 Because back then, we didn't really have...\n\nOr paste standard .SRT / .VTT subtitles"}
+                    className="w-full bg-[#16171a] border-2 border-[#1c1d20] rounded shadow-[inset_2px_2px_5px_rgba(0,0,0,0.8)] p-2.5 text-xs text-[#ebe6d8] font-mono outline-none focus:border-[#cf573c]"
+                  />
+                  {manualParseError && (
+                    <p className="text-[10px] font-mono text-red-700 font-bold">{manualParseError}</p>
+                  )}
+                  <div className="flex items-center justify-between gap-2">
+                    <label className="text-[10px] font-mono font-bold px-2 py-1 bg-[#d8d2c4] hover:bg-[#c5bfb0] text-[#1c1d20] rounded border border-[#1c1d20] cursor-pointer">
+                      📁 UPLOAD .SRT / .VTT
+                      <input type="file" accept=".srt,.vtt,.txt,.json" onChange={handleFileUpload} className="hidden" />
+                    </label>
+                    <button
+                      type="button"
+                      onClick={handleApplyManualTranscript}
+                      className="text-[10px] font-mono font-bold uppercase px-3 py-1 rounded bg-[#cf573c] hover:bg-[#b84a30] text-white border border-[#1c1d20] shadow-[1px_1px_0px_#18191c]"
+                    >
+                      APPLY SUBTITLES
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
 
 
 
