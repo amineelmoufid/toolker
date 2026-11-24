@@ -11,7 +11,7 @@ import {
   onDisconnect,
   update
 } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js';
-import { PracticeSession, UserSubmission, ChatMessage, AppLanguage } from '../types';
+import { PracticeSession, UserSubmission, ChatMessage, AppLanguage, TokenUsageInfo, DictationItem } from '../types';
 
 const firebaseConfig = {
   apiKey: "AIzaSyB1UOkCHwl8Tqjc4BsP2FC7lj2Qu-f8vCg",
@@ -190,6 +190,151 @@ export const subscribeToRoomData = (roomId: string, callback: (data: any) => voi
   if (!roomId) return () => {};
   const roomRef = ref(db, `rooms/${roomId}`);
   return onValue(roomRef, (snapshot) => {
+    callback(snapshot.val());
+  });
+};
+
+export const setRoomHost = async (roomId: string, hostId: string) => {
+  if (!roomId || !hostId) return;
+  await set(ref(db, `rooms/${roomId}/hostId`), hostId);
+};
+
+export const getRoomHost = async (roomId: string): Promise<string | null> => {
+  if (!roomId) return null;
+  try {
+    const snap = await get(ref(db, `rooms/${roomId}/hostId`));
+    return snap.exists() ? snap.val() : null;
+  } catch (e) {
+    return null;
+  }
+};
+
+export const publishRoomSessionText = async (
+  roomId: string,
+  sentence: string, 
+  language: AppLanguage,
+  tokenUsage?: TokenUsageInfo
+) => {
+  if (!roomId) return;
+  await set(ref(db, `rooms/${roomId}/session`), { 
+    sentence, 
+    referenceAudios: {}, 
+    timestamp: Date.now(),
+    language,
+    generatingSpeeds: {},
+    tokenUsage: tokenUsage || null
+  });
+};
+
+export const setRoomSpeedGenerating = async (roomId: string, speed: string, isGenerating: boolean) => {
+  if (!roomId) return;
+  const updates: Record<string, any> = {};
+  if (isGenerating) {
+    updates[`rooms/${roomId}/session/generatingSpeeds/${speed}`] = true;
+  } else {
+    updates[`rooms/${roomId}/session/generatingSpeeds/${speed}`] = null;
+  }
+  await update(ref(db), updates);
+};
+
+export const publishRoomSessionAudio = async (
+  roomId: string,
+  speed: string, 
+  audio: string,
+  tokenUsage?: TokenUsageInfo
+) => {
+  if (!roomId) return;
+  const snapshot = await get(ref(db, `rooms/${roomId}/session`));
+  if (!snapshot.exists()) return;
+  
+  const updates: Record<string, any> = {};
+  updates[`rooms/${roomId}/session/referenceAudios/${speed}`] = audio;
+  updates[`rooms/${roomId}/session/generatingSpeeds/${speed}`] = null;
+  if (tokenUsage) {
+    updates[`rooms/${roomId}/session/tokenUsage`] = tokenUsage;
+  }
+  await update(ref(db), updates);
+};
+
+export const subscribeToRoomSession = (roomId: string, callback: (data: PracticeSession | null) => void) => {
+  if (!roomId) return () => {};
+  return onValue(ref(db, `rooms/${roomId}/session`), (snap) => {
+    callback(snap.val() || null);
+  });
+};
+
+export const sendRoomChatMessage = async (roomId: string, msg: Omit<ChatMessage, 'id' | 'timestamp'>) => {
+  if (!roomId) return;
+  const newMsgRef = push(ref(db, `rooms/${roomId}/chat`));
+  await set(newMsgRef, {
+    ...msg,
+    timestamp: serverTimestamp()
+  });
+
+  const snapshot = await get(ref(db, `rooms/${roomId}/chat`));
+  if (snapshot.exists()) {
+    const messages = snapshot.val();
+    const keys = Object.keys(messages).sort((a, b) => (messages[a].timestamp || 0) - (messages[b].timestamp || 0));
+    if (keys.length > 30) {
+      const toDelete = keys.slice(0, keys.length - 30);
+      for (const key of toDelete) {
+        await remove(ref(db, `rooms/${roomId}/chat/${key}`));
+      }
+    }
+  }
+};
+
+export const subscribeToRoomChat = (roomId: string, callback: (msgs: ChatMessage[]) => void) => {
+  if (!roomId) return () => {};
+  return onValue(ref(db, `rooms/${roomId}/chat`), (snapshot) => {
+    const data = snapshot.val();
+    if (!data) {
+      callback([]);
+      return;
+    }
+    const list = Object.entries(data).map(([id, val]: [string, any]) => ({
+      ...val,
+      id
+    }));
+    list.sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
+    callback(list);
+  });
+};
+
+export const syncRoomDictation = async (
+  roomId: string, 
+  lesson: { topic: string; level: string; items: DictationItem[] }
+) => {
+  if (!roomId || !lesson) return;
+  await set(ref(db, `rooms/${roomId}/dictation`), {
+    topic: lesson.topic,
+    level: lesson.level,
+    items: lesson.items,
+    timestamp: Date.now()
+  });
+};
+
+export const subscribeToRoomDictation = (roomId: string, callback: (data: any) => void) => {
+  if (!roomId) return () => {};
+  return onValue(ref(db, `rooms/${roomId}/dictation`), (snapshot) => {
+    callback(snapshot.val());
+  });
+};
+
+export const syncRoomShadowState = async (
+  roomId: string, 
+  state: { activeLineId?: string; start?: number; lineByLine?: boolean; senderId?: string }
+) => {
+  if (!roomId || !state) return;
+  await update(ref(db, `rooms/${roomId}/shadowState`), {
+    ...state,
+    updatedAt: Date.now()
+  });
+};
+
+export const subscribeToRoomShadowState = (roomId: string, callback: (data: any) => void) => {
+  if (!roomId) return () => {};
+  return onValue(ref(db, `rooms/${roomId}/shadowState`), (snapshot) => {
     callback(snapshot.val());
   });
 };

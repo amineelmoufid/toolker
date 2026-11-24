@@ -1,25 +1,46 @@
 import React, { createContext, useContext, useEffect, useState, useRef } from 'react';
 import Peer, { DataConnection } from 'peerjs';
-import { syncRoomClip, syncRoomAudio, subscribeToRoomData, getStoredUserId, killRoomInFirebase, checkIsRoomKilled } from '../services/firebase';
+import { 
+  syncRoomClip, 
+  syncRoomAudio, 
+  subscribeToRoomData, 
+  getStoredUserId, 
+  killRoomInFirebase, 
+  checkIsRoomKilled,
+  setRoomHost,
+  getRoomHost,
+  sendRoomChatMessage,
+  syncRoomDictation,
+  subscribeToRoomDictation,
+  syncRoomShadowState,
+  subscribeToRoomShadowState
+} from '../services/firebase';
 
 export type RoomAction = {
-  type: 'PLAY' | 'PAUSE' | 'SEEK' | 'AUDIO_SYNC' | 'SYNC_SENTENCE' | 'SYNC_VIDEO' | 'CHAT_MESSAGE' | 'ROOM_KILLED';
+  type: 'PLAY' | 'PAUSE' | 'SEEK' | 'AUDIO_SYNC' | 'SYNC_SENTENCE' | 'SYNC_VIDEO' | 'CHAT_MESSAGE' | 'SYNC_DICTATION' | 'SYNC_CAPTION' | 'TOGGLE_LINE_BY_LINE' | 'ROOM_KILLED';
   payload?: any;
 };
+
+export type ConnectionTelemetry = 'none' | 'p2p' | 'cloud' | 'both';
 
 interface RoomContextProps {
   roomId: string | null;
   peerId: string;
   remotePeerId: string | null;
   isConnected: boolean;
+  isHost: boolean;
+  connectionType: ConnectionTelemetry;
   createRoom: (initialClip?: any) => string;
   connectToRoom: (id: string) => void;
   disconnectRoom: () => void;
+  leaveRoom: () => void;
   killRoom: () => Promise<void>;
   broadcastAction: (action: RoomAction) => void;
   syncClip: (clip: any) => void;
+  syncDictation: (lesson: any) => void;
   lastAction: RoomAction | null;
   syncedClip: any | null;
+  syncedDictation: any | null;
 }
 
 const RoomContext = createContext<RoomContextProps | undefined>(undefined);
@@ -32,16 +53,30 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
   });
   const [isPeerConnected, setIsPeerConnected] = useState(false);
   const [isFirebaseConnected, setIsFirebaseConnected] = useState(false);
+  const [isHost, setIsHost] = useState<boolean>(() => {
+    const rId = new URLSearchParams(window.location.search).get('room');
+    if (!rId) return false;
+    return localStorage.getItem(`toolker_host_room_${rId}`) === 'true';
+  });
   const [lastAction, setLastAction] = useState<RoomAction | null>(null);
   const [syncedClip, setSyncedClip] = useState<any | null>(null);
+  const [syncedDictation, setSyncedDictation] = useState<any | null>(null);
   
   const peerRef = useRef<Peer | null>(null);
   const connRef = useRef<DataConnection | null>(null);
   const lastAudioTimestampRef = useRef<number>(Date.now());
+  const lastShadowTimestampRef = useRef<number>(Date.now());
 
-  // Initialize PeerJS for direct WebRTC
+  // Initialize PeerJS for direct WebRTC with Google STUN servers for robust NAT traversal
   useEffect(() => {
-    const peer = new Peer();
+    const peer = new Peer({
+      config: {
+        iceServers: [
+          { urls: 'stun:stun.l.google.com:19302' },
+          { urls: 'stun:stun1.l.google.com:19302' }
+        ]
+      }
+    });
     
     peer.on('open', (id) => {
       setPeerId(id);
@@ -62,6 +97,28 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
     };
   }, []);
 
+  // Check host status when roomId changes
+  useEffect(() => {
+    if (!roomId) {
+      setIsHost(false);
+      return;
+    }
+    const myId = getStoredUserId();
+    const storedHostFlag = localStorage.getItem(`toolker_host_room_${roomId}`) === 'true';
+    if (storedHostFlag) {
+      setIsHost(true);
+      return;
+    }
+    getRoomHost(roomId).then(hostId => {
+      if (hostId && hostId === myId) {
+        setIsHost(true);
+        localStorage.setItem(`toolker_host_room_${roomId}`, 'true');
+      } else {
+        setIsHost(false);
+      }
+    });
+  }, [roomId]);
+
   // Listen to Firebase room updates for instant 100% reliable state sync
   useEffect(() => {
     if (!roomId) {
@@ -70,7 +127,7 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
 
     setIsFirebaseConnected(true);
-    const unsubscribe = subscribeToRoomData(roomId, (data) => {
+    const unsubscribeData = subscribeToRoomData(roomId, (data) => {
       if (!data) return;
 
       // Check if room was killed
@@ -101,8 +158,41 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
     });
 
+    // 3. Synchronize Dictation
+    const unsubscribeDictation = subscribeToRoomDictation(roomId, (dictationData) => {
+      if (dictationData) {
+        setSyncedDictation(dictationData);
+        setLastAction({ type: 'SYNC_DICTATION', payload: dictationData });
+      }
+    });
+
+    // 4. Synchronize Shadow Caption & Line-by-Line State
+    const unsubscribeShadow = subscribeToRoomShadowState(roomId, (shadowData) => {
+      if (!shadowData || !shadowData.updatedAt) return;
+      const myId = peerId || getStoredUserId();
+      if (shadowData.senderId === myId) return;
+      if (shadowData.updatedAt <= lastShadowTimestampRef.current) return;
+      lastShadowTimestampRef.current = shadowData.updatedAt;
+
+      if (typeof shadowData.lineByLine === 'boolean') {
+        setLastAction({ type: 'TOGGLE_LINE_BY_LINE', payload: { enabled: shadowData.lineByLine } });
+      }
+      if (typeof shadowData.start === 'number') {
+        setLastAction({
+          type: 'SYNC_CAPTION',
+          payload: {
+            lineId: shadowData.activeLineId,
+            start: shadowData.start,
+            autoPlay: true
+          }
+        });
+      }
+    });
+
     return () => {
-      unsubscribe();
+      unsubscribeData();
+      unsubscribeDictation();
+      unsubscribeShadow();
     };
   }, [roomId, peerId]);
 
@@ -132,6 +222,9 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
         window.history.pushState({}, '', newUrl.toString());
         alert("⚠ ROOM TERMINATED // The room creator has killed this session.");
         return;
+      }
+      if (data?.type === 'SYNC_DICTATION') {
+        setSyncedDictation(data.payload);
       }
       setLastAction(data as RoomAction);
     });
@@ -176,7 +269,12 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const createRoom = (initialClip?: any): string => {
     const newRoomId = peerId || `room_${Date.now()}`;
+    const myId = getStoredUserId();
+    
     setRoomId(newRoomId);
+    setIsHost(true);
+    localStorage.setItem(`toolker_host_room_${newRoomId}`, 'true');
+    setRoomHost(newRoomId, myId).catch(err => console.warn('Could not record room host:', err));
     
     if (initialClip) {
       syncRoomClip(newRoomId, initialClip);
@@ -193,7 +291,15 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setRemotePeerId(null);
     setIsPeerConnected(false);
     setRoomId(null);
+    setIsHost(false);
     setSyncedClip(null);
+    setSyncedDictation(null);
+  };
+
+  const leaveRoom = () => {
+    disconnectRoom();
+    const newUrl = new URL(window.location.origin + window.location.pathname);
+    window.history.pushState({}, '', newUrl.toString());
   };
 
   const killRoom = async () => {
@@ -226,6 +332,16 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
+  const syncDictation = (lesson: any) => {
+    if (!lesson) return;
+    if (roomId) {
+      syncRoomDictation(roomId, lesson);
+    }
+    if (connRef.current && isPeerConnected) {
+      connRef.current.send({ type: 'SYNC_DICTATION', payload: lesson });
+    }
+  };
+
   const broadcastAction = (action: RoomAction) => {
     // 1. Send via Firebase for guaranteed delivery
     if (roomId) {
@@ -234,6 +350,21 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
         syncRoomAudio(roomId, action.payload, myId);
       } else if (action.type === 'SYNC_VIDEO') {
         syncRoomClip(roomId, action.payload);
+      } else if (action.type === 'SYNC_DICTATION') {
+        syncRoomDictation(roomId, action.payload);
+      } else if (action.type === 'CHAT_MESSAGE') {
+        sendRoomChatMessage(roomId, action.payload);
+      } else if (action.type === 'SYNC_CAPTION') {
+        syncRoomShadowState(roomId, {
+          activeLineId: action.payload?.lineId,
+          start: action.payload?.start,
+          senderId: peerId || getStoredUserId()
+        });
+      } else if (action.type === 'TOGGLE_LINE_BY_LINE') {
+        syncRoomShadowState(roomId, {
+          lineByLine: action.payload?.enabled,
+          senderId: peerId || getStoredUserId()
+        });
       }
     }
 
@@ -249,20 +380,30 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const isConnected = !!roomId && (isFirebaseConnected || isPeerConnected);
 
+  const connectionType: ConnectionTelemetry = 
+    isPeerConnected && isFirebaseConnected ? 'both' :
+    isPeerConnected ? 'p2p' :
+    isFirebaseConnected ? 'cloud' : 'none';
+
   return (
     <RoomContext.Provider value={{ 
       roomId,
       peerId, 
       remotePeerId, 
       isConnected, 
+      isHost,
+      connectionType,
       createRoom,
       connectToRoom, 
-      disconnectRoom, 
-      killRoom,
+      disconnectRoom,
+      leaveRoom,
+      killRoom, 
       broadcastAction, 
       syncClip,
+      syncDictation,
       lastAction,
-      syncedClip
+      syncedClip,
+      syncedDictation
     }}>
       {children}
     </RoomContext.Provider>
@@ -276,4 +417,3 @@ export const useRoom = () => {
   }
   return context;
 };
-

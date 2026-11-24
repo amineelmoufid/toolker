@@ -1,26 +1,56 @@
-import React, { useState } from 'react';
-import { DictationItem } from '../../types';
+import React, { useState, useEffect, useRef } from 'react';
+import { DictationItem, AppMode } from '../../types';
 import DictationDashboard from './DictationDashboard';
 import DictationLesson from './DictationLesson';
 import { SectionNavigator } from '../common/SectionNavigator';
+import { RoomShareButton } from '../common/RoomShareButton';
+import { useRoom } from '../../contexts/RoomContext';
 
 interface DictationStudioProps {
   onBack: () => void;
+  onNavigate?: (mode: AppMode) => void;
 }
 
 export type DictationFlowState = 'dashboard' | 'lesson' | 'summary';
 
-const DictationStudio: React.FC<DictationStudioProps> = ({ onBack }) => {
+const DictationStudio: React.FC<DictationStudioProps> = ({ onBack, onNavigate }) => {
   const [flowState, setFlowState] = useState<DictationFlowState>('dashboard');
   const [lessonItems, setLessonItems] = useState<DictationItem[]>([]);
   const [topic, setTopic] = useState('');
   const [level, setLevel] = useState('');
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const toastTimeoutRef = useRef<number | null>(null);
+
+  const { roomId, isConnected, syncDictation, syncedDictation } = useRoom();
+
+  const showToast = (msg: string, duration = 3500) => {
+    if (toastTimeoutRef.current) clearTimeout(toastTimeoutRef.current);
+    setToastMessage(msg);
+    toastTimeoutRef.current = window.setTimeout(() => {
+      setToastMessage(null);
+    }, duration);
+  };
+
+  // Synchronize incoming lesson from room partner
+  useEffect(() => {
+    if (syncedDictation && syncedDictation.items && syncedDictation.items.length > 0) {
+      setLessonItems(syncedDictation.items);
+      setTopic(syncedDictation.topic || 'Lesson');
+      setLevel(syncedDictation.level || 'Custom');
+      setFlowState('lesson');
+      showToast(`🎯 SYNCED LESSON: ${syncedDictation.topic} (${syncedDictation.level})`);
+    }
+  }, [syncedDictation]);
 
   const handleStartLesson = (items: DictationItem[], selectedTopic: string, selectedLevel: string) => {
     setLessonItems(items);
     setTopic(selectedTopic);
     setLevel(selectedLevel);
     setFlowState('lesson');
+    
+    if (roomId) {
+      syncDictation({ topic: selectedTopic, level: selectedLevel, items });
+    }
   };
 
   const handleFinishLesson = () => {
@@ -33,7 +63,16 @@ const DictationStudio: React.FC<DictationStudioProps> = ({ onBack }) => {
   };
 
   return (
-    <div className="min-h-screen bg-[#d8d2c4] text-[#1c1d20] flex flex-col items-center justify-start overflow-y-auto font-sans p-3 sm:p-6 pb-32">
+    <div className="min-h-screen bg-[#d8d2c4] text-[#1c1d20] flex flex-col items-center justify-start overflow-y-auto font-sans p-3 sm:p-6 pb-32 relative">
+      
+      {/* Toast Notification Banner */}
+      {toastMessage && (
+        <div className="fixed top-4 sm:top-5 left-1/2 -translate-x-1/2 z-50 bg-[#16171a] text-[#ebe6d8] border-2 border-[#cf573c] px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-mono text-[11px] sm:text-xs font-bold uppercase shadow-[4px_4px_0px_#18191c] flex items-center gap-2 transition-all">
+          <span className="w-2.5 h-2.5 rounded-full bg-[#cf573c] animate-pulse shrink-0" />
+          <span className="truncate max-w-[280px] sm:max-w-none">{toastMessage}</span>
+        </div>
+      )}
+
       <div className="w-full max-w-4xl mx-auto flex flex-col gap-6">
         
         {/* TOP BAR */}
@@ -42,7 +81,7 @@ const DictationStudio: React.FC<DictationStudioProps> = ({ onBack }) => {
           <div className="absolute bottom-2 left-2 w-2 h-2 rounded-full border border-[#7a776e] bg-[#c5bfb0] flex items-center justify-center text-[7px] text-[#4d4a43] select-none">+</div>
           
           <div className="flex items-center gap-1.5 shrink-0 ml-1">
-            <SectionNavigator activeMode="dictation" />
+            <SectionNavigator activeMode="dictation" onSelectMode={onNavigate} />
           </div>
 
           <div className="flex flex-col items-center text-center flex-1 min-w-0 px-1">
@@ -54,7 +93,22 @@ const DictationStudio: React.FC<DictationStudioProps> = ({ onBack }) => {
              </h1>
           </div>
 
-          <div className="w-8 shrink-0"></div>
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0 mr-1">
+            <RoomShareButton 
+              modeName="dictation"
+              onClipSync={() => lessonItems.length > 0 && syncDictation({ topic, level, items: lessonItems })}
+            />
+
+            {flowState === 'lesson' && (
+              <button
+                onClick={handleReturnToDashboard}
+                title="Return to Curriculum Dashboard"
+                className="text-[10px] sm:text-xs font-mono font-bold uppercase bg-[#476171] hover:bg-[#374c59] text-[#fbf8f2] border-2 border-[#1c1d20] shadow-[2px_2px_0px_#18191c] px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-md transition-all active:translate-y-0.5 active:shadow-none"
+              >
+                TOPICS 📚
+              </button>
+            )}
+          </div>
         </header>
 
         {flowState === 'dashboard' && (

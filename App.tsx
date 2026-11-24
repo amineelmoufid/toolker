@@ -228,19 +228,39 @@ const App: React.FC = () => {
 
   if (appMode === 'dictation') {
     return (
-      <DictationStudio onBack={() => {
-        window.location.hash = '';
-        setAppMode('instrument');
-      }} />
+      <DictationStudio 
+        onBack={() => {
+          window.location.hash = '';
+          setAppMode('instrument');
+        }}
+        onNavigate={(mode: AppMode) => {
+          setAppMode(mode);
+          if (mode === 'instrument') {
+            window.location.hash = '';
+          } else {
+            window.location.hash = `#${mode}`;
+          }
+        }}
+      />
     );
   }
 
   if (appMode === 'reader') {
     return (
-      <FocusReaderStudio onBack={() => {
-        window.location.hash = '';
-        setAppMode('instrument');
-      }} />
+      <FocusReaderStudio 
+        onBack={() => {
+          window.location.hash = '';
+          setAppMode('instrument');
+        }}
+        onNavigate={(mode: AppMode) => {
+          setAppMode(mode);
+          if (mode === 'instrument') {
+            window.location.hash = '';
+          } else {
+            window.location.hash = `#${mode}`;
+          }
+        }}
+      />
     );
   }
 

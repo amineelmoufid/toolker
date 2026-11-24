@@ -15,11 +15,16 @@ import {
   publishSessionText, 
   publishSessionAudio, 
   setSpeedGenerating, 
+  publishRoomSessionText,
+  publishRoomSessionAudio,
+  setRoomSpeedGenerating,
+  subscribeToRoomSession,
   onValue, 
   sessionRef, 
   configRef, 
   saveCustomPrompt 
 } from '../services/firebase';
+import { useRoom } from '../contexts/RoomContext';
 
 interface GeneratorProps {
   role: UserRole;
@@ -28,6 +33,7 @@ interface GeneratorProps {
 type VoiceSpeed = 'word' | 'slow' | 'normal';
 
 const Generator: React.FC<GeneratorProps> = ({ role }) => {
+  const { roomId } = useRoom();
   const [topic, setTopic] = useState('');
   const [language, setLanguage] = useState<AppLanguage>('English');
   const [speed, setSpeed] = useState<VoiceSpeed>('slow');
@@ -41,10 +47,17 @@ const Generator: React.FC<GeneratorProps> = ({ role }) => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   useEffect(() => {
-    const unsubSession = onValue(sessionRef, (snapshot) => {
-      const data = snapshot.val();
-      setCurrentSession(data);
-    });
+    let unsubSession: () => void;
+    if (roomId) {
+      unsubSession = subscribeToRoomSession(roomId, (data) => {
+        setCurrentSession(data);
+      });
+    } else {
+      unsubSession = onValue(sessionRef, (snapshot) => {
+        const data = snapshot.val();
+        setCurrentSession(data);
+      });
+    }
     
     const unsubConfig = onValue(configRef, (snapshot) => {
       const data = snapshot.val();
@@ -58,7 +71,31 @@ const Generator: React.FC<GeneratorProps> = ({ role }) => {
       unsubSession();
       unsubConfig();
     };
-  }, []);
+  }, [roomId]);
+
+  const setSpeedGeneratingScoped = async (targetSpeed: string, isGen: boolean) => {
+    if (roomId) {
+      await setRoomSpeedGenerating(roomId, targetSpeed, isGen);
+    } else {
+      await setSpeedGenerating(targetSpeed, isGen);
+    }
+  };
+
+  const publishSessionTextScoped = async (sentence: string, lang: AppLanguage, usage?: TokenUsageInfo) => {
+    if (roomId) {
+      await publishRoomSessionText(roomId, sentence, lang, usage);
+    } else {
+      await publishSessionText(sentence, lang, usage);
+    }
+  };
+
+  const publishSessionAudioScoped = async (targetSpeed: string, audio: string, usage?: TokenUsageInfo) => {
+    if (roomId) {
+      await publishRoomSessionAudio(roomId, targetSpeed, audio, usage);
+    } else {
+      await publishSessionAudio(targetSpeed, audio, usage);
+    }
+  };
 
   const handleGenerateNew = async () => {
     if (!topic.trim()) return;
@@ -76,10 +113,10 @@ const Generator: React.FC<GeneratorProps> = ({ role }) => {
         lastUpdated: Date.now()
       };
 
-      await publishSessionText(sentenceResult.sentence, language, tokenUsageInfo);
+      await publishSessionTextScoped(sentenceResult.sentence, language, tokenUsageInfo);
       
       // Generate the active speed first, awaiting it so the UI unlocks
-      await setSpeedGenerating(speed, true);
+      await setSpeedGeneratingScoped(speed, true);
       const speechResult = await generateSpeech(sentenceResult.sentence, speed, language);
       const audioUsage = speechResult.usage;
 
@@ -94,7 +131,7 @@ const Generator: React.FC<GeneratorProps> = ({ role }) => {
         };
       }
 
-      await publishSessionAudio(speed, speechResult.base64Audio, tokenUsageInfo);
+      await publishSessionAudioScoped(speed, speechResult.base64Audio, tokenUsageInfo);
 
       // Background Preload Loop for other speeds
       const otherSpeeds: VoiceSpeed[] = ['normal', 'slow', 'word'].filter(s => s !== speed) as VoiceSpeed[];
@@ -104,7 +141,7 @@ const Generator: React.FC<GeneratorProps> = ({ role }) => {
         let currentTokens = tokenUsageInfo;
         for (const targetSpeed of otherSpeeds) {
           try {
-            await setSpeedGenerating(targetSpeed, true);
+            await setSpeedGeneratingScoped(targetSpeed, true);
             const bgSpeechResult = await generateSpeech(sentenceResult.sentence, targetSpeed, language);
             const bgUsage = bgSpeechResult.usage;
             
@@ -116,10 +153,10 @@ const Generator: React.FC<GeneratorProps> = ({ role }) => {
                 lastUpdated: Date.now()
               };
             }
-            await publishSessionAudio(targetSpeed, bgSpeechResult.base64Audio, currentTokens);
+            await publishSessionAudioScoped(targetSpeed, bgSpeechResult.base64Audio, currentTokens);
           } catch(err) {
             console.error(`Background preload failed for ${targetSpeed}:`, err);
-            await setSpeedGenerating(targetSpeed, false);
+            await setSpeedGeneratingScoped(targetSpeed, false);
           }
         }
       })();
@@ -132,7 +169,7 @@ const Generator: React.FC<GeneratorProps> = ({ role }) => {
       } else {
         setErrorMessage("Generation failed: " + msg);
       }
-      await setSpeedGenerating(speed, false).catch(()=>{});
+      await setSpeedGeneratingScoped(speed, false).catch(()=>{});
     } finally {
       setLocalLoading(false);
     }
@@ -150,7 +187,7 @@ const Generator: React.FC<GeneratorProps> = ({ role }) => {
     if (!currentSession?.sentence || localLoading) return null;
     setErrorMessage('');
     try {
-      await setSpeedGenerating(requestedSpeed, true);
+      await setSpeedGeneratingScoped(requestedSpeed, true);
       const speechResult = await generateSpeech(currentSession.sentence, requestedSpeed as any, currentSession.language);
       const audioUsage = speechResult.usage;
 
@@ -170,7 +207,7 @@ const Generator: React.FC<GeneratorProps> = ({ role }) => {
         };
       }
 
-      await publishSessionAudio(requestedSpeed, speechResult.base64Audio, tokenUsageInfo);
+      await publishSessionAudioScoped(requestedSpeed, speechResult.base64Audio, tokenUsageInfo);
       return speechResult.base64Audio;
     } catch (error: any) {
       console.error("Failed to regenerate audio:", error);
@@ -180,7 +217,7 @@ const Generator: React.FC<GeneratorProps> = ({ role }) => {
       } else {
         setErrorMessage("Audio synthesis failed: " + msg);
       }
-      await setSpeedGenerating(requestedSpeed, false).catch(()=>{});
+      await setSpeedGeneratingScoped(requestedSpeed, false).catch(()=>{});
       return null;
     }
   };

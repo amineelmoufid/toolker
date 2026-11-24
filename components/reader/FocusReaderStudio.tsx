@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { AppMode } from '../../types';
 import { useRoom } from '../../contexts/RoomContext';
 import { RoomShareButton } from '../common/RoomShareButton';
 import { SectionNavigator } from '../common/SectionNavigator';
@@ -6,6 +7,7 @@ import { FOCUS_FLOW_HTML } from './focusFlowTemplate';
 
 interface FocusReaderStudioProps {
   onBack: () => void;
+  onNavigate?: (mode: AppMode) => void;
 }
 
 declare global {
@@ -15,7 +17,7 @@ declare global {
   }
 }
 
-const FocusReaderStudio: React.FC<FocusReaderStudioProps> = ({ onBack }) => {
+const FocusReaderStudio: React.FC<FocusReaderStudioProps> = ({ onBack, onNavigate }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const { isConnected, broadcastAction, lastAction, roomId, peerId } = useRoom();
@@ -106,7 +108,7 @@ const FocusReaderStudio: React.FC<FocusReaderStudioProps> = ({ onBack }) => {
 
           {/* Left: Section Navigator */}
           <div className="flex items-center gap-1.5 shrink-0 ml-1">
-            <SectionNavigator activeMode="reader" />
+            <SectionNavigator activeMode="reader" onSelectMode={onNavigate} />
           </div>
 
           {/* Center: Module Telemetry Title */}

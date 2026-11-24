@@ -9,6 +9,7 @@ interface ControlDockProps {
   onSelectMode: (mode: 'slow' | 'normal') => void;
   autoPause: boolean;
   onToggleAutoPause: () => void;
+  isInRoom?: boolean;
   onOpenShadowModal: () => void;
   // Hold-to-record props
   onStartHoldRecord: () => void;
@@ -44,6 +45,7 @@ const ControlDock: React.FC<ControlDockProps> = ({
   onSelectMode,
   autoPause,
   onToggleAutoPause,
+  isInRoom = false,
   onOpenShadowModal,
   onStartHoldRecord,
   onStopHoldRecord,
@@ -205,23 +207,23 @@ const ControlDock: React.FC<ControlDockProps> = ({
         </div>
       )}
 
-      {/* ── MOBILE SECONDARY ROW (< sm): Tempo & Auto-Pause ── */}
-      <div className="flex sm:hidden items-center justify-between w-full max-w-[340px] px-3.5 py-1 mb-1.5 bg-[#e4dfd3]/95 backdrop-blur-sm border-2 border-[#1c1d20] rounded-full shadow-[3px_3px_0px_#18191c] text-xs font-mono font-bold select-none">
+      {/* ── SECONDARY INSTRUMENT ROW (Universal: Mobile & Desktop): Tempo, Line-by-Line & Type ── */}
+      <div className="flex items-center justify-between w-full max-w-[360px] sm:max-w-md px-3 sm:px-4 py-1 sm:py-1.5 mb-1.5 bg-[#e4dfd3]/95 backdrop-blur-sm border-2 border-[#1c1d20] rounded-full shadow-[3px_3px_0px_#18191c] text-xs font-mono font-bold select-none">
         {/* Tempo Selector */}
         <div className="flex items-center gap-1.5">
-          <span className="text-[9px] text-[#6b6659] tracking-wider uppercase">TEMPO:</span>
+          <span className="text-[9px] sm:text-[10px] text-[#6b6659] tracking-wider uppercase">TEMPO:</span>
           <div className="flex bg-[#d8d2c4] p-0.5 rounded-full border border-[#a8a497]">
             <button
               onClick={() => { triggerHaptic(10); onSelectMode('slow'); }}
               title="Slow Mode (0.75x)"
-              className={`px-2 py-0.5 text-[9px] rounded-full transition-colors ${playbackMode === 'slow' ? 'bg-[#1c1d20] text-white shadow-inner font-bold' : 'text-[#4d4a43]'}`}
+              className={`px-2 py-0.5 text-[9px] sm:text-[10px] rounded-full transition-colors ${playbackMode === 'slow' ? 'bg-[#1c1d20] text-white shadow-inner font-bold' : 'text-[#4d4a43] hover:text-[#1c1d20]'}`}
             >
               0.75×
             </button>
             <button
               onClick={() => { triggerHaptic(10); onSelectMode('normal'); }}
               title="Normal Mode (1.0x)"
-              className={`px-2 py-0.5 text-[9px] rounded-full transition-colors ${playbackMode === 'normal' ? 'bg-[#1c1d20] text-white shadow-inner font-bold' : 'text-[#4d4a43]'}`}
+              className={`px-2 py-0.5 text-[9px] sm:text-[10px] rounded-full transition-colors ${playbackMode === 'normal' ? 'bg-[#1c1d20] text-white shadow-inner font-bold' : 'text-[#4d4a43] hover:text-[#1c1d20]'}`}
             >
               1.0×
             </button>
@@ -230,19 +232,22 @@ const ControlDock: React.FC<ControlDockProps> = ({
 
         <div className="h-3.5 w-[1px] bg-[#a8a497]" />
 
-        {/* Auto-Pause Toggle */}
+        {/* Line-by-Line (Caption-by-Caption) Toggle Button */}
         <button
           onClick={() => { triggerHaptic(10); onToggleAutoPause(); }}
-          title={autoPause ? "Auto-Pause: ON" : "Auto-Pause: OFF"}
+          title={autoPause ? "Line-by-Line Mode: ON (Stops after each caption)" : "Line-by-Line Mode: OFF (Continuous video)"}
           className="flex items-center gap-1.5 py-0.5 active:scale-95 transition-transform"
         >
-          <span className="text-[9px] text-[#6b6659] tracking-wider uppercase">AUTO-PAUSE:</span>
-          <span className={`text-[9.5px] px-2 py-0.5 rounded-full font-bold uppercase transition-colors ${autoPause ? 'bg-[#cf573c] text-white shadow-sm' : 'bg-[#c5bfb0] text-[#4d4a43]'}`}>
+          <span className="text-[9px] sm:text-[10px] text-[#6b6659] tracking-wider uppercase flex items-center gap-1">
+            LINE-BY-LINE:
+            {isInRoom && <span className="text-[10px]" title="Synced for all users in room">🤝</span>}
+          </span>
+          <span className={`text-[9.5px] sm:text-[10.5px] px-2.5 py-0.5 rounded-full font-bold uppercase transition-colors shadow-sm ${autoPause ? 'bg-[#cf573c] text-white' : 'bg-[#c5bfb0] text-[#4d4a43] hover:bg-[#b8b2a3]'}`}>
             {autoPause ? 'ON' : 'OFF'}
           </span>
         </button>
 
-        {/* Dictation Mode Toggle on Mobile */}
+        {/* Dictation Mode Toggle */}
         {onToggleDictationMode && (
           <>
             <div className="h-3.5 w-[1px] bg-[#a8a497]" />
@@ -251,8 +256,8 @@ const ControlDock: React.FC<ControlDockProps> = ({
               title={isDictationMode ? "Dictation: ON (Typing)" : "Dictation: OFF"}
               className="flex items-center gap-1.5 py-0.5 active:scale-95 transition-transform"
             >
-              <span className="text-[9px] text-[#6b6659] tracking-wider uppercase">TYPE:</span>
-              <span className={`text-[9.5px] px-2 py-0.5 rounded-full font-bold uppercase transition-colors ${isDictationMode ? 'bg-[#3d7a4d] text-white shadow-sm' : 'bg-[#c5bfb0] text-[#4d4a43]'}`}>
+              <span className="text-[9px] sm:text-[10px] text-[#6b6659] tracking-wider uppercase">TYPE:</span>
+              <span className={`text-[9.5px] sm:text-[10.5px] px-2 py-0.5 rounded-full font-bold uppercase transition-colors shadow-sm ${isDictationMode ? 'bg-[#3d7a4d] text-white' : 'bg-[#c5bfb0] text-[#4d4a43] hover:bg-[#b8b2a3]'}`}>
                 {isDictationMode ? 'ON' : 'OFF'}
               </span>
             </button>
@@ -261,73 +266,10 @@ const ControlDock: React.FC<ControlDockProps> = ({
       </div>
 
       {/* ── PRIMARY THUMB ISLAND ── */}
-      <div className="w-full bg-[#e4dfd3] border-2 border-[#1c1d20] rounded-full px-3 sm:px-6 py-2 sm:py-3 shadow-[5px_5px_0px_#18191c] flex items-center justify-between text-[#1c1d20] select-none gap-1 sm:gap-2">
+      <div className="w-full bg-[#e4dfd3] border-2 border-[#1c1d20] rounded-full px-4 sm:px-8 py-2 sm:py-3 shadow-[5px_5px_0px_#18191c] flex items-center justify-between text-[#1c1d20] select-none gap-2 sm:gap-4">
+
         
-        {/* Desktop-Only Secondary Controls (Hidden on Mobile, Clean Single-Row on Desktop) */}
-        <div className="hidden sm:flex items-center gap-2">
-          {/* 1. Playback Mode Selector */}
-          <div className="flex bg-[#d8d2c4] p-1 rounded-full border border-[#a8a497]">
-            <button
-              onClick={() => onSelectMode('slow')}
-              title="Slow Mode (0.75x)"
-              className={`p-1.5 rounded-full transition-colors ${playbackMode === 'slow' ? 'bg-[#1c1d20] text-white shadow-inner' : 'text-[#4d4a43] hover:bg-[#c5bfb0]'}`}
-            >
-              <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="4" />
-              </svg>
-            </button>
-            
-            <button
-              onClick={() => onSelectMode('normal')}
-              title="Normal Mode (1.0x)"
-              className={`p-1.5 rounded-full transition-colors ${playbackMode === 'normal' ? 'bg-[#1c1d20] text-white shadow-inner' : 'text-[#4d4a43] hover:bg-[#c5bfb0]'}`}
-            >
-              <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                <polygon points="5 3 19 12 5 21 5 3" />
-              </svg>
-            </button>
-          </div>
-
-          {/* 2. Auto-Pause Toggle */}
-          <button
-            onClick={onToggleAutoPause}
-            title={autoPause ? "Auto-Pause: ON" : "Auto-Pause: OFF"}
-            className="flex items-center justify-center p-2 rounded hover:bg-[#c5bfb0] transition-colors group"
-          >
-            <svg className="w-10 h-6" viewBox="0 0 32 18" fill="none">
-               <rect 
-                 x="0" y="0" width="32" height="18" rx="9" 
-                 fill={autoPause ? '#cf573c' : '#a8a497'} 
-                 className="transition-colors duration-300 ease-in-out" 
-               />
-               <g className="transition-transform duration-300 ease-in-out" style={{ transform: `translateX(${autoPause ? '14px' : '0px'})` }}>
-                 <circle cx="9" cy="9" r="7" fill="#1c1d20" />
-                 <line x1="7.5" y1="6.5" x2="7.5" y2="11.5" stroke="#e4dfd3" strokeWidth="1.5" strokeLinecap="round" />
-                 <line x1="10.5" y1="6.5" x2="10.5" y2="11.5" stroke="#e4dfd3" strokeWidth="1.5" strokeLinecap="round" />
-               </g>
-            </svg>
-          </button>
-
-          {/* 3. Dictation / Blur Mode Toggle */}
-          {onToggleDictationMode && (
-            <button
-              onClick={() => { triggerHaptic(10); onToggleDictationMode(); }}
-              title={isDictationMode ? "Dictation Typing Mode: ON" : "Dictation Typing Mode: OFF"}
-              className={`p-1.5 rounded-full border transition-all active:scale-95 flex items-center justify-center ${
-                isDictationMode
-                  ? 'bg-[#3d7a4d] text-white border-[#3d7a4d] shadow-[0_0_8px_rgba(61,122,77,0.7)]'
-                  : 'bg-[#d8d2c4] text-[#4d4a43] border-[#a8a497] hover:bg-[#c5bfb0]'
-              }`}
-            >
-              <svg className="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="M6 8h.001M10 8h.001M14 8h.001M18 8h.001M6 12h.001M10 12h.001M14 12h.001M18 12h.001M8 16h8" />
-              </svg>
-            </button>
-          )}
-        </div>
-
-        {/* 3. Previous Line (<) - Enlarged for Mobile Thumb Target */}
+        {/* 1. Previous Line (<) - Enlarged Thumb Target */}
         <button
           onClick={() => { triggerHaptic(10); onPrevLine(); }}
           title="Previous Sentence (<)"

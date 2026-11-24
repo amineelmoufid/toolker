@@ -76,7 +76,13 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
 
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [playbackMode, setPlaybackMode] = useState<'slow' | 'normal'>('normal');
-  const [autoPause, setAutoPause] = useState<boolean>(false);
+  const [lineByLine, setLineByLine] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem('toolker_yt_line_by_line') === 'true';
+    } catch (e) {
+      return false;
+    }
+  });
   
   // Dictation / Typing Mode States
   const [isDictationMode, setIsDictationMode] = useState<boolean>(() => {
@@ -334,6 +340,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
   const playerRef = useRef<YouTubePlayerRef | null>(null);
   const lastSavedTimeRef = useRef<number>(0);
   const lastActiveLineRef = useRef<SubtitleLine | null>(null);
+  const isAtLineEndRef = useRef<SubtitleLine | null>(null);
 
   const { peerId, roomId, isConnected, createRoom, syncClip, broadcastAction, lastAction, syncedClip } = useRoom();
 
@@ -378,14 +385,32 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     }, duration);
   };
 
-  // Listen to remote AUDIO_SYNC broadcasts from room partner - DO NOT play immediately, pop up button instead
+  // Listen to remote actions (AUDIO_SYNC, SYNC_CAPTION, TOGGLE_LINE_BY_LINE)
   useEffect(() => {
-    if (lastAction?.type === 'AUDIO_SYNC' && lastAction.payload) {
+    if (!lastAction) return;
+
+    if (lastAction.type === 'AUDIO_SYNC' && lastAction.payload) {
       const remoteAudio = lastAction.payload;
       setLatestPartnerAudio(remoteAudio);
       setIsPlayingPartnerAudio(false);
       setHasUnreadPartnerAudio(true);
       showToast("🎙️ PARTNER SHADOWED // CLICK ▶ TO LISTEN", 4000);
+    } else if (lastAction.type === 'SYNC_CAPTION' && lastAction.payload) {
+      const { start, autoPlay } = lastAction.payload;
+      if (typeof start === 'number') {
+        isAtLineEndRef.current = null;
+        setCurrentTime(start);
+        playerRef.current?.seekTo(start);
+        if (autoPlay) {
+          playerRef.current?.play();
+        }
+        showToast("📍 PARTNER JUMPED TO CAPTION");
+      }
+    } else if (lastAction.type === 'TOGGLE_LINE_BY_LINE' && lastAction.payload) {
+      const enabled = !!lastAction.payload.enabled;
+      setLineByLine(enabled);
+      try { localStorage.setItem('toolker_yt_line_by_line', String(enabled)); } catch (e) {}
+      showToast(enabled ? "🤝 LINE-BY-LINE: ON (SYNCED)" : "🤝 LINE-BY-LINE: OFF (SYNCED)");
     }
   }, [lastAction]);
 
@@ -431,7 +456,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     }
   }, [currentClip, currentTime]);
 
-  // Auto-pause logic (also auto-pauses at line end if Dictation mode is active)
+  // Line-by-Line auto-pause logic (also auto-pauses at line end if Dictation mode is active)
   useEffect(() => {
     if (!isPlaying || !currentClip?.subtitles) return;
     
@@ -440,15 +465,36 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     
     if (activeLine) {
       lastActiveLineRef.current = activeLine;
-    } else if (lastActiveLineRef.current && (autoPause || isDictationMode)) {
+      if (currentTime < activeLine.end - 0.2) {
+        isAtLineEndRef.current = null;
+      }
+    } else if (lastActiveLineRef.current && (lineByLine || isDictationMode)) {
       // If we just left an active line, and we are slightly past its end (meaning normal playback, not a seek jump backwards)
       const justPassed = currentTime > lastActiveLineRef.current.end && currentTime < lastActiveLineRef.current.end + 0.6;
       if (justPassed) {
         playerRef.current?.pause();
+        isAtLineEndRef.current = lastActiveLineRef.current;
       }
       lastActiveLineRef.current = null;
     }
-  }, [currentTime, isPlaying, autoPause, isDictationMode, currentClip?.subtitles]);
+  }, [currentTime, isPlaying, lineByLine, isDictationMode, currentClip?.subtitles]);
+
+  const handleToggleLineByLine = () => {
+    const next = !lineByLine;
+    setLineByLine(next);
+    try { localStorage.setItem('toolker_yt_line_by_line', String(next)); } catch (e) {}
+    showToast(next ? "🔁 LINE-BY-LINE MODE: ON" : "CONTINUOUS PLAYBACK MODE");
+
+    if (isConnected) {
+      broadcastAction({
+        type: 'TOGGLE_LINE_BY_LINE',
+        payload: {
+          enabled: next,
+          timestamp: Date.now()
+        }
+      });
+    }
+  };
 
   const handleToggleDictationMode = () => {
     const next = !isDictationMode;
@@ -498,16 +544,36 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     }, 1100);
   };
 
-  // Play / Pause toggle
+  // Play / Pause toggle with Replay-on-Resume for Line-by-Line mode
   const handleTogglePlay = () => {
+    if (!isPlaying && lineByLine && isAtLineEndRef.current) {
+      const lineToReplay = isAtLineEndRef.current;
+      isAtLineEndRef.current = null;
+      handleSelectLine(lineToReplay, true);
+      showToast("↺ REPLAYING CAPTION");
+      return;
+    }
     playerRef.current?.togglePlay();
   };
 
-  // Jump to specific subtitle line
-  const handleSelectLine = (line: SubtitleLine) => {
+  // Jump to specific subtitle line (synced across room if connected)
+  const handleSelectLine = (line: SubtitleLine, broadcast = true) => {
+    isAtLineEndRef.current = null;
     setCurrentTime(line.start);
     playerRef.current?.seekTo(line.start);
     playerRef.current?.play();
+
+    if (isConnected && broadcast) {
+      broadcastAction({
+        type: 'SYNC_CAPTION',
+        payload: {
+          lineId: line.id,
+          start: line.start,
+          autoPlay: true,
+          timestamp: Date.now()
+        }
+      });
+    }
   };
 
   // Previous Line navigation (<)
@@ -829,8 +895,9 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
         onNextLine={handleNextLine}
         playbackMode={playbackMode}
         onSelectMode={handleSelectMode}
-        autoPause={autoPause}
-        onToggleAutoPause={() => setAutoPause(!autoPause)}
+        autoPause={lineByLine}
+        onToggleAutoPause={handleToggleLineByLine}
+        isInRoom={isConnected}
         onOpenShadowModal={handleOpenShadowModal}
         onStartHoldRecord={handleStartHoldRecord}
         onStopHoldRecord={handleStopHoldRecord}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { UserRole, ChatMessage } from '../types';
-import { onValue, chatRef, sendChatMessage } from '../services/firebase';
+import { onValue, chatRef, sendChatMessage, subscribeToRoomChat } from '../services/firebase';
 import { blobToBase64, playStandardAudio, stopAllAudio } from '../utils/audio';
 import { useRoom } from '../contexts/RoomContext';
 
@@ -22,38 +22,63 @@ const Chat: React.FC<ChatProps> = ({ role, userName }) => {
   const chunksRef = useRef<Blob[]>([]);
   const timerRef = useRef<number | null>(null);
 
-  const { isConnected, broadcastAction, lastAction } = useRoom();
+  const { isConnected, roomId, broadcastAction, lastAction, connectionType } = useRoom();
 
   useEffect(() => {
     if (lastAction?.type === 'CHAT_MESSAGE' && lastAction.payload) {
-      setP2pMessages(prev => [...prev, lastAction.payload]);
+      const incoming = lastAction.payload;
+      setP2pMessages(prev => {
+        // Prevent duplicate append
+        if (incoming.id && prev.some(m => m.id === incoming.id)) return prev;
+        return [...prev, incoming];
+      });
     }
   }, [lastAction]);
 
   useEffect(() => {
-    // Only subscribe to Firebase if NOT connected to a P2P room (or just always subscribe but we display all)
-    const unsubscribe = onValue(chatRef, (snapshot) => {
-      const data = snapshot.val();
-      if (data) {
-        const list = Object.entries(data).map(([id, val]: [string, any]) => ({
-          ...val,
-          id
-        }));
-        setMessages(list.sort((a, b) => a.timestamp - b.timestamp));
-      } else {
-        setMessages([]);
-      }
-    });
+    let unsubscribe: () => void;
+    setP2pMessages([]);
+
+    if (roomId) {
+      // Room-scoped private channel
+      unsubscribe = subscribeToRoomChat(roomId, (roomMsgs) => {
+        setMessages(roomMsgs);
+        // Clean out any optimistic temp messages that have now landed in Firebase
+        setP2pMessages(prev => prev.filter(p => !roomMsgs.some(m => m.text === p.text && m.sender === p.sender)));
+      });
+    } else {
+      // Global broadcast channel
+      unsubscribe = onValue(chatRef, (snapshot) => {
+        const data = snapshot.val();
+        if (data) {
+          const list = Object.entries(data).map(([id, val]: [string, any]) => ({
+            ...val,
+            id
+          }));
+          setMessages(list.sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0)));
+        } else {
+          setMessages([]);
+        }
+      });
+    }
+
     return () => {
       unsubscribe();
       stopAllAudio();
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, []);
+  }, [roomId]);
 
-  const allMessages = isConnected 
-    ? [...messages, ...p2pMessages].sort((a, b) => a.timestamp - b.timestamp)
-    : messages;
+  // Combine room/global messages with any sub-millisecond P2P optimistic messages
+  const messageMap = new Map<string, ChatMessage>();
+  messages.forEach(m => messageMap.set(m.id || `${m.timestamp}_${m.sender}`, m));
+  p2pMessages.forEach(m => {
+    const key = m.id || `${m.timestamp}_${m.sender}`;
+    if (!messageMap.has(key)) {
+      messageMap.set(key, m);
+    }
+  });
+  const allMessages = Array.from(messageMap.values()).sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -77,8 +102,8 @@ const Chat: React.FC<ChatProps> = ({ role, userName }) => {
       timestamp: Date.now()
     };
 
-    if (isConnected) {
-      const p2pMsg = { ...msgData, id: `p2p_${Date.now()}` } as ChatMessage;
+    if (roomId) {
+      const p2pMsg = { ...msgData, id: `msg_${Date.now()}` } as ChatMessage;
       broadcastAction({ type: 'CHAT_MESSAGE', payload: p2pMsg });
       setP2pMessages(prev => [...prev, p2pMsg]);
     } else {
@@ -107,8 +132,8 @@ const Chat: React.FC<ChatProps> = ({ role, userName }) => {
           timestamp: Date.now()
         };
 
-        if (isConnected) {
-          const p2pMsg = { ...msgData, id: `p2p_${Date.now()}` } as ChatMessage;
+        if (roomId) {
+          const p2pMsg = { ...msgData, id: `msg_${Date.now()}` } as ChatMessage;
           broadcastAction({ type: 'CHAT_MESSAGE', payload: p2pMsg });
           setP2pMessages(prev => [...prev, p2pMsg]);
         } else {
@@ -130,10 +155,10 @@ const Chat: React.FC<ChatProps> = ({ role, userName }) => {
   };
 
   const stopRecordingAndSend = () => {
-    if (mediaRecorderRef.current && isRecording) {
+    if (mediaRecorderRef.current && mediaRecorderRef.current.state === 'recording') {
       mediaRecorderRef.current.stop();
-      cleanupRecording();
     }
+    cleanupRecording();
   };
 
   const cancelRecording = () => {
@@ -171,7 +196,22 @@ const Chat: React.FC<ChatProps> = ({ role, userName }) => {
   };
 
   return (
-    <div className="flex flex-col h-full gap-4">
+    <div className="flex flex-col h-full gap-3">
+      {/* Comms Channel Status Bar */}
+      <div className="flex items-center justify-between px-1">
+        <div className="flex items-center gap-2">
+          <span className={`w-2 h-2 rounded-full ${roomId ? 'bg-[#3d7a4d] animate-pulse' : 'bg-[#cf573c]'}`} />
+          <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#7a776e]">
+            {roomId ? `SECURE ROOM CHANNEL // ${roomId}` : 'PUBLIC COMMS TERMINAL // GLOBAL'}
+          </span>
+        </div>
+        {roomId && (
+          <span className="font-mono text-[9px] font-bold text-[#3d7a4d] bg-[#3d7a4d]/10 px-2 py-0.5 rounded border border-[#3d7a4d]/30 uppercase">
+            {connectionType === 'both' ? '⚡ P2P + ☁️ CLOUD' : connectionType === 'p2p' ? '⚡ P2P DIRECT' : '☁️ CLOUD BUS'}
+          </span>
+        )}
+      </div>
+
       {/* Recessed CRT/LCD Comms Display Area */}
       <div 
         ref={scrollRef}
@@ -251,10 +291,10 @@ const Chat: React.FC<ChatProps> = ({ role, userName }) => {
           </div>
         ))}
 
-        {messages.length === 0 && (
+        {allMessages.length === 0 && (
           <div className="h-full py-16 flex items-center justify-center text-center">
             <p className="font-mono text-xs text-[#716e64] uppercase tracking-wider">
-              &gt; COMMS LOG BUFFER STANDBY // TRANSMIT TEXT OR VOICE RECORDING
+              &gt; {roomId ? 'ROOM COMMS STANDBY // TRANSMIT PRIVATE MESSAGE TO PARTNER' : 'COMMS LOG BUFFER STANDBY // TRANSMIT TEXT OR VOICE RECORDING'}
             </p>
           </div>
         )}
@@ -301,7 +341,7 @@ const Chat: React.FC<ChatProps> = ({ role, userName }) => {
               type="text"
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
-              placeholder="INPUT DISPATCH MESSAGE..."
+              placeholder={roomId ? "TRANSMIT ROOM DISPATCH..." : "INPUT DISPATCH MESSAGE..."}
               className="flex-grow bg-[#16171a] border-2 border-[#2a2c33] px-3 py-2.5 rounded text-[#ebe6d8] font-mono text-xs shadow-[inset_1px_1px_3px_rgba(0,0,0,0.8)] focus:border-[#476171] outline-none placeholder:text-[#585963]"
             />
 
