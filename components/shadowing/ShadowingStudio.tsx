@@ -346,10 +346,13 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
 
   // Synchronize clip from room partner (via Firebase & PeerJS)
   useEffect(() => {
-    if (syncedClip) {
+    if (syncedClip && syncedClip.youtubeId) {
       setCurrentClip(prev => {
         if (prev?.id === syncedClip.id && prev?.youtubeId === syncedClip.youtubeId) return prev;
-        return syncedClip;
+        return {
+          ...syncedClip,
+          subtitles: reconstructSubtitlesSemantically(syncedClip.subtitles || [])
+        };
       });
       showToast(`🎬 SYNCED VIDEO: ${syncedClip.title || 'Clip Loaded'}`);
     }
@@ -360,7 +363,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     if (roomId && currentClip && isConnected) {
       syncClip(currentClip);
     }
-  }, [roomId]);
+  }, [roomId, isConnected]);
 
   // Hold-to-record Shadow state
   const [isRecordingShadow, setIsRecordingShadow] = useState(false);
@@ -399,6 +402,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
       const { start, autoPlay } = lastAction.payload;
       if (typeof start === 'number') {
         isAtLineEndRef.current = null;
+        lastActiveLineRef.current = null;
         setCurrentTime(start);
         playerRef.current?.seekTo(start);
         if (autoPlay) {
@@ -411,6 +415,19 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
       setLineByLine(enabled);
       try { localStorage.setItem('toolker_yt_line_by_line', String(enabled)); } catch (e) {}
       showToast(enabled ? "🤝 LINE-BY-LINE: ON (SYNCED)" : "🤝 LINE-BY-LINE: OFF (SYNCED)");
+    } else if (lastAction.type === 'LINE_BOUNDARY_PAUSE' && lastAction.payload) {
+      playerRef.current?.pause();
+      if (lastAction.payload.lineId && currentClip?.subtitles) {
+        const line = currentClip.subtitles.find(l => l.id === lastAction.payload.lineId);
+        if (line) {
+          isAtLineEndRef.current = line;
+        }
+      }
+      showToast("⏸️ LINE COMPLETED (PAUSED)");
+    } else if (lastAction.type === 'PLAY') {
+      playerRef.current?.play();
+    } else if (lastAction.type === 'PAUSE') {
+      playerRef.current?.pause();
     }
   }, [lastAction]);
 
@@ -474,6 +491,15 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
       if (justPassed) {
         playerRef.current?.pause();
         isAtLineEndRef.current = lastActiveLineRef.current;
+        if (isConnected) {
+          broadcastAction({
+            type: 'LINE_BOUNDARY_PAUSE',
+            payload: {
+              lineId: lastActiveLineRef.current.id,
+              time: lastActiveLineRef.current.end
+            }
+          });
+        }
       }
       lastActiveLineRef.current = null;
     }
@@ -553,7 +579,14 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
       showToast("↺ REPLAYING CAPTION");
       return;
     }
+    const willPlay = !isPlaying;
     playerRef.current?.togglePlay();
+    if (isConnected) {
+      broadcastAction({
+        type: willPlay ? 'PLAY' : 'PAUSE',
+        payload: { time: currentTime }
+      });
+    }
   };
 
   // Jump to specific subtitle line (synced across room if connected)
@@ -803,6 +836,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
 
             <RoomShareButton 
               modeName="shadowing" 
+              initialClip={currentClip}
               onClipSync={() => currentClip && syncClip(currentClip)} 
             />
 

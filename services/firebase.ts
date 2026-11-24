@@ -339,4 +339,30 @@ export const subscribeToRoomShadowState = (roomId: string, callback: (data: any)
   });
 };
 
+export interface RoomBroadcastAction {
+  actionId: string;
+  type: string;
+  payload?: any;
+  senderId: string;
+  timestamp: number;
+}
+
+export const broadcastRoomActionToFirebase = async (roomId: string, action: RoomBroadcastAction) => {
+  if (!roomId || !action) return;
+  await set(ref(db, `rooms/${roomId}/latestAction`), {
+    ...action,
+    serverTimestamp: Date.now()
+  });
+};
+
+export const subscribeToRoomActions = (roomId: string, callback: (action: RoomBroadcastAction) => void) => {
+  if (!roomId) return () => {};
+  return onValue(ref(db, `rooms/${roomId}/latestAction`), (snapshot) => {
+    const val = snapshot.val();
+    if (val && val.actionId) {
+      callback(val);
+    }
+  });
+};
+
 export { onValue };

@@ -4,12 +4,14 @@ import { useRoom } from '../../contexts/RoomContext';
 interface RoomShareButtonProps {
   modeName?: string;
   onClipSync?: () => void;
+  initialClip?: any;
   className?: string;
 }
 
 export const RoomShareButton: React.FC<RoomShareButtonProps> = ({
   modeName,
   onClipSync,
+  initialClip,
   className = ''
 }) => {
   const { roomId, isConnected, isHost, connectionType, createRoom, killRoom, leaveRoom } = useRoom();
@@ -19,7 +21,7 @@ export const RoomShareButton: React.FC<RoomShareButtonProps> = ({
   const handleShareOrCopy = () => {
     let activeRoom = roomId;
     if (!activeRoom) {
-      activeRoom = createRoom();
+      activeRoom = createRoom(initialClip);
       if (onClipSync) onClipSync();
     }
 

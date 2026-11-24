@@ -13,11 +13,14 @@ import {
   syncRoomDictation,
   subscribeToRoomDictation,
   syncRoomShadowState,
-  subscribeToRoomShadowState
+  subscribeToRoomShadowState,
+  broadcastRoomActionToFirebase,
+  subscribeToRoomActions,
+  RoomBroadcastAction
 } from '../services/firebase';
 
 export type RoomAction = {
-  type: 'PLAY' | 'PAUSE' | 'SEEK' | 'AUDIO_SYNC' | 'SYNC_SENTENCE' | 'SYNC_VIDEO' | 'CHAT_MESSAGE' | 'SYNC_DICTATION' | 'SYNC_CAPTION' | 'TOGGLE_LINE_BY_LINE' | 'ROOM_KILLED';
+  type: 'PLAY' | 'PAUSE' | 'SEEK' | 'AUDIO_SYNC' | 'SYNC_SENTENCE' | 'SYNC_VIDEO' | 'CHAT_MESSAGE' | 'SYNC_DICTATION' | 'SYNC_CAPTION' | 'TOGGLE_LINE_BY_LINE' | 'LINE_BOUNDARY_PAUSE' | 'ROOM_KILLED';
   payload?: any;
 };
 
@@ -66,6 +69,47 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const connRef = useRef<DataConnection | null>(null);
   const lastAudioTimestampRef = useRef<number>(Date.now());
   const lastShadowTimestampRef = useRef<number>(Date.now());
+
+  // Unique session ID for each tab/device to prevent self-echo and allow multi-tab testing
+  const tabSessionIdRef = useRef<string>(
+    'tab_' + Math.random().toString(36).substring(2, 9) + '_' + Date.now()
+  );
+  // Dedup set for dual-rail delivery (Firebase + WebRTC P2P)
+  const processedActionIdsRef = useRef<Set<string>>(new Set());
+
+  // Universal handler for incoming actions from either Firebase or WebRTC P2P
+  const handleIncomingAction = (action: any) => {
+    if (!action || !action.type) return;
+    const mySenderId = tabSessionIdRef.current;
+    if (action.senderId && (action.senderId === mySenderId || (peerId && action.senderId === peerId))) {
+      return; // Ignore our own actions/echoes
+    }
+    if (action.actionId) {
+      if (processedActionIdsRef.current.has(action.actionId)) {
+        return; // Already processed via other rail
+      }
+      processedActionIdsRef.current.add(action.actionId);
+      if (processedActionIdsRef.current.size > 300) {
+        const arr = Array.from(processedActionIdsRef.current);
+        processedActionIdsRef.current = new Set(arr.slice(arr.length - 150));
+      }
+    }
+
+    if (action.type === 'ROOM_KILLED') {
+      disconnectRoom();
+      const newUrl = new URL(window.location.origin + window.location.pathname);
+      window.history.pushState({}, '', newUrl.toString());
+      alert("⚠ ROOM TERMINATED // The room creator has killed this session.");
+      return;
+    }
+    if (action.type === 'SYNC_DICTATION') {
+      setSyncedDictation(action.payload);
+    }
+    if (action.type === 'SYNC_VIDEO') {
+      setSyncedClip(action.payload);
+    }
+    setLastAction(action as RoomAction);
+  };
 
   // Initialize PeerJS for direct WebRTC with Google STUN servers for robust NAT traversal
   useEffect(() => {
@@ -166,32 +210,28 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
     });
 
-    // 4. Synchronize Shadow Caption & Line-by-Line State
-    const unsubscribeShadow = subscribeToRoomShadowState(roomId, (shadowData) => {
-      if (!shadowData || !shadowData.updatedAt) return;
-      const myId = peerId || getStoredUserId();
-      if (shadowData.senderId === myId) return;
-      if (shadowData.updatedAt <= lastShadowTimestampRef.current) return;
-      lastShadowTimestampRef.current = shadowData.updatedAt;
+    // 4. Synchronize all Real-Time Room Actions (Guaranteed Delivery Rail)
+    const unsubscribeActions = subscribeToRoomActions(roomId, (remoteAction) => {
+      handleIncomingAction(remoteAction);
+    });
 
-      if (typeof shadowData.lineByLine === 'boolean') {
-        setLastAction({ type: 'TOGGLE_LINE_BY_LINE', payload: { enabled: shadowData.lineByLine } });
-      }
-      if (typeof shadowData.start === 'number') {
-        setLastAction({
-          type: 'SYNC_CAPTION',
-          payload: {
-            lineId: shadowData.activeLineId,
-            start: shadowData.start,
-            autoPlay: true
-          }
-        });
+    // 5. Initial snapshot for newly joined participants (Shadow Caption & Line-by-Line State)
+    const unsubscribeShadow = subscribeToRoomShadowState(roomId, (shadowData) => {
+      if (!shadowData) return;
+      const myId = tabSessionIdRef.current;
+      if (shadowData.senderId === myId) return;
+      // Only use as snapshot if we haven't received recent real-time actions
+      if (processedActionIdsRef.current.size === 0) {
+        if (typeof shadowData.lineByLine === 'boolean') {
+          setLastAction({ type: 'TOGGLE_LINE_BY_LINE', payload: { enabled: shadowData.lineByLine } });
+        }
       }
     });
 
     return () => {
       unsubscribeData();
       unsubscribeDictation();
+      unsubscribeActions();
       unsubscribeShadow();
     };
   }, [roomId, peerId]);
@@ -216,17 +256,7 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
     });
 
     conn.on('data', (data: any) => {
-      if (data?.type === 'ROOM_KILLED') {
-        disconnectRoom();
-        const newUrl = new URL(window.location.origin + window.location.pathname);
-        window.history.pushState({}, '', newUrl.toString());
-        alert("⚠ ROOM TERMINATED // The room creator has killed this session.");
-        return;
-      }
-      if (data?.type === 'SYNC_DICTATION') {
-        setSyncedDictation(data.payload);
-      }
-      setLastAction(data as RoomAction);
+      handleIncomingAction(data);
     });
 
     conn.on('close', () => {
@@ -343,11 +373,24 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const broadcastAction = (action: RoomAction) => {
-    // 1. Send via Firebase for guaranteed delivery
+    const actionId = 'act_' + Date.now() + '_' + Math.random().toString(36).substring(2, 9);
+    const senderId = tabSessionIdRef.current;
+    const fullAction = {
+      ...action,
+      actionId,
+      senderId,
+      timestamp: Date.now()
+    };
+
+    // Mark locally as processed so we never process our own echo
+    processedActionIdsRef.current.add(actionId);
+
+    // 1. Broadcast to Firebase real-time action rail (guaranteed delivery)
     if (roomId) {
+      broadcastRoomActionToFirebase(roomId, fullAction as any);
+
       if (action.type === 'AUDIO_SYNC') {
-        const myId = peerId || getStoredUserId();
-        syncRoomAudio(roomId, action.payload, myId);
+        syncRoomAudio(roomId, action.payload, senderId);
       } else if (action.type === 'SYNC_VIDEO') {
         syncRoomClip(roomId, action.payload);
       } else if (action.type === 'SYNC_DICTATION') {
@@ -358,12 +401,12 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
         syncRoomShadowState(roomId, {
           activeLineId: action.payload?.lineId,
           start: action.payload?.start,
-          senderId: peerId || getStoredUserId()
+          senderId
         });
       } else if (action.type === 'TOGGLE_LINE_BY_LINE') {
         syncRoomShadowState(roomId, {
           lineByLine: action.payload?.enabled,
-          senderId: peerId || getStoredUserId()
+          senderId
         });
       }
     }
@@ -371,7 +414,7 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
     // 2. Also send via WebRTC peer data connection for sub-millisecond P2P
     if (connRef.current && isPeerConnected) {
       try {
-        connRef.current.send(action);
+        connRef.current.send(fullAction);
       } catch (e) {
         console.warn("PeerJS send failed:", e);
       }
