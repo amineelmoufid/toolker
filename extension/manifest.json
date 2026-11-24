@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Toolker Subtitle Companion",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Enables 100% authentic, residential YouTube subtitle extraction for Toolker Shadowing Studio.",
   "permissions": [
     "activeTab",
@@ -9,6 +9,7 @@
   ],
   "host_permissions": [
     "*://*.youtube.com/*",
+    "*://*.googlevideo.com/*",
     "*://*.stratom.bond/*",
     "*://*.pages.dev/*",
     "*://toolker.stratom.bond/*",

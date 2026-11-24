@@ -87,6 +87,7 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
   const [isEmbedRestricted, setIsEmbedRestricted] = useState<boolean>(false);
 
   const [hasExtension, setHasExtension] = useState<boolean>(false);
+  const [extensionVersion, setExtensionVersion] = useState<string | null>(null);
 
   const [showExtensionModal, setShowExtensionModal] = useState<boolean>(false);
 
@@ -140,28 +141,19 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
     reader.readAsText(file);
   };
 
-
-
   // Detect Toolker Companion Extension
-
   React.useEffect(() => {
-
     const handleMsg = (e: MessageEvent) => {
-
       if (e.data && e.data.type === 'TOOLKER_EXTENSION_READY') {
-
         setHasExtension(true);
-
+        if (e.data.version) {
+          setExtensionVersion(e.data.version);
+        }
       }
-
     };
-
     window.addEventListener('message', handleMsg);
-
     window.postMessage({ type: 'TOOLKER_EXTENSION_PING' }, '*');
-
     return () => window.removeEventListener('message', handleMsg);
-
   }, []);
 
 
@@ -232,9 +224,11 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
         if (parsed && parsed.length > 0) {
           const clean = reconstructSubtitlesSemantically(parsed);
           console.log('[Toolker Subtitles] Loaded via Companion Extension:', clean.length);
-          setSyncMessage(`✓ Extracted dialogue via Extension (${clean.length} sentences)`);
+          setSyncMessage(`✓ Extracted dialogue via Companion Extension (${clean.length} sentences)`);
           return clean;
         }
+      } else if (extResult && !extResult.ok) {
+        console.warn('[Toolker Subtitles] Companion Extension notice:', extResult.error);
       }
     } catch (_) {}
     // 1. PRIMARY FAST-PATH: Direct Serverless Edge Extractor (/api/transcript)
@@ -396,10 +390,16 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
     if (cleanSubs.length > 0) {
       setSyncStatus('success');
       const wordCount = cleanSubs.reduce((acc: number, sub: any) => acc + (sub.words?.length || 0), 0);
-      setSyncMessage(`✓ Synchronized original dialogue (${cleanSubs.length} cues, ${wordCount} words)`);
+      setSyncMessage(`✓ Synchronized dialogue (${cleanSubs.length} cues, ${wordCount} words)`);
     } else {
       setSyncStatus('error');
-      setSyncMessage(`⚠️ Cloud runner queued in background. You can also paste transcript below!`);
+      if (hasExtension && extensionVersion !== '1.0.3') {
+        setSyncMessage(`⚠️ Extension update pending. Please reload extension (v1.0.3) in chrome://extensions and click RE-SYNC.`);
+      } else if (hasExtension) {
+        setSyncMessage(`⚠️ Extension did not detect captions for this video. You can paste transcript or upload SRT below!`);
+      } else {
+        setSyncMessage(`⚠️ Cloud runner queued. You can also paste transcript or drag the Bookmarklet!`);
+      }
       setShowManualTranscript(true);
     }
     setIsSyncing(false);
@@ -980,7 +980,9 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
                     External Playback Restricted by Video Owner (Error 150)
                   </div>
                   <div className="text-[11px] opacity-90 mt-1">
-                    Subtitles and timing are 100% extracted. You can practice in the studio using the Synced YouTube Pop-up alongside Toolker!
+                    {syncedSubtitles && syncedSubtitles.length > 0
+                      ? 'Subtitles and timing are 100% extracted. You can practice in the studio using the Synced YouTube Pop-up alongside Toolker!'
+                      : 'Video embedding restricted by creator. Synchronizing subtitles and timing...'}
                   </div>
                 </div>
               </div>
@@ -1153,21 +1155,13 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
                 </span>
 
                 {hasExtension ? (
-
                   <span className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded bg-[#1e4620] text-[#a3e635] border border-[#1c1d20]">
-
-                    COMPANION ACTIVE ✓
-
+                    {extensionVersion ? `COMPANION v${extensionVersion} ACTIVE ✓` : 'COMPANION ACTIVE ✓'}
                   </span>
-
                 ) : (
-
                   <span className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded bg-[#476171] text-[#ebe6d8] border border-[#1c1d20]">
-
                     ZERO-CORS READY
-
                   </span>
-
                 )}
 
               </div>
@@ -1264,7 +1258,9 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
 
                   >
 
-                    {hasExtension ? '✓ EXTENSION CONNECTED' : 'HOW TO INSTALL (10s)'}
+                    {hasExtension 
+                      ? (extensionVersion ? `✓ EXTENSION v${extensionVersion} CONNECTED` : '✓ EXTENSION CONNECTED') 
+                      : 'HOW TO INSTALL (10s)'}
 
                   </button>
 
@@ -1351,8 +1347,8 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
                 <li>Turn on <strong className="text-[#cf573c]">Developer mode</strong> (toggle in top-right).</li>
 
                 <li>Click <strong className="text-[#1c1d20]">Load unpacked</strong> (top-left).</li>
-
-                <li>Select the <code className="bg-[#1c1d20] text-[#a3e635] px-1 py-0.5 rounded">extension</code> folder from the project repo.</li>
+                <li>Select the <code className="bg-[#1c1d20] text-[#a3e635] px-1 py-0.5 rounded">extension</code> folder from this project.</li>
+                <li><strong>To update:</strong> Click the <code className="bg-[#1c1d20] text-[#a3e635] px-1 py-0.5 rounded">⟳ Reload</code> icon on the extension card anytime files change.</li>
 
               </ol>
 

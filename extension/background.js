@@ -1,6 +1,7 @@
 // Toolker Subtitle Companion - Background Service Worker
 // Extracts authentic YouTube subtitle XML directly using the user's residential browser session (0 CORS, 0 Datacenter blocks)
 
+const EXTENSION_VERSION = '1.0.3';
 const OFFICIAL_KEY = ['AIza', 'SyAO', '_FJ2SlqU', '8Q4STEHL', 'GCilw_Y9', '_11qcW8'].join('');
 
 function decodeEntities(text) {
@@ -15,7 +16,7 @@ function decodeEntities(text) {
     .replace(/&#(\d+);/g, (_, dec) => String.fromCodePoint(parseInt(dec, 10)));
 }
 
-async function extractYouTubeSubtitles(videoId) {
+async function extractYouTubeSubtitles(videoId, requestedLang) {
   let captionTracks = [];
   let itData = null;
 
@@ -54,7 +55,7 @@ async function extractYouTubeSubtitles(videoId) {
     try {
       const watchRes = await fetch(`https://www.youtube.com/watch?v=${videoId}`, {
         headers: {
-          'Accept-Language': 'en-US,en;q=0.9,fr;q=0.8'
+          'Accept-Language': requestedLang || 'en-US,en;q=0.9,fr;q=0.8'
         }
       });
       if (watchRes.ok) {
@@ -94,34 +95,45 @@ async function extractYouTubeSubtitles(videoId) {
     throw new Error('No caption tracks found on YouTube for this video');
   }
 
-  // 3. Select track: prefer original language / manual track over ASR if available
+  // 3. Select track: prefer requestedLang, then original language / manual track over ASR
   const authenticTracks = captionTracks.filter(t => !t.vssId || !t.vssId.startsWith('t.'));
-  const selectedTrack = authenticTracks.find(t => t.languageCode === 'en' && t.kind !== 'asr') ||
-                        authenticTracks.find(t => t.languageCode === 'en') ||
-                        authenticTracks.find(t => t.isDefault && t.kind !== 'asr') ||
-                        authenticTracks.find(t => t.isDefault) ||
-                        authenticTracks.find(t => t.kind !== 'asr') ||
-                        captionTracks.find(t => t.languageCode === 'en') ||
-                        captionTracks[0];
+  let selectedTrack = null;
+
+  if (requestedLang) {
+    selectedTrack = authenticTracks.find(t => t.languageCode?.toLowerCase().startsWith(requestedLang.toLowerCase())) ||
+                    captionTracks.find(t => t.languageCode?.toLowerCase().startsWith(requestedLang.toLowerCase()));
+  }
+
+  if (!selectedTrack) {
+    selectedTrack = authenticTracks.find(t => t.languageCode === 'en' && t.kind !== 'asr') ||
+                    authenticTracks.find(t => t.languageCode === 'en') ||
+                    authenticTracks.find(t => t.isDefault && t.kind !== 'asr') ||
+                    authenticTracks.find(t => t.isDefault) ||
+                    authenticTracks.find(t => t.kind !== 'asr') ||
+                    captionTracks.find(t => t.languageCode === 'en') ||
+                    captionTracks[0];
+  }
 
   let trackUrl = selectedTrack.baseUrl;
-  if (!trackUrl.includes('fmt=')) {
-    trackUrl += '&fmt=srv3';
-  }
+  let srv3Url = trackUrl.includes('fmt=') ? trackUrl : `${trackUrl}&fmt=srv3`;
 
   // 4. Fetch timedtext XML directly using residential session
-  let xmlRes = await fetch(trackUrl);
   let xmlText = '';
-  if (xmlRes.ok) {
-    xmlText = await xmlRes.text();
-  }
+  try {
+    const xmlRes = await fetch(srv3Url);
+    if (xmlRes.ok) {
+      xmlText = await xmlRes.text();
+    }
+  } catch (_) {}
 
   // Fallback to baseUrl without &fmt=srv3 if empty
   if (!xmlText || xmlText.length < 50) {
-    const rawRes = await fetch(selectedTrack.baseUrl);
-    if (rawRes.ok) {
-      xmlText = await rawRes.text();
-    }
+    try {
+      const rawRes = await fetch(trackUrl);
+      if (rawRes.ok) {
+        xmlText = await rawRes.text();
+      }
+    } catch (_) {}
   }
 
   if (!xmlText || xmlText.length < 50) {
@@ -131,6 +143,7 @@ async function extractYouTubeSubtitles(videoId) {
   return {
     ok: true,
     videoId,
+    version: EXTENSION_VERSION,
     lang: selectedTrack.languageCode || 'en',
     xml: xmlText,
     track: selectedTrack
@@ -140,12 +153,13 @@ async function extractYouTubeSubtitles(videoId) {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === 'TOOLKER_FETCH_SUBTITLES') {
     const videoId = request.videoId;
+    const lang = request.lang;
     if (!videoId || videoId.length !== 11) {
       sendResponse({ ok: false, error: 'Invalid videoId' });
       return true;
     }
 
-    extractYouTubeSubtitles(videoId)
+    extractYouTubeSubtitles(videoId, lang)
       .then((result) => {
         sendResponse(result);
       })

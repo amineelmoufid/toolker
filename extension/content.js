@@ -4,7 +4,7 @@
 function announceReady() {
   window.postMessage({
     type: 'TOOLKER_EXTENSION_READY',
-    version: '1.0.2',
+    version: '1.0.3',
     capabilities: ['direct_youtube_extraction', 'residential_ip']
   }, '*');
 }
@@ -17,11 +17,11 @@ window.addEventListener('message', (event) => {
 
   const data = event.data;
   if (data && data.type === 'TOOLKER_REQ_SUBTITLES') {
-    const { videoId, requestId } = data;
+    const { videoId, requestId, lang } = data;
     console.log('[Toolker Companion] Content script received extraction request for:', videoId);
 
     chrome.runtime.sendMessage(
-      { type: 'TOOLKER_FETCH_SUBTITLES', videoId },
+      { type: 'TOOLKER_FETCH_SUBTITLES', videoId, lang },
       (response) => {
         const lastErr = chrome.runtime.lastError;
         if (lastErr) {
