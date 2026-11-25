@@ -90,10 +90,10 @@ const SubtitleStage: React.FC<SubtitleStageProps> = ({
     );
   }
 
-  // 1. Determine active line:
+  // 1. Determine active line (seamlessly spans full dialogue + inter-caption silence until next line):
   const activeLineIdx = subtitles.findIndex((line, idx) => {
     const nextLine = subtitles[idx + 1];
-    const thresholdEnd = nextLine ? Math.min(line.end + 0.6, nextLine.start) : line.end + 1.2;
+    const thresholdEnd = nextLine ? nextLine.start : (line.end + 1.2);
     return currentTime >= line.start - 0.12 && currentTime < thresholdEnd;
   });
 
@@ -131,9 +131,13 @@ const SubtitleStage: React.FC<SubtitleStageProps> = ({
         {/* Terminal Header */}
         <div className="flex flex-wrap items-center justify-between w-full mb-2.5 sm:mb-4 gap-2">
           <div className="flex items-center gap-1.5 sm:gap-2">
-            <span className={`w-1.5 h-1.5 rounded-full ${isDictationMode ? 'bg-[#3d7a4d]' : 'bg-[#cf573c]'} animate-pulse`} />
-            <span className={`font-mono text-[8.5px] sm:text-[9px] font-bold tracking-widest ${isDictationMode ? 'text-[#3d7a4d]' : 'text-[#cf573c]'} uppercase`}>
-              {isDictationMode ? 'DICTATION TYPING BUFFER' : 'TARGET SENTENCE BUFFER'}
+            <span className={`w-1.5 h-1.5 rounded-full ${isDictationMode ? 'bg-[#3d7a4d]' : (activeLine && currentTime > activeLine.end + 0.35) ? 'bg-[#eab308]' : 'bg-[#cf573c]'} animate-pulse`} />
+            <span className={`font-mono text-[8.5px] sm:text-[9px] font-bold tracking-widest ${isDictationMode ? 'text-[#3d7a4d]' : (activeLine && currentTime > activeLine.end + 0.35) ? 'text-[#eab308]' : 'text-[#cf573c]'} uppercase`}>
+              {isDictationMode 
+                ? 'DICTATION TYPING BUFFER' 
+                : (activeLine && currentTime > activeLine.end + 0.35) 
+                  ? 'SCENE CONTINUES // SPACE: REPLAY | ->: NEXT' 
+                  : 'TARGET SENTENCE BUFFER'}
             </span>
           </div>
 

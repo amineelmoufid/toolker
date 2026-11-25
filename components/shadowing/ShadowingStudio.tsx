@@ -850,28 +850,30 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
   // Play / Pause toggle with Line-by-Line replay dedication
   const handleTogglePlay = () => {
     if (!isPlaying) {
-      if ((lineByLine || isDictationMode) && currentClip?.subtitles) {
+      if ((lineByLine || isDictationMode) && currentClip?.subtitles?.length) {
         const subs = currentClip.subtitles;
-        // In Line-by-Line mode, the play button is dedicated to playing/replaying the active caption
-        const targetLine = isAtLineEndRef.current || lastActiveLineRef.current || subs.find(l => currentTime >= l.start - 0.15 && currentTime <= l.end + 0.3) || subs[0];
-        if (targetLine) {
+        // In Line-by-Line mode, Space / Play replays the line that just completed!
+        const lineToReplay = isAtLineEndRef.current || justCompletedLineRef.current || lastActiveLineRef.current || subs[0];
+        if (lineToReplay) {
           isAtLineEndRef.current = null;
           lastPausedLineIdRef.current = null;
-          lastActiveLineRef.current = targetLine;
-          setCurrentTime(targetLine.start);
-          playerRef.current?.seekTo(targetLine.start);
+          lastActiveLineRef.current = lineToReplay;
+          justCompletedLineRef.current = lineToReplay;
+          setCurrentTime(lineToReplay.start);
+          playerRef.current?.seekTo(lineToReplay.start);
           playerRef.current?.play();
           if (isConnected) {
             broadcastAction({
               type: 'PLAY',
-              payload: { time: targetLine.start, timestamp: Date.now() }
+              payload: { time: lineToReplay.start, timestamp: Date.now() }
             });
             syncPlayback({
-              activeLineId: targetLine.id,
-              time: targetLine.start,
+              activeLineId: lineToReplay.id,
+              time: lineToReplay.start,
               isPlaying: true
             });
           }
+          showToast(`↺ REPLAYING: ${lineToReplay.text.substring(0, 32)}...`);
           return;
         }
       }
@@ -908,6 +910,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     isAtLineEndRef.current = null;
     lastPausedLineIdRef.current = null;
     lastActiveLineRef.current = line;
+    justCompletedLineRef.current = line;
     setCurrentTime(line.start);
     playerRef.current?.seekTo(line.start);
     playerRef.current?.play();
@@ -934,9 +937,12 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
   const handlePrevLine = () => {
     if (!currentClip || !currentClip.subtitles?.length) return;
     const subs = currentClip.subtitles;
-    const active = lastActiveLineRef.current || isAtLineEndRef.current || subs.find(l => currentTime >= l.start - 0.1 && currentTime <= l.end + 0.3);
-    const currentIndex = active ? subs.findIndex(l => l.id === active.id) : subs.findIndex(l => currentTime >= l.start && currentTime <= l.end + 0.3);
-    
+    const refLine = isAtLineEndRef.current || justCompletedLineRef.current || lastActiveLineRef.current;
+    const currentIndex = refLine ? subs.findIndex(l => l.id === refLine.id) : -1;
+
+    isAtLineEndRef.current = null;
+    lastPausedLineIdRef.current = null;
+
     if (currentIndex > 0) {
       handleSelectLine(subs[currentIndex - 1], true);
     } else {
@@ -948,8 +954,11 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
   const handleNextLine = () => {
     if (!currentClip || !currentClip.subtitles?.length) return;
     const subs = currentClip.subtitles;
-    const active = lastActiveLineRef.current || isAtLineEndRef.current || subs.find(l => currentTime >= l.start - 0.1 && currentTime <= l.end + 0.3);
-    const currentIndex = active ? subs.findIndex(l => l.id === active.id) : subs.findIndex(l => currentTime >= l.start && currentTime <= l.end + 0.3);
+    const refLine = isAtLineEndRef.current || justCompletedLineRef.current || lastActiveLineRef.current;
+    const currentIndex = refLine ? subs.findIndex(l => l.id === refLine.id) : -1;
+
+    isAtLineEndRef.current = null;
+    lastPausedLineIdRef.current = null;
 
     if (currentIndex !== -1 && currentIndex < subs.length - 1) {
       handleSelectLine(subs[currentIndex + 1], true);
