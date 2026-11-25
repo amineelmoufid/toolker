@@ -29,3 +29,9 @@ gemini_text_generator_breakdown.md
 *.njsproj
 *.sln
 *.sw?
+
+# Sensitive and temporary credentials
+cookies.txt
+*cookies*.txt
+github*.txt
+
