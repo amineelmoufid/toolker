@@ -10,7 +10,6 @@ interface ControlDockProps {
   autoPause: boolean;
   onToggleAutoPause: () => void;
   isInRoom?: boolean;
-  onOpenShadowModal: () => void;
   // Hold-to-record props
   onStartHoldRecord: () => void;
   onStopHoldRecord: (shouldSend: boolean) => void;
@@ -46,7 +45,6 @@ const ControlDock: React.FC<ControlDockProps> = ({
   autoPause,
   onToggleAutoPause,
   isInRoom = false,
-  onOpenShadowModal,
   onStartHoldRecord,
   onStopHoldRecord,
   onCancelHoldRecord,
@@ -84,6 +82,13 @@ const ControlDock: React.FC<ControlDockProps> = ({
   const handlePointerDown = (e: React.PointerEvent<HTMLButtonElement>) => {
     if (e.button !== 0 && e.pointerType === 'mouse') return;
 
+    if (isRecordingShadow) {
+      // If already recording, tapping it stops and sends!
+      triggerHaptic([15, 30, 15]);
+      onStopHoldRecord(true);
+      return;
+    }
+
     // Capture pointer so moving cursor anywhere keeps triggering events on this button
     try {
       e.currentTarget.setPointerCapture(e.pointerId);
@@ -97,7 +102,7 @@ const ControlDock: React.FC<ControlDockProps> = ({
     wasCancelArmedRef.current = false;
     isHeldRef.current = false;
 
-    // Threshold (150ms) to distinguish tap from hold
+    // Threshold (150ms) to distinguish instant tap from hold-to-talk
     holdTimerRef.current = window.setTimeout(() => {
       isHeldRef.current = true;
       triggerHaptic(18); // Gentle buzz on hold record onset
@@ -138,10 +143,12 @@ const ControlDock: React.FC<ControlDockProps> = ({
       holdTimerRef.current = null;
     }
 
-    if (!isHeldRef.current && !isRecordingShadow) {
-      // Quick tap -> open full modal
-      triggerHaptic(10);
-      onOpenShadowModal();
+    if (!isHeldRef.current) {
+      // Quick tap when idle -> start recording immediately
+      if (!isRecordingShadow) {
+        triggerHaptic(18);
+        onStartHoldRecord();
+      }
       return;
     }
 
@@ -317,7 +324,7 @@ const ControlDock: React.FC<ControlDockProps> = ({
             onPointerUp={handlePointerUp}
             onPointerCancel={handlePointerCancel}
             onContextMenu={(e) => e.preventDefault()}
-            title="Hold to Record & Send | Click to Open Lab"
+            title={isRecordingShadow ? "Click to Stop & Send" : "Click to Record / Hold to Speak"}
             className={`relative flex flex-col items-center justify-center min-w-[56px] h-11 sm:h-auto sm:min-w-0 p-1.5 px-3 rounded-full transition-all group select-none touch-none ${
               isRecordingShadow
                 ? isCancelArmed
@@ -333,7 +340,7 @@ const ControlDock: React.FC<ControlDockProps> = ({
               <line x1="8" y1="23" x2="16" y2="23" />
             </svg>
             <span className={`text-[8.5px] sm:text-[8.5px] font-mono font-bold uppercase mt-0.5 tracking-tight ${isRecordingShadow ? 'text-white' : 'text-[#cf573c]'}`}>
-              {isRecordingShadow ? (isCancelArmed ? 'CANCEL' : 'REC') : 'SHADOW'}
+              {isRecordingShadow ? (isCancelArmed ? 'CANCEL' : 'STOP') : 'SHADOW'}
             </span>
           </button>
 

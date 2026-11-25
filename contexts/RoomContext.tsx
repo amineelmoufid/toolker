@@ -20,7 +20,7 @@ import {
 } from '../services/firebase';
 
 export type RoomAction = {
-  type: 'PLAY' | 'PAUSE' | 'SEEK' | 'AUDIO_SYNC' | 'SYNC_SENTENCE' | 'SYNC_VIDEO' | 'CHAT_MESSAGE' | 'SYNC_DICTATION' | 'SYNC_CAPTION' | 'TOGGLE_LINE_BY_LINE' | 'LINE_BOUNDARY_PAUSE' | 'ROOM_KILLED';
+  type: 'PLAY' | 'PAUSE' | 'SEEK' | 'PLAYHEAD_PULSE' | 'AUDIO_SYNC' | 'SYNC_SENTENCE' | 'SYNC_VIDEO' | 'CHAT_MESSAGE' | 'SYNC_DICTATION' | 'SYNC_CAPTION' | 'TOGGLE_LINE_BY_LINE' | 'LINE_BOUNDARY_PAUSE' | 'ROOM_KILLED';
   payload?: any;
 };
 
@@ -192,10 +192,12 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
       // 2. Synchronize Shadow Audio
       if (data.latestAudio) {
         const { audioBase64, senderId, timestamp } = data.latestAudio;
-        const myId = peerId || getStoredUserId();
+        const mySenderId = tabSessionIdRef.current;
+        const myUserId = getStoredUserId();
+        const isSelf = senderId === mySenderId || senderId === myUserId || (peerId && senderId === peerId);
         
         // Only trigger for partner's audio and if newer than connection time
-        if (senderId !== myId && timestamp > lastAudioTimestampRef.current) {
+        if (!isSelf && timestamp > lastAudioTimestampRef.current) {
           lastAudioTimestampRef.current = timestamp;
           setLastAction({ type: 'AUDIO_SYNC', payload: audioBase64 });
         }

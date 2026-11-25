@@ -159,12 +159,20 @@ export const syncRoomClip = async (roomId: string, clip: any) => {
 
 export const syncRoomAudio = async (roomId: string, audioBase64: string, senderId: string, senderName?: string) => {
   if (!roomId || !audioBase64) return;
+  const timestamp = Date.now();
   await set(ref(db, `rooms/${roomId}/latestAudio`), {
     audioBase64,
     senderId,
     senderName: senderName || 'Partner',
-    timestamp: Date.now()
+    timestamp
   });
+  if (senderId) {
+    await set(ref(db, `rooms/${roomId}/userAudios/${senderId}`), {
+      audioBase64,
+      senderId,
+      timestamp
+    });
+  }
 };
 
 export const killRoomInFirebase = async (roomId: string) => {
