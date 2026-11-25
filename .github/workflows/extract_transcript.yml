@@ -44,11 +44,18 @@ jobs:
           pip install --upgrade youtube-transcript-api yt-dlp curl_cffi
 
       - name: Extract Transcript
+        env:
+          YT_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
         run: |
           VIDEO_ID="${{ github.event.client_payload.videoId || github.event.inputs.videoId }}"
           LANG="${{ github.event.client_payload.lang || github.event.inputs.lang }}"
           echo "Extracting transcript for videoId: $VIDEO_ID (lang: $LANG)"
+          if [ -n "$YT_COOKIES" ]; then
+            echo "$YT_COOKIES" > cookies.txt
+            echo "Loaded authenticated session cookies from GitHub Secrets"
+          fi
           python scripts/extract_transcript.py "$VIDEO_ID" "$LANG"
+          rm -f cookies.txt
 
       - name: Commit and Push Transcript
         run: |

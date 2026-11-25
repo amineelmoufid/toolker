@@ -182,6 +182,7 @@ const YouTubePlayer = forwardRef<YouTubePlayerRef, YouTubePlayerProps>(({
 
   const lastReportedTimeRef = useRef<number>(0);
   const lastReportedPerfRef = useRef<number>(0);
+  const lastEmitTimeRef = useRef<number>(0);
 
   // High-frequency time sync loop with continuous microsecond interpolation
   const startTracking = () => {
@@ -189,6 +190,7 @@ const YouTubePlayer = forwardRef<YouTubePlayerRef, YouTubePlayerProps>(({
     if (playerRef.current && typeof playerRef.current.getCurrentTime === 'function') {
       lastReportedTimeRef.current = playerRef.current.getCurrentTime() || 0;
       lastReportedPerfRef.current = performance.now();
+      lastEmitTimeRef.current = 0;
     }
 
     const loop = () => {
@@ -207,7 +209,11 @@ const YouTubePlayer = forwardRef<YouTubePlayerRef, YouTubePlayerProps>(({
         const clampedElapsed = Math.min(Math.max(elapsed, 0), 0.35);
         const continuousTime = lastReportedTimeRef.current + (clampedElapsed * (playbackRate || 1));
 
-        onTimeUpdate(continuousTime);
+        // Throttle React state updates to 15 Hz (~66ms) to prevent UI/video stuttering
+        if (now - lastEmitTimeRef.current >= 66) {
+          lastEmitTimeRef.current = now;
+          onTimeUpdate(continuousTime);
+        }
       }
       if (isPlayingRef.current) {
         animFrameRef.current = requestAnimationFrame(loop);

@@ -16,6 +16,25 @@ COMMON_ABBREVIATIONS = {
 OFFICIAL_KEY = "".join(['AIza', 'SyAO', '_FJ2SlqU', '8Q4STEHL', 'GCilw_Y9', '_11qcW8'])
 INNERTUBE_URL = f"https://www.youtube.com/youtubei/v1/player?key={OFFICIAL_KEY}"
 
+def load_cookie_header(cookie_path="cookies.txt"):
+    if not os.path.isfile(cookie_path):
+        return None
+    try:
+        cookies = []
+        with open(cookie_path, "r", encoding="utf-8", errors="ignore") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#"):
+                    continue
+                parts = line.split("\t")
+                if len(parts) >= 7:
+                    cookies.append(f"{parts[5]}={parts[6]}")
+        if cookies:
+            return "; ".join(cookies)
+    except Exception:
+        pass
+    return None
+
 def interpolate_words(text, start, end):
     words = [w for w in text.split() if w]
     if not words:
@@ -254,6 +273,9 @@ def select_best_innertube_track(caption_tracks, audio_tracks=None, preferred_lan
 
 def extract_with_innertube(vid, preferred_lang=None, video_title=""):
     print(f"--> [Primary Engine] Extracting via Native Mobile InnerTube API for {vid}...")
+    cookie_hdr = load_cookie_header()
+    if cookie_hdr:
+        print("    [InnerTube] Using authenticated session cookies from cookies.txt")
     
     clients = [
         {
@@ -297,6 +319,8 @@ def extract_with_innertube(vid, preferred_lang=None, video_title=""):
                 "Content-Type": "application/json",
                 "User-Agent": c["ua"]
             }
+            if cookie_hdr:
+                headers["Cookie"] = cookie_hdr
             body = json.dumps(payload).encode('utf-8')
             req = urllib.request.Request(INNERTUBE_URL, data=body, headers=headers)
             with urllib.request.urlopen(req, timeout=8) as resp:
@@ -327,7 +351,10 @@ def extract_with_innertube(vid, preferred_lang=None, video_title=""):
                     track_url += "&fmt=srv3"
 
                 print(f"    Found track via [{c['name']}]: {lang_code} (kind: {track_kind})")
-                tt_req = urllib.request.Request(track_url, headers={"User-Agent": c["ua"]})
+                tt_headers = {"User-Agent": c["ua"]}
+                if cookie_hdr:
+                    tt_headers["Cookie"] = cookie_hdr
+                tt_req = urllib.request.Request(track_url, headers=tt_headers)
                 with urllib.request.urlopen(tt_req, timeout=10) as tt_res:
                     xml_content = tt_res.read().decode('utf-8')
                     if not xml_content or not xml_content.strip().startswith('<') or "GoogleSorry" in xml_content:
@@ -376,6 +403,11 @@ def extract_with_ytdlp(vid, preferred_lang=None):
         cmd.extend(["--js-runtimes", "node"])
     elif shutil.which("deno"):
         cmd.extend(["--js-runtimes", "deno"])
+
+    # Support authenticated cookies if cookies.txt is provided
+    if os.path.isfile("cookies.txt"):
+        print("    [yt-dlp] Using authenticated session cookies from cookies.txt")
+        cmd.extend(["--cookies", "cookies.txt"])
 
     cmd.append(f"https://www.youtube.com/watch?v={vid}")
 

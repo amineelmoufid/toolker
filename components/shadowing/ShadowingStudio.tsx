@@ -365,6 +365,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
   const lastActiveLineRef = useRef<SubtitleLine | null>(null);
   const isAtLineEndRef = useRef<SubtitleLine | null>(null);
   const lastPausedLineIdRef = useRef<string | null>(null);
+  const justCompletedLineRef = useRef<SubtitleLine | null>(null);
   const isRemoteUpdateRef = useRef<boolean>(false);
   const suppressOutboundUntilRef = useRef<number>(0);
 
@@ -442,8 +443,9 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     const authoritativeTime = calculateAuthoritativeTime(syncedPlayback);
     const localTime = playerRef.current?.getCurrentTime() ?? currentTime;
     const drift = Math.abs(localTime - authoritativeTime);
+    const deadbandThreshold = syncedPlayback.isPlaying ? 1.5 : 0.4;
 
-    if (drift > 0.5) {
+    if (drift > deadbandThreshold) {
       isRemoteUpdateRef.current = true;
       suppressOutboundUntilRef.current = Date.now() + 2500;
       playerRef.current?.seekTo(authoritativeTime);
@@ -546,10 +548,11 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
         if (line) {
           isAtLineEndRef.current = line;
           lastActiveLineRef.current = line;
+          justCompletedLineRef.current = line;
           lastPausedLineIdRef.current = line.id;
         }
       }
-      showToast("⏸️ CAPTION COMPLETE (PAUSED)");
+      showToast("⏸️ READY FOR NEXT LINE // SPACE: REPLAY | ->: NEXT");
     } else if (lastAction.type === 'PLAY') {
       const remoteTime = lastAction.payload?.time;
       const remoteTimestamp = lastAction.payload?.timestamp || Date.now();
@@ -693,18 +696,41 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     }
   }, [currentClip, currentTime]);
 
-  // Line-by-Line auto-pause logic (stops strictly at the end of each caption)
+  // Line-by-Line auto-pause logic (seamless play-through: never skips silence, pauses before next dialogue line begins)
   useEffect(() => {
-    if (!isPlaying || !currentClip?.subtitles || (!lineByLine && !isDictationMode)) return;
+    if (!isPlaying || !currentClip?.subtitles?.length || (!lineByLine && !isDictationMode)) return;
 
     const subs = currentClip.subtitles;
-    const activeLine = subs.find(l => currentTime >= l.start - 0.05 && currentTime <= l.end);
+    // 1. Locate current subtitle context:
+    // Either currently spoken (start - 0.1 to end + 0.35) or silence after a line
+    let activeLine = subs.find(l => currentTime >= l.start - 0.1 && currentTime <= l.end + 0.35);
+    
+    // If we are currently in silence between lines, keep lastActiveLineRef as active context
+    if (!activeLine && lastActiveLineRef.current) {
+      const lastLine = lastActiveLineRef.current;
+      const lastIdx = subs.findIndex(l => l.id === lastLine.id);
+      const nextLine = (lastIdx !== -1 && lastIdx < subs.length - 1) ? subs[lastIdx + 1] : null;
+      if (nextLine && currentTime > lastLine.end && currentTime < nextLine.start) {
+        activeLine = lastLine;
+      }
+    }
 
     if (activeLine) {
       lastActiveLineRef.current = activeLine;
+      justCompletedLineRef.current = activeLine;
 
-      // If comfortably inside the line, reset boundary flag so it can pause at the end
-      if (currentTime < activeLine.end - 0.25) {
+      const currentIdx = subs.findIndex(l => l.id === activeLine.id);
+      const nextLine = (currentIdx !== -1 && currentIdx < subs.length - 1) ? subs[currentIdx + 1] : null;
+
+      // The pause threshold:
+      // If a next line exists, play through ALL silence until right before next speaker (nextLine.start - 0.06s)
+      // If no next line (last sentence of video), pause after natural speech tail (activeLine.end + 0.4s)
+      const pauseThreshold = nextLine 
+        ? Math.max(activeLine.end + 0.25, nextLine.start - 0.06) 
+        : (activeLine.end + 0.4);
+
+      // If comfortably inside the active speech part, reset boundary flags for next pause
+      if (currentTime < activeLine.end - 0.2) {
         if (isAtLineEndRef.current?.id === activeLine.id) {
           isAtLineEndRef.current = null;
         }
@@ -713,57 +739,32 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
         }
       }
 
-      // Catch boundary within 0.08s of end
-      if (currentTime >= activeLine.end - 0.08 && lastPausedLineIdRef.current !== activeLine.id) {
+      // Reached boundary before next line begins!
+      if (currentTime >= pauseThreshold && lastPausedLineIdRef.current !== activeLine.id) {
         lastPausedLineIdRef.current = activeLine.id;
         isAtLineEndRef.current = activeLine;
-        lastActiveLineRef.current = activeLine;
+        justCompletedLineRef.current = activeLine;
+        
+        const targetPauseTime = nextLine ? (nextLine.start - 0.05) : pauseThreshold;
         playerRef.current?.pause();
-        playerRef.current?.seekTo(activeLine.start);
-        setCurrentTime(activeLine.start);
+        playerRef.current?.seekTo(targetPauseTime);
+        setCurrentTime(targetPauseTime);
         
         if (isConnected) {
           broadcastAction({
             type: 'LINE_BOUNDARY_PAUSE',
             payload: {
               lineId: activeLine.id,
-              time: activeLine.start
+              time: targetPauseTime
             }
           });
           syncPlayback({
             activeLineId: activeLine.id,
-            time: activeLine.start,
+            time: targetPauseTime,
             isPlaying: false
           });
         }
-        showToast("⏸️ CAPTION COMPLETED (PRESS ▶ TO REPLAY)");
-        return;
-      }
-    } else if (lastActiveLineRef.current && lastPausedLineIdRef.current !== lastActiveLineRef.current.id) {
-      // Caught jump across line boundary into a gap or the start of the next line
-      const crossedLine = lastActiveLineRef.current;
-      if (currentTime >= crossedLine.end - 0.1) {
-        lastPausedLineIdRef.current = crossedLine.id;
-        isAtLineEndRef.current = crossedLine;
-        playerRef.current?.pause();
-        playerRef.current?.seekTo(crossedLine.start);
-        setCurrentTime(crossedLine.start);
-        
-        if (isConnected) {
-          broadcastAction({
-            type: 'LINE_BOUNDARY_PAUSE',
-            payload: {
-              lineId: crossedLine.id,
-              time: crossedLine.start
-            }
-          });
-          syncPlayback({
-            activeLineId: crossedLine.id,
-            time: crossedLine.start,
-            isPlaying: false
-          });
-        }
-        showToast("⏸️ CAPTION COMPLETED (PRESS ▶ TO REPLAY)");
+        showToast("⏸️ READY FOR NEXT LINE // SPACE: REPLAY | ->: NEXT");
         return;
       }
     }

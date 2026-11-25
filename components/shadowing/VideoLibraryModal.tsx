@@ -225,6 +225,12 @@ const VideoLibraryModal: React.FC<VideoLibraryModalProps> = ({
           const clean = reconstructSubtitlesSemantically(parsed);
           console.log('[Toolker Subtitles] Loaded via Companion Extension:', clean.length);
           setSyncMessage(`✓ Extracted dialogue via Companion Extension (${clean.length} sentences)`);
+          // Automatically seed edge cache for mobile and other devices
+          fetch('/api/cache', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ videoId: ytId, title: customTitle || `YouTube Video (${ytId})`, subtitles: clean })
+          }).catch(() => {});
           return clean;
         }
       } else if (extResult && !extResult.ok) {
