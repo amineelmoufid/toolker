@@ -6,6 +6,8 @@ interface SubtitleStageProps {
   subtitles: SubtitleLine[];
   currentTime: number;
   onSelectLine: (line: SubtitleLine) => void;
+  isLineByLine?: boolean;
+  activeSentenceIndex?: number;
   // Dictation mode props
   isDictationMode: boolean;
   onToggleDictationMode: () => void;
@@ -25,6 +27,8 @@ const SubtitleStage: React.FC<SubtitleStageProps> = ({
   subtitles,
   currentTime,
   onSelectLine,
+  isLineByLine,
+  activeSentenceIndex,
   isDictationMode,
   onToggleDictationMode,
   maskMode,
@@ -90,33 +94,39 @@ const SubtitleStage: React.FC<SubtitleStageProps> = ({
     );
   }
 
-  // 1. Determine active line (seamlessly spans full dialogue + inter-caption silence until next line):
-  const activeLineIdx = subtitles.findIndex((line, idx) => {
-    const nextLine = subtitles[idx + 1];
-    const thresholdEnd = nextLine ? nextLine.start : (line.end + 1.2);
-    return currentTime >= line.start - 0.12 && currentTime < thresholdEnd;
-  });
+  // 1. Determine active line:
+  let currentIndex = -1;
+  if (isLineByLine && typeof activeSentenceIndex === 'number' && activeSentenceIndex >= 0 && activeSentenceIndex < subtitles.length) {
+    // Deterministic Line-by-Line lock: directly bind to activeSentenceIndex
+    currentIndex = activeSentenceIndex;
+  } else {
+    // Continuous mode tracking: smoothly tracks audio cue and inter-caption scene
+    const activeLineIdx = subtitles.findIndex((line, idx) => {
+      const nextLine = subtitles[idx + 1];
+      const thresholdEnd = nextLine ? nextLine.start : (line.end + 1.2);
+      return currentTime >= line.start - 0.12 && currentTime < thresholdEnd;
+    });
 
-  // If before first line or in a gap between lines, keep the current contextual line:
-  let effectiveIdx = activeLineIdx;
-  if (effectiveIdx === -1 && subtitles.length > 0) {
-    if (currentTime < subtitles[0].start) {
-      effectiveIdx = 0; // Show first sentence awaiting onset
-    } else {
-      // Keep displaying the line that just completed until the next starts
-      for (let i = subtitles.length - 1; i >= 0; i--) {
-        if (currentTime >= subtitles[i].start) {
-          effectiveIdx = i;
-          break;
+    let effectiveIdx = activeLineIdx;
+    if (effectiveIdx === -1 && subtitles.length > 0) {
+      if (currentTime < subtitles[0].start) {
+        effectiveIdx = 0; // Show first sentence awaiting onset
+      } else {
+        // Keep displaying the line that just completed until the next starts
+        for (let i = subtitles.length - 1; i >= 0; i--) {
+          if (currentTime >= subtitles[i].start) {
+            effectiveIdx = i;
+            break;
+          }
         }
       }
     }
+    currentIndex = effectiveIdx !== -1 ? effectiveIdx : (subtitles.length > 0 ? 0 : -1);
   }
 
-  const currentIndex = effectiveIdx !== -1 ? effectiveIdx : (subtitles.length > 0 ? 0 : -1);
   const activeLine = currentIndex !== -1 ? subtitles[currentIndex] : null;
 
-  // Upcoming lines after the active line
+  // Upcoming lines after the active line (rendered in continuous mode)
   const upcomingLines = currentIndex !== -1 ? subtitles.slice(currentIndex + 1, currentIndex + 4) : [];
 
 
@@ -135,9 +145,11 @@ const SubtitleStage: React.FC<SubtitleStageProps> = ({
             <span className={`font-mono text-[8.5px] sm:text-[9px] font-bold tracking-widest ${isDictationMode ? 'text-[#3d7a4d]' : (activeLine && currentTime > activeLine.end + 0.35) ? 'text-[#eab308]' : 'text-[#cf573c]'} uppercase`}>
               {isDictationMode 
                 ? 'DICTATION TYPING BUFFER' 
-                : (activeLine && currentTime > activeLine.end + 0.35) 
-                  ? 'SCENE CONTINUES // SPACE: REPLAY | ->: NEXT' 
-                  : 'TARGET SENTENCE BUFFER'}
+                : isLineByLine
+                  ? `SENTENCE [${(currentIndex + 1)}/${subtitles.length}] // SPACE: REPLAY | ->: NEXT`
+                  : (activeLine && currentTime > activeLine.end + 0.35) 
+                    ? 'SCENE CONTINUES // SPACE: REPLAY | ->: NEXT' 
+                    : 'TARGET SENTENCE BUFFER'}
             </span>
           </div>
 
@@ -244,43 +256,56 @@ const SubtitleStage: React.FC<SubtitleStageProps> = ({
         )}
       </div>
 
-      {/* 2. UPCOMING SUBTITLE LINES */}
-      <div className="w-full px-1.5 sm:px-2 space-y-2.5 sm:space-y-4">
-        {upcomingLines.map((line, idx) => {
-          const opacityClasses = [
-            'text-[#7a776e] hover:text-[#4d4a43]',
-            'text-[#c5bfb0] hover:text-[#7a776e]',
-            'text-[#d8d2c4] hover:text-[#c5bfb0]'
-          ];
-
-          return (
-            <div
-              key={line.id}
-              onClick={() => onSelectLine(line)}
-              className={`cursor-pointer transition-all duration-150 font-mono text-xs sm:text-sm font-bold tracking-wide flex items-center justify-between group border-l-2 border-transparent hover:border-[#cf573c] pl-2 ${
-                opacityClasses[idx] || 'text-[#d8d2c4]'
-              }`}
-              title="Click to jump video to this line"
-            >
-              <div className="flex flex-col">
-                <p className="leading-relaxed group-hover:translate-x-1 transition-transform">
-                  {line.text}
-                </p>
-
-              </div>
-              <span className="text-[8.5px] sm:text-[9px] font-mono font-bold text-[#cf573c] opacity-0 group-hover:opacity-100 transition-opacity shrink-0 ml-2">
-                ▶ JUMP
-              </span>
-            </div>
-          );
-        })}
-
-        {upcomingLines.length === 0 && (
-          <div className="pt-2 sm:pt-4 text-center text-[9px] sm:text-[10px] font-mono text-[#c5bfb0] uppercase tracking-wider">
-            END OF CLIP DATA
+      {/* 2. UPCOMING SUBTITLE LINES (or Line-by-Line Isolation Dock) */}
+      {isLineByLine ? (
+        <div className="w-full px-3 py-3 bg-[#16171a]/30 border border-[#24252a] rounded-lg flex items-center justify-between font-mono">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#3d7a4d] animate-pulse" />
+            <span className="text-[10px] sm:text-[11px] font-bold text-[#a09c91] uppercase tracking-wider">
+              Line-by-Line Isolation: Sentence {currentIndex + 1} of {subtitles.length}
+            </span>
           </div>
-        )}
-      </div>
+          <span className="text-[9px] sm:text-[10px] text-[#7a776e] tracking-wider uppercase hidden sm:inline">
+            [Space]: Replay • [→]: Next Sentence
+          </span>
+        </div>
+      ) : (
+        <div className="w-full px-1.5 sm:px-2 space-y-2.5 sm:space-y-4">
+          {upcomingLines.map((line, idx) => {
+            const opacityClasses = [
+              'text-[#7a776e] hover:text-[#4d4a43]',
+              'text-[#c5bfb0] hover:text-[#7a776e]',
+              'text-[#d8d2c4] hover:text-[#c5bfb0]'
+            ];
+
+            return (
+              <div
+                key={line.id}
+                onClick={() => onSelectLine(line)}
+                className={`cursor-pointer transition-all duration-150 font-mono text-xs sm:text-sm font-bold tracking-wide flex items-center justify-between group border-l-2 border-transparent hover:border-[#cf573c] pl-2 ${
+                  opacityClasses[idx] || 'text-[#d8d2c4]'
+                }`}
+                title="Click to jump video to this line"
+              >
+                <div className="flex flex-col">
+                  <p className="leading-relaxed group-hover:translate-x-1 transition-transform">
+                    {line.text}
+                  </p>
+                </div>
+                <span className="text-[8.5px] sm:text-[9px] font-mono font-bold text-[#cf573c] opacity-0 group-hover:opacity-100 transition-opacity shrink-0 ml-2">
+                  ▶ JUMP
+                </span>
+              </div>
+            );
+          })}
+
+          {upcomingLines.length === 0 && (
+            <div className="pt-2 sm:pt-4 text-center text-[9px] sm:text-[10px] font-mono text-[#c5bfb0] uppercase tracking-wider">
+              END OF CLIP DATA
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

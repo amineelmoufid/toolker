@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { ShadowingClip, SubtitleLine, AppMode } from '../../types';
 import { PRESET_CLIPS, reconstructSubtitlesSemantically, parseTranscriptXml } from './mockClips';
 import YouTubePlayer, { YouTubePlayerRef } from './YouTubePlayer';
@@ -362,6 +362,13 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
 
   const playerRef = useRef<YouTubePlayerRef | null>(null);
   const lastSavedTimeRef = useRef<number>(0);
+  // Unified single source of truth for all playback, auto-pause checks, navigation, and UI
+  const cleanSubtitles = useMemo<SubtitleLine[]>(() => {
+    return reconstructSubtitlesSemantically(currentClip?.subtitles || []);
+  }, [currentClip?.subtitles, currentClip?.id]);
+
+  const [activeSentenceIndex, setActiveSentenceIndex] = useState<number>(0);
+  const isWaitingForNextLineRef = useRef<boolean>(false);
   const lastActiveLineRef = useRef<SubtitleLine | null>(null);
   const isAtLineEndRef = useRef<SubtitleLine | null>(null);
   const lastPausedLineIdRef = useRef<string | null>(null);
@@ -433,9 +440,10 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
 
     // 4. Synchronize Active Caption
     if (syncedPlayback.activeLineId) {
-      const matchingLine = currentClip.subtitles.find(l => l.id === syncedPlayback.activeLineId);
-      if (matchingLine) {
-        lastActiveLineRef.current = matchingLine;
+      const matchingIdx = cleanSubtitles.findIndex(l => l.id === syncedPlayback.activeLineId);
+      if (matchingIdx !== -1) {
+        setActiveSentenceIndex(matchingIdx);
+        lastActiveLineRef.current = cleanSubtitles[matchingIdx];
       }
     }
 
@@ -508,10 +516,12 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
       if (typeof start === 'number') {
         isAtLineEndRef.current = null;
         lastPausedLineIdRef.current = null;
-        if (lineId && currentClip?.subtitles) {
-          const targetLine = currentClip.subtitles.find(l => l.id === lineId);
-          if (targetLine) {
-            lastActiveLineRef.current = targetLine;
+        isWaitingForNextLineRef.current = false;
+        if (lineId && cleanSubtitles.length) {
+          const targetIdx = cleanSubtitles.findIndex(l => l.id === lineId);
+          if (targetIdx !== -1) {
+            setActiveSentenceIndex(targetIdx);
+            lastActiveLineRef.current = cleanSubtitles[targetIdx];
           }
         }
         setCurrentTime(start);
@@ -539,13 +549,16 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
       showToast(enabled ? "🤝 DICTATION: ON (SYNCED)" : "🤝 DICTATION: OFF (SYNCED)");
     } else if (lastAction.type === 'LINE_BOUNDARY_PAUSE' && lastAction.payload) {
       playerRef.current?.pause();
+      isWaitingForNextLineRef.current = true;
       if (typeof lastAction.payload.time === 'number') {
         playerRef.current?.seekTo(lastAction.payload.time);
         setCurrentTime(lastAction.payload.time);
       }
-      if (lastAction.payload.lineId && currentClip?.subtitles) {
-        const line = currentClip.subtitles.find(l => l.id === lastAction.payload.lineId);
-        if (line) {
+      if (lastAction.payload.lineId && cleanSubtitles.length) {
+        const lineIdx = cleanSubtitles.findIndex(l => l.id === lastAction.payload.lineId);
+        if (lineIdx !== -1) {
+          setActiveSentenceIndex(lineIdx);
+          const line = cleanSubtitles[lineIdx];
           isAtLineEndRef.current = line;
           lastActiveLineRef.current = line;
           justCompletedLineRef.current = line;
@@ -696,79 +709,61 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     }
   }, [currentClip, currentTime]);
 
-  // Line-by-Line auto-pause logic (seamless play-through: never skips silence, pauses before next dialogue line begins)
+  // Sync activeSentenceIndex with currentTime in Continuous mode
   useEffect(() => {
-    if (!isPlaying || !currentClip?.subtitles?.length || (!lineByLine && !isDictationMode)) return;
+    if (lineByLine || isDictationMode || !isPlaying || !cleanSubtitles.length) return;
+    const idx = cleanSubtitles.findIndex((l, i) => {
+      const next = cleanSubtitles[i + 1];
+      const endThreshold = next ? next.start : l.end;
+      return currentTime >= l.start - 0.1 && currentTime < endThreshold;
+    });
+    if (idx !== -1 && idx !== activeSentenceIndex) {
+      setActiveSentenceIndex(idx);
+    }
+  }, [currentTime, isPlaying, lineByLine, isDictationMode, cleanSubtitles, activeSentenceIndex]);
 
-    const subs = currentClip.subtitles;
-    // 1. Locate current subtitle context:
-    // Either currently spoken (start - 0.1 to end + 0.35) or silence after a line
-    let activeLine = subs.find(l => currentTime >= l.start - 0.1 && currentTime <= l.end + 0.35);
-    
-    // If we are currently in silence between lines, keep lastActiveLineRef as active context
-    if (!activeLine && lastActiveLineRef.current) {
-      const lastLine = lastActiveLineRef.current;
-      const lastIdx = subs.findIndex(l => l.id === lastLine.id);
-      const nextLine = (lastIdx !== -1 && lastIdx < subs.length - 1) ? subs[lastIdx + 1] : null;
-      if (nextLine && currentTime > lastLine.end && currentTime < nextLine.start) {
-        activeLine = lastLine;
+  // Line-by-Line auto-pause logic (strictly pauses at the end of the active sentence)
+  useEffect(() => {
+    if (!isPlaying || !cleanSubtitles.length || (!lineByLine && !isDictationMode)) return;
+
+    const targetSentence = cleanSubtitles[activeSentenceIndex];
+    if (!targetSentence) return;
+
+    // Reset paused latch if user seeks/rewinds before the sentence end
+    if (currentTime < targetSentence.end - 0.2) {
+      if (lastPausedLineIdRef.current === targetSentence.id) {
+        lastPausedLineIdRef.current = null;
+      }
+      if (isAtLineEndRef.current?.id === targetSentence.id) {
+        isAtLineEndRef.current = null;
       }
     }
 
-    if (activeLine) {
-      lastActiveLineRef.current = activeLine;
-      justCompletedLineRef.current = activeLine;
+    // Strict boundary pause at target sentence end (+0.12s natural speech tail)
+    if (currentTime >= targetSentence.end + 0.12 && lastPausedLineIdRef.current !== targetSentence.id) {
+      lastPausedLineIdRef.current = targetSentence.id;
+      isAtLineEndRef.current = targetSentence;
+      justCompletedLineRef.current = targetSentence;
+      isWaitingForNextLineRef.current = true;
+      playerRef.current?.pause();
 
-      const currentIdx = subs.findIndex(l => l.id === activeLine.id);
-      const nextLine = (currentIdx !== -1 && currentIdx < subs.length - 1) ? subs[currentIdx + 1] : null;
-
-      // The pause threshold:
-      // If a next line exists, play through ALL silence until right before next speaker (nextLine.start - 0.06s)
-      // If no next line (last sentence of video), pause after natural speech tail (activeLine.end + 0.4s)
-      const pauseThreshold = nextLine 
-        ? Math.max(activeLine.end + 0.25, nextLine.start - 0.06) 
-        : (activeLine.end + 0.4);
-
-      // If comfortably inside the active speech part, reset boundary flags for next pause
-      if (currentTime < activeLine.end - 0.2) {
-        if (isAtLineEndRef.current?.id === activeLine.id) {
-          isAtLineEndRef.current = null;
-        }
-        if (lastPausedLineIdRef.current === activeLine.id) {
-          lastPausedLineIdRef.current = null;
-        }
+      if (isConnected) {
+        broadcastAction({
+          type: 'LINE_BOUNDARY_PAUSE',
+          payload: {
+            lineId: targetSentence.id,
+            time: currentTime
+          }
+        });
+        syncPlayback({
+          activeLineId: targetSentence.id,
+          time: currentTime,
+          isPlaying: false
+        });
       }
-
-      // Reached boundary before next line begins!
-      if (currentTime >= pauseThreshold && lastPausedLineIdRef.current !== activeLine.id) {
-        lastPausedLineIdRef.current = activeLine.id;
-        isAtLineEndRef.current = activeLine;
-        justCompletedLineRef.current = activeLine;
-        
-        const targetPauseTime = nextLine ? (nextLine.start - 0.05) : pauseThreshold;
-        playerRef.current?.pause();
-        playerRef.current?.seekTo(targetPauseTime);
-        setCurrentTime(targetPauseTime);
-        
-        if (isConnected) {
-          broadcastAction({
-            type: 'LINE_BOUNDARY_PAUSE',
-            payload: {
-              lineId: activeLine.id,
-              time: targetPauseTime
-            }
-          });
-          syncPlayback({
-            activeLineId: activeLine.id,
-            time: targetPauseTime,
-            isPlaying: false
-          });
-        }
-        showToast("⏸️ READY FOR NEXT LINE // SPACE: REPLAY | ->: NEXT");
-        return;
-      }
+      showToast(`⏸️ SENTENCE ${activeSentenceIndex + 1} COMPLETE // SPACE: REPLAY | ->: NEXT`);
     }
-  }, [currentTime, isPlaying, lineByLine, isDictationMode, currentClip?.subtitles, isConnected]);
+  }, [currentTime, isPlaying, lineByLine, isDictationMode, cleanSubtitles, activeSentenceIndex, isConnected]);
 
   const handleToggleLineByLine = () => {
     const next = !lineByLine;
@@ -850,35 +845,34 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
   // Play / Pause toggle with Line-by-Line replay dedication
   const handleTogglePlay = () => {
     if (!isPlaying) {
-      if ((lineByLine || isDictationMode) && currentClip?.subtitles?.length) {
-        const subs = currentClip.subtitles;
-        // In Line-by-Line mode, Space / Play replays the line that just completed!
-        const lineToReplay = isAtLineEndRef.current || justCompletedLineRef.current || lastActiveLineRef.current || subs[0];
-        if (lineToReplay) {
+      if ((lineByLine || isDictationMode) && cleanSubtitles.length > 0) {
+        const targetSentence = cleanSubtitles[activeSentenceIndex] || cleanSubtitles[0];
+        // If parked at sentence completion or waiting for next line, Spacebar / Play REPLAYS this sentence!
+        if (isWaitingForNextLineRef.current || isAtLineEndRef.current || currentTime >= targetSentence.end - 0.1) {
+          isWaitingForNextLineRef.current = false;
           isAtLineEndRef.current = null;
           lastPausedLineIdRef.current = null;
-          lastActiveLineRef.current = lineToReplay;
-          justCompletedLineRef.current = lineToReplay;
-          setCurrentTime(lineToReplay.start);
-          playerRef.current?.seekTo(lineToReplay.start);
+          setCurrentTime(targetSentence.start);
+          playerRef.current?.seekTo(targetSentence.start);
           playerRef.current?.play();
           if (isConnected) {
             broadcastAction({
               type: 'PLAY',
-              payload: { time: lineToReplay.start, timestamp: Date.now() }
+              payload: { time: targetSentence.start, timestamp: Date.now() }
             });
             syncPlayback({
-              activeLineId: lineToReplay.id,
-              time: lineToReplay.start,
+              activeLineId: targetSentence.id,
+              time: targetSentence.start,
               isPlaying: true
             });
           }
-          showToast(`↺ REPLAYING: ${lineToReplay.text.substring(0, 32)}...`);
+          showToast(`↺ REPLAYING SENTENCE ${activeSentenceIndex + 1}`);
           return;
         }
       }
 
       lastPausedLineIdRef.current = null;
+      isWaitingForNextLineRef.current = false;
       playerRef.current?.play();
       if (isConnected) {
         broadcastAction({
@@ -907,10 +901,13 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
 
   // Jump to specific subtitle line (synced across room if connected)
   const handleSelectLine = (line: SubtitleLine, broadcast = true) => {
+    const idx = cleanSubtitles.findIndex(l => l.id === line.id);
+    if (idx !== -1) {
+      setActiveSentenceIndex(idx);
+    }
+    isWaitingForNextLineRef.current = false;
     isAtLineEndRef.current = null;
     lastPausedLineIdRef.current = null;
-    lastActiveLineRef.current = line;
-    justCompletedLineRef.current = line;
     setCurrentTime(line.start);
     playerRef.current?.seekTo(line.start);
     playerRef.current?.play();
@@ -935,39 +932,80 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
 
   // Previous Line navigation (< or ArrowLeft)
   const handlePrevLine = () => {
-    if (!currentClip || !currentClip.subtitles?.length) return;
-    const subs = currentClip.subtitles;
-    const refLine = isAtLineEndRef.current || justCompletedLineRef.current || lastActiveLineRef.current;
-    const currentIndex = refLine ? subs.findIndex(l => l.id === refLine.id) : -1;
+    if (!cleanSubtitles.length) return;
 
+    const prevIdx = Math.max(0, activeSentenceIndex - 1);
+    const prevSentence = cleanSubtitles[prevIdx];
+    setActiveSentenceIndex(prevIdx);
+    isWaitingForNextLineRef.current = false;
     isAtLineEndRef.current = null;
     lastPausedLineIdRef.current = null;
 
-    if (currentIndex > 0) {
-      handleSelectLine(subs[currentIndex - 1], true);
-    } else {
-      handleSelectLine(subs[0], true);
+    setCurrentTime(prevSentence.start);
+    playerRef.current?.seekTo(prevSentence.start);
+    playerRef.current?.play();
+
+    if (isConnected) {
+      broadcastAction({
+        type: 'SYNC_CAPTION',
+        payload: {
+          lineId: prevSentence.id,
+          start: prevSentence.start,
+          autoPlay: true,
+          timestamp: Date.now()
+        }
+      });
+      syncPlayback({
+        activeLineId: prevSentence.id,
+        time: prevSentence.start,
+        isPlaying: true
+      });
     }
+    showToast(`⏮️ SENTENCE ${prevIdx + 1}`);
   };
 
   // Next Line navigation (> or ArrowRight)
   const handleNextLine = () => {
-    if (!currentClip || !currentClip.subtitles?.length) return;
-    const subs = currentClip.subtitles;
-    const refLine = isAtLineEndRef.current || justCompletedLineRef.current || lastActiveLineRef.current;
-    const currentIndex = refLine ? subs.findIndex(l => l.id === refLine.id) : -1;
+    if (!cleanSubtitles.length) return;
 
-    isAtLineEndRef.current = null;
-    lastPausedLineIdRef.current = null;
+    if (activeSentenceIndex < cleanSubtitles.length - 1) {
+      const nextIdx = activeSentenceIndex + 1;
+      const nextSentence = cleanSubtitles[nextIdx];
+      setActiveSentenceIndex(nextIdx);
+      isWaitingForNextLineRef.current = false;
+      isAtLineEndRef.current = null;
+      lastPausedLineIdRef.current = null;
 
-    if (currentIndex !== -1 && currentIndex < subs.length - 1) {
-      handleSelectLine(subs[currentIndex + 1], true);
-    } else if (currentIndex === -1) {
-      const next = subs.find(l => l.start > currentTime + 0.1);
-      if (next) handleSelectLine(next, true);
-      else handleSelectLine(subs[subs.length - 1], true);
+      // In line-by-line mode:
+      // If currentTime is before nextSentence.start (in silence/scenery), play continuously from current position through the video scene!
+      // If already past nextSentence.start, seek to nextSentence.start.
+      if (currentTime < nextSentence.start) {
+        playerRef.current?.play();
+        showToast(`▶ CONTINUING TO SENTENCE ${nextIdx + 1}`);
+      } else {
+        setCurrentTime(nextSentence.start);
+        playerRef.current?.seekTo(nextSentence.start);
+        playerRef.current?.play();
+      }
+
+      if (isConnected) {
+        broadcastAction({
+          type: 'SYNC_CAPTION',
+          payload: {
+            lineId: nextSentence.id,
+            start: nextSentence.start,
+            autoPlay: true,
+            timestamp: Date.now()
+          }
+        });
+        syncPlayback({
+          activeLineId: nextSentence.id,
+          time: Math.min(currentTime, nextSentence.start),
+          isPlaying: true
+        });
+      }
     } else {
-      handleSelectLine(subs[subs.length - 1], true);
+      showToast("🏆 ALL CLIP DIALOGUE COMPLETED!");
     }
   };
 
@@ -1249,9 +1287,11 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
         <div className="bg-[#e4dfd3] rounded-lg border-2 border-[#1c1d20] shadow-[5px_5px_0px_#18191c] relative w-full flex-1 flex flex-col items-center">
           {currentClip ? (
             <SubtitleStage
-              subtitles={reconstructSubtitlesSemantically(currentClip.subtitles || [])}
+              subtitles={cleanSubtitles}
               currentTime={currentTime}
               onSelectLine={handleSelectLine}
+              isLineByLine={lineByLine || isDictationMode}
+              activeSentenceIndex={activeSentenceIndex}
               isDictationMode={isDictationMode}
               onToggleDictationMode={handleToggleDictationMode}
               maskMode={maskMode}
