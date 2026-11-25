@@ -400,6 +400,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
   const streamRef = useRef<MediaStream | null>(null);
+  const recordedMimeTypeRef = useRef<string>('audio/webm');
   const recordTimerRef = useRef<number | null>(null);
   const toastTimeoutRef = useRef<number | null>(null);
 
@@ -495,18 +496,23 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     }
   }, [lastAction]);
 
+  const currentTimeRef = useRef(currentTime);
+  useEffect(() => {
+    currentTimeRef.current = currentTime;
+  }, [currentTime]);
+
   // Periodic heartbeat pulse to keep room participants strictly synchronized during playback
   useEffect(() => {
     if (!isConnected || !isPlaying) return;
     const interval = setInterval(() => {
-      const nowTime = playerRef.current?.getCurrentTime() ?? currentTime;
+      const nowTime = playerRef.current?.getCurrentTime() ?? currentTimeRef.current;
       broadcastAction({
         type: 'PLAYHEAD_PULSE',
         payload: { time: nowTime, timestamp: Date.now() }
       });
     }, 2800);
     return () => clearInterval(interval);
-  }, [isConnected, isPlaying, currentTime]);
+  }, [isConnected, isPlaying]);
 
   const handleTogglePlayPartnerAudio = () => {
     if (!latestPartnerAudio) return;
@@ -838,7 +844,23 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       streamRef.current = stream;
-      const mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/webm' });
+
+      let mimeType = '';
+      if (typeof MediaRecorder !== 'undefined') {
+        if (MediaRecorder.isTypeSupported('audio/webm;codecs=opus')) {
+          mimeType = 'audio/webm;codecs=opus';
+        } else if (MediaRecorder.isTypeSupported('audio/webm')) {
+          mimeType = 'audio/webm';
+        } else if (MediaRecorder.isTypeSupported('audio/mp4')) {
+          mimeType = 'audio/mp4';
+        } else if (MediaRecorder.isTypeSupported('audio/ogg')) {
+          mimeType = 'audio/ogg';
+        }
+      }
+      recordedMimeTypeRef.current = mimeType || 'audio/webm';
+
+      const options = mimeType ? { mimeType } : undefined;
+      const mediaRecorder = options ? new MediaRecorder(stream, options) : new MediaRecorder(stream);
       mediaRecorderRef.current = mediaRecorder;
       chunksRef.current = [];
 
@@ -846,7 +868,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
         if (e.data.size > 0) chunksRef.current.push(e.data);
       };
 
-      mediaRecorder.start();
+      mediaRecorder.start(100);
       setIsRecordingShadow(true);
       setRecordingDuration(0);
       recordTimerRef.current = window.setInterval(() => {
@@ -867,7 +889,8 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
       if (shouldSend) {
         mediaRecorderRef.current.onstop = async () => {
-          const audioBlob = new Blob(chunksRef.current, { type: 'audio/webm' });
+          const mime = recordedMimeTypeRef.current || 'audio/webm';
+          const audioBlob = new Blob(chunksRef.current, { type: mime });
           if (audioBlob.size > 0) {
             const base64 = await blobToBase64(audioBlob);
             setLatestLocalAudio(base64);

@@ -63,6 +63,7 @@ const ControlDock: React.FC<ControlDockProps> = ({
   const holdTimerRef = useRef<number | null>(null);
   const isHeldRef = useRef(false);
   const wasCancelArmedRef = useRef(false);
+  const justStoppedRef = useRef(false);
 
   // Escape key cancels hold recording
   useEffect(() => {
@@ -84,10 +85,13 @@ const ControlDock: React.FC<ControlDockProps> = ({
 
     if (isRecordingShadow) {
       // If already recording, tapping it stops and sends!
+      justStoppedRef.current = true;
       triggerHaptic([15, 30, 15]);
       onStopHoldRecord(true);
       return;
     }
+
+    justStoppedRef.current = false;
 
     // Capture pointer so moving cursor anywhere keeps triggering events on this button
     try {
@@ -141,6 +145,11 @@ const ControlDock: React.FC<ControlDockProps> = ({
     if (holdTimerRef.current) {
       clearTimeout(holdTimerRef.current);
       holdTimerRef.current = null;
+    }
+
+    if (justStoppedRef.current) {
+      justStoppedRef.current = false;
+      return;
     }
 
     if (!isHeldRef.current) {

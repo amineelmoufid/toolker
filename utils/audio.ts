@@ -65,14 +65,29 @@ export async function playPcmAudio(base64Audio: string, onEnded?: () => void) {
   await playPcmBuffer(data, onEnded);
 }
 
-export function playStandardAudio(base64: string, onEnded?: () => void): HTMLAudioElement {
+export function playStandardAudio(base64OrDataUri: string, onEnded?: () => void): HTMLAudioElement {
   stopAllAudio();
-  const audio = new Audio(`data:audio/webm;base64,${base64}`);
+  const src = base64OrDataUri.startsWith('data:') 
+    ? base64OrDataUri 
+    : `data:audio/webm;base64,${base64OrDataUri}`;
+  const audio = new Audio(src);
   audio.onended = () => {
     if (onEnded) onEnded();
     globalAudio = null;
   };
-  audio.play();
+  audio.onerror = (e) => {
+    console.warn("Audio playback error:", e);
+    if (onEnded) onEnded();
+    globalAudio = null;
+  };
+  const playPromise = audio.play();
+  if (playPromise !== undefined) {
+    playPromise.catch((err) => {
+      console.warn("Audio playback interrupted or blocked:", err);
+      if (onEnded) onEnded();
+      globalAudio = null;
+    });
+  }
   globalAudio = audio;
   return audio;
 }
@@ -81,8 +96,8 @@ export async function blobToBase64(blob: Blob): Promise<string> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.onloadend = () => {
-      const base64String = (reader.result as string).split(',')[1];
-      resolve(base64String);
+      const result = reader.result as string;
+      resolve(result);
     };
     reader.onerror = reject;
     reader.readAsDataURL(blob);
