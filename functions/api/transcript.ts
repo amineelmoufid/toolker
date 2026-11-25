@@ -351,7 +351,8 @@ export const onRequestGet = async (context: any) => {
           context: {
             client: {
               clientName: 'ANDROID',
-              clientVersion: INNERTUBE_CLIENT_VERSION
+              clientVersion: INNERTUBE_CLIENT_VERSION,
+              androidSdkVersion: 34
             }
           },
           videoId
@@ -614,9 +615,9 @@ export const onRequestGet = async (context: any) => {
     // D. Detect language from video title
     if (!selectedTrack && videoTitle) {
       const isArabic = /[\u0600-\u06FF\u0750-\u077F]/.test(videoTitle);
-      const isFrench = /[éèêëàâôûùçîïœæ]|\b(pourquoi|comment|quand|dans|avec|pour|sens|mal|sans|raison|le|la|les|un|une|des|du|qui|que)\b/i.test(videoTitle);
-      const isSpanish = /[áéíóúüñ¿¡]|\b(por qué|como|cuando|en|con|para|el|la|los|las|un|una|del)\b/i.test(videoTitle);
-      const isGerman = /[äöüß]|\b(warum|wie|wenn|in|mit|für|der|die|das|ein|eine|des|dem|den)\b/i.test(videoTitle);
+      const isFrench = /[éèêëàâôûùçîïœæ]|\b(french|français|paris|pourquoi|comment|quand|dans|avec|pour|sens|mal|sans|raison|le|la|les|un|une|des|du|qui|que)\b/i.test(videoTitle);
+      const isSpanish = /[áéíóúüñ¿¡]|\b(spanish|español|por qué|como|cuando|en|con|para|el|la|los|las|un|une|del)\b/i.test(videoTitle);
+      const isGerman = /[äöüß]|\b(german|deutsch|warum|wie|wenn|in|mit|für|der|die|das|ein|eine|des|dem|den)\b/i.test(videoTitle);
 
       const titleLang = isArabic ? 'ar' : isFrench ? 'fr' : isSpanish ? 'es' : isGerman ? 'de' : null;
       if (titleLang) {

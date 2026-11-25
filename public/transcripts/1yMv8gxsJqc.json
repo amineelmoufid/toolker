@@ -1,0 +1,3360 @@
+{
+  "ok": true,
+  "videoId": "1yMv8gxsJqc",
+  "title": "A Summer Day in Paris 🇫🇷 French Vlog with Subtitles",
+  "language": "fr",
+  "trackKind": "asr",
+  "subtitles": [
+    {
+      "id": "cue-1",
+      "start": 4.24,
+      "end": 8.4,
+      "text": "Bonjour et bienvenue à Paris.",
+      "words": [
+        {
+          "text": "Bonjour",
+          "start": 4.24,
+          "end": 5.32
+        },
+        {
+          "text": "et",
+          "start": 5.32,
+          "end": 5.68
+        },
+        {
+          "text": "bienvenue",
+          "start": 5.68,
+          "end": 6.8
+        },
+        {
+          "text": "à",
+          "start": 6.8,
+          "end": 7.52
+        },
+        {
+          "text": "Paris.",
+          "start": 7.52,
+          "end": 8.4
+        }
+      ]
+    },
+    {
+      "id": "cue-2",
+      "start": 8.4,
+      "end": 13.36,
+      "text": "Aujourd'hui, c'est la journée des premières fois.",
+      "words": [
+        {
+          "text": "Aujourd'hui,",
+          "start": 8.4,
+          "end": 9.44
+        },
+        {
+          "text": "c'est",
+          "start": 9.44,
+          "end": 10.2
+        },
+        {
+          "text": "la",
+          "start": 10.2,
+          "end": 10.4
+        },
+        {
+          "text": "journée",
+          "start": 10.4,
+          "end": 11.28
+        },
+        {
+          "text": "des",
+          "start": 11.28,
+          "end": 11.56
+        },
+        {
+          "text": "premières",
+          "start": 11.56,
+          "end": 12.16
+        },
+        {
+          "text": "fois.",
+          "start": 12.16,
+          "end": 13.36
+        }
+      ]
+    },
+    {
+      "id": "cue-3",
+      "start": 13.52,
+      "end": 19.8,
+      "text": "Donc, c'est la première fois que je filme un vlog en extérieur.",
+      "words": [
+        {
+          "text": "Donc,",
+          "start": 13.52,
+          "end": 14.0
+        },
+        {
+          "text": "c'est",
+          "start": 14.0,
+          "end": 14.48
+        },
+        {
+          "text": "la",
+          "start": 14.48,
+          "end": 14.68
+        },
+        {
+          "text": "première",
+          "start": 14.68,
+          "end": 15.28
+        },
+        {
+          "text": "fois",
+          "start": 15.28,
+          "end": 15.8
+        },
+        {
+          "text": "que",
+          "start": 15.8,
+          "end": 16.32
+        },
+        {
+          "text": "je",
+          "start": 16.32,
+          "end": 16.56
+        },
+        {
+          "text": "filme",
+          "start": 16.56,
+          "end": 17.24
+        },
+        {
+          "text": "un",
+          "start": 17.24,
+          "end": 17.6
+        },
+        {
+          "text": "vlog",
+          "start": 17.6,
+          "end": 18.44
+        },
+        {
+          "text": "en",
+          "start": 18.44,
+          "end": 18.6
+        },
+        {
+          "text": "extérieur.",
+          "start": 18.6,
+          "end": 19.8
+        }
+      ]
+    },
+    {
+      "id": "cue-4",
+      "start": 20.36,
+      "end": 28.2,
+      "text": "Et ce matin, c'était la première fois que j'avais un shooting photo.",
+      "words": [
+        {
+          "text": "Et",
+          "start": 20.36,
+          "end": 20.88
+        },
+        {
+          "text": "ce",
+          "start": 20.88,
+          "end": 21.2
+        },
+        {
+          "text": "matin,",
+          "start": 21.2,
+          "end": 22.12
+        },
+        {
+          "text": "c'était",
+          "start": 22.12,
+          "end": 22.92
+        },
+        {
+          "text": "la",
+          "start": 22.92,
+          "end": 23.12
+        },
+        {
+          "text": "première",
+          "start": 23.12,
+          "end": 23.72
+        },
+        {
+          "text": "fois",
+          "start": 23.72,
+          "end": 24.72
+        },
+        {
+          "text": "que",
+          "start": 24.72,
+          "end": 25.2
+        },
+        {
+          "text": "j'avais",
+          "start": 25.2,
+          "end": 26.0
+        },
+        {
+          "text": "un",
+          "start": 26.0,
+          "end": 26.44
+        },
+        {
+          "text": "shooting",
+          "start": 26.44,
+          "end": 27.0
+        },
+        {
+          "text": "photo.",
+          "start": 27.0,
+          "end": 28.2
+        }
+      ]
+    },
+    {
+      "id": "cue-5",
+      "start": 28.4,
+      "end": 30.88,
+      "text": "Ça s'est super bien passé.",
+      "words": [
+        {
+          "text": "Ça",
+          "start": 28.4,
+          "end": 28.56
+        },
+        {
+          "text": "s'est",
+          "start": 28.56,
+          "end": 29.04
+        },
+        {
+          "text": "super",
+          "start": 29.04,
+          "end": 29.56
+        },
+        {
+          "text": "bien",
+          "start": 29.56,
+          "end": 29.76
+        },
+        {
+          "text": "passé.",
+          "start": 29.76,
+          "end": 30.88
+        }
+      ]
+    },
+    {
+      "id": "cue-6",
+      "start": 30.88,
+      "end": 34.28,
+      "text": "Mais donc voilà, c'est la journée des nouveautés.",
+      "words": [
+        {
+          "text": "Mais",
+          "start": 30.88,
+          "end": 31.0
+        },
+        {
+          "text": "donc",
+          "start": 31.0,
+          "end": 31.2
+        },
+        {
+          "text": "voilà,",
+          "start": 31.2,
+          "end": 31.88
+        },
+        {
+          "text": "c'est",
+          "start": 31.88,
+          "end": 32.4
+        },
+        {
+          "text": "la",
+          "start": 32.4,
+          "end": 32.6
+        },
+        {
+          "text": "journée",
+          "start": 32.6,
+          "end": 33.36
+        },
+        {
+          "text": "des",
+          "start": 33.36,
+          "end": 33.52
+        },
+        {
+          "text": "nouveautés.",
+          "start": 33.52,
+          "end": 34.28
+        }
+      ]
+    },
+    {
+      "id": "cue-7",
+      "start": 34.28,
+      "end": 42.92,
+      "text": "Là, je vais retrouver une amie que j'ai rencontrée aux Pays-Bas.",
+      "words": [
+        {
+          "text": "Là,",
+          "start": 34.28,
+          "end": 34.88
+        },
+        {
+          "text": "je",
+          "start": 34.88,
+          "end": 35.2
+        },
+        {
+          "text": "vais",
+          "start": 35.2,
+          "end": 35.76
+        },
+        {
+          "text": "retrouver",
+          "start": 35.76,
+          "end": 36.96
+        },
+        {
+          "text": "une",
+          "start": 37.16,
+          "end": 37.68
+        },
+        {
+          "text": "amie",
+          "start": 37.68,
+          "end": 38.88
+        },
+        {
+          "text": "que",
+          "start": 39.24,
+          "end": 39.48
+        },
+        {
+          "text": "j'ai",
+          "start": 39.48,
+          "end": 40.12
+        },
+        {
+          "text": "rencontrée",
+          "start": 40.12,
+          "end": 41.24
+        },
+        {
+          "text": "aux",
+          "start": 41.24,
+          "end": 41.72
+        },
+        {
+          "text": "Pays-Bas.",
+          "start": 41.72,
+          "end": 42.92
+        }
+      ]
+    },
+    {
+      "id": "cue-8",
+      "start": 43.28,
+      "end": 45.88,
+      "text": "Et elle vient d'avoir un bébé.",
+      "words": [
+        {
+          "text": "Et",
+          "start": 43.28,
+          "end": 43.44
+        },
+        {
+          "text": "elle",
+          "start": 43.44,
+          "end": 43.6
+        },
+        {
+          "text": "vient",
+          "start": 43.6,
+          "end": 43.84
+        },
+        {
+          "text": "d'avoir",
+          "start": 43.84,
+          "end": 44.56
+        },
+        {
+          "text": "un",
+          "start": 44.56,
+          "end": 44.8
+        },
+        {
+          "text": "bébé.",
+          "start": 44.8,
+          "end": 45.88
+        }
+      ]
+    },
+    {
+      "id": "cue-9",
+      "start": 45.88,
+      "end": 49.2,
+      "text": "Donc, aujourd'hui, c'est la première fois.",
+      "words": [
+        {
+          "text": "Donc,",
+          "start": 45.88,
+          "end": 46.84
+        },
+        {
+          "text": "aujourd'hui,",
+          "start": 46.84,
+          "end": 47.8
+        },
+        {
+          "text": "c'est",
+          "start": 47.8,
+          "end": 48.36
+        },
+        {
+          "text": "la",
+          "start": 48.36,
+          "end": 48.56
+        },
+        {
+          "text": "première",
+          "start": 48.56,
+          "end": 48.96
+        },
+        {
+          "text": "fois.",
+          "start": 48.96,
+          "end": 49.2
+        }
+      ]
+    },
+    {
+      "id": "cue-10",
+      "start": 49.2,
+      "end": 52.0,
+      "text": "Bon ben voilà, une troisième première fois.",
+      "words": [
+        {
+          "text": "Bon",
+          "start": 49.2,
+          "end": 49.36
+        },
+        {
+          "text": "ben",
+          "start": 49.36,
+          "end": 49.48
+        },
+        {
+          "text": "voilà,",
+          "start": 49.48,
+          "end": 49.84
+        },
+        {
+          "text": "une",
+          "start": 49.84,
+          "end": 50.08
+        },
+        {
+          "text": "troisième",
+          "start": 50.08,
+          "end": 50.64
+        },
+        {
+          "text": "première",
+          "start": 50.64,
+          "end": 51.04
+        },
+        {
+          "text": "fois.",
+          "start": 51.04,
+          "end": 52.0
+        }
+      ]
+    },
+    {
+      "id": "cue-11",
+      "start": 52.0,
+      "end": 58.68,
+      "text": "C'est la première fois que je vois, que je rencontre son bébé.",
+      "words": [
+        {
+          "text": "C'est",
+          "start": 52.0,
+          "end": 52.24
+        },
+        {
+          "text": "la",
+          "start": 52.24,
+          "end": 52.44
+        },
+        {
+          "text": "première",
+          "start": 52.44,
+          "end": 52.96
+        },
+        {
+          "text": "fois",
+          "start": 52.96,
+          "end": 53.88
+        },
+        {
+          "text": "que",
+          "start": 53.88,
+          "end": 54.52
+        },
+        {
+          "text": "je",
+          "start": 54.52,
+          "end": 55.52
+        },
+        {
+          "text": "vois,",
+          "start": 55.52,
+          "end": 56.04
+        },
+        {
+          "text": "que",
+          "start": 56.04,
+          "end": 56.16
+        },
+        {
+          "text": "je",
+          "start": 56.16,
+          "end": 56.36
+        },
+        {
+          "text": "rencontre",
+          "start": 56.36,
+          "end": 57.56
+        },
+        {
+          "text": "son",
+          "start": 57.6,
+          "end": 57.76
+        },
+        {
+          "text": "bébé.",
+          "start": 57.76,
+          "end": 58.68
+        }
+      ]
+    },
+    {
+      "id": "cue-12",
+      "start": 58.68,
+      "end": 61.0,
+      "text": "J'ai trop hâte.",
+      "words": [
+        {
+          "text": "J'ai",
+          "start": 58.68,
+          "end": 59.44
+        },
+        {
+          "text": "trop",
+          "start": 59.44,
+          "end": 59.8
+        },
+        {
+          "text": "hâte.",
+          "start": 59.8,
+          "end": 61.0
+        }
+      ]
+    },
+    {
+      "id": "cue-13",
+      "start": 106.88,
+      "end": 115.32,
+      "text": "Ah oui, et j'ai oublié de préciser qu'il fait une chaleur monstre, mais monstre.",
+      "words": [
+        {
+          "text": "Ah",
+          "start": 106.88,
+          "end": 107.0
+        },
+        {
+          "text": "oui,",
+          "start": 107.0,
+          "end": 107.4
+        },
+        {
+          "text": "et",
+          "start": 107.4,
+          "end": 108.04
+        },
+        {
+          "text": "j'ai",
+          "start": 108.04,
+          "end": 108.48
+        },
+        {
+          "text": "oublié",
+          "start": 108.48,
+          "end": 109.28
+        },
+        {
+          "text": "de",
+          "start": 109.28,
+          "end": 109.4
+        },
+        {
+          "text": "préciser",
+          "start": 109.4,
+          "end": 110.6
+        },
+        {
+          "text": "qu'il",
+          "start": 110.72,
+          "end": 110.92
+        },
+        {
+          "text": "fait",
+          "start": 110.92,
+          "end": 111.4
+        },
+        {
+          "text": "une",
+          "start": 111.4,
+          "end": 111.84
+        },
+        {
+          "text": "chaleur",
+          "start": 111.84,
+          "end": 112.72
+        },
+        {
+          "text": "monstre,",
+          "start": 112.72,
+          "end": 113.64
+        },
+        {
+          "text": "mais",
+          "start": 113.64,
+          "end": 114.12
+        },
+        {
+          "text": "monstre.",
+          "start": 114.12,
+          "end": 115.32
+        }
+      ]
+    },
+    {
+      "id": "cue-14",
+      "start": 115.64,
+      "end": 121.44,
+      "text": "Euh, c'est-à-dire qu'il fait très Il fait 40 degrés.",
+      "words": [
+        {
+          "text": "Euh,",
+          "start": 115.64,
+          "end": 115.84
+        },
+        {
+          "text": "c'est-à-dire",
+          "start": 115.84,
+          "end": 116.32
+        },
+        {
+          "text": "qu'il",
+          "start": 116.32,
+          "end": 116.56
+        },
+        {
+          "text": "fait",
+          "start": 116.56,
+          "end": 116.84
+        },
+        {
+          "text": "très",
+          "start": 116.84,
+          "end": 118.04
+        },
+        {
+          "text": "Il",
+          "start": 118.2,
+          "end": 118.4
+        },
+        {
+          "text": "fait",
+          "start": 118.4,
+          "end": 119.6
+        },
+        {
+          "text": "40",
+          "start": 119.72,
+          "end": 120.24
+        },
+        {
+          "text": "degrés.",
+          "start": 120.24,
+          "end": 121.44
+        }
+      ]
+    },
+    {
+      "id": "cue-15",
+      "start": 121.48,
+      "end": 130.64,
+      "text": "Et déjà ce matin à 7h30 quand j'ai commencé le shooting photo, il faisait 30 degrés.",
+      "words": [
+        {
+          "text": "Et",
+          "start": 121.48,
+          "end": 121.64
+        },
+        {
+          "text": "déjà",
+          "start": 121.64,
+          "end": 122.24
+        },
+        {
+          "text": "ce",
+          "start": 122.24,
+          "end": 122.4
+        },
+        {
+          "text": "matin",
+          "start": 122.4,
+          "end": 123.28
+        },
+        {
+          "text": "à",
+          "start": 123.28,
+          "end": 124.28
+        },
+        {
+          "text": "7h30",
+          "start": 124.28,
+          "end": 125.48
+        },
+        {
+          "text": "quand",
+          "start": 126.12,
+          "end": 126.2
+        },
+        {
+          "text": "j'ai",
+          "start": 126.2,
+          "end": 126.36
+        },
+        {
+          "text": "commencé",
+          "start": 126.36,
+          "end": 127.32
+        },
+        {
+          "text": "le",
+          "start": 127.32,
+          "end": 127.48
+        },
+        {
+          "text": "shooting",
+          "start": 127.48,
+          "end": 127.88
+        },
+        {
+          "text": "photo,",
+          "start": 127.88,
+          "end": 128.84
+        },
+        {
+          "text": "il",
+          "start": 128.84,
+          "end": 128.96
+        },
+        {
+          "text": "faisait",
+          "start": 128.96,
+          "end": 129.4
+        },
+        {
+          "text": "30",
+          "start": 129.4,
+          "end": 130.12
+        },
+        {
+          "text": "degrés.",
+          "start": 130.12,
+          "end": 130.64
+        }
+      ]
+    },
+    {
+      "id": "cue-16",
+      "start": 130.64,
+      "end": 138.28,
+      "text": "Donc c'est étouffant vraiment la la chaleur l'air est étouffant.",
+      "words": [
+        {
+          "text": "Donc",
+          "start": 130.64,
+          "end": 131.84
+        },
+        {
+          "text": "c'est",
+          "start": 132.32,
+          "end": 133.04
+        },
+        {
+          "text": "étouffant",
+          "start": 133.04,
+          "end": 133.92
+        },
+        {
+          "text": "vraiment",
+          "start": 133.92,
+          "end": 134.28
+        },
+        {
+          "text": "la",
+          "start": 134.28,
+          "end": 134.92
+        },
+        {
+          "text": "la",
+          "start": 134.92,
+          "end": 135.08
+        },
+        {
+          "text": "chaleur",
+          "start": 135.08,
+          "end": 136.0
+        },
+        {
+          "text": "l'air",
+          "start": 136.0,
+          "end": 136.64
+        },
+        {
+          "text": "est",
+          "start": 136.64,
+          "end": 137.08
+        },
+        {
+          "text": "étouffant.",
+          "start": 137.08,
+          "end": 138.28
+        }
+      ]
+    },
+    {
+      "id": "cue-17",
+      "start": 138.4,
+      "end": 152.6,
+      "text": "Donc cet après-midi, je vais essayer de euh rester à l'intérieur au maximum dans des cafés, dans des musées.",
+      "words": [
+        {
+          "text": "Donc",
+          "start": 138.4,
+          "end": 139.08
+        },
+        {
+          "text": "cet",
+          "start": 139.08,
+          "end": 139.32
+        },
+        {
+          "text": "après-midi,",
+          "start": 139.32,
+          "end": 140.0
+        },
+        {
+          "text": "je",
+          "start": 140.0,
+          "end": 140.2
+        },
+        {
+          "text": "vais",
+          "start": 140.2,
+          "end": 140.48
+        },
+        {
+          "text": "essayer",
+          "start": 140.48,
+          "end": 141.68
+        },
+        {
+          "text": "de",
+          "start": 142.04,
+          "end": 142.88
+        },
+        {
+          "text": "euh",
+          "start": 142.88,
+          "end": 143.6
+        },
+        {
+          "text": "rester",
+          "start": 143.6,
+          "end": 144.8
+        },
+        {
+          "text": "à",
+          "start": 145.2,
+          "end": 146.4
+        },
+        {
+          "text": "l'intérieur",
+          "start": 146.4,
+          "end": 147.52
+        },
+        {
+          "text": "au",
+          "start": 147.52,
+          "end": 147.64
+        },
+        {
+          "text": "maximum",
+          "start": 147.64,
+          "end": 148.84
+        },
+        {
+          "text": "dans",
+          "start": 149.04,
+          "end": 149.52
+        },
+        {
+          "text": "des",
+          "start": 149.52,
+          "end": 149.72
+        },
+        {
+          "text": "cafés,",
+          "start": 149.72,
+          "end": 150.76
+        },
+        {
+          "text": "dans",
+          "start": 150.76,
+          "end": 151.24
+        },
+        {
+          "text": "des",
+          "start": 151.24,
+          "end": 151.4
+        },
+        {
+          "text": "musées.",
+          "start": 151.4,
+          "end": 152.6
+        }
+      ]
+    },
+    {
+      "id": "cue-18",
+      "start": 153.04,
+      "end": 158.56,
+      "text": "Voilà, parce que à l'extérieur c'est euh c'est invivable.",
+      "words": [
+        {
+          "text": "Voilà,",
+          "start": 153.04,
+          "end": 153.52
+        },
+        {
+          "text": "parce",
+          "start": 153.52,
+          "end": 153.8
+        },
+        {
+          "text": "que",
+          "start": 153.8,
+          "end": 153.96
+        },
+        {
+          "text": "à",
+          "start": 153.96,
+          "end": 154.0
+        },
+        {
+          "text": "l'extérieur",
+          "start": 154.0,
+          "end": 154.92
+        },
+        {
+          "text": "c'est",
+          "start": 154.92,
+          "end": 155.36
+        },
+        {
+          "text": "euh",
+          "start": 155.36,
+          "end": 156.56
+        },
+        {
+          "text": "c'est",
+          "start": 157.0,
+          "end": 157.36
+        },
+        {
+          "text": "invivable.",
+          "start": 157.36,
+          "end": 158.56
+        }
+      ]
+    },
+    {
+      "id": "cue-19",
+      "start": 161.68,
+      "end": 162.8,
+      "text": "Oui.",
+      "words": [
+        {
+          "text": "Oui.",
+          "start": 161.68,
+          "end": 162.8
+        }
+      ]
+    },
+    {
+      "id": "cue-20",
+      "start": 162.8,
+      "end": 164.56,
+      "text": "Est-ce que tu m'as donné le code ou ?",
+      "words": [
+        {
+          "text": "Est-ce",
+          "start": 162.8,
+          "end": 162.92
+        },
+        {
+          "text": "que",
+          "start": 162.92,
+          "end": 163.04
+        },
+        {
+          "text": "tu",
+          "start": 163.04,
+          "end": 163.16
+        },
+        {
+          "text": "m'as",
+          "start": 163.16,
+          "end": 163.28
+        },
+        {
+          "text": "donné",
+          "start": 163.28,
+          "end": 163.52
+        },
+        {
+          "text": "le",
+          "start": 163.52,
+          "end": 163.64
+        },
+        {
+          "text": "code",
+          "start": 163.64,
+          "end": 163.88
+        },
+        {
+          "text": "ou",
+          "start": 163.88,
+          "end": 163.92
+        },
+        {
+          "text": "?",
+          "start": 163.92,
+          "end": 164.56
+        }
+      ]
+    },
+    {
+      "id": "cue-21",
+      "start": 164.56,
+      "end": 166.2,
+      "text": "Parce que je suis là.",
+      "words": [
+        {
+          "text": "Parce",
+          "start": 164.56,
+          "end": 164.64
+        },
+        {
+          "text": "que",
+          "start": 164.64,
+          "end": 164.76
+        },
+        {
+          "text": "je",
+          "start": 164.76,
+          "end": 164.84
+        },
+        {
+          "text": "suis",
+          "start": 164.84,
+          "end": 165.0
+        },
+        {
+          "text": "là.",
+          "start": 165.0,
+          "end": 166.2
+        }
+      ]
+    },
+    {
+      "id": "cue-22",
+      "start": 167.0,
+      "end": 168.2,
+      "text": "!",
+      "words": [
+        {
+          "text": "!",
+          "start": 167.0,
+          "end": 168.2
+        }
+      ]
+    },
+    {
+      "id": "cue-23",
+      "start": 168.2,
+      "end": 169.0,
+      "text": "!",
+      "words": [
+        {
+          "text": "!",
+          "start": 168.2,
+          "end": 169.0
+        }
+      ]
+    },
+    {
+      "id": "cue-24",
+      "start": 169.0,
+      "end": 169.64,
+      "text": "Ça ?",
+      "words": [
+        {
+          "text": "Ça",
+          "start": 169.0,
+          "end": 169.12
+        },
+        {
+          "text": "?",
+          "start": 169.12,
+          "end": 169.64
+        }
+      ]
+    },
+    {
+      "id": "cue-25",
+      "start": 169.64,
+      "end": 170.36,
+      "text": "Ça va et ?",
+      "words": [
+        {
+          "text": "Ça",
+          "start": 169.64,
+          "end": 169.72
+        },
+        {
+          "text": "va",
+          "start": 169.72,
+          "end": 169.84
+        },
+        {
+          "text": "et",
+          "start": 169.84,
+          "end": 169.92
+        },
+        {
+          "text": "?",
+          "start": 169.92,
+          "end": 170.36
+        }
+      ]
+    },
+    {
+      "id": "cue-26",
+      "start": 170.36,
+      "end": 171.16,
+      "text": "Oui.",
+      "words": [
+        {
+          "text": "Oui.",
+          "start": 170.36,
+          "end": 171.16
+        }
+      ]
+    },
+    {
+      "id": "cue-27",
+      "start": 171.16,
+      "end": 171.68,
+      "text": "J'ai chaud.",
+      "words": [
+        {
+          "text": "J'ai",
+          "start": 171.16,
+          "end": 171.32
+        },
+        {
+          "text": "chaud.",
+          "start": 171.32,
+          "end": 171.68
+        }
+      ]
+    },
+    {
+      "id": "cue-28",
+      "start": 171.68,
+      "end": 174.4,
+      "text": "Désolée hein, je suis vachement en retard.",
+      "words": [
+        {
+          "text": "Désolée",
+          "start": 171.68,
+          "end": 172.04
+        },
+        {
+          "text": "hein,",
+          "start": 172.04,
+          "end": 172.16
+        },
+        {
+          "text": "je",
+          "start": 172.16,
+          "end": 172.28
+        },
+        {
+          "text": "suis",
+          "start": 172.28,
+          "end": 172.76
+        },
+        {
+          "text": "vachement",
+          "start": 172.76,
+          "end": 173.12
+        },
+        {
+          "text": "en",
+          "start": 173.12,
+          "end": 173.2
+        },
+        {
+          "text": "retard.",
+          "start": 173.2,
+          "end": 174.4
+        }
+      ]
+    },
+    {
+      "id": "cue-29",
+      "start": 188.24,
+      "end": 202.84,
+      "text": "Bon du coup, c'était très sympa avec ma copine et maintenant je vais rejoindre une autre copine aussi une copine que j'ai rencontrée aux Pays-Bas.",
+      "words": [
+        {
+          "text": "Bon",
+          "start": 188.24,
+          "end": 188.4
+        },
+        {
+          "text": "du",
+          "start": 188.4,
+          "end": 188.56
+        },
+        {
+          "text": "coup,",
+          "start": 188.56,
+          "end": 188.96
+        },
+        {
+          "text": "c'était",
+          "start": 188.96,
+          "end": 190.08
+        },
+        {
+          "text": "très",
+          "start": 190.08,
+          "end": 190.4
+        },
+        {
+          "text": "sympa",
+          "start": 190.4,
+          "end": 190.92
+        },
+        {
+          "text": "avec",
+          "start": 190.92,
+          "end": 191.16
+        },
+        {
+          "text": "ma",
+          "start": 191.16,
+          "end": 191.32
+        },
+        {
+          "text": "copine",
+          "start": 191.32,
+          "end": 192.32
+        },
+        {
+          "text": "et",
+          "start": 192.32,
+          "end": 192.8
+        },
+        {
+          "text": "maintenant",
+          "start": 192.8,
+          "end": 194.0
+        },
+        {
+          "text": "je",
+          "start": 194.92,
+          "end": 195.24
+        },
+        {
+          "text": "vais",
+          "start": 195.24,
+          "end": 195.48
+        },
+        {
+          "text": "rejoindre",
+          "start": 195.48,
+          "end": 196.68
+        },
+        {
+          "text": "une",
+          "start": 196.8,
+          "end": 197.36
+        },
+        {
+          "text": "autre",
+          "start": 197.36,
+          "end": 197.68
+        },
+        {
+          "text": "copine",
+          "start": 197.68,
+          "end": 198.88
+        },
+        {
+          "text": "aussi",
+          "start": 199.08,
+          "end": 199.64
+        },
+        {
+          "text": "une",
+          "start": 199.64,
+          "end": 199.76
+        },
+        {
+          "text": "copine",
+          "start": 199.76,
+          "end": 200.12
+        },
+        {
+          "text": "que",
+          "start": 200.12,
+          "end": 200.24
+        },
+        {
+          "text": "j'ai",
+          "start": 200.24,
+          "end": 200.36
+        },
+        {
+          "text": "rencontrée",
+          "start": 200.36,
+          "end": 201.52
+        },
+        {
+          "text": "aux",
+          "start": 201.52,
+          "end": 201.64
+        },
+        {
+          "text": "Pays-Bas.",
+          "start": 201.64,
+          "end": 202.84
+        }
+      ]
+    },
+    {
+      "id": "cue-30",
+      "start": 203.6,
+      "end": 215.76,
+      "text": "Mais j'ai loupé ma station de métro donc je vais marcher euh je sais pas, 10 minutes au lieu de 5, mais bon.",
+      "words": [
+        {
+          "text": "Mais",
+          "start": 203.6,
+          "end": 204.0
+        },
+        {
+          "text": "j'ai",
+          "start": 204.0,
+          "end": 204.56
+        },
+        {
+          "text": "loupé",
+          "start": 204.56,
+          "end": 205.72
+        },
+        {
+          "text": "ma",
+          "start": 205.72,
+          "end": 205.96
+        },
+        {
+          "text": "station",
+          "start": 205.96,
+          "end": 206.6
+        },
+        {
+          "text": "de",
+          "start": 206.6,
+          "end": 206.96
+        },
+        {
+          "text": "métro",
+          "start": 206.96,
+          "end": 207.52
+        },
+        {
+          "text": "donc",
+          "start": 207.52,
+          "end": 208.72
+        },
+        {
+          "text": "je",
+          "start": 209.24,
+          "end": 209.48
+        },
+        {
+          "text": "vais",
+          "start": 209.48,
+          "end": 209.64
+        },
+        {
+          "text": "marcher",
+          "start": 209.64,
+          "end": 210.6
+        },
+        {
+          "text": "euh",
+          "start": 210.6,
+          "end": 211.8
+        },
+        {
+          "text": "je",
+          "start": 211.84,
+          "end": 211.92
+        },
+        {
+          "text": "sais",
+          "start": 211.92,
+          "end": 212.08
+        },
+        {
+          "text": "pas,",
+          "start": 212.08,
+          "end": 212.36
+        },
+        {
+          "text": "10",
+          "start": 212.36,
+          "end": 212.56
+        },
+        {
+          "text": "minutes",
+          "start": 212.56,
+          "end": 212.96
+        },
+        {
+          "text": "au",
+          "start": 212.96,
+          "end": 213.04
+        },
+        {
+          "text": "lieu",
+          "start": 213.04,
+          "end": 213.24
+        },
+        {
+          "text": "de",
+          "start": 213.24,
+          "end": 213.76
+        },
+        {
+          "text": "5,",
+          "start": 213.76,
+          "end": 214.4
+        },
+        {
+          "text": "mais",
+          "start": 214.4,
+          "end": 214.56
+        },
+        {
+          "text": "bon.",
+          "start": 214.56,
+          "end": 215.76
+        }
+      ]
+    },
+    {
+      "id": "cue-31",
+      "start": 228.36,
+      "end": 237.88,
+      "text": "On va aller à Bourse de Commerce qui est un musée d'art contemporain à Paris, que euh je n'ai jamais fait.",
+      "words": [
+        {
+          "text": "On",
+          "start": 228.36,
+          "end": 228.6
+        },
+        {
+          "text": "va",
+          "start": 228.6,
+          "end": 229.0
+        },
+        {
+          "text": "aller",
+          "start": 229.0,
+          "end": 229.64
+        },
+        {
+          "text": "à",
+          "start": 229.64,
+          "end": 230.12
+        },
+        {
+          "text": "Bourse",
+          "start": 230.12,
+          "end": 230.6
+        },
+        {
+          "text": "de",
+          "start": 230.6,
+          "end": 230.8
+        },
+        {
+          "text": "Commerce",
+          "start": 230.8,
+          "end": 231.52
+        },
+        {
+          "text": "qui",
+          "start": 231.52,
+          "end": 231.88
+        },
+        {
+          "text": "est",
+          "start": 231.88,
+          "end": 232.2
+        },
+        {
+          "text": "un",
+          "start": 232.2,
+          "end": 232.4
+        },
+        {
+          "text": "musée",
+          "start": 232.4,
+          "end": 233.32
+        },
+        {
+          "text": "d'art",
+          "start": 233.32,
+          "end": 233.56
+        },
+        {
+          "text": "contemporain",
+          "start": 233.56,
+          "end": 234.32
+        },
+        {
+          "text": "à",
+          "start": 234.32,
+          "end": 234.44
+        },
+        {
+          "text": "Paris,",
+          "start": 234.44,
+          "end": 235.64
+        },
+        {
+          "text": "que",
+          "start": 235.92,
+          "end": 236.48
+        },
+        {
+          "text": "euh",
+          "start": 236.48,
+          "end": 236.52
+        },
+        {
+          "text": "je",
+          "start": 236.52,
+          "end": 236.68
+        },
+        {
+          "text": "n'ai",
+          "start": 236.68,
+          "end": 236.8
+        },
+        {
+          "text": "jamais",
+          "start": 236.8,
+          "end": 237.16
+        },
+        {
+          "text": "fait.",
+          "start": 237.16,
+          "end": 237.88
+        }
+      ]
+    },
+    {
+      "id": "cue-32",
+      "start": 237.88,
+      "end": 240.92,
+      "text": "Donc voilà, c'est juste pour essayer.",
+      "words": [
+        {
+          "text": "Donc",
+          "start": 237.88,
+          "end": 238.32
+        },
+        {
+          "text": "voilà,",
+          "start": 238.32,
+          "end": 238.68
+        },
+        {
+          "text": "c'est",
+          "start": 238.68,
+          "end": 238.84
+        },
+        {
+          "text": "juste",
+          "start": 238.84,
+          "end": 239.56
+        },
+        {
+          "text": "pour",
+          "start": 239.56,
+          "end": 239.72
+        },
+        {
+          "text": "essayer.",
+          "start": 239.72,
+          "end": 240.92
+        }
+      ]
+    },
+    {
+      "id": "cue-33",
+      "start": 252.24,
+      "end": 252.76,
+      "text": "Ça ?",
+      "words": [
+        {
+          "text": "Ça",
+          "start": 252.24,
+          "end": 252.44
+        },
+        {
+          "text": "?",
+          "start": 252.44,
+          "end": 252.76
+        }
+      ]
+    },
+    {
+      "id": "cue-34",
+      "start": 252.76,
+      "end": 254.4,
+      "text": "Ça fait trop longtemps.",
+      "words": [
+        {
+          "text": "Ça",
+          "start": 252.76,
+          "end": 252.88
+        },
+        {
+          "text": "fait",
+          "start": 252.88,
+          "end": 253.0
+        },
+        {
+          "text": "trop",
+          "start": 253.0,
+          "end": 253.6
+        },
+        {
+          "text": "longtemps.",
+          "start": 253.72,
+          "end": 254.4
+        }
+      ]
+    },
+    {
+      "id": "cue-35",
+      "start": 254.4,
+      "end": 255.68,
+      "text": "On est contentes.",
+      "words": [
+        {
+          "text": "On",
+          "start": 254.4,
+          "end": 254.44
+        },
+        {
+          "text": "est",
+          "start": 254.44,
+          "end": 254.48
+        },
+        {
+          "text": "contentes.",
+          "start": 254.48,
+          "end": 255.68
+        }
+      ]
+    },
+    {
+      "id": "cue-36",
+      "start": 256.56,
+      "end": 257.76,
+      "text": "Exotique.",
+      "words": [
+        {
+          "text": "Exotique.",
+          "start": 256.56,
+          "end": 257.76
+        }
+      ]
+    },
+    {
+      "id": "cue-37",
+      "start": 257.96,
+      "end": 260.16,
+      "text": "Moi, je vais prendre l'exotique mangue.",
+      "words": [
+        {
+          "text": "Moi,",
+          "start": 257.96,
+          "end": 258.08
+        },
+        {
+          "text": "je",
+          "start": 258.08,
+          "end": 258.16
+        },
+        {
+          "text": "vais",
+          "start": 258.16,
+          "end": 258.24
+        },
+        {
+          "text": "prendre",
+          "start": 258.24,
+          "end": 258.44
+        },
+        {
+          "text": "l'exotique",
+          "start": 258.44,
+          "end": 258.96
+        },
+        {
+          "text": "mangue.",
+          "start": 258.96,
+          "end": 260.16
+        }
+      ]
+    },
+    {
+      "id": "cue-38",
+      "start": 261.24,
+      "end": 262.2,
+      "text": "Oui.",
+      "words": [
+        {
+          "text": "Oui.",
+          "start": 261.24,
+          "end": 262.2
+        }
+      ]
+    },
+    {
+      "id": "cue-39",
+      "start": 262.2,
+      "end": 263.8,
+      "text": "Euh tu prends ?",
+      "words": [
+        {
+          "text": "Euh",
+          "start": 262.2,
+          "end": 262.88
+        },
+        {
+          "text": "tu",
+          "start": 262.88,
+          "end": 263.0
+        },
+        {
+          "text": "prends",
+          "start": 263.0,
+          "end": 263.16
+        },
+        {
+          "text": "?",
+          "start": 263.16,
+          "end": 263.8
+        }
+      ]
+    },
+    {
+      "id": "cue-40",
+      "start": 263.8,
+      "end": 265.68,
+      "text": "Moi, je vais vous prendre un exotique, s'il vous plaît.",
+      "words": [
+        {
+          "text": "Moi,",
+          "start": 263.8,
+          "end": 263.92
+        },
+        {
+          "text": "je",
+          "start": 263.92,
+          "end": 264.0
+        },
+        {
+          "text": "vais",
+          "start": 264.0,
+          "end": 264.08
+        },
+        {
+          "text": "vous",
+          "start": 264.08,
+          "end": 264.2
+        },
+        {
+          "text": "prendre",
+          "start": 264.2,
+          "end": 264.52
+        },
+        {
+          "text": "un",
+          "start": 264.52,
+          "end": 264.64
+        },
+        {
+          "text": "exotique,",
+          "start": 264.64,
+          "end": 265.12
+        },
+        {
+          "text": "s'il",
+          "start": 265.12,
+          "end": 265.2
+        },
+        {
+          "text": "vous",
+          "start": 265.2,
+          "end": 265.28
+        },
+        {
+          "text": "plaît.",
+          "start": 265.28,
+          "end": 265.68
+        }
+      ]
+    },
+    {
+      "id": "cue-41",
+      "start": 265.68,
+      "end": 266.56,
+      "text": "Un exotique.",
+      "words": [
+        {
+          "text": "Un",
+          "start": 265.68,
+          "end": 265.76
+        },
+        {
+          "text": "exotique.",
+          "start": 265.76,
+          "end": 266.56
+        }
+      ]
+    },
+    {
+      "id": "cue-42",
+      "start": 266.56,
+      "end": 269.48,
+      "text": "Et pour moi, une citronnade maison, s'il vous plaît.",
+      "words": [
+        {
+          "text": "Et",
+          "start": 266.56,
+          "end": 266.76
+        },
+        {
+          "text": "pour",
+          "start": 266.76,
+          "end": 266.92
+        },
+        {
+          "text": "moi,",
+          "start": 266.92,
+          "end": 267.04
+        },
+        {
+          "text": "une",
+          "start": 267.04,
+          "end": 267.4
+        },
+        {
+          "text": "citronnade",
+          "start": 267.4,
+          "end": 267.88
+        },
+        {
+          "text": "maison,",
+          "start": 267.88,
+          "end": 268.24
+        },
+        {
+          "text": "s'il",
+          "start": 268.24,
+          "end": 268.36
+        },
+        {
+          "text": "vous",
+          "start": 268.36,
+          "end": 268.48
+        },
+        {
+          "text": "plaît.",
+          "start": 268.48,
+          "end": 269.48
+        }
+      ]
+    },
+    {
+      "id": "cue-43",
+      "start": 269.48,
+      "end": 269.98,
+      "text": "Merci.",
+      "words": [
+        {
+          "text": "Merci.",
+          "start": 269.48,
+          "end": 269.92
+        }
+      ]
+    },
+    {
+      "id": "cue-44",
+      "start": 270.24,
+      "end": 272.76,
+      "text": "Et deux verres deux verres d'eau, s'il vous plaît.",
+      "words": [
+        {
+          "text": "Et",
+          "start": 270.24,
+          "end": 270.44
+        },
+        {
+          "text": "deux",
+          "start": 270.44,
+          "end": 270.6
+        },
+        {
+          "text": "verres",
+          "start": 270.6,
+          "end": 270.92
+        },
+        {
+          "text": "deux",
+          "start": 270.92,
+          "end": 271.04
+        },
+        {
+          "text": "verres",
+          "start": 271.04,
+          "end": 271.2
+        },
+        {
+          "text": "d'eau,",
+          "start": 271.2,
+          "end": 271.36
+        },
+        {
+          "text": "s'il",
+          "start": 271.36,
+          "end": 271.48
+        },
+        {
+          "text": "vous",
+          "start": 271.48,
+          "end": 271.56
+        },
+        {
+          "text": "plaît.",
+          "start": 271.56,
+          "end": 272.76
+        }
+      ]
+    },
+    {
+      "id": "cue-45",
+      "start": 272.96,
+      "end": 274.12,
+      "text": "Merci.",
+      "words": [
+        {
+          "text": "Merci.",
+          "start": 272.96,
+          "end": 274.12
+        }
+      ]
+    },
+    {
+      "id": "cue-46",
+      "start": 274.12,
+      "end": 275.32,
+      "text": "Merci.",
+      "words": [
+        {
+          "text": "Merci.",
+          "start": 274.12,
+          "end": 275.32
+        }
+      ]
+    },
+    {
+      "id": "cue-47",
+      "start": 275.76,
+      "end": 276.76,
+      "text": "Super, merci.",
+      "words": [
+        {
+          "text": "Super,",
+          "start": 275.76,
+          "end": 276.16
+        },
+        {
+          "text": "merci.",
+          "start": 276.16,
+          "end": 276.76
+        }
+      ]
+    },
+    {
+      "id": "cue-48",
+      "start": 278.64,
+      "end": 281.4,
+      "text": "Ils utilisent un autre outil là, qui pète un peu comme Canva.",
+      "words": [
+        {
+          "text": "Ils",
+          "start": 278.64,
+          "end": 278.72
+        },
+        {
+          "text": "utilisent",
+          "start": 278.72,
+          "end": 279.04
+        },
+        {
+          "text": "un",
+          "start": 279.04,
+          "end": 279.12
+        },
+        {
+          "text": "autre",
+          "start": 279.12,
+          "end": 279.32
+        },
+        {
+          "text": "outil",
+          "start": 279.32,
+          "end": 279.56
+        },
+        {
+          "text": "là,",
+          "start": 279.56,
+          "end": 279.68
+        },
+        {
+          "text": "qui",
+          "start": 279.68,
+          "end": 280.0
+        },
+        {
+          "text": "pète",
+          "start": 280.0,
+          "end": 280.24
+        },
+        {
+          "text": "un",
+          "start": 280.24,
+          "end": 280.28
+        },
+        {
+          "text": "peu",
+          "start": 280.28,
+          "end": 280.4
+        },
+        {
+          "text": "comme",
+          "start": 280.4,
+          "end": 280.56
+        },
+        {
+          "text": "Canva.",
+          "start": 280.56,
+          "end": 281.4
+        }
+      ]
+    },
+    {
+      "id": "cue-49",
+      "start": 281.4,
+      "end": 282.64,
+      "text": "Euh Product Designer, du coup.",
+      "words": [
+        {
+          "text": "Euh",
+          "start": 281.4,
+          "end": 281.56
+        },
+        {
+          "text": "Product",
+          "start": 281.56,
+          "end": 281.84
+        },
+        {
+          "text": "Designer,",
+          "start": 281.84,
+          "end": 282.24
+        },
+        {
+          "text": "du",
+          "start": 282.24,
+          "end": 282.32
+        },
+        {
+          "text": "coup.",
+          "start": 282.32,
+          "end": 282.64
+        }
+      ]
+    },
+    {
+      "id": "cue-50",
+      "start": 282.64,
+      "end": 283.24,
+      "text": "OK.",
+      "words": [
+        {
+          "text": "OK.",
+          "start": 282.64,
+          "end": 283.24
+        }
+      ]
+    },
+    {
+      "id": "cue-51",
+      "start": 283.24,
+      "end": 287.64,
+      "text": "Euh comment dire euh elle a changé de poste, mais tu sais, il y en a eu une.",
+      "words": [
+        {
+          "text": "Euh",
+          "start": 283.24,
+          "end": 284.28
+        },
+        {
+          "text": "comment",
+          "start": 284.28,
+          "end": 284.52
+        },
+        {
+          "text": "dire",
+          "start": 284.52,
+          "end": 284.96
+        },
+        {
+          "text": "euh",
+          "start": 284.96,
+          "end": 285.24
+        },
+        {
+          "text": "elle",
+          "start": 285.24,
+          "end": 285.32
+        },
+        {
+          "text": "a",
+          "start": 285.32,
+          "end": 285.4
+        },
+        {
+          "text": "changé",
+          "start": 285.4,
+          "end": 285.64
+        },
+        {
+          "text": "de",
+          "start": 285.64,
+          "end": 285.68
+        },
+        {
+          "text": "poste,",
+          "start": 285.68,
+          "end": 285.88
+        },
+        {
+          "text": "mais",
+          "start": 285.88,
+          "end": 285.96
+        },
+        {
+          "text": "tu",
+          "start": 285.96,
+          "end": 286.04
+        },
+        {
+          "text": "sais,",
+          "start": 286.04,
+          "end": 286.16
+        },
+        {
+          "text": "il",
+          "start": 286.16,
+          "end": 286.2
+        },
+        {
+          "text": "y",
+          "start": 286.2,
+          "end": 286.24
+        },
+        {
+          "text": "en",
+          "start": 286.24,
+          "end": 286.32
+        },
+        {
+          "text": "a",
+          "start": 286.32,
+          "end": 286.4
+        },
+        {
+          "text": "eu",
+          "start": 286.4,
+          "end": 286.44
+        },
+        {
+          "text": "une.",
+          "start": 286.44,
+          "end": 287.64
+        }
+      ]
+    },
+    {
+      "id": "cue-52",
+      "start": 293.08,
+      "end": 294.32,
+      "text": "C'est une glace.",
+      "words": [
+        {
+          "text": "C'est",
+          "start": 293.08,
+          "end": 293.2
+        },
+        {
+          "text": "une",
+          "start": 293.2,
+          "end": 293.48
+        },
+        {
+          "text": "glace.",
+          "start": 293.48,
+          "end": 294.32
+        }
+      ]
+    },
+    {
+      "id": "cue-53",
+      "start": 294.32,
+      "end": 299.32,
+      "text": "Il y a des morceaux de chocolat et des bouts de biscuits.",
+      "words": [
+        {
+          "text": "Il",
+          "start": 294.32,
+          "end": 294.4
+        },
+        {
+          "text": "y",
+          "start": 294.4,
+          "end": 294.44
+        },
+        {
+          "text": "a",
+          "start": 294.44,
+          "end": 294.48
+        },
+        {
+          "text": "des",
+          "start": 294.48,
+          "end": 294.6
+        },
+        {
+          "text": "morceaux",
+          "start": 294.6,
+          "end": 295.04
+        },
+        {
+          "text": "de",
+          "start": 295.04,
+          "end": 295.32
+        },
+        {
+          "text": "chocolat",
+          "start": 295.32,
+          "end": 296.52
+        },
+        {
+          "text": "et",
+          "start": 296.8,
+          "end": 297.0
+        },
+        {
+          "text": "des",
+          "start": 297.0,
+          "end": 297.44
+        },
+        {
+          "text": "bouts",
+          "start": 297.44,
+          "end": 297.72
+        },
+        {
+          "text": "de",
+          "start": 297.72,
+          "end": 298.12
+        },
+        {
+          "text": "biscuits.",
+          "start": 298.12,
+          "end": 299.32
+        }
+      ]
+    },
+    {
+      "id": "cue-54",
+      "start": 299.56,
+      "end": 302.4,
+      "text": "Ça fait penser un peu à de la stracciatella.",
+      "words": [
+        {
+          "text": "Ça",
+          "start": 299.56,
+          "end": 299.64
+        },
+        {
+          "text": "fait",
+          "start": 299.64,
+          "end": 299.8
+        },
+        {
+          "text": "penser",
+          "start": 299.8,
+          "end": 300.12
+        },
+        {
+          "text": "un",
+          "start": 300.12,
+          "end": 300.24
+        },
+        {
+          "text": "peu",
+          "start": 300.24,
+          "end": 300.52
+        },
+        {
+          "text": "à",
+          "start": 300.52,
+          "end": 300.68
+        },
+        {
+          "text": "de",
+          "start": 300.68,
+          "end": 300.84
+        },
+        {
+          "text": "la",
+          "start": 300.84,
+          "end": 301.2
+        },
+        {
+          "text": "stracciatella.",
+          "start": 301.2,
+          "end": 302.4
+        }
+      ]
+    },
+    {
+      "id": "cue-55",
+      "start": 306.8,
+      "end": 315.76,
+      "text": "Bon, finalement, pas de musée parce que euh la plupart des musées sont fermés le mardi à Paris.",
+      "words": [
+        {
+          "text": "Bon,",
+          "start": 306.8,
+          "end": 307.08
+        },
+        {
+          "text": "finalement,",
+          "start": 307.08,
+          "end": 308.28
+        },
+        {
+          "text": "pas",
+          "start": 308.44,
+          "end": 308.6
+        },
+        {
+          "text": "de",
+          "start": 308.6,
+          "end": 308.76
+        },
+        {
+          "text": "musée",
+          "start": 308.76,
+          "end": 309.6
+        },
+        {
+          "text": "parce",
+          "start": 309.6,
+          "end": 309.92
+        },
+        {
+          "text": "que",
+          "start": 309.92,
+          "end": 310.44
+        },
+        {
+          "text": "euh",
+          "start": 310.44,
+          "end": 311.0
+        },
+        {
+          "text": "la",
+          "start": 311.0,
+          "end": 311.16
+        },
+        {
+          "text": "plupart",
+          "start": 311.16,
+          "end": 311.6
+        },
+        {
+          "text": "des",
+          "start": 311.6,
+          "end": 311.76
+        },
+        {
+          "text": "musées",
+          "start": 311.76,
+          "end": 312.2
+        },
+        {
+          "text": "sont",
+          "start": 312.2,
+          "end": 312.44
+        },
+        {
+          "text": "fermés",
+          "start": 312.44,
+          "end": 313.64
+        },
+        {
+          "text": "le",
+          "start": 313.84,
+          "end": 313.92
+        },
+        {
+          "text": "mardi",
+          "start": 313.92,
+          "end": 314.44
+        },
+        {
+          "text": "à",
+          "start": 314.44,
+          "end": 314.56
+        },
+        {
+          "text": "Paris.",
+          "start": 314.56,
+          "end": 315.76
+        }
+      ]
+    },
+    {
+      "id": "cue-56",
+      "start": 316.12,
+      "end": 317.32,
+      "text": "Je ne savais pas.",
+      "words": [
+        {
+          "text": "Je",
+          "start": 316.12,
+          "end": 316.48
+        },
+        {
+          "text": "ne",
+          "start": 316.48,
+          "end": 316.64
+        },
+        {
+          "text": "savais",
+          "start": 316.64,
+          "end": 316.92
+        },
+        {
+          "text": "pas.",
+          "start": 316.92,
+          "end": 317.32
+        }
+      ]
+    },
+    {
+      "id": "cue-57",
+      "start": 317.32,
+      "end": 319.72,
+      "text": "Donc voilà, pas de musée aujourd'hui.",
+      "words": [
+        {
+          "text": "Donc",
+          "start": 317.32,
+          "end": 317.44
+        },
+        {
+          "text": "voilà,",
+          "start": 317.44,
+          "end": 317.76
+        },
+        {
+          "text": "pas",
+          "start": 317.76,
+          "end": 317.96
+        },
+        {
+          "text": "de",
+          "start": 317.96,
+          "end": 318.12
+        },
+        {
+          "text": "musée",
+          "start": 318.12,
+          "end": 318.52
+        },
+        {
+          "text": "aujourd'hui.",
+          "start": 318.52,
+          "end": 319.72
+        }
+      ]
+    },
+    {
+      "id": "cue-58",
+      "start": 320.0,
+      "end": 323.88,
+      "text": "Et là, ma mission, c'est de trouver un Vélib.",
+      "words": [
+        {
+          "text": "Et",
+          "start": 320.0,
+          "end": 320.08
+        },
+        {
+          "text": "là,",
+          "start": 320.08,
+          "end": 320.24
+        },
+        {
+          "text": "ma",
+          "start": 320.24,
+          "end": 320.4
+        },
+        {
+          "text": "mission,",
+          "start": 320.4,
+          "end": 321.48
+        },
+        {
+          "text": "c'est",
+          "start": 321.48,
+          "end": 321.6
+        },
+        {
+          "text": "de",
+          "start": 321.6,
+          "end": 321.76
+        },
+        {
+          "text": "trouver",
+          "start": 321.76,
+          "end": 322.4
+        },
+        {
+          "text": "un",
+          "start": 322.4,
+          "end": 322.68
+        },
+        {
+          "text": "Vélib.",
+          "start": 322.68,
+          "end": 323.88
+        }
+      ]
+    },
+    {
+      "id": "cue-59",
+      "start": 323.88,
+      "end": 335.32,
+      "text": "Un Vélib, ce sont les vélos en libre-service pour rentrer chez ma famille, chez qui je dors ce soir.",
+      "words": [
+        {
+          "text": "Un",
+          "start": 323.88,
+          "end": 324.12
+        },
+        {
+          "text": "Vélib,",
+          "start": 324.12,
+          "end": 324.64
+        },
+        {
+          "text": "ce",
+          "start": 324.64,
+          "end": 324.8
+        },
+        {
+          "text": "sont",
+          "start": 324.8,
+          "end": 325.08
+        },
+        {
+          "text": "les",
+          "start": 325.08,
+          "end": 326.0
+        },
+        {
+          "text": "vélos",
+          "start": 326.0,
+          "end": 326.56
+        },
+        {
+          "text": "en",
+          "start": 326.56,
+          "end": 326.92
+        },
+        {
+          "text": "libre-service",
+          "start": 326.92,
+          "end": 328.12
+        },
+        {
+          "text": "pour",
+          "start": 329.08,
+          "end": 329.52
+        },
+        {
+          "text": "rentrer",
+          "start": 329.52,
+          "end": 330.68
+        },
+        {
+          "text": "chez",
+          "start": 330.68,
+          "end": 331.56
+        },
+        {
+          "text": "ma",
+          "start": 331.56,
+          "end": 331.8
+        },
+        {
+          "text": "famille,",
+          "start": 331.8,
+          "end": 333.0
+        },
+        {
+          "text": "chez",
+          "start": 333.2,
+          "end": 333.4
+        },
+        {
+          "text": "qui",
+          "start": 333.4,
+          "end": 333.56
+        },
+        {
+          "text": "je",
+          "start": 333.56,
+          "end": 333.68
+        },
+        {
+          "text": "dors",
+          "start": 333.68,
+          "end": 333.96
+        },
+        {
+          "text": "ce",
+          "start": 333.96,
+          "end": 334.12
+        },
+        {
+          "text": "soir.",
+          "start": 334.12,
+          "end": 335.32
+        }
+      ]
+    },
+    {
+      "id": "cue-60",
+      "start": 335.36,
+      "end": 344.76,
+      "text": "Donc là, je suis avec mon téléphone pour essayer de trouver un vélo.",
+      "words": [
+        {
+          "text": "Donc",
+          "start": 335.36,
+          "end": 335.6
+        },
+        {
+          "text": "là,",
+          "start": 335.6,
+          "end": 336.8
+        },
+        {
+          "text": "je",
+          "start": 337.24,
+          "end": 337.36
+        },
+        {
+          "text": "suis",
+          "start": 337.36,
+          "end": 337.64
+        },
+        {
+          "text": "avec",
+          "start": 337.64,
+          "end": 338.84
+        },
+        {
+          "text": "mon",
+          "start": 339.2,
+          "end": 339.4
+        },
+        {
+          "text": "téléphone",
+          "start": 339.4,
+          "end": 340.56
+        },
+        {
+          "text": "pour",
+          "start": 340.56,
+          "end": 340.72
+        },
+        {
+          "text": "essayer",
+          "start": 340.72,
+          "end": 341.76
+        },
+        {
+          "text": "de",
+          "start": 341.76,
+          "end": 342.96
+        },
+        {
+          "text": "trouver",
+          "start": 343.12,
+          "end": 343.48
+        },
+        {
+          "text": "un",
+          "start": 343.48,
+          "end": 343.56
+        },
+        {
+          "text": "vélo.",
+          "start": 343.56,
+          "end": 344.76
+        }
+      ]
+    },
+    {
+      "id": "cue-61",
+      "start": 392.48,
+      "end": 403.84,
+      "text": "Ça, c'est vraiment le bonheur de faire du vélo dans Paris, c'est Bon, il fait un tout petit peu trop chaud, mais sinon c'est un pur plaisir.",
+      "words": [
+        {
+          "text": "Ça,",
+          "start": 392.48,
+          "end": 392.92
+        },
+        {
+          "text": "c'est",
+          "start": 392.92,
+          "end": 393.04
+        },
+        {
+          "text": "vraiment",
+          "start": 393.04,
+          "end": 393.36
+        },
+        {
+          "text": "le",
+          "start": 393.36,
+          "end": 393.52
+        },
+        {
+          "text": "bonheur",
+          "start": 393.52,
+          "end": 394.2
+        },
+        {
+          "text": "de",
+          "start": 394.2,
+          "end": 394.36
+        },
+        {
+          "text": "faire",
+          "start": 394.36,
+          "end": 394.76
+        },
+        {
+          "text": "du",
+          "start": 394.76,
+          "end": 394.96
+        },
+        {
+          "text": "vélo",
+          "start": 394.96,
+          "end": 395.36
+        },
+        {
+          "text": "dans",
+          "start": 395.36,
+          "end": 395.56
+        },
+        {
+          "text": "Paris,",
+          "start": 395.56,
+          "end": 396.12
+        },
+        {
+          "text": "c'est",
+          "start": 396.12,
+          "end": 397.32
+        },
+        {
+          "text": "Bon,",
+          "start": 397.64,
+          "end": 397.76
+        },
+        {
+          "text": "il",
+          "start": 397.76,
+          "end": 397.92
+        },
+        {
+          "text": "fait",
+          "start": 397.92,
+          "end": 398.24
+        },
+        {
+          "text": "un",
+          "start": 398.56,
+          "end": 398.68
+        },
+        {
+          "text": "tout",
+          "start": 398.68,
+          "end": 399.04
+        },
+        {
+          "text": "petit",
+          "start": 399.04,
+          "end": 399.2
+        },
+        {
+          "text": "peu",
+          "start": 399.2,
+          "end": 399.32
+        },
+        {
+          "text": "trop",
+          "start": 399.32,
+          "end": 399.56
+        },
+        {
+          "text": "chaud,",
+          "start": 399.56,
+          "end": 399.84
+        },
+        {
+          "text": "mais",
+          "start": 399.84,
+          "end": 400.0
+        },
+        {
+          "text": "sinon",
+          "start": 400.0,
+          "end": 401.2
+        },
+        {
+          "text": "c'est",
+          "start": 401.56,
+          "end": 401.88
+        },
+        {
+          "text": "un",
+          "start": 401.88,
+          "end": 402.32
+        },
+        {
+          "text": "pur",
+          "start": 402.32,
+          "end": 402.64
+        },
+        {
+          "text": "plaisir.",
+          "start": 402.64,
+          "end": 403.84
+        }
+      ]
+    },
+    {
+      "id": "cue-62",
+      "start": 444.6,
+      "end": 457.12,
+      "text": "J'avais mis de la crème solaire, mais je sens que sur mes bras je vais avoir un coup de soleil.",
+      "words": [
+        {
+          "text": "J'avais",
+          "start": 444.6,
+          "end": 445.0
+        },
+        {
+          "text": "mis",
+          "start": 445.0,
+          "end": 445.48
+        },
+        {
+          "text": "de",
+          "start": 445.48,
+          "end": 446.24
+        },
+        {
+          "text": "la",
+          "start": 446.24,
+          "end": 446.44
+        },
+        {
+          "text": "crème",
+          "start": 446.44,
+          "end": 447.08
+        },
+        {
+          "text": "solaire,",
+          "start": 447.08,
+          "end": 448.0
+        },
+        {
+          "text": "mais",
+          "start": 448.0,
+          "end": 449.2
+        },
+        {
+          "text": "je",
+          "start": 449.28,
+          "end": 449.52
+        },
+        {
+          "text": "sens",
+          "start": 449.52,
+          "end": 450.72
+        },
+        {
+          "text": "que",
+          "start": 451.04,
+          "end": 451.6
+        },
+        {
+          "text": "sur",
+          "start": 451.6,
+          "end": 451.88
+        },
+        {
+          "text": "mes",
+          "start": 451.88,
+          "end": 452.0
+        },
+        {
+          "text": "bras",
+          "start": 452.0,
+          "end": 453.2
+        },
+        {
+          "text": "je",
+          "start": 453.64,
+          "end": 453.92
+        },
+        {
+          "text": "vais",
+          "start": 453.92,
+          "end": 454.12
+        },
+        {
+          "text": "avoir",
+          "start": 454.12,
+          "end": 454.88
+        },
+        {
+          "text": "un",
+          "start": 454.88,
+          "end": 455.28
+        },
+        {
+          "text": "coup",
+          "start": 455.28,
+          "end": 455.72
+        },
+        {
+          "text": "de",
+          "start": 455.72,
+          "end": 455.92
+        },
+        {
+          "text": "soleil.",
+          "start": 455.92,
+          "end": 457.12
+        }
+      ]
+    },
+    {
+      "id": "cue-63",
+      "start": 464.52,
+      "end": 468.12,
+      "text": "Je dans un parc.",
+      "words": [
+        {
+          "text": "Je",
+          "start": 464.52,
+          "end": 465.68
+        },
+        {
+          "text": "dans",
+          "start": 465.68,
+          "end": 466.72
+        },
+        {
+          "text": "un",
+          "start": 466.72,
+          "end": 466.92
+        },
+        {
+          "text": "parc.",
+          "start": 466.92,
+          "end": 468.12
+        }
+      ]
+    },
+    {
+      "id": "cue-64",
+      "start": 468.88,
+      "end": 479.48,
+      "text": "Je profite un peu du vent et du calme avant de rentrer chez ma famille pour le dîner.",
+      "words": [
+        {
+          "text": "Je",
+          "start": 468.88,
+          "end": 469.16
+        },
+        {
+          "text": "profite",
+          "start": 469.16,
+          "end": 469.92
+        },
+        {
+          "text": "un",
+          "start": 469.92,
+          "end": 470.08
+        },
+        {
+          "text": "peu",
+          "start": 470.08,
+          "end": 470.8
+        },
+        {
+          "text": "du",
+          "start": 470.8,
+          "end": 471.08
+        },
+        {
+          "text": "vent",
+          "start": 471.08,
+          "end": 471.84
+        },
+        {
+          "text": "et",
+          "start": 471.84,
+          "end": 472.32
+        },
+        {
+          "text": "du",
+          "start": 472.32,
+          "end": 472.6
+        },
+        {
+          "text": "calme",
+          "start": 472.6,
+          "end": 473.32
+        },
+        {
+          "text": "avant",
+          "start": 473.32,
+          "end": 474.24
+        },
+        {
+          "text": "de",
+          "start": 474.24,
+          "end": 474.88
+        },
+        {
+          "text": "rentrer",
+          "start": 474.88,
+          "end": 475.88
+        },
+        {
+          "text": "chez",
+          "start": 475.88,
+          "end": 476.24
+        },
+        {
+          "text": "ma",
+          "start": 476.24,
+          "end": 476.4
+        },
+        {
+          "text": "famille",
+          "start": 476.4,
+          "end": 477.6
+        },
+        {
+          "text": "pour",
+          "start": 477.6,
+          "end": 478.04
+        },
+        {
+          "text": "le",
+          "start": 478.04,
+          "end": 478.28
+        },
+        {
+          "text": "dîner.",
+          "start": 478.28,
+          "end": 479.48
+        }
+      ]
+    },
+    {
+      "id": "cue-65",
+      "start": 479.68,
+      "end": 489.94,
+      "text": "C'est la fin de cette vidéo et j'espère t'avoir permis de t'évader un peu, de rêver de Paris.",
+      "words": [
+        {
+          "text": "C'est",
+          "start": 479.68,
+          "end": 480.24
+        },
+        {
+          "text": "la",
+          "start": 480.24,
+          "end": 480.48
+        },
+        {
+          "text": "fin",
+          "start": 480.48,
+          "end": 481.16
+        },
+        {
+          "text": "de",
+          "start": 481.16,
+          "end": 481.52
+        },
+        {
+          "text": "cette",
+          "start": 481.52,
+          "end": 481.72
+        },
+        {
+          "text": "vidéo",
+          "start": 481.72,
+          "end": 482.72
+        },
+        {
+          "text": "et",
+          "start": 482.72,
+          "end": 482.84
+        },
+        {
+          "text": "j'espère",
+          "start": 482.84,
+          "end": 483.6
+        },
+        {
+          "text": "t'avoir",
+          "start": 483.6,
+          "end": 484.28
+        },
+        {
+          "text": "permis",
+          "start": 484.28,
+          "end": 485.48
+        },
+        {
+          "text": "de",
+          "start": 485.52,
+          "end": 485.92
+        },
+        {
+          "text": "t'évader",
+          "start": 485.92,
+          "end": 487.0
+        },
+        {
+          "text": "un",
+          "start": 487.0,
+          "end": 487.16
+        },
+        {
+          "text": "peu,",
+          "start": 487.16,
+          "end": 487.88
+        },
+        {
+          "text": "de",
+          "start": 487.88,
+          "end": 488.24
+        },
+        {
+          "text": "rêver",
+          "start": 488.24,
+          "end": 489.08
+        },
+        {
+          "text": "de",
+          "start": 489.08,
+          "end": 489.36
+        },
+        {
+          "text": "Paris.",
+          "start": 489.36,
+          "end": 489.94
+        }
+      ]
+    },
+    {
+      "id": "cue-66",
+      "start": 490.2,
+      "end": 494.16,
+      "text": "N'oublie pas de t'abonner pour plus de contenu en français.",
+      "words": [
+        {
+          "text": "N'oublie",
+          "start": 490.2,
+          "end": 490.64
+        },
+        {
+          "text": "pas",
+          "start": 490.64,
+          "end": 491.08
+        },
+        {
+          "text": "de",
+          "start": 491.08,
+          "end": 491.28
+        },
+        {
+          "text": "t'abonner",
+          "start": 491.28,
+          "end": 492.04
+        },
+        {
+          "text": "pour",
+          "start": 492.04,
+          "end": 492.28
+        },
+        {
+          "text": "plus",
+          "start": 492.28,
+          "end": 492.64
+        },
+        {
+          "text": "de",
+          "start": 492.64,
+          "end": 492.8
+        },
+        {
+          "text": "contenu",
+          "start": 492.8,
+          "end": 493.36
+        },
+        {
+          "text": "en",
+          "start": 493.36,
+          "end": 493.52
+        },
+        {
+          "text": "français.",
+          "start": 493.52,
+          "end": 494.16
+        }
+      ]
+    },
+    {
+      "id": "cue-67",
+      "start": 494.16,
+      "end": 494.66,
+      "text": "À !",
+      "words": [
+        {
+          "text": "À",
+          "start": 494.16,
+          "end": 494.24
+        },
+        {
+          "text": "!",
+          "start": 494.24,
+          "end": 494.59
+        }
+      ]
+    }
+  ]
+}

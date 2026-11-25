@@ -1,48 +1,41 @@
 {
   "ok": true,
   "videoId": "dQw4w9WgXcQ",
+  "title": "Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster)",
   "language": "en",
   "trackKind": "standard",
   "subtitles": [
     {
       "id": "cue-1",
       "start": 19.1,
-      "end": 21.4,
-      "text": "We're no strangers to love.",
+      "end": 38.65,
+      "text": "We're no strangers to love You know the rules and so do I A full commitment's what I'm thinking of You wouldn't get this from any other guy I just wanna tell you how I'm.",
       "words": [
         {
           "text": "We're",
           "start": 19.1,
-          "end": 19.56
+          "end": 19.57
         },
         {
           "text": "no",
-          "start": 19.56,
-          "end": 20.02
+          "start": 19.57,
+          "end": 20.03
         },
         {
           "text": "strangers",
-          "start": 20.02,
-          "end": 20.48
+          "start": 20.03,
+          "end": 20.49
         },
         {
           "text": "to",
-          "start": 20.48,
-          "end": 20.94
+          "start": 20.49,
+          "end": 20.95
         },
         {
-          "text": "love.",
-          "start": 20.94,
-          "end": 21.4
-        }
-      ]
-    },
-    {
-      "id": "cue-2",
-      "start": 23.07,
-      "end": 26.51,
-      "text": "You know the rules and so do I.",
-      "words": [
+          "text": "love",
+          "start": 20.95,
+          "end": 21.42
+        },
         {
           "text": "You",
           "start": 23.07,
@@ -51,185 +44,161 @@
         {
           "text": "know",
           "start": 23.5,
-          "end": 23.93
+          "end": 23.94
         },
         {
           "text": "the",
-          "start": 23.93,
-          "end": 24.36
+          "start": 23.94,
+          "end": 24.37
         },
         {
           "text": "rules",
-          "start": 24.36,
-          "end": 24.79
+          "start": 24.37,
+          "end": 24.8
         },
         {
           "text": "and",
-          "start": 24.79,
-          "end": 25.22
+          "start": 24.8,
+          "end": 25.23
         },
         {
           "text": "so",
-          "start": 25.22,
-          "end": 25.65
+          "start": 25.23,
+          "end": 25.66
         },
         {
           "text": "do",
-          "start": 25.65,
-          "end": 26.08
+          "start": 25.66,
+          "end": 26.1
         },
         {
-          "text": "I.",
-          "start": 26.08,
-          "end": 26.51
-        }
-      ]
-    },
-    {
-      "id": "cue-3",
-      "start": 27.48,
-      "end": 30.56,
-      "text": "A full commitment's what I'm thinking of.",
-      "words": [
+          "text": "I",
+          "start": 26.1,
+          "end": 26.53
+        },
         {
           "text": "A",
           "start": 27.48,
-          "end": 27.92
+          "end": 27.93
         },
         {
           "text": "full",
-          "start": 27.92,
-          "end": 28.36
+          "start": 27.93,
+          "end": 28.37
         },
         {
           "text": "commitment's",
-          "start": 28.36,
-          "end": 28.8
+          "start": 28.37,
+          "end": 28.82
         },
         {
           "text": "what",
-          "start": 28.8,
-          "end": 29.24
+          "start": 28.82,
+          "end": 29.26
         },
         {
           "text": "I'm",
-          "start": 29.24,
-          "end": 29.68
+          "start": 29.26,
+          "end": 29.71
         },
         {
           "text": "thinking",
-          "start": 29.68,
-          "end": 30.12
+          "start": 29.71,
+          "end": 30.15
         },
         {
-          "text": "of.",
-          "start": 30.12,
-          "end": 30.56
-        }
-      ]
-    },
-    {
-      "id": "cue-4",
-      "start": 31.52,
-      "end": 34.72,
-      "text": "You wouldn't get this from any other guy.",
-      "words": [
+          "text": "of",
+          "start": 30.15,
+          "end": 30.6
+        },
         {
           "text": "You",
           "start": 31.52,
-          "end": 31.92
+          "end": 31.91
         },
         {
           "text": "wouldn't",
-          "start": 31.92,
-          "end": 32.32
+          "start": 31.91,
+          "end": 32.31
         },
         {
           "text": "get",
-          "start": 32.32,
-          "end": 32.72
+          "start": 32.31,
+          "end": 32.7
         },
         {
           "text": "this",
-          "start": 32.72,
-          "end": 33.12
+          "start": 32.7,
+          "end": 33.1
         },
         {
           "text": "from",
-          "start": 33.12,
-          "end": 33.52
+          "start": 33.1,
+          "end": 33.5
         },
         {
           "text": "any",
-          "start": 33.52,
-          "end": 33.92
+          "start": 33.5,
+          "end": 33.89
         },
         {
           "text": "other",
-          "start": 33.92,
-          "end": 34.32
+          "start": 33.89,
+          "end": 34.29
         },
         {
-          "text": "guy.",
-          "start": 34.32,
-          "end": 34.72
-        }
-      ]
-    },
-    {
-      "id": "cue-5",
-      "start": 35.6,
-      "end": 39.12,
-      "text": "I just wanna tell you how I'm feeling.",
-      "words": [
+          "text": "guy",
+          "start": 34.29,
+          "end": 34.68
+        },
         {
           "text": "I",
           "start": 35.6,
-          "end": 36.04
+          "end": 36.03
         },
         {
           "text": "just",
-          "start": 36.04,
-          "end": 36.48
+          "start": 36.03,
+          "end": 36.47
         },
         {
           "text": "wanna",
-          "start": 36.48,
-          "end": 36.92
+          "start": 36.47,
+          "end": 36.9
         },
         {
           "text": "tell",
-          "start": 36.92,
-          "end": 37.36
+          "start": 36.9,
+          "end": 37.34
         },
         {
           "text": "you",
-          "start": 37.36,
-          "end": 37.8
+          "start": 37.34,
+          "end": 37.78
         },
         {
           "text": "how",
-          "start": 37.8,
-          "end": 38.24
+          "start": 37.78,
+          "end": 38.21
         },
         {
-          "text": "I'm",
-          "start": 38.24,
-          "end": 38.68
-        },
-        {
-          "text": "feeling.",
-          "start": 38.68,
-          "end": 39.12
+          "text": "I'm.",
+          "start": 38.21,
+          "end": 38.65
         }
       ]
     },
     {
-      "id": "cue-6",
-      "start": 40.92,
-      "end": 46.82,
-      "text": "Gotta make you understand Never gonna give you up Never gonna let you down.",
+      "id": "cue-2",
+      "start": 38.65,
+      "end": 57.54,
+      "text": "Feeling Gotta make you understand Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a.",
       "words": [
+        {
+          "text": "Feeling",
+          "start": 38.65,
+          "end": 39.08
+        },
         {
           "text": "Gotta",
           "start": 40.92,
@@ -253,27 +222,27 @@
         {
           "text": "Never",
           "start": 43.3,
-          "end": 43.6
+          "end": 43.61
         },
         {
           "text": "gonna",
-          "start": 43.6,
-          "end": 43.9
+          "start": 43.61,
+          "end": 43.91
         },
         {
           "text": "give",
-          "start": 43.9,
-          "end": 44.2
+          "start": 43.91,
+          "end": 44.21
         },
         {
           "text": "you",
-          "start": 44.2,
-          "end": 44.5
+          "start": 44.21,
+          "end": 44.51
         },
         {
           "text": "up",
-          "start": 44.5,
-          "end": 44.8
+          "start": 44.51,
+          "end": 44.82
         },
         {
           "text": "Never",
@@ -288,26 +257,18 @@
         {
           "text": "let",
           "start": 46.01,
-          "end": 46.28
+          "end": 46.27
         },
         {
           "text": "you",
-          "start": 46.28,
-          "end": 46.55
+          "start": 46.27,
+          "end": 46.54
         },
         {
-          "text": "down.",
-          "start": 46.55,
-          "end": 46.82
-        }
-      ]
-    },
-    {
-      "id": "cue-7",
-      "start": 47.74,
-      "end": 50.68,
-      "text": "Never gonna run around and desert you.",
-      "words": [
+          "text": "down",
+          "start": 46.54,
+          "end": 46.81
+        },
         {
           "text": "Never",
           "start": 47.74,
@@ -316,65 +277,57 @@
         {
           "text": "gonna",
           "start": 48.16,
-          "end": 48.58
+          "end": 48.59
         },
         {
           "text": "run",
-          "start": 48.58,
-          "end": 49.0
+          "start": 48.59,
+          "end": 49.01
         },
         {
           "text": "around",
-          "start": 49.0,
-          "end": 49.42
+          "start": 49.01,
+          "end": 49.43
         },
         {
           "text": "and",
-          "start": 49.42,
-          "end": 49.84
+          "start": 49.43,
+          "end": 49.85
         },
         {
           "text": "desert",
-          "start": 49.84,
-          "end": 50.26
-        },
-        {
-          "text": "you.",
-          "start": 50.26,
-          "end": 50.68
-        }
-      ]
-    },
-    {
-      "id": "cue-8",
-      "start": 51.77,
-      "end": 55.2,
-      "text": "Never gonna make you cry Never gonna say goodbye.",
-      "words": [
-        {
-          "text": "Never",
-          "start": 51.77,
-          "end": 52.06
-        },
-        {
-          "text": "gonna",
-          "start": 52.06,
-          "end": 52.35
-        },
-        {
-          "text": "make",
-          "start": 52.35,
-          "end": 52.64
+          "start": 49.85,
+          "end": 50.28
         },
         {
           "text": "you",
-          "start": 52.64,
-          "end": 52.93
+          "start": 50.28,
+          "end": 50.7
+        },
+        {
+          "text": "Never",
+          "start": 51.77,
+          "end": 52.05
+        },
+        {
+          "text": "gonna",
+          "start": 52.05,
+          "end": 52.34
+        },
+        {
+          "text": "make",
+          "start": 52.34,
+          "end": 52.62
+        },
+        {
+          "text": "you",
+          "start": 52.62,
+          "end": 52.91
         },
         {
           "text": "cry",
-          "start": 52.93,
-          "end": 53.22
+          "start": 52.91,
+          "end": 53.19
         },
         {
           "text": "Never",
@@ -392,109 +345,93 @@
           "end": 54.88
         },
         {
-          "text": "goodbye.",
+          "text": "goodbye",
           "start": 54.88,
           "end": 55.2
-        }
-      ]
-    },
-    {
-      "id": "cue-9",
-      "start": 56.08,
-      "end": 58.96,
-      "text": "Never gonna tell a lie and hurt you.",
-      "words": [
+        },
         {
           "text": "Never",
           "start": 56.08,
-          "end": 56.44
+          "end": 56.45
         },
         {
           "text": "gonna",
-          "start": 56.44,
-          "end": 56.8
+          "start": 56.45,
+          "end": 56.81
         },
         {
           "text": "tell",
-          "start": 56.8,
-          "end": 57.16
+          "start": 56.81,
+          "end": 57.18
         },
         {
-          "text": "a",
-          "start": 57.16,
-          "end": 57.52
-        },
+          "text": "a.",
+          "start": 57.18,
+          "end": 57.54
+        }
+      ]
+    },
+    {
+      "id": "cue-3",
+      "start": 57.54,
+      "end": 75.8,
+      "text": "Lie and hurt you We've known each other for so long Your heart's been aching but you're too shy to say it Inside we both know what's been going We know the game and we're.",
+      "words": [
         {
-          "text": "lie",
-          "start": 57.52,
-          "end": 57.88
+          "text": "Lie",
+          "start": 57.54,
+          "end": 57.9
         },
         {
           "text": "and",
-          "start": 57.88,
-          "end": 58.24
+          "start": 57.9,
+          "end": 58.27
         },
         {
           "text": "hurt",
-          "start": 58.24,
-          "end": 58.6
+          "start": 58.27,
+          "end": 58.63
         },
         {
-          "text": "you.",
-          "start": 58.6,
-          "end": 58.96
-        }
-      ]
-    },
-    {
-      "id": "cue-10",
-      "start": 61.24,
-      "end": 64.32,
-      "text": "We've known each other for so long.",
-      "words": [
+          "text": "you",
+          "start": 58.63,
+          "end": 59.0
+        },
         {
           "text": "We've",
           "start": 61.24,
-          "end": 61.68
+          "end": 61.69
         },
         {
           "text": "known",
-          "start": 61.68,
-          "end": 62.12
+          "start": 61.69,
+          "end": 62.13
         },
         {
           "text": "each",
-          "start": 62.12,
-          "end": 62.56
+          "start": 62.13,
+          "end": 62.58
         },
         {
           "text": "other",
-          "start": 62.56,
-          "end": 63.0
+          "start": 62.58,
+          "end": 63.02
         },
         {
           "text": "for",
-          "start": 63.0,
-          "end": 63.44
+          "start": 63.02,
+          "end": 63.47
         },
         {
           "text": "so",
-          "start": 63.44,
-          "end": 63.88
+          "start": 63.47,
+          "end": 63.91
         },
         {
-          "text": "long.",
-          "start": 63.88,
-          "end": 64.32
-        }
-      ]
-    },
-    {
-      "id": "cue-11",
-      "start": 65.2,
-      "end": 72.56,
-      "text": "Your heart's been aching but you're too shy to say it Inside we both know what's been going.",
-      "words": [
+          "text": "long",
+          "start": 63.91,
+          "end": 64.36
+        },
         {
           "text": "Your",
           "start": 65.2,
@@ -553,46 +490,38 @@
         {
           "text": "Inside",
           "start": 69.55,
-          "end": 69.98
+          "end": 69.97
         },
         {
           "text": "we",
-          "start": 69.98,
-          "end": 70.41
+          "start": 69.97,
+          "end": 70.4
         },
         {
           "text": "both",
-          "start": 70.41,
-          "end": 70.84
+          "start": 70.4,
+          "end": 70.83
         },
         {
           "text": "know",
-          "start": 70.84,
-          "end": 71.27
+          "start": 70.83,
+          "end": 71.25
         },
         {
           "text": "what's",
-          "start": 71.27,
-          "end": 71.7
+          "start": 71.25,
+          "end": 71.68
         },
         {
           "text": "been",
-          "start": 71.7,
-          "end": 72.13
+          "start": 71.68,
+          "end": 72.11
         },
         {
-          "text": "going.",
-          "start": 72.13,
-          "end": 72.56
-        }
-      ]
-    },
-    {
-      "id": "cue-12",
-      "start": 73.71,
-      "end": 76.86,
-      "text": "We know the game and we're gonna play it.",
-      "words": [
+          "text": "going",
+          "start": 72.11,
+          "end": 72.53
+        },
         {
           "text": "We",
           "start": 73.71,
@@ -616,123 +545,115 @@
         {
           "text": "and",
           "start": 75.11,
-          "end": 75.46
+          "end": 75.45
         },
         {
-          "text": "we're",
-          "start": 75.46,
-          "end": 75.81
-        },
+          "text": "we're.",
+          "start": 75.45,
+          "end": 75.8
+        }
+      ]
+    },
+    {
+      "id": "cue-4",
+      "start": 75.8,
+      "end": 92.77,
+      "text": "Gonna play it And if you ask me how I'm feeling Don't tell me you're too blind to see Never gonna give you up Never gonna let you down Never gonna run around and desert.",
+      "words": [
         {
-          "text": "gonna",
-          "start": 75.81,
-          "end": 76.16
+          "text": "Gonna",
+          "start": 75.8,
+          "end": 76.15
         },
         {
           "text": "play",
-          "start": 76.16,
-          "end": 76.51
+          "start": 76.15,
+          "end": 76.5
         },
         {
-          "text": "it.",
-          "start": 76.51,
-          "end": 76.86
-        }
-      ]
-    },
-    {
-      "id": "cue-13",
-      "start": 77.86,
-      "end": 81.54,
-      "text": "And if you ask me how I'm feeling.",
-      "words": [
+          "text": "it",
+          "start": 76.5,
+          "end": 76.85
+        },
         {
           "text": "And",
           "start": 77.86,
-          "end": 78.32
+          "end": 78.33
         },
         {
           "text": "if",
-          "start": 78.32,
-          "end": 78.78
+          "start": 78.33,
+          "end": 78.79
         },
         {
           "text": "you",
-          "start": 78.78,
-          "end": 79.24
+          "start": 78.79,
+          "end": 79.26
         },
         {
           "text": "ask",
-          "start": 79.24,
-          "end": 79.7
+          "start": 79.26,
+          "end": 79.72
         },
         {
           "text": "me",
-          "start": 79.7,
-          "end": 80.16
+          "start": 79.72,
+          "end": 80.18
         },
         {
           "text": "how",
-          "start": 80.16,
-          "end": 80.62
+          "start": 80.18,
+          "end": 80.65
         },
         {
           "text": "I'm",
-          "start": 80.62,
-          "end": 81.08
+          "start": 80.65,
+          "end": 81.11
         },
         {
-          "text": "feeling.",
-          "start": 81.08,
-          "end": 81.54
-        }
-      ]
-    },
-    {
-      "id": "cue-14",
-      "start": 82.68,
-      "end": 89.04,
-      "text": "Don't tell me you're too blind to see Never gonna give you up Never gonna let you down.",
-      "words": [
+          "text": "feeling",
+          "start": 81.11,
+          "end": 81.58
+        },
         {
           "text": "Don't",
           "start": 82.68,
-          "end": 82.96
+          "end": 82.97
         },
         {
           "text": "tell",
-          "start": 82.96,
-          "end": 83.24
+          "start": 82.97,
+          "end": 83.25
         },
         {
           "text": "me",
-          "start": 83.24,
-          "end": 83.52
+          "start": 83.25,
+          "end": 83.54
         },
         {
           "text": "you're",
-          "start": 83.52,
-          "end": 83.8
+          "start": 83.54,
+          "end": 83.82
         },
         {
           "text": "too",
-          "start": 83.8,
-          "end": 84.08
+          "start": 83.82,
+          "end": 84.1
         },
         {
           "text": "blind",
-          "start": 84.08,
-          "end": 84.36
+          "start": 84.1,
+          "end": 84.39
         },
         {
           "text": "to",
-          "start": 84.36,
-          "end": 84.64
+          "start": 84.39,
+          "end": 84.67
         },
         {
           "text": "see",
-          "start": 84.64,
-          "end": 84.92
+          "start": 84.67,
+          "end": 84.96
         },
         {
           "text": "Never",
@@ -780,204 +701,188 @@
           "end": 88.76
         },
         {
-          "text": "down.",
+          "text": "down",
           "start": 88.76,
           "end": 89.04
+        },
+        {
+          "text": "Never",
+          "start": 89.92,
+          "end": 90.39
+        },
+        {
+          "text": "gonna",
+          "start": 90.39,
+          "end": 90.87
+        },
+        {
+          "text": "run",
+          "start": 90.87,
+          "end": 91.34
+        },
+        {
+          "text": "around",
+          "start": 91.34,
+          "end": 91.82
+        },
+        {
+          "text": "and",
+          "start": 91.82,
+          "end": 92.29
+        },
+        {
+          "text": "desert.",
+          "start": 92.29,
+          "end": 92.77
         }
       ]
     },
     {
-      "id": "cue-15",
-      "start": 89.92,
-      "end": 97.61,
-      "text": "Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye.",
+      "id": "cue-5",
+      "start": 92.77,
+      "end": 109.68,
+      "text": "You Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you Never gonna give you up Never gonna let you down Never gonna run around and desert you.",
       "words": [
         {
-          "text": "Never",
-          "start": 89.92,
-          "end": 90.4
-        },
-        {
-          "text": "gonna",
-          "start": 90.4,
-          "end": 90.88
-        },
-        {
-          "text": "run",
-          "start": 90.88,
-          "end": 91.36
-        },
-        {
-          "text": "around",
-          "start": 91.36,
-          "end": 91.84
-        },
-        {
-          "text": "and",
-          "start": 91.84,
-          "end": 92.32
-        },
-        {
-          "text": "desert",
-          "start": 92.32,
-          "end": 92.8
-        },
-        {
-          "text": "you",
-          "start": 92.8,
-          "end": 93.28
+          "text": "You",
+          "start": 92.77,
+          "end": 93.24
         },
         {
           "text": "Never",
           "start": 94.06,
-          "end": 94.32
+          "end": 94.31
         },
         {
           "text": "gonna",
-          "start": 94.32,
-          "end": 94.58
+          "start": 94.31,
+          "end": 94.57
         },
         {
           "text": "make",
-          "start": 94.58,
-          "end": 94.84
+          "start": 94.57,
+          "end": 94.83
         },
         {
           "text": "you",
-          "start": 94.84,
-          "end": 95.1
+          "start": 94.83,
+          "end": 95.09
         },
         {
           "text": "cry",
-          "start": 95.1,
-          "end": 95.36
+          "start": 95.09,
+          "end": 95.34
         },
         {
           "text": "Never",
           "start": 96.13,
-          "end": 96.5
+          "end": 96.51
         },
         {
           "text": "gonna",
-          "start": 96.5,
-          "end": 96.87
+          "start": 96.51,
+          "end": 96.88
         },
         {
           "text": "say",
-          "start": 96.87,
-          "end": 97.24
+          "start": 96.88,
+          "end": 97.25
         },
         {
-          "text": "goodbye.",
-          "start": 97.24,
-          "end": 97.61
-        }
-      ]
-    },
-    {
-      "id": "cue-16",
-      "start": 98.48,
-      "end": 106.08,
-      "text": "Never gonna tell a lie and hurt you Never gonna give you up Never gonna let you down.",
-      "words": [
+          "text": "goodbye",
+          "start": 97.25,
+          "end": 97.63
+        },
         {
           "text": "Never",
           "start": 98.48,
-          "end": 98.88
+          "end": 98.87
         },
         {
           "text": "gonna",
-          "start": 98.88,
-          "end": 99.28
+          "start": 98.87,
+          "end": 99.27
         },
         {
           "text": "tell",
-          "start": 99.28,
-          "end": 99.68
+          "start": 99.27,
+          "end": 99.66
         },
         {
           "text": "a",
-          "start": 99.68,
-          "end": 100.08
+          "start": 99.66,
+          "end": 100.06
         },
         {
           "text": "lie",
-          "start": 100.08,
-          "end": 100.48
+          "start": 100.06,
+          "end": 100.46
         },
         {
           "text": "and",
-          "start": 100.48,
-          "end": 100.88
+          "start": 100.46,
+          "end": 100.85
         },
         {
           "text": "hurt",
-          "start": 100.88,
-          "end": 101.28
+          "start": 100.85,
+          "end": 101.25
         },
         {
           "text": "you",
-          "start": 101.28,
-          "end": 101.68
+          "start": 101.25,
+          "end": 101.64
         },
         {
           "text": "Never",
           "start": 102.47,
-          "end": 102.74
+          "end": 102.75
         },
         {
           "text": "gonna",
-          "start": 102.74,
-          "end": 103.01
+          "start": 102.75,
+          "end": 103.02
         },
         {
           "text": "give",
-          "start": 103.01,
-          "end": 103.28
+          "start": 103.02,
+          "end": 103.3
         },
         {
           "text": "you",
-          "start": 103.28,
-          "end": 103.55
+          "start": 103.3,
+          "end": 103.57
         },
         {
           "text": "up",
-          "start": 103.55,
-          "end": 103.82
+          "start": 103.57,
+          "end": 103.85
         },
         {
           "text": "Never",
           "start": 104.58,
-          "end": 104.88
+          "end": 104.87
         },
         {
           "text": "gonna",
-          "start": 104.88,
-          "end": 105.18
+          "start": 104.87,
+          "end": 105.17
         },
         {
           "text": "let",
-          "start": 105.18,
-          "end": 105.48
+          "start": 105.17,
+          "end": 105.47
         },
         {
           "text": "you",
-          "start": 105.48,
-          "end": 105.78
+          "start": 105.47,
+          "end": 105.77
         },
         {
-          "text": "down.",
-          "start": 105.78,
-          "end": 106.08
-        }
-      ]
-    },
-    {
-      "id": "cue-17",
-      "start": 106.88,
-      "end": 109.68,
-      "text": "Never gonna run around and desert you.",
-      "words": [
+          "text": "down",
+          "start": 105.77,
+          "end": 106.06
+        },
         {
           "text": "Never",
           "start": 106.88,
@@ -1016,10 +921,10 @@
       ]
     },
     {
-      "id": "cue-18",
+      "id": "cue-6",
       "start": 111.04,
-      "end": 114.35,
-      "text": "Never gonna make you cry Never gonna say goodbye.",
+      "end": 118.38,
+      "text": "Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you.",
       "words": [
         {
           "text": "Never",
@@ -1049,31 +954,23 @@
         {
           "text": "Never",
           "start": 113.11,
-          "end": 113.42
+          "end": 113.43
         },
         {
           "text": "gonna",
-          "start": 113.42,
-          "end": 113.73
+          "start": 113.43,
+          "end": 113.74
         },
         {
           "text": "say",
-          "start": 113.73,
-          "end": 114.04
+          "start": 113.74,
+          "end": 114.05
         },
         {
-          "text": "goodbye.",
-          "start": 114.04,
-          "end": 114.35
-        }
-      ]
-    },
-    {
-      "id": "cue-19",
-      "start": 115.34,
-      "end": 118.38,
-      "text": "Never gonna tell a lie and hurt you.",
-      "words": [
+          "text": "goodbye",
+          "start": 114.05,
+          "end": 114.37
+        },
         {
           "text": "Never",
           "start": 115.34,
@@ -1117,10 +1014,10 @@
       ]
     },
     {
-      "id": "cue-20",
+      "id": "cue-7",
       "start": 120.36,
-      "end": 122.44,
-      "text": "(Ooh, give you up).",
+      "end": 126.75,
+      "text": "(Ooh, give you up) (Ooh, give you up).",
       "words": [
         {
           "text": "(Ooh,",
@@ -1138,94 +1035,83 @@
           "end": 121.92
         },
         {
-          "text": "up).",
+          "text": "up)",
           "start": 121.92,
           "end": 122.44
-        }
-      ]
-    },
-    {
-      "id": "cue-21",
-      "start": 124.33,
-      "end": 126.77,
-      "text": "(Ooh, give you up).",
-      "words": [
+        },
         {
           "text": "(Ooh,",
           "start": 124.33,
-          "end": 124.94
+          "end": 124.93
         },
         {
           "text": "give",
-          "start": 124.94,
-          "end": 125.55
+          "start": 124.93,
+          "end": 125.54
         },
         {
           "text": "you",
-          "start": 125.55,
-          "end": 126.16
+          "start": 125.54,
+          "end": 126.15
         },
         {
           "text": "up).",
-          "start": 126.16,
-          "end": 126.77
+          "start": 126.15,
+          "end": 126.75
         }
       ]
     },
     {
-      "id": "cue-22",
+      "id": "cue-8",
       "start": 128.69,
-      "end": 131.28,
-      "text": "Never gonna give, never gonna give you up).",
+      "end": 135.61,
+      "text": "Never gonna give, never gonna give (Give you up) Never gonna give, never gonna give (Give you up).",
       "words": [
         {
           "text": "Never",
           "start": 128.69,
-          "end": 128.9
+          "end": 128.89
         },
         {
           "text": "gonna",
-          "start": 128.9,
-          "end": 129.11
+          "start": 128.89,
+          "end": 129.09
         },
         {
           "text": "give,",
-          "start": 129.11,
-          "end": 129.32
+          "start": 129.09,
+          "end": 129.3
         },
         {
           "text": "never",
-          "start": 129.32,
-          "end": 129.53
+          "start": 129.3,
+          "end": 129.5
         },
         {
           "text": "gonna",
-          "start": 129.53,
-          "end": 129.74
+          "start": 129.5,
+          "end": 129.71
         },
         {
           "text": "give",
-          "start": 129.74,
-          "end": 129.95
+          "start": 129.71,
+          "end": 129.91
+        },
+        {
+          "text": "(Give",
+          "start": 130.5,
+          "end": 130.77
         },
         {
           "text": "you",
-          "start": 130.76,
-          "end": 131.02
+          "start": 130.77,
+          "end": 131.03
         },
         {
-          "text": "up).",
-          "start": 131.02,
-          "end": 131.28
-        }
-      ]
-    },
-    {
-      "id": "cue-23",
-      "start": 132.7,
-      "end": 135.6,
-      "text": "Never gonna give, never gonna give (Give you up).",
-      "words": [
+          "text": "up)",
+          "start": 131.03,
+          "end": 131.3
+        },
         {
           "text": "Never",
           "start": 132.7,
@@ -1264,20 +1150,20 @@
         {
           "text": "you",
           "start": 134.98,
-          "end": 135.29
+          "end": 135.3
         },
         {
           "text": "up).",
-          "start": 135.29,
-          "end": 135.6
+          "start": 135.3,
+          "end": 135.61
         }
       ]
     },
     {
-      "id": "cue-24",
+      "id": "cue-9",
       "start": 137.24,
-      "end": 140.6,
-      "text": "We've known each other for so long.",
+      "end": 154.3,
+      "text": "We've known each other for so long Your heart's been aching but you're too shy to say it Inside we both know what's been going We know the game and we're gonna play it I.",
       "words": [
         {
           "text": "We've",
@@ -1310,18 +1196,10 @@
           "end": 140.12
         },
         {
-          "text": "long.",
+          "text": "long",
           "start": 140.12,
           "end": 140.6
-        }
-      ]
-    },
-    {
-      "id": "cue-25",
-      "start": 141.51,
-      "end": 148.72,
-      "text": "Your heart's been aching but you're too shy to say it Inside we both know what's been going.",
-      "words": [
+        },
         {
           "text": "Your",
           "start": 141.51,
@@ -1330,216 +1208,200 @@
         {
           "text": "heart's",
           "start": 141.82,
-          "end": 142.13
+          "end": 142.12
         },
         {
           "text": "been",
-          "start": 142.13,
-          "end": 142.44
+          "start": 142.12,
+          "end": 142.43
         },
         {
           "text": "aching",
-          "start": 142.44,
-          "end": 142.75
+          "start": 142.43,
+          "end": 142.74
         },
         {
           "text": "but",
-          "start": 142.75,
-          "end": 143.06
+          "start": 142.74,
+          "end": 143.05
         },
         {
           "text": "you're",
-          "start": 143.06,
-          "end": 143.37
+          "start": 143.05,
+          "end": 143.35
         },
         {
           "text": "too",
-          "start": 143.37,
-          "end": 143.68
+          "start": 143.35,
+          "end": 143.66
         },
         {
           "text": "shy",
-          "start": 143.68,
-          "end": 143.99
+          "start": 143.66,
+          "end": 143.97
         },
         {
           "text": "to",
-          "start": 143.99,
-          "end": 144.3
+          "start": 143.97,
+          "end": 144.28
         },
         {
           "text": "say",
-          "start": 144.3,
-          "end": 144.61
+          "start": 144.28,
+          "end": 144.58
         },
         {
           "text": "it",
-          "start": 144.61,
-          "end": 144.92
+          "start": 144.58,
+          "end": 144.89
         },
         {
           "text": "Inside",
           "start": 145.71,
-          "end": 146.14
+          "end": 146.13
         },
         {
           "text": "we",
-          "start": 146.14,
-          "end": 146.57
+          "start": 146.13,
+          "end": 146.56
         },
         {
           "text": "both",
-          "start": 146.57,
-          "end": 147.0
+          "start": 146.56,
+          "end": 146.99
         },
         {
           "text": "know",
-          "start": 147.0,
-          "end": 147.43
+          "start": 146.99,
+          "end": 147.41
         },
         {
           "text": "what's",
-          "start": 147.43,
-          "end": 147.86
+          "start": 147.41,
+          "end": 147.84
         },
         {
           "text": "been",
-          "start": 147.86,
-          "end": 148.29
+          "start": 147.84,
+          "end": 148.27
         },
         {
-          "text": "going.",
-          "start": 148.29,
-          "end": 148.72
-        }
-      ]
-    },
-    {
-      "id": "cue-26",
-      "start": 149.85,
-      "end": 152.82,
-      "text": "We know the game and we're gonna play it.",
-      "words": [
+          "text": "going",
+          "start": 148.27,
+          "end": 148.69
+        },
         {
           "text": "We",
           "start": 149.85,
-          "end": 150.18
+          "end": 150.19
         },
         {
           "text": "know",
-          "start": 150.18,
-          "end": 150.51
+          "start": 150.19,
+          "end": 150.52
         },
         {
           "text": "the",
-          "start": 150.51,
-          "end": 150.84
+          "start": 150.52,
+          "end": 150.86
         },
         {
           "text": "game",
-          "start": 150.84,
-          "end": 151.17
+          "start": 150.86,
+          "end": 151.19
         },
         {
           "text": "and",
-          "start": 151.17,
-          "end": 151.5
+          "start": 151.19,
+          "end": 151.53
         },
         {
           "text": "we're",
-          "start": 151.5,
-          "end": 151.83
+          "start": 151.53,
+          "end": 151.86
         },
         {
           "text": "gonna",
-          "start": 151.83,
-          "end": 152.16
+          "start": 151.86,
+          "end": 152.2
         },
         {
           "text": "play",
-          "start": 152.16,
-          "end": 152.49
+          "start": 152.2,
+          "end": 152.53
         },
         {
-          "text": "it.",
-          "start": 152.49,
-          "end": 152.82
+          "text": "it",
+          "start": 152.53,
+          "end": 152.87
+        },
+        {
+          "text": "I.",
+          "start": 153.83,
+          "end": 154.3
         }
       ]
     },
     {
-      "id": "cue-27",
-      "start": 153.83,
-      "end": 157.59,
-      "text": "I just wanna tell you how I'm feeling.",
+      "id": "cue-10",
+      "start": 154.3,
+      "end": 172.88,
+      "text": "Just wanna tell you how I'm feeling Gotta make you understand Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna.",
       "words": [
         {
-          "text": "I",
-          "start": 153.83,
-          "end": 154.3
-        },
-        {
-          "text": "just",
+          "text": "Just",
           "start": 154.3,
-          "end": 154.77
+          "end": 154.76
         },
         {
           "text": "wanna",
-          "start": 154.77,
-          "end": 155.24
+          "start": 154.76,
+          "end": 155.23
         },
         {
           "text": "tell",
-          "start": 155.24,
-          "end": 155.71
+          "start": 155.23,
+          "end": 155.7
         },
         {
           "text": "you",
-          "start": 155.71,
-          "end": 156.18
+          "start": 155.7,
+          "end": 156.17
         },
         {
           "text": "how",
-          "start": 156.18,
-          "end": 156.65
+          "start": 156.17,
+          "end": 156.64
         },
         {
           "text": "I'm",
-          "start": 156.65,
-          "end": 157.12
+          "start": 156.64,
+          "end": 157.1
         },
         {
-          "text": "feeling.",
-          "start": 157.12,
-          "end": 157.59
-        }
-      ]
-    },
-    {
-      "id": "cue-28",
-      "start": 159.09,
-      "end": 165.3,
-      "text": "Gotta make you understand Never gonna give you up Never gonna let you down.",
-      "words": [
+          "text": "feeling",
+          "start": 157.1,
+          "end": 157.57
+        },
         {
           "text": "Gotta",
           "start": 159.09,
-          "end": 159.54
+          "end": 159.53
         },
         {
           "text": "make",
-          "start": 159.54,
-          "end": 159.99
+          "start": 159.53,
+          "end": 159.98
         },
         {
           "text": "you",
-          "start": 159.99,
-          "end": 160.44
+          "start": 159.98,
+          "end": 160.43
         },
         {
           "text": "understand",
-          "start": 160.44,
-          "end": 160.89
+          "start": 160.43,
+          "end": 160.87
         },
         {
           "text": "Never",
@@ -1569,95 +1431,87 @@
         {
           "text": "Never",
           "start": 163.75,
-          "end": 164.06
+          "end": 164.07
         },
         {
           "text": "gonna",
-          "start": 164.06,
-          "end": 164.37
+          "start": 164.07,
+          "end": 164.38
         },
         {
           "text": "let",
-          "start": 164.37,
-          "end": 164.68
+          "start": 164.38,
+          "end": 164.7
         },
         {
           "text": "you",
-          "start": 164.68,
-          "end": 164.99
+          "start": 164.7,
+          "end": 165.01
         },
         {
-          "text": "down.",
-          "start": 164.99,
-          "end": 165.3
-        }
-      ]
-    },
-    {
-      "id": "cue-29",
-      "start": 166.16,
-      "end": 175.12,
-      "text": "Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna.",
-      "words": [
+          "text": "down",
+          "start": 165.01,
+          "end": 165.33
+        },
         {
           "text": "Never",
           "start": 166.16,
-          "end": 166.6
+          "end": 166.61
         },
         {
           "text": "gonna",
-          "start": 166.6,
-          "end": 167.04
+          "start": 166.61,
+          "end": 167.05
         },
         {
           "text": "run",
-          "start": 167.04,
-          "end": 167.48
+          "start": 167.05,
+          "end": 167.5
         },
         {
           "text": "around",
-          "start": 167.48,
-          "end": 167.92
+          "start": 167.5,
+          "end": 167.94
         },
         {
           "text": "and",
-          "start": 167.92,
-          "end": 168.36
+          "start": 167.94,
+          "end": 168.39
         },
         {
           "text": "desert",
-          "start": 168.36,
-          "end": 168.8
+          "start": 168.39,
+          "end": 168.83
         },
         {
           "text": "you",
-          "start": 168.8,
-          "end": 169.24
+          "start": 168.83,
+          "end": 169.28
         },
         {
           "text": "Never",
           "start": 170.06,
-          "end": 170.32
+          "end": 170.33
         },
         {
           "text": "gonna",
-          "start": 170.32,
-          "end": 170.58
+          "start": 170.33,
+          "end": 170.59
         },
         {
           "text": "make",
-          "start": 170.58,
-          "end": 170.84
+          "start": 170.59,
+          "end": 170.85
         },
         {
           "text": "you",
-          "start": 170.84,
-          "end": 171.1
+          "start": 170.85,
+          "end": 171.11
         },
         {
           "text": "cry",
-          "start": 171.1,
-          "end": 171.36
+          "start": 171.11,
+          "end": 171.38
         },
         {
           "text": "Never",
@@ -1665,12 +1519,20 @@
           "end": 172.52
         },
         {
-          "text": "gonna",
+          "text": "gonna.",
           "start": 172.52,
           "end": 172.88
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-11",
+      "start": 172.88,
+      "end": 190.09,
+      "text": "Say goodbye Never gonna tell a lie and hurt you Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say.",
+      "words": [
         {
-          "text": "say",
+          "text": "Say",
           "start": 172.88,
           "end": 173.24
         },
@@ -1682,59 +1544,43 @@
         {
           "text": "Never",
           "start": 174.4,
-          "end": 174.76
+          "end": 174.75
         },
         {
-          "text": "gonna.",
-          "start": 174.76,
-          "end": 175.12
-        }
-      ]
-    },
-    {
-      "id": "cue-30",
-      "start": 175.12,
-      "end": 177.28,
-      "text": "Tell a lie and hurt you.",
-      "words": [
+          "text": "gonna",
+          "start": 174.75,
+          "end": 175.11
+        },
         {
-          "text": "Tell",
-          "start": 175.12,
-          "end": 175.48
+          "text": "tell",
+          "start": 175.11,
+          "end": 175.46
         },
         {
           "text": "a",
-          "start": 175.48,
-          "end": 175.84
+          "start": 175.46,
+          "end": 175.82
         },
         {
           "text": "lie",
-          "start": 175.84,
-          "end": 176.2
+          "start": 175.82,
+          "end": 176.18
         },
         {
           "text": "and",
-          "start": 176.2,
-          "end": 176.56
+          "start": 176.18,
+          "end": 176.53
         },
         {
           "text": "hurt",
-          "start": 176.56,
-          "end": 176.92
+          "start": 176.53,
+          "end": 176.89
         },
         {
-          "text": "you.",
-          "start": 176.92,
-          "end": 177.28
-        }
-      ]
-    },
-    {
-      "id": "cue-31",
-      "start": 178.49,
-      "end": 182.12,
-      "text": "Never gonna give you up Never gonna let you down.",
-      "words": [
+          "text": "you",
+          "start": 176.89,
+          "end": 177.24
+        },
         {
           "text": "Never",
           "start": 178.49,
@@ -1748,51 +1594,43 @@
         {
           "text": "give",
           "start": 179.07,
-          "end": 179.36
+          "end": 179.37
         },
         {
           "text": "you",
-          "start": 179.36,
-          "end": 179.65
+          "start": 179.37,
+          "end": 179.66
         },
         {
           "text": "up",
-          "start": 179.65,
-          "end": 179.94
+          "start": 179.66,
+          "end": 179.95
         },
         {
           "text": "Never",
           "start": 180.62,
-          "end": 180.92
+          "end": 180.93
         },
         {
           "text": "gonna",
-          "start": 180.92,
-          "end": 181.22
+          "start": 180.93,
+          "end": 181.23
         },
         {
           "text": "let",
-          "start": 181.22,
-          "end": 181.52
+          "start": 181.23,
+          "end": 181.53
         },
         {
           "text": "you",
-          "start": 181.52,
-          "end": 181.82
+          "start": 181.53,
+          "end": 181.83
         },
         {
-          "text": "down.",
-          "start": 181.82,
-          "end": 182.12
-        }
-      ]
-    },
-    {
-      "id": "cue-32",
-      "start": 182.98,
-      "end": 190.39,
-      "text": "Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye.",
-      "words": [
+          "text": "down",
+          "start": 181.83,
+          "end": 182.14
+        },
         {
           "text": "Never",
           "start": 182.98,
@@ -1801,150 +1639,150 @@
         {
           "text": "gonna",
           "start": 183.44,
-          "end": 183.9
+          "end": 183.89
         },
         {
           "text": "run",
-          "start": 183.9,
-          "end": 184.36
+          "start": 183.89,
+          "end": 184.35
         },
         {
           "text": "around",
-          "start": 184.36,
-          "end": 184.82
+          "start": 184.35,
+          "end": 184.81
         },
         {
           "text": "and",
-          "start": 184.82,
-          "end": 185.28
+          "start": 184.81,
+          "end": 185.27
         },
         {
           "text": "desert",
-          "start": 185.28,
-          "end": 185.74
+          "start": 185.27,
+          "end": 185.72
         },
         {
           "text": "you",
-          "start": 185.74,
-          "end": 186.2
+          "start": 185.72,
+          "end": 186.18
         },
         {
           "text": "Never",
           "start": 187.01,
-          "end": 187.3
+          "end": 187.29
         },
         {
           "text": "gonna",
-          "start": 187.3,
-          "end": 187.59
+          "start": 187.29,
+          "end": 187.58
         },
         {
           "text": "make",
-          "start": 187.59,
-          "end": 187.88
+          "start": 187.58,
+          "end": 187.86
         },
         {
           "text": "you",
-          "start": 187.88,
-          "end": 188.17
+          "start": 187.86,
+          "end": 188.15
         },
         {
           "text": "cry",
-          "start": 188.17,
-          "end": 188.46
+          "start": 188.15,
+          "end": 188.43
         },
         {
           "text": "Never",
           "start": 189.15,
-          "end": 189.46
+          "end": 189.47
         },
         {
           "text": "gonna",
-          "start": 189.46,
-          "end": 189.77
+          "start": 189.47,
+          "end": 189.78
         },
         {
-          "text": "say",
-          "start": 189.77,
-          "end": 190.08
-        },
-        {
-          "text": "goodbye.",
-          "start": 190.08,
-          "end": 190.39
+          "text": "say.",
+          "start": 189.78,
+          "end": 190.09
         }
       ]
     },
     {
-      "id": "cue-33",
-      "start": 191.28,
-      "end": 198.94,
-      "text": "Never gonna tell a lie and hurt you Never gonna give you up Never gonna let you down.",
+      "id": "cue-12",
+      "start": 190.09,
+      "end": 207.48,
+      "text": "Goodbye Never gonna tell a lie and hurt you Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye.",
       "words": [
+        {
+          "text": "Goodbye",
+          "start": 190.09,
+          "end": 190.41
+        },
         {
           "text": "Never",
           "start": 191.28,
-          "end": 191.72
+          "end": 191.71
         },
         {
           "text": "gonna",
-          "start": 191.72,
-          "end": 192.16
+          "start": 191.71,
+          "end": 192.15
         },
         {
           "text": "tell",
-          "start": 192.16,
-          "end": 192.6
+          "start": 192.15,
+          "end": 192.58
         },
         {
           "text": "a",
-          "start": 192.6,
-          "end": 193.04
+          "start": 192.58,
+          "end": 193.02
         },
         {
           "text": "lie",
-          "start": 193.04,
-          "end": 193.48
+          "start": 193.02,
+          "end": 193.46
         },
         {
           "text": "and",
-          "start": 193.48,
-          "end": 193.92
+          "start": 193.46,
+          "end": 193.89
         },
         {
           "text": "hurt",
-          "start": 193.92,
-          "end": 194.36
+          "start": 193.89,
+          "end": 194.33
         },
         {
           "text": "you",
-          "start": 194.36,
-          "end": 194.8
+          "start": 194.33,
+          "end": 194.76
         },
         {
           "text": "Never",
           "start": 195.54,
-          "end": 195.8
+          "end": 195.81
         },
         {
           "text": "gonna",
-          "start": 195.8,
-          "end": 196.06
+          "start": 195.81,
+          "end": 196.07
         },
         {
           "text": "give",
-          "start": 196.06,
-          "end": 196.32
+          "start": 196.07,
+          "end": 196.33
         },
         {
           "text": "you",
-          "start": 196.32,
-          "end": 196.58
+          "start": 196.33,
+          "end": 196.59
         },
         {
           "text": "up",
-          "start": 196.58,
-          "end": 196.84
+          "start": 196.59,
+          "end": 196.86
         },
         {
           "text": "Never",
@@ -1959,69 +1797,53 @@
         {
           "text": "let",
           "start": 198.07,
-          "end": 198.36
+          "end": 198.37
         },
         {
           "text": "you",
-          "start": 198.36,
-          "end": 198.65
+          "start": 198.37,
+          "end": 198.66
         },
         {
-          "text": "down.",
-          "start": 198.65,
-          "end": 198.94
-        }
-      ]
-    },
-    {
-      "id": "cue-34",
-      "start": 199.81,
-      "end": 202.68,
-      "text": "Never gonna run around and desert you.",
-      "words": [
+          "text": "down",
+          "start": 198.66,
+          "end": 198.95
+        },
         {
           "text": "Never",
           "start": 199.81,
-          "end": 200.22
+          "end": 200.23
         },
         {
           "text": "gonna",
-          "start": 200.22,
-          "end": 200.63
+          "start": 200.23,
+          "end": 200.64
         },
         {
           "text": "run",
-          "start": 200.63,
-          "end": 201.04
+          "start": 200.64,
+          "end": 201.05
         },
         {
           "text": "around",
-          "start": 201.04,
-          "end": 201.45
+          "start": 201.05,
+          "end": 201.47
         },
         {
           "text": "and",
-          "start": 201.45,
-          "end": 201.86
+          "start": 201.47,
+          "end": 201.88
         },
         {
           "text": "desert",
-          "start": 201.86,
-          "end": 202.27
+          "start": 201.88,
+          "end": 202.29
         },
         {
-          "text": "you.",
-          "start": 202.27,
-          "end": 202.68
-        }
-      ]
-    },
-    {
-      "id": "cue-35",
-      "start": 203.68,
-      "end": 210.98,
-      "text": "Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you.",
-      "words": [
+          "text": "you",
+          "start": 202.29,
+          "end": 202.71
+        },
         {
           "text": "Never",
           "start": 203.68,
@@ -2063,10 +1885,18 @@
           "end": 207.12
         },
         {
-          "text": "goodbye",
+          "text": "goodbye.",
           "start": 207.12,
           "end": 207.48
-        },
+        }
+      ]
+    },
+    {
+      "id": "cue-13",
+      "start": 208.26,
+      "end": 210.98,
+      "text": "Never gonna tell a lie and hurt you.",
+      "words": [
         {
           "text": "Never",
           "start": 208.26,
