@@ -101,7 +101,7 @@ const YouTubePlayer = forwardRef<YouTubePlayerRef, YouTubePlayerProps>(({
             origin: window.location.origin,
             widget_referrer: window.location.origin,
             start: Math.floor(initialTime),
-            autoplay: 1,       // Auto-play to skip the initial red play button screen
+            autoplay: 0,       // Do NOT auto-play on load; wait for user explicit click
             controls: 0,       // Force hide native timeline and buttons
             disablekb: 1,      // Disable YouTube keyboard shortcuts
             fs: 0,             // Hide fullscreen button
@@ -116,7 +116,7 @@ const YouTubePlayer = forwardRef<YouTubePlayerRef, YouTubePlayerProps>(({
             onReady: (event: any) => {
               try {
                 event.target.setPlaybackRate(playbackRate);
-                event.target.playVideo(); // Aggressively start playing
+                // Parked paused on initial load - user clicks to play
                 checkAndEmitDuration(event);
               } catch (e) {}
             },

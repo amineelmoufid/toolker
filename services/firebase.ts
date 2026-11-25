@@ -228,6 +228,47 @@ export const getRoomHost = async (roomId: string): Promise<string | null> => {
   }
 };
 
+export interface RoomMember {
+  id: string;
+  name: string;
+  isHost?: boolean;
+  joinedAt: number;
+  lastSeen: number;
+}
+
+export const registerRoomMember = async (
+  roomId: string, 
+  member: { id: string; name: string; isHost?: boolean }
+) => {
+  if (!roomId || !member.id) return;
+  const memberRef = ref(db, `rooms/${roomId}/members/${member.id}`);
+  await set(memberRef, {
+    id: member.id,
+    name: member.name,
+    isHost: Boolean(member.isHost),
+    joinedAt: Date.now(),
+    lastSeen: Date.now()
+  });
+  onDisconnect(memberRef).remove();
+};
+
+export const unregisterRoomMember = async (roomId: string, userId: string) => {
+  if (!roomId || !userId) return;
+  try {
+    await remove(ref(db, `rooms/${roomId}/members/${userId}`));
+  } catch (_) {}
+};
+
+export const subscribeToRoomMembers = (
+  roomId: string, 
+  callback: (members: Record<string, RoomMember>) => void
+) => {
+  if (!roomId) return () => {};
+  return onValue(ref(db, `rooms/${roomId}/members`), (snapshot) => {
+    callback(snapshot.val() || {});
+  });
+};
+
 export const publishRoomSessionText = async (
   roomId: string,
   sentence: string, 

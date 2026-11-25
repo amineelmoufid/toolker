@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState, useRef } from 'react';
+import React, { createContext, useContext, useEffect, useState, useRef, useMemo } from 'react';
 import Peer, { DataConnection } from 'peerjs';
 import { 
   syncRoomClip, 
@@ -21,7 +21,11 @@ import {
   subscribeToRoomPlayback,
   RoomPlaybackState,
   calculateAuthoritativeTime,
-  subscribeToRoomUserAudios
+  subscribeToRoomUserAudios,
+  registerRoomMember,
+  unregisterRoomMember,
+  subscribeToRoomMembers,
+  RoomMember
 } from '../services/firebase';
 
 export function getRoomIdFromUrl(): string | null {
@@ -48,11 +52,18 @@ export function getRoomIdFromUrl(): string | null {
 }
 
 export type RoomAction = {
-  type: 'PLAY' | 'PAUSE' | 'SEEK' | 'PLAYHEAD_PULSE' | 'AUDIO_SYNC' | 'SYNC_SENTENCE' | 'SYNC_VIDEO' | 'CHAT_MESSAGE' | 'SYNC_DICTATION' | 'SYNC_CAPTION' | 'TOGGLE_LINE_BY_LINE' | 'LINE_BOUNDARY_PAUSE' | 'SYNC_PLAYBACK' | 'ROOM_KILLED';
+  type: 'PLAY' | 'PAUSE' | 'SEEK' | 'PLAYHEAD_PULSE' | 'AUDIO_SYNC' | 'SYNC_SENTENCE' | 'SYNC_VIDEO' | 'CHAT_MESSAGE' | 'SYNC_DICTATION' | 'SYNC_CAPTION' | 'TOGGLE_LINE_BY_LINE' | 'LINE_BOUNDARY_PAUSE' | 'SYNC_PLAYBACK' | 'ROOM_KILLED' | 'USER_JOINED';
   payload?: any;
 };
 
 export type ConnectionTelemetry = 'none' | 'p2p' | 'cloud' | 'both';
+
+export interface RoomMemberInfo {
+  id: string;
+  name: string;
+  isHost: boolean;
+  isSelf: boolean;
+}
 
 interface RoomContextProps {
   roomId: string | null;
@@ -68,12 +79,15 @@ interface RoomContextProps {
   killRoom: () => Promise<void>;
   broadcastAction: (action: RoomAction) => void;
   syncClip: (clip: any) => void;
+  syncAudio: (audioBase64: string) => void;
   syncDictation: (lesson: any) => void;
   syncPlayback: (state: Partial<RoomPlaybackState>) => void;
   lastAction: RoomAction | null;
   syncedClip: any | null;
   syncedDictation: any | null;
   syncedPlayback: RoomPlaybackState | null;
+  roomMembers: RoomMemberInfo[];
+  activeUserCount: number;
 }
 
 const RoomContext = createContext<RoomContextProps | undefined>(undefined);
@@ -95,11 +109,38 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [syncedClip, setSyncedClip] = useState<any | null>(null);
   const [syncedDictation, setSyncedDictation] = useState<any | null>(null);
   const [syncedPlayback, setSyncedPlayback] = useState<RoomPlaybackState | null>(null);
+  const [membersMap, setMembersMap] = useState<Record<string, { id: string; name: string; isHost?: boolean }>>({});
   
   const peerRef = useRef<Peer | null>(null);
   const connRef = useRef<DataConnection | null>(null);
   const lastAudioTimestampRef = useRef<number>(0);
   const lastShadowTimestampRef = useRef<number>(0);
+
+  // Presence & Member Registration in Firebase Realtime Database
+  useEffect(() => {
+    if (!roomId) {
+      setMembersMap({});
+      return;
+    }
+    const myId = getStoredUserId();
+    const storedName = localStorage.getItem('toolker_device_username') || '';
+    const myName = (storedName && storedName.trim()) ? storedName.trim() : `User ${myId.slice(-4).toUpperCase()}`;
+    
+    registerRoomMember(roomId, {
+      id: myId,
+      name: myName,
+      isHost: isHost
+    });
+
+    const unsubscribe = subscribeToRoomMembers(roomId, (remoteMembers) => {
+      setMembersMap(remoteMembers || {});
+    });
+
+    return () => {
+      unregisterRoomMember(roomId, myId);
+      unsubscribe();
+    };
+  }, [roomId, isHost]);
 
   // Unique session ID for each tab/device to prevent self-echo and allow multi-tab testing
   const tabSessionIdRef = useRef<string>(
@@ -347,6 +388,20 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
     setRoomId(id);
     connectToPeer(id);
+
+    // Announce join to pause room and notify partner
+    const myId = getStoredUserId();
+    const storedName = localStorage.getItem('toolker_device_username') || '';
+    const myName = (storedName && storedName.trim()) ? storedName.trim() : `User ${myId.slice(-4).toUpperCase()}`;
+    broadcastRoomActionToFirebase(id, {
+      actionId: 'act_' + Math.random().toString(36).substring(2, 9),
+      type: 'USER_JOINED',
+      payload: { userId: myId, userName: myName, timestamp: Date.now() },
+      senderId: tabSessionIdRef.current,
+      timestamp: Date.now()
+    });
+    // Immediately pause room on newcomer entry
+    syncRoomPlayback(id, { isPlaying: false });
   };
 
   const createRoom = (initialClip?: any): string => {
@@ -530,6 +585,53 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
     isPeerConnected ? 'p2p' :
     isFirebaseConnected ? 'cloud' : 'none';
 
+  const roomMembers = useMemo<RoomMemberInfo[]>(() => {
+    const myId = getStoredUserId();
+    const storedName = localStorage.getItem('toolker_device_username') || '';
+    const myName = (storedName && storedName.trim()) ? storedName.trim() : `User ${myId.slice(-4).toUpperCase()}`;
+
+    const list: RoomMemberInfo[] = [];
+    const seen = new Set<string>();
+
+    for (const [id, m] of Object.entries(membersMap)) {
+      if (m && m.name) {
+        seen.add(id);
+        list.push({
+          id,
+          name: m.name,
+          isHost: Boolean(m.isHost),
+          isSelf: id === myId
+        });
+      }
+    }
+
+    if (roomId && !seen.has(myId)) {
+      list.unshift({
+        id: myId,
+        name: myName,
+        isHost: isHost,
+        isSelf: true
+      });
+      seen.add(myId);
+    }
+
+    if (remotePeerId && !seen.has(remotePeerId)) {
+      list.push({
+        id: remotePeerId,
+        name: 'Partner',
+        isHost: false,
+        isSelf: false
+      });
+    }
+
+    return list;
+  }, [membersMap, roomId, isHost, remotePeerId]);
+
+  const activeUserCount = useMemo(() => {
+    if (!roomId) return 1;
+    return Math.max(roomMembers.length, isConnected ? 2 : 1);
+  }, [roomId, roomMembers.length, isConnected]);
+
   return (
     <RoomContext.Provider value={{ 
       roomId,
@@ -545,12 +647,15 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
       killRoom, 
       broadcastAction, 
       syncClip,
+      syncAudio,
       syncDictation,
       syncPlayback,
       lastAction,
       syncedClip,
       syncedDictation,
-      syncedPlayback
+      syncedPlayback,
+      roomMembers,
+      activeUserCount
     }}>
       {children}
     </RoomContext.Provider>

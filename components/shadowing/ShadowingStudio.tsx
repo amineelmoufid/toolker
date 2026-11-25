@@ -375,6 +375,8 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
   const justCompletedLineRef = useRef<SubtitleLine | null>(null);
   const isRemoteUpdateRef = useRef<boolean>(false);
   const suppressOutboundUntilRef = useRef<number>(0);
+  const isFirstPlaybackSyncRef = useRef<boolean>(true);
+  const [showMembersDropdown, setShowMembersDropdown] = useState(false);
 
   const { 
     peerId, 
@@ -383,12 +385,63 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     isHost,
     createRoom, 
     syncClip, 
+    syncAudio,
     syncPlayback,
     broadcastAction, 
     lastAction, 
     syncedClip,
-    syncedPlayback 
+    syncedPlayback,
+    roomMembers,
+    activeUserCount
   } = useRoom();
+
+  const findSentenceIndexByTime = (time: number, subs: SubtitleLine[]): number => {
+    if (!subs || subs.length === 0) return 0;
+    const idx = subs.findIndex((line, i) => {
+      const nextLine = subs[i + 1];
+      const thresholdEnd = nextLine ? nextLine.start : (line.end + 1.2);
+      return time >= line.start - 0.15 && time < thresholdEnd;
+    });
+    if (idx !== -1) return idx;
+    if (time <= subs[0].start) return 0;
+    for (let i = subs.length - 1; i >= 0; i--) {
+      if (time >= subs[i].start) return i;
+    }
+    return 0;
+  };
+
+  const handleTimelineSeek = (t: number) => {
+    const targetIdx = findSentenceIndexByTime(t, cleanSubtitles);
+    setActiveSentenceIndex(targetIdx);
+    isAtLineEndRef.current = null;
+    lastPausedLineIdRef.current = null;
+    isWaitingForNextLineRef.current = false;
+    
+    if (cleanSubtitles[targetIdx]) {
+      lastActiveLineRef.current = cleanSubtitles[targetIdx];
+    }
+    
+    playerRef.current?.seekTo(t);
+    setCurrentTime(t);
+    
+    if (isConnected) {
+      broadcastAction({
+        type: 'SEEK',
+        payload: { 
+          time: t,
+          lineIndex: targetIdx,
+          lineId: cleanSubtitles[targetIdx]?.id
+        }
+      });
+      syncPlayback({ 
+        time: t, 
+        isPlaying,
+        activeLineIndex: targetIdx,
+        activeLineId: cleanSubtitles[targetIdx]?.id
+      });
+    }
+    showToast(`📍 JUMPED TO SENTENCE ${targetIdx + 1}`);
+  };
 
   // Synchronize clip from room partner (via Firebase & PeerJS)
   useEffect(() => {
@@ -414,6 +467,18 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
   // Authoritative Living Room State Synchronizer (Instant Catch-up for late joiners or room updates)
   useEffect(() => {
     if (!syncedPlayback || !currentClip?.subtitles) return;
+
+    // Prevent auto-play on initial load/join: Pause the room instead so user must click play
+    if (isFirstPlaybackSyncRef.current) {
+      isFirstPlaybackSyncRef.current = false;
+      if (syncedPlayback.isPlaying) {
+        playerRef.current?.pause();
+        setIsPlaying(false);
+        syncPlayback({ isPlaying: false, time: syncedPlayback.time || 0 });
+        showToast("👤 JOINED ROOM // PLAYBACK PAUSED (CLICK PLAY TO START)", 4000);
+        return;
+      }
+    }
 
     // 1. Synchronize Room Parameter: Line-by-Line Mode
     if (typeof syncedPlayback.lineByLine === 'boolean' && syncedPlayback.lineByLine !== lineByLine) {
@@ -458,6 +523,11 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
       suppressOutboundUntilRef.current = Date.now() + 2500;
       playerRef.current?.seekTo(authoritativeTime);
       setCurrentTime(authoritativeTime);
+      const targetIdx = findSentenceIndexByTime(authoritativeTime, cleanSubtitles);
+      setActiveSentenceIndex(targetIdx);
+      if (cleanSubtitles[targetIdx]) {
+        lastActiveLineRef.current = cleanSubtitles[targetIdx];
+      }
     }
 
     // 6. Synchronize Play / Pause State
@@ -507,10 +577,24 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
         : (lastAction.payload.audioBase64 || lastAction.payload.audio);
       if (remoteAudio) {
         setLatestPartnerAudio(remoteAudio);
-        setIsPlayingPartnerAudio(false);
-        setHasUnreadPartnerAudio(true);
-        showToast("🎙️ PARTNER SHADOWED // CLICK ▶ TO LISTEN", 4000);
+        // Requirement 1: Partner audio plays immediately when received
+        stopAllAudio();
+        setIsPlayingLocalAudio(false);
+        setIsPlayingPartnerAudio(true);
+        setHasUnreadPartnerAudio(false);
+        // Pause video to ensure clean listening
+        playerRef.current?.pause();
+        setIsPlaying(false);
+        showToast("🎙️ PARTNER RECORDING RECEIVED // PLAYING NOW...", 4500);
+        playStandardAudio(remoteAudio, () => {
+          setIsPlayingPartnerAudio(false);
+        });
       }
+    } else if (lastAction.type === 'USER_JOINED') {
+      playerRef.current?.pause();
+      setIsPlaying(false);
+      const joinedName = lastAction.payload?.userName || 'A new partner';
+      showToast(`👤 ${joinedName.toUpperCase()} JOINED // PLAYBACK PAUSED`, 5000);
     } else if (lastAction.type === 'SYNC_CAPTION' && lastAction.payload) {
       const { lineId, start, autoPlay } = lastAction.payload;
       if (typeof start === 'number') {
@@ -585,10 +669,20 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
       }
     } else if (lastAction.type === 'SEEK') {
       if (typeof lastAction.payload?.time === 'number') {
+        const seekTime = lastAction.payload.time;
         isAtLineEndRef.current = null;
         lastPausedLineIdRef.current = null;
-        playerRef.current?.seekTo(lastAction.payload.time);
-        setCurrentTime(lastAction.payload.time);
+        isWaitingForNextLineRef.current = false;
+        playerRef.current?.seekTo(seekTime);
+        setCurrentTime(seekTime);
+        const targetIdx = typeof lastAction.payload?.lineIndex === 'number'
+          ? lastAction.payload.lineIndex
+          : findSentenceIndexByTime(seekTime, cleanSubtitles);
+        setActiveSentenceIndex(targetIdx);
+        if (cleanSubtitles[targetIdx]) {
+          lastActiveLineRef.current = cleanSubtitles[targetIdx];
+        }
+        showToast(`📍 PARTNER SEEKED TO SENTENCE ${targetIdx + 1}`);
       }
     } else if (lastAction.type === 'PLAYHEAD_PULSE') {
       if (isPlaying && typeof lastAction.payload?.time === 'number') {
@@ -1138,6 +1232,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
             // Broadcast to partner in room
             if (isConnected) {
               broadcastAction({ type: 'AUDIO_SYNC', payload: base64 });
+              syncAudio(base64);
               showToast("✓ SHADOW SENT TO PARTNER");
             } else {
               showToast("✓ SHADOW RECORDED (STANDALONE)");
@@ -1211,7 +1306,48 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
           </div>
 
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            {/* Active Users Indicator Pill with Hover / Click Popover */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setShowMembersDropdown(true)}
+              onMouseLeave={() => setShowMembersDropdown(false)}
+            >
+              <button
+                type="button"
+                onClick={() => setShowMembersDropdown(prev => !prev)}
+                className="flex items-center gap-1.5 px-2 sm:px-2.5 py-1.5 bg-[#16171a] hover:bg-[#24252a] text-[#ebe6d8] border-2 border-[#1c1d20] shadow-[2px_2px_0px_#18191c] rounded-md font-mono text-[10px] sm:text-xs font-bold uppercase transition-all select-none cursor-pointer active:translate-y-0.5 active:shadow-[0px_0px_0px_#18191c]"
+                title="Active users in room (hover to see names)"
+              >
+                <span className={`w-2 h-2 rounded-full ${isConnected ? 'bg-[#3d7a4d] animate-pulse' : 'bg-[#eab308]'}`} />
+                <span>👥 {activeUserCount}</span>
+                <span className="text-[8px] text-[#a09c91]">▾</span>
+              </button>
 
+              {/* Hover / Click Dropdown showing active user names */}
+              {showMembersDropdown && (
+                <div className="absolute top-full right-0 mt-1.5 w-52 sm:w-60 bg-[#16171a] border-2 border-[#1c1d20] shadow-[4px_4px_0px_#18191c] rounded-md p-2.5 z-50 font-mono flex flex-col gap-1.5 animate-in fade-in zoom-in-95 duration-100">
+                  <div className="flex items-center justify-between border-b border-[#2b2c31] pb-1.5 mb-1">
+                    <span className="text-[9px] uppercase tracking-wider text-[#a09c91] font-bold">
+                      {isConnected ? `Room Active (${activeUserCount})` : 'Solo Session (1)'}
+                    </span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#3d7a4d]" />
+                  </div>
+
+                  <div className="flex flex-col gap-1 max-h-40 overflow-y-auto">
+                    {roomMembers.map((m) => (
+                      <div key={m.id} className="flex items-center justify-between text-xs px-1.5 py-1 rounded bg-[#24252a]/60">
+                        <span className="text-[#ebe6d8] font-bold truncate max-w-[130px]">
+                          {m.name} {m.isSelf && <span className="text-[#3d7a4d] font-normal">(You)</span>}
+                        </span>
+                        <span className="text-[8.5px] uppercase text-[#a09c91] bg-[#16171a] px-1 py-0.5 rounded border border-[#3e4049]">
+                          {m.isHost ? '👑 HOST' : 'ACTIVE'}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
 
             <RoomShareButton 
               modeName="shadowing" 
@@ -1253,18 +1389,18 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
               <CustomTimeline 
                 currentTime={currentTime}
                 duration={duration}
-                onSeek={(t) => {
-                  isAtLineEndRef.current = null;
-                  lastPausedLineIdRef.current = null;
-                  playerRef.current?.seekTo(t);
+                onScrub={(t) => {
                   setCurrentTime(t);
-                  if (isConnected) {
-                    broadcastAction({
-                      type: 'SEEK',
-                      payload: { time: t }
-                    });
-                    syncPlayback({ time: t, isPlaying });
+                  const targetIdx = findSentenceIndexByTime(t, cleanSubtitles);
+                  if (targetIdx !== activeSentenceIndex) {
+                    setActiveSentenceIndex(targetIdx);
+                    if (cleanSubtitles[targetIdx]) {
+                      lastActiveLineRef.current = cleanSubtitles[targetIdx];
+                    }
                   }
+                }}
+                onSeek={(t) => {
+                  handleTimelineSeek(t);
                 }}
               />
             </div>

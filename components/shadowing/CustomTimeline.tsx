@@ -4,9 +4,10 @@ interface CustomTimelineProps {
   currentTime: number;
   duration: number;
   onSeek: (time: number) => void;
+  onScrub?: (time: number) => void;
 }
 
-const CustomTimeline: React.FC<CustomTimelineProps> = ({ currentTime, duration, onSeek }) => {
+const CustomTimeline: React.FC<CustomTimelineProps> = ({ currentTime, duration, onSeek, onScrub }) => {
   const trackRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [dragTime, setDragTime] = useState(0);
@@ -31,6 +32,7 @@ const CustomTimeline: React.FC<CustomTimelineProps> = ({ currentTime, duration, 
     setIsDragging(true);
     const newTime = calculateTimeFromEvent(e);
     setDragTime(newTime);
+    if (onScrub) onScrub(newTime);
     
     // Capture pointer to allow dragging outside the element
     e.currentTarget.setPointerCapture(e.pointerId);
@@ -40,6 +42,7 @@ const CustomTimeline: React.FC<CustomTimelineProps> = ({ currentTime, duration, 
     if (!isDragging) return;
     const newTime = calculateTimeFromEvent(e);
     setDragTime(newTime);
+    if (onScrub) onScrub(newTime);
   };
 
   const handlePointerUp = (e: React.PointerEvent) => {
