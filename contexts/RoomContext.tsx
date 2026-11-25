@@ -479,6 +479,14 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
+  const syncAudio = (audioBase64: string) => {
+    if (!roomId || !audioBase64) return;
+    const mySenderId = tabSessionIdRef.current;
+    const storedName = localStorage.getItem('toolker_device_username') || '';
+    const myName = (storedName && storedName.trim()) ? storedName.trim() : 'Partner';
+    syncRoomAudio(roomId, audioBase64, mySenderId, myName);
+  };
+
   const syncDictation = (lesson: any) => {
     if (!lesson) return;
     if (roomId) {
