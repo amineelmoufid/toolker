@@ -20,17 +20,43 @@ def load_cookie_header(cookie_path="cookies.txt"):
     if not os.path.isfile(cookie_path):
         return None
     try:
-        cookies = []
+        clean_map = {}
         with open(cookie_path, "r", encoding="utf-8", errors="ignore") as f:
             for line in f:
-                line = line.strip()
-                if not line or line.startswith("#"):
+                line_s = line.strip()
+                if not line_s or line_s.startswith("#"):
                     continue
-                parts = line.split("\t")
-                if len(parts) >= 7:
-                    cookies.append(f"{parts[5]}={parts[6]}")
-        if cookies:
-            return "; ".join(cookies)
+                parts = line_s.split("\t")
+                if len(parts) >= 7 and "youtube.com" in parts[0]:
+                    key = (parts[0], parts[2], parts[5])
+                    clean_map[key] = f"{parts[5]}={parts[6]}"
+        if clean_map:
+            return "; ".join(clean_map.values())
+    except Exception:
+        pass
+    return None
+
+def prepare_clean_cookies_file(cookie_path="cookies.txt"):
+    if not os.path.isfile(cookie_path):
+        return None
+    try:
+        clean_map = {}
+        with open(cookie_path, "r", encoding="utf-8", errors="ignore") as f:
+            for line in f:
+                line_s = line.strip()
+                if not line_s or line_s.startswith("#"):
+                    continue
+                parts = line_s.split("\t")
+                if len(parts) >= 7 and "youtube.com" in parts[0]:
+                    key = (parts[0], parts[2], parts[5])
+                    clean_map[key] = line_s
+        if clean_map:
+            clean_file = f"temp_clean_cookies_{os.getpid()}.txt"
+            with open(clean_file, "w", encoding="utf-8") as out:
+                out.write("# Netscape HTTP Cookie File\n")
+                for l in clean_map.values():
+                    out.write(l + "\n")
+            return clean_file
     except Exception:
         pass
     return None
@@ -405,9 +431,10 @@ def extract_with_ytdlp(vid, preferred_lang=None):
         cmd.extend(["--js-runtimes", "deno"])
 
     # Support authenticated cookies if cookies.txt is provided
-    if os.path.isfile("cookies.txt"):
-        print("    [yt-dlp] Using authenticated session cookies from cookies.txt")
-        cmd.extend(["--cookies", "cookies.txt"])
+    clean_cookie_file = prepare_clean_cookies_file()
+    if clean_cookie_file:
+        print("    [yt-dlp] Using authenticated YouTube session cookies")
+        cmd.extend(["--cookies", clean_cookie_file])
 
     cmd.append(f"https://www.youtube.com/watch?v={vid}")
 
@@ -443,6 +470,12 @@ def extract_with_ytdlp(vid, preferred_lang=None):
         with open(chosen_file, "r", encoding="utf-8") as jf:
             data = json.load(jf)
     finally:
+        if clean_cookie_file:
+            try:
+                if os.path.isfile(clean_cookie_file):
+                    os.remove(clean_cookie_file)
+            except Exception:
+                pass
         for f in files:
             try:
                 os.remove(f)
