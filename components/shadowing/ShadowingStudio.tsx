@@ -7,6 +7,7 @@ import ControlDock from './ControlDock';
 import VideoLibraryModal from './VideoLibraryModal';
 import CustomTimeline from './CustomTimeline';
 import { useRoom } from '../../contexts/RoomContext';
+import { calculateAuthoritativeTime } from '../../services/firebase';
 import { RoomShareButton } from '../common/RoomShareButton';
 import { SectionNavigator } from '../common/SectionNavigator';
 import { blobToBase64, playStandardAudio, stopAllAudio } from '../../utils/audio';
@@ -364,8 +365,22 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
   const lastActiveLineRef = useRef<SubtitleLine | null>(null);
   const isAtLineEndRef = useRef<SubtitleLine | null>(null);
   const lastPausedLineIdRef = useRef<string | null>(null);
+  const isRemoteUpdateRef = useRef<boolean>(false);
+  const suppressOutboundUntilRef = useRef<number>(0);
 
-  const { peerId, roomId, isConnected, createRoom, syncClip, broadcastAction, lastAction, syncedClip } = useRoom();
+  const { 
+    peerId, 
+    roomId, 
+    isConnected, 
+    isHost,
+    createRoom, 
+    syncClip, 
+    syncPlayback,
+    broadcastAction, 
+    lastAction, 
+    syncedClip,
+    syncedPlayback 
+  } = useRoom();
 
   // Synchronize clip from room partner (via Firebase & PeerJS)
   useEffect(() => {
@@ -381,12 +396,71 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     }
   }, [syncedClip]);
 
-  // If in room and we already have a clip, ensure room is synced
+  // Host seeds initial clip to room; guests adopt room clip
   useEffect(() => {
-    if (roomId && currentClip && isConnected) {
+    if (isHost && roomId && currentClip && isConnected) {
       syncClip(currentClip);
     }
-  }, [roomId, isConnected]);
+  }, [isHost, roomId, isConnected]);
+
+  // Authoritative Living Room State Synchronizer (Instant Catch-up for late joiners or room updates)
+  useEffect(() => {
+    if (!syncedPlayback || !currentClip?.subtitles) return;
+
+    // 1. Synchronize Room Parameter: Line-by-Line Mode
+    if (typeof syncedPlayback.lineByLine === 'boolean' && syncedPlayback.lineByLine !== lineByLine) {
+      setLineByLine(syncedPlayback.lineByLine);
+      try { localStorage.setItem('toolker_yt_line_by_line', String(syncedPlayback.lineByLine)); } catch (_) {}
+      showToast(syncedPlayback.lineByLine ? "🤝 LINE-BY-LINE: ON (SYNCED)" : "🤝 CONTINUOUS MODE (SYNCED)");
+    }
+
+    // 2. Synchronize Room Parameter: Tempo / Playback Rate
+    if (typeof syncedPlayback.playbackRate === 'number') {
+      const mode = syncedPlayback.playbackRate < 0.9 ? 'slow' : 'normal';
+      if (playbackMode !== mode) {
+        setPlaybackMode(mode);
+        playerRef.current?.setPlaybackRate(syncedPlayback.playbackRate);
+        showToast(`🤝 TEMPO: ${syncedPlayback.playbackRate}× (SYNCED)`);
+      }
+    }
+
+    // 3. Synchronize Room Parameter: Dictation Mode
+    if (typeof syncedPlayback.isDictationMode === 'boolean' && syncedPlayback.isDictationMode !== isDictationMode) {
+      setIsDictationMode(syncedPlayback.isDictationMode);
+      try { localStorage.setItem('toolker_yt_dictation_mode', String(syncedPlayback.isDictationMode)); } catch (_) {}
+    }
+
+    // 4. Synchronize Active Caption
+    if (syncedPlayback.activeLineId) {
+      const matchingLine = currentClip.subtitles.find(l => l.id === syncedPlayback.activeLineId);
+      if (matchingLine) {
+        lastActiveLineRef.current = matchingLine;
+      }
+    }
+
+    // 5. Living Clock Calculation & Continuous Seek Alignment
+    const authoritativeTime = calculateAuthoritativeTime(syncedPlayback);
+    const localTime = playerRef.current?.getCurrentTime() ?? currentTime;
+    const drift = Math.abs(localTime - authoritativeTime);
+
+    if (drift > 0.5) {
+      isRemoteUpdateRef.current = true;
+      suppressOutboundUntilRef.current = Date.now() + 2500;
+      playerRef.current?.seekTo(authoritativeTime);
+      setCurrentTime(authoritativeTime);
+    }
+
+    // 6. Synchronize Play / Pause State
+    if (syncedPlayback.isPlaying && !isPlaying) {
+      isRemoteUpdateRef.current = true;
+      suppressOutboundUntilRef.current = Date.now() + 2500;
+      playerRef.current?.play();
+    } else if (!syncedPlayback.isPlaying && isPlaying) {
+      isRemoteUpdateRef.current = true;
+      suppressOutboundUntilRef.current = Date.now() + 2500;
+      playerRef.current?.pause();
+    }
+  }, [syncedPlayback, currentClip?.id]);
 
   // Hold-to-record Shadow state
   const [isRecordingShadow, setIsRecordingShadow] = useState(false);
@@ -395,6 +469,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
   const [latestLocalAudio, setLatestLocalAudio] = useState<string | null>(null);
   const [latestPartnerAudio, setLatestPartnerAudio] = useState<string | null>(null);
   const [isPlayingPartnerAudio, setIsPlayingPartnerAudio] = useState(false);
+  const [isPlayingLocalAudio, setIsPlayingLocalAudio] = useState(false);
   const [hasUnreadPartnerAudio, setHasUnreadPartnerAudio] = useState(false);
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
@@ -427,11 +502,16 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
         showToast("🎙️ PARTNER SHADOWED // CLICK ▶ TO LISTEN", 4000);
       }
     } else if (lastAction.type === 'SYNC_CAPTION' && lastAction.payload) {
-      const { start, autoPlay } = lastAction.payload;
+      const { lineId, start, autoPlay } = lastAction.payload;
       if (typeof start === 'number') {
         isAtLineEndRef.current = null;
-        lastActiveLineRef.current = null;
         lastPausedLineIdRef.current = null;
+        if (lineId && currentClip?.subtitles) {
+          const targetLine = currentClip.subtitles.find(l => l.id === lineId);
+          if (targetLine) {
+            lastActiveLineRef.current = targetLine;
+          }
+        }
         setCurrentTime(start);
         playerRef.current?.seekTo(start);
         if (autoPlay) {
@@ -444,6 +524,17 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
       setLineByLine(enabled);
       try { localStorage.setItem('toolker_yt_line_by_line', String(enabled)); } catch (e) {}
       showToast(enabled ? "🤝 LINE-BY-LINE: ON (SYNCED)" : "🤝 LINE-BY-LINE: OFF (SYNCED)");
+    } else if (lastAction.type === 'SET_TEMPO' && lastAction.payload) {
+      const mode = lastAction.payload.mode === 'slow' ? 'slow' : 'normal';
+      const rate = lastAction.payload.rate || (mode === 'slow' ? 0.75 : 1);
+      setPlaybackMode(mode);
+      playerRef.current?.setPlaybackRate(rate);
+      showToast(`🤝 TEMPO: ${rate}× (SYNCED)`);
+    } else if (lastAction.type === 'TOGGLE_DICTATION' && lastAction.payload) {
+      const enabled = !!lastAction.payload.enabled;
+      setIsDictationMode(enabled);
+      try { localStorage.setItem('toolker_yt_dictation_mode', String(enabled)); } catch (e) {}
+      showToast(enabled ? "🤝 DICTATION: ON (SYNCED)" : "🤝 DICTATION: OFF (SYNCED)");
     } else if (lastAction.type === 'LINE_BOUNDARY_PAUSE' && lastAction.payload) {
       playerRef.current?.pause();
       if (typeof lastAction.payload.time === 'number') {
@@ -454,10 +545,11 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
         const line = currentClip.subtitles.find(l => l.id === lastAction.payload.lineId);
         if (line) {
           isAtLineEndRef.current = line;
+          lastActiveLineRef.current = line;
           lastPausedLineIdRef.current = line.id;
         }
       }
-      showToast("⏸️ LINE COMPLETED (PAUSED)");
+      showToast("⏸️ CAPTION COMPLETE (PAUSED)");
     } else if (lastAction.type === 'PLAY') {
       const remoteTime = lastAction.payload?.time;
       const remoteTimestamp = lastAction.payload?.timestamp || Date.now();
@@ -514,6 +606,48 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     return () => clearInterval(interval);
   }, [isConnected, isPlaying]);
 
+  // Global Keyboard Shortcuts (-> next caption, <- prev caption, Space play/replay)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Don't intercept if user is typing in an input, textarea, or contentEditable
+      const target = e.target as HTMLElement;
+      if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)) {
+        return;
+      }
+
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        handleNextLine();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        handlePrevLine();
+      } else if (e.key === ' ' || e.code === 'Space') {
+        e.preventDefault();
+        handleTogglePlay();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [currentClip, currentTime, lineByLine, isDictationMode, isPlaying, isConnected]);
+
+  const handleTogglePlayLocalAudio = () => {
+    if (!latestLocalAudio) return;
+    if (isPlayingLocalAudio) {
+      stopAllAudio();
+      setIsPlayingLocalAudio(false);
+    } else {
+      if (isPlayingPartnerAudio) {
+        stopAllAudio();
+        setIsPlayingPartnerAudio(false);
+      }
+      setIsPlayingLocalAudio(true);
+      playStandardAudio(latestLocalAudio, () => {
+        setIsPlayingLocalAudio(false);
+      });
+    }
+  };
+
   const handleTogglePlayPartnerAudio = () => {
     if (!latestPartnerAudio) return;
     setHasUnreadPartnerAudio(false); // Disappears immediately when played!
@@ -521,7 +655,10 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
       stopAllAudio();
       setIsPlayingPartnerAudio(false);
     } else {
-      stopAllAudio();
+      if (isPlayingLocalAudio) {
+        stopAllAudio();
+        setIsPlayingLocalAudio(false);
+      }
       setIsPlayingPartnerAudio(true);
       playStandardAudio(latestPartnerAudio, () => {
         setIsPlayingPartnerAudio(false);
@@ -580,19 +717,26 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
       if (currentTime >= activeLine.end - 0.08 && lastPausedLineIdRef.current !== activeLine.id) {
         lastPausedLineIdRef.current = activeLine.id;
         isAtLineEndRef.current = activeLine;
+        lastActiveLineRef.current = activeLine;
         playerRef.current?.pause();
-        playerRef.current?.seekTo(activeLine.end);
+        playerRef.current?.seekTo(activeLine.start);
+        setCurrentTime(activeLine.start);
         
         if (isConnected) {
           broadcastAction({
             type: 'LINE_BOUNDARY_PAUSE',
             payload: {
               lineId: activeLine.id,
-              time: activeLine.end
+              time: activeLine.start
             }
           });
+          syncPlayback({
+            activeLineId: activeLine.id,
+            time: activeLine.start,
+            isPlaying: false
+          });
         }
-        showToast("⏸️ LINE COMPLETED (PAUSED)");
+        showToast("⏸️ CAPTION COMPLETED (PRESS ▶ TO REPLAY)");
         return;
       }
     } else if (lastActiveLineRef.current && lastPausedLineIdRef.current !== lastActiveLineRef.current.id) {
@@ -602,19 +746,24 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
         lastPausedLineIdRef.current = crossedLine.id;
         isAtLineEndRef.current = crossedLine;
         playerRef.current?.pause();
-        playerRef.current?.seekTo(crossedLine.end);
+        playerRef.current?.seekTo(crossedLine.start);
+        setCurrentTime(crossedLine.start);
         
         if (isConnected) {
           broadcastAction({
             type: 'LINE_BOUNDARY_PAUSE',
             payload: {
               lineId: crossedLine.id,
-              time: crossedLine.end
+              time: crossedLine.start
             }
           });
+          syncPlayback({
+            activeLineId: crossedLine.id,
+            time: crossedLine.start,
+            isPlaying: false
+          });
         }
-        showToast("⏸️ LINE COMPLETED (PAUSED)");
-        lastActiveLineRef.current = null;
+        showToast("⏸️ CAPTION COMPLETED (PRESS ▶ TO REPLAY)");
         return;
       }
     }
@@ -634,6 +783,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
           timestamp: Date.now()
         }
       });
+      syncPlayback({ lineByLine: next });
     }
   };
 
@@ -642,6 +792,17 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     setIsDictationMode(next);
     try { localStorage.setItem('toolker_yt_dictation_mode', String(next)); } catch (e) {}
     showToast(next ? "⌨️ DICTATION TYPING MODE ON" : "KARAOKE SUBTITLE MODE");
+
+    if (isConnected) {
+      broadcastAction({
+        type: 'TOGGLE_DICTATION',
+        payload: {
+          enabled: next,
+          timestamp: Date.now()
+        }
+      });
+      syncPlayback({ isDictationMode: next });
+    }
   };
 
   const handleToggleMaskMode = () => {
@@ -685,22 +846,31 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     }, 1100);
   };
 
-  // Play / Pause toggle with Line-by-Line progression
+  // Play / Pause toggle with Line-by-Line replay dedication
   const handleTogglePlay = () => {
     if (!isPlaying) {
-      // If we are currently stopped at the end of a line in Line-by-Line mode, advance to next line
-      if ((lineByLine || isDictationMode) && isAtLineEndRef.current && currentClip?.subtitles) {
+      if ((lineByLine || isDictationMode) && currentClip?.subtitles) {
         const subs = currentClip.subtitles;
-        const currentIdx = subs.findIndex(l => l.id === isAtLineEndRef.current?.id);
-        isAtLineEndRef.current = null;
-        lastPausedLineIdRef.current = null;
-
-        if (currentIdx !== -1 && currentIdx < subs.length - 1) {
-          handleSelectLine(subs[currentIdx + 1], true);
-          return;
-        } else {
-          // Replay from beginning if at the end of clip
-          handleSelectLine(subs[0], true);
+        // In Line-by-Line mode, the play button is dedicated to playing/replaying the active caption
+        const targetLine = isAtLineEndRef.current || lastActiveLineRef.current || subs.find(l => currentTime >= l.start - 0.15 && currentTime <= l.end + 0.3) || subs[0];
+        if (targetLine) {
+          isAtLineEndRef.current = null;
+          lastPausedLineIdRef.current = null;
+          lastActiveLineRef.current = targetLine;
+          setCurrentTime(targetLine.start);
+          playerRef.current?.seekTo(targetLine.start);
+          playerRef.current?.play();
+          if (isConnected) {
+            broadcastAction({
+              type: 'PLAY',
+              payload: { time: targetLine.start, timestamp: Date.now() }
+            });
+            syncPlayback({
+              activeLineId: targetLine.id,
+              time: targetLine.start,
+              isPlaying: true
+            });
+          }
           return;
         }
       }
@@ -712,6 +882,10 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
           type: 'PLAY',
           payload: { time: currentTime, timestamp: Date.now() }
         });
+        syncPlayback({
+          time: currentTime,
+          isPlaying: true
+        });
       }
     } else {
       playerRef.current?.pause();
@@ -719,6 +893,10 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
         broadcastAction({
           type: 'PAUSE',
           payload: { time: currentTime }
+        });
+        syncPlayback({
+          time: currentTime,
+          isPlaying: false
         });
       }
     }
@@ -743,46 +921,56 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
           timestamp: Date.now()
         }
       });
+      syncPlayback({
+        activeLineId: line.id,
+        time: line.start,
+        isPlaying: true
+      });
     }
   };
 
-  // Previous Line navigation (<)
+  // Previous Line navigation (< or ArrowLeft)
   const handlePrevLine = () => {
-    if (!currentClip) return;
+    if (!currentClip || !currentClip.subtitles?.length) return;
     const subs = currentClip.subtitles;
-    if (!subs.length) return;
-    const currentIndex = subs.findIndex(l => currentTime >= l.start && currentTime <= l.end + 0.3);
+    const active = lastActiveLineRef.current || isAtLineEndRef.current || subs.find(l => currentTime >= l.start - 0.1 && currentTime <= l.end + 0.3);
+    const currentIndex = active ? subs.findIndex(l => l.id === active.id) : subs.findIndex(l => currentTime >= l.start && currentTime <= l.end + 0.3);
+    
     if (currentIndex > 0) {
-      handleSelectLine(subs[currentIndex - 1]);
-    } else if (currentIndex === -1) {
-      const prior = [...subs].reverse().find(l => l.start < currentTime);
-      if (prior) handleSelectLine(prior);
-      else handleSelectLine(subs[0]);
+      handleSelectLine(subs[currentIndex - 1], true);
     } else {
-      // Replay first line
-      handleSelectLine(subs[0]);
+      handleSelectLine(subs[0], true);
     }
   };
 
-  // Next Line navigation (>)
+  // Next Line navigation (> or ArrowRight)
   const handleNextLine = () => {
-    if (!currentClip) return;
+    if (!currentClip || !currentClip.subtitles?.length) return;
     const subs = currentClip.subtitles;
-    if (!subs.length) return;
-    const next = subs.find(l => l.start > currentTime + 0.2);
-    if (next) {
-      handleSelectLine(next);
+    const active = lastActiveLineRef.current || isAtLineEndRef.current || subs.find(l => currentTime >= l.start - 0.1 && currentTime <= l.end + 0.3);
+    const currentIndex = active ? subs.findIndex(l => l.id === active.id) : subs.findIndex(l => currentTime >= l.start && currentTime <= l.end + 0.3);
+
+    if (currentIndex !== -1 && currentIndex < subs.length - 1) {
+      handleSelectLine(subs[currentIndex + 1], true);
+    } else if (currentIndex === -1) {
+      const next = subs.find(l => l.start > currentTime + 0.1);
+      if (next) handleSelectLine(next, true);
+      else handleSelectLine(subs[subs.length - 1], true);
     } else {
-      handleSelectLine(subs[subs.length - 1]);
+      handleSelectLine(subs[subs.length - 1], true);
     }
   };
 
   const handleSelectMode = (mode: 'slow' | 'normal') => {
     setPlaybackMode(mode);
-    if (mode === 'slow') {
-      playerRef.current?.setPlaybackRate(0.5);
-    } else {
-      playerRef.current?.setPlaybackRate(1);
+    const rate = mode === 'slow' ? 0.75 : 1;
+    playerRef.current?.setPlaybackRate(rate);
+    if (isConnected) {
+      broadcastAction({
+        type: 'SET_TEMPO',
+        payload: { mode, rate }
+      });
+      syncPlayback({ playbackRate: rate });
     }
   };
 
@@ -1027,6 +1215,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
                       type: 'SEEK',
                       payload: { time: t }
                     });
+                    syncPlayback({ time: t, isPlaying });
                   }
                 }}
               />
@@ -1090,6 +1279,9 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
         recordingDuration={recordingDuration}
         isDictationMode={isDictationMode}
         onToggleDictationMode={handleToggleDictationMode}
+        hasLocalAudio={!!latestLocalAudio}
+        isPlayingLocalAudio={isPlayingLocalAudio}
+        onTogglePlayLocalAudio={handleTogglePlayLocalAudio}
         hasPartnerAudio={!!latestPartnerAudio}
         hasUnreadPartnerAudio={hasUnreadPartnerAudio}
         isPlayingPartnerAudio={isPlayingPartnerAudio}

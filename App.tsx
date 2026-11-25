@@ -27,7 +27,7 @@ const isAdminRoute = () => {
   return path === '/adm' || path === '/adm/' || path.startsWith('/adm/') || path === '/admin' || hash === '#adm' || search.includes('role=admin');
 };
 
-import { useRoom } from './contexts/RoomContext';
+import { useRoom, getRoomIdFromUrl } from './contexts/RoomContext';
 import { RoomShareButton } from './components/common/RoomShareButton';
 import { SectionNavigator } from './components/common/SectionNavigator';
 
@@ -38,9 +38,11 @@ const App: React.FC = () => {
     isAuthenticated: false,
   });
   const [appMode, setAppMode] = useState<AppMode>(() => {
-    if (window.location.hash === '#shadowing' || window.location.search.includes('mode=shadowing')) return 'shadowing';
-    if (window.location.hash === '#dictation' || window.location.search.includes('mode=dictation')) return 'dictation';
-    if (window.location.hash === '#reader' || window.location.search.includes('mode=reader')) return 'reader';
+    const hash = window.location.hash.toLowerCase();
+    const search = window.location.search.toLowerCase();
+    if (hash.includes('shadowing') || search.includes('mode=shadowing')) return 'shadowing';
+    if (hash.includes('dictation') || search.includes('mode=dictation')) return 'dictation';
+    if (hash.includes('reader') || search.includes('mode=reader')) return 'reader';
     return 'instrument';
   });
   const [isInitializing, setIsInitializing] = useState(true);
@@ -49,9 +51,7 @@ const App: React.FC = () => {
   const [roomUrlCopied, setRoomUrlCopied] = useState(false);
 
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const roomParam = urlParams.get('room');
-    
+    const roomParam = getRoomIdFromUrl();
     if (roomParam && !isConnected && roomId !== roomParam) {
       connectToRoom(roomParam);
     }
@@ -87,11 +87,12 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const handleHashChange = () => {
-      if (window.location.hash === '#shadowing') {
+      const hash = window.location.hash.toLowerCase();
+      if (hash.includes('shadowing')) {
         setAppMode('shadowing');
-      } else if (window.location.hash === '#dictation') {
+      } else if (hash.includes('dictation')) {
         setAppMode('dictation');
-      } else if (window.location.hash === '#reader') {
+      } else if (hash.includes('reader')) {
         setAppMode('reader');
       } else if (appMode === 'shadowing' || appMode === 'dictation' || appMode === 'reader') {
         setAppMode('instrument');

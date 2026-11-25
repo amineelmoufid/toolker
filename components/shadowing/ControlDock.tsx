@@ -19,6 +19,10 @@ interface ControlDockProps {
   // Dictation mode props
   isDictationMode?: boolean;
   onToggleDictationMode?: () => void;
+  // Local audio props
+  hasLocalAudio?: boolean;
+  isPlayingLocalAudio?: boolean;
+  onTogglePlayLocalAudio?: () => void;
   // Partner audio props
   hasPartnerAudio?: boolean;
   hasUnreadPartnerAudio?: boolean;
@@ -52,6 +56,9 @@ const ControlDock: React.FC<ControlDockProps> = ({
   recordingDuration,
   isDictationMode,
   onToggleDictationMode,
+  hasLocalAudio,
+  isPlayingLocalAudio,
+  onTogglePlayLocalAudio,
   hasPartnerAudio,
   hasUnreadPartnerAudio,
   isPlayingPartnerAudio,
@@ -325,8 +332,32 @@ const ControlDock: React.FC<ControlDockProps> = ({
           </svg>
         </button>
 
-        {/* 6. Shadow Microphone Button & Floating Partner Play Icon */}
+        {/* 6. Shadow Microphone Button & Floating Audio Play Icons */}
         <div className="relative flex items-center">
+          {/* Replay My Recording Button (Left Shoulder) */}
+          {hasLocalAudio && (
+            <button
+              onClick={() => { triggerHaptic(12); onTogglePlayLocalAudio?.(); }}
+              title={isPlayingLocalAudio ? "Stop My Shadow Recording" : "Replay My Shadow Recording"}
+              className={`absolute -top-3.5 -left-3.5 sm:-top-3 sm:-left-4 w-9 h-9 sm:w-8 sm:h-8 rounded-full border-2 border-[#1c1d20] shadow-[2px_2px_0px_#18191c] flex items-center justify-center transition-all z-30 active:scale-95 active:shadow-none ${
+                isPlayingLocalAudio
+                  ? 'bg-[#eab308] text-[#1c1d20] shadow-[0_0_12px_rgba(234,179,8,0.9)] scale-110 font-bold'
+                  : 'bg-[#4a473e] hover:bg-[#1c1d20] text-[#e4dfd3]'
+              }`}
+            >
+              {isPlayingLocalAudio ? (
+                <svg className="w-4 h-4 sm:w-3.5 sm:h-3.5 fill-current" viewBox="0 0 24 24">
+                  <rect x="6" y="6" width="12" height="12" rx="1.5" />
+                </svg>
+              ) : (
+                <svg className="w-4 h-4 sm:w-3.5 sm:h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                  <path d="M3 3v5h5" />
+                </svg>
+              )}
+            </button>
+          )}
+
           <button
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}

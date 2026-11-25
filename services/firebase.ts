@@ -170,9 +170,20 @@ export const syncRoomAudio = async (roomId: string, audioBase64: string, senderI
     await set(ref(db, `rooms/${roomId}/userAudios/${senderId}`), {
       audioBase64,
       senderId,
+      senderName: senderName || 'Partner',
       timestamp
     });
   }
+};
+
+export const subscribeToRoomUserAudios = (
+  roomId: string,
+  callback: (audios: Record<string, { audioBase64: string; senderId: string; timestamp: number }> | null) => void
+) => {
+  if (!roomId) return () => {};
+  return onValue(ref(db, `rooms/${roomId}/userAudios`), (snapshot) => {
+    callback(snapshot.val() || null);
+  });
 };
 
 export const killRoomInFirebase = async (roomId: string) => {
@@ -326,6 +337,50 @@ export const subscribeToRoomDictation = (roomId: string, callback: (data: any) =
   if (!roomId) return () => {};
   return onValue(ref(db, `rooms/${roomId}/dictation`), (snapshot) => {
     callback(snapshot.val());
+  });
+};
+
+export interface RoomPlaybackState {
+  videoId?: string;
+  isPlaying: boolean;
+  time: number;
+  lastUpdated: number;
+  activeLineId?: string;
+  activeLineIndex?: number;
+  lineByLine?: boolean;
+  playbackRate?: number;
+  isDictationMode?: boolean;
+  senderId?: string;
+  actionId?: string;
+}
+
+export function calculateAuthoritativeTime(state: RoomPlaybackState): number {
+  let currentTime = state.time || 0;
+  if (state.isPlaying && state.lastUpdated) {
+    const elapsedSec = (Date.now() - state.lastUpdated) / 1000;
+    const rate = state.playbackRate || 1;
+    if (elapsedSec > 0 && elapsedSec < 14400) {
+      currentTime = Math.max(0, currentTime + (elapsedSec * rate));
+    }
+  }
+  return currentTime;
+}
+
+export const syncRoomPlayback = async (
+  roomId: string, 
+  state: Partial<RoomPlaybackState>
+) => {
+  if (!roomId || !state) return;
+  await update(ref(db, `rooms/${roomId}/playback`), {
+    ...state,
+    lastUpdated: Date.now()
+  });
+};
+
+export const subscribeToRoomPlayback = (roomId: string, callback: (data: RoomPlaybackState | null) => void) => {
+  if (!roomId) return () => {};
+  return onValue(ref(db, `rooms/${roomId}/playback`), (snapshot) => {
+    callback(snapshot.val() || null);
   });
 };
 

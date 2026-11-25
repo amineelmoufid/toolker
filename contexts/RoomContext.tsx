@@ -16,11 +16,39 @@ import {
   subscribeToRoomShadowState,
   broadcastRoomActionToFirebase,
   subscribeToRoomActions,
-  RoomBroadcastAction
+  RoomBroadcastAction,
+  syncRoomPlayback,
+  subscribeToRoomPlayback,
+  RoomPlaybackState,
+  calculateAuthoritativeTime,
+  subscribeToRoomUserAudios
 } from '../services/firebase';
 
+export function getRoomIdFromUrl(): string | null {
+  if (typeof window === 'undefined') return null;
+  // 1. Check window.location.search (?room=XYZ)
+  const searchParams = new URLSearchParams(window.location.search);
+  const fromSearch = searchParams.get('room');
+  if (fromSearch) return fromSearch;
+
+  // 2. Check window.location.hash (#shadowing?room=XYZ or #room=XYZ)
+  const hash = window.location.hash || '';
+  if (hash.includes('?')) {
+    const hashQuery = hash.split('?')[1];
+    const hashParams = new URLSearchParams(hashQuery);
+    const fromHashQuery = hashParams.get('room');
+    if (fromHashQuery) return fromHashQuery;
+  } else if (hash.includes('room=')) {
+    const clean = hash.replace(/^#/, '');
+    const hashParams = new URLSearchParams(clean);
+    const fromClean = hashParams.get('room');
+    if (fromClean) return fromClean;
+  }
+  return null;
+}
+
 export type RoomAction = {
-  type: 'PLAY' | 'PAUSE' | 'SEEK' | 'PLAYHEAD_PULSE' | 'AUDIO_SYNC' | 'SYNC_SENTENCE' | 'SYNC_VIDEO' | 'CHAT_MESSAGE' | 'SYNC_DICTATION' | 'SYNC_CAPTION' | 'TOGGLE_LINE_BY_LINE' | 'LINE_BOUNDARY_PAUSE' | 'ROOM_KILLED';
+  type: 'PLAY' | 'PAUSE' | 'SEEK' | 'PLAYHEAD_PULSE' | 'AUDIO_SYNC' | 'SYNC_SENTENCE' | 'SYNC_VIDEO' | 'CHAT_MESSAGE' | 'SYNC_DICTATION' | 'SYNC_CAPTION' | 'TOGGLE_LINE_BY_LINE' | 'LINE_BOUNDARY_PAUSE' | 'SYNC_PLAYBACK' | 'ROOM_KILLED';
   payload?: any;
 };
 
@@ -41,9 +69,11 @@ interface RoomContextProps {
   broadcastAction: (action: RoomAction) => void;
   syncClip: (clip: any) => void;
   syncDictation: (lesson: any) => void;
+  syncPlayback: (state: Partial<RoomPlaybackState>) => void;
   lastAction: RoomAction | null;
   syncedClip: any | null;
   syncedDictation: any | null;
+  syncedPlayback: RoomPlaybackState | null;
 }
 
 const RoomContext = createContext<RoomContextProps | undefined>(undefined);
@@ -52,23 +82,24 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [peerId, setPeerId] = useState<string>('');
   const [remotePeerId, setRemotePeerId] = useState<string | null>(null);
   const [roomId, setRoomId] = useState<string | null>(() => {
-    return new URLSearchParams(window.location.search).get('room');
+    return getRoomIdFromUrl();
   });
   const [isPeerConnected, setIsPeerConnected] = useState(false);
   const [isFirebaseConnected, setIsFirebaseConnected] = useState(false);
   const [isHost, setIsHost] = useState<boolean>(() => {
-    const rId = new URLSearchParams(window.location.search).get('room');
+    const rId = getRoomIdFromUrl();
     if (!rId) return false;
     return localStorage.getItem(`toolker_host_room_${rId}`) === 'true';
   });
   const [lastAction, setLastAction] = useState<RoomAction | null>(null);
   const [syncedClip, setSyncedClip] = useState<any | null>(null);
   const [syncedDictation, setSyncedDictation] = useState<any | null>(null);
+  const [syncedPlayback, setSyncedPlayback] = useState<RoomPlaybackState | null>(null);
   
   const peerRef = useRef<Peer | null>(null);
   const connRef = useRef<DataConnection | null>(null);
-  const lastAudioTimestampRef = useRef<number>(Date.now());
-  const lastShadowTimestampRef = useRef<number>(Date.now());
+  const lastAudioTimestampRef = useRef<number>(0);
+  const lastShadowTimestampRef = useRef<number>(0);
 
   // Unique session ID for each tab/device to prevent self-echo and allow multi-tab testing
   const tabSessionIdRef = useRef<string>(
@@ -189,18 +220,40 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setLastAction({ type: 'SYNC_VIDEO', payload: data.clip });
       }
 
-      // 2. Synchronize Shadow Audio
+      // 2. Synchronize Shadow Audio (from latestAudio)
       if (data.latestAudio) {
         const { audioBase64, senderId, timestamp } = data.latestAudio;
         const mySenderId = tabSessionIdRef.current;
         const myUserId = getStoredUserId();
         const isSelf = senderId === mySenderId || senderId === myUserId || (peerId && senderId === peerId);
         
-        // Only trigger for partner's audio and if newer than connection time
         if (!isSelf && timestamp > lastAudioTimestampRef.current) {
           lastAudioTimestampRef.current = timestamp;
           setLastAction({ type: 'AUDIO_SYNC', payload: audioBase64 });
         }
+      }
+    });
+
+    // 2b. Synchronize User-Specific Shadow Audio Rail (Never overwrites across partners)
+    const unsubscribeUserAudios = subscribeToRoomUserAudios(roomId, (userAudios) => {
+      if (!userAudios) return;
+      const mySenderId = tabSessionIdRef.current;
+      const myUserId = getStoredUserId();
+
+      // Find newest audio from any partner in the room
+      let newestPartnerAudio: { audioBase64: string; timestamp: number } | null = null;
+      for (const [sId, entry] of Object.entries(userAudios)) {
+        const isSelf = sId === mySenderId || sId === myUserId || (peerId && sId === peerId);
+        if (!isSelf && entry && entry.audioBase64) {
+          if (!newestPartnerAudio || entry.timestamp > newestPartnerAudio.timestamp) {
+            newestPartnerAudio = entry;
+          }
+        }
+      }
+
+      if (newestPartnerAudio && newestPartnerAudio.timestamp > lastAudioTimestampRef.current) {
+        lastAudioTimestampRef.current = newestPartnerAudio.timestamp;
+        setLastAction({ type: 'AUDIO_SYNC', payload: newestPartnerAudio.audioBase64 });
       }
     });
 
@@ -217,24 +270,21 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
       handleIncomingAction(remoteAction);
     });
 
-    // 5. Initial snapshot for newly joined participants (Shadow Caption & Line-by-Line State)
-    const unsubscribeShadow = subscribeToRoomShadowState(roomId, (shadowData) => {
-      if (!shadowData) return;
+    // 5. Authoritative Living Playback State (Living Clock, Captions, Line-by-Line, Tempo)
+    const unsubscribePlayback = subscribeToRoomPlayback(roomId, (playbackData) => {
+      if (!playbackData) return;
       const myId = tabSessionIdRef.current;
-      if (shadowData.senderId === myId) return;
-      // Only use as snapshot if we haven't received recent real-time actions
-      if (processedActionIdsRef.current.size === 0) {
-        if (typeof shadowData.lineByLine === 'boolean') {
-          setLastAction({ type: 'TOGGLE_LINE_BY_LINE', payload: { enabled: shadowData.lineByLine } });
-        }
-      }
+      if (playbackData.senderId === myId) return; // Do not process our own echo
+      setSyncedPlayback(playbackData);
+      setLastAction({ type: 'SYNC_PLAYBACK', payload: playbackData });
     });
 
     return () => {
       unsubscribeData();
+      unsubscribeUserAudios();
       unsubscribeDictation();
       unsubscribeActions();
-      unsubscribeShadow();
+      unsubscribePlayback();
     };
   }, [roomId, peerId]);
 
@@ -300,7 +350,9 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const createRoom = (initialClip?: any): string => {
-    const newRoomId = peerId || `room_${Date.now()}`;
+    // Generate clean, deterministic, isolated room ID: e.g. room_1732524_a9b2c3
+    const randomSuffix = Math.random().toString(36).substring(2, 8);
+    const newRoomId = `room_${Date.now().toString(36)}_${randomSuffix}`;
     const myId = getStoredUserId();
     
     setRoomId(newRoomId);
@@ -308,6 +360,13 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.setItem(`toolker_host_room_${newRoomId}`, 'true');
     setRoomHost(newRoomId, myId).catch(err => console.warn('Could not record room host:', err));
     
+    // Update browser URL query param
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set('room', newRoomId);
+      window.history.pushState({}, '', url.toString());
+    } catch (_) {}
+
     if (initialClip) {
       syncRoomClip(newRoomId, initialClip);
     }
@@ -326,6 +385,7 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setIsHost(false);
     setSyncedClip(null);
     setSyncedDictation(null);
+    setSyncedPlayback(null);
   };
 
   const leaveRoom = () => {
@@ -374,6 +434,15 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
+  const syncPlayback = (state: Partial<RoomPlaybackState>) => {
+    if (!roomId) return;
+    const senderId = tabSessionIdRef.current;
+    syncRoomPlayback(roomId, {
+      ...state,
+      senderId
+    });
+  };
+
   const broadcastAction = (action: RoomAction) => {
     const actionId = 'act_' + Date.now() + '_' + Math.random().toString(36).substring(2, 9);
     const senderId = tabSessionIdRef.current;
@@ -387,7 +456,7 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
     // Mark locally as processed so we never process our own echo
     processedActionIdsRef.current.add(actionId);
 
-    // 1. Broadcast to Firebase real-time action rail (guaranteed delivery)
+    // 1. Broadcast to Firebase real-time action rail & update living playback state
     if (roomId) {
       broadcastRoomActionToFirebase(roomId, fullAction as any);
 
@@ -400,14 +469,45 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
       } else if (action.type === 'CHAT_MESSAGE') {
         sendRoomChatMessage(roomId, action.payload);
       } else if (action.type === 'SYNC_CAPTION') {
-        syncRoomShadowState(roomId, {
+        syncRoomPlayback(roomId, {
           activeLineId: action.payload?.lineId,
-          start: action.payload?.start,
+          time: action.payload?.start,
+          isPlaying: true,
+          actionId,
           senderId
         });
       } else if (action.type === 'TOGGLE_LINE_BY_LINE') {
-        syncRoomShadowState(roomId, {
+        syncRoomPlayback(roomId, {
           lineByLine: action.payload?.enabled,
+          actionId,
+          senderId
+        });
+      } else if (action.type === 'PLAY') {
+        syncRoomPlayback(roomId, {
+          time: action.payload?.time,
+          isPlaying: true,
+          actionId,
+          senderId
+        });
+      } else if (action.type === 'PAUSE') {
+        syncRoomPlayback(roomId, {
+          time: action.payload?.time,
+          isPlaying: false,
+          actionId,
+          senderId
+        });
+      } else if (action.type === 'SEEK') {
+        syncRoomPlayback(roomId, {
+          time: action.payload?.time,
+          actionId,
+          senderId
+        });
+      } else if (action.type === 'LINE_BOUNDARY_PAUSE') {
+        syncRoomPlayback(roomId, {
+          time: action.payload?.time,
+          activeLineId: action.payload?.lineId,
+          isPlaying: false,
+          actionId,
           senderId
         });
       }
@@ -446,9 +546,11 @@ export const RoomProvider: React.FC<{ children: React.ReactNode }> = ({ children
       broadcastAction, 
       syncClip,
       syncDictation,
+      syncPlayback,
       lastAction,
       syncedClip,
-      syncedDictation
+      syncedDictation,
+      syncedPlayback
     }}>
       {children}
     </RoomContext.Provider>
