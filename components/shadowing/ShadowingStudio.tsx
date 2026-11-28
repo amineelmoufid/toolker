@@ -10,7 +10,7 @@ import { useRoom } from '../../contexts/RoomContext';
 import { calculateAuthoritativeTime } from '../../services/firebase';
 import { RoomShareButton } from '../common/RoomShareButton';
 import { SectionNavigator } from '../common/SectionNavigator';
-import { blobToBase64, playStandardAudio, stopAllAudio } from '../../utils/audio';
+import { blobToBase64, playStandardAudio, playStandardAudioWithProgress, stopAllAudio } from '../../utils/audio';
 
 interface ShadowingStudioProps {
   onBack: () => void;
@@ -552,6 +552,15 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
   const [isPlayingLocalAudio, setIsPlayingLocalAudio] = useState(false);
   const [hasUnreadPartnerAudio, setHasUnreadPartnerAudio] = useState(false);
 
+  // Multi-user Recording & Listening UX Enhancements
+  const [isPartnerRecording, setIsPartnerRecording] = useState(false);
+  const [isPartnerListeningToMyAudio, setIsPartnerListeningToMyAudio] = useState(false);
+  const [partnerAudioProgress, setPartnerAudioProgress] = useState(0);
+  const [partnerListeningProgress, setPartnerListeningProgress] = useState(0);
+
+  // Universal Video Play Interlock: Video cannot play if ANYONE is recording
+  const isVideoPlayLocked = isRecordingShadow || isPartnerRecording;
+
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
   const streamRef = useRef<MediaStream | null>(null);
@@ -577,18 +586,63 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
         : (lastAction.payload.audioBase64 || lastAction.payload.audio);
       if (remoteAudio) {
         setLatestPartnerAudio(remoteAudio);
-        // Requirement 1: Partner audio plays immediately when received
+        // Requirement 1 & 3: Partner audio plays immediately when received, updating circled timeline
         stopAllAudio();
         setIsPlayingLocalAudio(false);
         setIsPlayingPartnerAudio(true);
         setHasUnreadPartnerAudio(false);
+        setPartnerAudioProgress(0);
         // Pause video to ensure clean listening
         playerRef.current?.pause();
         setIsPlaying(false);
         showToast("🎙️ PARTNER RECORDING RECEIVED // PLAYING NOW...", 4500);
-        playStandardAudio(remoteAudio, () => {
-          setIsPlayingPartnerAudio(false);
-        });
+
+        if (isConnected) {
+          broadcastAction({
+            type: 'AUDIO_PLAY_STATUS',
+            payload: { isPlaying: true, progress: 0 }
+          });
+        }
+
+        playStandardAudioWithProgress(
+          remoteAudio,
+          (progress) => {
+            setPartnerAudioProgress(progress);
+            if (isConnected) {
+              broadcastAction({
+                type: 'AUDIO_PLAY_STATUS',
+                payload: { isPlaying: true, progress }
+              });
+            }
+          },
+          () => {
+            setIsPlayingPartnerAudio(false);
+            setPartnerAudioProgress(0);
+            if (isConnected) {
+              broadcastAction({
+                type: 'AUDIO_PLAY_STATUS',
+                payload: { isPlaying: false, progress: 0 }
+              });
+            }
+          }
+        );
+      }
+    } else if (lastAction.type === 'PARTNER_RECORDING_STATE') {
+      const isRec = !!lastAction.payload?.isRecording;
+      setIsPartnerRecording(isRec);
+      if (isRec) {
+        playerRef.current?.pause();
+        setIsPlaying(false);
+        showToast("🎙️ PARTNER IS RECORDING // VIDEO LOCKED", 3500);
+      } else {
+        showToast("✓ PARTNER FINISHED RECORDING", 2500);
+      }
+    } else if (lastAction.type === 'AUDIO_PLAY_STATUS') {
+      const isListening = !!lastAction.payload?.isPlaying;
+      setIsPartnerListeningToMyAudio(isListening);
+      setPartnerListeningProgress(lastAction.payload?.progress || 0);
+      if (isListening && !isPartnerListeningToMyAudio) {
+        showToast("🎧 PARTNER IS LISTENING TO YOUR RECORDING", 3000);
       }
     } else if (lastAction.type === 'USER_JOINED') {
       playerRef.current?.pause();
@@ -651,6 +705,9 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
       }
       showToast("⏸️ READY FOR NEXT LINE // SPACE: REPLAY | ->: NEXT");
     } else if (lastAction.type === 'PLAY') {
+      if (isVideoPlayLocked) {
+        return; // Ignore remote play command while recording is locked
+      }
       const remoteTime = lastAction.payload?.time;
       const remoteTimestamp = lastAction.payload?.timestamp || Date.now();
       const lag = Math.max(0, (Date.now() - remoteTimestamp) / 1000);
@@ -696,7 +753,7 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
         }
       }
     }
-  }, [lastAction]);
+  }, [lastAction, isVideoPlayLocked]);
 
   const currentTimeRef = useRef(currentTime);
   useEffect(() => {
@@ -733,13 +790,17 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
         handlePrevLine();
       } else if (e.key === ' ' || e.code === 'Space') {
         e.preventDefault();
+        if (isVideoPlayLocked) {
+          showToast(isPartnerRecording ? "⚠️ PARTNER IS RECORDING // VIDEO LOCKED" : "⚠️ RECORDING IN PROGRESS // VIDEO LOCKED");
+          return;
+        }
         handleTogglePlay();
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentClip, currentTime, lineByLine, isDictationMode, isPlaying, isConnected]);
+  }, [currentClip, currentTime, lineByLine, isDictationMode, isPlaying, isConnected, isVideoPlayLocked, isPartnerRecording]);
 
   const handleTogglePlayLocalAudio = () => {
     if (!latestLocalAudio) return;
@@ -764,15 +825,52 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     if (isPlayingPartnerAudio) {
       stopAllAudio();
       setIsPlayingPartnerAudio(false);
+      setPartnerAudioProgress(0);
+      if (isConnected) {
+        broadcastAction({
+          type: 'AUDIO_PLAY_STATUS',
+          payload: { isPlaying: false, progress: 0 }
+        });
+      }
     } else {
       if (isPlayingLocalAudio) {
         stopAllAudio();
         setIsPlayingLocalAudio(false);
       }
       setIsPlayingPartnerAudio(true);
-      playStandardAudio(latestPartnerAudio, () => {
-        setIsPlayingPartnerAudio(false);
-      });
+      setPartnerAudioProgress(0);
+      playerRef.current?.pause();
+      setIsPlaying(false);
+
+      if (isConnected) {
+        broadcastAction({
+          type: 'AUDIO_PLAY_STATUS',
+          payload: { isPlaying: true, progress: 0 }
+        });
+      }
+
+      playStandardAudioWithProgress(
+        latestPartnerAudio,
+        (progress) => {
+          setPartnerAudioProgress(progress);
+          if (isConnected) {
+            broadcastAction({
+              type: 'AUDIO_PLAY_STATUS',
+              payload: { isPlaying: true, progress }
+            });
+          }
+        },
+        () => {
+          setIsPlayingPartnerAudio(false);
+          setPartnerAudioProgress(0);
+          if (isConnected) {
+            broadcastAction({
+              type: 'AUDIO_PLAY_STATUS',
+              payload: { isPlaying: false, progress: 0 }
+            });
+          }
+        }
+      );
     }
   };
 
@@ -938,6 +1036,10 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
 
   // Play / Pause toggle with Line-by-Line replay dedication
   const handleTogglePlay = () => {
+    if (isVideoPlayLocked) {
+      showToast(isPartnerRecording ? "⚠️ PARTNER IS RECORDING // VIDEO LOCKED" : "⚠️ RECORDING IN PROGRESS // VIDEO LOCKED");
+      return;
+    }
     if (!isPlaying) {
       if ((lineByLine || isDictationMode) && cleanSubtitles.length > 0) {
         const targetSentence = cleanSubtitles[activeSentenceIndex] || cleanSubtitles[0];
@@ -1170,7 +1272,19 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
   };
 
   const handleStartHoldRecord = async () => {
+    if (isVideoPlayLocked && isPartnerRecording) {
+      showToast("⚠️ PARTNER IS RECORDING // RECORDING LOCKED");
+      return;
+    }
     playerRef.current?.pause();
+    setIsPlaying(false);
+    if (isConnected) {
+      broadcastAction({
+        type: 'PARTNER_RECORDING_STATE',
+        payload: { isRecording: true, userId: peerId }
+      });
+      syncPlayback({ isPlaying: false });
+    }
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       streamRef.current = stream;
@@ -1207,6 +1321,12 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     } catch (err) {
       console.error("Microphone access denied:", err);
       showToast("⚠️ Microphone access denied");
+      if (isConnected) {
+        broadcastAction({
+          type: 'PARTNER_RECORDING_STATE',
+          payload: { isRecording: false, userId: peerId }
+        });
+      }
     }
   };
 
@@ -1214,6 +1334,13 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     if (recordTimerRef.current) {
       clearInterval(recordTimerRef.current);
       recordTimerRef.current = null;
+    }
+
+    if (isConnected) {
+      broadcastAction({
+        type: 'PARTNER_RECORDING_STATE',
+        payload: { isRecording: false, userId: peerId }
+      });
     }
 
     if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
@@ -1261,6 +1388,12 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
     if (recordTimerRef.current) {
       clearInterval(recordTimerRef.current);
       recordTimerRef.current = null;
+    }
+    if (isConnected) {
+      broadcastAction({
+        type: 'PARTNER_RECORDING_STATE',
+        payload: { isRecording: false, userId: peerId }
+      });
     }
     if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
       mediaRecorderRef.current.onstop = null;
@@ -1472,6 +1605,10 @@ const ShadowingStudio: React.FC<ShadowingStudioProps> = ({ onBack, onNavigate })
         hasUnreadPartnerAudio={hasUnreadPartnerAudio}
         isPlayingPartnerAudio={isPlayingPartnerAudio}
         onTogglePlayPartnerAudio={handleTogglePlayPartnerAudio}
+        isVideoPlayLocked={isVideoPlayLocked}
+        isPartnerRecording={isPartnerRecording}
+        isPartnerListeningToMyAudio={isPartnerListeningToMyAudio}
+        partnerAudioProgress={isPlayingPartnerAudio ? partnerAudioProgress : partnerListeningProgress}
       />
 
       {/* 5. MODALS */}

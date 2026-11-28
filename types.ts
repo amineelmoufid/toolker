@@ -82,12 +82,54 @@ export interface ShadowingClip {
 export interface DictationItem {
   id: string;
   word: string;
+  pronunciation?: string;    // intuitive respelling, e.g. "spuh-SIF-ik"
+  definition?: string;       // e.g. "Clearly defined or exact."
   sentence: string;
   translation: string;
+  level?: string;            // 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2'
+  topic?: string;
+  language?: AppLanguage;    // 'English' | 'French'
+  icon?: string;             // e.g. '🎯'
 }
 
 export interface DictationLesson {
   topic: string;
   level: string;
   items: DictationItem[];
+  language?: AppLanguage;
+}
+
+export interface WordMasteryRecord {
+  id: string;
+  word: string;
+  pronunciation: string;
+  definition: string;
+  translation: string;
+  sentence: string;
+  level: string;
+  topic: string;
+  language: AppLanguage;
+  masteredAt: number;
+  timesPracticed: number;
+  isPerfect: boolean;
+}
+
+export interface DictationAchievementBadge {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  target: number;
+  unlockedAt: number | null;
+}
+
+export interface DictationUserStats {
+  totalMasteredWords: number;
+  totalSessionsCompleted: number;
+  perfectSessions: number;
+  currentStreak: number;
+  longestStreak: number;
+  lastPracticeDate: string;
+  masteredWords: Record<string, WordMasteryRecord>; // key: `${lang}_${word.toLowerCase()}`
+  badges: Record<string, number>; // badgeId -> timestamp
 }

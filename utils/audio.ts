@@ -92,6 +92,63 @@ export function playStandardAudio(base64OrDataUri: string, onEnded?: () => void)
   return audio;
 }
 
+export function playStandardAudioWithProgress(
+  base64OrDataUri: string,
+  onProgress?: (progress: number, currentTime: number, duration: number) => void,
+  onEnded?: () => void
+): HTMLAudioElement {
+  stopAllAudio();
+  const src = base64OrDataUri.startsWith('data:') 
+    ? base64OrDataUri 
+    : `data:audio/webm;base64,${base64OrDataUri}`;
+  const audio = new Audio(src);
+  let animFrameId: number | null = null;
+
+  const trackProgress = () => {
+    if (audio && !audio.paused && audio.duration) {
+      const prog = Math.min(1, Math.max(0, audio.currentTime / audio.duration));
+      if (onProgress) onProgress(prog, audio.currentTime, audio.duration);
+      animFrameId = requestAnimationFrame(trackProgress);
+    }
+  };
+
+  const cleanup = () => {
+    if (animFrameId) cancelAnimationFrame(animFrameId);
+    animFrameId = null;
+  };
+
+  audio.onplay = () => {
+    animFrameId = requestAnimationFrame(trackProgress);
+  };
+  audio.onended = () => {
+    cleanup();
+    if (onProgress) onProgress(1, audio.duration || 0, audio.duration || 0);
+    if (onEnded) onEnded();
+    globalAudio = null;
+  };
+  audio.onerror = (e) => {
+    cleanup();
+    console.warn("Audio playback error:", e);
+    if (onEnded) onEnded();
+    globalAudio = null;
+  };
+  audio.onpause = () => {
+    cleanup();
+  };
+
+  const playPromise = audio.play();
+  if (playPromise !== undefined) {
+    playPromise.catch((err) => {
+      cleanup();
+      console.warn("Audio playback interrupted or blocked:", err);
+      if (onEnded) onEnded();
+      globalAudio = null;
+    });
+  }
+  globalAudio = audio;
+  return audio;
+}
+
 export async function blobToBase64(blob: Blob): Promise<string> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();

@@ -28,6 +28,11 @@ interface ControlDockProps {
   hasUnreadPartnerAudio?: boolean;
   isPlayingPartnerAudio?: boolean;
   onTogglePlayPartnerAudio?: () => void;
+  // Multi-user Recording & Listening UX Enhancements
+  isVideoPlayLocked?: boolean;
+  isPartnerRecording?: boolean;
+  isPartnerListeningToMyAudio?: boolean;
+  partnerAudioProgress?: number;
 }
 
 // Mobile Micro-Haptic Vibration Utility
@@ -62,7 +67,11 @@ const ControlDock: React.FC<ControlDockProps> = ({
   hasPartnerAudio,
   hasUnreadPartnerAudio,
   isPlayingPartnerAudio,
-  onTogglePlayPartnerAudio
+  onTogglePlayPartnerAudio,
+  isVideoPlayLocked = false,
+  isPartnerRecording = false,
+  isPartnerListeningToMyAudio = false,
+  partnerAudioProgress = 0
 }) => {
   const [isCancelArmed, setIsCancelArmed] = useState(false);
   const startYRef = useRef<number>(0);
@@ -304,22 +313,48 @@ const ControlDock: React.FC<ControlDockProps> = ({
         </button>
 
         {/* 4. Play / Pause Button (Center Hero Button) */}
-        <button
-          onClick={() => { triggerHaptic(12); onTogglePlay(); }}
-          title={isPlaying ? "Pause" : "Play"}
-          className="w-13 h-13 sm:w-12 sm:h-12 min-w-[50px] min-h-[50px] rounded-full bg-[#1c1d20] text-[#e4dfd3] flex items-center justify-center shadow-[inset_1px_1px_3px_rgba(0,0,0,0.8)] border-2 border-[#1c1d20] hover:bg-[#cf573c] hover:border-[#cf573c] active:scale-95 transition-all"
-        >
-          {isPlaying ? (
-            <svg className="w-6 h-6 sm:w-6 sm:h-6 fill-current" viewBox="0 0 24 24">
-              <rect x="6" y="4" width="4" height="16" rx="1" />
-              <rect x="14" y="4" width="4" height="16" rx="1" />
-            </svg>
-          ) : (
-            <svg className="w-6 h-6 sm:w-6 sm:h-6 fill-current translate-x-0.5" viewBox="0 0 24 24">
-              <polygon points="5 3 19 12 5 21 5 3" />
-            </svg>
+        <div className="relative">
+          <button
+            onClick={() => {
+              if (isVideoPlayLocked) {
+                triggerHaptic([30, 40, 30]);
+                onTogglePlay(); // parent handles lock toast notification
+                return;
+              }
+              triggerHaptic(12);
+              onTogglePlay();
+            }}
+            title={isVideoPlayLocked ? "Recording in progress (video locked)" : isPlaying ? "Pause" : "Play"}
+            className={`w-13 h-13 sm:w-12 sm:h-12 min-w-[50px] min-h-[50px] rounded-full flex items-center justify-center shadow-[inset_1px_1px_3px_rgba(0,0,0,0.8)] border-2 transition-all ${
+              isVideoPlayLocked
+                ? 'bg-[#1c1d20]/50 border-[#1c1d20]/70 text-[#a09c91] cursor-not-allowed opacity-75'
+                : 'bg-[#1c1d20] text-[#e4dfd3] border-[#1c1d20] hover:bg-[#cf573c] hover:border-[#cf573c] active:scale-95'
+            }`}
+          >
+            {isPlaying ? (
+              <svg className="w-6 h-6 sm:w-6 sm:h-6 fill-current" viewBox="0 0 24 24">
+                <rect x="6" y="4" width="4" height="16" rx="1" />
+                <rect x="14" y="4" width="4" height="16" rx="1" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6 sm:w-6 sm:h-6 fill-current translate-x-0.5" viewBox="0 0 24 24">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+            )}
+          </button>
+
+          {/* Locked Badge during recording */}
+          {isVideoPlayLocked && (
+            <span 
+              className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#eab308] text-[#1c1d20] flex items-center justify-center border border-[#1c1d20] shadow-[1px_1px_0px_#18191c] pointer-events-none"
+              title="Video locked during recording"
+            >
+              <svg className="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24">
+                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+              </svg>
+            </span>
           )}
-        </button>
+        </div>
 
         {/* 5. Next Line (>) - Enlarged for Mobile Thumb Target */}
         <button
@@ -384,34 +419,104 @@ const ControlDock: React.FC<ControlDockProps> = ({
             </span>
           </button>
 
-          {/* Floating Partner Play Button - Enlarged to 44px active touch target on mobile */}
-          {hasPartnerAudio && (
-            <button
-              onClick={() => { triggerHaptic(12); onTogglePlayPartnerAudio?.(); }}
-              title={isPlayingPartnerAudio ? "Stop Partner Audio" : "Play Partner's Shadow Recording"}
-              className={`absolute -top-3.5 -right-3.5 sm:-top-3 sm:-right-4 w-9 h-9 sm:w-8 sm:h-8 rounded-full border-2 border-[#1c1d20] shadow-[2px_2px_0px_#18191c] flex items-center justify-center transition-all z-30 active:scale-95 active:shadow-none ${
-                isPlayingPartnerAudio
-                  ? 'bg-[#3b82f6] text-white shadow-[0_0_12px_rgba(59,130,246,0.9)] scale-110'
-                  : 'bg-[#3d7a4d] hover:bg-[#346942] text-white animate-bounce-short'
-              }`}
-            >
-              {isPlayingPartnerAudio ? (
-                <svg className="w-4 h-4 sm:w-3.5 sm:h-3.5 fill-current" viewBox="0 0 24 24">
-                  <rect x="6" y="6" width="12" height="12" rx="1.5" />
-                </svg>
-              ) : (
-                <svg className="w-4 h-4 sm:w-3.5 sm:h-3.5 fill-current translate-x-0.5" viewBox="0 0 24 24">
-                  <polygon points="5 3 19 12 5 21 5 3" />
-                </svg>
-              )}
+          {/* Floating Partner Play Button with Micro-Dot & Circled Timeline */}
+          {(hasPartnerAudio || isPartnerRecording || isPartnerListeningToMyAudio) && (
+            <div className="absolute -top-3.5 -right-3.5 sm:-top-3 sm:-right-4 z-30">
+              <button
+                onClick={() => { triggerHaptic(12); onTogglePlayPartnerAudio?.(); }}
+                disabled={isPartnerRecording && !hasPartnerAudio}
+                title={
+                  isPartnerRecording 
+                    ? "Partner is currently speaking..." 
+                    : isPartnerListeningToMyAudio 
+                      ? "Partner is listening to your recording!" 
+                      : isPlayingPartnerAudio 
+                        ? "Stop Partner Audio" 
+                        : "Play Partner's Shadow Recording"
+                }
+                className={`relative w-9 h-9 sm:w-8 sm:h-8 rounded-full border-2 border-[#1c1d20] shadow-[2px_2px_0px_#18191c] flex items-center justify-center transition-all active:scale-95 active:shadow-none ${
+                  isPartnerListeningToMyAudio
+                    ? 'bg-[#eab308] text-[#1c1d20] shadow-[0_0_12px_rgba(234,179,8,0.9)] scale-105'
+                    : isPlayingPartnerAudio
+                      ? 'bg-[#3b82f6] text-white shadow-[0_0_12px_rgba(59,130,246,0.9)] scale-110'
+                      : isPartnerRecording
+                        ? 'bg-[#2b5536] text-white'
+                        : 'bg-[#3d7a4d] hover:bg-[#346942] text-white animate-bounce-short'
+                }`}
+              >
+                {/* SVG Circled Timeline Progress Ring (r=18, Circumference = 2 * PI * 18 = 113.1) */}
+                {(isPlayingPartnerAudio || isPartnerListeningToMyAudio) && (
+                  <svg 
+                    className="absolute -inset-1.5 w-[calc(100%+12px)] h-[calc(100%+12px)] -rotate-90 pointer-events-none"
+                    viewBox="0 0 44 44"
+                  >
+                    {/* Background Track Ring */}
+                    <circle
+                      cx="22"
+                      cy="22"
+                      r="18"
+                      fill="none"
+                      stroke="#1c1d20"
+                      strokeWidth="3"
+                      className="opacity-30"
+                    />
+                    {/* Animated Progress Timeline Ring */}
+                    <circle
+                      cx="22"
+                      cy="22"
+                      r="18"
+                      fill="none"
+                      stroke={isPartnerListeningToMyAudio ? "#eab308" : "#38bdf8"}
+                      strokeWidth="3.2"
+                      strokeDasharray="113.1"
+                      strokeDashoffset={113.1 * (1 - Math.min(1, Math.max(0, partnerAudioProgress || 0)))}
+                      strokeLinecap="round"
+                      className="transition-[stroke-dashoffset] duration-75"
+                    />
+                  </svg>
+                )}
 
-              {/* '1' Unread Notification Badge */}
-              {hasUnreadPartnerAudio && (
-                <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-[#cf573c] text-[#fbf8f2] text-[9px] font-mono font-bold flex items-center justify-center border border-[#1c1d20] shadow-[1px_1px_0px_#18191c] animate-pulse pointer-events-none">
-                  1
-                </span>
-              )}
-            </button>
+                {/* Inner Icon */}
+                {isPartnerListeningToMyAudio ? (
+                  // Headphones / listening icon
+                  <svg className="w-4 h-4 sm:w-3.5 sm:h-3.5 fill-current animate-pulse" viewBox="0 0 24 24">
+                    <path d="M12 3a9 9 0 0 0-9 9v7c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2H5v-1a7 7 0 1 1 14 0v1h-2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-7a9 9 0 0 0-9-9z"/>
+                  </svg>
+                ) : isPlayingPartnerAudio ? (
+                  <svg className="w-4 h-4 sm:w-3.5 sm:h-3.5 fill-current" viewBox="0 0 24 24">
+                    <rect x="6" y="6" width="12" height="12" rx="1.5" />
+                  </svg>
+                ) : isPartnerRecording ? (
+                  // Small mic indicating partner speaking
+                  <svg className="w-4 h-4 sm:w-3.5 sm:h-3.5 stroke-current animate-pulse" viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                  </svg>
+                ) : (
+                  <svg className="w-4 h-4 sm:w-3.5 sm:h-3.5 fill-current translate-x-0.5" viewBox="0 0 24 24">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                )}
+
+                {/* Floating Micro-Dot (Notice partner is in recording!) */}
+                {isPartnerRecording && (
+                  <span 
+                    className="absolute -top-1.5 -right-1.5 flex h-3.5 w-3.5 items-center justify-center pointer-events-none z-40"
+                    title="Partner is recording"
+                  >
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ef4444] opacity-80" />
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#ef4444] border border-[#1c1d20] shadow-[0_0_8px_rgba(239,68,68,1)]" />
+                  </span>
+                )}
+
+                {/* '1' Unread Notification Badge */}
+                {hasUnreadPartnerAudio && !isPartnerRecording && !isPartnerListeningToMyAudio && (
+                  <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-[#cf573c] text-[#fbf8f2] text-[9px] font-mono font-bold flex items-center justify-center border border-[#1c1d20] shadow-[1px_1px_0px_#18191c] animate-pulse pointer-events-none">
+                    1
+                  </span>
+                )}
+              </button>
+            </div>
           )}
         </div>
 
